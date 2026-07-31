@@ -1,4 +1,4 @@
-# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=564 fetched=2026-07-31T11:23:54.388154+00:00
+# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=564 fetched=2026-07-31T13:46:54.459516+00:00
 # pts/ppg/mins/g/a/cs/bonus are LAST SEASON totals carried into the new game.
 # st: a=available i=injured d=doubtful s=suspended u=unavailable
 id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
@@ -7,11 +7,11 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 4,Gabriel,ARS,DEF,8.0,25.5,209,6.5,2750,3,5,18,30,a
 397,Semenyo,MCI,MID,8.5,20.9,202,5.5,3200,17,6,12,18,a
 480,Gibbs-White,NFO,MID,8.0,12.2,188,5.1,3101,15,4,10,18,a
-13,Rice,ARS,MID,7.5,22.1,184,5.1,3093,4,9,18,23,a
+13,Rice,ARS,MID,7.5,22.2,184,5.1,3093,4,9,18,23,a
 106,Thiago,BRE,FWD,8.0,15.9,181,4.8,3282,22,1,10,22,a
 481,Anderson,MCI,MID,6.5,12.1,180,4.7,3332,4,5,10,16,a
 388,Guéhi,MCI,DEF,6.0,24.3,179,5.1,3150,3,5,14,14,a
-165,João Pedro,CHE,FWD,7.5,54.1,177,5.1,2658,15,9,10,30,a
+165,João Pedro,CHE,FWD,7.5,54.2,177,5.1,2658,15,9,10,30,a
 356,Virgil,LIV,DEF,6.5,16.1,175,4.6,3420,6,1,10,10,a
 498,Senesi,TOT,DEF,6.0,11.1,175,4.7,3288,0,6,11,14,a
 229,Tarkowski,EVE,DEF,6.0,9.8,170,4.6,3330,2,3,11,12,a
@@ -25,9 +25,9 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 239,Garner,EVE,MID,6.0,1.1,159,4.2,3413,2,7,11,13,i
 12,Saka,ARS,MID,9.5,10.7,157,5.1,2218,7,10,12,18,a
 155,Enzo,CHE,MID,7.0,5.3,157,4.4,3114,10,5,8,19,a
-200,Lacroix,CRY,DEF,6.0,12.0,154,4.4,3085,1,2,11,11,a
+200,Lacroix,CHE,DEF,6.0,12.0,154,4.4,3085,1,2,11,11,a
 389,Matheus N.,MCI,DEF,6.0,5.3,154,4.5,2861,1,8,12,16,a
-452,Bruno G.,NEW,MID,7.0,8.0,154,5.3,2456,9,7,6,22,a
+452,Bruno G.,NEW,MID,7.0,8.1,154,5.3,2456,9,7,6,22,a
 236,Dewsbury-Hall,EVE,MID,6.5,4.1,151,4.9,2629,8,7,8,18,a
 533,Mukiele,SUN,DEF,5.5,7.7,151,4.7,2784,3,5,9,11,a
 5,J.Timber,ARS,DEF,6.5,0.6,149,5.0,2452,3,6,13,9,i
@@ -56,19 +56,19 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 198,Henderson,CRY,GKP,5.0,3.0,131,3.5,3330,0,0,11,7,a
 231,Keane,EVE,DEF,5.0,1.5,131,4.0,2588,3,1,7,8,a
 367,Gakpo,LIV,MID,7.0,3.4,131,3.6,2736,7,5,10,5,a
-398,Foden,MCI,MID,7.0,7.2,131,4.0,2078,7,5,11,13,a
+398,Foden,MCI,MID,7.0,7.3,131,4.0,2078,7,5,11,13,a
 109,Verbruggen,BHA,GKP,4.5,16.7,130,3.4,3420,0,0,10,6,a
 84,Collins,BRE,DEF,5.5,2.0,129,3.7,2971,1,2,9,7,a
 25,Gyökeres,ARS,FWD,7.5,13.3,128,3.6,2217,14,1,12,16,a
 202,Richards,CRY,DEF,5.0,0.8,128,3.9,2825,1,0,11,5,a
-237,Ndiaye,EVE,MID,6.0,18.6,128,4.0,2781,6,3,8,7,a
+237,Ndiaye,EVE,MID,6.0,18.5,128,4.0,2781,6,3,8,7,a
 469,N.Williams,NFO,DEF,5.0,13.4,128,3.5,3203,2,3,9,15,a
 136,Welbeck,BHA,FWD,6.0,2.9,126,3.4,2249,13,1,10,18,a
 337,Aaronson,LEE,MID,5.5,0.6,126,3.4,2449,4,8,9,5,a
 445,Thiaw,NEW,DEF,5.0,2.3,126,3.6,2963,4,0,5,12,a
 94,Schade,BRE,MID,6.0,2.4,125,3.6,2744,8,5,11,5,a
 156,Neto,CHE,MID,6.5,1.2,125,3.7,2629,5,7,11,9,a
-366,Wirtz,LIV,MID,7.5,10.7,125,3.8,2374,5,4,10,17,a
+366,Wirtz,LIV,MID,7.5,10.8,125,3.8,2374,5,4,10,17,a
 380,Ekitiké,LIV,FWD,7.5,0.2,125,4.5,1797,11,4,7,22,i
 535,Alderete,SUN,DEF,5.0,1.2,125,3.8,2797,1,1,10,5,a
 57,Petrović,BOU,GKP,4.5,3.5,124,3.3,3420,0,0,11,5,a
@@ -90,17 +90,17 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 79,Evanilson,BOU,FWD,6.0,1.9,115,3.2,2741,6,7,11,6,a
 86,Lewis-Potter,BRE,MID,5.5,0.5,115,3.2,1960,3,4,9,5,a
 142,James,CHE,DEF,5.5,8.1,115,4.0,1957,2,6,8,11,a
-154,Palmer,CHE,MID,9.5,13.1,114,4.4,1954,10,2,3,11,a
+154,Palmer,CHE,MID,9.5,13.2,114,4.4,1954,10,2,3,11,a
 223,Mateta,CRY,FWD,6.5,7.2,114,3.6,2210,12,0,8,13,a
 491,Igor Jesus,NFO,FWD,6.0,4.5,114,3.1,2293,6,6,9,13,a
 14,Eze,ARS,MID,6.5,3.3,113,3.4,1885,7,3,11,8,a
-78,Kroupi.Jr,BOU,MID,7.5,9.1,113,3.4,1663,13,0,10,13,i
+78,Kroupi.Jr,BOU,MID,7.5,9.0,113,3.4,1663,13,0,10,13,i
 85,Van den Berg,BRE,DEF,5.0,0.7,113,3.5,2761,0,3,8,3,a
 88,Kayode,BRE,DEF,4.5,4.4,113,3.1,3258,1,2,10,9,a
 96,Damsgaard,BRE,MID,5.5,0.7,113,3.4,2046,4,4,5,9,a
 140,Sánchez,CHE,GKP,5.0,2.0,113,3.2,3040,0,1,9,7,a
 390,Rúben,MCI,DEF,5.5,1.4,113,4.3,2139,2,0,12,4,a
-423,Shaw,MUN,DEF,4.5,24.0,113,3.0,3220,1,1,10,3,a
+423,Shaw,MUN,DEF,4.5,24.1,113,3.0,3220,1,1,10,3,a
 210,Wharton,CRY,MID,5.5,0.2,112,3.3,2552,1,6,8,8,d
 417,Dalot,MUN,DEF,5.0,3.1,111,3.3,2609,1,6,7,9,a
 439,Šeško,MUN,FWD,7.0,3.1,111,3.7,1630,11,2,2,19,d
@@ -141,10 +141,10 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 332,Justin,LEE,DEF,4.5,0.5,94,3.2,1893,2,1,6,9,a
 448,Burn,NEW,DEF,5.0,2.7,93,3.2,2195,1,3,6,5,a
 404,Reijnders,MCI,MID,6.0,0.4,92,3.3,1623,5,3,7,6,a
-552,Brobbey,SUN,FWD,6.0,22.3,92,3.0,1920,7,2,6,12,a
+552,Brobbey,SUN,FWD,6.0,22.2,92,3.0,1920,7,2,6,12,a
 123,Hinshelwood,BHA,MID,6.0,0.3,91,3.4,1736,4,5,7,2,a
 265,Berge,FUL,MID,5.0,0.4,91,2.6,2904,0,3,8,3,a
-350,A.Becker,LIV,GKP,5.5,4.2,91,3.5,2340,0,0,8,8,a
+350,A.Becker,LIV,GKP,5.5,4.1,91,3.5,2340,0,0,8,8,a
 431,Amad,MUN,MID,6.0,1.5,91,2.8,2339,2,5,6,7,a
 500,Romero,TOT,DEF,5.0,1.1,91,4.0,1869,4,1,5,10,a
 418,Maguire,MUN,DEF,5.0,7.2,90,3.9,1649,1,2,7,5,a
@@ -171,7 +171,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 238,Grealish,MCI,MID,6.5,0.3,79,4.0,1627,2,6,7,12,d
 391,Gvardiol,MCI,DEF,5.5,8.8,79,4.4,1370,2,2,6,5,a
 449,Hall,NEW,DEF,5.0,4.3,79,2.6,2176,1,2,4,4,a
-124,Groß,BHA,MID,5.5,4.2,78,4.1,1636,1,6,6,10,a
+124,Groß,BHA,MID,5.5,4.3,78,4.1,1636,1,6,6,10,a
 505,Spence,TOT,DEF,4.5,10.1,78,2.6,2049,0,0,9,3,a
 514,Tel,TOT,MID,6.0,0.3,78,2.5,1334,4,2,3,7,a
 73,Adams,BOU,MID,5.0,0.7,77,3.1,1769,2,2,7,3,a
@@ -244,7 +244,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 419,Martinez,MUN,DEF,5.0,0.9,51,2.8,1229,0,0,5,3,d
 446,Schär,NEW,DEF,5.0,0.1,51,3.2,1089,0,0,4,0,a
 33,Mings,AVL,DEF,4.5,0.2,50,2.9,1322,0,1,3,4,a
-483,Ndoye,NFO,MID,5.5,0.7,50,2.1,1167,1,2,2,4,a
+483,Ndoye,NFO,MID,5.5,0.6,50,2.1,1167,1,2,2,4,a
 263,Kevin,FUL,MID,5.5,0.1,49,1.9,1030,1,3,4,0,a
 520,Bergvall,TOT,MID,5.5,0.2,49,2.1,955,1,3,3,0,a
 454,Elanga,NEW,MID,6.0,0.7,48,1.5,1302,0,1,2,0,a
@@ -269,7 +269,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 440,Zirkzee,MUN,FWD,5.5,0.7,42,1.8,607,2,1,2,6,a
 70,Kluivert,BOU,MID,6.0,0.9,41,2.0,945,2,0,4,3,a
 266,Cairney,FUL,MID,5.0,0.0,41,1.7,756,2,0,2,1,a
-379,Isak,LIV,FWD,9.0,11.4,41,2.9,694,3,1,1,4,a
+379,Isak,LIV,FWD,9.0,11.5,41,2.9,694,3,1,1,4,a
 490,Wood,NFO,FWD,6.0,1.8,41,2.7,896,3,0,2,4,a
 11,Mosquera,ARS,DEF,5.5,17.3,40,2.0,986,0,0,3,1,a
 35,Bogarde,AVL,MID,5.0,0.1,40,1.4,1042,0,0,2,4,a
@@ -315,7 +315,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 44,Bailey,AVL,MID,5.5,0.1,21,1.6,450,0,2,0,0,a
 244,Armstrong,EVE,MID,5.0,0.1,21,1.6,524,0,0,1,0,a
 206,Chadi Riad,CRY,DEF,4.5,0.1,20,2.2,550,0,1,1,0,a
-496,Kinsky,TOT,GKP,4.5,17.2,20,2.9,630,0,0,2,0,a
+496,Kinsky,TOT,GKP,4.5,17.3,20,2.9,630,0,0,2,0,a
 63,Milosavljević,BOU,DEF,5.0,0.1,19,2.7,367,0,0,1,0,a
 148,Hato,CHE,DEF,4.5,1.4,19,0.9,1139,0,0,0,0,a
 395,Lewis,MCI,DEF,4.5,0.2,19,1.7,401,0,1,1,2,a
@@ -484,7 +484,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 286,Belloumi,HUL,MID,5.0,0.6,0,0.0,0,0,0,0,0,a
 287,Millar,HUL,MID,5.0,0.1,0,0.0,0,0,0,0,0,a
 288,Dowell,HUL,MID,4.5,0.6,0,0.0,0,0,0,0,0,a
-289,Crooks,HUL,MID,4.5,0.6,0,0.0,0,0,0,0,0,a
+289,Crooks,HUL,MID,4.5,0.7,0,0.0,0,0,0,0,0,a
 290,Slater,HUL,MID,4.5,1.7,0,0.0,0,0,0,0,0,a
 291,Matazo,HUL,MID,4.5,0.0,0,0.0,0,0,0,0,0,i
 292,Ömür,HUL,MID,5.0,0.0,0,0.0,0,0,0,0,0,a
@@ -502,7 +502,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 302,Button,IPS,GKP,4.0,0.6,0,0.0,0,0,0,0,0,a
 303,Kipré,IPS,DEF,4.0,0.3,0,0.0,0,0,0,0,0,a
 304,O'Shea,IPS,DEF,4.0,1.2,0,0.0,0,0,0,0,0,a
-305,Davis,IPS,DEF,4.0,3.9,0,0.0,0,0,0,0,0,a
+305,Davis,IPS,DEF,4.0,3.8,0,0.0,0,0,0,0,0,a
 306,Greaves,IPS,DEF,4.0,0.5,0,0.0,0,0,0,0,0,a
 307,Johnson,IPS,DEF,4.0,0.1,0,0.0,0,0,0,0,0,a
 308,Furlong,IPS,DEF,4.0,0.3,0,0.0,0,0,0,0,0,a
@@ -525,7 +525,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 554,Van Oevelen,IPS,GKP,4.5,0.1,0,0.0,0,0,0,0,0,a
 562,Maeda,IPS,MID,5.5,0.4,0,0.0,0,0,0,0,0,a
 564,Scherpen,IPS,GKP,4.5,0.1,0,0.0,0,0,0,0,0,a
-334,Muharemović,LEE,DEF,5.0,0.7,0,0.0,0,0,0,0,0,a
+334,Muharemović,LEE,DEF,5.0,0.8,0,0.0,0,0,0,0,0,a
 340,Gelhardt,LEE,MID,5.0,0.1,0,0.0,0,0,0,0,0,a
 349,Mateo Joseph,LEE,FWD,4.5,0.5,0,0.0,0,0,0,0,0,i
 353,Pecsi,LIV,GKP,4.0,0.1,0,0.0,0,0,0,0,0,a
