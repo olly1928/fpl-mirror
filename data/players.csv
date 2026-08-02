@@ -1,4 +1,4 @@
-# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=564 fetched=2026-08-02T02:02:49.297887+00:00
+# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=564 fetched=2026-08-02T05:49:03.450451+00:00
 # pts/ppg/mins/g/a/cs/bonus are LAST SEASON totals carried into the new game.
 # st: a=available i=injured d=doubtful s=suspended u=unavailable
 id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
@@ -11,7 +11,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 106,Thiago,BRE,FWD,8.0,15.9,181,4.8,3282,22,1,10,22,a
 481,Anderson,MCI,MID,6.5,12.1,180,4.7,3332,4,5,10,16,a
 388,Guéhi,MCI,DEF,6.0,24.2,179,5.1,3150,3,5,14,14,a
-165,João Pedro,CHE,FWD,7.5,54.5,177,5.1,2658,15,9,10,30,a
+165,João Pedro,CHE,FWD,7.5,54.6,177,5.1,2658,15,9,10,30,a
 356,Virgil,LIV,DEF,6.5,16.3,175,4.6,3420,6,1,10,10,a
 498,Senesi,TOT,DEF,6.0,11.0,175,4.7,3288,0,6,11,14,a
 229,Tarkowski,EVE,DEF,6.0,9.8,170,4.6,3330,2,3,11,12,a
@@ -31,9 +31,9 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 236,Dewsbury-Hall,EVE,MID,6.5,4.1,151,4.9,2629,8,7,8,18,a
 533,Mukiele,SUN,DEF,5.5,7.6,151,4.7,2784,3,5,9,11,a
 5,J.Timber,ARS,DEF,6.5,0.5,149,5.0,2452,3,6,13,9,i
-427,Mbeumo,MUN,MID,8.0,14.7,148,4.5,2611,11,3,8,16,a
+427,Mbeumo,MUN,MID,8.0,14.8,148,4.5,2611,11,3,8,16,a
 112,Van Hecke,TOT,DEF,5.0,8.1,148,4.1,3210,3,3,10,8,a
-542,E.Le Fée,SUN,MID,6.0,11.6,147,4.1,2930,5,6,10,16,a
+542,E.Le Fée,SUN,MID,6.0,11.7,147,4.1,2930,5,6,10,16,a
 371,Gravenberch,LIV,MID,6.0,1.9,144,4.0,2991,5,5,9,17,a
 82,Kelleher,BRE,GKP,5.0,5.6,143,3.9,3330,0,0,10,11,a
 428,Cunha,MUN,MID,8.0,15.0,143,4.3,2493,10,4,8,14,a
@@ -50,7 +50,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 226,Pickford,EVE,GKP,5.5,9.0,135,3.6,3420,0,0,11,11,a
 384,Donnarumma,MCI,GKP,5.5,11.1,135,4.0,3060,0,0,15,5,a
 399,Cherki,MCI,MID,7.5,9.5,135,4.1,1772,4,13,8,16,a
-525,Fernandes,TOT,MID,6.0,4.0,135,3.8,3017,3,4,8,7,a
+525,Fernandes,TOT,MID,6.0,3.9,135,3.8,3017,3,4,8,7,a
 338,Ampadu,LEE,MID,5.5,1.4,134,3.8,3119,1,4,8,11,a
 19,Zubimendi,ARS,MID,5.5,1.5,133,3.5,2991,5,1,16,9,a
 198,Henderson,CRY,GKP,5.0,3.1,131,3.5,3330,0,0,11,7,a
@@ -61,7 +61,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 84,Collins,BRE,DEF,5.5,2.0,129,3.7,2971,1,2,9,7,a
 25,Gyökeres,ARS,FWD,7.5,13.2,128,3.6,2217,14,1,12,16,a
 202,Richards,CRY,DEF,5.0,0.8,128,3.9,2825,1,0,11,5,a
-237,Ndiaye,EVE,MID,6.0,17.9,128,4.0,2781,6,3,8,7,a
+237,Ndiaye,EVE,MID,6.0,17.8,128,4.0,2781,6,3,8,7,a
 469,N.Williams,NFO,DEF,5.0,13.3,128,3.5,3203,2,3,9,15,a
 136,Welbeck,BHA,FWD,6.0,2.8,126,3.4,2249,13,1,10,18,a
 337,Aaronson,LEE,MID,5.5,0.7,126,3.4,2449,4,8,9,5,a
@@ -141,7 +141,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 332,Justin,LEE,DEF,4.5,0.5,94,3.2,1893,2,1,6,9,a
 448,Burn,NEW,DEF,5.0,2.7,93,3.2,2195,1,3,6,5,a
 404,Reijnders,MCI,MID,6.0,0.4,92,3.3,1623,5,3,7,6,a
-552,Brobbey,SUN,FWD,6.0,21.8,92,3.0,1920,7,2,6,12,a
+552,Brobbey,SUN,FWD,6.0,21.7,92,3.0,1920,7,2,6,12,a
 123,Hinshelwood,BHA,MID,6.0,0.3,91,3.4,1736,4,5,7,2,a
 265,Berge,FUL,MID,5.0,0.4,91,2.6,2904,0,3,8,3,a
 350,A.Becker,LIV,GKP,5.5,4.2,91,3.5,2340,0,0,8,8,a
@@ -376,7 +376,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 435,Lacey,MUN,MID,5.0,0.1,3,1.0,40,0,0,0,0,a
 477,Abbott,NFO,DEF,4.0,0.2,3,1.0,165,0,0,0,0,a
 511,Souza,TOT,DEF,4.0,0.3,3,0.8,142,0,0,0,0,a
-515,Maddison,TOT,MID,6.5,2.3,3,1.0,34,0,0,0,0,a
+515,Maddison,TOT,MID,6.5,2.2,3,1.0,34,0,0,0,0,a
 2,Arrizabalaga,ARS,GKP,5.0,0.2,2,2.0,90,0,0,0,0,a
 51,George Hemmings,AVL,MID,4.5,0.3,2,1.0,25,0,0,0,0,a
 103,Dasilva,BRE,MID,5.0,0.0,2,1.0,2,0,0,0,0,a
@@ -425,7 +425,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 504,Vuskovic,BHA,DEF,5.0,2.8,0,0.0,0,0,0,0,0,a
 152,Palestra,CHE,DEF,5.5,1.5,0,0.0,0,0,0,0,0,a
 153,Disasi,CHE,DEF,4.5,0.1,0,0.0,0,0,0,0,0,a
-164,Quenda,CHE,MID,5.5,0.1,0,0.0,0,0,0,0,0,d
+164,Quenda,CHE,MID,5.5,0.0,0,0.0,0,0,0,0,0,d
 166,N.Jackson,CHE,FWD,6.5,0.4,0,0.0,0,0,0,0,0,a
 170,Emegha,CHE,FWD,5.0,0.2,0,0.0,0,0,0,0,0,d
 560,Penders,CHE,GKP,4.5,0.0,0,0.0,0,0,0,0,0,a
