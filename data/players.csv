@@ -1,4 +1,4 @@
-# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=568 fetched=2026-08-04T16:47:29.898410+00:00
+# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=568 fetched=2026-08-04T18:23:53.660223+00:00
 # pts/ppg/mins/g/a/cs/bonus are LAST SEASON totals carried into the new game.
 # st: a=available i=injured d=doubtful s=suspended u=unavailable
 id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
@@ -32,12 +32,12 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 533,Mukiele,SUN,DEF,5.5,7.7,151,4.7,2784,3,5,9,11,a
 5,J.Timber,ARS,DEF,6.5,0.5,149,5.0,2452,3,6,13,9,i
 427,Mbeumo,MUN,MID,8.0,17.0,148,4.5,2611,11,3,8,16,a
-112,Van Hecke,TOT,DEF,5.0,8.2,148,4.1,3210,3,3,10,8,a
+112,Van Hecke,TOT,DEF,5.0,8.3,148,4.1,3210,3,3,10,8,a
 542,E.Le Fée,SUN,MID,6.0,12.4,147,4.1,2930,5,6,10,16,a
 371,Gravenberch,LIV,MID,6.0,1.9,144,4.0,2991,5,5,9,17,a
 82,Kelleher,BRE,GKP,5.0,5.6,143,3.9,3330,0,0,10,11,a
 428,Cunha,MUN,MID,8.0,14.4,143,4.3,2493,10,4,8,14,a
-346,Calvert-Lewin,LEE,FWD,6.0,21.8,142,4.1,2721,14,2,8,20,a
+346,Calvert-Lewin,LEE,FWD,6.0,21.9,142,4.1,2721,14,2,8,20,a
 6,Saliba,ARS,DEF,6.0,0.5,137,4.4,2614,1,0,15,12,i
 68,Tavernier,BOU,MID,6.0,1.9,137,4.0,2732,7,4,11,14,a
 335,Stach,LEE,MID,6.0,1.4,137,4.7,2369,5,6,7,14,a
@@ -45,11 +45,11 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 95,O.Dango,BRE,MID,6.5,1.3,136,4.2,2271,7,8,6,16,a
 143,Chalobah,CHE,DEF,5.5,2.0,136,4.0,2780,3,1,9,7,a
 201,Muñoz,CRY,DEF,5.5,11.9,136,4.7,2400,4,4,10,9,a
-529,Roefs,SUN,GKP,5.0,5.3,136,3.9,3150,0,0,10,12,a
+529,Roefs,SUN,GKP,5.0,5.2,136,3.9,3150,0,0,10,12,a
 204,Mitchell,CRY,DEF,4.5,7.0,135,3.6,3253,1,3,12,8,a
 226,Pickford,EVE,GKP,5.5,9.0,135,3.6,3420,0,0,11,11,a
 384,Donnarumma,MCI,GKP,5.5,11.1,135,4.0,3060,0,0,15,5,a
-399,Cherki,MCI,MID,7.5,9.4,135,4.1,1772,4,13,8,16,a
+399,Cherki,MCI,MID,7.5,9.3,135,4.1,1772,4,13,8,16,a
 525,Fernandes,TOT,MID,6.0,3.7,135,3.8,3017,3,4,8,7,a
 338,Ampadu,LEE,MID,5.5,1.4,134,3.8,3119,1,4,8,11,a
 19,Zubimendi,ARS,MID,5.5,1.5,133,3.5,2991,5,1,16,9,a
@@ -61,7 +61,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 84,Collins,BRE,DEF,5.5,2.0,129,3.7,2971,1,2,9,7,a
 25,Gyökeres,ARS,FWD,7.5,13.0,128,3.6,2217,14,1,12,16,a
 202,Richards,CRY,DEF,5.0,0.8,128,3.9,2825,1,0,11,5,a
-237,Ndiaye,EVE,MID,6.0,16.9,128,4.0,2781,6,3,8,7,a
+237,Ndiaye,EVE,MID,6.0,16.8,128,4.0,2781,6,3,8,7,a
 469,N.Williams,NFO,DEF,5.0,13.2,128,3.5,3203,2,3,9,15,a
 136,Welbeck,CHE,FWD,6.0,2.8,126,3.4,2249,13,1,10,18,a
 337,Aaronson,LEE,MID,5.5,0.8,126,3.4,2449,4,8,9,5,a
@@ -110,7 +110,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 8,Calafiori,ARS,DEF,5.5,15.5,109,4.2,1697,1,2,13,6,a
 329,Rodon,LEE,DEF,4.5,1.8,109,3.1,2952,2,0,6,5,a
 336,Okafor,LEE,MID,6.0,0.7,109,3.9,1553,8,3,6,11,a
-412,Lammens,MUN,GKP,5.0,20.2,109,3.4,2880,0,0,8,11,a
+412,Lammens,MUN,GKP,5.0,20.3,109,3.4,2880,0,0,8,11,a
 328,Struijk,BHA,DEF,5.0,0.5,108,3.2,2935,0,1,7,4,a
 372,Mac Allister,LIV,MID,5.5,1.9,108,2.9,2654,2,5,7,9,a
 463,Woltemade,NEW,FWD,6.0,1.7,108,3.3,1896,8,4,8,12,a
@@ -169,15 +169,15 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 513,Xavi,TOT,MID,6.0,0.0,80,2.9,1747,2,5,4,7,i
 545,Sadiki,SUN,MID,5.0,0.4,80,2.4,2891,0,2,9,0,a
 238,Grealish,MCI,MID,6.5,0.2,79,4.0,1627,2,6,7,12,d
-391,Gvardiol,MCI,DEF,5.5,10.9,79,4.4,1370,2,2,6,5,a
+391,Gvardiol,MCI,DEF,5.5,11.0,79,4.4,1370,2,2,6,5,a
 449,Hall,NEW,DEF,5.0,4.1,79,2.6,2176,1,2,4,4,a
-124,Groß,BHA,MID,5.5,7.5,78,4.1,1636,1,6,6,10,a
+124,Groß,BHA,MID,5.5,7.6,78,4.1,1636,1,6,6,10,a
 505,Spence,TOT,DEF,4.5,9.5,78,2.6,2049,0,0,9,3,a
 514,Tel,TOT,MID,6.0,0.4,78,2.5,1334,4,2,3,7,a
 73,Adams,BOU,MID,5.0,0.7,77,3.1,1769,2,2,7,3,a
 211,Yeremy,CRY,MID,5.5,0.2,77,2.3,2074,2,2,7,3,a
 48,Onana,AVL,MID,5.0,0.0,76,3.0,1755,2,0,6,4,i
-87,Ajer,BRE,DEF,4.5,1.2,76,2.8,1805,0,2,5,1,a
+87,Ajer,BRE,DEF,4.5,1.3,76,2.8,1805,0,2,5,1,a
 101,Henderson,CHE,MID,5.0,0.0,76,2.4,1911,1,3,6,5,u
 465,Osula,NEW,FWD,6.0,1.7,76,3.2,805,7,1,2,13,a
 222,Strand Larsen,CRY,FWD,6.0,0.6,75,2.1,2301,4,1,5,3,a
@@ -253,7 +253,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 162,Andrey Santos,MUN,MID,5.0,1.5,47,1.7,1247,1,0,1,3,a
 62,Diakité,BOU,DEF,5.0,0.2,46,2.6,1275,0,0,4,2,a
 517,Odobert,TOT,MID,5.5,0.0,46,1.9,972,0,2,2,6,i
-10,White,ARS,DEF,5.5,0.2,45,3.8,699,0,1,5,3,a
+10,White,ARS,DEF,5.5,0.3,45,3.8,699,0,1,5,3,a
 167,Delap,CHE,FWD,5.5,0.5,45,1.6,1092,1,2,2,1,a
 212,Hughes,CRY,MID,4.5,11.1,45,1.5,1560,0,1,5,0,a
 42,Guessand,AVL,MID,5.5,0.0,44,2.1,909,1,3,2,0,a
@@ -267,11 +267,11 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 360,Bradley,LIV,DEF,5.0,0.0,42,2.8,928,0,2,4,2,i
 421,Heaven,MUN,DEF,4.5,0.4,42,2.5,920,0,1,2,3,a
 440,Zirkzee,MUN,FWD,5.5,0.7,42,1.8,607,2,1,2,6,a
-70,Kluivert,BOU,MID,6.0,0.9,41,2.0,945,2,0,4,3,a
+70,Kluivert,BOU,MID,6.0,1.0,41,2.0,945,2,0,4,3,a
 266,Cairney,FUL,MID,5.0,0.0,41,1.7,756,2,0,2,1,a
 379,Isak,LIV,FWD,9.0,11.3,41,2.9,694,3,1,1,4,a
 490,Wood,NFO,FWD,6.0,1.8,41,2.7,896,3,0,2,4,a
-11,Mosquera,ARS,DEF,5.5,16.9,40,2.0,986,0,0,3,1,a
+11,Mosquera,ARS,DEF,5.5,16.8,40,2.0,986,0,0,3,1,a
 35,Bogarde,AVL,MID,5.0,0.1,40,1.4,1042,0,0,2,4,a
 71,Cook,BOU,MID,5.0,0.1,40,2.2,872,0,1,1,0,a
 526,Solanke,TOT,FWD,6.0,2.6,40,2.7,997,3,0,0,4,a
@@ -377,7 +377,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 477,Abbott,NFO,DEF,4.0,0.2,3,1.0,165,0,0,0,0,a
 511,Souza,TOT,DEF,4.0,0.3,3,0.8,142,0,0,0,0,a
 515,Maddison,TOT,MID,6.5,2.1,3,1.0,34,0,0,0,0,a
-2,Arrizabalaga,ARS,GKP,5.0,0.2,2,2.0,90,0,0,0,0,a
+2,Arrizabalaga,ARS,GKP,5.0,0.1,2,2.0,90,0,0,0,0,a
 51,George Hemmings,AVL,MID,4.5,0.3,2,1.0,25,0,0,0,0,a
 103,Dasilva,BRE,MID,5.0,0.0,2,1.0,2,0,0,0,0,a
 220,Cardines,CRY,DEF,4.5,0.0,2,2.0,90,0,0,0,0,a
@@ -432,7 +432,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 560,Penders,CHE,GKP,4.5,0.1,0,0.0,0,0,0,0,0,a
 561,Anselmino,CHE,DEF,4.5,0.0,0,0.0,0,0,0,0,0,a
 568,Barco,CHE,MID,5.5,0.0,0,0.0,0,0,0,0,0,a
-110,Rushworth,COV,GKP,4.5,0.6,0,0.0,0,0,0,0,0,a
+110,Rushworth,COV,GKP,4.5,0.7,0,0.0,0,0,0,0,0,a
 171,Dovin,COV,GKP,4.0,3.0,0,0.0,0,0,0,0,0,a
 172,Wilson,COV,GKP,4.5,0.7,0,0.0,0,0,0,0,0,a
 173,Thomas,COV,DEF,4.0,8.8,0,0.0,0,0,0,0,0,a
