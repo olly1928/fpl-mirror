@@ -1,4 +1,4 @@
-# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=573 fetched=2026-08-07T15:47:56.235055+00:00
+# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=573 fetched=2026-08-07T16:44:20.810396+00:00
 # pts/ppg/mins/g/a/cs/bonus are LAST SEASON totals carried into the new game.
 # st: a=available i=injured d=doubtful s=suspended u=unavailable
 id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
@@ -96,7 +96,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 14,Eze,ARS,MID,6.5,3.2,113,3.4,1885,7,3,11,8,a
 78,Kroupi.Jr,BOU,MID,7.5,4.7,113,3.4,1663,13,0,10,13,i
 85,Van den Berg,BRE,DEF,5.0,0.7,113,3.5,2761,0,3,8,3,a
-88,Kayode,BRE,DEF,4.5,4.0,113,3.1,3258,1,2,10,9,a
+88,Kayode,BRE,DEF,4.5,3.9,113,3.1,3258,1,2,10,9,a
 96,Damsgaard,BRE,MID,5.5,0.7,113,3.4,2046,4,4,5,9,a
 140,Sánchez,CHE,GKP,5.0,1.9,113,3.2,3040,0,1,9,7,a
 390,Rúben,MCI,DEF,5.5,1.4,113,4.3,2139,2,0,12,4,a
@@ -106,8 +106,8 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 439,Šeško,MUN,FWD,7.0,2.7,111,3.7,1630,11,2,2,19,d
 60,Hill,BOU,DEF,5.5,1.3,110,3.8,2102,0,3,8,4,a
 159,Caicedo,CHE,MID,5.5,3.7,110,3.3,2796,3,1,6,10,a
-534,Hume,SUN,DEF,4.5,2.4,110,2.9,3032,2,1,9,6,a
-8,Calafiori,ARS,DEF,5.5,16.2,109,4.2,1697,1,2,13,6,a
+534,Hume,SUN,DEF,4.5,2.5,110,2.9,3032,2,1,9,6,a
+8,Calafiori,ARS,DEF,5.5,16.3,109,4.2,1697,1,2,13,6,a
 329,Rodon,LEE,DEF,4.5,1.8,109,3.1,2952,2,0,6,5,a
 336,Okafor,LEE,MID,6.0,0.7,109,3.9,1553,8,3,6,11,a
 412,Lammens,MUN,GKP,5.0,20.3,109,3.4,2880,0,0,8,11,a
@@ -419,7 +419,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 105,Anthony,BRE,MID,6.0,0.2,0,0.0,0,0,0,0,0,a
 108,Wilson,BRE,FWD,5.5,0.4,0,0.0,0,0,0,0,0,a
 565,Sangaré,BRE,MID,5.5,1.2,0,0.0,0,0,0,0,0,a
-111,Steele,BHA,GKP,4.0,4.6,0,0.0,0,0,0,0,0,a
+111,Steele,BHA,GKP,4.0,4.5,0,0.0,0,0,0,0,0,a
 119,Costinha,BHA,DEF,4.5,0.0,0,0.0,0,0,0,0,0,a
 120,Svoboda,BHA,DEF,5.0,0.1,0,0.0,0,0,0,0,0,a
 135,Yohanna,BHA,MID,5.0,0.1,0,0.0,0,0,0,0,0,a
@@ -438,7 +438,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 172,Wilson,COV,GKP,4.5,0.6,0,0.0,0,0,0,0,0,a
 173,Thomas,COV,DEF,4.0,8.9,0,0.0,0,0,0,0,0,a
 174,Kitching,COV,DEF,4.0,0.4,0,0.0,0,0,0,0,0,a
-175,van Ewijk,COV,DEF,4.0,16.3,0,0.0,0,0,0,0,0,a
+175,van Ewijk,COV,DEF,4.0,16.2,0,0.0,0,0,0,0,0,a
 176,Dasilva,COV,DEF,4.0,0.5,0,0.0,0,0,0,0,0,a
 177,Kesler-Hayden,COV,DEF,4.0,0.1,0,0.0,0,0,0,0,0,a
 178,Bidwell,COV,DEF,4.0,0.1,0,0.0,0,0,0,0,0,a
