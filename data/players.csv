@@ -1,4 +1,4 @@
-# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=572 fetched=2026-08-07T03:44:15.098446+00:00
+# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=572 fetched=2026-08-07T05:28:37.758752+00:00
 # pts/ppg/mins/g/a/cs/bonus are LAST SEASON totals carried into the new game.
 # st: a=available i=injured d=doubtful s=suspended u=unavailable
 id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
@@ -17,7 +17,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 229,Tarkowski,EVE,DEF,6.0,9.9,170,4.6,3330,2,3,11,12,a
 40,Rogers,CHE,MID,7.5,29.8,169,4.6,3280,10,8,9,17,a
 260,Wilson,LEE,MID,6.5,8.5,168,4.7,2674,10,9,9,21,a
-55,Watkins,AVL,FWD,8.0,12.5,167,4.5,2833,16,4,9,26,a
+55,Watkins,AVL,FWD,8.0,12.6,167,4.5,2833,16,4,9,26,a
 61,Truffert,BOU,DEF,5.5,4.7,165,4.3,3378,1,6,11,19,a
 1,Raya,ARS,GKP,6.0,30.9,162,4.4,3330,0,0,19,11,a
 368,Szoboszlai,LIV,MID,7.0,47.0,160,4.4,3232,6,7,9,21,a
