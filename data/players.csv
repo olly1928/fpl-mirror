@@ -1,4 +1,4 @@
-# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=572 fetched=2026-08-07T00:36:49.996554+00:00
+# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=572 fetched=2026-08-07T03:44:15.098446+00:00
 # pts/ppg/mins/g/a/cs/bonus are LAST SEASON totals carried into the new game.
 # st: a=available i=injured d=doubtful s=suspended u=unavailable
 id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
@@ -31,9 +31,9 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 236,Dewsbury-Hall,EVE,MID,6.5,3.9,151,4.9,2629,8,7,8,18,a
 533,Mukiele,SUN,DEF,5.5,7.6,151,4.7,2784,3,5,9,11,a
 5,J.Timber,ARS,DEF,6.5,0.5,149,5.0,2452,3,6,13,9,i
-427,Mbeumo,MUN,MID,8.0,18.2,148,4.5,2611,11,3,8,16,a
+427,Mbeumo,MUN,MID,8.0,18.3,148,4.5,2611,11,3,8,16,a
 112,Van Hecke,TOT,DEF,5.0,8.3,148,4.1,3210,3,3,10,8,a
-542,E.Le Fée,SUN,MID,6.0,12.6,147,4.1,2930,5,6,10,16,a
+542,E.Le Fée,SUN,MID,6.0,12.7,147,4.1,2930,5,6,10,16,a
 371,Gravenberch,LIV,MID,6.0,1.9,144,4.0,2991,5,5,9,17,a
 82,Kelleher,BRE,GKP,5.0,5.6,143,3.9,3330,0,0,10,11,a
 428,Cunha,MUN,MID,8.0,14.1,143,4.3,2493,10,4,8,14,a
@@ -271,7 +271,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 266,Cairney,FUL,MID,5.0,0.0,41,1.7,756,2,0,2,1,a
 379,Isak,LIV,FWD,9.0,11.3,41,2.9,694,3,1,1,4,a
 490,Wood,NFO,FWD,6.0,1.8,41,2.7,896,3,0,2,4,a
-11,Mosquera,ARS,DEF,5.5,16.5,40,2.0,986,0,0,3,1,a
+11,Mosquera,ARS,DEF,5.5,16.4,40,2.0,986,0,0,3,1,a
 35,Bogarde,AVL,MID,5.0,0.1,40,1.4,1042,0,0,2,4,a
 71,Cook,BOU,MID,5.0,0.1,40,2.2,872,0,1,1,0,a
 526,Solanke,TOT,FWD,6.0,2.7,40,2.7,997,3,0,0,4,a
@@ -295,8 +295,8 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 359,Gomez,LIV,DEF,5.0,0.1,33,1.6,594,0,2,2,2,i
 230,Branthwaite,EVE,DEF,5.5,1.9,32,3.2,678,1,1,1,0,a
 341,Gnonto,LEE,MID,5.0,0.1,32,1.4,521,0,3,1,0,a
-259,Diop,IPS,DEF,4.0,19.6,31,2.4,812,1,0,1,3,a
-489,Yates,NFO,MID,4.5,7.3,30,1.4,602,0,2,0,0,a
+259,Diop,IPS,DEF,4.0,19.5,31,2.4,812,1,0,1,3,a
+489,Yates,NFO,MID,4.5,7.2,30,1.4,602,0,2,0,0,a
 7,Lewis-Skelly,ARS,MID,5.5,0.3,29,1.4,697,0,0,2,0,a
 37,Lindelöf,AVL,DEF,4.5,0.2,29,1.7,942,0,1,1,0,a
 243,Alcaraz,EVE,MID,5.0,0.1,29,1.4,679,0,1,3,0,a
