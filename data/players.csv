@@ -1,4 +1,4 @@
-# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=573 fetched=2026-08-07T21:31:31.983120+00:00
+# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=573 fetched=2026-08-07T22:27:26.310561+00:00
 # pts/ppg/mins/g/a/cs/bonus are LAST SEASON totals carried into the new game.
 # st: a=available i=injured d=doubtful s=suspended u=unavailable
 id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
@@ -61,14 +61,14 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 84,Collins,BRE,DEF,5.5,2.0,129,3.7,2971,1,2,9,7,a
 25,Gyökeres,ARS,FWD,7.5,13.1,128,3.6,2217,14,1,12,16,a
 202,Richards,CRY,DEF,5.0,0.8,128,3.9,2825,1,0,11,5,a
-237,Ndiaye,EVE,MID,6.0,16.2,128,4.0,2781,6,3,8,7,a
+237,Ndiaye,EVE,MID,6.0,16.1,128,4.0,2781,6,3,8,7,a
 469,N.Williams,NFO,DEF,5.0,12.8,128,3.5,3203,2,3,9,15,a
 136,Welbeck,CHE,FWD,6.0,2.7,126,3.4,2249,13,1,10,18,a
 337,Aaronson,LEE,MID,5.5,0.8,126,3.4,2449,4,8,9,5,a
 445,Thiaw,NEW,DEF,5.0,2.0,126,3.6,2963,4,0,5,12,a
 94,Schade,BRE,MID,6.0,2.1,125,3.6,2744,8,5,11,5,a
 156,Neto,CHE,MID,6.5,1.3,125,3.7,2629,5,7,11,9,a
-366,Wirtz,LIV,MID,7.5,12.5,125,3.8,2374,5,4,10,17,a
+366,Wirtz,LIV,MID,7.5,12.6,125,3.8,2374,5,4,10,17,a
 380,Ekitiké,LIV,FWD,7.5,0.2,125,4.5,1797,11,4,7,22,i
 535,Alderete,SUN,DEF,5.0,1.2,125,3.8,2797,1,1,10,5,a
 57,Petrović,BOU,GKP,4.5,3.7,124,3.3,3420,0,0,11,5,a
@@ -209,7 +209,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 473,Aina,NFO,DEF,4.5,4.5,67,3.7,1587,0,2,6,5,a
 145,Fofana,CHE,DEF,5.0,0.0,65,2.6,1718,0,2,4,3,s
 209,Johnson,CRY,MID,6.0,0.2,65,1.9,1710,2,1,6,2,a
-254,Robinson,FUL,DEF,4.5,2.6,65,3.0,1487,1,0,4,7,a
+254,Robinson,FUL,DEF,4.5,2.7,65,3.0,1487,1,0,4,7,a
 543,Diarra,SUN,MID,5.5,0.1,65,3.2,1403,2,6,5,3,a
 34,Pau,AVL,DEF,4.5,0.2,64,3.0,1673,0,2,5,2,a
 268,King,FUL,MID,5.5,0.1,63,2.0,1290,1,3,5,3,a
@@ -533,7 +533,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 562,Maeda,IPS,MID,5.5,0.4,0,0.0,0,0,0,0,0,a
 564,Scherpen,IPS,GKP,4.5,0.3,0,0.0,0,0,0,0,0,a
 571,Florentino,IPS,MID,5.0,0.0,0,0.0,0,0,0,0,0,a
-334,Muharemović,LEE,DEF,5.0,1.3,0,0.0,0,0,0,0,0,a
+334,Muharemović,LEE,DEF,5.0,1.4,0,0.0,0,0,0,0,0,a
 340,Gelhardt,LEE,MID,5.0,0.0,0,0.0,0,0,0,0,0,a
 349,Mateo Joseph,LEE,FWD,4.5,0.3,0,0.0,0,0,0,0,0,i
 353,Pecsi,LIV,GKP,4.0,0.1,0,0.0,0,0,0,0,0,a
