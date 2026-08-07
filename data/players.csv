@@ -1,4 +1,4 @@
-# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=572 fetched=2026-08-07T09:53:47.023064+00:00
+# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=572 fetched=2026-08-07T10:44:18.018710+00:00
 # pts/ppg/mins/g/a/cs/bonus are LAST SEASON totals carried into the new game.
 # st: a=available i=injured d=doubtful s=suspended u=unavailable
 id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
@@ -128,7 +128,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 97,Jensen,BRE,MID,5.5,0.1,98,2.7,2239,3,2,9,1,a
 129,Ayari,BHA,MID,5.5,0.5,98,3.4,1921,3,4,6,7,a
 30,Digne,AVL,DEF,4.5,1.4,97,3.1,1842,0,7,7,5,a
-127,Gomez,BHA,MID,5.0,1.8,97,3.0,2117,5,1,8,9,a
+127,Gomez,BHA,MID,5.0,1.7,97,3.0,2117,5,1,8,9,a
 144,Gusto,CHE,DEF,5.0,1.1,96,2.8,2255,2,3,7,7,a
 330,Bogle,LEE,DEF,4.5,0.4,96,2.8,2795,1,5,6,1,a
 442,Pope,NEW,GKP,5.0,1.1,96,3.6,2416,0,1,7,3,a
@@ -152,7 +152,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 447,Botman,NEW,DEF,5.0,0.4,89,3.6,1834,1,1,5,6,a
 488,Sangaré,NFO,MID,5.0,0.5,89,3.2,2073,2,2,8,2,a
 482,Hudson-Odoi,NFO,MID,6.0,0.0,88,2.9,1838,3,4,6,8,d
-9,Hincapie,ARS,DEF,5.5,4.3,87,3.5,1787,1,2,5,7,a
+9,Hincapie,ARS,DEF,5.5,4.2,87,3.5,1787,1,2,5,7,a
 125,Georginio,BHA,FWD,5.5,0.7,87,2.7,1776,3,5,7,2,a
 516,Bentancur,TOT,MID,5.5,0.1,86,3.3,1880,1,1,8,4,a
 54,Gomes,AVL,MID,5.5,0.3,85,3.0,2207,1,1,4,4,a
@@ -169,9 +169,9 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 513,Xavi,TOT,MID,6.0,0.0,80,2.9,1747,2,5,4,7,i
 545,Sadiki,SUN,MID,5.0,0.4,80,2.4,2891,0,2,9,0,a
 238,Grealish,MCI,MID,6.5,0.2,79,4.0,1627,2,6,7,12,d
-391,Gvardiol,MCI,DEF,5.5,11.9,79,4.4,1370,2,2,6,5,a
+391,Gvardiol,MCI,DEF,5.5,12.0,79,4.4,1370,2,2,6,5,a
 449,Hall,NEW,DEF,5.0,4.1,79,2.6,2176,1,2,4,4,a
-124,Groß,BHA,MID,5.5,8.6,78,4.1,1636,1,6,6,10,a
+124,Groß,BHA,MID,5.5,8.7,78,4.1,1636,1,6,6,10,a
 505,Spence,TOT,DEF,4.5,9.2,78,2.6,2049,0,0,9,3,a
 514,Tel,TOT,MID,6.0,0.4,78,2.5,1334,4,2,3,7,a
 73,Adams,BOU,MID,5.0,0.7,77,3.1,1769,2,2,7,3,a
@@ -442,7 +442,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 177,Kesler-Hayden,COV,DEF,4.0,0.1,0,0.0,0,0,0,0,0,a
 178,Bidwell,COV,DEF,4.0,0.1,0,0.0,0,0,0,0,0,a
 179,Latibeaudiere,COV,DEF,4.0,0.1,0,0.0,0,0,0,0,0,a
-180,Woolfenden,COV,DEF,4.0,0.3,0,0.0,0,0,0,0,0,a
+180,Woolfenden,COV,DEF,4.0,0.2,0,0.0,0,0,0,0,0,a
 181,Brau,COV,DEF,4.0,0.1,0,0.0,0,0,0,0,0,a
 182,Amenda,COV,DEF,4.0,0.5,0,0.0,0,0,0,0,0,a
 183,Rudoni,COV,MID,5.0,0.3,0,0.0,0,0,0,0,0,d
