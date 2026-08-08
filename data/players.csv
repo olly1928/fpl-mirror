@@ -1,4 +1,4 @@
-# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=573 fetched=2026-08-08T22:20:32.726032+00:00
+# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=573 fetched=2026-08-08T23:20:48.785128+00:00
 # pts/ppg/mins/g/a/cs/bonus are LAST SEASON totals carried into the new game.
 # st: a=available i=injured d=doubtful s=suspended u=unavailable
 id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
@@ -31,13 +31,13 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 236,Dewsbury-Hall,EVE,MID,6.5,3.8,151,4.9,2629,8,7,8,18,a
 533,Mukiele,SUN,DEF,5.5,7.5,151,4.7,2784,3,5,9,11,a
 5,J.Timber,ARS,DEF,6.5,0.5,149,5.0,2452,3,6,13,9,i
-427,Mbeumo,MUN,MID,8.0,19.8,148,4.5,2611,11,3,8,16,a
+427,Mbeumo,MUN,MID,8.0,19.9,148,4.5,2611,11,3,8,16,a
 112,Van Hecke,TOT,DEF,5.0,8.3,148,4.1,3210,3,3,10,8,a
 542,E.Le Fée,SUN,MID,6.0,12.8,147,4.1,2930,5,6,10,16,a
 371,Gravenberch,LIV,MID,6.0,1.9,144,4.0,2991,5,5,9,17,a
 82,Kelleher,BRE,GKP,5.0,5.6,143,3.9,3330,0,0,10,11,a
 428,Cunha,MUN,MID,8.0,13.7,143,4.3,2493,10,4,8,14,a
-346,Calvert-Lewin,LEE,FWD,6.0,23.9,142,4.1,2721,14,2,8,20,a
+346,Calvert-Lewin,LEE,FWD,6.0,24.0,142,4.1,2721,14,2,8,20,a
 6,Saliba,ARS,DEF,6.0,0.5,137,4.4,2614,1,0,15,12,i
 68,Tavernier,BOU,MID,6.0,1.9,137,4.0,2732,7,4,11,14,a
 335,Stach,LEE,MID,6.0,1.3,137,4.7,2369,5,6,7,14,a
@@ -48,7 +48,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 529,Roefs,SUN,GKP,5.0,5.0,136,3.9,3150,0,0,10,12,a
 204,Mitchell,CRY,DEF,4.5,6.8,135,3.6,3253,1,3,12,8,a
 226,Pickford,EVE,GKP,5.5,8.9,135,3.6,3420,0,0,11,11,a
-384,Donnarumma,MCI,GKP,5.5,11.1,135,4.0,3060,0,0,15,5,a
+384,Donnarumma,MCI,GKP,5.5,11.0,135,4.0,3060,0,0,15,5,a
 399,Cherki,MCI,MID,7.5,9.2,135,4.1,1772,4,13,8,16,a
 525,Fernandes,TOT,MID,6.0,3.3,135,3.8,3017,3,4,8,7,a
 338,Ampadu,LEE,MID,5.5,1.6,134,3.8,3119,1,4,8,11,a
@@ -100,7 +100,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 96,Damsgaard,BRE,MID,5.5,0.7,113,3.4,2046,4,4,5,9,a
 140,Sánchez,CHE,GKP,5.0,2.0,113,3.2,3040,0,1,9,7,a
 390,Rúben,MCI,DEF,5.5,1.4,113,4.3,2139,2,0,12,4,a
-423,Shaw,MUN,DEF,4.5,24.6,113,3.0,3220,1,1,10,3,a
+423,Shaw,MUN,DEF,4.5,24.5,113,3.0,3220,1,1,10,3,a
 210,Wharton,CRY,MID,5.5,0.3,112,3.3,2552,1,6,8,8,a
 417,Dalot,MUN,DEF,5.0,3.0,111,3.3,2609,1,6,7,9,a
 439,Šeško,MUN,FWD,7.0,2.6,111,3.7,1630,11,2,2,19,d
@@ -141,7 +141,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 332,Justin,LEE,DEF,4.5,0.5,94,3.2,1893,2,1,6,9,a
 448,Burn,NEW,DEF,5.0,2.7,93,3.2,2195,1,3,6,5,a
 404,Reijnders,MCI,MID,6.0,0.4,92,3.3,1623,5,3,7,6,a
-552,Brobbey,SUN,FWD,6.0,18.8,92,3.0,1920,7,2,6,12,a
+552,Brobbey,SUN,FWD,6.0,18.7,92,3.0,1920,7,2,6,12,a
 123,Hinshelwood,BHA,MID,6.0,0.3,91,3.4,1736,4,5,7,2,a
 265,Berge,FUL,MID,5.0,0.4,91,2.6,2904,0,3,8,3,a
 350,A.Becker,LIV,GKP,5.5,4.1,91,3.5,2340,0,0,8,8,a
