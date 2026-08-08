@@ -1,4 +1,4 @@
-# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=573 fetched=2026-08-08T01:03:11.710267+00:00
+# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=573 fetched=2026-08-08T03:18:17.107359+00:00
 # pts/ppg/mins/g/a/cs/bonus are LAST SEASON totals carried into the new game.
 # st: a=available i=injured d=doubtful s=suspended u=unavailable
 id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
@@ -27,7 +27,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 155,Enzo,CHE,MID,7.0,5.5,157,4.4,3114,10,5,8,19,a
 200,Lacroix,CHE,DEF,6.0,11.9,154,4.4,3085,1,2,11,11,a
 389,Matheus N.,MCI,DEF,6.0,4.8,154,4.5,2861,1,8,12,16,a
-452,Bruno G.,NEW,MID,7.0,9.3,154,5.3,2456,9,7,6,22,a
+452,Bruno G.,NEW,MID,7.0,9.4,154,5.3,2456,9,7,6,22,a
 236,Dewsbury-Hall,EVE,MID,6.5,3.9,151,4.9,2629,8,7,8,18,a
 533,Mukiele,SUN,DEF,5.5,7.6,151,4.7,2784,3,5,9,11,a
 5,J.Timber,ARS,DEF,6.5,0.5,149,5.0,2452,3,6,13,9,i
@@ -100,7 +100,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 96,Damsgaard,BRE,MID,5.5,0.7,113,3.4,2046,4,4,5,9,a
 140,Sánchez,CHE,GKP,5.0,1.9,113,3.2,3040,0,1,9,7,a
 390,Rúben,MCI,DEF,5.5,1.4,113,4.3,2139,2,0,12,4,a
-423,Shaw,MUN,DEF,4.5,24.7,113,3.0,3220,1,1,10,3,a
+423,Shaw,MUN,DEF,4.5,24.8,113,3.0,3220,1,1,10,3,a
 210,Wharton,CRY,MID,5.5,0.2,112,3.3,2552,1,6,8,8,a
 417,Dalot,MUN,DEF,5.0,3.0,111,3.3,2609,1,6,7,9,a
 439,Šeško,MUN,FWD,7.0,2.7,111,3.7,1630,11,2,2,19,d
