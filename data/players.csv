@@ -1,4 +1,4 @@
-# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=573 fetched=2026-08-09T01:07:21.829518+00:00
+# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=573 fetched=2026-08-09T03:26:28.971119+00:00
 # pts/ppg/mins/g/a/cs/bonus are LAST SEASON totals carried into the new game.
 # st: a=available i=injured d=doubtful s=suspended u=unavailable
 id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
@@ -16,7 +16,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 498,Senesi,TOT,DEF,6.0,10.7,175,4.7,3288,0,6,11,14,a
 229,Tarkowski,EVE,DEF,6.0,9.9,170,4.6,3330,2,3,11,12,a
 40,Rogers,CHE,MID,7.5,28.9,169,4.6,3280,10,8,9,17,a
-260,Wilson,LEE,MID,6.5,8.4,168,4.7,2674,10,9,9,21,a
+260,Wilson,LEE,MID,6.5,8.3,168,4.7,2674,10,9,9,21,a
 55,Watkins,AVL,FWD,8.0,12.7,167,4.5,2833,16,4,9,26,a
 61,Truffert,BOU,DEF,5.5,4.8,165,4.3,3378,1,6,11,19,a
 1,Raya,ARS,GKP,6.0,31.0,162,4.4,3330,0,0,19,11,a
@@ -62,7 +62,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 25,Gyökeres,ARS,FWD,7.5,13.1,128,3.6,2217,14,1,12,16,a
 202,Richards,CRY,DEF,5.0,0.8,128,3.9,2825,1,0,11,5,a
 237,Ndiaye,EVE,MID,6.0,15.9,128,4.0,2781,6,3,8,7,a
-469,N.Williams,NFO,DEF,5.0,12.6,128,3.5,3203,2,3,9,15,a
+469,N.Williams,NFO,DEF,5.0,12.5,128,3.5,3203,2,3,9,15,a
 136,Welbeck,CHE,FWD,6.0,2.7,126,3.4,2249,13,1,10,18,a
 337,Aaronson,LEE,MID,5.5,0.8,126,3.4,2449,4,8,9,5,a
 445,Thiaw,NEW,DEF,5.0,2.0,126,3.6,2963,4,0,5,12,a
@@ -170,7 +170,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 545,Sadiki,SUN,MID,5.0,0.4,80,2.4,2891,0,2,9,0,a
 238,Grealish,MCI,MID,6.5,0.2,79,4.0,1627,2,6,7,12,d
 391,Gvardiol,MCI,DEF,5.5,12.6,79,4.4,1370,2,2,6,5,a
-449,Hall,NEW,DEF,5.0,4.1,79,2.6,2176,1,2,4,4,a
+449,Hall,NEW,DEF,5.0,4.0,79,2.6,2176,1,2,4,4,a
 124,Groß,BHA,MID,5.5,9.3,78,4.1,1636,1,6,6,10,a
 505,Spence,TOT,DEF,4.5,9.0,78,2.6,2049,0,0,9,3,a
 514,Tel,TOT,MID,6.0,0.4,78,2.5,1334,4,2,3,7,a
@@ -508,7 +508,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 301,Palmer,IPS,GKP,4.0,5.9,0,0.0,0,0,0,0,0,a
 302,Button,IPS,GKP,4.0,0.5,0,0.0,0,0,0,0,0,a
 303,Kipré,IPS,DEF,4.0,0.4,0,0.0,0,0,0,0,0,a
-304,O'Shea,IPS,DEF,4.0,1.8,0,0.0,0,0,0,0,0,a
+304,O'Shea,IPS,DEF,4.0,1.9,0,0.0,0,0,0,0,0,a
 305,Davis,IPS,DEF,4.0,3.9,0,0.0,0,0,0,0,0,a
 306,Greaves,IPS,DEF,4.0,0.5,0,0.0,0,0,0,0,0,a
 307,Johnson,IPS,DEF,4.0,0.1,0,0.0,0,0,0,0,0,a
