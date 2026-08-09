@@ -1,11 +1,11 @@
-# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=573 fetched=2026-08-09T11:22:09.177192+00:00
+# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=573 fetched=2026-08-09T12:34:34.432572+00:00
 # pts/ppg/mins/g/a/cs/bonus are LAST SEASON totals carried into the new game.
 # st: a=available i=injured d=doubtful s=suspended u=unavailable
 id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 411,Haaland,MCI,FWD,15.5,74.4,239,6.8,2953,27,8,13,43,a
 426,B.Fernandes,MUN,MID,12.0,48.6,235,6.7,3065,9,24,7,41,a
 4,Gabriel,ARS,DEF,8.0,26.5,209,6.5,2750,3,5,18,30,a
-397,Semenyo,MCI,MID,8.5,23.2,202,5.5,3200,17,6,12,18,a
+397,Semenyo,MCI,MID,8.5,23.3,202,5.5,3200,17,6,12,18,a
 480,Gibbs-White,NFO,MID,8.0,11.6,188,5.1,3101,15,4,10,18,a
 13,Rice,ARS,MID,7.5,22.4,184,5.1,3093,4,9,18,23,a
 106,Thiago,BRE,FWD,8.0,16.1,181,4.8,3282,22,1,10,22,a
@@ -31,7 +31,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 236,Dewsbury-Hall,EVE,MID,6.5,3.8,151,4.9,2629,8,7,8,18,a
 533,Mukiele,SUN,DEF,5.5,7.3,151,4.7,2784,3,5,9,11,d
 5,J.Timber,ARS,DEF,6.5,0.5,149,5.0,2452,3,6,13,9,i
-427,Mbeumo,MUN,MID,8.0,20.5,148,4.5,2611,11,3,8,16,a
+427,Mbeumo,MUN,MID,8.0,20.6,148,4.5,2611,11,3,8,16,a
 112,Van Hecke,TOT,DEF,5.0,8.3,148,4.1,3210,3,3,10,8,a
 542,E.Le Fée,SUN,MID,6.0,12.9,147,4.1,2930,5,6,10,16,a
 371,Gravenberch,LIV,MID,6.0,1.9,144,4.0,2991,5,5,9,17,a
@@ -94,23 +94,23 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 223,Mateta,CRY,FWD,6.5,6.8,114,3.6,2210,12,0,8,13,a
 491,Igor Jesus,NFO,FWD,6.0,5.1,114,3.1,2293,6,6,9,13,a
 14,Eze,ARS,MID,6.5,3.2,113,3.4,1885,7,3,11,8,a
-78,Kroupi.Jr,BOU,MID,7.5,4.1,113,3.4,1663,13,0,10,13,i
+78,Kroupi.Jr,BOU,MID,7.5,4.0,113,3.4,1663,13,0,10,13,i
 85,Van den Berg,BRE,DEF,5.0,0.7,113,3.5,2761,0,3,8,3,a
 88,Kayode,BRE,DEF,4.5,3.8,113,3.1,3258,1,2,10,9,a
 96,Damsgaard,BRE,MID,5.5,0.7,113,3.4,2046,4,4,5,9,a
 140,Sánchez,CHE,GKP,5.0,2.0,113,3.2,3040,0,1,9,7,a
-390,Rúben,MCI,DEF,5.5,1.4,113,4.3,2139,2,0,12,4,a
+390,Rúben,MCI,DEF,5.5,1.5,113,4.3,2139,2,0,12,4,a
 423,Shaw,MUN,DEF,4.5,24.5,113,3.0,3220,1,1,10,3,a
 210,Wharton,CRY,MID,5.5,0.3,112,3.3,2552,1,6,8,8,a
 417,Dalot,MUN,DEF,5.0,3.0,111,3.3,2609,1,6,7,9,a
 439,Šeško,MUN,FWD,7.0,2.5,111,3.7,1630,11,2,2,19,d
 60,Hill,BOU,DEF,5.5,1.2,110,3.8,2102,0,3,8,4,a
 159,Caicedo,CHE,MID,5.5,4.0,110,3.3,2796,3,1,6,10,a
-534,Hume,SUN,DEF,4.5,3.1,110,2.9,3032,2,1,9,6,a
-8,Calafiori,ARS,DEF,5.5,16.8,109,4.2,1697,1,2,13,6,a
+534,Hume,SUN,DEF,4.5,3.2,110,2.9,3032,2,1,9,6,a
+8,Calafiori,ARS,DEF,5.5,16.9,109,4.2,1697,1,2,13,6,a
 329,Rodon,LEE,DEF,4.5,1.8,109,3.1,2952,2,0,6,5,a
 336,Okafor,LEE,MID,6.0,0.7,109,3.9,1553,8,3,6,11,a
-412,Lammens,MUN,GKP,5.0,20.2,109,3.4,2880,0,0,8,11,a
+412,Lammens,MUN,GKP,5.0,20.1,109,3.4,2880,0,0,8,11,a
 328,Struijk,BHA,DEF,5.0,0.5,108,3.2,2935,0,1,7,4,a
 372,Mac Allister,LIV,MID,5.5,1.9,108,2.9,2654,2,5,7,9,a
 463,Woltemade,NEW,FWD,6.0,1.7,108,3.3,1896,8,4,8,12,a
