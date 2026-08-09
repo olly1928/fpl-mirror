@@ -1,4 +1,4 @@
-# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=573 fetched=2026-08-09T07:47:14.043659+00:00
+# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=573 fetched=2026-08-09T08:33:12.530433+00:00
 # pts/ppg/mins/g/a/cs/bonus are LAST SEASON totals carried into the new game.
 # st: a=available i=injured d=doubtful s=suspended u=unavailable
 id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
@@ -29,9 +29,9 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 389,Matheus N.,MCI,DEF,6.0,4.8,154,4.5,2861,1,8,12,16,a
 452,Bruno G.,NEW,MID,7.0,10.0,154,5.3,2456,9,7,6,22,a
 236,Dewsbury-Hall,EVE,MID,6.5,3.8,151,4.9,2629,8,7,8,18,a
-533,Mukiele,SUN,DEF,5.5,7.5,151,4.7,2784,3,5,9,11,a
+533,Mukiele,SUN,DEF,5.5,7.5,151,4.7,2784,3,5,9,11,d
 5,J.Timber,ARS,DEF,6.5,0.5,149,5.0,2452,3,6,13,9,i
-427,Mbeumo,MUN,MID,8.0,20.2,148,4.5,2611,11,3,8,16,a
+427,Mbeumo,MUN,MID,8.0,20.3,148,4.5,2611,11,3,8,16,a
 112,Van Hecke,TOT,DEF,5.0,8.3,148,4.1,3210,3,3,10,8,a
 542,E.Le Fée,SUN,MID,6.0,12.8,147,4.1,2930,5,6,10,16,a
 371,Gravenberch,LIV,MID,6.0,1.9,144,4.0,2991,5,5,9,17,a
@@ -70,7 +70,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 156,Neto,CHE,MID,6.5,1.3,125,3.7,2629,5,7,11,9,a
 366,Wirtz,LIV,MID,7.5,12.6,125,3.8,2374,5,4,10,17,a
 380,Ekitiké,LIV,FWD,7.5,0.2,125,4.5,1797,11,4,7,22,i
-535,Alderete,SUN,DEF,5.0,1.1,125,3.8,2797,1,1,10,5,a
+535,Alderete,SUN,DEF,5.0,1.1,125,3.8,2797,1,1,10,5,d
 57,Petrović,BOU,GKP,4.5,3.7,124,3.3,3420,0,0,11,5,a
 544,Xhaka,SUN,MID,5.5,5.6,124,3.6,2901,1,6,9,8,a
 253,Andersen,FUL,DEF,5.0,0.1,123,3.7,2882,0,1,8,8,s
@@ -188,7 +188,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 553,Isidor,SUN,FWD,5.5,1.2,74,2.3,1148,6,1,4,7,a
 347,Nmecha,LEE,FWD,5.5,0.6,73,2.4,1065,6,1,3,8,a
 432,Mainoo,MUN,MID,5.5,1.3,73,2.6,1653,1,2,6,2,a
-458,Joelinton,NEW,MID,5.5,0.0,73,2.7,1950,2,1,5,2,d
+458,Joelinton,NEW,MID,5.5,0.0,73,2.7,1950,2,1,5,2,a
 16,Madueke,ARS,MID,6.5,0.4,72,2.8,1205,3,1,8,9,a
 203,Canvot,CRY,DEF,5.0,0.6,72,3.6,1331,0,0,5,9,a
 459,L.Miley,NEW,MID,5.5,0.0,72,3.1,1493,1,4,2,5,i
@@ -198,7 +198,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 402,Rodrigo,MCI,MID,6.5,0.1,69,3.3,1510,1,1,5,6,i
 240,Iroegbunam,EVE,MID,5.0,0.1,68,2.3,1477,0,3,8,1,a
 331,Gudmundsson,LEE,DEF,4.5,0.4,68,2.1,2637,0,0,5,8,i
-43,Tielemans,MUN,MID,6.0,0.9,68,2.7,1857,0,4,4,3,d
+43,Tielemans,MUN,MID,6.0,0.9,68,2.7,1857,0,4,4,3,a
 17,Merino,ARS,MID,6.0,1.2,67,3.0,1024,4,3,4,5,a
 67,Rayan,BOU,MID,6.5,3.5,67,4.5,1110,5,2,6,3,a
 77,Adli,BOU,MID,5.0,0.2,67,2.2,1074,3,2,3,4,a
@@ -333,7 +333,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 91,Pinnock,BRE,DEF,4.5,0.1,14,3.5,318,0,0,1,2,a
 547,Mundle,SUN,MID,5.0,0.0,14,1.0,399,0,0,0,0,a
 24,Nelson,ARS,MID,5.5,0.0,13,1.3,118,0,1,0,0,a
-100,Carvalho,BRE,MID,5.0,0.0,13,2.2,100,1,0,0,1,d
+100,Carvalho,BRE,MID,5.0,0.0,13,2.2,100,1,0,0,1,a
 161,Lavia,CHE,MID,5.0,0.0,13,1.1,374,0,0,0,0,a
 168,Marc Guiu,CHE,FWD,5.0,0.4,13,1.3,265,0,1,0,0,a
 385,Trafford,LEE,GKP,5.0,1.9,13,3.2,360,0,0,1,0,a
@@ -410,7 +410,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 53,Manzambi,AVL,MID,6.0,2.1,0,0.0,0,0,0,0,0,a
 58,Forster,BOU,GKP,4.0,3.1,0,0.0,0,0,0,0,0,a
 59,Dennis,BOU,GKP,4.0,0.2,0,0.0,0,0,0,0,0,a
-65,J.Araujo,BOU,DEF,4.5,0.1,0,0.0,0,0,0,0,0,a
+65,J.Araujo,BOU,DEF,4.5,0.1,0,0.0,0,0,0,0,0,i
 81,Rodríguez,BOU,FWD,6.0,0.3,0,0.0,0,0,0,0,0,a
 566,Silva,BOU,DEF,5.0,0.2,0,0.0,0,0,0,0,0,a
 573,Sanchez,BOU,DEF,4.5,0.0,0,0.0,0,0,0,0,0,a
@@ -445,7 +445,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 179,Latibeaudiere,COV,DEF,4.0,0.1,0,0.0,0,0,0,0,0,a
 180,Woolfenden,COV,DEF,4.0,0.2,0,0.0,0,0,0,0,0,a
 181,Brau,COV,DEF,4.0,0.1,0,0.0,0,0,0,0,0,a
-182,Amenda,COV,DEF,4.0,0.5,0,0.0,0,0,0,0,0,a
+182,Amenda,COV,DEF,4.0,0.6,0,0.0,0,0,0,0,0,a
 183,Rudoni,COV,MID,5.0,0.3,0,0.0,0,0,0,0,0,d
 184,Grimes,COV,MID,5.0,0.2,0,0.0,0,0,0,0,0,a
 185,Sakamoto,COV,MID,5.0,0.1,0,0.0,0,0,0,0,0,a
@@ -578,9 +578,11 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 
 # ALERTS — id,name,team,status,chance,news
 # 239,Garner,EVE,i,0,Groin injury - Expected back 22 Aug
+# 533,Mukiele,SUN,d,75,Knock - 75% chance of playing
 # 5,J.Timber,ARS,i,0,Groin injury - Expected back 21 Aug
 # 6,Saliba,ARS,i,0,Back injury - Unknown return date
 # 380,Ekitiké,LIV,i,0,Achilles injury - Unknown return date
+# 535,Alderete,SUN,d,75,Knock - 75% chance of playing
 # 253,Andersen,FUL,s,0,Suspended until 30 Aug
 # 78,Kroupi.Jr,BOU,i,0,Foot injury - Unknown return date
 # 439,Šeško,MUN,d,75,Shin injury - 75% chance of playing
@@ -589,12 +591,10 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 # 48,Onana,AVL,i,0,Knee injury - Unknown return date
 # 101,Henderson,CHE,u,0,has departed the club as a free agent.
 # 512,Kudus,TOT,d,75,Thigh injury - 75% chance of playing
-# 458,Joelinton,NEW,d,75,Thigh injury - 75% chance of playing
 # 459,L.Miley,NEW,i,0,Leg injury - Expected back 30 Aug
 # 325,Darlow,MUN,d,75,Unspecified injury - 75% chance of playing
 # 402,Rodrigo,MCI,i,0,Back injury - Unknown return date
 # 331,Gudmundsson,LEE,i,0,Hamstring injury - Expected back 30 Aug
-# 43,Tielemans,MUN,d,75,Hamstring injury - 75% chance of playing
 # 145,Fofana,CHE,s,0,Suspended until 6 Sep
 # 121,Mitoma,BHA,i,0,Hamstring injury - Unknown return date
 # 450,Livramento,NEW,d,75,Calf injury - 75% chance of playing
@@ -610,11 +610,11 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 # 63,Milosavljević,BOU,i,0,Unspecified injury - Unknown return date
 # 225,Uche,CRY,u,0,has returned to Getafe CF
 # 137,Tzimas,BHA,d,75,Knee injury - 75% chance of playing
-# 100,Carvalho,BRE,d,25,Lack of match fitness - 25% chance of playing
 # 342,Harrison,LEE,u,0,Has joined New England Revolution permanently
 # 374,Endo,LIV,d,75,Ankle injury - 75% chance of playing
 # 133,Watson,BHA,u,0,Has joined Leicester City on loan for the rest of the season
 # 99,Milambo,BRE,d,75,Knee injury - 75% chance of playing
+# 65,J.Araujo,BOU,i,0,Thigh injury - Unknown return date
 # 139,Ferguson,BHA,i,0,Ankle injury - Expected back 10 Oct
 # 170,Emegha,CHE,d,75,Hamstring injury - 75% chance of playing
 # 183,Rudoni,COV,d,75,Shoulder injury - 75% chance of playing
