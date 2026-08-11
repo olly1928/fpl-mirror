@@ -1,4 +1,4 @@
-# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=577 fetched=2026-08-11T05:55:58.998765+00:00
+# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=577 fetched=2026-08-11T06:57:05.374012+00:00
 # pts/ppg/mins/g/a/cs/bonus are LAST SEASON totals carried into the new game.
 # st: a=available i=injured d=doubtful s=suspended u=unavailable
 id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
@@ -11,7 +11,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 106,Thiago,BRE,FWD,8.0,16.0,181,4.8,3282,22,1,10,22,a
 481,Anderson,MCI,MID,6.5,11.7,180,4.7,3332,4,5,10,16,a
 388,Guéhi,MCI,DEF,6.0,23.2,179,5.1,3150,3,5,14,14,a
-165,João Pedro,CHE,FWD,7.5,55.3,177,5.1,2658,15,9,10,30,a
+165,João Pedro,CHE,FWD,7.5,55.4,177,5.1,2658,15,9,10,30,a
 356,Virgil,LIV,DEF,6.5,16.6,175,4.6,3420,6,1,10,10,a
 498,Senesi,TOT,DEF,6.0,10.5,175,4.7,3288,0,6,11,14,a
 229,Tarkowski,EVE,DEF,6.0,9.8,170,4.6,3330,2,3,11,12,a
@@ -36,8 +36,8 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 542,E.Le Fée,SUN,MID,6.0,12.9,147,4.1,2930,5,6,10,16,a
 371,Gravenberch,LIV,MID,6.0,2.0,144,4.0,2991,5,5,9,17,a
 82,Kelleher,BRE,GKP,5.0,5.7,143,3.9,3330,0,0,10,11,a
-428,Cunha,MUN,MID,8.0,13.0,143,4.3,2493,10,4,8,14,a
-346,Calvert-Lewin,LEE,FWD,6.0,24.6,142,4.1,2721,14,2,8,20,a
+428,Cunha,MUN,MID,8.0,12.9,143,4.3,2493,10,4,8,14,a
+346,Calvert-Lewin,LEE,FWD,6.0,24.7,142,4.1,2721,14,2,8,20,a
 6,Saliba,ARS,DEF,6.0,0.5,137,4.4,2614,1,0,15,12,i
 68,Tavernier,BOU,MID,6.0,1.9,137,4.0,2732,7,4,11,14,a
 335,Stach,LEE,MID,6.0,1.2,137,4.7,2369,5,6,7,14,a
@@ -477,7 +477,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 569,García,FUL,FWD,6.0,1.6,0,0.0,0,0,0,0,0,a
 570,Palacios,FUL,MID,5.5,0.1,0,0.0,0,0,0,0,0,a
 273,Phillips,HUL,GKP,4.0,2.0,0,0.0,0,0,0,0,0,a
-274,Butland,HUL,GKP,4.5,0.8,0,0.0,0,0,0,0,0,i
+274,Butland,HUL,GKP,4.5,0.7,0,0.0,0,0,0,0,0,i
 275,Cartwright,HUL,GKP,4.0,0.1,0,0.0,0,0,0,0,0,u
 276,Lo-Tutala,HUL,GKP,4.0,0.2,0,0.0,0,0,0,0,0,a
 277,Egan,HUL,DEF,4.0,1.4,0,0.0,0,0,0,0,0,a
@@ -513,7 +513,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 302,Button,IPS,GKP,4.0,0.5,0,0.0,0,0,0,0,0,a
 303,Kipré,IPS,DEF,4.0,0.5,0,0.0,0,0,0,0,0,a
 304,O'Shea,IPS,DEF,4.0,2.1,0,0.0,0,0,0,0,0,a
-305,Davis,IPS,DEF,4.0,4.5,0,0.0,0,0,0,0,0,a
+305,Davis,IPS,DEF,4.0,4.6,0,0.0,0,0,0,0,0,a
 306,Greaves,IPS,DEF,4.0,0.6,0,0.0,0,0,0,0,0,a
 307,Johnson,IPS,DEF,4.0,0.1,0,0.0,0,0,0,0,0,a
 308,Furlong,IPS,DEF,4.0,0.5,0,0.0,0,0,0,0,0,a
@@ -534,8 +534,8 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 323,McAteer,IPS,MID,4.5,1.6,0,0.0,0,0,0,0,0,a
 324,Mehmeti,IPS,MID,5.0,0.1,0,0.0,0,0,0,0,0,a
 554,Van Oevelen,IPS,GKP,4.5,0.1,0,0.0,0,0,0,0,0,a
-562,Maeda,IPS,MID,5.5,0.5,0,0.0,0,0,0,0,0,a
-564,Scherpen,IPS,GKP,4.5,0.3,0,0.0,0,0,0,0,0,a
+562,Maeda,IPS,MID,5.5,0.4,0,0.0,0,0,0,0,0,a
+564,Scherpen,IPS,GKP,4.5,0.4,0,0.0,0,0,0,0,0,a
 571,Florentino,IPS,MID,5.0,0.0,0,0.0,0,0,0,0,0,a
 334,Muharemović,LEE,DEF,5.0,1.6,0,0.0,0,0,0,0,0,a
 340,Gelhardt,LEE,MID,5.0,0.0,0,0.0,0,0,0,0,0,a
