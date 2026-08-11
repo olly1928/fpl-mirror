@@ -1,4 +1,4 @@
-# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=577 fetched=2026-08-11T18:51:54.720207+00:00
+# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=577 fetched=2026-08-11T19:56:17.830978+00:00
 # pts/ppg/mins/g/a/cs/bonus are LAST SEASON totals carried into the new game.
 # st: a=available i=injured d=doubtful s=suspended u=unavailable
 id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
@@ -15,7 +15,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 356,Virgil,LIV,DEF,6.5,16.6,175,4.6,3420,6,1,10,10,a
 498,Senesi,TOT,DEF,6.0,10.4,175,4.7,3288,0,6,11,14,a
 229,Tarkowski,EVE,DEF,6.0,9.8,170,4.6,3330,2,3,11,12,a
-40,Rogers,CHE,MID,7.5,27.4,169,4.6,3280,10,8,9,17,a
+40,Rogers,CHE,MID,7.5,27.3,169,4.6,3280,10,8,9,17,a
 260,Wilson,LEE,MID,6.5,8.1,168,4.7,2674,10,9,9,21,a
 55,Watkins,AVL,FWD,8.0,12.7,167,4.5,2833,16,4,9,26,a
 61,Truffert,BOU,DEF,5.5,4.8,165,4.3,3378,1,6,11,19,a
@@ -57,7 +57,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 231,Keane,EVE,DEF,5.0,1.6,131,4.0,2588,3,1,7,8,a
 367,Gakpo,LIV,MID,7.0,3.4,131,3.6,2736,7,5,10,5,a
 398,Foden,MCI,MID,7.0,6.7,131,4.0,2078,7,5,11,13,a
-109,Verbruggen,BHA,GKP,4.5,17.6,130,3.4,3420,0,0,10,6,a
+109,Verbruggen,BHA,GKP,4.5,17.7,130,3.4,3420,0,0,10,6,a
 84,Collins,BRE,DEF,5.5,2.0,129,3.7,2971,1,2,9,7,a
 25,Gyökeres,ARS,FWD,7.5,13.1,128,3.6,2217,14,1,12,16,a
 202,Richards,CRY,DEF,5.0,0.8,128,3.9,2825,1,0,11,5,a
@@ -100,7 +100,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 96,Damsgaard,BRE,MID,5.5,0.7,113,3.4,2046,4,4,5,9,a
 140,Sánchez,CHE,GKP,5.0,2.0,113,3.2,3040,0,1,9,7,a
 390,Rúben,MCI,DEF,5.5,1.6,113,4.3,2139,2,0,12,4,a
-423,Shaw,MUN,DEF,4.5,24.4,113,3.0,3220,1,1,10,3,a
+423,Shaw,MUN,DEF,4.5,24.3,113,3.0,3220,1,1,10,3,a
 210,Wharton,CRY,MID,5.5,0.4,112,3.3,2552,1,6,8,8,a
 417,Dalot,MUN,DEF,5.0,3.1,111,3.3,2609,1,6,7,9,a
 439,Šeško,MUN,FWD,7.0,2.4,111,3.7,1630,11,2,2,19,d
@@ -142,7 +142,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 448,Burn,NEW,DEF,5.0,2.7,93,3.2,2195,1,3,6,5,a
 404,Reijnders,MCI,MID,6.0,0.4,92,3.3,1623,5,3,7,6,a
 552,Brobbey,SUN,FWD,6.0,17.5,92,3.0,1920,7,2,6,12,a
-123,Hinshelwood,BHA,MID,6.0,0.3,91,3.4,1736,4,5,7,2,a
+123,Hinshelwood,BHA,MID,6.0,0.2,91,3.4,1736,4,5,7,2,a
 265,Berge,FUL,MID,5.0,0.4,91,2.6,2904,0,3,8,3,a
 350,A.Becker,LIV,GKP,5.5,4.0,91,3.5,2340,0,0,8,8,a
 431,Amad,MUN,MID,6.0,1.7,91,2.8,2339,2,5,6,7,a
@@ -238,7 +238,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 502,Robertson,TOT,DEF,4.5,1.9,55,2.3,1165,1,0,4,4,a
 36,Maatsen,AVL,DEF,4.5,0.6,54,1.8,1590,0,1,2,1,a
 241,McNeil,EVE,MID,5.5,0.2,53,2.4,1161,0,3,6,1,a
-422,Mazraoui,MUN,DEF,4.5,0.7,53,2.6,977,0,0,5,6,a
+422,Mazraoui,MUN,DEF,4.5,0.8,53,2.6,977,0,0,5,6,a
 470,Morato,NFO,DEF,5.0,0.1,53,2.5,1340,1,0,2,1,a
 89,Henry,BRE,DEF,4.5,0.2,52,2.1,1322,0,2,4,0,a
 419,Martinez,MUN,DEF,5.0,0.5,51,2.8,1229,0,0,5,3,d
@@ -271,7 +271,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 266,Cairney,FUL,MID,5.0,0.0,41,1.7,756,2,0,2,1,a
 379,Isak,LIV,FWD,9.0,13.0,41,2.9,694,3,1,1,4,a
 490,Wood,NFO,FWD,6.0,1.8,41,2.7,896,3,0,2,4,a
-11,Mosquera,ARS,DEF,5.5,14.8,40,2.0,986,0,0,3,1,a
+11,Mosquera,ARS,DEF,5.5,14.7,40,2.0,986,0,0,3,1,a
 35,Bogarde,AVL,MID,5.0,0.1,40,1.4,1042,0,0,2,4,a
 71,Cook,BOU,MID,5.0,0.1,40,2.2,872,0,1,1,0,a
 526,Solanke,TOT,FWD,6.0,2.3,40,2.7,997,3,0,0,4,a
@@ -436,7 +436,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 110,Rushworth,COV,GKP,4.5,0.9,0,0.0,0,0,0,0,0,a
 171,Dovin,COV,GKP,4.0,2.5,0,0.0,0,0,0,0,0,a
 172,Wilson,COV,GKP,4.5,0.6,0,0.0,0,0,0,0,0,a
-173,Thomas,COV,DEF,4.0,8.5,0,0.0,0,0,0,0,0,a
+173,Thomas,COV,DEF,4.0,8.4,0,0.0,0,0,0,0,0,a
 174,Kitching,COV,DEF,4.0,0.5,0,0.0,0,0,0,0,0,a
 175,van Ewijk,COV,DEF,4.0,15.5,0,0.0,0,0,0,0,0,a
 176,Dasilva,COV,DEF,4.0,0.6,0,0.0,0,0,0,0,0,a
@@ -534,7 +534,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 323,McAteer,IPS,MID,4.5,1.5,0,0.0,0,0,0,0,0,a
 324,Mehmeti,IPS,MID,5.0,0.1,0,0.0,0,0,0,0,0,a
 554,Van Oevelen,IPS,GKP,4.5,0.1,0,0.0,0,0,0,0,0,a
-562,Maeda,IPS,MID,5.5,0.5,0,0.0,0,0,0,0,0,a
+562,Maeda,IPS,MID,5.5,0.4,0,0.0,0,0,0,0,0,a
 564,Scherpen,IPS,GKP,4.5,0.4,0,0.0,0,0,0,0,0,a
 571,Florentino,IPS,MID,5.0,0.0,0,0.0,0,0,0,0,0,a
 334,Muharemović,LEE,DEF,5.0,1.6,0,0.0,0,0,0,0,0,a
