@@ -1,4 +1,4 @@
-# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=577 fetched=2026-08-11T03:28:35.794076+00:00
+# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=577 fetched=2026-08-11T04:59:40.787898+00:00
 # pts/ppg/mins/g/a/cs/bonus are LAST SEASON totals carried into the new game.
 # st: a=available i=injured d=doubtful s=suspended u=unavailable
 id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
@@ -21,7 +21,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 61,Truffert,BOU,DEF,5.5,4.8,165,4.3,3378,1,6,11,19,a
 1,Raya,ARS,GKP,6.0,31.0,162,4.4,3330,0,0,19,11,a
 368,Szoboszlai,LIV,MID,7.0,44.7,160,4.4,3232,6,7,9,21,a
-387,O'Reilly,MCI,DEF,6.5,22.4,160,4.7,2643,5,4,14,10,a
+387,O'Reilly,MCI,DEF,6.5,22.3,160,4.7,2643,5,4,14,10,a
 239,Garner,EVE,MID,6.0,0.5,159,4.2,3413,2,7,11,13,i
 12,Saka,ARS,MID,9.5,10.7,157,5.1,2218,7,10,12,18,a
 155,Enzo,CHE,MID,7.0,5.5,157,4.4,3114,10,5,8,19,a
@@ -31,11 +31,11 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 236,Dewsbury-Hall,EVE,MID,6.5,3.7,151,4.9,2629,8,7,8,18,a
 533,Mukiele,SUN,DEF,5.5,6.1,151,4.7,2784,3,5,9,11,d
 5,J.Timber,ARS,DEF,6.5,0.4,149,5.0,2452,3,6,13,9,i
-427,Mbeumo,MUN,MID,8.0,22.5,148,4.5,2611,11,3,8,16,a
+427,Mbeumo,MUN,MID,8.0,22.6,148,4.5,2611,11,3,8,16,a
 112,Van Hecke,TOT,DEF,5.0,8.4,148,4.1,3210,3,3,10,8,a
 542,E.Le Fée,SUN,MID,6.0,12.9,147,4.1,2930,5,6,10,16,a
 371,Gravenberch,LIV,MID,6.0,2.0,144,4.0,2991,5,5,9,17,a
-82,Kelleher,BRE,GKP,5.0,5.6,143,3.9,3330,0,0,10,11,a
+82,Kelleher,BRE,GKP,5.0,5.7,143,3.9,3330,0,0,10,11,a
 428,Cunha,MUN,MID,8.0,13.0,143,4.3,2493,10,4,8,14,a
 346,Calvert-Lewin,LEE,FWD,6.0,24.6,142,4.1,2721,14,2,8,20,a
 6,Saliba,ARS,DEF,6.0,0.5,137,4.4,2614,1,0,15,12,i
