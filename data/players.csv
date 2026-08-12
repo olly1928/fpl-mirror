@@ -1,8 +1,8 @@
-# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=577 fetched=2026-08-12T01:16:01.153037+00:00
+# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=577 fetched=2026-08-12T03:58:48.792349+00:00
 # pts/ppg/mins/g/a/cs/bonus are LAST SEASON totals carried into the new game.
 # st: a=available i=injured d=doubtful s=suspended u=unavailable
 id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
-411,Haaland,MCI,FWD,15.5,73.8,239,6.8,2953,27,8,13,43,a
+411,Haaland,MCI,FWD,15.5,73.7,239,6.8,2953,27,8,13,43,a
 426,B.Fernandes,MUN,MID,12.0,48.3,235,6.7,3065,9,24,7,41,a
 4,Gabriel,ARS,DEF,8.0,26.7,209,6.5,2750,3,5,18,30,a
 397,Semenyo,MCI,MID,8.5,26.1,202,5.5,3200,17,6,12,18,a
@@ -53,15 +53,15 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 525,Fernandes,TOT,MID,6.0,3.0,135,3.8,3017,3,4,8,7,a
 338,Ampadu,LEE,MID,5.5,1.6,134,3.8,3119,1,4,8,11,a
 19,Zubimendi,ARS,MID,5.5,1.5,133,3.5,2991,5,1,16,9,a
-198,Henderson,CRY,GKP,5.0,3.1,131,3.5,3330,0,0,11,7,a
+198,Henderson,CRY,GKP,5.0,3.2,131,3.5,3330,0,0,11,7,a
 231,Keane,EVE,DEF,5.0,1.6,131,4.0,2588,3,1,7,8,a
 367,Gakpo,LIV,MID,7.0,3.4,131,3.6,2736,7,5,10,5,a
 398,Foden,MCI,MID,7.0,6.7,131,4.0,2078,7,5,11,13,a
-109,Verbruggen,BHA,GKP,4.5,17.7,130,3.4,3420,0,0,10,6,a
+109,Verbruggen,BHA,GKP,4.5,17.8,130,3.4,3420,0,0,10,6,a
 84,Collins,BRE,DEF,5.5,2.0,129,3.7,2971,1,2,9,7,a
 25,Gyökeres,ARS,FWD,7.5,13.1,128,3.6,2217,14,1,12,16,a
 202,Richards,CRY,DEF,5.0,0.8,128,3.9,2825,1,0,11,5,a
-237,Ndiaye,EVE,MID,6.0,15.2,128,4.0,2781,6,3,8,7,a
+237,Ndiaye,EVE,MID,6.0,15.1,128,4.0,2781,6,3,8,7,a
 469,N.Williams,NFO,DEF,5.0,12.1,128,3.5,3203,2,3,9,15,a
 136,Welbeck,CHE,FWD,6.0,2.6,126,3.4,2249,13,1,10,18,a
 337,Aaronson,LEE,MID,5.5,0.8,126,3.4,2449,4,8,9,5,a
@@ -147,7 +147,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 350,A.Becker,LIV,GKP,5.5,4.0,91,3.5,2340,0,0,8,8,a
 431,Amad,MUN,MID,6.0,1.7,91,2.8,2339,2,5,6,7,a
 500,Romero,TOT,DEF,5.0,1.1,91,4.0,1869,4,1,5,10,a
-418,Maguire,MUN,DEF,5.0,9.4,90,3.9,1649,1,2,7,5,a
+418,Maguire,MUN,DEF,5.0,9.5,90,3.9,1649,1,2,7,5,a
 494,Vicario,TOT,GKP,4.5,1.4,90,2.9,2790,0,0,7,6,a
 447,Botman,NEW,DEF,5.0,0.4,89,3.6,1834,1,1,5,6,a
 488,Sangaré,NFO,MID,5.0,0.6,89,3.2,2073,2,2,8,2,a
@@ -156,7 +156,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 125,Georginio,BHA,FWD,5.5,1.0,87,2.7,1776,3,5,7,2,a
 516,Bentancur,TOT,MID,5.5,0.2,86,3.3,1880,1,1,8,4,a
 54,Gomes,AVL,MID,5.5,0.3,85,3.0,2207,1,1,4,4,a
-358,Kerkez,LIV,DEF,5.5,5.2,85,2.5,2251,2,1,6,4,a
+358,Kerkez,LIV,DEF,5.5,5.1,85,2.5,2251,2,1,6,4,a
 115,De Cuyper,BHA,DEF,4.5,1.3,84,2.8,1404,2,3,5,9,a
 472,Murillo,NFO,DEF,5.5,0.5,83,3.3,2130,1,0,6,3,a
 549,Talbi,SUN,MID,5.5,0.2,83,3.0,1553,4,2,7,6,a
@@ -179,7 +179,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 48,Onana,AVL,MID,5.0,0.0,76,3.0,1755,2,0,6,4,i
 87,Ajer,BRE,DEF,4.5,1.7,76,2.8,1805,0,2,5,1,a
 101,Henderson,CHE,MID,5.0,0.0,76,2.4,1911,1,3,6,5,d
-465,Osula,NEW,FWD,6.0,1.4,76,3.2,805,7,1,2,13,a
+465,Osula,NEW,FWD,6.0,1.3,76,3.2,805,7,1,2,13,a
 222,Strand Larsen,CRY,FWD,6.0,0.6,75,2.1,2301,4,1,5,3,a
 512,Kudus,TOT,MID,6.5,0.2,75,3.9,1535,2,6,7,7,d
 15,Ødegaard,ARS,MID,6.5,2.9,74,3.1,1363,1,7,6,5,a
@@ -295,7 +295,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 359,Gomez,LIV,DEF,5.0,0.1,33,1.6,594,0,2,2,2,i
 230,Branthwaite,EVE,DEF,5.5,1.9,32,3.2,678,1,1,1,0,a
 341,Gnonto,LEE,MID,5.0,0.1,32,1.4,521,0,3,1,0,a
-259,Diop,IPS,DEF,4.0,18.7,31,2.4,812,1,0,1,3,a
+259,Diop,IPS,DEF,4.0,18.6,31,2.4,812,1,0,1,3,a
 489,Yates,NFO,MID,4.5,7.0,30,1.4,602,0,2,0,0,a
 7,Lewis-Skelly,ARS,MID,5.5,0.3,29,1.4,697,0,0,2,0,a
 37,Lindelöf,AVL,DEF,4.5,0.2,29,1.7,942,0,1,1,0,a
@@ -461,7 +461,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 195,Simms,COV,FWD,5.0,0.6,0,0.0,0,0,0,0,0,a
 196,Markelo,COV,FWD,5.0,0.1,0,0.0,0,0,0,0,0,a
 197,Bassette,COV,FWD,4.5,0.3,0,0.0,0,0,0,0,0,u
-575,Yirenkyi,COV,MID,5.0,0.0,0,0.0,0,0,0,0,0,a
+575,Yirenkyi,COV,MID,5.0,0.1,0,0.0,0,0,0,0,0,a
 207,Mingueza,CRY,DEF,4.5,0.1,0,0.0,0,0,0,0,0,a
 217,M.França,CRY,MID,5.0,0.0,0,0.0,0,0,0,0,0,a
 218,Doucouré,CRY,MID,5.0,0.1,0,0.0,0,0,0,0,0,a
