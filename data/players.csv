@@ -1,12 +1,12 @@
-# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=581 fetched=2026-08-13T11:43:12.251373+00:00
+# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=581 fetched=2026-08-13T12:53:10.093604+00:00
 # pts/ppg/mins/g/a/cs/bonus are LAST SEASON totals carried into the new game.
 # st: a=available i=injured d=doubtful s=suspended u=unavailable
 id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 411,Haaland,MCI,FWD,15.5,73.6,239,6.8,2953,27,8,13,43,a
 426,B.Fernandes,MUN,MID,12.0,48.2,235,6.7,3065,9,24,7,41,a
 4,Gabriel,ARS,DEF,8.0,26.9,209,6.5,2750,3,5,18,30,a
-397,Semenyo,MCI,MID,8.5,26.7,202,5.5,3200,17,6,12,18,a
-480,Gibbs-White,NFO,MID,8.0,11.5,188,5.1,3101,15,4,10,18,a
+397,Semenyo,MCI,MID,8.5,26.8,202,5.5,3200,17,6,12,18,a
+480,Gibbs-White,NFO,MID,8.0,11.6,188,5.1,3101,15,4,10,18,a
 13,Rice,ARS,MID,7.5,21.8,184,5.1,3093,4,9,18,23,a
 106,Thiago,BRE,FWD,8.0,16.1,181,4.8,3282,22,1,10,22,a
 481,Anderson,MCI,MID,6.5,11.3,180,4.7,3332,4,5,10,16,a
@@ -15,7 +15,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 356,Virgil,LIV,DEF,6.5,16.8,175,4.6,3420,6,1,10,10,a
 498,Senesi,TOT,DEF,6.0,10.3,175,4.7,3288,0,6,11,14,a
 229,Tarkowski,EVE,DEF,6.0,9.7,170,4.6,3330,2,3,11,12,a
-40,Rogers,CHE,MID,7.5,26.7,169,4.6,3280,10,8,9,17,a
+40,Rogers,CHE,MID,7.5,26.6,169,4.6,3280,10,8,9,17,a
 260,Wilson,LEE,MID,6.5,8.0,168,4.7,2674,10,9,9,21,a
 55,Watkins,AVL,FWD,8.0,12.7,167,4.5,2833,16,4,9,26,a
 61,Truffert,BOU,DEF,5.5,4.9,165,4.3,3378,1,6,11,19,a
@@ -31,7 +31,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 236,Dewsbury-Hall,EVE,MID,6.5,3.7,151,4.9,2629,8,7,8,18,a
 533,Mukiele,SUN,DEF,5.5,5.0,151,4.7,2784,3,5,9,11,d
 5,J.Timber,ARS,DEF,6.5,0.4,149,5.0,2452,3,6,13,9,i
-427,Mbeumo,MUN,MID,8.0,25.1,148,4.5,2611,11,3,8,16,a
+427,Mbeumo,MUN,MID,8.0,25.2,148,4.5,2611,11,3,8,16,a
 112,Van Hecke,TOT,DEF,5.0,8.5,148,4.1,3210,3,3,10,8,a
 542,E.Le Fée,SUN,MID,6.0,12.8,147,4.1,2930,5,6,10,16,a
 371,Gravenberch,LIV,MID,6.0,2.0,144,4.0,2991,5,5,9,17,a
@@ -80,20 +80,20 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 471,Milenković,NFO,DEF,5.5,2.3,119,3.1,3375,0,1,9,2,a
 527,Richarlison,TOT,FWD,6.0,2.0,119,3.7,1954,11,4,7,17,a
 113,F.Kadıoğlu,BHA,DEF,4.5,3.1,118,3.2,3130,1,2,10,7,a
-32,Cash,AVL,DEF,4.5,8.1,117,3.3,3016,3,3,8,7,a
+32,Cash,AVL,DEF,4.5,8.2,117,3.3,3016,3,3,8,7,a
 122,Minteh,BHA,MID,6.0,0.7,117,3.4,2389,3,8,11,9,a
 208,Sarr,CRY,MID,6.5,7.9,117,4.2,2173,9,2,9,9,a
 499,Pedro Porro,TOT,DEF,5.5,23.3,117,3.4,2793,1,3,9,8,a
 232,O'Brien,EVE,DEF,5.0,0.5,116,3.1,3118,1,3,10,2,a
 503,Van de Ven,TOT,DEF,5.0,7.3,116,3.3,3041,4,1,9,10,a
-532,Ballard,SUN,DEF,5.0,4.3,116,4.0,2144,2,2,6,9,a
+532,Ballard,SUN,DEF,5.0,4.4,116,4.0,2144,2,2,6,9,a
 79,Evanilson,BOU,FWD,6.0,2.1,115,3.2,2741,6,7,11,6,a
 86,Lewis-Potter,BRE,MID,5.5,0.5,115,3.2,1960,3,4,9,5,a
 142,James,CHE,DEF,5.5,8.0,115,4.0,1957,2,6,8,11,a
 154,Palmer,CHE,MID,9.5,11.2,114,4.4,1954,10,2,3,11,a
 223,Mateta,CRY,FWD,6.5,6.6,114,3.6,2210,12,0,8,13,a
 491,Igor Jesus,NFO,FWD,6.0,5.3,114,3.1,2293,6,6,9,13,a
-14,Eze,ARS,MID,6.5,3.1,113,3.4,1885,7,3,11,8,a
+14,Eze,ARS,MID,6.5,3.0,113,3.4,1885,7,3,11,8,a
 78,Kroupi.Jr,BOU,MID,7.5,2.9,113,3.4,1663,13,0,10,13,i
 85,Van den Berg,BRE,DEF,5.0,0.7,113,3.5,2761,0,3,8,3,a
 88,Kayode,BRE,DEF,4.5,3.7,113,3.1,3258,1,2,10,9,a
@@ -106,11 +106,11 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 439,Šeško,MUN,FWD,7.0,2.2,111,3.7,1630,11,2,2,19,d
 60,Hill,BOU,DEF,5.5,1.2,110,3.8,2102,0,3,8,4,a
 159,Caicedo,CHE,MID,5.5,4.1,110,3.3,2796,3,1,6,10,a
-534,Hume,SUN,DEF,4.5,4.7,110,2.9,3032,2,1,9,6,a
+534,Hume,SUN,DEF,4.5,4.8,110,2.9,3032,2,1,9,6,a
 8,Calafiori,ARS,DEF,5.5,17.7,109,4.2,1697,1,2,13,6,a
 329,Rodon,LEE,DEF,4.5,2.0,109,3.1,2952,2,0,6,5,a
 336,Okafor,LEE,MID,6.0,0.7,109,3.9,1553,8,3,6,11,a
-412,Lammens,MUN,GKP,5.0,19.7,109,3.4,2880,0,0,8,11,a
+412,Lammens,MUN,GKP,5.0,19.6,109,3.4,2880,0,0,8,11,a
 328,Struijk,BHA,DEF,5.0,0.5,108,3.2,2935,0,1,7,4,a
 372,Mac Allister,LIV,MID,5.5,1.9,108,2.9,2654,2,5,7,9,a
 463,Woltemade,NEW,FWD,6.0,1.7,108,3.3,1896,8,4,8,12,a
@@ -198,7 +198,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 402,Rodrigo,MCI,MID,6.5,0.1,69,3.3,1510,1,1,5,6,i
 240,Iroegbunam,EVE,MID,5.0,0.1,68,2.3,1477,0,3,8,1,a
 331,Gudmundsson,LEE,DEF,4.5,0.3,68,2.1,2637,0,0,5,8,i
-43,Tielemans,MUN,MID,6.0,1.5,68,2.7,1857,0,4,4,3,a
+43,Tielemans,MUN,MID,6.0,1.6,68,2.7,1857,0,4,4,3,a
 17,Merino,ARS,MID,6.0,1.1,67,3.0,1024,4,3,4,5,a
 67,Rayan,BOU,MID,6.5,3.3,67,4.5,1110,5,2,6,3,a
 77,Adli,BOU,MID,5.0,0.2,67,2.2,1074,3,2,3,4,a
@@ -300,11 +300,11 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 7,Lewis-Skelly,ARS,MID,5.5,0.3,29,1.4,697,0,0,2,0,a
 37,Lindelöf,AVL,DEF,4.5,0.2,29,1.7,942,0,1,1,0,a
 243,Alcaraz,EVE,MID,5.0,0.1,29,1.4,679,0,1,3,0,a
-506,Udogie,TOT,DEF,4.5,0.4,29,1.4,1335,0,1,1,1,a
+506,Udogie,TOT,DEF,4.5,0.5,29,1.4,1335,0,1,1,1,a
 80,Enes Ünal,BOU,FWD,5.5,0.2,27,1.2,214,1,0,0,1,a
 464,Wissa,NEW,FWD,6.0,1.7,27,1.4,517,1,1,1,0,a
 485,Bakwa,NFO,MID,5.5,0.0,26,1.9,549,0,2,2,1,a
-539,O'Nien,SUN,DEF,4.0,2.6,26,2.2,565,0,1,2,1,a
+539,O'Nien,SUN,DEF,4.0,2.7,26,2.2,565,0,1,2,1,a
 158,Gittens,CHE,MID,6.0,0.1,25,1.6,486,0,2,1,0,a
 333,Bornauw,LEE,DEF,4.5,0.0,25,2.1,429,0,0,2,0,a
 27,G.Jesus,ARS,FWD,6.0,0.4,24,1.7,418,3,0,1,0,a
@@ -482,7 +482,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 274,Butland,HUL,GKP,4.5,0.6,0,0.0,0,0,0,0,0,i
 275,Cartwright,HUL,GKP,4.0,0.1,0,0.0,0,0,0,0,0,u
 276,Lo-Tutala,HUL,GKP,4.0,0.2,0,0.0,0,0,0,0,0,a
-277,Egan,HUL,DEF,4.0,1.5,0,0.0,0,0,0,0,0,a
+277,Egan,HUL,DEF,4.0,1.6,0,0.0,0,0,0,0,0,a
 278,Hughes,HUL,DEF,4.0,0.6,0,0.0,0,0,0,0,0,i
 279,Ajayi,HUL,DEF,4.0,0.8,0,0.0,0,0,0,0,0,a
 280,Coyle,HUL,DEF,4.0,0.6,0,0.0,0,0,0,0,0,a
@@ -546,7 +546,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 354,Jaros,LIV,GKP,4.0,0.0,0,0.0,0,0,0,0,0,i
 355,Davies,LIV,GKP,4.0,0.1,0,0.0,0,0,0,0,0,a
 361,Lucky,LIV,DEF,4.0,0.1,0,0.0,0,0,0,0,0,a
-362,Jacquet,LIV,DEF,5.0,1.3,0,0.0,0,0,0,0,0,a
+362,Jacquet,LIV,DEF,5.0,1.2,0,0.0,0,0,0,0,0,a
 363,Leoni,LIV,DEF,4.0,0.1,0,0.0,0,0,0,0,0,i
 364,Tsimikas,LIV,DEF,5.0,0.1,0,0.0,0,0,0,0,0,a
 365,Ramsay,LIV,DEF,4.0,0.2,0,0.0,0,0,0,0,0,a
