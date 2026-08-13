@@ -1,4 +1,4 @@
-# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=584 fetched=2026-08-13T20:33:46.390347+00:00
+# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=584 fetched=2026-08-13T21:37:00.620733+00:00
 # pts/ppg/mins/g/a/cs/bonus are LAST SEASON totals carried into the new game.
 # st: a=available i=injured d=doubtful s=suspended u=unavailable
 id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
@@ -31,12 +31,12 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 236,Dewsbury-Hall,EVE,MID,6.5,3.7,151,4.9,2629,8,7,8,18,a
 533,Mukiele,SUN,DEF,5.5,4.8,151,4.7,2784,3,5,9,11,d
 5,J.Timber,ARS,DEF,6.5,0.4,149,5.0,2452,3,6,13,9,i
-427,Mbeumo,MUN,MID,8.0,25.6,148,4.5,2611,11,3,8,16,a
+427,Mbeumo,MUN,MID,8.0,25.7,148,4.5,2611,11,3,8,16,a
 112,Van Hecke,TOT,DEF,5.0,8.6,148,4.1,3210,3,3,10,8,a
 542,E.Le Fée,SUN,MID,6.0,12.8,147,4.1,2930,5,6,10,16,a
 371,Gravenberch,LIV,MID,6.0,2.0,144,4.0,2991,5,5,9,17,a
 82,Kelleher,BRE,GKP,5.0,5.7,143,3.9,3330,0,0,10,11,a
-428,Cunha,MUN,MID,8.0,12.4,143,4.3,2493,10,4,8,14,a
+428,Cunha,MUN,MID,8.0,12.3,143,4.3,2493,10,4,8,14,a
 346,Calvert-Lewin,LEE,FWD,6.0,25.2,142,4.1,2721,14,2,8,20,a
 6,Saliba,ARS,DEF,6.0,0.5,137,4.4,2614,1,0,15,12,i
 68,Tavernier,BOU,MID,6.0,1.8,137,4.0,2732,7,4,11,14,a
@@ -106,7 +106,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 439,Šeško,MUN,FWD,7.0,2.2,111,3.7,1630,11,2,2,19,d
 60,Hill,BOU,DEF,5.5,1.2,110,3.8,2102,0,3,8,4,a
 159,Caicedo,CHE,MID,5.5,4.1,110,3.3,2796,3,1,6,10,a
-534,Hume,SUN,DEF,4.5,4.8,110,2.9,3032,2,1,9,6,a
+534,Hume,SUN,DEF,4.5,4.9,110,2.9,3032,2,1,9,6,a
 8,Calafiori,ARS,DEF,5.5,17.8,109,4.2,1697,1,2,13,6,a
 329,Rodon,LEE,DEF,4.5,2.0,109,3.1,2952,2,0,6,5,a
 336,Okafor,LEE,MID,6.0,0.7,109,3.9,1553,8,3,6,11,a
@@ -171,7 +171,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 238,Grealish,MCI,MID,6.5,0.1,79,4.0,1627,2,6,7,12,d
 391,Gvardiol,MCI,DEF,5.5,13.7,79,4.4,1370,2,2,6,5,a
 449,Hall,NEW,DEF,5.0,3.9,79,2.6,2176,1,2,4,4,a
-124,Groß,BHA,MID,5.5,10.7,78,4.1,1636,1,6,6,10,a
+124,Groß,BHA,MID,5.5,10.8,78,4.1,1636,1,6,6,10,a
 505,Spence,TOT,DEF,4.5,7.1,78,2.6,2049,0,0,9,3,a
 514,Tel,TOT,MID,6.0,0.4,78,2.5,1334,4,2,3,7,a
 73,Adams,BOU,MID,5.0,0.7,77,3.1,1769,2,2,7,3,a
@@ -236,7 +236,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 401,Marmoush,MCI,FWD,7.0,0.8,56,2.7,691,3,3,4,5,a
 420,Yoro,MUN,DEF,5.0,0.8,56,1.8,1730,0,1,2,1,a
 502,Robertson,TOT,DEF,4.5,2.1,55,2.3,1165,1,0,4,4,a
-36,Maatsen,AVL,DEF,4.5,0.7,54,1.8,1590,0,1,2,1,a
+36,Maatsen,AVL,DEF,4.5,0.8,54,1.8,1590,0,1,2,1,a
 241,McNeil,CRY,MID,5.5,0.2,53,2.4,1161,0,3,6,1,a
 422,Mazraoui,MUN,DEF,4.5,0.8,53,2.6,977,0,0,5,6,a
 470,Morato,NFO,DEF,5.0,0.1,53,2.5,1340,1,0,2,1,a
@@ -337,7 +337,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 161,Lavia,CHE,MID,5.0,0.1,13,1.1,374,0,0,0,0,a
 168,Marc Guiu,CHE,FWD,5.0,0.4,13,1.3,265,0,1,0,0,a
 385,Trafford,LEE,GKP,5.0,2.4,13,3.2,360,0,0,1,0,a
-474,Jair Cunha,NFO,DEF,4.5,0.4,13,1.4,514,0,0,0,0,a
+474,Jair Cunha,NFO,DEF,4.5,0.3,13,1.4,514,0,0,0,0,a
 551,Angulo,SUN,MID,5.0,0.1,13,1.6,401,0,0,1,0,a
 104,Onyeka,COV,MID,5.0,0.2,12,2.0,88,0,2,0,0,a
 342,Harrison,LEE,MID,5.0,0.0,12,1.1,262,0,0,0,0,u
@@ -359,7 +359,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 21,Nørgaard,EVE,MID,5.0,0.7,7,1.0,101,0,0,0,0,a
 118,Igor,BHA,DEF,4.5,0.1,6,1.5,103,0,0,0,0,a
 205,Sosa,CRY,DEF,4.5,0.0,6,0.9,99,0,0,0,0,a
-272,Kusi-Asare,FUL,FWD,4.5,7.5,6,0.9,49,0,0,0,0,a
+272,Kusi-Asare,FUL,FWD,4.5,7.4,6,0.9,49,0,0,0,0,a
 352,Woodman,LIV,GKP,4.0,1.2,6,2.0,212,0,0,0,0,a
 375,Nyoni,LIV,MID,5.0,0.1,6,1.0,21,0,0,0,0,a
 38,A.García,AVL,DEF,4.0,1.6,5,0.8,83,0,0,0,0,a
@@ -558,7 +558,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 378,McConnell,LIV,MID,4.5,0.2,0,0.0,0,0,0,0,0,a
 381,Koumas,LIV,MID,5.0,0.0,0,0.0,0,0,0,0,0,a
 382,Danns,LIV,FWD,4.5,0.0,0,0.0,0,0,0,0,0,i
-579,Araujo,LIV,DEF,5.5,0.4,0,0.0,0,0,0,0,0,a
+579,Araujo,LIV,DEF,5.5,0.5,0,0.0,0,0,0,0,0,a
 386,Bettinelli,MCI,GKP,4.5,0.0,0,0.0,0,0,0,0,0,a
 396,Vitor Reis,MCI,DEF,4.5,0.0,0,0.0,0,0,0,0,0,a
 407,Echeverri,MCI,MID,5.0,0.0,0,0.0,0,0,0,0,0,a
