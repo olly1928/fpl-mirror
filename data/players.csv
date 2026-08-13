@@ -1,4 +1,4 @@
-# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=584 fetched=2026-08-13T22:33:20.880711+00:00
+# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=584 fetched=2026-08-13T23:33:22.269379+00:00
 # pts/ppg/mins/g/a/cs/bonus are LAST SEASON totals carried into the new game.
 # st: a=available i=injured d=doubtful s=suspended u=unavailable
 id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
@@ -15,7 +15,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 356,Virgil,LIV,DEF,6.5,16.8,175,4.6,3420,6,1,10,10,a
 498,Senesi,TOT,DEF,6.0,10.3,175,4.7,3288,0,6,11,14,a
 229,Tarkowski,EVE,DEF,6.0,9.7,170,4.6,3330,2,3,11,12,a
-40,Rogers,CHE,MID,7.5,26.5,169,4.6,3280,10,8,9,17,a
+40,Rogers,CHE,MID,7.5,26.4,169,4.6,3280,10,8,9,17,a
 260,Wilson,LEE,MID,6.5,7.9,168,4.7,2674,10,9,9,21,a
 55,Watkins,AVL,FWD,8.0,12.6,167,4.5,2833,16,4,9,26,a
 61,Truffert,BOU,DEF,5.5,4.9,165,4.3,3378,1,6,11,19,a
@@ -30,8 +30,8 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 389,Matheus N.,MCI,DEF,6.0,4.6,154,4.5,2861,1,8,12,16,a
 236,Dewsbury-Hall,EVE,MID,6.5,3.7,151,4.9,2629,8,7,8,18,a
 533,Mukiele,SUN,DEF,5.5,4.8,151,4.7,2784,3,5,9,11,d
-5,J.Timber,ARS,DEF,6.5,0.4,149,5.0,2452,3,6,13,9,i
-427,Mbeumo,MUN,MID,8.0,25.7,148,4.5,2611,11,3,8,16,a
+5,J.Timber,ARS,DEF,6.5,0.3,149,5.0,2452,3,6,13,9,i
+427,Mbeumo,MUN,MID,8.0,25.8,148,4.5,2611,11,3,8,16,a
 112,Van Hecke,TOT,DEF,5.0,8.6,148,4.1,3210,3,3,10,8,a
 542,E.Le Fée,SUN,MID,6.0,12.8,147,4.1,2930,5,6,10,16,a
 371,Gravenberch,LIV,MID,6.0,2.0,144,4.0,2991,5,5,9,17,a
@@ -447,7 +447,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 178,Bidwell,COV,DEF,4.0,0.1,0,0.0,0,0,0,0,0,a
 179,Latibeaudiere,COV,DEF,4.0,0.1,0,0.0,0,0,0,0,0,a
 180,Woolfenden,COV,DEF,4.0,0.2,0,0.0,0,0,0,0,0,a
-181,Brau,COV,DEF,4.0,0.0,0,0.0,0,0,0,0,0,a
+181,Brau,COV,DEF,4.0,0.1,0,0.0,0,0,0,0,0,a
 182,Amenda,COV,DEF,4.0,0.7,0,0.0,0,0,0,0,0,a
 183,Rudoni,COV,MID,5.0,0.2,0,0.0,0,0,0,0,0,d
 184,Grimes,COV,MID,5.0,0.2,0,0.0,0,0,0,0,0,a
