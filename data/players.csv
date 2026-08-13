@@ -1,4 +1,4 @@
-# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=584 fetched=2026-08-13T19:52:33.916099+00:00
+# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=584 fetched=2026-08-13T20:33:46.390347+00:00
 # pts/ppg/mins/g/a/cs/bonus are LAST SEASON totals carried into the new game.
 # st: a=available i=injured d=doubtful s=suspended u=unavailable
 id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
@@ -212,7 +212,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 254,Robinson,FUL,DEF,4.5,2.4,65,3.0,1487,1,0,4,7,a
 543,Diarra,SUN,MID,5.5,0.1,65,3.2,1403,2,6,5,3,a
 34,Pau,AVL,DEF,4.5,0.3,64,3.0,1673,0,2,5,2,a
-268,King,FUL,MID,5.5,0.1,63,2.0,1290,1,3,5,3,a
+268,King,FUL,MID,5.5,0.2,63,2.0,1290,1,3,5,3,a
 357,Frimpong,LIV,DEF,5.5,3.0,63,3.0,1032,0,5,5,1,a
 405,N.Gonzalez,MCI,MID,5.5,0.1,63,2.5,1561,1,0,7,1,a
 501,Danso,TOT,DEF,5.0,0.2,63,2.6,1489,0,0,4,1,a
@@ -408,7 +408,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 39,Nedeljkovic,AVL,DEF,4.0,0.7,0,0.0,0,0,0,0,0,a
 49,Iling Jr,AVL,MID,5.0,0.0,0,0.0,0,0,0,0,0,a
 53,Manzambi,AVL,MID,6.0,1.8,0,0.0,0,0,0,0,0,a
-582,Madjo,AVL,FWD,5.5,0.5,0,0.0,0,0,0,0,0,a
+582,Madjo,AVL,FWD,5.5,0.6,0,0.0,0,0,0,0,0,a
 58,Forster,BOU,GKP,4.0,3.2,0,0.0,0,0,0,0,0,a
 59,Dennis,BOU,GKP,4.0,0.2,0,0.0,0,0,0,0,0,a
 65,J.Araujo,BOU,DEF,4.5,0.1,0,0.0,0,0,0,0,0,i
