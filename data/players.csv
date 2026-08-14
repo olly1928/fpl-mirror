@@ -1,10 +1,10 @@
-# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=587 fetched=2026-08-14T17:46:20.868606+00:00
+# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=587 fetched=2026-08-14T18:42:58.236976+00:00
 # pts/ppg/mins/g/a/cs/bonus are LAST SEASON totals carried into the new game.
 # st: a=available i=injured d=doubtful s=suspended u=unavailable
 id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 411,Haaland,MCI,FWD,15.5,73.4,239,6.8,2953,27,8,13,43,a
 426,B.Fernandes,MUN,MID,12.0,48.0,235,6.7,3065,9,24,7,41,a
-4,Gabriel,ARS,DEF,8.0,27.1,209,6.5,2750,3,5,18,30,a
+4,Gabriel,ARS,DEF,8.0,27.2,209,6.5,2750,3,5,18,30,a
 397,Semenyo,MCI,MID,8.5,27.5,202,5.5,3200,17,6,12,18,a
 480,Gibbs-White,NFO,MID,8.0,11.6,188,5.1,3101,15,4,10,18,a
 13,Rice,ARS,MID,7.5,21.6,184,5.1,3093,4,9,18,23,a
@@ -29,7 +29,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 200,Lacroix,CHE,DEF,6.0,11.2,154,4.4,3085,1,2,11,11,a
 389,Matheus N.,MCI,DEF,6.0,4.6,154,4.5,2861,1,8,12,16,a
 236,Dewsbury-Hall,EVE,MID,6.5,3.7,151,4.9,2629,8,7,8,18,a
-533,Mukiele,SUN,DEF,5.5,4.5,151,4.7,2784,3,5,9,11,d
+533,Mukiele,SUN,DEF,5.5,4.4,151,4.7,2784,3,5,9,11,d
 5,J.Timber,ARS,DEF,6.5,0.3,149,5.0,2452,3,6,13,9,i
 427,Mbeumo,MUN,MID,8.0,26.6,148,4.5,2611,11,3,8,16,a
 112,Van Hecke,TOT,DEF,5.0,8.6,148,4.1,3210,3,3,10,8,a
@@ -54,7 +54,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 338,Ampadu,LEE,MID,5.5,1.6,134,3.8,3119,1,4,8,11,a
 19,Zubimendi,ARS,MID,5.5,1.4,133,3.5,2991,5,1,16,9,a
 198,Henderson,CRY,GKP,5.0,3.2,131,3.5,3330,0,0,11,7,a
-231,Keane,EVE,DEF,5.0,1.6,131,4.0,2588,3,1,7,8,a
+231,Keane,EVE,DEF,5.0,1.7,131,4.0,2588,3,1,7,8,a
 367,Gakpo,LIV,MID,7.0,3.3,131,3.6,2736,7,5,10,5,a
 398,Foden,MCI,MID,7.0,6.2,131,4.0,2078,7,5,11,13,a
 109,Verbruggen,BHA,GKP,4.5,18.2,130,3.4,3420,0,0,10,6,a
@@ -81,8 +81,8 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 527,Richarlison,TOT,FWD,6.0,2.0,119,3.7,1954,11,4,7,17,a
 113,F.Kadıoğlu,BHA,DEF,4.5,3.1,118,3.2,3130,1,2,10,7,a
 32,Cash,AVL,DEF,4.5,8.3,117,3.3,3016,3,3,8,7,a
-122,Minteh,BHA,MID,6.0,0.7,117,3.4,2389,3,8,11,9,a
-208,Sarr,CRY,MID,6.5,7.7,117,4.2,2173,9,2,9,9,a
+122,Minteh,BHA,MID,6.0,0.7,117,3.4,2389,3,8,11,9,i
+208,Sarr,CRY,MID,6.5,7.6,117,4.2,2173,9,2,9,9,a
 499,Pedro Porro,TOT,DEF,5.5,23.3,117,3.4,2793,1,3,9,8,a
 232,O'Brien,EVE,DEF,5.0,0.5,116,3.1,3118,1,3,10,2,a
 503,Van de Ven,TOT,DEF,5.0,7.4,116,3.3,3041,4,1,9,10,a
@@ -172,7 +172,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 391,Gvardiol,MCI,DEF,5.5,13.7,79,4.4,1370,2,2,6,5,a
 449,Hall,NEW,DEF,5.0,3.9,79,2.6,2176,1,2,4,4,a
 124,Groß,BHA,MID,5.5,11.1,78,4.1,1636,1,6,6,10,a
-505,Spence,TOT,DEF,4.5,6.6,78,2.6,2049,0,0,9,3,a
+505,Spence,TOT,DEF,4.5,6.5,78,2.6,2049,0,0,9,3,a
 514,Tel,TOT,MID,6.0,0.4,78,2.5,1334,4,2,3,7,a
 73,Adams,BOU,MID,5.0,0.7,77,3.1,1769,2,2,7,3,a
 211,Yeremy,CRY,MID,5.5,0.2,77,2.3,2074,2,2,7,3,a
@@ -253,7 +253,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 162,Andrey Santos,MUN,MID,5.0,1.3,47,1.7,1247,1,0,1,3,a
 62,Diakité,BOU,DEF,5.0,0.2,46,2.6,1275,0,0,4,2,a
 517,Odobert,TOT,MID,5.5,0.0,46,1.9,972,0,2,2,6,i
-10,White,ARS,DEF,5.5,1.1,45,3.8,699,0,1,5,3,a
+10,White,ARS,DEF,5.5,1.2,45,3.8,699,0,1,5,3,a
 167,Delap,CHE,FWD,5.5,0.5,45,1.6,1092,1,2,2,1,a
 212,Hughes,CRY,MID,4.5,11.1,45,1.5,1560,0,1,5,0,a
 42,Guessand,CRY,MID,5.5,0.0,44,2.1,909,1,3,2,0,a
@@ -268,10 +268,10 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 421,Heaven,MUN,DEF,4.5,0.3,42,2.5,920,0,1,2,3,a
 440,Zirkzee,MUN,FWD,5.5,0.7,42,1.8,607,2,1,2,6,a
 70,Kluivert,BOU,MID,6.0,1.1,41,2.0,945,2,0,4,3,a
-266,Cairney,FUL,MID,5.0,0.0,41,1.7,756,2,0,2,1,a
+266,Cairney,FUL,MID,5.0,0.0,41,1.7,756,2,0,2,1,i
 379,Isak,LIV,FWD,9.0,13.8,41,2.9,694,3,1,1,4,a
 490,Wood,NFO,FWD,6.0,1.7,41,2.7,896,3,0,2,4,a
-11,Mosquera,ARS,DEF,5.5,13.8,40,2.0,986,0,0,3,1,a
+11,Mosquera,ARS,DEF,5.5,13.7,40,2.0,986,0,0,3,1,a
 35,Bogarde,AVL,MID,5.0,0.1,40,1.4,1042,0,0,2,4,a
 71,Cook,BOU,MID,5.0,0.1,40,2.2,872,0,1,1,0,a
 526,Solanke,TOT,FWD,6.0,2.1,40,2.7,997,3,0,0,4,a
@@ -319,7 +319,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 63,Milosavljević,BOU,DEF,5.0,0.0,19,2.7,367,0,0,1,0,i
 148,Hato,CHE,DEF,4.5,0.9,19,0.9,1139,0,0,0,0,a
 395,Lewis,MCI,DEF,4.5,0.2,19,1.7,401,0,1,1,2,a
-245,Dibling,EVE,MID,5.5,0.1,18,1.3,349,0,0,2,0,a
+245,Dibling,EVE,MID,5.5,0.0,18,1.3,349,0,0,2,0,a
 225,Uche,CRY,FWD,5.0,0.0,17,1.2,159,0,1,0,0,u
 348,Piroe,LEE,FWD,5.0,0.5,17,1.1,244,0,0,1,0,a
 486,McAtee,NFO,MID,5.5,0.0,17,1.2,288,0,1,0,0,a
@@ -527,7 +527,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 309,Núñez,IPS,MID,5.0,0.2,0,0.0,0,0,0,0,0,a
 310,Matusiwa,IPS,MID,5.0,0.0,0,0.0,0,0,0,0,0,i
 311,Burns,IPS,MID,5.0,0.0,0,0.0,0,0,0,0,0,u
-312,Taylor,IPS,MID,4.5,0.2,0,0.0,0,0,0,0,0,i
+312,Taylor,IPS,MID,4.5,0.1,0,0.0,0,0,0,0,0,i
 313,Clarke,IPS,MID,5.5,0.3,0,0.0,0,0,0,0,0,a
 314,Ogbene,IPS,MID,5.0,0.0,0,0.0,0,0,0,0,0,a
 315,Fatawu,IPS,MID,5.5,0.3,0,0.0,0,0,0,0,0,a
@@ -560,7 +560,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 378,McConnell,LIV,MID,4.5,0.2,0,0.0,0,0,0,0,0,a
 381,Koumas,LIV,MID,5.0,0.0,0,0.0,0,0,0,0,0,a
 382,Danns,LIV,FWD,4.5,0.0,0,0.0,0,0,0,0,0,i
-579,Araujo,LIV,DEF,5.5,0.6,0,0.0,0,0,0,0,0,a
+579,Araujo,LIV,DEF,5.5,0.7,0,0.0,0,0,0,0,0,a
 386,Bettinelli,MCI,GKP,4.5,0.0,0,0.0,0,0,0,0,0,a
 396,Vitor Reis,MCI,DEF,4.5,0.0,0,0.0,0,0,0,0,0,a
 407,Echeverri,MCI,MID,5.0,0.0,0,0.0,0,0,0,0,0,a
@@ -599,6 +599,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 # 380,Ekitiké,LIV,i,0,Achilles injury - Unknown return date
 # 535,Alderete,SUN,d,75,Knock - 75% chance of playing
 # 253,Andersen,FUL,s,0,Suspended until 30 Aug
+# 122,Minteh,BHA,i,0,Leg injury - Expected back 28 Nov
 # 78,Kroupi.Jr,BOU,i,0,Foot injury - Unknown return date
 # 439,Šeško,MUN,d,75,Shin injury - 75% chance of playing
 # 30,Digne,AVL,u,0,Has joined Paris Saint-Germain permanently
@@ -620,6 +621,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 # 517,Odobert,TOT,i,0,Knee injury - Unknown return date
 # 416,De Ligt,MUN,i,0,Back injury - Unknown return date
 # 360,Bradley,LIV,i,0,Knee injury - Unknown return date
+# 266,Cairney,FUL,i,0,Knee injury - Expected back 10 Oct
 # 475,Savona,NFO,i,0,Knee injury - Unknown return date
 # 433,Ugarte,MUN,i,0,Knee injury - Unknown return date
 # 359,Gomez,LIV,i,0,Muscular injury - Unknown return date
