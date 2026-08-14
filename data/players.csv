@@ -1,4 +1,4 @@
-# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=584 fetched=2026-08-14T03:59:08.660826+00:00
+# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=584 fetched=2026-08-14T05:39:59.692230+00:00
 # pts/ppg/mins/g/a/cs/bonus are LAST SEASON totals carried into the new game.
 # st: a=available i=injured d=doubtful s=suspended u=unavailable
 id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
@@ -46,7 +46,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 143,Chalobah,CHE,DEF,5.5,1.3,136,4.0,2780,3,1,9,7,u
 201,Muñoz,CRY,DEF,5.5,11.4,136,4.7,2400,4,4,10,9,a
 529,Roefs,SUN,GKP,5.0,4.9,136,3.9,3150,0,0,10,12,a
-204,Mitchell,CRY,DEF,4.5,6.8,135,3.6,3253,1,3,12,8,a
+204,Mitchell,CRY,DEF,4.5,6.9,135,3.6,3253,1,3,12,8,a
 226,Pickford,EVE,GKP,5.5,8.8,135,3.6,3420,0,0,11,11,a
 384,Donnarumma,MCI,GKP,5.5,11.1,135,4.0,3060,0,0,15,5,a
 399,Cherki,MCI,MID,7.5,8.9,135,4.1,1772,4,13,8,16,a
@@ -101,7 +101,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 140,Sánchez,CHE,GKP,5.0,2.1,113,3.2,3040,0,1,9,7,a
 390,Rúben,MCI,DEF,5.5,1.6,113,4.3,2139,2,0,12,4,a
 423,Shaw,MUN,DEF,4.5,24.3,113,3.0,3220,1,1,10,3,a
-210,Wharton,CRY,MID,5.5,0.4,112,3.3,2552,1,6,8,8,a
+210,Wharton,CRY,MID,5.5,0.5,112,3.3,2552,1,6,8,8,a
 417,Dalot,MUN,DEF,5.0,3.1,111,3.3,2609,1,6,7,9,a
 439,Šeško,MUN,FWD,7.0,2.2,111,3.7,1630,11,2,2,19,d
 60,Hill,BOU,DEF,5.5,1.2,110,3.8,2102,0,3,8,4,a
@@ -404,11 +404,11 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 550,Jocelin.T,SUN,MID,5.0,0.0,1,1.0,38,0,0,0,0,a
 3,Meslier,ARS,GKP,5.0,0.1,0,0.0,0,11,0,0,0,a
 23,Fábio Vieira,ARS,MID,5.5,0.0,0,0.0,0,0,0,0,0,a
-557,Tzolis,ARS,MID,6.5,3.9,0,0.0,0,0,0,0,0,a
+557,Tzolis,ARS,MID,6.5,4.0,0,0.0,0,0,0,0,0,a
 39,Nedeljkovic,AVL,DEF,4.0,0.7,0,0.0,0,0,0,0,0,a
 49,Iling Jr,AVL,MID,5.0,0.0,0,0.0,0,0,0,0,0,a
 53,Manzambi,AVL,MID,6.0,1.8,0,0.0,0,0,0,0,0,a
-582,Madjo,AVL,FWD,5.5,0.8,0,0.0,0,0,0,0,0,a
+582,Madjo,AVL,FWD,5.5,0.9,0,0.0,0,0,0,0,0,a
 58,Forster,BOU,GKP,4.0,3.2,0,0.0,0,0,0,0,0,a
 59,Dennis,BOU,GKP,4.0,0.2,0,0.0,0,0,0,0,0,a
 65,J.Araujo,BOU,DEF,4.5,0.1,0,0.0,0,0,0,0,0,i
@@ -478,7 +478,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 247,Hackney,EVE,MID,5.5,0.3,0,0.0,0,0,0,0,0,a
 251,Lecomte,FUL,GKP,4.0,1.4,0,0.0,0,0,0,0,0,a
 252,McNally,FUL,GKP,4.0,0.2,0,0.0,0,0,0,0,0,a
-569,García,FUL,FWD,6.0,1.7,0,0.0,0,0,0,0,0,a
+569,García,FUL,FWD,6.0,1.8,0,0.0,0,0,0,0,0,a
 570,Palacios,FUL,MID,5.5,0.1,0,0.0,0,0,0,0,0,a
 580,Charles,FUL,MID,5.0,0.0,0,0.0,0,0,0,0,0,a
 273,Phillips,HUL,GKP,4.0,2.0,0,0.0,0,0,0,0,0,a
