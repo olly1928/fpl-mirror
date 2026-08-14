@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-14T22:14:39.128527+00:00",
+  "fetched_at": "2026-08-14T22:41:42.533965+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -19,6 +19,58 @@
   ],
   "chips_used": [],
   "gameweek_history": [],
+  "past_seasons": [
+    {
+      "season": "2022/23",
+      "total_points": 1730,
+      "overall_rank": 8205023
+    },
+    {
+      "season": "2023/24",
+      "total_points": 1881,
+      "overall_rank": 6226927
+    },
+    {
+      "season": "2024/25",
+      "total_points": 1998,
+      "overall_rank": 5521163
+    },
+    {
+      "season": "2025/26",
+      "total_points": 2207,
+      "overall_rank": 825006
+    }
+  ],
+  "transfers": [],
+  "mini_leagues": [
+    {
+      "id": 43750,
+      "name": "Chile x Madrid",
+      "my_rank": 0,
+      "my_last_rank": 0,
+      "entries": 0,
+      "standings_truncated_to": null,
+      "standings": []
+    },
+    {
+      "id": 358630,
+      "name": "twentyAI FPL New",
+      "my_rank": 0,
+      "my_last_rank": 0,
+      "entries": 0,
+      "standings_truncated_to": null,
+      "standings": []
+    },
+    {
+      "id": 568696,
+      "name": "Box LeadGen",
+      "my_rank": 0,
+      "my_last_rank": 0,
+      "entries": 0,
+      "standings_truncated_to": null,
+      "standings": []
+    }
+  ],
   "free_transfers_estimate": 1,
   "free_transfers_estimate_note": "ESTIMATE — no gameweeks played yet. GW1 is unlimited squad selection, so 1 free transfer going into GW2. Confirm on the FPL site.",
   "picks_event": null,
