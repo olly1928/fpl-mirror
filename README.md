@@ -20,6 +20,28 @@ a `warnings[]` array and a per-component freshness breakdown. If `stale` is true
 some part of this mirror has stopped refreshing and the file you are about to
 read may be describing last week.
 
+### Beware the CDN cache
+
+`raw.githubusercontent.com` caches **per path**, so one file can be minutes or
+hours behind another even though both were written by the same run. A cached
+`meta.json` is the dangerous one: it defeats the integrity gate just as
+completely as a broken build would, and it looks entirely plausible while doing
+it.
+
+Every CSV carries `fetched=<timestamp>` in its first comment line, and within a
+single build that is always **identical** to `meta.json`'s `fetched_at`. So the
+check is free:
+
+```bash
+BASE=https://raw.githubusercontent.com/olly1928/fpl-mirror/main/data
+curl -s "$BASE/meta.json?v=$(date +%s)"   | head -2      # "fetched_at": ...
+curl -s "$BASE/players.csv?v=$(date +%s)" | head -1      # # season=... fetched=...
+```
+
+If those two timestamps disagree, you are holding a cached copy, not a stale
+mirror — refetch with the cache-busting query string. If they agree and the
+timestamp is old, the mirror really has stopped.
+
 ## Files
 
 | File | Contents | Refresh |
@@ -29,6 +51,7 @@ read may be describing last week.
 | `data/teams.csv` | FPL's own team strength ratings and league table | hourly |
 | `data/fixtures.csv` | Full season fixture list, with results once played | hourly |
 | `data/fdr.csv` | Per-team fixture difficulty over the next six gameweeks | hourly |
+| `data/fixture_stats.csv` | Per-fixture, per-player stat lines. Empty until games are played | hourly |
 | `data/squad.json` | My squad, transfers, chip usage, past seasons, mini-league standings | hourly |
 | `data/snapshots/YYYY-MM.csv` | Price / ownership / transfer / news history | hourly |
 | `data/player_history.csv` | Per-player, per-gameweek stats | once per gameweek |
@@ -53,6 +76,14 @@ Beyond those: expected goals and assists (plus per-90s), **`starts` and
 `starts_per_90`**, `chance_of_playing_this_round` / `_next_round`, defensive
 contributions, set-piece order and notes, discipline, ICT, and FPL's own
 projections.
+
+`defensive_contribution` is an aggregate and cannot be decomposed after the
+fact, so its raw components are mirrored alongside it:
+`clearances_blocks_interceptions`, `tackles` and `recoveries`. Defenders and
+midfielders cross the DEFCON threshold on different combinations of these, and
+`recoveries` counts towards it for midfielders and forwards only — so modelling
+the probability of a player clearing the threshold needs the parts, not the
+total.
 
 `starts` is the one to reach for first. `minutes` alone cannot separate a player
 who started twenty games from one who came off the bench in thirty-eight, and
@@ -90,6 +121,24 @@ baseline means you never have to read the previous month to resolve a player.
 
 `now_cost` and the `cost_change_*` columns are in tenths of a million, as the API
 reports them. (`players.csv` `price` is in millions.)
+
+### `fixture_stats.csv`
+
+```
+fixture_id, gw, player_id, team_side, identifier, value
+```
+
+Flattened from `fixtures[].stats` — one row per fixture per player per stat.
+`team_side` is `h` or `a`.
+
+This overlaps `player_history.csv` but is not redundant. `event/{id}/live/`
+aggregates a player across a whole gameweek, so in a double gameweek it cannot
+say which of the two fixtures a goal came in. This can.
+
+Unlike the append-only files it is rebuilt in full on every run, because it is
+re-fetchable at any time and FPL amends it: bonus points are provisional until
+`data_checked`, and stat corrections land days later. A rewrite picks those up;
+an append would freeze the first, wrong version.
 
 ### `player_history.csv`
 
@@ -131,6 +180,16 @@ This is designed to run unattended for nine months, where the realistic failure
 is not a crash but a job that keeps succeeding while producing garbage, or one
 that quietly stops running.
 
+**Every write is verified.** After writing, `build_fpl.py` reads each file back
+off disk and checks two independent things: that the content carries this run's
+timestamp, and that the file's modification time is from this run. Either alone
+has a blind spot — the content check cannot see a write that never happened when
+the previous run fell inside the same clock second. A separate workflow step then
+confirms `meta.json` reached the *commit* with that same timestamp and all its
+keys intact, which catches a stray `.gitignore` rule or an unstaged path. A
+frozen `meta.json` would defeat the entire staleness design from the inside, so
+it fails the run rather than being published.
+
 **Nothing is written partially.** Every file is built into a temp path, validated,
 then renamed into place. A malformed API response exits non-zero and leaves the
 whole previous set untouched — a stale but well-formed file is far more useful
@@ -140,11 +199,15 @@ than a fresh corrupt one, because staleness is detectable and corruption is not.
 gain rows. Existing rows are carried through byte for byte; only the comment
 header is refreshed, so its `fetched=` stays honest.
 
-**Schema drift is loud.** The expected field list for each endpoint is an
-explicit constant in the code. If FPL renames or drops a field, the column is
-still written — empty — *and* the discrepancy lands in `meta.json` `warnings[]`.
-A silently null column is far worse than a loud one. New fields FPL adds are
-reported there too.
+**Schema drift is loud, but not noisy.** The expected field list for each
+endpoint is an explicit constant in the code. If FPL renames or drops a field, the
+column is still written — empty — *and* the discrepancy lands in `meta.json`
+`warnings[]`. A silently null column is far worse than a loud one. Fields FPL has
+that this mirror deliberately does not carry (derived ranks, photo URLs, internal
+flags) sit in a matching `IGNORED_*` constant, so the guard stays quiet about the
+forty already reviewed and still fires the moment something genuinely new
+appears. A guard that reports the same forty fields every hour is a guard nobody
+reads.
 
 **Staleness surfaces in one place.** Each builder records its last run in
 `data/build_status.json`. `build_fpl.py` runs last and folds the lot into
@@ -182,7 +245,7 @@ job can be kicked by hand from there.
 python build_snapshots.py        # price/ownership/news history  (run first)
 python build_player_history.py   # per-gameweek panel
 python build_squad.py            # my squad                      (FPL_TEAM_ID)
-python build_fpl.py              # players/teams/fixtures/fdr/meta (run last)
+python build_fpl.py              # players/teams/fixtures/fdr/fixture_stats/meta
 ODDS_API_KEY=... python build_odds.py
 ```
 

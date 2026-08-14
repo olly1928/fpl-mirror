@@ -35,19 +35,22 @@ from fpl_common import (
 
 OUT = DATA / "player_history.csv"
 
-COLS = [
-    "gw", "player_id", "minutes", "starts", "total_points", "goals_scored",
-    "assists", "clean_sheets", "goals_conceded", "own_goals", "penalties_saved",
+# The stats block on each element of the live payload, read straight out of it.
+# clearances_blocks_interceptions, tackles and recoveries are the raw components
+# defensive_contribution is built from — the aggregate cannot be decomposed after
+# the fact, and defenders and midfielders cross the threshold on different
+# combinations of them.
+STAT_COLS = [
+    "minutes", "starts", "total_points", "goals_scored", "assists",
+    "clean_sheets", "goals_conceded", "own_goals", "penalties_saved",
     "penalties_missed", "yellow_cards", "red_cards", "saves", "bonus", "bps",
     "influence", "creativity", "threat", "ict_index",
     "expected_goals", "expected_assists", "expected_goal_involvements",
     "expected_goals_conceded", "defensive_contribution",
-    "fixture_id", "opponent_team", "was_home",
+    "clearances_blocks_interceptions", "tackles", "recoveries",
 ]
 
-# The stats block on each element of the live payload. Everything from
-# 'minutes' through 'defensive_contribution' is read straight out of it.
-STAT_COLS = COLS[2:-3]
+COLS = ["gw", "player_id"] + STAT_COLS + ["fixture_id", "opponent_team", "was_home"]
 
 EXPECTED_LIVE_STAT_FIELDS = list(STAT_COLS)
 
@@ -80,13 +83,29 @@ def read_existing(path):
 
     Comment lines and the column header are dropped — they get rebuilt on write.
     Data lines are returned verbatim so an append never reformats history.
+
+    If the column header on disk does not match the columns this build produces,
+    stop. Appending wider rows under a rewritten header would silently misalign
+    every row already in the file, which is the one thing an append-only file
+    must never do. Rebuilding into a new file is the supported move — this data
+    is re-fetchable from event/{id}/live/ indefinitely, so nothing is lost.
     """
     if not path.exists():
         return [], set()
 
-    lines = [ln for ln in path.read_text(encoding="utf-8").split("\n")
-             if ln and not ln.startswith("#")]
+    raw = path.read_text(encoding="utf-8").split("\n")
+    lines = [ln for ln in raw if ln and not ln.startswith("#")]
     if lines and lines[0].startswith("gw,"):
+        on_disk = lines[0].split(",")
+        if on_disk != COLS:
+            added = [c for c in COLS if c not in on_disk]
+            removed = [c for c in on_disk if c not in COLS]
+            die(f"{path} was written with a different set of columns and appending "
+                f"would misalign every existing row.\n"
+                f"  added since:   {', '.join(added) or 'none'}\n"
+                f"  removed since: {', '.join(removed) or 'none'}\n"
+                f"Rebuild into a new file instead, then swap it in:\n"
+                f"  python build_player_history.py --backfill-from 1 --out data/player_history_v2.csv")
         lines = lines[1:]
 
     seen = set()

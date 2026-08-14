@@ -199,7 +199,7 @@ def write_all(pending):
 
 # ---------------------------------------------------------------- schema drift
 
-def check_fields(records, expected, label, report_new=True):
+def check_fields(records, expected, label, report_new=True, ignore=()):
     """
     Compare what the API actually sent against the field list we expect.
 
@@ -213,6 +213,12 @@ def check_fields(records, expected, label, report_new=True):
     and listing the other thirty-eight every hour would bury the warnings that
     matter. One caller per endpoint owns the new-field report; for elements that
     is build_fpl.
+
+    Pass `ignore` for fields that exist, have been reviewed, and are deliberately
+    not mirrored. They are subtracted from the new-field report so it stays quiet
+    about what is already known and still fires the moment FPL ships something
+    genuinely new. Without it the guard reports the same forty fields every hour
+    and stops being read, which is the failure mode it exists to prevent.
 
     The union of keys across every record is used rather than the first one,
     because FPL occasionally omits null-valued keys on individual elements.
@@ -232,7 +238,7 @@ def check_fields(records, expected, label, report_new=True):
             f"{label}: expected field(s) absent from the API response and written "
             f"as empty: {', '.join(missing)}"
         )
-    added = sorted(actual - set(expected)) if report_new else []
+    added = sorted(actual - set(expected) - set(ignore)) if report_new else []
     if added:
         warnings.append(
             f"{label}: {len(added)} new field(s) present in the API and not mirrored: "

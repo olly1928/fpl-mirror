@@ -76,6 +76,47 @@ jobs:
           git pull --rebase origin "${GITHUB_REF_NAME}"
           git push
 
+      # build_fpl already proves meta.json reached the disk. This proves it
+      # reached the commit, which is a different failure: a stray .gitignore
+      # rule or a path the add step never staged would leave the published
+      # mirror frozen while every local check passed.
+      - name: Verify meta.json reached the commit
+        if: ${{ !cancelled() }}
+        run: |
+          if git check-ignore -q data/meta.json; then
+            echo "FATAL: data/meta.json is gitignored — it can never be published." >&2
+            exit 1
+          fi
+          if ! git diff --quiet HEAD -- data/; then
+            echo "FATAL: files under data/ changed but were not committed:" >&2
+            git diff --name-only HEAD -- data/ >&2
+            exit 1
+          fi
+          python - <<'PY'
+          import json, subprocess, sys
+
+          disk = json.load(open("data/meta.json"))
+          committed = json.loads(subprocess.run(
+              ["git", "show", "HEAD:data/meta.json"],
+              capture_output=True, text=True, check=True).stdout)
+
+          problems = []
+          if committed.get("fetched_at") != disk.get("fetched_at"):
+              problems.append(
+                  f"committed meta.json fetched_at={committed.get('fetched_at')!r} "
+                  f"but the working copy says {disk.get('fetched_at')!r}")
+          for key in ("events", "game_settings", "chips", "element_types",
+                      "warnings", "components", "stale"):
+              if key not in committed:
+                  problems.append(f"committed meta.json is missing {key!r}")
+          if problems:
+              print("FATAL: meta.json did not reach the commit intact:", file=sys.stderr)
+              for p in problems:
+                  print(f"  {p}", file=sys.stderr)
+              raise SystemExit(1)
+          print(f"meta.json committed OK — fetched_at={committed['fetched_at']}")
+          PY
+
       # Repo-owner email on a failed run is on by default, but it is easy for it
       # to be going somewhere nobody reads. An issue is visible in the repo
       # itself, notifies watchers, and is impossible to miss on the next visit.
