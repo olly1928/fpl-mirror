@@ -41,6 +41,8 @@ import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
 
+from fpl_common import record_status
+
 ODDS_BASE = "https://api.the-odds-api.com/v4"
 FPL_BOOTSTRAP = "https://fantasy.premierleague.com/api/bootstrap-static/"
 SPORT = "soccer_epl"
@@ -390,11 +392,20 @@ def build_row(event, lookup, fetched_at, tally):
 
 def write_csv(rows):
     os.makedirs("data", exist_ok=True)
-    with open(OUT, "w", newline="", encoding="utf-8") as f:
+    # Temp file then rename, so a crash mid-write cannot leave a truncated
+    # odds.csv where a complete stale one used to be.
+    tmp = OUT + ".tmp"
+    with open(tmp, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=COLUMNS)
         w.writeheader()
         w.writerows(rows)
+    os.replace(tmp, OUT)
     print(f"  wrote {OUT} ({len(rows)} rows)")
+
+    # Twice daily, so meta.json should only call this stale after 24 hours.
+    record_status("build_odds", expected_interval_minutes=720,
+                  warnings=[f"unmatched club name: {n}" for n in sorted(UNMATCHED)],
+                  rows=len(rows))
 
 
 # ------------------------------------------------------------------ main

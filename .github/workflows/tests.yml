@@ -1,0 +1,53 @@
+name: Tests
+
+# The acceptance checks from the expansion spec, run against synthetic API
+# payloads so they need no network and no secrets. Two of them — a malformed
+# response, and a field FPL renamed away — cannot be produced against the live
+# API on demand, which is the whole reason the harness fakes the transport
+# rather than hitting the real thing.
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.7'
+
+      - name: Confirm the builders need nothing but the standard library
+        run: |
+          python - <<'PY'
+          import ast, pathlib, sys
+          stdlib = set(sys.stdlib_module_names)
+          local = {p.stem for p in pathlib.Path('.').glob('*.py')}
+          bad = []
+          for path in sorted(pathlib.Path('.').rglob('*.py')):
+              tree = ast.parse(path.read_text())
+              for node in ast.walk(tree):
+                  if isinstance(node, ast.Import):
+                      names = [a.name.split('.')[0] for a in node.names]
+                  elif isinstance(node, ast.ImportFrom):
+                      names = [(node.module or '').split('.')[0]]
+                  else:
+                      continue
+                  bad += [f"{path}: {n}" for n in names
+                          if n and n not in stdlib and n not in local]
+          if bad:
+              print("third-party imports found:", *bad, sep="\n  ")
+              raise SystemExit(1)
+          print("stdlib only — nothing to pin, nothing to break in February")
+          PY
+
+      - name: Acceptance checks
+        run: python tests/test_offline.py

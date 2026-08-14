@@ -2,39 +2,105 @@ name: FPL mirror
 
 # Refreshes the data hourly and commits it to the repo.
 # No secrets needed — the FPL API and the entry endpoints used here are public.
+#
+# Step order is deliberate. build_snapshots runs first because it is the only
+# job capturing something that cannot be re-fetched later: price, ownership,
+# transfer counts and injury news are overwritten in place by FPL, so an hour
+# missed is an hour gone. build_fpl runs last because it folds every other
+# builder's warnings and freshness into meta.json.
+#
+# Every step after the first runs even if an earlier one failed, so a broken
+# squad endpoint cannot cost us a price snapshot. The job still reports failure.
 
 on:
   schedule:
     - cron: '0 * * * *'      # every hour, on the hour
-  workflow_dispatch:             # lets you trigger it by hand
+    - cron: '10 1,2 * * *'   # second pass just after FPL's overnight price run,
+                             # covering 02:00 UK in both BST (01:00Z) and GMT (02:00Z)
+  workflow_dispatch:         # lets you trigger it by hand
 
 permissions:
   contents: write
+  issues: write              # the failure notice below opens an issue
+
+# Never let two runs push at once.
+concurrency:
+  group: fpl-mirror
+  cancel-in-progress: false
 
 jobs:
   mirror:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Full history, so the rebase before pushing has a merge base. The
+          # odds mirror can land a commit while this job is mid-run.
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          # Pinned to an exact patch. A pipeline meant to run unattended for nine
+          # months should not change interpreter underneath itself in February.
+          python-version: '3.12.7'
 
-      - name: Build CSVs from the FPL API
-        run: python build_fpl.py
+      # The one irreplaceable file. First, always.
+      - name: Snapshot the ephemeral fields
+        run: python build_snapshots.py
+
+      # No-op unless a gameweek has just been marked data_checked.
+      - name: Capture any newly completed gameweek
+        if: ${{ !cancelled() }}
+        run: python build_player_history.py
 
       # Pre-season this writes "picks": null and exits 0 — the picks endpoint
       # does not exist until a gameweek has started. That is not a failure.
       - name: Mirror my squad
+        if: ${{ !cancelled() }}
         run: python build_squad.py
         env:
           FPL_TEAM_ID: '790889'
 
+      # Last, so meta.json can report on everything above it.
+      - name: Build CSVs from the FPL API
+        if: ${{ !cancelled() }}
+        run: python build_fpl.py
+
       - name: Commit if anything changed
+        if: ${{ !cancelled() }}
         run: |
           git config user.name  "fpl-mirror"
           git config user.email "actions@github.com"
           git add data/
           git diff --staged --quiet || git commit -m "FPL data $(date -u +%Y-%m-%dT%H:%M)"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
           git push
+
+      # Repo-owner email on a failed run is on by default, but it is easy for it
+      # to be going somewhere nobody reads. An issue is visible in the repo
+      # itself, notifies watchers, and is impossible to miss on the next visit.
+      # One issue is reused rather than a new one per failed run.
+      - name: Report failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          TITLE="FPL mirror is failing"
+          EXISTING=$(gh issue list --state open --label mirror-failure \
+                       --json number --jq '.[0].number' || true)
+          BODY="The hourly mirror failed at $(date -u +%Y-%m-%dT%H:%MZ).
+
+          Run: $RUN_URL
+
+          The previous data files are untouched — every builder writes atomically
+          and refuses to overwrite good data with a partial file. Check
+          \`data/meta.json\` for \`stale\` and \`warnings[]\` before assuming the
+          mirror is current."
+          if [ -n "$EXISTING" ]; then
+            gh issue comment "$EXISTING" --body "$BODY"
+          else
+            gh label create mirror-failure --color d73a4a \
+              --description "A scheduled mirror run failed" 2>/dev/null || true
+            gh issue create --title "$TITLE" --label mirror-failure --body "$BODY"
+          fi
