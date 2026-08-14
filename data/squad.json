@@ -1,0 +1,20 @@
+{
+  "fetched_at": "2026-08-14T14:20:18.947546+00:00",
+  "team_id": 790889,
+  "current_event": null,
+  "next_event": 1,
+  "notes": [
+    "No picks available — pre-season, or the gameweek has not started. Squad must be pasted by hand until GW1 kicks off.",
+    "Selling prices are NOT in the public API — they need an authenticated session. Values above are current market prices. Any transfer maths using them is approximate; ask me to paste selling prices for anything tight."
+  ],
+  "entry_name": "Meeks Freeks",
+  "manager": "Oliver Meiklejohn",
+  "overall_points": null,
+  "overall_rank": null,
+  "chips_used": [],
+  "gameweek_history": [],
+  "free_transfers_estimate": 1,
+  "free_transfers_confidence": "estimated from transfer history — confirm on the FPL site",
+  "picks": null,
+  "selling_prices": null
+}
