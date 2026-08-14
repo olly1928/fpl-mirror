@@ -1,20 +1,28 @@
 {
-  "fetched_at": "2026-08-14T14:20:18.947546+00:00",
+  "fetched_at": "2026-08-14T15:08:19.523591+00:00",
   "team_id": 790889,
-  "current_event": null,
-  "next_event": 1,
-  "notes": [
-    "No picks available — pre-season, or the gameweek has not started. Squad must be pasted by hand until GW1 kicks off.",
-    "Selling prices are NOT in the public API — they need an authenticated session. Values above are current market prices. Any transfer maths using them is approximate; ask me to paste selling prices for anything tight."
-  ],
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
+  "current_event": null,
+  "next_event": 1,
+  "next_deadline": "2026-08-21T17:30:00Z",
+  "preseason": true,
   "overall_points": null,
   "overall_rank": null,
+  "bank": null,
+  "squad_value": null,
+  "notes": [
+    "FREE TRANSFERS: ESTIMATE — no gameweeks played yet. GW1 is unlimited squad selection, so 1 free transfer going into GW2. Confirm on the FPL site.",
+    "No picks available. It is pre-season: no gameweek is current yet, so the FPL API has no picks to publish for entry 790889. The squad will appear here automatically once GW1 starts (deadline 2026-08-21T17:30:00Z).",
+    "SELLING PRICES: not available. They require an authenticated FPL session, which this mirror deliberately does not have. Every 'now_cost' above is the CURRENT MARKET PRICE, not what I would receive for selling. A player who has risen since I bought them sells for purchase price plus half the rise, rounded down, so market price overstates my sale proceeds. Treat any transfer or budget maths built on these numbers as approximate, and ask me to paste the real selling prices before committing to anything tight.",
+    "All prices and squad_value are in millions. bank and squad_value are as at the last deadline, so they do not move with in-week price changes."
+  ],
   "chips_used": [],
   "gameweek_history": [],
   "free_transfers_estimate": 1,
-  "free_transfers_confidence": "estimated from transfer history — confirm on the FPL site",
+  "free_transfers_estimate_note": "ESTIMATE — no gameweeks played yet. GW1 is unlimited squad selection, so 1 free transfer going into GW2. Confirm on the FPL site.",
+  "picks_event": null,
+  "active_chip": null,
   "picks": null,
   "selling_prices": null
 }
