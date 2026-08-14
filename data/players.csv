@@ -1,4 +1,4 @@
-# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=587 fetched=2026-08-14T15:08:18.690561+00:00
+# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=587 fetched=2026-08-14T15:43:49.188403+00:00
 # pts/ppg/mins/g/a/cs/bonus are LAST SEASON totals carried into the new game.
 # st: a=available i=injured d=doubtful s=suspended u=unavailable
 id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
@@ -8,7 +8,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 397,Semenyo,MCI,MID,8.5,27.4,202,5.5,3200,17,6,12,18,a
 480,Gibbs-White,NFO,MID,8.0,11.6,188,5.1,3101,15,4,10,18,a
 13,Rice,ARS,MID,7.5,21.6,184,5.1,3093,4,9,18,23,a
-106,Thiago,BRE,FWD,8.0,16.0,181,4.8,3282,22,1,10,22,a
+106,Thiago,BRE,FWD,8.0,16.1,181,4.8,3282,22,1,10,22,a
 481,Anderson,MCI,MID,6.5,11.1,180,4.7,3332,4,5,10,16,a
 388,Guéhi,MCI,DEF,6.0,22.6,179,5.1,3150,3,5,14,14,a
 165,João Pedro,CHE,FWD,7.5,55.9,177,5.1,2658,15,9,10,30,a
@@ -31,7 +31,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 236,Dewsbury-Hall,EVE,MID,6.5,3.7,151,4.9,2629,8,7,8,18,a
 533,Mukiele,SUN,DEF,5.5,4.5,151,4.7,2784,3,5,9,11,d
 5,J.Timber,ARS,DEF,6.5,0.3,149,5.0,2452,3,6,13,9,i
-427,Mbeumo,MUN,MID,8.0,26.4,148,4.5,2611,11,3,8,16,a
+427,Mbeumo,MUN,MID,8.0,26.5,148,4.5,2611,11,3,8,16,a
 112,Van Hecke,TOT,DEF,5.0,8.6,148,4.1,3210,3,3,10,8,a
 542,E.Le Fée,SUN,MID,6.0,12.8,147,4.1,2930,5,6,10,16,a
 371,Gravenberch,LIV,MID,6.0,2.0,144,4.0,2991,5,5,9,17,a
@@ -68,11 +68,11 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 445,Thiaw,NEW,DEF,5.0,2.0,126,3.6,2963,4,0,5,12,a
 94,Schade,BRE,MID,6.0,1.9,125,3.6,2744,8,5,11,5,a
 156,Neto,CHE,MID,6.5,1.4,125,3.7,2629,5,7,11,9,a
-366,Wirtz,LIV,MID,7.5,14.6,125,3.8,2374,5,4,10,17,a
+366,Wirtz,LIV,MID,7.5,14.7,125,3.8,2374,5,4,10,17,a
 380,Ekitiké,LIV,FWD,7.5,0.2,125,4.5,1797,11,4,7,22,i
 535,Alderete,SUN,DEF,5.0,0.7,125,3.8,2797,1,1,10,5,d
 57,Petrović,BOU,GKP,4.5,3.7,124,3.3,3420,0,0,11,5,a
-544,Xhaka,SUN,MID,5.5,5.2,124,3.6,2901,1,6,9,8,a
+544,Xhaka,SUN,MID,5.5,5.1,124,3.6,2901,1,6,9,8,a
 253,Andersen,FUL,DEF,5.0,0.1,123,3.7,2882,0,1,8,8,s
 250,Leno,FUL,GKP,4.5,3.3,122,3.2,3420,0,0,9,8,a
 28,Martinez,AVL,GKP,5.0,5.0,120,3.8,2835,0,1,7,11,a
@@ -122,7 +122,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 257,Bassey,FUL,DEF,4.5,0.6,103,3.4,2532,1,1,7,9,a
 261,Iwobi,FUL,MID,5.5,1.0,103,3.6,2420,4,3,5,13,a
 41,Buendía,AVL,MID,6.0,1.1,102,2.8,1753,6,2,3,10,a
-31,Konsa,AVL,DEF,4.5,16.0,100,2.9,3035,0,1,9,3,a
+31,Konsa,AVL,DEF,4.5,15.9,100,2.9,3035,0,1,9,3,a
 116,Dunk,BHA,DEF,4.5,0.8,100,3.0,2837,1,1,7,5,a
 327,Bijol,LEE,DEF,5.0,0.3,99,4.0,1888,1,3,5,6,a
 97,Jensen,BRE,MID,5.5,0.2,98,2.7,2239,3,2,9,1,a
@@ -132,7 +132,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 144,Gusto,CHE,DEF,5.0,1.1,96,2.8,2255,2,3,7,7,a
 330,Bogle,LEE,DEF,4.5,0.5,96,2.8,2795,1,5,6,1,a
 442,Pope,NEW,GKP,5.0,1.2,96,3.6,2416,0,1,7,3,a
-497,Dubravka,TOT,GKP,4.0,22.5,96,2.7,3150,0,0,4,7,a
+497,Dubravka,TOT,GKP,4.0,22.4,96,2.7,3150,0,0,4,7,a
 233,Mykolenko,EVE,DEF,4.5,1.3,95,2.9,2959,0,1,9,2,a
 249,Barry,EVE,FWD,5.5,1.0,95,2.5,1898,8,0,7,9,a
 269,Sessegnon,FUL,DEF,4.5,0.4,95,3.5,1816,3,3,6,8,a
@@ -172,7 +172,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 391,Gvardiol,MCI,DEF,5.5,13.7,79,4.4,1370,2,2,6,5,a
 449,Hall,NEW,DEF,5.0,3.9,79,2.6,2176,1,2,4,4,a
 124,Groß,BHA,MID,5.5,11.0,78,4.1,1636,1,6,6,10,a
-505,Spence,TOT,DEF,4.5,6.7,78,2.6,2049,0,0,9,3,a
+505,Spence,TOT,DEF,4.5,6.6,78,2.6,2049,0,0,9,3,a
 514,Tel,TOT,MID,6.0,0.4,78,2.5,1334,4,2,3,7,a
 73,Adams,BOU,MID,5.0,0.7,77,3.1,1769,2,2,7,3,a
 211,Yeremy,CRY,MID,5.5,0.2,77,2.3,2074,2,2,7,3,a
@@ -274,7 +274,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 11,Mosquera,ARS,DEF,5.5,13.8,40,2.0,986,0,0,3,1,a
 35,Bogarde,AVL,MID,5.0,0.1,40,1.4,1042,0,0,2,4,a
 71,Cook,BOU,MID,5.0,0.1,40,2.2,872,0,1,1,0,a
-526,Solanke,TOT,FWD,6.0,2.2,40,2.7,997,3,0,0,4,a
+526,Solanke,TOT,FWD,6.0,2.1,40,2.7,997,3,0,0,4,a
 114,Boscagli,BHA,DEF,4.5,0.2,39,3.2,799,0,1,3,4,a
 151,Acheampong,CHE,DEF,4.5,0.3,39,2.3,657,1,0,2,5,a
 255,J.Cuenca,FUL,DEF,4.5,0.0,39,2.6,935,0,0,2,1,a
@@ -482,7 +482,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 570,Palacios,FUL,MID,5.5,0.1,0,0.0,0,0,0,0,0,a
 580,Charles,FUL,MID,5.0,0.0,0,0.0,0,0,0,0,0,a
 273,Phillips,HUL,GKP,4.0,2.0,0,0.0,0,0,0,0,0,a
-274,Butland,HUL,GKP,4.5,0.6,0,0.0,0,0,0,0,0,i
+274,Butland,HUL,GKP,4.5,0.5,0,0.0,0,0,0,0,0,i
 275,Cartwright,HUL,GKP,4.0,0.1,0,0.0,0,0,0,0,0,u
 276,Lo-Tutala,HUL,GKP,4.0,0.2,0,0.0,0,0,0,0,0,a
 277,Egan,HUL,DEF,4.0,1.7,0,0.0,0,0,0,0,0,a
