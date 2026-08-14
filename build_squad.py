@@ -12,19 +12,32 @@ returns 404. That is expected, not a failure: the script writes "picks": null
 with a note saying why and exits 0. Everything else is required — if
 bootstrap-static, /entry/ or /history/ cannot be read the script exits 1 rather
 than writing a half-empty file.
+
+Beyond the squad itself this also mirrors the full transfer history, previous
+seasons, chip usage and standings for every mini-league the entry is in, so
+rank-vs-rivals is answerable from the feed. Those four are enrichment: if one of
+them fails the file is still written, with the reason recorded in notes[].
 """
 
 import json
 import os
 import sys
 import urllib.error
-import urllib.request
 from datetime import datetime, timezone
+
+from fpl_common import api, record_status
 
 TEAM_ID = os.environ.get("FPL_TEAM_ID", "790889").strip()
 BASE = "https://fantasy.premierleague.com/api"
 OUT = "data/squad.json"
-HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; fpl-mirror/1.0)"}
+
+# Classic leagues come in two flavours: 'x' is a mini-league someone created,
+# 's' is a system league (Overall, your country, your favourite club). System
+# leagues have millions of entries and no rival worth tracking, so only the
+# mini-leagues are worth a standings call.
+MINI_LEAGUE_TYPE = "x"
+MAX_LEAGUES = 10
+MAX_STANDINGS_ROWS = 50
 
 POS = {1: "GKP", 2: "DEF", 3: "MID", 4: "FWD"}
 
@@ -47,17 +60,38 @@ def die(msg):
     sys.exit(1)
 
 
-def get(path):
-    """GET a JSON endpoint. Raises on any failure — callers decide what is fatal."""
-    req = urllib.request.Request(BASE + path, headers=HEADERS)
-    with urllib.request.urlopen(req, timeout=30) as r:
-        return json.load(r)
+def get(path, cache_ttl=0):
+    """
+    GET a JSON endpoint. Raises on any failure — callers decide what is fatal.
+
+    Retries and the per-run request ceiling live in fpl_common, so every builder
+    in this repo backs off the same way. A 404 still comes straight back as an
+    HTTPError, which is what get_picks relies on.
+    """
+    return api(path, cache_ttl=cache_ttl)
 
 
-def get_required(path, what):
+def get_optional(path, what, default=None):
+    """
+    Fetch something worth having but not worth failing the whole file over.
+
+    Transfer history, past seasons and league standings are all enrichment. If
+    one of them is down, a squad.json without it still answers every question the
+    consumer actually needs to make a transfer, so the failure is noted in
+    notes[] rather than raised.
+    """
+    try:
+        return get(path), None
+    except urllib.error.HTTPError as exc:
+        return default, f"{what} unavailable — {BASE}{path} returned HTTP {exc.code} {exc.reason}"
+    except Exception as exc:
+        return default, f"{what} unavailable — could not read {BASE}{path}: {exc}"
+
+
+def get_required(path, what, cache_ttl=0):
     """Fetch something the file is useless without."""
     try:
-        return get(path)
+        return get(path, cache_ttl=cache_ttl)
     except urllib.error.HTTPError as exc:
         die(f"{what} — {BASE}{path} returned HTTP {exc.code} {exc.reason}")
     except Exception as exc:
@@ -155,11 +189,88 @@ def describe_pick(pick, element, teams):
     }
 
 
+def describe_transfer(t, elements, teams):
+    """One transfer, with both players resolved so the row reads on its own."""
+    def side(element_id, cost):
+        e = elements.get(element_id, {})
+        return {
+            "element": element_id,
+            "name": e.get("web_name"),
+            "team": teams.get(e.get("team")),
+            "pos": POS.get(e.get("element_type")),
+            # Costs in the transfers feed are in tenths of a million, and they are
+            # the prices at the moment of the transfer, not today's.
+            "cost_at_transfer": (cost / 10.0) if cost is not None else None,
+        }
+
+    return {
+        "event": t.get("event"),
+        "time": t.get("time"),
+        "in": side(t.get("element_in"), t.get("element_in_cost")),
+        "out": side(t.get("element_out"), t.get("element_out_cost")),
+    }
+
+
+def mini_leagues(entry, notes):
+    """
+    Standings for the mini-leagues this entry is in, so rank-vs-rivals is
+    queryable rather than something to go and look up on the website.
+
+    Capped at MAX_LEAGUES leagues and MAX_STANDINGS_ROWS rows each: the point is
+    the rivals near the top, and an unbounded fetch here is how a quiet hourly
+    job turns into a rate-limit problem.
+    """
+    classic = ((entry.get("leagues") or {}).get("classic") or [])
+    mine = [lg for lg in classic if lg.get("league_type") == MINI_LEAGUE_TYPE]
+    if len(mine) > MAX_LEAGUES:
+        notes.append(
+            f"MINI-LEAGUES: {len(mine)} found, only the first {MAX_LEAGUES} were fetched."
+        )
+        mine = mine[:MAX_LEAGUES]
+
+    out = []
+    for lg in mine:
+        payload, err = get_optional(
+            f"/leagues-classic/{lg['id']}/standings/", f"standings for league {lg['id']}"
+        )
+        if err:
+            notes.append(err)
+            out.append({"id": lg.get("id"), "name": lg.get("name"),
+                        "my_rank": lg.get("entry_rank"), "standings": None,
+                        "standings_error": err})
+            continue
+
+        results = ((payload or {}).get("standings") or {}).get("results") or []
+        truncated = len(results) > MAX_STANDINGS_ROWS
+        out.append({
+            "id": lg.get("id"),
+            "name": lg.get("name"),
+            "my_rank": lg.get("entry_rank"),
+            "my_last_rank": lg.get("entry_last_rank"),
+            "entries": len(results),
+            "standings_truncated_to": MAX_STANDINGS_ROWS if truncated else None,
+            "standings": [
+                {
+                    "rank": r.get("rank"),
+                    "last_rank": r.get("last_rank"),
+                    "entry": r.get("entry"),
+                    "entry_name": r.get("entry_name"),
+                    "manager": r.get("player_name"),
+                    "event_total": r.get("event_total"),
+                    "total": r.get("total"),
+                    "is_me": str(r.get("entry")) == TEAM_ID,
+                }
+                for r in results[:MAX_STANDINGS_ROWS]
+            ],
+        })
+    return out
+
+
 def main():
     os.makedirs("data", exist_ok=True)
     print(f"Mirroring squad for entry {TEAM_ID}")
 
-    boot = get_required("/bootstrap-static/", "bootstrap-static")
+    boot = get_required("/bootstrap-static/", "bootstrap-static", cache_ttl=600)
     if not boot.get("elements") or not boot.get("teams"):
         die("bootstrap-static came back without elements/teams — refusing to write a stub file")
 
@@ -207,6 +318,27 @@ def main():
         }
         for w in (history.get("current") or [])
     ]
+
+    out["past_seasons"] = [
+        {
+            "season": p.get("season_name"),
+            "total_points": p.get("total_points"),
+            "overall_rank": p.get("rank"),
+        }
+        for p in (history.get("past") or [])
+    ]
+
+    # Full transfer history. The costs in it are the prices at the time of the
+    # transfer, which is the only place a purchase price is recoverable without
+    # an authenticated session — see the selling-prices note below.
+    transfers, transfers_err = get_optional(
+        f"/entry/{TEAM_ID}/transfers/", "transfer history", default=[]
+    )
+    if transfers_err:
+        out["notes"].append(transfers_err)
+    out["transfers"] = [describe_transfer(t, elements, teams) for t in (transfers or [])]
+
+    out["mini_leagues"] = mini_leagues(entry, out["notes"])
 
     ft, ft_note = estimate_free_transfers(history)
     out["free_transfers_estimate"] = ft
@@ -264,14 +396,29 @@ def main():
         "last deadline, so they do not move with in-week price changes."
     )
 
-    with open(OUT, "w", encoding="utf-8") as f:
+    # Temp file then rename: an interrupted write must never replace a good
+    # squad.json with a truncated one.
+    tmp = OUT + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
         json.dump(out, f, indent=2, ensure_ascii=False)
         f.write("\n")
+    os.replace(tmp, OUT)
+
+    record_status(
+        "build_squad",
+        expected_interval_minutes=60,
+        warnings=[n for n in out["notes"] if "unavailable" in n],
+        picks=len(out["picks"]) if out.get("picks") else 0,
+        transfers=len(out.get("transfers") or []),
+        mini_leagues=len(out.get("mini_leagues") or []),
+    )
 
     n = len(out["picks"]) if out.get("picks") else 0
     print(
         f"Wrote {OUT} — {n} picks, bank {out.get('bank')}, value {out.get('squad_value')}, "
-        f"FT est {out.get('free_transfers_estimate')} (estimate)"
+        f"FT est {out.get('free_transfers_estimate')} (estimate), "
+        f"{len(out.get('transfers') or [])} transfers, "
+        f"{len(out.get('mini_leagues') or [])} mini-league(s)"
     )
 
 

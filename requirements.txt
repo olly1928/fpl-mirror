@@ -1,0 +1,10 @@
+# Deliberately empty.
+#
+# Every builder in this repo uses the Python standard library only — urllib,
+# json, csv, argparse. There is nothing to install and therefore nothing that
+# can ship a breaking major version in February and take the pipeline down with
+# it, which is exactly the maintenance this design is trying to avoid.
+#
+# The runtime is pinned in the workflows (python-version: '3.12.7'). The tests
+# workflow enforces the stdlib-only rule on every push, so adding a dependency
+# here means noticing you have done it.

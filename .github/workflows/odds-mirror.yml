@@ -16,6 +16,11 @@ on:
 
 permissions:
   contents: write
+  issues: write
+
+concurrency:
+  group: odds-mirror
+  cancel-in-progress: false
 
 jobs:
   odds:
@@ -29,7 +34,8 @@ jobs:
 
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          # Pinned to an exact patch, same reasoning as the FPL mirror.
+          python-version: '3.12.7'
 
       - name: Build odds.csv
         env:
@@ -49,3 +55,30 @@ jobs:
           # The hourly job may have pushed while we were fetching odds.
           git pull --rebase origin "${GITHUB_REF_NAME}"
           git push
+
+      # Same reasoning as the FPL mirror: default failure email is easy to miss,
+      # an issue is not. Reuses one issue rather than opening a new one per run.
+      - name: Report failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          TITLE="Odds mirror is failing"
+          EXISTING=$(gh issue list --state open --label mirror-failure --search "$TITLE" \
+                       --json number --jq '.[0].number' || true)
+          BODY="The odds mirror failed at $(date -u +%Y-%m-%dT%H:%MZ).
+
+          Run: $RUN_URL
+
+          Most likely causes, in order: the monthly Odds API credit allowance is
+          exhausted (HTTP 429), ODDS_API_KEY is missing or rejected (HTTP 401), or
+          the response shape moved and no event produced a row. The previous
+          data/odds.csv is untouched either way."
+          if [ -n "$EXISTING" ]; then
+            gh issue comment "$EXISTING" --body "$BODY"
+          else
+            gh label create mirror-failure --color d73a4a \
+              --description "A scheduled mirror run failed" 2>/dev/null || true
+            gh issue create --title "$TITLE" --label mirror-failure --body "$BODY"
+          fi
