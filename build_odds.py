@@ -53,7 +53,7 @@ COLUMNS = [
     "kickoff_utc", "home", "away", "home_code", "away_code",
     "p_home", "p_draw", "p_away", "p_over25",
     "xg_home", "xg_away", "cs_prob_home", "cs_prob_away",
-    "n_books", "fetched_at",
+    "n_books", "n_books_totals", "fetched_at",
 ]
 
 # Poisson grid: 0.20 to 4.00 in 0.05 steps.
@@ -300,7 +300,10 @@ def median_prices(event):
     totals line is used — books list several lines and they are not comparable.
 
     Returns (h2h median prices, totals median prices, number of books in the
-    h2h median).
+    h2h median, number of books in the totals median). The two counts are
+    reported separately because a fixture can have deep 1X2 pricing and a single
+    book's over/under line — and if the xG fit is resting on one book, that
+    should be visible in the CSV rather than buried.
     """
     home, away = event.get("home_team"), event.get("away_team")
     h_prices, d_prices, a_prices, over, under = [], [], [], [], []
@@ -334,15 +337,20 @@ def median_prices(event):
     if over:
         totals = {"over": statistics.median(over), "under": statistics.median(under)}
 
-    return h2h, totals, len(h_prices)
+    return h2h, totals, len(h_prices), len(over)
 
 
-def build_row(event, lookup, fetched_at):
-    h2h, totals, n_books = median_prices(event)
+def build_row(event, lookup, fetched_at, tally):
+    """Build one CSV row, recording why an event was dropped if it was."""
+    h2h, totals, n_books, n_books_totals = median_prices(event)
+    if totals:
+        tally["with_totals_25"] += 1
+
     if not h2h:
         print(f"  ! no usable UK h2h prices for "
               f"{event.get('home_team')} v {event.get('away_team')} — skipped")
         return None
+    tally["with_h2h"] += 1
 
     probs = devig(h2h)
     if not probs:
@@ -375,6 +383,7 @@ def build_row(event, lookup, fetched_at):
         "cs_prob_home": round(math.exp(-la), 4),
         "cs_prob_away": round(math.exp(-lh), 4),
         "n_books": n_books,
+        "n_books_totals": n_books_totals,
         "fetched_at": fetched_at,
     }
 
@@ -424,9 +433,8 @@ def main():
          "oddsFormat": "decimal", "dateFormat": "iso"},
         "odds",
     )
-    print(f"  {len(events)} events listed")
-
     if not events:
+        print("  events returned by the API : 0")
         print("  No fixtures listed. Normal between rounds, in international breaks "
               "and pre-season — bookmakers simply have nothing up. The API does not "
               "charge a credit for this. Writing a header-only CSV so nothing stale "
@@ -435,11 +443,25 @@ def main():
         return
 
     print("STEP 4 — consensus, de-vig and Poisson fit")
-    rows = [r for r in (build_row(e, lookup, fetched_at) for e in events) if r]
+    tally = {"with_h2h": 0, "with_totals_25": 0}
+    rows = [r for r in (build_row(e, lookup, fetched_at, tally) for e in events) if r]
+
+    # An empty odds.csv is only ever legitimate when the API returned no events
+    # at all. If events came back and nothing survived parsing, the response
+    # shape has moved and a header-only file would be indistinguishable from a
+    # quiet weekend — so say so, show the shape, and fail.
+    print("\n  events returned by the API : %d" % len(events))
+    print("  with a usable h2h market   : %d" % tally["with_h2h"])
+    print("  with a totals line at 2.5  : %d" % tally["with_totals_25"])
+    print("  rows written               : %d" % len(rows))
 
     if not rows:
-        die(f"{len(events)} events came back but none produced a usable row. "
-            "Something has changed in the response shape — refusing to overwrite "
+        print("\nPARSE FAILURE — the API returned events but none produced a row.",
+              file=sys.stderr)
+        print("Raw JSON of the first event, so the actual shape is visible:",
+              file=sys.stderr)
+        print(json.dumps(events[0], indent=2)[:8000], file=sys.stderr)
+        die(f"{len(events)} events returned, 0 rows written. Refusing to overwrite "
             "odds.csv with an empty file that would look like a quiet weekend.")
 
     rows.sort(key=lambda r: r["kickoff_utc"] or "")
