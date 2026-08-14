@@ -1,9 +1,9 @@
-# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=587 fetched=2026-08-14T15:43:49.188403+00:00
+# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=587 fetched=2026-08-14T16:42:34.043595+00:00
 # pts/ppg/mins/g/a/cs/bonus are LAST SEASON totals carried into the new game.
 # st: a=available i=injured d=doubtful s=suspended u=unavailable
 id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
-411,Haaland,MCI,FWD,15.5,73.5,239,6.8,2953,27,8,13,43,a
-426,B.Fernandes,MUN,MID,12.0,48.1,235,6.7,3065,9,24,7,41,a
+411,Haaland,MCI,FWD,15.5,73.4,239,6.8,2953,27,8,13,43,a
+426,B.Fernandes,MUN,MID,12.0,48.0,235,6.7,3065,9,24,7,41,a
 4,Gabriel,ARS,DEF,8.0,27.1,209,6.5,2750,3,5,18,30,a
 397,Semenyo,MCI,MID,8.5,27.4,202,5.5,3200,17,6,12,18,a
 480,Gibbs-White,NFO,MID,8.0,11.6,188,5.1,3101,15,4,10,18,a
@@ -15,12 +15,12 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 356,Virgil,LIV,DEF,6.5,16.9,175,4.6,3420,6,1,10,10,a
 498,Senesi,TOT,DEF,6.0,10.2,175,4.7,3288,0,6,11,14,a
 229,Tarkowski,EVE,DEF,6.0,9.7,170,4.6,3330,2,3,11,12,a
-40,Rogers,CHE,MID,7.5,26.2,169,4.6,3280,10,8,9,17,a
+40,Rogers,CHE,MID,7.5,26.1,169,4.6,3280,10,8,9,17,a
 260,Wilson,LEE,MID,6.5,7.9,168,4.7,2674,10,9,9,21,a
 55,Watkins,AVL,FWD,8.0,12.6,167,4.5,2833,16,4,9,26,a
 61,Truffert,BOU,DEF,5.5,4.9,165,4.3,3378,1,6,11,19,a
-1,Raya,ARS,GKP,6.0,31.1,162,4.4,3330,0,0,19,11,a
-368,Szoboszlai,LIV,MID,7.0,42.9,160,4.4,3232,6,7,9,21,a
+1,Raya,ARS,GKP,6.0,31.2,162,4.4,3330,0,0,19,11,a
+368,Szoboszlai,LIV,MID,7.0,42.8,160,4.4,3232,6,7,9,21,a
 387,O'Reilly,MCI,DEF,6.5,22.2,160,4.7,2643,5,4,14,10,a
 239,Garner,EVE,MID,6.0,0.4,159,4.2,3413,2,7,11,13,i
 12,Saka,ARS,MID,9.5,10.6,157,5.1,2218,7,10,12,18,a
@@ -37,7 +37,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 371,Gravenberch,LIV,MID,6.0,2.0,144,4.0,2991,5,5,9,17,a
 82,Kelleher,BRE,GKP,5.0,5.7,143,3.9,3330,0,0,10,11,a
 428,Cunha,MUN,MID,8.0,12.2,143,4.3,2493,10,4,8,14,a
-346,Calvert-Lewin,LEE,FWD,6.0,25.3,142,4.1,2721,14,2,8,20,a
+346,Calvert-Lewin,LEE,FWD,6.0,25.4,142,4.1,2721,14,2,8,20,a
 6,Saliba,ARS,DEF,6.0,0.5,137,4.4,2614,1,0,15,12,i
 68,Tavernier,BOU,MID,6.0,1.8,137,4.0,2732,7,4,11,14,a
 335,Stach,LEE,MID,6.0,1.1,137,4.7,2369,5,6,7,14,a
@@ -319,7 +319,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 63,Milosavljević,BOU,DEF,5.0,0.0,19,2.7,367,0,0,1,0,i
 148,Hato,CHE,DEF,4.5,0.9,19,0.9,1139,0,0,0,0,a
 395,Lewis,MCI,DEF,4.5,0.2,19,1.7,401,0,1,1,2,a
-245,Dibling,EVE,MID,5.5,0.1,18,1.3,349,0,0,2,0,a
+245,Dibling,EVE,MID,5.5,0.0,18,1.3,349,0,0,2,0,a
 225,Uche,CRY,FWD,5.0,0.0,17,1.2,159,0,1,0,0,u
 348,Piroe,LEE,FWD,5.0,0.5,17,1.1,244,0,0,1,0,a
 486,McAtee,NFO,MID,5.5,0.0,17,1.2,288,0,1,0,0,a
