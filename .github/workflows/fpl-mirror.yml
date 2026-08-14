@@ -1,11 +1,11 @@
 name: FPL mirror
 
-# Refreshes the data twice a day and commits it to the repo.
-# No secrets needed — the FPL API is public.
+# Refreshes the data hourly and commits it to the repo.
+# No secrets needed — the FPL API and the entry endpoints used here are public.
 
 on:
   schedule:
-    - cron: '0 * * * *'      # 06:00 and 18:00 UTC
+    - cron: '0 * * * *'      # every hour, on the hour
   workflow_dispatch:             # lets you trigger it by hand
 
 permissions:
@@ -24,8 +24,12 @@ jobs:
       - name: Build CSVs from the FPL API
         run: python build_fpl.py
 
+      # Pre-season this writes "picks": null and exits 0 — the picks endpoint
+      # does not exist until a gameweek has started. That is not a failure.
       - name: Mirror my squad
         run: python build_squad.py
+        env:
+          FPL_TEAM_ID: '790889'
 
       - name: Commit if anything changed
         run: |

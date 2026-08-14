@@ -1,8 +1,13 @@
 name: Odds mirror
 
-# Pulls bookmaker odds and non-PL fixture congestion from API-Football.
-# Runs at 07:20 and 17:20 UTC — deliberately offset from the hourly FPL
-# mirror so the two jobs never try to push at the same moment.
+# Pulls bookmaker odds from The Odds API and writes data/odds.csv.
+#
+# Runs at 07:20 and 17:20 UTC — deliberately offset from the hourly FPL mirror
+# so the two jobs never try to push at the same minute.
+#
+# Cost is 2 API credits per run (2 markets x 1 region), so 4 a day.
+# Needs the ODDS_API_KEY repository secret: gh secret set ODDS_API_KEY
+# Without it the job fails loudly rather than writing an empty file.
 
 on:
   schedule:
@@ -17,14 +22,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Full history so the rebase below has something to rebase onto —
+          # the hourly FPL mirror commits often enough to land mid-run.
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
-      - name: Build odds and congestion files
+      - name: Build odds.csv
         env:
-          API_SPORTS_KEY: ${{ secrets.API_SPORTS_KEY }}
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
         run: python build_odds.py
 
       - name: Commit if anything changed
@@ -32,7 +41,11 @@ jobs:
           git config user.name  "fpl-mirror"
           git config user.email "actions@github.com"
           git add data/
-          git diff --staged --quiet && echo "no changes" && exit 0
+          if git diff --staged --quiet; then
+            echo "no changes"
+            exit 0
+          fi
           git commit -m "Odds $(date -u +%Y-%m-%dT%H:%M)"
-          git pull --rebase
+          # The hourly job may have pushed while we were fetching odds.
+          git pull --rebase origin "${GITHUB_REF_NAME}"
           git push
