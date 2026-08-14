@@ -1,4 +1,4 @@
-# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=587 fetched=2026-08-14T22:41:43+00:00
+# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=587 fetched=2026-08-14T23:14:22+00:00
 # pts/ppg/mins/g/a/cs/bonus are LAST SEASON totals carried into the new game.
 # st: a=available i=injured d=doubtful s=suspended u=unavailable
 id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st,expected_goals,expected_goals_per_90,expected_assists,expected_assists_per_90,expected_goal_involvements,expected_goals_conceded,expected_goals_conceded_per_90,starts,starts_per_90,chance_of_playing_this_round,chance_of_playing_next_round,defensive_contribution,defensive_contribution_per_90,clean_sheets_per_90,goals_conceded_per_90,saves_per_90,penalties_order,penalties_text,direct_freekicks_order,direct_freekicks_text,corners_and_indirect_freekicks_order,corners_and_indirect_freekicks_text,yellow_cards,red_cards,own_goals,penalties_missed,penalties_saved,saves,bps,influence,creativity,threat,ict_index,form,ep_this,ep_next,value_form,value_season
@@ -94,7 +94,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st,expected_goals,expected_
 223,Mateta,CRY,FWD,6.5,6.5,114,3.6,2210,12,0,8,13,a,14.42,0.59,1.32,0.05,15.74,31.77,1.29,25,1.02,,,125,5.09,0.33,1.18,0.0,1,,,,,,2,0,0,0,0,0,397,567.2,160.6,786.0,150.8,0.0,,2.1,0.0,17.5
 491,Igor Jesus,NFO,FWD,6.0,5.4,114,3.1,2293,6,6,9,13,a,6.48,0.25,1.26,0.05,7.74,38.77,1.52,28,1.1,,,123,4.83,0.35,1.45,0.0,3,,,,,,2,0,0,0,0,0,407,420.6,240.7,726.0,136.4,0.0,,2.0,0.0,19.0
 14,Eze,ARS,MID,6.5,3.0,113,3.4,1885,7,3,11,8,a,5.18,0.25,2.66,0.13,7.84,14.21,0.68,22,1.05,,,120,5.73,0.53,0.67,0.0,,,3,,,,1,0,0,0,0,0,439,393.4,305.7,455.0,115.1,0.0,,2.3,0.0,17.4
-78,Kroupi.Jr,BOU,MID,7.5,2.6,113,3.4,1663,13,0,10,13,i,8.31,0.45,1.51,0.08,9.82,25.91,1.4,21,1.14,,0,112,6.06,0.54,1.14,0.0,1,,,,,,5,0,0,0,0,0,480,532.2,306.9,563.0,139.9,0.0,,0.0,0.0,15.1
+78,Kroupi.Jr,BOU,MID,7.5,2.5,113,3.4,1663,13,0,10,13,i,8.31,0.45,1.51,0.08,9.82,25.91,1.4,21,1.14,,0,112,6.06,0.54,1.14,0.0,1,,,,,,5,0,0,0,0,0,480,532.2,306.9,563.0,139.9,0.0,,0.0,0.0,15.1
 85,Van den Berg,BRE,DEF,5.0,0.7,113,3.5,2761,0,3,8,3,a,3.36,0.11,1.45,0.05,4.81,41.59,1.36,30,0.98,,,272,8.87,0.26,1.34,0.0,,,,,,,2,0,0,0,0,0,435,659.0,98.0,305.0,106.3,0.0,,2.2,0.0,22.6
 88,Kayode,BRE,DEF,4.5,3.7,113,3.1,3258,1,2,10,9,a,1.28,0.04,2.89,0.08,4.17,52.65,1.45,37,1.02,,,219,6.05,0.28,1.35,0.0,,,,,,,8,0,1,0,0,0,494,613.8,470.2,130.0,121.7,0.0,,1.7,0.0,25.1
 96,Damsgaard,BRE,MID,5.5,0.6,113,3.4,2046,4,4,5,9,a,2.61,0.11,5.43,0.24,8.04,31.55,1.39,24,1.06,,,241,10.6,0.22,1.41,0.0,,,3,,2,,0,0,0,0,0,0,467,530.6,691.3,326.0,155.0,0.0,,2.0,0.0,20.5
@@ -232,7 +232,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st,expected_goals,expected_
 160,Garnacho,AVL,MID,6.0,0.8,56,2.3,1261,1,4,4,3,a,3.44,0.25,3.68,0.26,7.12,20.52,1.46,14,1.0,,,71,5.07,0.29,1.43,0.0,,,,,,,2,0,0,0,0,0,222,211.4,405.3,399.0,100.5,0.0,,2.1,0.0,9.3
 131,Baleba,BHA,MID,5.0,0.3,56,1.8,1646,0,0,7,0,i,0.78,0.04,0.72,0.04,1.50,20.40,1.12,23,1.26,,0,209,11.43,0.38,1.04,0.0,,,,,,,5,0,0,0,0,0,231,166.8,156.3,44.0,36.8,0.0,,0.0,0.0,11.2
 339,Longstaff,LEE,MID,5.0,0.2,56,2.4,1003,2,2,1,5,a,1.23,0.11,1.87,0.17,3.10,15.88,1.42,10,0.9,,,110,9.87,0.09,1.79,0.0,,,2,,3,,2,0,0,0,0,0,273,291.8,403.7,116.0,81.2,0.0,,1.5,0.0,11.2
-344,Gruev,LEE,MID,5.0,0.0,56,2.4,1318,0,4,5,3,a,0.49,0.03,0.86,0.06,1.35,25.27,1.73,15,1.02,,,114,7.78,0.34,1.57,0.0,,,,,,,3,0,0,0,0,0,245,199.4,171.0,64.0,43.2,0.0,,1.5,0.0,11.2
+344,Gruev,LEE,MID,5.0,0.0,56,2.4,1318,0,4,5,3,i,0.49,0.03,0.86,0.06,1.35,25.27,1.73,15,1.02,,0,114,7.78,0.34,1.57,0.0,,,,,,,3,0,0,0,0,0,245,199.4,171.0,64.0,43.2,0.0,,0.0,0.0,11.2
 401,Marmoush,MCI,FWD,7.0,0.8,56,2.7,691,3,3,4,5,a,2.78,0.36,0.77,0.1,3.55,7.92,1.03,8,1.04,,,39,5.08,0.52,0.65,0.0,2,,2,,,,3,0,0,0,0,0,182,203.2,159.8,284.0,64.4,0.0,,2.2,0.0,8.0
 420,Yoro,MUN,DEF,5.0,0.8,56,1.8,1730,0,1,2,1,a,1.34,0.07,0.59,0.03,1.93,26.83,1.4,18,0.94,,,156,8.12,0.1,1.72,0.0,,,,,,,1,0,0,0,0,0,191,327.0,83.1,124.0,53.2,0.0,,2.2,0.0,11.2
 502,Robertson,TOT,DEF,4.5,2.1,55,2.3,1165,1,0,4,4,a,1.10,0.08,1.40,0.11,2.49,17.44,1.35,11,0.85,,,55,4.25,0.31,1.24,0.0,,,,,,,0,0,0,0,0,0,216,239.8,318.8,121.0,68.2,0.0,,1.7,0.0,12.2
@@ -616,6 +616,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st,expected_goals,expected_
 # 121,Mitoma,BHA,i,0,Hamstring injury - Unknown return date
 # 450,Livramento,NEW,d,75,Calf injury - 75% chance of playing
 # 131,Baleba,BHA,i,0,Ankle injury - Expected back 23 Aug
+# 344,Gruev,LEE,i,0,Knee injury - Unknown return date
 # 419,Martinez,MUN,d,75,Thigh injury - 75% chance of playing
 # 75,Christie,BOU,s,0,Suspended until 29 Aug
 # 517,Odobert,TOT,i,0,Knee injury - Unknown return date
