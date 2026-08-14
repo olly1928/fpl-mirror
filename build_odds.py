@@ -1,347 +1,456 @@
 #!/usr/bin/env python3
 """
-build_odds.py — pulls bookmaker odds and non-PL fixture congestion from
-API-Football (v3.football.api-sports.io) and writes two small CSVs.
+build_odds.py — bookmaker consensus for upcoming Premier League fixtures.
 
-Outputs
-  data/odds.csv        one row per upcoming PL fixture: de-vigged 1X2,
-                       over/under 2.5, fitted expected goals, clean-sheet
-                       probability for each side
-  data/congestion.csv  non-PL matches for PL clubs in the next 28 days,
-                       with rest days before the following league game
+Source: The Odds API v4 (api.the-odds-api.com). Key comes from the ODDS_API_KEY
+environment variable and is never written to disk.
 
-Needs the API_SPORTS_KEY environment variable. NEVER hardcode the key here.
+Output: data/odds.csv, one row per upcoming listed fixture, carrying de-vigged
+1X2 probabilities, P(over 2.5), a fitted independent-Poisson goal expectation for
+each side, and the clean-sheet probability that falls out of it. The clean-sheet
+columns are the point of the file: they are a market-priced replacement for FPL's
+own fixture difficulty rating when picking defenders and goalkeepers.
 
-Budget: roughly 12-15 requests per run. Free tier is 100/day, 10/minute,
-so twice a day sits comfortably inside it.
+Request budget
+    One call to /v4/sports/ (free, does not consume credits) to confirm the key
+    works and the competition is listed.
+    One call to /v4/sports/soccer_epl/odds/ with regions=uk and markets=h2h,totals.
+    Credit cost is markets x regions, so that is 2 credits per run. Every upcoming
+    fixture and every UK bookmaker comes back inside that single response, so
+    there is never a reason to loop per fixture.
+
+Both calls print x-requests-remaining and x-requests-used so the real allowance is
+visible in the Actions log.
+
+Empty results are normal between rounds, during international breaks and in
+pre-season: bookmakers simply have nothing listed. The API does not charge a
+credit for a request that returns no events. The script writes a header-only CSV
+and exits 0, so a stale file is never left behind pretending to be current.
 """
 
 import csv
 import json
 import math
 import os
+import re
+import statistics
 import sys
-import time
+import unicodedata
+import urllib.error
 import urllib.parse
 import urllib.request
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timezone
 
-KEY = os.environ.get("API_SPORTS_KEY", "").strip()
-BASE = "https://v3.football.api-sports.io"
-SEASON = 2026                     # API-Football uses the starting year
-PL = 39                           # Premier League
+ODDS_BASE = "https://api.the-odds-api.com/v4"
+FPL_BOOTSTRAP = "https://fantasy.premierleague.com/api/bootstrap-static/"
+SPORT = "soccer_epl"
+REGIONS = "uk"
+MARKETS = "h2h,totals"
+TOTALS_LINE = 2.5  # books list several lines; only 2.5 is comparable across them
 
-# If any of these come back with zero fixtures, the ID may be wrong for this
-# season — the script prints a warning so it can be corrected.
-OTHER_COMPS = {
-    2: "Champions League",
-    3: "Europa League",
-    848: "Conference League",
-    45: "FA Cup",
-    48: "League Cup",
+OUT = "data/odds.csv"
+COLUMNS = [
+    "kickoff_utc", "home", "away", "home_code", "away_code",
+    "p_home", "p_draw", "p_away", "p_over25",
+    "xg_home", "xg_away", "cs_prob_home", "cs_prob_away",
+    "n_books", "fetched_at",
+]
+
+# Poisson grid: 0.20 to 4.00 in 0.05 steps.
+GRID = [round(0.20 + 0.05 * i, 2) for i in range(77)]
+MAX_GOALS = 15  # Poisson(4.0) has ~1e-5 mass above this
+
+# Normalised Odds-API club name -> FPL short code, for names that normalisation
+# alone cannot reach. Anything in here that is not in the current bootstrap is
+# dropped at startup, so retired clubs are harmless. Print-and-top-up: any club
+# that fails to match is listed loudly at the end of the run.
+ALIASES = {
+    "manchester city": "MCI",
+    "manchester united": "MUN",
+    "man united": "MUN",
+    "man utd": "MUN",
+    "tottenham hotspur": "TOT",
+    "tottenham": "TOT",
+    "spurs": "TOT",
+    "nottingham forest": "NFO",
+    "notts forest": "NFO",
+    "wolverhampton wanderers": "WOL",
+    "wolves": "WOL",
+    "brighton and hove albion": "BHA",
+    "brighton hove albion": "BHA",
+    "west ham united": "WHU",
+    "west bromwich albion": "WBA",
+    "sheffield united": "SHU",
+    "leicester city": "LEI",
+    "luton town": "LUT",
+    "newcastle united": "NEW",
+    "leeds united": "LEE",
+    "ipswich town": "IPS",
+    "hull city": "HUL",
+    "coventry city": "COV",
+    "afc bournemouth": "BOU",
+    "norwich city": "NOR",
 }
 
-PREFERRED_BOOKMAKERS = ["Bet365", "Pinnacle", "William Hill", "1xBet"]
+# Generic club-name furniture, dropped when reducing a name to its core.
+FILLER = {"fc", "afc", "cf", "united", "utd", "city", "town", "hotspur",
+          "albion", "wanderers", "and", "hove", "association", "the"}
 
-# API-Football team name -> FPL short code.
-TEAM_CODES = {
-    "arsenal": "ARS",
-    "aston villa": "AVL",
-    "brighton": "BHA", "brighton hove albion": "BHA", "brighton and hove albion": "BHA",
-    "bournemouth": "BOU", "afc bournemouth": "BOU",
-    "brentford": "BRE",
-    "chelsea": "CHE",
-    "coventry": "COV", "coventry city": "COV",
-    "crystal palace": "CRY",
-    "everton": "EVE",
-    "fulham": "FUL",
-    "hull": "HUL", "hull city": "HUL",
-    "ipswich": "IPS", "ipswich town": "IPS",
-    "leeds": "LEE", "leeds united": "LEE",
-    "liverpool": "LIV",
-    "manchester city": "MCI", "man city": "MCI",
-    "manchester united": "MUN", "man united": "MUN", "manchester utd": "MUN",
-    "newcastle": "NEW", "newcastle united": "NEW",
-    "nottingham forest": "NFO", "nottingham": "NFO",
-    "sunderland": "SUN",
-    "tottenham": "TOT", "tottenham hotspur": "TOT", "spurs": "TOT",
-}
-
-CALLS = 0
 UNMATCHED = set()
 
 
-def api(path, params=None):
-    """One authenticated GET. Sleeps to respect the 10/min free-tier limit."""
-    global CALLS
-    url = BASE + path
-    if params:
-        url += "?" + urllib.parse.urlencode(params)
-    req = urllib.request.Request(url, headers={"x-apisports-key": KEY})
+def die(msg):
+    """Fail loudly. Never leave a half-written file behind."""
+    print(f"FATAL: {msg}", file=sys.stderr)
+    sys.exit(1)
+
+
+# ------------------------------------------------------------------ http
+
+def get_json(url, headers=None):
+    """GET returning (payload, response headers)."""
+    req = urllib.request.Request(url, headers=headers or {})
     with urllib.request.urlopen(req, timeout=30) as r:
-        remaining = r.headers.get("x-ratelimit-requests-remaining")
-        body = json.load(r)
-    CALLS += 1
-    errs = body.get("errors")
-    if errs and errs not in ([], {}):
-        print(f"  ! API errors on {path}: {errs}")
-    print(f"  [{CALLS}] {path} -> {body.get('results', 0)} results "
-          f"(quota left: {remaining})")
-    time.sleep(7)  # stay under 10 requests/minute
-    return body.get("response", [])
+        return json.load(r), dict(r.headers)
 
 
-def code_for(name):
-    key = (name or "").lower().replace(".", "").replace("-", " ").strip()
-    if key in TEAM_CODES:
-        return TEAM_CODES[key]
-    UNMATCHED.add(name)
-    return None
+def report_quota(label, headers):
+    """The headers that decide whether the free tier is viable at all."""
+    remaining = headers.get("x-requests-remaining")
+    used = headers.get("x-requests-used")
+    last = headers.get("x-requests-last")
+    print(f"  [{label}] x-requests-remaining={remaining}  x-requests-used={used}"
+          + (f"  x-requests-last={last}" if last else ""))
+    return remaining, used
 
 
-# ---------------------------------------------------------------- odds maths
+def odds_get(path, params, label):
+    """One call to The Odds API, with the quota headers surfaced either way."""
+    url = f"{ODDS_BASE}{path}?" + urllib.parse.urlencode(params)
+    try:
+        payload, headers = get_json(url)
+    except urllib.error.HTTPError as exc:
+        body = ""
+        try:
+            body = exc.read().decode("utf-8", "replace")[:500]
+        except Exception:
+            pass
+        report_quota(f"{label} (HTTP {exc.code})", dict(exc.headers or {}))
+        hint = {
+            401: "ODDS_API_KEY is missing, malformed or rejected.",
+            422: "The request parameters were rejected — check sport/regions/markets.",
+            429: "Monthly credit allowance is exhausted.",
+        }.get(exc.code, "")
+        die(f"{label} — {ODDS_BASE}{path} returned HTTP {exc.code} {exc.reason}. "
+            f"{hint} {body}".strip())
+    except Exception as exc:
+        die(f"{label} — could not reach {ODDS_BASE}{path}: {exc}")
+    report_quota(label, headers)
+    return payload, headers
 
-def devig(odds_map):
-    """Proportional de-vig: strip the bookmaker margin off implied probs."""
-    inv = {k: 1.0 / v for k, v in odds_map.items() if v and v > 1.0}
+
+# ------------------------------------------------------------------ team names
+
+def normalise(name):
+    s = unicodedata.normalize("NFKD", str(name or ""))
+    s = "".join(c for c in s if not unicodedata.combining(c))
+    s = s.lower().replace("&", " and ")
+    s = re.sub(r"[^a-z0-9]+", " ", s)
+    return re.sub(r"\s+", " ", s).strip()
+
+
+def core(name):
+    """Strip generic club-name furniture, keeping at least one token."""
+    tokens = [t for t in normalise(name).split() if t not in FILLER]
+    return " ".join(tokens) if tokens else normalise(name)
+
+
+def build_team_index(fpl_teams):
+    """
+    Map club names to FPL short codes using the bootstrap 'teams' array at
+    runtime, rather than a hardcoded dictionary that rots every August.
+
+    Three layers, most specific first: exact normalised name or short_name, then
+    the small alias table, then a 'core' match that is only trusted when it
+    resolves to exactly one club (this is what keeps Manchester City and
+    Manchester United — which share the core 'manchester' — from colliding).
+    """
+    shorts = {t["short_name"] for t in fpl_teams}
+    exact = {}
+    core_counts = {}
+    for t in fpl_teams:
+        short = t["short_name"]
+        exact[normalise(t["name"])] = short
+        exact[normalise(short)] = short
+        core_counts.setdefault(core(t["name"]), set()).add(short)
+
+    aliases = {k: v for k, v in ALIASES.items() if v in shorts}
+    unique_cores = {k: next(iter(v)) for k, v in core_counts.items() if len(v) == 1}
+
+    def lookup(name):
+        n = normalise(name)
+        if n in exact:
+            return exact[n]
+        if n in aliases:
+            return aliases[n]
+        c = core(name)
+        if c in unique_cores:
+            return unique_cores[c]
+        UNMATCHED.add(str(name))
+        return ""
+
+    return lookup
+
+
+# ------------------------------------------------------------------ odds maths
+
+def devig(prices):
+    """
+    Proportional de-vig: invert each decimal price to an implied probability,
+    then divide each by their sum so the book totals 1.
+
+    This is an approximation. It assumes the bookmaker's margin is spread evenly
+    across outcomes, which it is not — real books load more margin onto longshots,
+    so this mildly overstates outsiders and understates favourites. Shin or
+    power methods correct for that; proportional is fine at the accuracy this
+    file is used at.
+    """
+    inv = {k: 1.0 / v for k, v in prices.items() if v and v > 1.0}
     total = sum(inv.values())
-    if not total:
+    if len(inv) != len(prices) or total <= 0:
         return None
     return {k: v / total for k, v in inv.items()}
 
 
-def pmf_table(lam, maxg=10):
-    return [math.exp(-lam) * lam ** k / math.factorial(k) for k in range(maxg)]
+def poisson_pmf(lam, n=MAX_GOALS):
+    out, p = [], math.exp(-lam)
+    for k in range(n + 1):
+        out.append(p)
+        p = p * lam / (k + 1)
+    return out
 
 
-def outcome_probs(ph, pa):
-    home = draw = away = over = 0.0
-    for i, hi in enumerate(ph):
-        for j, aj in enumerate(pa):
-            p = hi * aj
-            if i > j:
-                home += p
-            elif i == j:
-                draw += p
-            else:
-                away += p
-            if i + j >= 3:
-                over += p
-    return home, draw, away, over
+def below_cdf(pmf):
+    """below[i] = P(X < i)."""
+    out, run = [0.0], 0.0
+    for p in pmf:
+        run += p
+        out.append(run)
+    return out
 
 
 def fit_expected_goals(p_home, p_draw, p_away, p_over):
     """
-    Grid-search the independent-Poisson pair (lambda_home, lambda_away) that
-    best reproduces the market's implied probabilities.
+    Grid-search the independent-Poisson pair (lambda_home, lambda_away) whose
+    implied outcome probabilities best reproduce the market's.
 
-    Independent Poisson slightly understates draws in real football, so treat
-    these as good estimates rather than exact numbers.
+    Scored on squared error against the de-vigged P(home)/P(draw)/P(away) and,
+    when available, P(over 2.5). The PMF and CDF for every lambda are computed
+    once up front, so the inner loop is a handful of multiply-adds and the whole
+    5929-pair search runs in well under a second in pure Python.
+
+    Independent Poisson understates draws slightly in real football (goals are
+    mildly negatively correlated), so treat these as good estimates, not truth.
     """
-    grid = [round(0.20 + 0.05 * i, 2) for i in range(77)]  # 0.20 -> 4.00
-    tables = {g: pmf_table(g) for g in grid}
+    pmfs = {g: poisson_pmf(g) for g in GRID}
+    cdfs = {g: below_cdf(pmfs[g]) for g in GRID}
+
     best, best_err = None, float("inf")
-    for lh in grid:
-        ph = tables[lh]
-        for la in grid:
-            h, d, a, o = outcome_probs(ph, tables[la])
-            err = (h - p_home) ** 2 + (d - p_draw) ** 2 + (a - p_away) ** 2
+    for lh in GRID:
+        ph, ch = pmfs[lh], cdfs[lh]
+        for la in GRID:
+            pa, ca = pmfs[la], cdfs[la]
+
+            draw = 0.0
+            for k in range(MAX_GOALS + 1):
+                draw += ph[k] * pa[k]
+            home = 0.0
+            for i in range(MAX_GOALS + 1):
+                home += ph[i] * ca[i]      # away strictly below home
+            away = 0.0
+            for j in range(MAX_GOALS + 1):
+                away += pa[j] * ch[j]      # home strictly below away
+
+            total = home + draw + away
+            if total <= 0:
+                continue
+            home, draw, away = home / total, draw / total, away / total
+
+            err = (home - p_home) ** 2 + (draw - p_draw) ** 2 + (away - p_away) ** 2
             if p_over is not None:
-                err += (o - p_over) ** 2
+                under = (ph[0] * pa[0]
+                         + ph[0] * pa[1] + ph[1] * pa[0]
+                         + ph[0] * pa[2] + ph[1] * pa[1] + ph[2] * pa[0])
+                err += ((1.0 - under) - p_over) ** 2
+
             if err < best_err:
                 best_err, best = err, (lh, la)
+
     return best
 
 
-# ---------------------------------------------------------------- extraction
+# ------------------------------------------------------------------ extraction
 
-def extract_market(bookmaker):
-    """Pull 1X2 and Over/Under 2.5 prices out of one bookmaker block."""
-    res = {"h": None, "d": None, "a": None, "over": None}
-    for bet in bookmaker.get("bets", []):
-        name = (bet.get("name") or "").lower()
-        vals = {(v.get("value") or "").lower(): v.get("odd") for v in bet.get("values", [])}
-        if "match winner" in name or name == "1x2":
-            res["h"] = safe_float(vals.get("home"))
-            res["d"] = safe_float(vals.get("draw"))
-            res["a"] = safe_float(vals.get("away"))
-        elif "goals over/under" in name or name == "over/under":
-            res["over"] = safe_float(vals.get("over 2.5"))
-    return res
+def median_prices(event):
+    """
+    Collapse every UK bookmaker on this event into one consensus price set.
+
+    A median across books is more robust than trusting a single book, and since
+    one call already returns all of them it costs nothing extra. Only the 2.5
+    totals line is used — books list several lines and they are not comparable.
+
+    Returns (h2h median prices, totals median prices, number of books in the
+    h2h median).
+    """
+    home, away = event.get("home_team"), event.get("away_team")
+    h_prices, d_prices, a_prices, over, under = [], [], [], [], []
+
+    for book in event.get("bookmakers") or []:
+        for market in book.get("markets") or []:
+            key = market.get("key")
+            outcomes = market.get("outcomes") or []
+            if key == "h2h":
+                by_name = {o.get("name"): o.get("price") for o in outcomes}
+                h, d, a = by_name.get(home), by_name.get("Draw"), by_name.get(away)
+                if h and d and a:
+                    h_prices.append(float(h))
+                    d_prices.append(float(d))
+                    a_prices.append(float(a))
+            elif key == "totals":
+                line = {o.get("name"): o.get("price") for o in outcomes
+                        if o.get("point") == TOTALS_LINE}
+                if line.get("Over") and line.get("Under"):
+                    over.append(float(line["Over"]))
+                    under.append(float(line["Under"]))
+
+    h2h = None
+    if h_prices:
+        h2h = {
+            "home": statistics.median(h_prices),
+            "draw": statistics.median(d_prices),
+            "away": statistics.median(a_prices),
+        }
+    totals = None
+    if over:
+        totals = {"over": statistics.median(over), "under": statistics.median(under)}
+
+    return h2h, totals, len(h_prices)
 
 
-def safe_float(x):
-    try:
-        return float(x)
-    except (TypeError, ValueError):
+def build_row(event, lookup, fetched_at):
+    h2h, totals, n_books = median_prices(event)
+    if not h2h:
+        print(f"  ! no usable UK h2h prices for "
+              f"{event.get('home_team')} v {event.get('away_team')} — skipped")
         return None
 
+    probs = devig(h2h)
+    if not probs:
+        print(f"  ! could not de-vig {event.get('home_team')} v {event.get('away_team')} — skipped")
+        return None
+
+    # The over/under pair carries its own margin, so de-vig it as a two-way book
+    # rather than reading 1/over straight off.
+    p_over = None
+    if totals:
+        two_way = devig(totals)
+        if two_way:
+            p_over = two_way["over"]
+
+    lh, la = fit_expected_goals(probs["home"], probs["draw"], probs["away"], p_over)
+
+    return {
+        "kickoff_utc": event.get("commence_time"),
+        "home": event.get("home_team"),
+        "away": event.get("away_team"),
+        "home_code": lookup(event.get("home_team")),
+        "away_code": lookup(event.get("away_team")),
+        "p_home": round(probs["home"], 4),
+        "p_draw": round(probs["draw"], 4),
+        "p_away": round(probs["away"], 4),
+        "p_over25": round(p_over, 4) if p_over is not None else "",
+        "xg_home": lh,
+        "xg_away": la,
+        # A clean sheet for the home side means the away side fails to score.
+        "cs_prob_home": round(math.exp(-la), 4),
+        "cs_prob_away": round(math.exp(-lh), 4),
+        "n_books": n_books,
+        "fetched_at": fetched_at,
+    }
+
+
+def write_csv(rows):
+    os.makedirs("data", exist_ok=True)
+    with open(OUT, "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=COLUMNS)
+        w.writeheader()
+        w.writerows(rows)
+    print(f"  wrote {OUT} ({len(rows)} rows)")
+
+
+# ------------------------------------------------------------------ main
 
 def main():
-    if not KEY:
-        print("FATAL: API_SPORTS_KEY is not set. Add it as a repository secret.")
-        sys.exit(1)
+    key = os.environ.get("ODDS_API_KEY", "").strip()
+    if not key:
+        die("ODDS_API_KEY is not set. Add it as a repository secret "
+            "(gh secret set ODDS_API_KEY) and inject it in the workflow env block. "
+            "Never commit the key.")
 
-    os.makedirs("data", exist_ok=True)
-    now = datetime.now(timezone.utc)
+    fetched_at = datetime.now(timezone.utc).isoformat()
 
-    print("=" * 60)
-    print("STEP 1 — account check")
-    status = api("/status")
-    if isinstance(status, dict):
-        sub = status.get("subscription", {})
-        req = status.get("requests", {})
-        print(f"  plan: {sub.get('plan')}  active: {sub.get('active')}")
-        print(f"  requests today: {req.get('current')} / {req.get('limit_day')}")
+    print("STEP 1 — key check and quota (free endpoint, costs no credits)")
+    sports, _ = odds_get("/sports/", {"apiKey": key}, "sports")
+    listed = {s.get("key") for s in sports if isinstance(s, dict)}
+    if SPORT not in listed:
+        die(f"{SPORT} is not in the list of sports this key can see "
+            f"({len(listed)} sports returned). The competition may be out of season.")
+    print(f"  {SPORT} is listed ({len(listed)} sports available)")
 
-    print("STEP 2 — season coverage check")
-    leagues = api("/leagues", {"id": PL, "season": SEASON})
-    if not leagues:
-        print(f"  FATAL: no Premier League data for season {SEASON}.")
-        print("  Free plans are restricted to certain seasons — this is the")
-        print("  check that decides whether the free tier is usable. Upgrade or stop here.")
-        sys.exit(1)
-    for s in leagues[0].get("seasons", []):
-        if s.get("year") == SEASON:
-            cov = s.get("coverage", {})
-            print(f"  odds coverage: {cov.get('odds')}  |  fixtures: {bool(cov.get('fixtures'))}")
-            if not cov.get("odds"):
-                print("  WARNING: odds flag is false — odds.csv will be empty.")
+    print("STEP 2 — FPL bootstrap, for the runtime team-name mapping")
+    try:
+        boot, _ = get_json(FPL_BOOTSTRAP, {"User-Agent": "Mozilla/5.0 (fpl-mirror)"})
+    except Exception as exc:
+        die(f"could not read the FPL bootstrap for team codes: {exc}")
+    if not boot.get("teams"):
+        die("FPL bootstrap returned no teams — cannot map club names to short codes")
+    lookup = build_team_index(boot["teams"])
+    print(f"  {len(boot['teams'])} clubs indexed")
 
-    print("STEP 3 — upcoming Premier League fixtures")
-    pl_fixtures = api("/fixtures", {"league": PL, "season": SEASON, "next": 30})
-    fixture_meta = {}
-    pl_by_club = {}
-    for f in pl_fixtures:
-        fid = f["fixture"]["id"]
-        home = f["teams"]["home"]["name"]
-        away = f["teams"]["away"]["name"]
-        ko = f["fixture"]["date"]
-        fixture_meta[fid] = {"home": home, "away": away, "kickoff": ko}
-        for club in (home, away):
-            pl_by_club.setdefault(code_for(club), []).append(ko)
+    print(f"STEP 3 — odds ({MARKETS} x {REGIONS} = 2 credits)")
+    events, _ = odds_get(
+        f"/sports/{SPORT}/odds/",
+        {"apiKey": key, "regions": REGIONS, "markets": MARKETS,
+         "oddsFormat": "decimal", "dateFormat": "iso"},
+        "odds",
+    )
+    print(f"  {len(events)} events listed")
 
-    print("STEP 4 — bookmaker selection")
-    books = api("/odds/bookmakers")
-    book_id, book_name = None, None
-    for want in PREFERRED_BOOKMAKERS:
-        for b in books:
-            if (b.get("name") or "").lower() == want.lower():
-                book_id, book_name = b["id"], b["name"]
-                break
-        if book_id:
-            break
-    if not book_id and books:
-        book_id, book_name = books[0]["id"], books[0]["name"]
-    print(f"  using bookmaker: {book_name} (id {book_id})")
+    if not events:
+        print("  No fixtures listed. Normal between rounds, in international breaks "
+              "and pre-season — bookmakers simply have nothing up. The API does not "
+              "charge a credit for this. Writing a header-only CSV so nothing stale "
+              "is left behind.")
+        write_csv([])
+        return
 
-    print("STEP 5 — odds")
-    odds_rows = []
-    page, pages = 1, 1
-    while page <= pages and page <= 4:
-        req = urllib.request.Request(
-            BASE + "/odds?" + urllib.parse.urlencode(
-                {"league": PL, "season": SEASON, "bookmaker": book_id, "page": page}),
-            headers={"x-apisports-key": KEY},
-        )
-        with urllib.request.urlopen(req, timeout=30) as r:
-            body = json.load(r)
-        pages = (body.get("paging") or {}).get("total", 1)
-        print(f"  [odds] page {page}/{pages} -> {body.get('results', 0)} fixtures")
-        for item in body.get("response", []):
-            fid = item["fixture"]["id"]
-            meta = fixture_meta.get(fid)
-            if not meta:
-                continue
-            for bk in item.get("bookmakers", []):
-                m = extract_market(bk)
-                if not (m["h"] and m["d"] and m["a"]):
-                    continue
-                probs = devig({"h": m["h"], "d": m["d"], "a": m["a"]})
-                if not probs:
-                    continue
-                p_over = None
-                if m["over"]:
-                    p_over = min(0.95, max(0.05, 1.0 / m["over"] * 0.95))
-                lh, la = fit_expected_goals(probs["h"], probs["d"], probs["a"], p_over)
-                odds_rows.append({
-                    "kickoff_utc": meta["kickoff"],
-                    "home": meta["home"],
-                    "away": meta["away"],
-                    "home_code": code_for(meta["home"]),
-                    "away_code": code_for(meta["away"]),
-                    "p_home": round(probs["h"], 4),
-                    "p_draw": round(probs["d"], 4),
-                    "p_away": round(probs["a"], 4),
-                    "p_over25": round(p_over, 4) if p_over else "",
-                    "xg_home": lh,
-                    "xg_away": la,
-                    "cs_prob_home": round(math.exp(-la), 4),
-                    "cs_prob_away": round(math.exp(-lh), 4),
-                    "bookmaker": book_name,
-                    "fetched_at": now.isoformat(),
-                })
-                break
-        page += 1
-        time.sleep(7)
+    print("STEP 4 — consensus, de-vig and Poisson fit")
+    rows = [r for r in (build_row(e, lookup, fetched_at) for e in events) if r]
 
-    print("STEP 6 — non-PL fixtures (congestion)")
-    horizon = (now + timedelta(days=28)).strftime("%Y-%m-%d")
-    congestion_rows = []
-    for lid, lname in OTHER_COMPS.items():
-        fx = api("/fixtures", {
-            "league": lid, "season": SEASON,
-            "from": now.strftime("%Y-%m-%d"), "to": horizon,
-        })
-        if not fx:
-            print(f"  note: no fixtures for {lname} (id {lid}) — check the ID if this persists")
-        for f in fx:
-            for side in ("home", "away"):
-                club = f["teams"][side]["name"]
-                code = code_for(club)
-                if not code:
-                    continue
-                ko = f["fixture"]["date"]
-                nxt = sorted([d for d in pl_by_club.get(code, []) if d > ko])
-                rest = ""
-                if nxt:
-                    a = datetime.fromisoformat(ko.replace("Z", "+00:00"))
-                    b = datetime.fromisoformat(nxt[0].replace("Z", "+00:00"))
-                    rest = round((b - a).total_seconds() / 86400, 1)
-                congestion_rows.append({
-                    "club_code": code,
-                    "club": club,
-                    "competition": lname,
-                    "kickoff_utc": ko,
-                    "opponent": f["teams"]["away" if side == "home" else "home"]["name"],
-                    "venue": "H" if side == "home" else "A",
-                    "next_pl_kickoff": nxt[0] if nxt else "",
-                    "days_rest_before_next_pl": rest,
-                })
-
-    write_csv("data/odds.csv", odds_rows)
-    write_csv("data/congestion.csv", sorted(congestion_rows, key=lambda r: r["kickoff_utc"]))
-
-    print("=" * 60)
-    print(f"DONE — {len(odds_rows)} odds rows, {len(congestion_rows)} congestion rows, "
-          f"{CALLS} API calls used")
-    if UNMATCHED:
-        print("UNMATCHED TEAM NAMES (send these to Claude to fix the mapping):")
-        for n in sorted(UNMATCHED):
-            print(f"    {n}")
-
-
-def write_csv(path, rows):
     if not rows:
-        print(f"  (no rows for {path} — writing header only)")
-    with open(path, "w", newline="", encoding="utf-8") as f:
-        if rows:
-            w = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
-            w.writeheader()
-            w.writerows(rows)
-        else:
-            f.write("no_data\n")
-    print(f"  wrote {path} ({len(rows)} rows)")
+        die(f"{len(events)} events came back but none produced a usable row. "
+            "Something has changed in the response shape — refusing to overwrite "
+            "odds.csv with an empty file that would look like a quiet weekend.")
+
+    rows.sort(key=lambda r: r["kickoff_utc"] or "")
+    write_csv(rows)
+
+    if UNMATCHED:
+        print("\nUNMATCHED CLUB NAMES — add these to the ALIASES table in build_odds.py:")
+        for n in sorted(UNMATCHED):
+            print(f"    {n!r}  (normalised: {normalise(n)!r}, core: {core(n)!r})")
+
+    print(f"\nDONE — {len(rows)} fixtures, {len(UNMATCHED)} unmatched club names")
 
 
 if __name__ == "__main__":
