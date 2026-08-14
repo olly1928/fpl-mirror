@@ -1,4 +1,4 @@
-# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=584 fetched=2026-08-14T01:16:44.801078+00:00
+# season=2026/27 preseason=True next_gw=1 deadline=2026-08-21T17:30:00Z players=584 fetched=2026-08-14T03:59:08.660826+00:00
 # pts/ppg/mins/g/a/cs/bonus are LAST SEASON totals carried into the new game.
 # st: a=available i=injured d=doubtful s=suspended u=unavailable
 id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
@@ -10,7 +10,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 13,Rice,ARS,MID,7.5,21.7,184,5.1,3093,4,9,18,23,a
 106,Thiago,BRE,FWD,8.0,16.0,181,4.8,3282,22,1,10,22,a
 481,Anderson,MCI,MID,6.5,11.2,180,4.7,3332,4,5,10,16,a
-388,Guéhi,MCI,DEF,6.0,22.8,179,5.1,3150,3,5,14,14,a
+388,Guéhi,MCI,DEF,6.0,22.7,179,5.1,3150,3,5,14,14,a
 165,João Pedro,CHE,FWD,7.5,55.9,177,5.1,2658,15,9,10,30,a
 356,Virgil,LIV,DEF,6.5,16.8,175,4.6,3420,6,1,10,10,a
 498,Senesi,TOT,DEF,6.0,10.3,175,4.7,3288,0,6,11,14,a
@@ -31,7 +31,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 236,Dewsbury-Hall,EVE,MID,6.5,3.7,151,4.9,2629,8,7,8,18,a
 533,Mukiele,SUN,DEF,5.5,4.7,151,4.7,2784,3,5,9,11,d
 5,J.Timber,ARS,DEF,6.5,0.3,149,5.0,2452,3,6,13,9,i
-427,Mbeumo,MUN,MID,8.0,25.8,148,4.5,2611,11,3,8,16,a
+427,Mbeumo,MUN,MID,8.0,25.9,148,4.5,2611,11,3,8,16,a
 112,Van Hecke,TOT,DEF,5.0,8.6,148,4.1,3210,3,3,10,8,a
 542,E.Le Fée,SUN,MID,6.0,12.8,147,4.1,2930,5,6,10,16,a
 371,Gravenberch,LIV,MID,6.0,2.0,144,4.0,2991,5,5,9,17,a
@@ -107,7 +107,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 60,Hill,BOU,DEF,5.5,1.2,110,3.8,2102,0,3,8,4,a
 159,Caicedo,CHE,MID,5.5,4.1,110,3.3,2796,3,1,6,10,a
 534,Hume,SUN,DEF,4.5,4.9,110,2.9,3032,2,1,9,6,a
-8,Calafiori,ARS,DEF,5.5,17.8,109,4.2,1697,1,2,13,6,a
+8,Calafiori,ARS,DEF,5.5,17.9,109,4.2,1697,1,2,13,6,a
 329,Rodon,LEE,DEF,4.5,2.0,109,3.1,2952,2,0,6,5,a
 336,Okafor,LEE,MID,6.0,0.7,109,3.9,1553,8,3,6,11,a
 412,Lammens,MUN,GKP,5.0,19.6,109,3.4,2880,0,0,8,11,a
@@ -141,7 +141,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 332,Justin,LEE,DEF,4.5,0.5,94,3.2,1893,2,1,6,9,a
 448,Burn,NEW,DEF,5.0,2.6,93,3.2,2195,1,3,6,5,a
 404,Reijnders,MCI,MID,6.0,0.4,92,3.3,1623,5,3,7,6,a
-552,Brobbey,SUN,FWD,6.0,16.7,92,3.0,1920,7,2,6,12,a
+552,Brobbey,SUN,FWD,6.0,16.6,92,3.0,1920,7,2,6,12,a
 123,Hinshelwood,BHA,MID,6.0,0.2,91,3.4,1736,4,5,7,2,a
 265,Berge,FUL,MID,5.0,0.4,91,2.6,2904,0,3,8,3,a
 350,A.Becker,LIV,GKP,5.5,4.0,91,3.5,2340,0,0,8,8,a
@@ -447,7 +447,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
 178,Bidwell,COV,DEF,4.0,0.1,0,0.0,0,0,0,0,0,a
 179,Latibeaudiere,COV,DEF,4.0,0.1,0,0.0,0,0,0,0,0,a
 180,Woolfenden,COV,DEF,4.0,0.2,0,0.0,0,0,0,0,0,a
-181,Brau,COV,DEF,4.0,0.0,0,0.0,0,0,0,0,0,a
+181,Brau,COV,DEF,4.0,0.1,0,0.0,0,0,0,0,0,a
 182,Amenda,COV,DEF,4.0,0.7,0,0.0,0,0,0,0,0,a
 183,Rudoni,COV,MID,5.0,0.2,0,0.0,0,0,0,0,0,d
 184,Grimes,COV,MID,5.0,0.2,0,0.0,0,0,0,0,0,a
