@@ -1,0 +1,38 @@
+name: Odds mirror
+
+# Pulls bookmaker odds and non-PL fixture congestion from API-Football.
+# Runs at 07:20 and 17:20 UTC — deliberately offset from the hourly FPL
+# mirror so the two jobs never try to push at the same moment.
+
+on:
+  schedule:
+    - cron: '20 7,17 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  odds:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Build odds and congestion files
+        env:
+          API_SPORTS_KEY: ${{ secrets.API_SPORTS_KEY }}
+        run: python build_odds.py
+
+      - name: Commit if anything changed
+        run: |
+          git config user.name  "fpl-mirror"
+          git config user.email "actions@github.com"
+          git add data/
+          git diff --staged --quiet && echo "no changes" && exit 0
+          git commit -m "Odds $(date -u +%Y-%m-%dT%H:%M)"
+          git pull --rebase
+          git push
