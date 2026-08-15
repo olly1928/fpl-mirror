@@ -1,4 +1,4 @@
-# fpl-mirror snapshots — month=2026-08 mode=delta rows=1208 fetched=2026-08-15T08:18:39+00:00
+# fpl-mirror snapshots — month=2026-08 mode=delta rows=1213 fetched=2026-08-15T08:44:43+00:00
 # The ephemeral fields FPL overwrites in place. Append-only; rows are never edited.
 # delta mode: a full baseline for every player on the first snapshot of each UTC day, then only changed players. Forward-fill from the most recent earlier row.
 # now_cost and cost_change_* are in tenths of a million, as the API reports them.
@@ -1211,3 +1211,8 @@ snapshot_at,player_id,now_cost,cost_change_event,cost_change_start,selected_by_p
 2026-08-15T08:18:39+00:00,581,55,0,0,0.3,0,0,a,,,
 2026-08-15T08:18:39+00:00,540,40,0,0,1.1,0,0,u,0,Has joined Konyaspor permanently,2026-08-12T14:08:03.097784Z
 2026-08-15T08:18:39+00:00,552,60,0,0,16.2,0,0,a,,,
+2026-08-15T08:44:43+00:00,193,55,0,0,1.5,0,0,i,0,Thigh injury - Unknown return date,2026-08-14T22:00:07.214508Z
+2026-08-15T08:44:43+00:00,379,90,0,0,14.0,0,0,a,,,
+2026-08-15T08:44:43+00:00,579,55,0,0,0.8,0,0,a,,,
+2026-08-15T08:44:43+00:00,530,40,0,0,0.7,0,0,u,0,Has joined Wrexham permanently,2026-08-12T14:08:03.064533Z
+2026-08-15T08:44:43+00:00,532,50,0,0,4.6,0,0,a,,,

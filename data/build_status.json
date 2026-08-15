@@ -1,23 +1,23 @@
 {
   "build_snapshots": {
-    "last_run_at": "2026-08-15T08:18:39+00:00",
+    "last_run_at": "2026-08-15T08:44:43+00:00",
     "expected_interval_minutes": 60,
     "warnings": [],
-    "last_snapshot_at": "2026-08-15T08:18:39+00:00",
+    "last_snapshot_at": "2026-08-15T08:44:43+00:00",
     "last_baseline_date": "2026-08-15",
-    "last_rows_written": 10,
+    "last_rows_written": 5,
     "current_file": "data/snapshots/2026-08.csv",
     "mode": "delta"
   },
   "build_player_history": {
-    "last_run_at": "2026-08-15T08:18:39+00:00",
+    "last_run_at": "2026-08-15T08:44:43+00:00",
     "expected_interval_minutes": 60,
     "warnings": [],
     "captured_gameweeks": [],
     "last_rows_written": 0
   },
   "build_squad": {
-    "last_run_at": "2026-08-15T08:18:40+00:00",
+    "last_run_at": "2026-08-15T08:44:43+00:00",
     "expected_interval_minutes": 60,
     "warnings": [],
     "picks": 0,
@@ -25,19 +25,15 @@
     "mini_leagues": 3
   },
   "build_fpl": {
-    "last_run_at": "2026-08-15T08:18:40+00:00",
+    "last_run_at": "2026-08-15T08:44:44+00:00",
     "expected_interval_minutes": 60,
-    "warnings": [
-      "bootstrap-static.elements: 45 new field(s) present in the API and not mirrored: birth_date, can_select, can_transact, clearances_blocks_interceptions, code, cost_change_event_fall, cost_change_start_fall, creativity_rank, creativity_rank_type, dreamteam_count, event_points, expected_goal_involvements_per_90, form_rank, form_rank_type, goals_conceded, has_temporary_code, ict_index_rank, ict_index_rank_type, in_dreamteam, influence_rank, influence_rank_type, known_name, now_cost_rank, now_cost_rank_type, opta_code, photo, points_per_game_rank, points_per_game_rank_type, price_change_percent, recoveries, region, removed, scout_news_link, scout_risks, selected_rank, selected_rank_type, special, squad_number, tackles, team_code, team_join_date, threat_rank, threat_rank_type, transfers_in, transfers_out",
-      "bootstrap-static.teams: 4 new field(s) present in the API and not mirrored: link_url, pulse_id, team_division, unavailable",
-      "bootstrap-static.events: 18 new field(s) present in the API and not mirrored: can_enter, can_manage, cup_leagues_created, deadline_time_epoch, deadline_time_game_offset, h2h_ko_matches_created, highest_scoring_entry, is_previous, most_transferred_in, most_vice_captained, name, overrides, ranked_count, release_time, released, top_element, top_element_info, transfers_made",
-      "fixtures: 5 new field(s) present in the API and not mirrored: code, finished_provisional, pulse_id, started, stats"
-    ],
+    "warnings": [],
     "files": [
       "players.csv",
       "teams.csv",
       "fdr.csv",
       "fixtures.csv",
+      "fixture_stats.csv",
       "meta.json"
     ]
   },
