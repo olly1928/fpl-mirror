@@ -1,4 +1,4 @@
-# fpl-mirror snapshots — month=2026-08 mode=delta rows=1247 fetched=2026-08-15T11:12:52+00:00
+# fpl-mirror snapshots — month=2026-08 mode=delta rows=1259 fetched=2026-08-15T12:21:46+00:00
 # The ephemeral fields FPL overwrites in place. Append-only; rows are never edited.
 # delta mode: a full baseline for every player on the first snapshot of each UTC day, then only changed players. Forward-fill from the most recent earlier row.
 # now_cost and cost_change_* are in tenths of a million, as the API reports them.
@@ -1250,3 +1250,15 @@ snapshot_at,player_id,now_cost,cost_change_event,cost_change_start,selected_by_p
 2026-08-15T11:12:52+00:00,389,60,0,0,4.5,0,0,a,,,
 2026-08-15T11:12:52+00:00,397,85,0,0,27.8,0,0,a,,,
 2026-08-15T11:12:52+00:00,505,45,0,0,6.2,0,0,a,,,
+2026-08-15T12:21:46+00:00,31,45,0,0,15.8,0,0,a,,,
+2026-08-15T12:21:46+00:00,78,75,0,0,2.4,0,0,i,0,Foot injury - Unknown return date,2026-07-29T17:30:09.796802Z
+2026-08-15T12:21:46+00:00,120,50,0,0,0.0,0,0,a,,,
+2026-08-15T12:21:46+00:00,124,55,0,0,11.3,0,0,a,,,
+2026-08-15T12:21:46+00:00,173,40,0,0,8.3,0,0,a,,,
+2026-08-15T12:21:46+00:00,577,45,0,0,0.2,0,0,a,,,
+2026-08-15T12:21:46+00:00,259,40,0,0,18.4,0,0,a,,,
+2026-08-15T12:21:46+00:00,359,50,0,0,0.0,0,0,i,0,Muscular injury - Unknown return date,2026-07-26T08:30:10.078473Z
+2026-08-15T12:21:46+00:00,368,70,0,0,42.4,0,0,a,,,
+2026-08-15T12:21:46+00:00,404,60,0,0,0.3,0,0,a,,,
+2026-08-15T12:21:46+00:00,427,80,0,0,27.3,0,0,a,,,
+2026-08-15T12:21:46+00:00,439,70,0,0,2.0,0,0,d,75,Shin injury - 75% chance of playing,2026-07-23T12:01:23.722029Z
