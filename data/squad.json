@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-15T09:18:26.105390+00:00",
+  "fetched_at": "2026-08-15T10:05:30.853266+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -11,11 +11,14 @@
   "overall_rank": null,
   "bank": null,
   "squad_value": null,
+  "squad_selling_value": null,
+  "squad_market_value": null,
+  "available_budget": null,
   "notes": [
     "FREE TRANSFERS: ESTIMATE — no gameweeks played yet. GW1 is unlimited squad selection, so 1 free transfer going into GW2. Confirm on the FPL site.",
     "No picks available. It is pre-season: no gameweek is current yet, so the FPL API has no picks to publish for entry 790889. The squad will appear here automatically once GW1 starts (deadline 2026-08-21T17:30:00Z).",
-    "SELLING PRICES: not available. They require an authenticated FPL session, which this mirror deliberately does not have. Every 'now_cost' above is the CURRENT MARKET PRICE, not what I would receive for selling. A player who has risen since I bought them sells for purchase price plus half the rise, rounded down, so market price overstates my sale proceeds. Treat any transfer or budget maths built on these numbers as approximate, and ask me to paste the real selling prices before committing to anything tight.",
-    "All prices and squad_value are in millions. bank and squad_value are as at the last deadline, so they do not move with in-week price changes."
+    "SELLING PRICES: none, because there is no squad to price yet. It is pre-season — the picks endpoint publishes nothing until a gameweek has started, and an empty squad must not be turned into fifteen invented entries.",
+    "UNITS: bank and squad_value are in millions. selling_prices, squad_selling_value, squad_market_value and available_budget are in TENTHS of a million (the API's own units), so 155 is 15.5m — bank in those units is bank * 10, and available_budget = squad_selling_value + bank * 10. bank and squad_value are as at the last deadline, so they do not move with in-week price changes."
   ],
   "chips_used": [],
   "gameweek_history": [],
@@ -76,5 +79,6 @@
   "picks_event": null,
   "active_chip": null,
   "picks": null,
-  "selling_prices": null
+  "selling_prices": null,
+  "selling_prices_confidence": null
 }

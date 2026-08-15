@@ -1,4 +1,4 @@
-# fpl-mirror snapshots — month=2026-08 mode=delta rows=1224 fetched=2026-08-15T09:18:25+00:00
+# fpl-mirror snapshots — month=2026-08 mode=delta rows=1230 fetched=2026-08-15T10:05:30+00:00
 # The ephemeral fields FPL overwrites in place. Append-only; rows are never edited.
 # delta mode: a full baseline for every player on the first snapshot of each UTC day, then only changed players. Forward-fill from the most recent earlier row.
 # now_cost and cost_change_* are in tenths of a million, as the API reports them.
@@ -1227,3 +1227,9 @@ snapshot_at,player_id,now_cost,cost_change_event,cost_change_start,selected_by_p
 2026-08-15T09:18:25+00:00,357,55,0,0,2.9,0,0,a,,,
 2026-08-15T09:18:25+00:00,418,50,0,0,10.0,0,0,a,,,
 2026-08-15T09:18:25+00:00,423,45,0,0,24.3,0,0,a,,,
+2026-08-15T10:05:30+00:00,7,55,0,0,0.4,0,0,a,,,
+2026-08-15T10:05:30+00:00,30,45,0,0,0.7,0,0,u,0,Has joined Paris Saint-Germain permanently,2026-08-10T14:03:30.089007Z
+2026-08-15T10:05:30+00:00,584,55,0,0,0.1,0,0,a,,,
+2026-08-15T10:05:30+00:00,323,45,0,0,1.4,0,0,a,,,
+2026-08-15T10:05:30+00:00,524,45,0,0,0.8,0,0,a,,,
+2026-08-15T10:05:30+00:00,534,45,0,0,5.2,0,0,a,,,
