@@ -1,23 +1,23 @@
 {
   "build_snapshots": {
-    "last_run_at": "2026-08-15T06:24:28+00:00",
+    "last_run_at": "2026-08-15T07:23:58+00:00",
     "expected_interval_minutes": 60,
     "warnings": [],
-    "last_snapshot_at": "2026-08-15T06:24:28+00:00",
+    "last_snapshot_at": "2026-08-15T07:23:58+00:00",
     "last_baseline_date": "2026-08-15",
-    "last_rows_written": 5,
+    "last_rows_written": 6,
     "current_file": "data/snapshots/2026-08.csv",
     "mode": "delta"
   },
   "build_player_history": {
-    "last_run_at": "2026-08-15T06:24:28+00:00",
+    "last_run_at": "2026-08-15T07:23:58+00:00",
     "expected_interval_minutes": 60,
     "warnings": [],
     "captured_gameweeks": [],
     "last_rows_written": 0
   },
   "build_squad": {
-    "last_run_at": "2026-08-15T06:24:29+00:00",
+    "last_run_at": "2026-08-15T07:24:00+00:00",
     "expected_interval_minutes": 60,
     "warnings": [],
     "picks": 0,
@@ -25,7 +25,7 @@
     "mini_leagues": 3
   },
   "build_fpl": {
-    "last_run_at": "2026-08-15T06:24:30+00:00",
+    "last_run_at": "2026-08-15T07:24:00+00:00",
     "expected_interval_minutes": 60,
     "warnings": [
       "bootstrap-static.elements: 45 new field(s) present in the API and not mirrored: birth_date, can_select, can_transact, clearances_blocks_interceptions, code, cost_change_event_fall, cost_change_start_fall, creativity_rank, creativity_rank_type, dreamteam_count, event_points, expected_goal_involvements_per_90, form_rank, form_rank_type, goals_conceded, has_temporary_code, ict_index_rank, ict_index_rank_type, in_dreamteam, influence_rank, influence_rank_type, known_name, now_cost_rank, now_cost_rank_type, opta_code, photo, points_per_game_rank, points_per_game_rank_type, price_change_percent, recoveries, region, removed, scout_news_link, scout_risks, selected_rank, selected_rank_type, special, squad_number, tackles, team_code, team_join_date, threat_rank, threat_rank_type, transfers_in, transfers_out",
