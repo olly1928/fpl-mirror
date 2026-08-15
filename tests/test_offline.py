@@ -78,8 +78,11 @@ def make_element(i):
               "value_season"]:
         e[f] = f"{(i % 30) / 10:.2f}"
     for f in ["starts", "defensive_contribution", "yellow_cards", "red_cards",
-              "own_goals", "penalties_missed", "penalties_saved", "saves", "bps"]:
+              "own_goals", "penalties_missed", "penalties_saved", "saves", "bps",
+              "clearances_blocks_interceptions", "tackles", "recoveries",
+              "goals_conceded"]:
         e[f] = i % 12
+    e["expected_goal_involvements_per_90"] = f"{(i % 30) / 10:.2f}"
     # A set-piece note with a comma in it, to prove the naive-join writer stays safe.
     e["penalties_order"] = 1 if i % 17 == 0 else None
     e["penalties_text"] = "Takes penalties, and corners" if i % 17 == 0 else ""
@@ -141,6 +144,16 @@ def make_fixtures(played_gws=0):
                 "team_h_score": 2 if done else None,
                 "team_a_score": 1 if done else None,
                 "minutes": 90 if done else 0,
+                # Flattened into fixture_stats.csv. Two identifiers, both sides,
+                # so a double gameweek is separable by fixture.
+                "stats": [
+                    {"identifier": "goals_scored",
+                     "h": [{"element": h, "value": 1}],
+                     "a": [{"element": a, "value": 1}]},
+                    {"identifier": "bps",
+                     "h": [{"element": h, "value": 24}],
+                     "a": [{"element": a, "value": 18}]},
+                ] if done else [],
             })
             fid += 1
     return out
@@ -465,6 +478,152 @@ def test_stale_flag():
           any("a warning raised by another process" in w for w in meta["warnings"]))
 
 
+def test_meta_cannot_silently_freeze():
+    """
+    The regression test for the bug that wasn't.
+
+    A frozen meta.json is the worst failure this mirror has, because meta.json is
+    the only file the downstream consumer reads for its integrity gate: it would
+    report a valid season and deadline forever while quietly ageing. The original
+    59 assertions all passed while that was believed to be happening, which is the
+    more interesting problem — none of them compared meta.json against the files
+    written beside it in the same run.
+    """
+    print("\n[9] meta.json cannot silently freeze")
+    scratch()
+    load_api()
+    run(build_fpl)
+
+    meta = json.loads(pathlib.Path("data/meta.json").read_text())
+    stamp = meta["fetched_at"]
+    for name in ["players.csv", "teams.csv", "fdr.csv", "fixtures.csv",
+                 "fixture_stats.csv"]:
+        head = pathlib.Path("data", name).read_text().split("\n")[0]
+        check(f"{name} header carries the same fetched_at as meta.json",
+              f"fetched={stamp}" in head, f"meta={stamp} vs {head[:100]}")
+
+    status = json.loads(pathlib.Path("data/build_status.json").read_text())
+    check("build_status build_fpl.last_run_at agrees with meta.json fetched_at",
+          status["build_fpl"]["last_run_at"] == stamp,
+          f"{status['build_fpl']['last_run_at']} vs {stamp}")
+
+    # Now prove the guard bites. Freeze meta.json by making its write a no-op and
+    # confirm the build fails instead of reporting success over a stale file.
+    frozen_before = pathlib.Path("data/meta.json").read_bytes()
+    real_write = build_fpl.atomic_write_json
+    build_fpl.atomic_write_json = lambda path, obj: None
+    try:
+        code = run(build_fpl)
+    finally:
+        build_fpl.atomic_write_json = real_write
+    check("a meta.json write that does not land exits non-zero", code != 0, f"exit={code}")
+    check("the frozen meta.json is left as it was",
+          pathlib.Path("data/meta.json").read_bytes() == frozen_before)
+
+    # And that the siblings moving on without it is itself detected: write a
+    # meta.json carrying the wrong timestamp and confirm the build rejects it.
+    def stale_write(path, obj):
+        if str(path).endswith("meta.json"):
+            obj = dict(obj, fetched_at="2020-01-01T00:00:00+00:00")
+        real_write(path, obj)
+
+    build_fpl.atomic_write_json = stale_write
+    try:
+        code = run(build_fpl)
+    finally:
+        build_fpl.atomic_write_json = real_write
+    check("a meta.json carrying the wrong timestamp exits non-zero",
+          code != 0, f"exit={code}")
+
+    # A meta.json missing the section 6 / section 9 keys must fail too — that is
+    # exactly the shape the pre-merge file had.
+    def gutted_write(path, obj):
+        if str(path).endswith("meta.json"):
+            obj = {k: v for k, v in obj.items()
+                   if k not in ("events", "game_settings", "chips", "element_types",
+                                "warnings", "stale", "components")}
+        real_write(path, obj)
+
+    build_fpl.atomic_write_json = gutted_write
+    try:
+        code = run(build_fpl)
+    finally:
+        build_fpl.atomic_write_json = real_write
+    check("a meta.json missing events/game_settings/warnings/stale exits non-zero",
+          code != 0, f"exit={code}")
+
+
+def test_new_defensive_and_fixture_stats():
+    print("\n[10] the fields the drift guard surfaced")
+    scratch()
+    load_api(completed_gws=2)
+    run(build_fpl)
+
+    rows = read_csv_like_a_consumer("data/players.csv")
+    for col in ["clearances_blocks_interceptions", "tackles", "recoveries",
+                "expected_goal_involvements_per_90", "goals_conceded"]:
+        check(f"players.csv gains {col}", col in rows[0])
+    cols = list(rows[0])
+    check("the original 14 columns are still leftmost and in order",
+          cols[:14] == ["id", "name", "team", "pos", "price", "own", "pts", "ppg",
+                        "mins", "g", "a", "cs", "bonus", "st"])
+    check("the five new columns are at the right-hand end",
+          cols[-5:] == ["clearances_blocks_interceptions", "tackles", "recoveries",
+                        "expected_goal_involvements_per_90", "goals_conceded"],
+          str(cols[-5:]))
+
+    fs = read_csv_like_a_consumer("data/fixture_stats.csv")
+    check("fixture_stats.csv has the specified columns",
+          list(fs[0]) == ["fixture_id", "gw", "player_id", "team_side",
+                          "identifier", "value"], str(list(fs[0])))
+    check("both sides of a fixture are represented",
+          {r["team_side"] for r in fs} == {"h", "a"})
+    check("a double gameweek is separable by fixture",
+          len({r["fixture_id"] for r in fs}) == 20)
+    check("goals_scored lines are present with values",
+          any(r["identifier"] == "goals_scored" and r["value"] == "1" for r in fs))
+
+    run(build_player_history)
+    hist = read_csv_like_a_consumer("data/player_history.csv")
+    for col in ["clearances_blocks_interceptions", "tackles", "recoveries",
+                "goals_conceded"]:
+        check(f"player_history.csv gains {col}", col in hist[0])
+    check("fixture_id/opponent_team/was_home stay last",
+          list(hist[0])[-3:] == ["fixture_id", "opponent_team", "was_home"])
+
+    # Appending to a panel written with different columns must refuse, not
+    # silently misalign every existing row.
+    p = pathlib.Path("data/player_history.csv")
+    text = p.read_text().replace(",tackles,", ",", 1)
+    p.write_text(text)
+    load_api(completed_gws=3)
+    check("a column-set change refuses to append", run(build_player_history) != 0)
+
+
+def test_drift_guard_is_quiet_about_known_fields():
+    print("\n[11] the drift guard reports only genuinely new fields")
+    scratch()
+    load_api()
+    boot = RESPONSES["/bootstrap-static/"]
+    for e in boot["elements"]:
+        e["photo"] = "12345.jpg"          # reviewed, deliberately not mirrored
+        e["influence_rank"] = 4
+        e["something_fpl_just_shipped"] = 7
+    for t in boot["teams"]:
+        t["pulse_id"] = 1
+    run(build_fpl)
+
+    meta = json.loads(pathlib.Path("data/meta.json").read_text())
+    joined = " ".join(meta["warnings"])
+    check("a genuinely new field is reported",
+          "something_fpl_just_shipped" in joined, joined)
+    check("reviewed-and-rejected fields are not reported",
+          "photo" not in joined and "influence_rank" not in joined
+          and "pulse_id" not in joined, joined)
+    check("no missing-field warnings on a complete response",
+          "absent from the API" not in joined, joined)
+
+
 def test_squad():
     print("\n[9] squad.json gains transfers, past seasons and mini-leagues")
     scratch()
@@ -569,6 +728,9 @@ def main():
         test_snapshots()
         test_player_history()
         test_stale_flag()
+        test_meta_cannot_silently_freeze()
+        test_new_defensive_and_fixture_stats()
+        test_drift_guard_is_quiet_about_known_fields()
         test_squad()
         test_no_secrets()
     finally:
