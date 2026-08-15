@@ -21,6 +21,7 @@ import pathlib
 import re
 import sys
 import tempfile
+import urllib.error
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
@@ -693,13 +694,21 @@ def test_squad():
     check("chips_used survives", squad["chips_used"] == [{"name": "wildcard", "event": 2}])
 
 
-def squad_endpoints(current_gw, transfers, chips, picks=range(1, 16), bank=5):
+def squad_endpoints(current_gw, transfers, chips, picks=range(1, 16), bank=5,
+                    transfers_recorded=None):
     """
     Wire up the four entry endpoints build_squad reads.
 
     No mini-leagues: standings are tested in [9] and an empty classic list keeps
     this fixture to the four calls the selling-price maths actually depends on.
+
+    transfers_recorded is how many transfers the entry's gameweek history claims,
+    which build_squad cross-checks against the transfer list. It defaults to
+    agreeing with that list — pass a larger number to simulate a feed that has
+    lost records. The entry's first gameweek is squad selection rather than
+    transfers, so the count is carried on the latest one.
     """
+    recorded = len(transfers) if transfers_recorded is None else transfers_recorded
     tid = build_squad.TEAM_ID
     RESPONSES[f"/entry/{tid}/"] = {
         "name": "Test XI", "player_first_name": "O", "player_last_name": "M",
@@ -709,7 +718,7 @@ def squad_endpoints(current_gw, transfers, chips, picks=range(1, 16), bank=5):
     }
     RESPONSES[f"/entry/{tid}/history/"] = {
         "current": [{"event": gw, "points": 60,
-                     "event_transfers": 1 if gw > 1 else 0}
+                     "event_transfers": recorded if gw == current_gw and gw > 1 else 0}
                     for gw in range(1, max(current_gw, 1) + 1)],
         "chips": chips,
         "past": [],
@@ -783,9 +792,14 @@ def test_selling_prices():
 
     check("one selling-price entry per pick", sp is not None and len(sp) == 15,
           str(sp if sp is None else len(sp)))
-    check("every entry carries the five specified keys",
-          all(set(v) == {"now_cost", "purchase", "selling", "source", "bought_event"}
+    check("every entry carries the five specified keys plus suspect",
+          all(set(v) == {"now_cost", "purchase", "selling", "source",
+                         "bought_event", "suspect"}
               for v in sp.values()), str(sorted(set(sp["1"]))))
+    check("nothing is suspect when the two transfer counts agree",
+          squad["selling_prices_confidence"] == "derived"
+          and not any(v["suspect"] for v in sp.values()),
+          str(squad["selling_prices_confidence"]))
     check("every value is an integer number of tenths, not a float",
           all(isinstance(v[k], int)
               for v in sp.values() for k in ("now_cost", "purchase", "selling")),
@@ -804,17 +818,19 @@ def test_selling_prices():
           sp["1"]["source"] == "transfer" and sp["1"]["bought_event"] == 2, str(sp["1"]))
     check("an initial-squad player derives purchase from now_cost - cost_change_start",
           sp["5"] == {"now_cost": 80, "purchase": 76, "selling": 78,
-                      "source": "initial_squad", "bought_event": None}, str(sp["5"]))
+                      "source": "initial_squad", "bought_event": None,
+                      "suspect": False}, str(sp["5"]))
 
     check("a Free Hit transfer is excluded and the purchase falls back to GW1",
           sp["6"] == {"now_cost": 85, "purchase": 80, "selling": 82,
-                      "source": "initial_squad", "bought_event": None}, str(sp["6"]))
+                      "source": "initial_squad", "bought_event": None,
+                      "suspect": False}, str(sp["6"]))
     check("a wildcard transfer is counted as a real purchase",
           sp["7"] == {"now_cost": 70, "purchase": 60, "selling": 65,
-                      "source": "transfer", "bought_event": 4}, str(sp["7"]))
+                      "source": "transfer", "bought_event": 4, "suspect": False}, str(sp["7"]))
     check("bought, sold and re-bought prices off the most recent purchase",
           sp["8"] == {"now_cost": 70, "purchase": 60, "selling": 65,
-                      "source": "transfer", "bought_event": 5}, str(sp["8"]))
+                      "source": "transfer", "bought_event": 5, "suspect": False}, str(sp["8"]))
 
     check("squad_selling_value is the sum of selling, in tenths",
           squad["squad_selling_value"] == sum(v["selling"] for v in sp.values()),
@@ -854,30 +870,71 @@ def test_selling_prices_edge_cases():
           any("SELLING PRICES: none" in n and "pre-season" in n
               for n in squad["notes"]), str(squad["notes"]))
 
-    # An empty transfer feed while the entry's own history records transfers is a
-    # broken feed, not a squad that was never changed. Treating everyone as an
-    # initial-squad pick there produces plausible, wrong numbers.
+    # A feed short of records is two readable sources disagreeing, not an absent
+    # source. The prices are still written — withholding them sends the consumer
+    # back to market price, which overstates proceeds on every risen player — but
+    # the doubt travels with them, per price and at the top of the file.
     scratch()
-    load_api(completed_gws=3)
-    squad_endpoints(3, [], [])
-    check("build_squad still exits 0 with a broken transfer feed",
+    load_api(completed_gws=5)
+    kept = {"entry": ME, "element_in": 7, "element_in_cost": 60, "element_out": 90,
+            "element_out_cost": 60, "event": 4, "time": "2026-09-18T10:00:00Z"}
+    squad_endpoints(5, [kept], [], transfers_recorded=2)   # one record has gone missing
+    check("build_squad still exits 0 when the transfer feed is short a record",
           run(build_squad) == 0)
     squad = json.loads(pathlib.Path("data/squad.json").read_text())
     status = json.loads(pathlib.Path("data/build_status.json").read_text())
-    check("an empty transfer feed outside pre-season is raised as a warning",
-          any("entry.transfers came back empty" in w
+    sp = squad["selling_prices"]
+
+    check("a contradiction still produces prices rather than nothing",
+          sp is not None and len(sp) == 15, str(sp if sp is None else len(sp)))
+    check("selling_prices_confidence is suspect, not derived",
+          squad["selling_prices_confidence"] == "suspect",
+          str(squad["selling_prices_confidence"]))
+    check("the totals are still written alongside them",
+          squad["squad_selling_value"] is not None
+          and squad["available_budget"]
+          == squad["squad_selling_value"] + int(round(squad["bank"] * 10)))
+    check("every price resting on the absence of a record is flagged suspect",
+          all(v["suspect"] for v in sp.values() if v["source"] == "initial_squad"),
+          str([k for k, v in sp.items() if v["source"] == "initial_squad"
+               and not v["suspect"]]))
+    check("a price resting on a record that IS present is not flagged",
+          sp["7"]["source"] == "transfer" and sp["7"]["suspect"] is False
+          and sp["7"]["purchase"] == 60, str(sp["7"]))
+    check("a note explains what contradicted and what it means",
+          any("SELLING PRICES ARE SUSPECT" in n and "1 purchase record(s) are missing"
+              in n for n in squad["notes"]), str(squad["notes"]))
+    check("the contradiction is raised as a warning as well",
+          any("purchase record(s) are missing from the feed" in w
               for w in status["build_squad"]["warnings"]),
           str(status["build_squad"]["warnings"]))
-    check("and no prices are invented from it",
-          squad["selling_prices"] is None, str(squad["selling_prices"]))
 
     # meta.json is where that warning has to surface, since it is the file the
     # consumer reads first.
     run(build_fpl)
     meta = json.loads(pathlib.Path("data/meta.json").read_text())
     check("the warning reaches meta.json warnings[]",
-          any("entry.transfers came back empty" in w for w in meta["warnings"]),
-          str(meta["warnings"]))
+          any("purchase record(s) are missing from the feed" in w
+              for w in meta["warnings"]), str(meta["warnings"]))
+
+    # An unreadable feed is the other situation: nothing to derive from at all.
+    scratch()
+    load_api(completed_gws=5)
+    tid = build_squad.TEAM_ID
+    squad_endpoints(5, [], [])
+    RESPONSES[f"/entry/{tid}/transfers/"] = urllib.error.HTTPError(
+        f"{build_squad.BASE}/entry/{tid}/transfers/", 503, "Service Unavailable", {}, None)
+    check("build_squad still exits 0 when the transfer feed cannot be read",
+          run(build_squad) == 0)
+    squad = json.loads(pathlib.Path("data/squad.json").read_text())
+    check("an unreadable transfer feed produces no prices at all",
+          squad["selling_prices"] is None and squad["selling_prices_confidence"] is None,
+          str(squad["selling_prices"]))
+    check("and the totals stay null rather than summing a partial squad",
+          squad["squad_selling_value"] is None and squad["available_budget"] is None)
+    check("a note says why nothing was derived",
+          any("SELLING PRICES: not derived" in n and "could not be read" in n
+              for n in squad["notes"]), str(squad["notes"]))
 
     # A GW1 manager who genuinely has not transferred is not a broken feed, and
     # warning about it hourly is how a warnings[] array stops being read.
@@ -888,11 +945,12 @@ def test_selling_prices_edge_cases():
     squad = json.loads(pathlib.Path("data/squad.json").read_text())
     status = json.loads(pathlib.Path("data/build_status.json").read_text())
     check("no transfers and none recorded is not warned about",
-          not any("came back empty" in w for w in status["build_squad"]["warnings"]),
+          not any("missing from the feed" in w
+                  for w in status["build_squad"]["warnings"]),
           str(status["build_squad"]["warnings"]))
-    check("and every player is priced as an initial-squad pick",
-          squad["selling_prices"] is not None
-          and all(v["source"] == "initial_squad"
+    check("and every player is priced as an unflagged initial-squad pick",
+          squad["selling_prices_confidence"] == "derived"
+          and all(v["source"] == "initial_squad" and not v["suspect"]
                   for v in squad["selling_prices"].values()))
 
     # A pick with no price at all must shrink the totals loudly, not quietly.

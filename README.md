@@ -180,9 +180,10 @@ keyed by player id, all values in **tenths of a million** — the API's own unit
 so `155` is £15.5m:
 
 ```json
+"selling_prices_confidence": "derived",
 "selling_prices": {
   "351": {"now_cost": 155, "purchase": 150, "selling": 152,
-          "source": "transfer", "bought_event": 4}
+          "source": "transfer", "bought_event": 4, "suspect": false}
 }
 ```
 
@@ -206,10 +207,34 @@ Alongside them, also in tenths: `squad_selling_value` (sum of `selling`),
 (`squad_selling_value` + bank). Note that `bank` and `squad_value` at the top of
 the file remain in **millions**, as they always have been.
 
-`selling_prices` is `null` — with the reason in `notes[]` — pre-season when there
-is no squad to price, and whenever the transfer feed cannot be read or contradicts
-the entry's own gameweek history. Deriving them anyway would price the whole squad
-off GW1: plausible numbers that are wrong for every player transferred in.
+##### When the numbers are doubtful
+
+The transfer feed is cross-checked against `history.current[].event_transfers`,
+which counts the same transfers without reference to the transfer list. If the
+feed has **fewer** records than that count, purchase records are missing, and a
+player really bought in GW7 is indistinguishable from one held since GW1.
+
+The prices are still written — withholding them sends you back to `now_cost`,
+which is not neutral but systematically overstates proceeds on every risen
+player — but the doubt travels with them:
+
+- `selling_prices_confidence` goes from `"derived"` to `"suspect"`;
+- every price resting on the *absence* of a record gets `"suspect": true`, while
+  prices resting on a record that is present stay `false` and are as good as on
+  any other run;
+- `notes[]` gains a line saying what contradicted and by how much;
+- `meta.json warnings[]` carries it too.
+
+`suspect` is always present, never absent-means-fine, so a consumer reading one
+price in isolation can tell "not suspect" from "written before this field
+existed".
+
+`selling_prices` is `null` — with the reason in `notes[]`, and
+`selling_prices_confidence` null with it — in two cases only: pre-season, when
+there is no squad to price; and when the transfer feed **cannot be read at all**,
+where there is no purchase-price source to work from and the whole squad would
+silently fall back to GW1 prices. That is a different situation from two readable
+sources disagreeing.
 
 ## Reliability
 
