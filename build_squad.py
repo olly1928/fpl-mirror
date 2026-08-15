@@ -17,6 +17,11 @@ Beyond the squad itself this also mirrors the full transfer history, previous
 seasons, chip usage and standings for every mini-league the entry is in, so
 rank-vs-rivals is answerable from the feed. Those four are enrichment: if one of
 them fails the file is still written, with the reason recorded in notes[].
+
+Selling prices are DERIVED here rather than fetched. The endpoint that publishes
+them needs an authenticated session, but the numbers themselves are a pure
+function of purchase price and current price, and both are already in the feed —
+see selling_price() and derive_selling_prices() below.
 """
 
 import json
@@ -25,7 +30,7 @@ import sys
 import urllib.error
 from datetime import datetime, timezone
 
-from fpl_common import api, record_status
+from fpl_common import api, check_fields, record_status
 
 TEAM_ID = os.environ.get("FPL_TEAM_ID", "790889").strip()
 BASE = "https://fantasy.premierleague.com/api"
@@ -52,6 +57,33 @@ STATUS_WORDS = {
 }
 
 MAX_BANKED_FREE_TRANSFERS = 5
+
+# ---------------------------------------------------------------- schema
+#
+# The selling-price derivation reads three feeds, so all three go through the
+# same drift guard the CSV builders use. A renamed element_in_cost would
+# otherwise turn every purchase price into a silent fallback to the initial-squad
+# branch — plausible-looking numbers that are wrong for anyone who has
+# transferred, which is the worst failure this file can produce.
+
+EXPECTED_TRANSFER_FIELDS = [
+    "element_in", "element_in_cost", "element_out", "element_out_cost",
+    "entry", "event", "time",
+]
+IGNORED_TRANSFER_FIELDS = []
+
+# chips[] from entry history. Free Hit weeks have to be identifiable from here.
+EXPECTED_CHIP_FIELDS = ["name", "event", "time"]
+IGNORED_CHIP_FIELDS = ["chip_type", "id", "played_by_entry", "status"]
+
+# The bootstrap element fields the initial-squad fallback depends on. Reported
+# missing-only: build_fpl owns the new-field report for elements, and listing
+# fifty bootstrap fields from here every hour would bury this.
+EXPECTED_PRICE_ELEMENT_FIELDS = ["id", "now_cost", "cost_change_start"]
+
+# The chip that makes a transfer temporary. Wildcard transfers are permanent and
+# must be counted; a Free Hit squad is handed back at the end of the gameweek.
+FREE_HIT = "freehit"
 
 
 def die(msg):
@@ -211,6 +243,148 @@ def describe_transfer(t, elements, teams):
     }
 
 
+def selling_price(purchase, now_cost):
+    """
+    FPL's sell rule, in integer tenths of a million.
+
+    A fall is absorbed in full — you take the whole loss. A rise is halved and
+    rounded DOWN, so a player bought at 7.0 and now worth 7.3 sells for 7.1, not
+    7.15 and not 7.2.
+
+    Integers throughout deliberately. In floats, 0.1 is not 0.1, and rounding a
+    half-tenth at the end of the sum lands on the wrong side often enough to
+    matter — roughly every second odd-numbered rise.
+    """
+    if now_cost <= purchase:
+        return now_cost
+    return purchase + (now_cost - purchase) // 2
+
+
+def free_hit_events(chips):
+    """
+    The gameweeks whose transfers must be ignored.
+
+    A Free Hit squad exists for one gameweek and is handed straight back, but
+    every one of its transfers stays in the transfer history looking exactly like
+    a permanent purchase. Reading them as purchases prices fifteen players off a
+    squad that was reverted a week later.
+
+    Wildcard weeks are deliberately not in here: those transfers are permanent
+    and their prices are the real purchase prices.
+    """
+    return {
+        c.get("event")
+        for c in (chips or [])
+        if c.get("name") == FREE_HIT and c.get("event") is not None
+    }
+
+
+def latest_purchases(transfers, chips):
+    """
+    element_id -> (cost_in_tenths, event) for the most recent real purchase.
+
+    Sorted by (event, time) ascending and overwritten as it goes, so a player
+    bought, sold and bought again is priced off the second purchase. The feed
+    arrives newest-first, so taking the first match would silently pick the
+    oldest price for exactly the players whose price has moved most.
+    """
+    skip = free_hit_events(chips)
+    out = {}
+    for t in sorted((transfers or []),
+                    key=lambda t: (t.get("event") or 0, t.get("time") or "")):
+        if t.get("event") in skip:
+            continue
+        element_id, cost = t.get("element_in"), t.get("element_in_cost")
+        if element_id is None or cost is None:
+            continue
+        out[element_id] = (cost, t.get("event"))
+    return out
+
+
+def derive_selling_prices(picks, elements, transfers, chips, records_missing=False):
+    """
+    One selling price per pick, in integer tenths, with its provenance.
+
+    Purchase price comes from one of two places, in this order:
+
+      1. element_in_cost on the most recent non-Free-Hit transfer that brought
+         the player in. That is literally what was paid.
+      2. Failing that the player has been held since the initial squad, so the
+         purchase price is the GW1 price: now_cost - cost_change_start.
+         Pre-season prices are static, so the season-start price and the GW1
+         deadline price are the same number.
+
+    source records which branch was taken, because they are not equally certain:
+    a transfer record is what happened, while the initial-squad figure carries
+    the assumption that the player was never sold and re-bought outside the
+    window the transfer feed covers.
+
+    records_missing says the transfer feed is known to be short of records — see
+    the cross-check in main(). Every price that rests on the ABSENCE of a
+    transfer record is then flagged suspect, because a player who was really
+    bought in GW7 looks exactly like one held since GW1 when the record for that
+    purchase is the one missing. Prices that rest on a record that is present
+    are not flagged: that record still says what was paid.
+
+    Returns (prices, warnings).
+    """
+    purchases = latest_purchases(transfers, chips)
+    prices, no_cost_change, unpriced = {}, [], []
+
+    for pick in picks:
+        element_id = pick.get("element")
+        element = elements.get(element_id) or {}
+        now_cost = element.get("now_cost")
+        if now_cost is None:
+            # No current price means no selling price. Leaving the pick out is
+            # the only honest answer, but a squad that silently prices fourteen
+            # of fifteen players is a wrong total, so it has to be said.
+            unpriced.append(str(element_id))
+            continue
+
+        if element_id in purchases:
+            purchase, bought_event = purchases[element_id]
+            source = "transfer"
+        else:
+            change = element.get("cost_change_start")
+            if change is None:
+                # Without it the GW1 price is unknowable. Assuming no movement is
+                # the smallest wrong answer, but it must not pass unremarked.
+                no_cost_change.append(str(element_id))
+                change = 0
+            purchase = now_cost - change
+            bought_event = None
+            source = "initial_squad"
+
+        prices[str(element_id)] = {
+            "now_cost": now_cost,
+            "purchase": purchase,
+            "selling": selling_price(purchase, now_cost),
+            "source": source,
+            "bought_event": bought_event,
+            # Always present, never absent-means-fine: a consumer reading one
+            # price in isolation must be able to tell "not suspect" from "written
+            # before this field existed".
+            "suspect": bool(records_missing and source == "initial_squad"),
+        }
+
+    warnings = []
+    if no_cost_change:
+        warnings.append(
+            "bootstrap-static.elements: cost_change_start absent for player(s) "
+            f"{', '.join(no_cost_change)}, so their initial-squad purchase price "
+            "was derived assuming the price has not moved since GW1."
+        )
+    if unpriced:
+        warnings.append(
+            f"{len(unpriced)} of {len(picks)} picks have no now_cost in "
+            f"bootstrap-static (player(s) {', '.join(unpriced)}), so they have no "
+            "selling price and are missing from squad_selling_value and "
+            "squad_market_value — both totals are short by that many players."
+        )
+    return prices, warnings
+
+
 def mini_leagues(entry, notes):
     """
     Standings for the mini-leagues this entry is in, so rank-vs-rivals is
@@ -299,8 +473,19 @@ def main():
         if entry.get("last_deadline_bank") is not None else None,
         "squad_value": (entry["last_deadline_value"] / 10.0)
         if entry.get("last_deadline_value") is not None else None,
+        # Filled in once picks and selling prices are known. Declared here so
+        # they sit alongside bank in the written file rather than at the end.
+        # Unlike bank and squad_value these three are in TENTHS of a million,
+        # matching selling_prices below and the API's own units.
+        "squad_selling_value": None,
+        "squad_market_value": None,
+        "available_budget": None,
         "notes": [],
     }
+
+    # Warnings that belong in meta.json warnings[] rather than only in notes[]:
+    # these are feed problems, not caveats about the data.
+    warnings = []
 
     out["chips_used"] = [
         {"name": c.get("name"), "event": c.get("event")}
@@ -329,14 +514,58 @@ def main():
     ]
 
     # Full transfer history. The costs in it are the prices at the time of the
-    # transfer, which is the only place a purchase price is recoverable without
-    # an authenticated session — see the selling-prices note below.
+    # transfer, which is where every purchase price below comes from.
     transfers, transfers_err = get_optional(
         f"/entry/{TEAM_ID}/transfers/", "transfer history", default=[]
     )
     if transfers_err:
         out["notes"].append(transfers_err)
     out["transfers"] = [describe_transfer(t, elements, teams) for t in (transfers or [])]
+
+    # Drift guard over the three feeds the selling-price maths reads. An empty
+    # transfer list or chip list is a legitimate state rather than drift — a
+    # manager who has made no transfers has nothing to check — so those are only
+    # checked when there is something to check. The elements check is
+    # missing-fields-only: build_fpl owns the new-field report for that endpoint.
+    if transfers:
+        warnings += check_fields(transfers, EXPECTED_TRANSFER_FIELDS,
+                                 "entry.transfers", ignore=IGNORED_TRANSFER_FIELDS)
+    if history.get("chips"):
+        warnings += check_fields(history["chips"], EXPECTED_CHIP_FIELDS,
+                                 "entry.history.chips", ignore=IGNORED_CHIP_FIELDS)
+    warnings += check_fields(boot["elements"], EXPECTED_PRICE_ELEMENT_FIELDS,
+                             "bootstrap-static.elements", report_new=False)
+
+    # Cross-check the transfer feed against an independent count of the same
+    # thing. A record missing from the feed is a quiet failure: the player falls
+    # through to the initial-squad branch and comes out with a plausible wrong
+    # price. The entry's gameweek history counts transfers per gameweek without
+    # reference to the transfer list, so the two only disagree when one is wrong.
+    #
+    # Two deliberate narrowings, both to stop this firing on a healthy feed —
+    # a warning that repeats hourly on a working mirror is one nobody reads:
+    #
+    #   * the entry's first gameweek is squad selection rather than transfers,
+    #     so it is excluded, exactly as estimate_free_transfers does;
+    #   * only a feed with FEWER records than history counts is flagged. More
+    #     records than counted does not produce the initial-squad fallback, and
+    #     chip weeks are the kind of place the two feeds could legitimately
+    #     differ in that direction.
+    weeks = history.get("current") or []
+    transfers_made = sum((w.get("event_transfers") or 0) for w in weeks[1:])
+    missing_records = max(0, transfers_made - len(transfers or []))
+    transfers_contradict = bool(
+        current_event is not None and not transfers_err and missing_records
+    )
+    if transfers_contradict:
+        warnings.append(
+            f"entry.transfers returned {len(transfers or [])} record(s), but the entry's "
+            f"gameweek history counts {transfers_made} transfer(s) made. {missing_records} "
+            "purchase record(s) are missing from the feed, so any player priced as an "
+            "initial-squad pick may really have been transferred in at a different price. "
+            "squad.json marks those entries suspect and sets "
+            "selling_prices_confidence=suspect."
+        )
 
     out["mini_leagues"] = mini_leagues(entry, out["notes"])
 
@@ -381,19 +610,103 @@ def main():
             out["captain"] = captain
             out["vice_captain"] = vice
 
-    out["selling_prices"] = None
+    # ---- selling prices ------------------------------------------------
+    #
+    # The endpoint that publishes these needs an authenticated session. The
+    # numbers do not: selling price is a pure function of purchase price and
+    # current price, and both are in the feeds already fetched above.
+    if not out["picks"]:
+        out["selling_prices"] = None
+        out["selling_prices_confidence"] = None
+        out["notes"].append(
+            "SELLING PRICES: none, because there is no squad to price yet. "
+            + ("It is pre-season — the picks endpoint publishes nothing until a "
+               "gameweek has started, and an empty squad must not be turned into "
+               "fifteen invented entries."
+               if current_event is None else
+               "The picks endpoint returned nothing for this gameweek, so there is "
+               "no list of players to derive prices for.")
+        )
+    elif transfers_err:
+        # Nothing to derive from. Every player would fall through to the
+        # initial-squad branch and be priced off GW1 — not a flaggable subset but
+        # the whole squad, from a source that could not be read at all. That is a
+        # different situation from two readable sources disagreeing below.
+        out["selling_prices"] = None
+        out["selling_prices_confidence"] = None
+        note = (
+            "SELLING PRICES: not derived. The transfer history could not be read this "
+            "run, so there is no purchase-price source to work from at all and every "
+            "player would be treated as an initial-squad pick — plausible-looking "
+            "numbers that are wrong for anyone transferred in. Use 'now_cost' as an "
+            "upper bound until the feed recovers."
+        )
+        out["notes"].append(note)
+        warnings.append(note)
+    else:
+        prices, price_warnings = derive_selling_prices(
+            out["picks"], elements, transfers, history.get("chips"),
+            records_missing=transfers_contradict,
+        )
+        warnings += price_warnings
+        out["selling_prices"] = prices
+        out["selling_prices_confidence"] = "suspect" if transfers_contradict else "derived"
+
+        out["squad_selling_value"] = sum(p["selling"] for p in prices.values())
+        out["squad_market_value"] = sum(p["now_cost"] for p in prices.values())
+        bank_tenths = entry.get("last_deadline_bank")
+        if bank_tenths is None:
+            out["notes"].append(
+                "available_budget is null: the entry summary did not carry "
+                "last_deadline_bank, so the bank could not be added to the squad's "
+                "selling value."
+            )
+        else:
+            out["available_budget"] = out["squad_selling_value"] + bank_tenths
+
+        derived = sum(1 for p in prices.values() if p["source"] == "initial_squad")
+        out["notes"].append(
+            "SELLING PRICES: DERIVED, not fetched — and they are the numbers to do "
+            "transfer maths with, not 'now_cost'. Purchase price comes from one of two "
+            "sources, recorded per player in selling_prices[id].source: "
+            "'transfer' means element_in_cost on the most recent non-Free-Hit transfer "
+            "that brought the player in, which is literally what was paid; "
+            "'initial_squad' means the player has been held since GW1 and the purchase "
+            "price is bootstrap-static's now_cost minus cost_change_start, which is the "
+            "GW1 price because pre-season prices are static. Selling price is then the "
+            "full fall, or the purchase price plus half of any rise rounded down. "
+            f"{len(prices) - derived} from a transfer record, {derived} derived from "
+            "the initial squad — the latter assume the player was never sold and "
+            "re-bought. Free Hit transfers are excluded; wildcard transfers count."
+        )
+
+        if transfers_contradict:
+            suspect = sorted(k for k, p in prices.items() if p["suspect"])
+            out["notes"].append(
+                "SELLING PRICES ARE SUSPECT THIS RUN. The transfer feed returned "
+                f"{len(transfers or [])} record(s) while the entry's own gameweek "
+                f"history counts {transfers_made} transfer(s) made, so "
+                f"{missing_records} purchase record(s) are missing from the feed. A "
+                "player really bought in a later gameweek is indistinguishable from one "
+                "held since GW1 when the record of that purchase is the one missing, so "
+                "every price resting on the ABSENCE of a record is flagged with "
+                "suspect=true — player(s) " + (", ".join(suspect) or "none") + ". Prices "
+                "sourced from a record that is present are not flagged, and are as good "
+                "as on any other run. The flagged ones are still better than 'now_cost', "
+                "which overstates proceeds on every player who has risen; they are just "
+                "not certain. If the missing record is a re-purchase of a player who "
+                "also has an earlier record, that player's price can be stale too. "
+                "selling_prices_confidence is 'suspect' rather than 'derived' until the "
+                "two feeds agree again."
+            )
+
     out["notes"].append(
-        "SELLING PRICES: not available. They require an authenticated FPL session, "
-        "which this mirror deliberately does not have. Every 'now_cost' above is the "
-        "CURRENT MARKET PRICE, not what I would receive for selling. A player who has "
-        "risen since I bought them sells for purchase price plus half the rise, rounded "
-        "down, so market price overstates my sale proceeds. Treat any transfer or budget "
-        "maths built on these numbers as approximate, and ask me to paste the real "
-        "selling prices before committing to anything tight."
-    )
-    out["notes"].append(
-        "All prices and squad_value are in millions. bank and squad_value are as at the "
-        "last deadline, so they do not move with in-week price changes."
+        "UNITS: bank and squad_value are in millions. selling_prices, "
+        "squad_selling_value, squad_market_value and available_budget are in TENTHS of "
+        "a million (the API's own units), so 155 is 15.5m — bank in those units is "
+        "bank * 10, and available_budget = squad_selling_value + bank * 10. "
+        "bank and squad_value are as at the last deadline, so they do not move with "
+        "in-week price changes."
     )
 
     # Temp file then rename: an interrupted write must never replace a good
@@ -407,10 +720,14 @@ def main():
     record_status(
         "build_squad",
         expected_interval_minutes=60,
-        warnings=[n for n in out["notes"] if "unavailable" in n],
+        # notes[] carries caveats a consumer of squad.json should read; warnings[]
+        # in meta.json is for things that have actually gone wrong with the feed.
+        warnings=[n for n in out["notes"] if "unavailable" in n] + warnings,
         picks=len(out["picks"]) if out.get("picks") else 0,
         transfers=len(out.get("transfers") or []),
         mini_leagues=len(out.get("mini_leagues") or []),
+        selling_prices=len(out["selling_prices"] or {}),
+        selling_prices_confidence=out["selling_prices_confidence"],
     )
 
     n = len(out["picks"]) if out.get("picks") else 0
@@ -420,6 +737,22 @@ def main():
         f"{len(out.get('transfers') or [])} transfers, "
         f"{len(out.get('mini_leagues') or [])} mini-league(s)"
     )
+    if out["selling_prices"]:
+        from_transfer = sum(1 for p in out["selling_prices"].values()
+                            if p["source"] == "transfer")
+        budget = out["available_budget"]
+        suspect = sum(1 for p in out["selling_prices"].values() if p["suspect"])
+        print(
+            f"  selling value {out['squad_selling_value'] / 10.0}m vs market "
+            f"{out['squad_market_value'] / 10.0}m, available budget "
+            f"{budget / 10.0 if budget is not None else '?'}m "
+            f"({from_transfer} priced from a transfer record, "
+            f"{len(out['selling_prices']) - from_transfer} from the initial squad), "
+            f"confidence {out['selling_prices_confidence']}"
+            + (f" — {suspect} suspect" if suspect else "")
+        )
+    for w in warnings:
+        print(f"  ! {w}", file=sys.stderr)
 
 
 if __name__ == "__main__":

@@ -166,13 +166,75 @@ Re-running never duplicates: gameweeks already in the file are skipped.
 ### `squad.json`
 
 Picks, captain, bank, value, chip usage, gameweek history, full transfer history,
-past seasons, and standings for each mini-league. Read `notes[]` before acting on
-any of it — in particular:
+past seasons, standings for each mini-league, and **selling prices**. Read
+`notes[]` before acting on any of it — in particular:
 
-- **Selling prices are not available.** They require an authenticated session
-  this mirror deliberately does not have. Every `now_cost` is the current market
-  price, which overstates sale proceeds for any player who has risen.
 - **Free transfers are an estimate.** The API does not publish them.
+
+#### Selling prices
+
+`selling_prices` is derived, not fetched. The endpoint that publishes it needs an
+authenticated session; the numbers themselves are a pure function of purchase
+price and current price, and both are already in the feed. One entry per pick,
+keyed by player id, all values in **tenths of a million** — the API's own units,
+so `155` is £15.5m:
+
+```json
+"selling_prices_confidence": "derived",
+"selling_prices": {
+  "351": {"now_cost": 155, "purchase": 150, "selling": 152,
+          "source": "transfer", "bought_event": 4, "suspect": false}
+}
+```
+
+`source` says where the purchase price came from, and the two are not equally
+certain:
+
+- `transfer` — `element_in_cost` on the most recent non-Free-Hit transfer that
+  brought the player in. Literally what was paid.
+- `initial_squad` — no transfer record, so the player has been held since GW1 and
+  the purchase price is `now_cost - cost_change_start`. Pre-season prices are
+  static, so that is the GW1 deadline price. Carries the assumption that the
+  player was never sold and re-bought.
+
+Selling price is then the full fall, or the purchase price plus **half of any
+rise, rounded down** — 7.0 → 7.3 sells for 7.1. Free Hit transfers are excluded
+(the squad reverts, but the transfers stay in the history looking permanent);
+wildcard transfers count, because they are real.
+
+Alongside them, also in tenths: `squad_selling_value` (sum of `selling`),
+`squad_market_value` (sum of `now_cost`, for comparison) and `available_budget`
+(`squad_selling_value` + bank). Note that `bank` and `squad_value` at the top of
+the file remain in **millions**, as they always have been.
+
+##### When the numbers are doubtful
+
+The transfer feed is cross-checked against `history.current[].event_transfers`,
+which counts the same transfers without reference to the transfer list. If the
+feed has **fewer** records than that count, purchase records are missing, and a
+player really bought in GW7 is indistinguishable from one held since GW1.
+
+The prices are still written — withholding them sends you back to `now_cost`,
+which is not neutral but systematically overstates proceeds on every risen
+player — but the doubt travels with them:
+
+- `selling_prices_confidence` goes from `"derived"` to `"suspect"`;
+- every price resting on the *absence* of a record gets `"suspect": true`, while
+  prices resting on a record that is present stay `false` and are as good as on
+  any other run;
+- `notes[]` gains a line saying what contradicted and by how much;
+- `meta.json warnings[]` carries it too.
+
+`suspect` is always present, never absent-means-fine, so a consumer reading one
+price in isolation can tell "not suspect" from "written before this field
+existed".
+
+`selling_prices` is `null` — with the reason in `notes[]`, and
+`selling_prices_confidence` null with it — in two cases only: pre-season, when
+there is no squad to price; and when the transfer feed **cannot be read at all**,
+where there is no purchase-price source to work from and the whole squad would
+silently fall back to GW1 prices. That is a different situation from two readable
+sources disagreeing.
 
 ## Reliability
 
