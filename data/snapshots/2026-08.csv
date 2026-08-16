@@ -1,4 +1,4 @@
-# fpl-mirror snapshots — month=2026-08 mode=delta rows=2047 fetched=2026-08-16T02:17:21+00:00
+# fpl-mirror snapshots — month=2026-08 mode=delta rows=2056 fetched=2026-08-16T03:41:40+00:00
 # The ephemeral fields FPL overwrites in place. Append-only; rows are never edited.
 # delta mode: a full baseline for every player on the first snapshot of each UTC day, then only changed players. Forward-fill from the most recent earlier row.
 # now_cost and cost_change_* are in tenths of a million, as the API reports them.
@@ -2050,3 +2050,12 @@ snapshot_at,player_id,now_cost,cost_change_event,cost_change_start,selected_by_p
 2026-08-16T02:17:21+00:00,275,40,0,0,0.0,0,0,u,0,Has joined Grimsby Town on loan for the rest of the season,2026-07-29T13:00:27.959925Z
 2026-08-16T02:17:21+00:00,418,50,0,0,10.5,0,0,a,,,
 2026-08-16T02:17:21+00:00,505,45,0,0,5.7,0,0,a,,,
+2026-08-16T03:41:40+00:00,67,65,0,0,3.2,0,0,a,,,
+2026-08-16T03:41:40+00:00,154,95,0,0,10.9,0,0,a,,,
+2026-08-16T03:41:40+00:00,256,45,0,0,0.3,0,0,a,,,
+2026-08-16T03:41:40+00:00,585,40,0,0,0.2,0,0,a,,,
+2026-08-16T03:41:40+00:00,329,45,0,0,2.1,0,0,a,,,
+2026-08-16T03:41:40+00:00,368,70,0,0,42.0,0,0,a,,,
+2026-08-16T03:41:40+00:00,377,65,0,0,0.7,0,0,a,,,
+2026-08-16T03:41:40+00:00,423,45,0,0,23.9,0,0,a,,,
+2026-08-16T03:41:40+00:00,534,45,0,0,5.5,0,0,a,,,
