@@ -1,4 +1,4 @@
-# fpl-mirror snapshots — month=2026-08 mode=delta rows=3129 fetched=2026-08-17T05:28:44+00:00
+# fpl-mirror snapshots — month=2026-08 mode=delta rows=3140 fetched=2026-08-17T06:38:05+00:00
 # The ephemeral fields FPL overwrites in place. Append-only; rows are never edited.
 # delta mode: a full baseline for every player on the first snapshot of each UTC day, then only changed players. Forward-fill from the most recent earlier row.
 # now_cost and cost_change_* are in tenths of a million, as the API reports them.
@@ -3132,3 +3132,14 @@ snapshot_at,player_id,now_cost,cost_change_event,cost_change_start,selected_by_p
 2026-08-17T05:28:44+00:00,372,55,0,0,1.8,0,0,a,,,
 2026-08-17T05:28:44+00:00,379,90,0,0,14.7,0,0,a,,,
 2026-08-17T05:28:44+00:00,397,85,0,0,27.2,0,0,a,,,
+2026-08-17T06:38:05+00:00,8,55,0,0,22.7,0,0,a,,,
+2026-08-17T06:38:05+00:00,10,55,0,0,2.1,0,0,a,100,,2026-07-23T12:01:23.305229Z
+2026-08-17T06:38:05+00:00,11,55,0,0,12.3,0,0,a,,,
+2026-08-17T06:38:05+00:00,557,65,0,0,10.1,0,0,a,,,
+2026-08-17T06:38:05+00:00,272,45,0,0,7.1,0,0,a,,,
+2026-08-17T06:38:05+00:00,346,60,0,0,26.2,0,0,a,,,
+2026-08-17T06:38:05+00:00,366,75,0,0,14.7,0,0,a,,,
+2026-08-17T06:38:05+00:00,384,55,0,0,10.4,0,0,a,,,
+2026-08-17T06:38:05+00:00,388,60,0,0,21.2,0,0,a,,,
+2026-08-17T06:38:05+00:00,391,55,0,0,12.8,0,0,a,,,
+2026-08-17T06:38:05+00:00,527,60,0,0,2.4,0,0,a,,,
