@@ -1,4 +1,4 @@
-# fpl-mirror snapshots — month=2026-08 mode=delta rows=3163 fetched=2026-08-17T07:45:27+00:00
+# fpl-mirror snapshots — month=2026-08 mode=delta rows=3174 fetched=2026-08-17T08:34:23+00:00
 # The ephemeral fields FPL overwrites in place. Append-only; rows are never edited.
 # delta mode: a full baseline for every player on the first snapshot of each UTC day, then only changed players. Forward-fill from the most recent earlier row.
 # now_cost and cost_change_* are in tenths of a million, as the API reports them.
@@ -3166,3 +3166,14 @@ snapshot_at,player_id,now_cost,cost_change_event,cost_change_start,selected_by_p
 2026-08-17T07:45:27+00:00,427,80,0,0,28.9,0,0,a,,,
 2026-08-17T07:45:27+00:00,491,60,0,0,5.4,0,0,a,,,
 2026-08-17T07:45:27+00:00,502,45,0,0,2.8,0,0,a,,,
+2026-08-17T08:34:23+00:00,8,55,0,0,23.0,0,0,a,,,
+2026-08-17T08:34:23+00:00,16,65,0,0,0.3,0,0,a,,,
+2026-08-17T08:34:23+00:00,557,65,0,0,10.5,0,0,a,,,
+2026-08-17T08:34:23+00:00,32,45,0,0,8.6,0,0,a,,,
+2026-08-17T08:34:23+00:00,78,75,0,0,1.9,0,0,i,0,Foot injury - Unknown return date,2026-07-29T17:30:09.796802Z
+2026-08-17T08:34:23+00:00,236,65,0,0,3.5,0,0,a,,,
+2026-08-17T08:34:23+00:00,250,45,0,0,3.2,0,0,a,,,
+2026-08-17T08:34:23+00:00,362,50,0,0,1.6,0,0,a,100,,2026-07-23T12:01:23.581126Z
+2026-08-17T08:34:23+00:00,423,45,0,0,23.3,0,0,a,,,
+2026-08-17T08:34:23+00:00,428,80,0,0,11.6,0,0,a,,,
+2026-08-17T08:34:23+00:00,451,40,0,0,0.4,0,0,u,0,Has joined FC Kaiserslautern on loan for the rest of the season,2026-08-12T14:05:29.224600Z
