@@ -1,4 +1,4 @@
-# fpl-mirror snapshots — month=2026-08 mode=delta rows=3124 fetched=2026-08-17T04:34:06+00:00
+# fpl-mirror snapshots — month=2026-08 mode=delta rows=3129 fetched=2026-08-17T05:28:44+00:00
 # The ephemeral fields FPL overwrites in place. Append-only; rows are never edited.
 # delta mode: a full baseline for every player on the first snapshot of each UTC day, then only changed players. Forward-fill from the most recent earlier row.
 # now_cost and cost_change_* are in tenths of a million, as the API reports them.
@@ -3127,3 +3127,8 @@ snapshot_at,player_id,now_cost,cost_change_event,cost_change_start,selected_by_p
 2026-08-17T04:34:06+00:00,1,60,0,0,32.8,0,0,a,,,
 2026-08-17T04:34:06+00:00,74,50,0,0,0.1,0,0,d,75,Unspecified injury - 75% chance of playing,2026-08-15T16:30:07.037929Z
 2026-08-17T04:34:06+00:00,427,80,0,0,28.8,0,0,a,,,
+2026-08-17T05:28:44+00:00,8,55,0,0,22.6,0,0,a,,,
+2026-08-17T05:28:44+00:00,557,65,0,0,10.0,0,0,a,,,
+2026-08-17T05:28:44+00:00,372,55,0,0,1.8,0,0,a,,,
+2026-08-17T05:28:44+00:00,379,90,0,0,14.7,0,0,a,,,
+2026-08-17T05:28:44+00:00,397,85,0,0,27.2,0,0,a,,,
