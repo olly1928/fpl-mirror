@@ -1,4 +1,4 @@
-# fpl-mirror snapshots — month=2026-08 mode=delta rows=4155 fetched=2026-08-18T02:11:22+00:00
+# fpl-mirror snapshots — month=2026-08 mode=delta rows=4170 fetched=2026-08-18T03:37:51+00:00
 # The ephemeral fields FPL overwrites in place. Append-only; rows are never edited.
 # delta mode: a full baseline for every player on the first snapshot of each UTC day, then only changed players. Forward-fill from the most recent earlier row.
 # now_cost and cost_change_* are in tenths of a million, as the API reports them.
@@ -4158,3 +4158,18 @@ snapshot_at,player_id,now_cost,cost_change_event,cost_change_start,selected_by_p
 2026-08-18T02:11:22+00:00,427,80,0,0,30.1,0,0,a,,,
 2026-08-18T02:11:22+00:00,544,55,0,0,4.7,0,0,a,,,
 2026-08-18T02:11:22+00:00,552,60,0,0,15.4,0,0,a,,,
+2026-08-18T03:37:51+00:00,1,60,0,0,33.9,0,0,a,,,
+2026-08-18T03:37:51+00:00,8,55,0,0,25.8,0,0,a,,,
+2026-08-18T03:37:51+00:00,10,55,0,0,2.7,0,0,a,100,,2026-07-23T12:01:23.305229Z
+2026-08-18T03:37:51+00:00,11,55,0,0,11.6,0,0,a,,,
+2026-08-18T03:37:51+00:00,452,70,0,0,9.1,0,0,a,,,
+2026-08-18T03:37:51+00:00,557,65,0,0,13.7,0,0,a,,,
+2026-08-18T03:37:51+00:00,94,60,0,0,3.1,0,0,a,,,
+2026-08-18T03:37:51+00:00,140,50,0,0,2.2,0,0,a,,,
+2026-08-18T03:37:51+00:00,200,60,0,0,10.6,0,0,a,,,
+2026-08-18T03:37:51+00:00,212,45,0,0,11.0,0,0,a,,,
+2026-08-18T03:37:51+00:00,229,60,0,0,9.5,0,0,a,,,
+2026-08-18T03:37:51+00:00,240,50,0,0,0.0,0,0,i,0,Groin injury - Unknown return date,2026-08-15T20:00:06.878792Z
+2026-08-18T03:37:51+00:00,411,155,0,0,70.9,0,0,a,,,
+2026-08-18T03:37:51+00:00,500,50,0,0,0.8,0,0,u,0,Has joined Atletico Madrid permanently,2026-08-17T13:49:05.465401Z
+2026-08-18T03:37:51+00:00,505,45,0,0,4.3,0,0,a,,,
