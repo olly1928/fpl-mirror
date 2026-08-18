@@ -1,4 +1,4 @@
-# fpl-mirror snapshots — month=2026-08 mode=delta rows=4170 fetched=2026-08-18T03:37:51+00:00
+# fpl-mirror snapshots — month=2026-08 mode=delta rows=4172 fetched=2026-08-18T04:27:57+00:00
 # The ephemeral fields FPL overwrites in place. Append-only; rows are never edited.
 # delta mode: a full baseline for every player on the first snapshot of each UTC day, then only changed players. Forward-fill from the most recent earlier row.
 # now_cost and cost_change_* are in tenths of a million, as the API reports them.
@@ -4173,3 +4173,5 @@ snapshot_at,player_id,now_cost,cost_change_event,cost_change_start,selected_by_p
 2026-08-18T03:37:51+00:00,411,155,0,0,70.9,0,0,a,,,
 2026-08-18T03:37:51+00:00,500,50,0,0,0.8,0,0,u,0,Has joined Atletico Madrid permanently,2026-08-17T13:49:05.465401Z
 2026-08-18T03:37:51+00:00,505,45,0,0,4.3,0,0,a,,,
+2026-08-18T04:27:57+00:00,3,50,0,0,0.0,0,0,a,,,
+2026-08-18T04:27:57+00:00,57,45,0,0,3.5,0,0,a,,,
