@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-18T15:23:52.354544+00:00",
+  "fetched_at": "2026-08-18T16:22:05.443375+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -67,6 +67,15 @@
     {
       "id": 568696,
       "name": "Box LeadGen",
+      "my_rank": 0,
+      "my_last_rank": 0,
+      "entries": 0,
+      "standings_truncated_to": null,
+      "standings": []
+    },
+    {
+      "id": 572297,
+      "name": "Box 26/27",
       "my_rank": 0,
       "my_last_rank": 0,
       "entries": 0,
