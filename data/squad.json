@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-19T20:18:27.475227+00:00",
+  "fetched_at": "2026-08-19T21:18:28.499086+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -76,6 +76,15 @@
     {
       "id": 572297,
       "name": "Box 26/27",
+      "my_rank": 0,
+      "my_last_rank": 0,
+      "entries": 0,
+      "standings_truncated_to": null,
+      "standings": []
+    },
+    {
+      "id": 1409321,
+      "name": "Just for fun 26-27",
       "my_rank": 0,
       "my_last_rank": 0,
       "entries": 0,
