@@ -1,4 +1,4 @@
-# fpl-mirror snapshots — month=2026-08 mode=delta rows=5293 fetched=2026-08-19T09:25:40+00:00
+# fpl-mirror snapshots — month=2026-08 mode=delta rows=5309 fetched=2026-08-19T10:20:47+00:00
 # The ephemeral fields FPL overwrites in place. Append-only; rows are never edited.
 # delta mode: a full baseline for every player on the first snapshot of each UTC day, then only changed players. Forward-fill from the most recent earlier row.
 # now_cost and cost_change_* are in tenths of a million, as the API reports them.
@@ -5296,3 +5296,19 @@ snapshot_at,player_id,now_cost,cost_change_event,cost_change_start,selected_by_p
 2026-08-19T09:25:40+00:00,427,80,0,0,31.9,0,0,a,,,
 2026-08-19T09:25:40+00:00,472,55,0,0,1.3,0,0,a,100,,2026-07-23T12:01:23.801183Z
 2026-08-19T09:25:40+00:00,552,60,0,0,15.1,0,0,a,,,
+2026-08-19T10:20:47+00:00,1,60,0,0,34.8,0,0,a,,,
+2026-08-19T10:20:47+00:00,8,55,0,0,28.8,0,0,a,,,
+2026-08-19T10:20:47+00:00,10,55,0,0,3.5,0,0,a,100,,2026-07-23T12:01:23.305229Z
+2026-08-19T10:20:47+00:00,557,65,0,0,16.7,0,0,a,,,
+2026-08-19T10:20:47+00:00,40,75,0,0,26.3,0,0,a,,,
+2026-08-19T10:20:47+00:00,165,75,0,0,60.8,0,0,a,,,
+2026-08-19T10:20:47+00:00,196,50,0,0,0.0,0,0,u,0,Has joined Shabab Al-Ahli Dubai permanently,2026-08-17T13:53:55.791223Z
+2026-08-19T10:20:47+00:00,411,155,0,0,70.0,0,0,a,,,
+2026-08-19T10:20:47+00:00,418,50,0,0,13.6,0,0,a,,,
+2026-08-19T10:20:47+00:00,427,80,0,0,32.0,0,0,a,,,
+2026-08-19T10:20:47+00:00,494,45,0,0,1.1,0,0,a,,,
+2026-08-19T10:20:47+00:00,498,60,0,0,9.3,0,0,a,,,
+2026-08-19T10:20:47+00:00,502,45,0,0,3.2,0,0,a,,,
+2026-08-19T10:20:47+00:00,505,45,0,0,3.3,0,0,u,0,Has joined Internazionale permanently,2026-08-18T14:13:08.454214Z
+2026-08-19T10:20:47+00:00,515,65,0,0,1.5,0,0,a,,,
+2026-08-19T10:20:47+00:00,542,60,0,0,11.6,0,0,a,,,
