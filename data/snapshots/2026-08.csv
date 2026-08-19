@@ -1,4 +1,4 @@
-# fpl-mirror snapshots — month=2026-08 mode=delta rows=5212 fetched=2026-08-19T02:31:15+00:00
+# fpl-mirror snapshots — month=2026-08 mode=delta rows=5220 fetched=2026-08-19T03:39:50+00:00
 # The ephemeral fields FPL overwrites in place. Append-only; rows are never edited.
 # delta mode: a full baseline for every player on the first snapshot of each UTC day, then only changed players. Forward-fill from the most recent earlier row.
 # now_cost and cost_change_* are in tenths of a million, as the API reports them.
@@ -5215,3 +5215,11 @@ snapshot_at,player_id,now_cost,cost_change_event,cost_change_start,selected_by_p
 2026-08-19T02:14:19+00:00,428,80,0,0,11.1,0,0,a,,,
 2026-08-19T02:31:15+00:00,366,75,0,0,14.5,0,0,a,,,
 2026-08-19T02:31:15+00:00,391,55,0,0,11.7,0,0,a,,,
+2026-08-19T03:39:50+00:00,8,55,0,0,28.3,0,0,a,,,
+2026-08-19T03:39:50+00:00,31,45,0,0,14.7,0,0,a,,,
+2026-08-19T03:39:50+00:00,109,45,0,0,19.3,0,0,a,,,
+2026-08-19T03:39:50+00:00,165,75,0,0,60.6,0,0,a,,,
+2026-08-19T03:39:50+00:00,591,55,0,0,0.1,0,0,a,,,
+2026-08-19T03:39:50+00:00,379,90,0,0,15.6,0,0,a,,,
+2026-08-19T03:39:50+00:00,489,45,0,0,5.2,0,0,d,75,Unspecified injury - 75% chance of playing,2026-08-17T20:30:08.195072Z
+2026-08-19T03:39:50+00:00,505,45,0,0,3.5,0,0,u,0,Has joined Internazionale permanently,2026-08-18T14:13:08.454214Z
