@@ -1,4 +1,4 @@
-# fpl-mirror snapshots — month=2026-08 mode=delta rows=5246 fetched=2026-08-19T06:30:27+00:00
+# fpl-mirror snapshots — month=2026-08 mode=delta rows=5261 fetched=2026-08-19T07:31:44+00:00
 # The ephemeral fields FPL overwrites in place. Append-only; rows are never edited.
 # delta mode: a full baseline for every player on the first snapshot of each UTC day, then only changed players. Forward-fill from the most recent earlier row.
 # now_cost and cost_change_* are in tenths of a million, as the API reports them.
@@ -5249,3 +5249,18 @@ snapshot_at,player_id,now_cost,cost_change_event,cost_change_start,selected_by_p
 2026-08-19T06:30:27+00:00,418,50,0,0,13.4,0,0,a,,,
 2026-08-19T06:30:27+00:00,538,40,0,0,0.1,0,0,u,0,Has joined KV Mechelen on loan for the rest of the season,2026-08-12T14:08:03.081789Z
 2026-08-19T06:30:27+00:00,540,40,0,0,0.6,0,0,u,0,Has joined Konyaspor permanently,2026-08-12T14:08:03.097784Z
+2026-08-19T07:31:44+00:00,8,55,0,0,28.5,0,0,a,,,
+2026-08-19T07:31:44+00:00,557,65,0,0,16.4,0,0,a,,,
+2026-08-19T07:31:44+00:00,21,50,0,0,0.4,0,0,d,25,Unspecified injury - 25% chance of playing,2026-08-15T20:00:06.779594Z
+2026-08-19T07:31:44+00:00,272,45,0,0,7.3,0,0,a,,,
+2026-08-19T07:31:44+00:00,334,50,0,0,2.7,0,0,a,,,
+2026-08-19T07:31:44+00:00,346,60,0,0,27.9,0,0,a,,,
+2026-08-19T07:31:44+00:00,384,55,0,0,9.4,0,0,a,,,
+2026-08-19T07:31:44+00:00,400,75,0,0,5.7,0,0,d,75,Calf injury - 75% chance of playing,2026-08-18T17:00:08.385597Z
+2026-08-19T07:31:44+00:00,423,45,0,0,22.1,0,0,a,,,
+2026-08-19T07:31:44+00:00,427,80,0,0,31.8,0,0,a,,,
+2026-08-19T07:31:44+00:00,491,60,0,0,5.0,0,0,a,,,
+2026-08-19T07:31:44+00:00,496,45,0,0,21.3,0,0,a,,,
+2026-08-19T07:31:44+00:00,497,40,0,0,21.5,0,0,a,,,
+2026-08-19T07:31:44+00:00,499,55,0,0,22.8,0,0,a,,,
+2026-08-19T07:31:44+00:00,544,55,0,0,4.6,0,0,a,,,
