@@ -1,4 +1,4 @@
-# fpl-mirror snapshots — month=2026-08 mode=delta rows=5204 fetched=2026-08-19T00:48:00+00:00
+# fpl-mirror snapshots — month=2026-08 mode=delta rows=5210 fetched=2026-08-19T02:14:19+00:00
 # The ephemeral fields FPL overwrites in place. Append-only; rows are never edited.
 # delta mode: a full baseline for every player on the first snapshot of each UTC day, then only changed players. Forward-fill from the most recent earlier row.
 # now_cost and cost_change_* are in tenths of a million, as the API reports them.
@@ -5207,3 +5207,9 @@ snapshot_at,player_id,now_cost,cost_change_event,cost_change_start,selected_by_p
 2026-08-19T00:48:00+00:00,551,50,0,0,0.1,0,0,a,,,
 2026-08-19T00:48:00+00:00,552,60,0,0,15.2,0,0,a,,,
 2026-08-19T00:48:00+00:00,553,55,0,0,1.1,0,0,a,,,
+2026-08-19T02:14:19+00:00,557,65,0,0,16.2,0,0,a,,,
+2026-08-19T02:14:19+00:00,88,45,0,0,3.4,0,0,a,,,
+2026-08-19T02:14:19+00:00,40,75,0,0,26.4,0,0,a,,,
+2026-08-19T02:14:19+00:00,298,45,0,0,1.4,0,0,u,0,Has joined Konyaspor permanently,2026-08-17T13:50:27.145733Z
+2026-08-19T02:14:19+00:00,388,60,0,0,19.8,0,0,a,,,
+2026-08-19T02:14:19+00:00,428,80,0,0,11.1,0,0,a,,,
