@@ -1,4 +1,4 @@
-# fpl-mirror snapshots — month=2026-08 mode=delta rows=5231 fetched=2026-08-19T05:22:05+00:00
+# fpl-mirror snapshots — month=2026-08 mode=delta rows=5246 fetched=2026-08-19T06:30:27+00:00
 # The ephemeral fields FPL overwrites in place. Append-only; rows are never edited.
 # delta mode: a full baseline for every player on the first snapshot of each UTC day, then only changed players. Forward-fill from the most recent earlier row.
 # now_cost and cost_change_* are in tenths of a million, as the API reports them.
@@ -5234,3 +5234,18 @@ snapshot_at,player_id,now_cost,cost_change_event,cost_change_start,selected_by_p
 2026-08-19T05:22:05+00:00,557,65,0,0,16.3,0,0,a,,,
 2026-08-19T05:22:05+00:00,233,45,0,0,1.5,0,0,a,,,
 2026-08-19T05:22:05+00:00,260,65,0,0,7.1,0,0,a,,,
+2026-08-19T06:30:27+00:00,1,60,0,0,34.7,0,0,a,,,
+2026-08-19T06:30:27+00:00,8,55,0,0,28.4,0,0,a,,,
+2026-08-19T06:30:27+00:00,17,60,0,0,0.8,0,0,a,,,
+2026-08-19T06:30:27+00:00,106,80,0,0,17.8,0,0,a,,,
+2026-08-19T06:30:27+00:00,124,55,0,0,12.5,0,0,a,,,
+2026-08-19T06:30:27+00:00,212,45,0,0,11.2,0,0,a,,,
+2026-08-19T06:30:27+00:00,226,55,0,0,8.4,0,0,a,,,
+2026-08-19T06:30:27+00:00,254,45,0,0,2.0,0,0,a,,,
+2026-08-19T06:30:27+00:00,280,40,0,0,0.7,0,0,a,,,
+2026-08-19T06:30:27+00:00,579,55,0,0,1.7,0,0,a,,,
+2026-08-19T06:30:27+00:00,411,155,0,0,70.1,0,0,a,,,
+2026-08-19T06:30:27+00:00,481,65,0,0,9.3,0,0,a,,,
+2026-08-19T06:30:27+00:00,418,50,0,0,13.4,0,0,a,,,
+2026-08-19T06:30:27+00:00,538,40,0,0,0.1,0,0,u,0,Has joined KV Mechelen on loan for the rest of the season,2026-08-12T14:08:03.081789Z
+2026-08-19T06:30:27+00:00,540,40,0,0,0.6,0,0,u,0,Has joined Konyaspor permanently,2026-08-12T14:08:03.097784Z
