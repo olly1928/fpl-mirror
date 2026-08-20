@@ -1,4 +1,4 @@
-# fpl-mirror snapshots — month=2026-08 mode=delta rows=6232 fetched=2026-08-20T03:39:49+00:00
+# fpl-mirror snapshots — month=2026-08 mode=delta rows=6239 fetched=2026-08-20T04:29:57+00:00
 # The ephemeral fields FPL overwrites in place. Append-only; rows are never edited.
 # delta mode: a full baseline for every player on the first snapshot of each UTC day, then only changed players. Forward-fill from the most recent earlier row.
 # now_cost and cost_change_* are in tenths of a million, as the API reports them.
@@ -6235,3 +6235,10 @@ snapshot_at,player_id,now_cost,cost_change_event,cost_change_start,selected_by_p
 2026-08-20T03:39:49+00:00,490,60,0,0,1.8,0,0,a,,,
 2026-08-20T03:39:49+00:00,502,45,0,0,3.3,0,0,a,,,
 2026-08-20T03:39:49+00:00,505,45,0,0,2.6,0,0,u,0,Has joined Internazionale permanently,2026-08-18T14:13:08.454214Z
+2026-08-20T04:29:57+00:00,8,55,0,0,30.8,0,0,a,,,
+2026-08-20T04:29:57+00:00,154,95,0,0,10.6,0,0,a,,,
+2026-08-20T04:29:57+00:00,155,70,0,0,5.1,0,0,a,,,
+2026-08-20T04:29:57+00:00,350,55,0,0,3.7,0,0,a,,,
+2026-08-20T04:29:57+00:00,496,45,0,0,21.8,0,0,a,,,
+2026-08-20T04:29:57+00:00,507,45,0,0,0.0,0,0,u,0,Has joined Middlesbrough permanently,2026-08-18T14:13:08.474144Z
+2026-08-20T04:29:57+00:00,533,55,0,0,2.1,0,0,d,75,Knock - 75% chance of playing,2026-08-09T08:30:05.954750Z
