@@ -1,4 +1,4 @@
-# fpl-mirror snapshots — month=2026-08 mode=delta rows=6221 fetched=2026-08-20T02:13:04+00:00
+# fpl-mirror snapshots — month=2026-08 mode=delta rows=6232 fetched=2026-08-20T03:39:49+00:00
 # The ephemeral fields FPL overwrites in place. Append-only; rows are never edited.
 # delta mode: a full baseline for every player on the first snapshot of each UTC day, then only changed players. Forward-fill from the most recent earlier row.
 # now_cost and cost_change_* are in tenths of a million, as the API reports them.
@@ -6224,3 +6224,14 @@ snapshot_at,player_id,now_cost,cost_change_event,cost_change_start,selected_by_p
 2026-08-20T02:13:04+00:00,497,40,0,0,21.2,0,0,a,,,
 2026-08-20T02:13:04+00:00,540,40,0,0,0.5,0,0,u,0,Has joined Konyaspor permanently,2026-08-12T14:08:03.097784Z
 2026-08-20T02:13:04+00:00,552,60,0,0,14.9,0,0,a,,,
+2026-08-20T03:39:49+00:00,1,60,0,0,35.7,0,0,a,,,
+2026-08-20T03:39:49+00:00,557,65,0,0,18.3,0,0,a,,,
+2026-08-20T03:39:49+00:00,152,55,0,0,2.8,0,0,a,,,
+2026-08-20T03:39:49+00:00,379,90,0,0,16.0,0,0,a,,,
+2026-08-20T03:39:49+00:00,411,155,0,0,69.6,0,0,a,,,
+2026-08-20T03:39:49+00:00,418,50,0,0,14.4,0,0,a,,,
+2026-08-20T03:39:49+00:00,427,80,0,0,33.1,0,0,a,,,
+2026-08-20T03:39:49+00:00,489,45,0,0,4.4,0,0,d,75,Unspecified injury - 75% chance of playing,2026-08-17T20:30:08.195072Z
+2026-08-20T03:39:49+00:00,490,60,0,0,1.8,0,0,a,,,
+2026-08-20T03:39:49+00:00,502,45,0,0,3.3,0,0,a,,,
+2026-08-20T03:39:49+00:00,505,45,0,0,2.6,0,0,u,0,Has joined Internazionale permanently,2026-08-18T14:13:08.454214Z
