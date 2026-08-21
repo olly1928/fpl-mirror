@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-21T22:15:42.309450+00:00",
+  "fetched_at": "2026-08-21T23:16:26.580888+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,7 +8,7 @@
   "next_deadline": "2026-08-28T17:30:00Z",
   "preseason": false,
   "overall_points": 17,
-  "overall_rank": 2147455,
+  "overall_rank": 2147453,
   "bank": 0.0,
   "squad_value": 100.0,
   "squad_selling_value": 1000,
@@ -23,12 +23,12 @@
   "gameweek_history": [
     {
       "event": 1,
-      "points": 0,
-      "overall_rank": null,
-      "rank": null,
+      "points": 17,
+      "overall_rank": 2147456,
+      "rank": 2147459,
       "transfers": 0,
       "transfer_cost": 0,
-      "points_on_bench": 0
+      "points_on_bench": 1
     }
   ],
   "past_seasons": [
@@ -226,9 +226,9 @@
         {
           "rank": 2,
           "last_rank": 0,
-          "entry": 7359153,
-          "entry_name": "ohforgodssaka",
-          "manager": "Jack Wilkinson",
+          "entry": 2527602,
+          "entry_name": "Peak Roy Hodgson FC",
+          "manager": "Andrew Hayes",
           "event_total": 21,
           "total": 21,
           "is_me": false
@@ -236,9 +236,9 @@
         {
           "rank": 2,
           "last_rank": 0,
-          "entry": 2527602,
-          "entry_name": "Peak Roy Hodgson FC",
-          "manager": "Andrew Hayes",
+          "entry": 7359153,
+          "entry_name": "ohforgodssaka",
+          "manager": "Jack Wilkinson",
           "event_total": 21,
           "total": 21,
           "is_me": false
@@ -256,9 +256,9 @@
         {
           "rank": 5,
           "last_rank": 0,
-          "entry": 5122358,
-          "entry_name": "Rohan Van Pedro",
-          "manager": "Rohan Holder",
+          "entry": 3820692,
+          "entry_name": "somgorsi",
+          "manager": "Hubert Kaźmierczak",
           "event_total": 20,
           "total": 20,
           "is_me": false
@@ -266,9 +266,9 @@
         {
           "rank": 5,
           "last_rank": 0,
-          "entry": 3820692,
-          "entry_name": "somgorsi",
-          "manager": "Hubert Kaźmierczak",
+          "entry": 5122358,
+          "entry_name": "Rohan Van Pedro",
+          "manager": "Rohan Holder",
           "event_total": 20,
           "total": 20,
           "is_me": false
@@ -296,9 +296,9 @@
         {
           "rank": 8,
           "last_rank": 0,
-          "entry": 3747240,
-          "entry_name": "VAR-a-Lago",
-          "manager": "Mike Phillips",
+          "entry": 1335880,
+          "entry_name": "The Szo Show",
+          "manager": "Chris Stern",
           "event_total": 17,
           "total": 17,
           "is_me": false
@@ -306,9 +306,9 @@
         {
           "rank": 8,
           "last_rank": 0,
-          "entry": 1335880,
-          "entry_name": "The Szo Show",
-          "manager": "Chris Stern",
+          "entry": 3747240,
+          "entry_name": "VAR-a-Lago",
+          "manager": "Mike Phillips",
           "event_total": 17,
           "total": 17,
           "is_me": false
@@ -346,9 +346,9 @@
         {
           "rank": 14,
           "last_rank": 0,
-          "entry": 687538,
-          "entry_name": "week_foot_11",
-          "manager": "Samip Thakkar",
+          "entry": 4780428,
+          "entry_name": "Viva Les Vegas",
+          "manager": "James Davies",
           "event_total": 11,
           "total": 11,
           "is_me": false
@@ -356,9 +356,9 @@
         {
           "rank": 14,
           "last_rank": 0,
-          "entry": 4780428,
-          "entry_name": "Viva Les Vegas",
-          "manager": "James Davies",
+          "entry": 687538,
+          "entry_name": "week_foot_11",
+          "manager": "Samip Thakkar",
           "event_total": 11,
           "total": 11,
           "is_me": false
