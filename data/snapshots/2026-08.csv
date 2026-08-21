@@ -1,4 +1,4 @@
-# fpl-mirror snapshots — month=2026-08 mode=delta rows=7449 fetched=2026-08-21T04:30:38+00:00
+# fpl-mirror snapshots — month=2026-08 mode=delta rows=7463 fetched=2026-08-21T05:25:36+00:00
 # The ephemeral fields FPL overwrites in place. Append-only; rows are never edited.
 # delta mode: a full baseline for every player on the first snapshot of each UTC day, then only changed players. Forward-fill from the most recent earlier row.
 # now_cost and cost_change_* are in tenths of a million, as the API reports them.
@@ -7452,3 +7452,17 @@ snapshot_at,player_id,now_cost,cost_change_event,cost_change_start,selected_by_p
 2026-08-21T04:30:38+00:00,112,50,0,0,9.4,0,0,a,,,
 2026-08-21T04:30:38+00:00,505,45,0,0,1.7,0,0,u,0,Has joined Internazionale permanently,2026-08-18T14:13:08.454214Z
 2026-08-21T04:30:38+00:00,552,60,0,0,14.5,0,0,a,,,
+2026-08-21T05:25:36+00:00,8,55,0,0,34.7,0,0,a,,,
+2026-08-21T05:25:36+00:00,11,55,0,0,7.9,0,0,a,,,
+2026-08-21T05:25:36+00:00,25,75,0,0,9.7,0,0,a,,,
+2026-08-21T05:25:36+00:00,77,50,0,0,0.0,0,0,i,0,Unspecified injury - Unknown return date,2026-08-15T16:00:07.590566Z
+2026-08-21T05:25:36+00:00,109,45,0,0,20.7,0,0,a,,,
+2026-08-21T05:25:36+00:00,136,60,0,0,1.7,0,0,d,75,Unspecified injury - 75% chance of playing,2026-08-20T14:00:07.949090Z
+2026-08-21T05:25:36+00:00,165,75,0,0,63.1,0,0,a,,,
+2026-08-21T05:25:36+00:00,200,60,0,0,9.6,0,0,a,,,
+2026-08-21T05:25:36+00:00,198,50,0,0,2.6,0,0,d,75,Ankle injury - 75% chance of playing,2026-08-20T14:00:08.018379Z
+2026-08-21T05:25:36+00:00,423,45,0,0,21.5,0,0,a,,,
+2026-08-21T05:25:36+00:00,427,80,0,0,35.9,0,0,a,,,
+2026-08-21T05:25:36+00:00,432,55,0,0,1.0,0,0,a,,,
+2026-08-21T05:25:36+00:00,489,45,0,0,3.1,0,0,i,0,Unspecified injury - Unknown return date,2026-08-17T20:30:08.195072Z
+2026-08-21T05:25:36+00:00,498,60,0,0,8.6,0,0,a,,,
