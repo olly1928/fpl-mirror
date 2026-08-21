@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-21T12:30:56.001852+00:00",
+  "fetched_at": "2026-08-21T13:38:56.503932+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -7,8 +7,8 @@
   "next_event": 1,
   "next_deadline": "2026-08-21T17:30:00Z",
   "preseason": true,
-  "overall_points": null,
-  "overall_rank": null,
+  "overall_points": 0,
+  "overall_rank": 0,
   "bank": null,
   "squad_value": null,
   "squad_selling_value": null,
