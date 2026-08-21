@@ -1,10 +1,10 @@
 {
-  "fetched_at": "2026-08-21T17:21:39+00:00",
+  "fetched_at": "2026-08-21T18:25:53+00:00",
   "season": "2026/27",
-  "preseason": true,
-  "current_event": null,
-  "next_event": 1,
-  "next_deadline": "2026-08-21T17:30:00Z",
+  "preseason": false,
+  "current_event": 1,
+  "next_event": 2,
+  "next_deadline": "2026-08-28T17:30:00Z",
   "player_count": 600,
   "teams_in_game": [
     "ARS",
@@ -34,13 +34,22 @@
       "deadline_time": "2026-08-21T17:30:00Z",
       "finished": false,
       "data_checked": false,
-      "is_current": false,
-      "is_next": true,
+      "is_current": true,
+      "is_next": false,
       "average_entry_score": 0,
       "highest_score": null,
-      "most_captained": null,
-      "most_selected": null,
-      "chip_plays": []
+      "most_captained": 411,
+      "most_selected": 411,
+      "chip_plays": [
+        {
+          "chip_name": "bboost",
+          "num_played": 814606
+        },
+        {
+          "chip_name": "3xc",
+          "num_played": 250816
+        }
+      ]
     },
     {
       "id": 2,
@@ -48,7 +57,7 @@
       "finished": false,
       "data_checked": false,
       "is_current": false,
-      "is_next": false,
+      "is_next": true,
       "average_entry_score": 0,
       "highest_score": null,
       "most_captained": null,
@@ -769,31 +778,31 @@
   ],
   "components": {
     "build_fpl": {
-      "last_run_at": "2026-08-21T17:21:39+00:00",
+      "last_run_at": "2026-08-21T18:25:53+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
     },
     "build_odds": {
-      "last_run_at": "2026-08-21T07:57:26+00:00",
+      "last_run_at": "2026-08-21T17:45:45+00:00",
       "expected_interval_minutes": 720,
       "stale_after_minutes": 1440,
       "stale": false
     },
     "build_player_history": {
-      "last_run_at": "2026-08-21T17:21:37+00:00",
+      "last_run_at": "2026-08-21T18:25:51+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
     },
     "build_snapshots": {
-      "last_run_at": "2026-08-21T17:21:37+00:00",
+      "last_run_at": "2026-08-21T18:25:51+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
     },
     "build_squad": {
-      "last_run_at": "2026-08-21T17:21:38+00:00",
+      "last_run_at": "2026-08-21T18:25:53+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
