@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-22T19:17:15.741105+00:00",
+  "fetched_at": "2026-08-22T20:14:01.031086+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -7,8 +7,8 @@
   "next_event": 2,
   "next_deadline": "2026-08-28T17:30:00Z",
   "preseason": false,
-  "overall_points": 31,
-  "overall_rank": 1699877,
+  "overall_points": 33,
+  "overall_rank": 1317411,
   "bank": 0.0,
   "squad_value": 100.0,
   "squad_selling_value": 1000,
@@ -23,12 +23,12 @@
   "gameweek_history": [
     {
       "event": 1,
-      "points": 17,
-      "overall_rank": 2147456,
-      "rank": 2147459,
+      "points": 33,
+      "overall_rank": 1317412,
+      "rank": 1317416,
       "transfers": 0,
       "transfer_cost": 0,
-      "points_on_bench": 1
+      "points_on_bench": 3
     }
   ],
   "past_seasons": [
@@ -79,8 +79,8 @@
           "entry": 790889,
           "entry_name": "Meeks Freeks",
           "manager": "Oliver Meiklejohn",
-          "event_total": 31,
-          "total": 31,
+          "event_total": 33,
+          "total": 33,
           "is_me": true
         }
       ]
@@ -109,8 +109,8 @@
           "entry": 790889,
           "entry_name": "Meeks Freeks",
           "manager": "Oliver Meiklejohn",
-          "event_total": 31,
-          "total": 31,
+          "event_total": 33,
+          "total": 33,
           "is_me": true
         },
         {
@@ -169,8 +169,8 @@
           "entry": 790889,
           "entry_name": "Meeks Freeks",
           "manager": "Oliver Meiklejohn",
-          "event_total": 31,
-          "total": 31,
+          "event_total": 33,
+          "total": 33,
           "is_me": true
         },
         {
@@ -208,7 +208,7 @@
     {
       "id": 572297,
       "name": "Box 26/27",
-      "my_rank": 5,
+      "my_rank": 3,
       "my_last_rank": 0,
       "entries": 20,
       "standings_truncated_to": null,
@@ -236,6 +236,16 @@
         {
           "rank": 3,
           "last_rank": 0,
+          "entry": 790889,
+          "entry_name": "Meeks Freeks",
+          "manager": "Oliver Meiklejohn",
+          "event_total": 33,
+          "total": 33,
+          "is_me": true
+        },
+        {
+          "rank": 3,
+          "last_rank": 0,
           "entry": 3747240,
           "entry_name": "VAR-a-Lago",
           "manager": "Mike Phillips",
@@ -244,7 +254,7 @@
           "is_me": false
         },
         {
-          "rank": 4,
+          "rank": 5,
           "last_rank": 0,
           "entry": 2387148,
           "entry_name": "Amadness",
@@ -254,7 +264,7 @@
           "is_me": false
         },
         {
-          "rank": 5,
+          "rank": 6,
           "last_rank": 0,
           "entry": 3820692,
           "entry_name": "somgorsi",
@@ -264,16 +274,6 @@
           "is_me": false
         },
         {
-          "rank": 5,
-          "last_rank": 0,
-          "entry": 790889,
-          "entry_name": "Meeks Freeks",
-          "manager": "Oliver Meiklejohn",
-          "event_total": 31,
-          "total": 31,
-          "is_me": true
-        },
-        {
           "rank": 7,
           "last_rank": 0,
           "entry": 2527602,
@@ -281,6 +281,16 @@
           "manager": "Andrew Hayes",
           "event_total": 30,
           "total": 30,
+          "is_me": false
+        },
+        {
+          "rank": 8,
+          "last_rank": 0,
+          "entry": 2940306,
+          "entry_name": "SomeRandomName",
+          "manager": "Ania ER",
+          "event_total": 28,
+          "total": 28,
           "is_me": false
         },
         {
@@ -299,16 +309,6 @@
           "entry": 5122358,
           "entry_name": "Rohan Van Pedro",
           "manager": "Rohan Holder",
-          "event_total": 28,
-          "total": 28,
-          "is_me": false
-        },
-        {
-          "rank": 8,
-          "last_rank": 0,
-          "entry": 2940306,
-          "entry_name": "SomeRandomName",
-          "manager": "Ania ER",
           "event_total": 28,
           "total": 28,
           "is_me": false
@@ -346,9 +346,9 @@
         {
           "rank": 14,
           "last_rank": 0,
-          "entry": 687538,
-          "entry_name": "week_foot_11",
-          "manager": "Samip Thakkar",
+          "entry": 4780428,
+          "entry_name": "Viva Les Vegas",
+          "manager": "James Davies",
           "event_total": 22,
           "total": 22,
           "is_me": false
@@ -356,9 +356,9 @@
         {
           "rank": 14,
           "last_rank": 0,
-          "entry": 4780428,
-          "entry_name": "Viva Les Vegas",
-          "manager": "James Davies",
+          "entry": 687538,
+          "entry_name": "week_foot_11",
+          "manager": "Samip Thakkar",
           "event_total": 22,
           "total": 22,
           "is_me": false
@@ -394,23 +394,23 @@
           "is_me": false
         },
         {
-          "rank": 19,
+          "rank": 18,
+          "last_rank": 0,
+          "entry": 2328199,
+          "entry_name": "Super Saiyan Sarr",
+          "manager": "Michael Bird",
+          "event_total": 15,
+          "total": 15,
+          "is_me": false
+        },
+        {
+          "rank": 20,
           "last_rank": 0,
           "entry": 5984664,
           "entry_name": "Wishing4Wigan",
           "manager": "Micajah Dudley",
           "event_total": 14,
           "total": 14,
-          "is_me": false
-        },
-        {
-          "rank": 20,
-          "last_rank": 0,
-          "entry": 2328199,
-          "entry_name": "Super Saiyan Sarr",
-          "manager": "Michael Bird",
-          "event_total": 13,
-          "total": 13,
           "is_me": false
         }
       ]
@@ -436,22 +436,22 @@
         {
           "rank": 2,
           "last_rank": 0,
+          "entry": 790889,
+          "entry_name": "Meeks Freeks",
+          "manager": "Oliver Meiklejohn",
+          "event_total": 33,
+          "total": 33,
+          "is_me": true
+        },
+        {
+          "rank": 3,
+          "last_rank": 0,
           "entry": 5887119,
           "entry_name": "You Araujo",
           "manager": "Finn Meredith",
           "event_total": 31,
           "total": 31,
           "is_me": false
-        },
-        {
-          "rank": 2,
-          "last_rank": 0,
-          "entry": 790889,
-          "entry_name": "Meeks Freeks",
-          "manager": "Oliver Meiklejohn",
-          "event_total": 31,
-          "total": 31,
-          "is_me": true
         },
         {
           "rank": 4,
@@ -509,8 +509,8 @@
           "entry": 790889,
           "entry_name": "Meeks Freeks",
           "manager": "Oliver Meiklejohn",
-          "event_total": 31,
-          "total": 31,
+          "event_total": 33,
+          "total": 33,
           "is_me": true
         },
         {
