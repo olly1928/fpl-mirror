@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-22T02:20:40.788801+00:00",
+  "fetched_at": "2026-08-22T03:35:47.088460+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,7 +8,7 @@
   "next_deadline": "2026-08-28T17:30:00Z",
   "preseason": false,
   "overall_points": 17,
-  "overall_rank": 2157966,
+  "overall_rank": 2157965,
   "bank": 0.0,
   "squad_value": 100.0,
   "squad_selling_value": 1000,
@@ -136,9 +136,9 @@
         {
           "rank": 5,
           "last_rank": 0,
-          "entry": 7267539,
-          "entry_name": "Pending Moderation",
-          "manager": "Paddy Hagger",
+          "entry": 4199979,
+          "entry_name": "Cold Bridge",
+          "manager": "Joy Jesuthasan",
           "event_total": 9,
           "total": 9,
           "is_me": false
@@ -146,9 +146,9 @@
         {
           "rank": 5,
           "last_rank": 0,
-          "entry": 4199979,
-          "entry_name": "Cold Bridge",
-          "manager": "Joy Jesuthasan",
+          "entry": 7267539,
+          "entry_name": "Pending Moderation",
+          "manager": "Paddy Hagger",
           "event_total": 9,
           "total": 9,
           "is_me": false
@@ -226,6 +226,16 @@
         {
           "rank": 2,
           "last_rank": 0,
+          "entry": 7359153,
+          "entry_name": "ohforgodssaka",
+          "manager": "Jack Wilkinson",
+          "event_total": 21,
+          "total": 21,
+          "is_me": false
+        },
+        {
+          "rank": 2,
+          "last_rank": 0,
           "entry": 2527602,
           "entry_name": "Peak Roy Hodgson FC",
           "manager": "Andrew Hayes",
@@ -244,13 +254,13 @@
           "is_me": false
         },
         {
-          "rank": 2,
+          "rank": 5,
           "last_rank": 0,
-          "entry": 7359153,
-          "entry_name": "ohforgodssaka",
-          "manager": "Jack Wilkinson",
-          "event_total": 21,
-          "total": 21,
+          "entry": 3820692,
+          "entry_name": "somgorsi",
+          "manager": "Hubert Kaźmierczak",
+          "event_total": 20,
+          "total": 20,
           "is_me": false
         },
         {
@@ -259,16 +269,6 @@
           "entry": 5122358,
           "entry_name": "Rohan Van Pedro",
           "manager": "Rohan Holder",
-          "event_total": 20,
-          "total": 20,
-          "is_me": false
-        },
-        {
-          "rank": 5,
-          "last_rank": 0,
-          "entry": 3820692,
-          "entry_name": "somgorsi",
-          "manager": "Hubert Kaźmierczak",
           "event_total": 20,
           "total": 20,
           "is_me": false
@@ -296,9 +296,9 @@
         {
           "rank": 8,
           "last_rank": 0,
-          "entry": 3747240,
-          "entry_name": "VAR-a-Lago",
-          "manager": "Mike Phillips",
+          "entry": 1335880,
+          "entry_name": "The Szo Show",
+          "manager": "Chris Stern",
           "event_total": 17,
           "total": 17,
           "is_me": false
@@ -306,9 +306,9 @@
         {
           "rank": 8,
           "last_rank": 0,
-          "entry": 1335880,
-          "entry_name": "The Szo Show",
-          "manager": "Chris Stern",
+          "entry": 3747240,
+          "entry_name": "VAR-a-Lago",
+          "manager": "Mike Phillips",
           "event_total": 17,
           "total": 17,
           "is_me": false
@@ -526,9 +526,9 @@
         {
           "rank": 3,
           "last_rank": 0,
-          "entry": 6418014,
-          "entry_name": "Murrays Marauders FC",
-          "manager": "Ross Murray",
+          "entry": 636134,
+          "entry_name": "Hobblers 2",
+          "manager": "Andrew Hasler",
           "event_total": 14,
           "total": 14,
           "is_me": false
@@ -536,9 +536,9 @@
         {
           "rank": 3,
           "last_rank": 0,
-          "entry": 636134,
-          "entry_name": "Hobblers 2",
-          "manager": "Andrew Hasler",
+          "entry": 6418014,
+          "entry_name": "Murrays Marauders FC",
+          "manager": "Ross Murray",
           "event_total": 14,
           "total": 14,
           "is_me": false
