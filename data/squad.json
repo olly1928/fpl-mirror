@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-22T18:18:20.312687+00:00",
+  "fetched_at": "2026-08-22T19:17:15.741105+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,7 +8,7 @@
   "next_deadline": "2026-08-28T17:30:00Z",
   "preseason": false,
   "overall_points": 31,
-  "overall_rank": 1689384,
+  "overall_rank": 1699877,
   "bank": 0.0,
   "squad_value": 100.0,
   "squad_selling_value": 1000,
@@ -119,8 +119,8 @@
           "entry": 1868009,
           "entry_name": "No More Mr Rice Kai",
           "manager": "Anai Patel",
-          "event_total": 27,
-          "total": 27,
+          "event_total": 29,
+          "total": 29,
           "is_me": false
         },
         {
@@ -296,16 +296,6 @@
         {
           "rank": 8,
           "last_rank": 0,
-          "entry": 2940306,
-          "entry_name": "SomeRandomName",
-          "manager": "Ania ER",
-          "event_total": 28,
-          "total": 28,
-          "is_me": false
-        },
-        {
-          "rank": 8,
-          "last_rank": 0,
           "entry": 5122358,
           "entry_name": "Rohan Van Pedro",
           "manager": "Rohan Holder",
@@ -314,13 +304,13 @@
           "is_me": false
         },
         {
-          "rank": 11,
+          "rank": 8,
           "last_rank": 0,
-          "entry": 2583053,
-          "entry_name": "Proper Team Name 2",
-          "manager": "Grzesiek Martinez",
-          "event_total": 27,
-          "total": 27,
+          "entry": 2940306,
+          "entry_name": "SomeRandomName",
+          "manager": "Ania ER",
+          "event_total": 28,
+          "total": 28,
           "is_me": false
         },
         {
@@ -329,6 +319,16 @@
           "entry": 7359153,
           "entry_name": "ohforgodssaka",
           "manager": "Jack Wilkinson",
+          "event_total": 27,
+          "total": 27,
+          "is_me": false
+        },
+        {
+          "rank": 11,
+          "last_rank": 0,
+          "entry": 2583053,
+          "entry_name": "Proper Team Name 2",
+          "manager": "Grzesiek Martinez",
           "event_total": 27,
           "total": 27,
           "is_me": false
