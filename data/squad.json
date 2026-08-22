@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-22T10:15:29.083768+00:00",
+  "fetched_at": "2026-08-22T11:14:05.844635+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,7 +8,7 @@
   "next_deadline": "2026-08-28T17:30:00Z",
   "preseason": false,
   "overall_points": 17,
-  "overall_rank": 2157957,
+  "overall_rank": 2157956,
   "bank": 0.0,
   "squad_value": 100.0,
   "squad_selling_value": 1000,
@@ -106,9 +106,9 @@
         {
           "rank": 2,
           "last_rank": 0,
-          "entry": 1868009,
-          "entry_name": "No More Mr Rice Kai",
-          "manager": "Anai Patel",
+          "entry": 5038162,
+          "entry_name": "Quantum of Tzolis",
+          "manager": "Ed Shropshire",
           "event_total": 15,
           "total": 15,
           "is_me": false
@@ -116,9 +116,9 @@
         {
           "rank": 2,
           "last_rank": 0,
-          "entry": 5038162,
-          "entry_name": "Quantum of Tzolis",
-          "manager": "Ed Shropshire",
+          "entry": 1868009,
+          "entry_name": "No More Mr Rice Kai",
+          "manager": "Anai Patel",
           "event_total": 15,
           "total": 15,
           "is_me": false
@@ -226,9 +226,9 @@
         {
           "rank": 2,
           "last_rank": 0,
-          "entry": 2527602,
-          "entry_name": "Peak Roy Hodgson FC",
-          "manager": "Andrew Hayes",
+          "entry": 2387148,
+          "entry_name": "Amadness",
+          "manager": "Michal Nowak",
           "event_total": 21,
           "total": 21,
           "is_me": false
@@ -246,21 +246,11 @@
         {
           "rank": 2,
           "last_rank": 0,
-          "entry": 2387148,
-          "entry_name": "Amadness",
-          "manager": "Michal Nowak",
+          "entry": 2527602,
+          "entry_name": "Peak Roy Hodgson FC",
+          "manager": "Andrew Hayes",
           "event_total": 21,
           "total": 21,
-          "is_me": false
-        },
-        {
-          "rank": 5,
-          "last_rank": 0,
-          "entry": 5122358,
-          "entry_name": "Rohan Van Pedro",
-          "manager": "Rohan Holder",
-          "event_total": 20,
-          "total": 20,
           "is_me": false
         },
         {
@@ -269,6 +259,16 @@
           "entry": 3820692,
           "entry_name": "somgorsi",
           "manager": "Hubert Kaźmierczak",
+          "event_total": 20,
+          "total": 20,
+          "is_me": false
+        },
+        {
+          "rank": 5,
+          "last_rank": 0,
+          "entry": 5122358,
+          "entry_name": "Rohan Van Pedro",
+          "manager": "Rohan Holder",
           "event_total": 20,
           "total": 20,
           "is_me": false
@@ -286,22 +286,22 @@
         {
           "rank": 8,
           "last_rank": 0,
-          "entry": 3747240,
-          "entry_name": "VAR-a-Lago",
-          "manager": "Mike Phillips",
-          "event_total": 17,
-          "total": 17,
-          "is_me": false
-        },
-        {
-          "rank": 8,
-          "last_rank": 0,
           "entry": 790889,
           "entry_name": "Meeks Freeks",
           "manager": "Oliver Meiklejohn",
           "event_total": 17,
           "total": 17,
           "is_me": true
+        },
+        {
+          "rank": 8,
+          "last_rank": 0,
+          "entry": 3747240,
+          "entry_name": "VAR-a-Lago",
+          "manager": "Mike Phillips",
+          "event_total": 17,
+          "total": 17,
+          "is_me": false
         },
         {
           "rank": 8,
@@ -346,9 +346,9 @@
         {
           "rank": 14,
           "last_rank": 0,
-          "entry": 4780428,
-          "entry_name": "Viva Les Vegas",
-          "manager": "James Davies",
+          "entry": 687538,
+          "entry_name": "week_foot_11",
+          "manager": "Samip Thakkar",
           "event_total": 11,
           "total": 11,
           "is_me": false
@@ -356,9 +356,9 @@
         {
           "rank": 14,
           "last_rank": 0,
-          "entry": 687538,
-          "entry_name": "week_foot_11",
-          "manager": "Samip Thakkar",
+          "entry": 4780428,
+          "entry_name": "Viva Les Vegas",
+          "manager": "James Davies",
           "event_total": 11,
           "total": 11,
           "is_me": false
