@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-21T23:16:26.580888+00:00",
+  "fetched_at": "2026-08-22T00:48:22.601823+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,7 +8,7 @@
   "next_deadline": "2026-08-28T17:30:00Z",
   "preseason": false,
   "overall_points": 17,
-  "overall_rank": 2147453,
+  "overall_rank": 2157967,
   "bank": 0.0,
   "squad_value": 100.0,
   "squad_selling_value": 1000,
@@ -106,9 +106,9 @@
         {
           "rank": 2,
           "last_rank": 0,
-          "entry": 5038162,
-          "entry_name": "Quantum of Tzolis",
-          "manager": "Ed Shropshire",
+          "entry": 1868009,
+          "entry_name": "No More Mr Rice Kai",
+          "manager": "Anai Patel",
           "event_total": 15,
           "total": 15,
           "is_me": false
@@ -116,9 +116,9 @@
         {
           "rank": 2,
           "last_rank": 0,
-          "entry": 1868009,
-          "entry_name": "No More Mr Rice Kai",
-          "manager": "Anai Patel",
+          "entry": 5038162,
+          "entry_name": "Quantum of Tzolis",
+          "manager": "Ed Shropshire",
           "event_total": 15,
           "total": 15,
           "is_me": false
@@ -296,9 +296,9 @@
         {
           "rank": 8,
           "last_rank": 0,
-          "entry": 1335880,
-          "entry_name": "The Szo Show",
-          "manager": "Chris Stern",
+          "entry": 3747240,
+          "entry_name": "VAR-a-Lago",
+          "manager": "Mike Phillips",
           "event_total": 17,
           "total": 17,
           "is_me": false
@@ -306,9 +306,9 @@
         {
           "rank": 8,
           "last_rank": 0,
-          "entry": 3747240,
-          "entry_name": "VAR-a-Lago",
-          "manager": "Mike Phillips",
+          "entry": 1335880,
+          "entry_name": "The Szo Show",
+          "manager": "Chris Stern",
           "event_total": 17,
           "total": 17,
           "is_me": false
@@ -326,9 +326,9 @@
         {
           "rank": 12,
           "last_rank": 0,
-          "entry": 2583053,
-          "entry_name": "Proper Team Name 2",
-          "manager": "Grzesiek Martinez",
+          "entry": 548815,
+          "entry_name": "Sels Like TeamSpirit",
+          "manager": "John Braddock",
           "event_total": 15,
           "total": 15,
           "is_me": false
@@ -336,9 +336,9 @@
         {
           "rank": 12,
           "last_rank": 0,
-          "entry": 548815,
-          "entry_name": "Sels Like TeamSpirit",
-          "manager": "John Braddock",
+          "entry": 2583053,
+          "entry_name": "Proper Team Name 2",
+          "manager": "Grzesiek Martinez",
           "event_total": 15,
           "total": 15,
           "is_me": false
@@ -411,6 +411,86 @@
           "manager": "Jesse Huling",
           "event_total": 0,
           "total": 0,
+          "is_me": false
+        }
+      ]
+    },
+    {
+      "id": 765116,
+      "name": "The League 26-27",
+      "my_rank": 3,
+      "my_last_rank": 0,
+      "entries": 7,
+      "standings_truncated_to": null,
+      "standings": [
+        {
+          "rank": 1,
+          "last_rank": 0,
+          "entry": 2316299,
+          "entry_name": "Caput mensae",
+          "manager": "Huw Meredith",
+          "event_total": 26,
+          "total": 26,
+          "is_me": false
+        },
+        {
+          "rank": 2,
+          "last_rank": 0,
+          "entry": 1732178,
+          "entry_name": "(Haa)Land Rover",
+          "manager": "Joe Meiklejohn",
+          "event_total": 21,
+          "total": 21,
+          "is_me": false
+        },
+        {
+          "rank": 3,
+          "last_rank": 0,
+          "entry": 790889,
+          "entry_name": "Meeks Freeks",
+          "manager": "Oliver Meiklejohn",
+          "event_total": 17,
+          "total": 17,
+          "is_me": true
+        },
+        {
+          "rank": 4,
+          "last_rank": 0,
+          "entry": 5887119,
+          "entry_name": "You Araujo",
+          "manager": "Finn Meredith",
+          "event_total": 15,
+          "total": 15,
+          "is_me": false
+        },
+        {
+          "rank": 5,
+          "last_rank": 0,
+          "entry": 7113295,
+          "entry_name": "Eze does, Eze goes",
+          "manager": "Gus Price",
+          "event_total": 11,
+          "total": 11,
+          "is_me": false
+        },
+        {
+          "rank": 6,
+          "last_rank": 0,
+          "entry": 2033083,
+          "entry_name": "Wirtz Case Scenario",
+          "manager": "Idris Jenkins",
+          "event_total": 9,
+          "total": 9,
+          "is_me": false
+        },
+        {
+          "rank": 7,
+          "last_rank": 0,
+          "entry": 8668432,
+          "entry_name": "MMDGAF FC",
+          "manager": "Helen Maude",
+          "event_total": 6,
+          "total": 6,
           "is_me": false
         }
       ]
