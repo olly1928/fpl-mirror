@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-23T03:43:51.771880+00:00",
+  "fetched_at": "2026-08-23T04:29:10.651292+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,7 +8,7 @@
   "next_deadline": "2026-08-28T17:30:00Z",
   "preseason": false,
   "overall_points": 33,
-  "overall_rank": 1317399,
+  "overall_rank": 1312277,
   "bank": 0.0,
   "squad_value": 100.0,
   "squad_selling_value": 1000,
@@ -236,22 +236,22 @@
         {
           "rank": 3,
           "last_rank": 0,
-          "entry": 790889,
-          "entry_name": "Meeks Freeks",
-          "manager": "Oliver Meiklejohn",
-          "event_total": 33,
-          "total": 33,
-          "is_me": true
-        },
-        {
-          "rank": 3,
-          "last_rank": 0,
           "entry": 3747240,
           "entry_name": "VAR-a-Lago",
           "manager": "Mike Phillips",
           "event_total": 33,
           "total": 33,
           "is_me": false
+        },
+        {
+          "rank": 3,
+          "last_rank": 0,
+          "entry": 790889,
+          "entry_name": "Meeks Freeks",
+          "manager": "Oliver Meiklejohn",
+          "event_total": 33,
+          "total": 33,
+          "is_me": true
         },
         {
           "rank": 5,
@@ -286,9 +286,9 @@
         {
           "rank": 8,
           "last_rank": 0,
-          "entry": 1335880,
-          "entry_name": "The Szo Show",
-          "manager": "Chris Stern",
+          "entry": 2940306,
+          "entry_name": "SomeRandomName",
+          "manager": "Ania ER",
           "event_total": 28,
           "total": 28,
           "is_me": false
@@ -296,9 +296,9 @@
         {
           "rank": 8,
           "last_rank": 0,
-          "entry": 2940306,
-          "entry_name": "SomeRandomName",
-          "manager": "Ania ER",
+          "entry": 1335880,
+          "entry_name": "The Szo Show",
+          "manager": "Chris Stern",
           "event_total": 28,
           "total": 28,
           "is_me": false
@@ -316,9 +316,9 @@
         {
           "rank": 11,
           "last_rank": 0,
-          "entry": 7359153,
-          "entry_name": "ohforgodssaka",
-          "manager": "Jack Wilkinson",
+          "entry": 2583053,
+          "entry_name": "Proper Team Name 2",
+          "manager": "Grzesiek Martinez",
           "event_total": 27,
           "total": 27,
           "is_me": false
@@ -326,9 +326,9 @@
         {
           "rank": 11,
           "last_rank": 0,
-          "entry": 2583053,
-          "entry_name": "Proper Team Name 2",
-          "manager": "Grzesiek Martinez",
+          "entry": 7359153,
+          "entry_name": "ohforgodssaka",
+          "manager": "Jack Wilkinson",
           "event_total": 27,
           "total": 27,
           "is_me": false
@@ -346,9 +346,9 @@
         {
           "rank": 14,
           "last_rank": 0,
-          "entry": 4780428,
-          "entry_name": "Viva Les Vegas",
-          "manager": "James Davies",
+          "entry": 687538,
+          "entry_name": "week_foot_11",
+          "manager": "Samip Thakkar",
           "event_total": 22,
           "total": 22,
           "is_me": false
@@ -356,9 +356,9 @@
         {
           "rank": 14,
           "last_rank": 0,
-          "entry": 687538,
-          "entry_name": "week_foot_11",
-          "manager": "Samip Thakkar",
+          "entry": 4780428,
+          "entry_name": "Viva Les Vegas",
+          "manager": "James Davies",
           "event_total": 22,
           "total": 22,
           "is_me": false
@@ -386,9 +386,9 @@
         {
           "rank": 18,
           "last_rank": 0,
-          "entry": 8853128,
-          "entry_name": "Jesse's Team",
-          "manager": "Jesse Huling",
+          "entry": 2328199,
+          "entry_name": "Super Saiyan Sarr",
+          "manager": "Michael Bird",
           "event_total": 15,
           "total": 15,
           "is_me": false
@@ -396,9 +396,9 @@
         {
           "rank": 18,
           "last_rank": 0,
-          "entry": 2328199,
-          "entry_name": "Super Saiyan Sarr",
-          "manager": "Michael Bird",
+          "entry": 8853128,
+          "entry_name": "Jesse's Team",
+          "manager": "Jesse Huling",
           "event_total": 15,
           "total": 15,
           "is_me": false
