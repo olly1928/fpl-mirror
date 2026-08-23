@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-23T00:52:57.294663+00:00",
+  "fetched_at": "2026-08-23T02:20:24.136990+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -346,9 +346,9 @@
         {
           "rank": 14,
           "last_rank": 0,
-          "entry": 4780428,
-          "entry_name": "Viva Les Vegas",
-          "manager": "James Davies",
+          "entry": 687538,
+          "entry_name": "week_foot_11",
+          "manager": "Samip Thakkar",
           "event_total": 22,
           "total": 22,
           "is_me": false
@@ -356,9 +356,9 @@
         {
           "rank": 14,
           "last_rank": 0,
-          "entry": 687538,
-          "entry_name": "week_foot_11",
-          "manager": "Samip Thakkar",
+          "entry": 4780428,
+          "entry_name": "Viva Les Vegas",
+          "manager": "James Davies",
           "event_total": 22,
           "total": 22,
           "is_me": false
@@ -386,9 +386,9 @@
         {
           "rank": 18,
           "last_rank": 0,
-          "entry": 2328199,
-          "entry_name": "Super Saiyan Sarr",
-          "manager": "Michael Bird",
+          "entry": 8853128,
+          "entry_name": "Jesse's Team",
+          "manager": "Jesse Huling",
           "event_total": 15,
           "total": 15,
           "is_me": false
@@ -396,9 +396,9 @@
         {
           "rank": 18,
           "last_rank": 0,
-          "entry": 8853128,
-          "entry_name": "Jesse's Team",
-          "manager": "Jesse Huling",
+          "entry": 2328199,
+          "entry_name": "Super Saiyan Sarr",
+          "manager": "Michael Bird",
           "event_total": 15,
           "total": 15,
           "is_me": false
