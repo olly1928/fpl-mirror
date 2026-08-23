@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-23T19:17:14.270365+00:00",
+  "fetched_at": "2026-08-23T20:13:36.117566+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,7 +8,7 @@
   "next_deadline": "2026-08-28T17:30:00Z",
   "preseason": false,
   "overall_points": 41,
-  "overall_rank": 2666205,
+  "overall_rank": 2685616,
   "bank": 0.0,
   "squad_value": 100.0,
   "squad_selling_value": 1000,
@@ -256,9 +256,9 @@
         {
           "rank": 5,
           "last_rank": 0,
-          "entry": 2527602,
-          "entry_name": "Peak Roy Hodgson FC",
-          "manager": "Andrew Hayes",
+          "entry": 2387148,
+          "entry_name": "Amadness",
+          "manager": "Michal Nowak",
           "event_total": 42,
           "total": 42,
           "is_me": false
@@ -266,9 +266,9 @@
         {
           "rank": 5,
           "last_rank": 0,
-          "entry": 2387148,
-          "entry_name": "Amadness",
-          "manager": "Michal Nowak",
+          "entry": 2527602,
+          "entry_name": "Peak Roy Hodgson FC",
+          "manager": "Andrew Hayes",
           "event_total": 42,
           "total": 42,
           "is_me": false
@@ -366,6 +366,16 @@
         {
           "rank": 16,
           "last_rank": 0,
+          "entry": 5093062,
+          "entry_name": "Saf London Fc",
+          "manager": "Tony Huckle",
+          "event_total": 29,
+          "total": 29,
+          "is_me": false
+        },
+        {
+          "rank": 16,
+          "last_rank": 0,
           "entry": 2328199,
           "entry_name": "Super Saiyan Sarr",
           "manager": "Michael Bird",
@@ -379,16 +389,6 @@
           "entry": 2583053,
           "entry_name": "Proper Team Name 2",
           "manager": "Grzesiek Martinez",
-          "event_total": 29,
-          "total": 29,
-          "is_me": false
-        },
-        {
-          "rank": 16,
-          "last_rank": 0,
-          "entry": 5093062,
-          "entry_name": "Saf London Fc",
-          "manager": "Tony Huckle",
           "event_total": 29,
           "total": 29,
           "is_me": false
@@ -476,9 +476,9 @@
         {
           "rank": 5,
           "last_rank": 0,
-          "entry": 1732178,
-          "entry_name": "(Haa)Land Rover",
-          "manager": "Joe Meiklejohn",
+          "entry": 8668432,
+          "entry_name": "MMDGAF FC",
+          "manager": "Helen Maude",
           "event_total": 30,
           "total": 30,
           "is_me": false
@@ -486,9 +486,9 @@
         {
           "rank": 5,
           "last_rank": 0,
-          "entry": 8668432,
-          "entry_name": "MMDGAF FC",
-          "manager": "Helen Maude",
+          "entry": 1732178,
+          "entry_name": "(Haa)Land Rover",
+          "manager": "Joe Meiklejohn",
           "event_total": 30,
           "total": 30,
           "is_me": false
