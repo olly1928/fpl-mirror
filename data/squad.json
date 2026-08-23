@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-23T18:18:14.290653+00:00",
+  "fetched_at": "2026-08-23T19:17:14.270365+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,7 +8,7 @@
   "next_deadline": "2026-08-28T17:30:00Z",
   "preseason": false,
   "overall_points": 41,
-  "overall_rank": 2666211,
+  "overall_rank": 2666205,
   "bank": 0.0,
   "squad_value": 100.0,
   "squad_selling_value": 1000,
@@ -23,9 +23,9 @@
   "gameweek_history": [
     {
       "event": 1,
-      "points": 33,
-      "overall_rank": 1317412,
-      "rank": 1317416,
+      "points": 41,
+      "overall_rank": 2666208,
+      "rank": 2666208,
       "transfers": 0,
       "transfer_cost": 0,
       "points_on_bench": 3
@@ -210,7 +210,7 @@
       "name": "Box 26/27",
       "my_rank": 7,
       "my_last_rank": 0,
-      "entries": 20,
+      "entries": 21,
       "standings_truncated_to": null,
       "standings": [
         {
@@ -276,16 +276,6 @@
         {
           "rank": 7,
           "last_rank": 0,
-          "entry": 6423433,
-          "entry_name": "Real Contenders",
-          "manager": "Anthony Prior",
-          "event_total": 41,
-          "total": 41,
-          "is_me": false
-        },
-        {
-          "rank": 7,
-          "last_rank": 0,
           "entry": 790889,
           "entry_name": "Meeks Freeks",
           "manager": "Oliver Meiklejohn",
@@ -294,13 +284,13 @@
           "is_me": true
         },
         {
-          "rank": 9,
+          "rank": 7,
           "last_rank": 0,
-          "entry": 2840746,
-          "entry_name": "Matthew's Team",
-          "manager": "Matthew Evans",
-          "event_total": 38,
-          "total": 38,
+          "entry": 6423433,
+          "entry_name": "Real Contenders",
+          "manager": "Anthony Prior",
+          "event_total": 41,
+          "total": 41,
           "is_me": false
         },
         {
@@ -309,6 +299,16 @@
           "entry": 1335880,
           "entry_name": "The Szo Show",
           "manager": "Chris Stern",
+          "event_total": 38,
+          "total": 38,
+          "is_me": false
+        },
+        {
+          "rank": 9,
+          "last_rank": 0,
+          "entry": 2840746,
+          "entry_name": "Matthew's Team",
+          "manager": "Matthew Evans",
           "event_total": 38,
           "total": 38,
           "is_me": false
@@ -366,6 +366,16 @@
         {
           "rank": 16,
           "last_rank": 0,
+          "entry": 2328199,
+          "entry_name": "Super Saiyan Sarr",
+          "manager": "Michael Bird",
+          "event_total": 29,
+          "total": 29,
+          "is_me": false
+        },
+        {
+          "rank": 16,
+          "last_rank": 0,
           "entry": 2583053,
           "entry_name": "Proper Team Name 2",
           "manager": "Grzesiek Martinez",
@@ -379,16 +389,6 @@
           "entry": 5093062,
           "entry_name": "Saf London Fc",
           "manager": "Tony Huckle",
-          "event_total": 29,
-          "total": 29,
-          "is_me": false
-        },
-        {
-          "rank": 16,
-          "last_rank": 0,
-          "entry": 2328199,
-          "entry_name": "Super Saiyan Sarr",
-          "manager": "Michael Bird",
           "event_total": 29,
           "total": 29,
           "is_me": false
@@ -411,6 +411,16 @@
           "manager": "Micajah Dudley",
           "event_total": 27,
           "total": 27,
+          "is_me": false
+        },
+        {
+          "rank": 21,
+          "last_rank": 0,
+          "entry": 4142396,
+          "entry_name": "West Holts",
+          "manager": "Darinder Bhangoo",
+          "event_total": 20,
+          "total": 20,
           "is_me": false
         }
       ]
