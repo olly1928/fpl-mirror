@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-23T02:36:57.878911+00:00",
+  "fetched_at": "2026-08-23T03:43:51.771880+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -286,9 +286,9 @@
         {
           "rank": 8,
           "last_rank": 0,
-          "entry": 2940306,
-          "entry_name": "SomeRandomName",
-          "manager": "Ania ER",
+          "entry": 1335880,
+          "entry_name": "The Szo Show",
+          "manager": "Chris Stern",
           "event_total": 28,
           "total": 28,
           "is_me": false
@@ -296,9 +296,9 @@
         {
           "rank": 8,
           "last_rank": 0,
-          "entry": 1335880,
-          "entry_name": "The Szo Show",
-          "manager": "Chris Stern",
+          "entry": 2940306,
+          "entry_name": "SomeRandomName",
+          "manager": "Ania ER",
           "event_total": 28,
           "total": 28,
           "is_me": false
@@ -386,9 +386,9 @@
         {
           "rank": 18,
           "last_rank": 0,
-          "entry": 2328199,
-          "entry_name": "Super Saiyan Sarr",
-          "manager": "Michael Bird",
+          "entry": 8853128,
+          "entry_name": "Jesse's Team",
+          "manager": "Jesse Huling",
           "event_total": 15,
           "total": 15,
           "is_me": false
@@ -396,9 +396,9 @@
         {
           "rank": 18,
           "last_rank": 0,
-          "entry": 8853128,
-          "entry_name": "Jesse's Team",
-          "manager": "Jesse Huling",
+          "entry": 2328199,
+          "entry_name": "Super Saiyan Sarr",
+          "manager": "Michael Bird",
           "event_total": 15,
           "total": 15,
           "is_me": false
