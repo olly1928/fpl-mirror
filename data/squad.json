@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-23T05:22:24.525733+00:00",
+  "fetched_at": "2026-08-23T06:27:53.642735+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,7 +8,7 @@
   "next_deadline": "2026-08-28T17:30:00Z",
   "preseason": false,
   "overall_points": 33,
-  "overall_rank": 1312277,
+  "overall_rank": 1312276,
   "bank": 0.0,
   "squad_value": 100.0,
   "squad_selling_value": 1000,
@@ -286,6 +286,16 @@
         {
           "rank": 8,
           "last_rank": 0,
+          "entry": 2940306,
+          "entry_name": "SomeRandomName",
+          "manager": "Ania ER",
+          "event_total": 28,
+          "total": 28,
+          "is_me": false
+        },
+        {
+          "rank": 8,
+          "last_rank": 0,
           "entry": 1335880,
           "entry_name": "The Szo Show",
           "manager": "Chris Stern",
@@ -304,13 +314,13 @@
           "is_me": false
         },
         {
-          "rank": 8,
+          "rank": 11,
           "last_rank": 0,
-          "entry": 2940306,
-          "entry_name": "SomeRandomName",
-          "manager": "Ania ER",
-          "event_total": 28,
-          "total": 28,
+          "entry": 2583053,
+          "entry_name": "Proper Team Name 2",
+          "manager": "Grzesiek Martinez",
+          "event_total": 27,
+          "total": 27,
           "is_me": false
         },
         {
@@ -319,16 +329,6 @@
           "entry": 7359153,
           "entry_name": "ohforgodssaka",
           "manager": "Jack Wilkinson",
-          "event_total": 27,
-          "total": 27,
-          "is_me": false
-        },
-        {
-          "rank": 11,
-          "last_rank": 0,
-          "entry": 2583053,
-          "entry_name": "Proper Team Name 2",
-          "manager": "Grzesiek Martinez",
           "event_total": 27,
           "total": 27,
           "is_me": false
