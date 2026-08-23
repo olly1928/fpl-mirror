@@ -1,4 +1,4 @@
-# season=2026/27 preseason=False next_gw=2 deadline=2026-08-28T17:30:00Z players=604 fetched=2026-08-23T15:14:42+00:00
+# season=2026/27 preseason=False next_gw=2 deadline=2026-08-28T17:30:00Z players=604 fetched=2026-08-23T16:16:21+00:00
 # One row per fixture per player per stat, flattened from fixtures[].stats.
 # team_side: h=home side, a=away side. Empty until fixtures are played.
 # Unlike the other append-only files this one is rebuilt each run, so FPL's later bonus-point and stat corrections are picked up.
@@ -558,3 +558,56 @@ fixture_id,gw,player_id,team_side,identifier,value
 8,1,76,a,defensive_contribution,2
 8,1,67,a,defensive_contribution,1
 8,1,72,a,defensive_contribution,1
+9,1,454,h,goals_scored,1
+9,1,465,h,assists,1
+9,1,459,h,yellow_cards,1
+9,1,464,h,yellow_cards,1
+9,1,357,a,yellow_cards,1
+9,1,358,a,yellow_cards,1
+9,1,567,h,saves,2
+9,1,350,a,saves,1
+9,1,454,h,bonus,3
+9,1,465,h,bonus,2
+9,1,366,a,bonus,1
+9,1,454,h,bps,28
+9,1,465,h,bps,18
+9,1,567,h,bps,8
+9,1,449,h,bps,7
+9,1,593,h,bps,5
+9,1,447,h,bps,4
+9,1,445,h,bps,3
+9,1,453,h,bps,3
+9,1,459,h,bps,3
+9,1,462,h,bps,3
+9,1,464,h,bps,1
+9,1,366,a,bps,9
+9,1,367,a,bps,7
+9,1,368,a,bps,6
+9,1,369,a,bps,5
+9,1,371,a,bps,5
+9,1,379,a,bps,3
+9,1,350,a,bps,1
+9,1,356,a,bps,1
+9,1,358,a,bps,-1
+9,1,362,a,bps,-1
+9,1,357,a,bps,-5
+9,1,459,h,defensive_contribution,7
+9,1,449,h,defensive_contribution,5
+9,1,445,h,defensive_contribution,4
+9,1,447,h,defensive_contribution,4
+9,1,464,h,defensive_contribution,4
+9,1,453,h,defensive_contribution,3
+9,1,465,h,defensive_contribution,3
+9,1,593,h,defensive_contribution,3
+9,1,454,h,defensive_contribution,2
+9,1,462,h,defensive_contribution,2
+9,1,367,a,defensive_contribution,6
+9,1,358,a,defensive_contribution,5
+9,1,356,a,defensive_contribution,4
+9,1,366,a,defensive_contribution,4
+9,1,368,a,defensive_contribution,4
+9,1,371,a,defensive_contribution,3
+9,1,369,a,defensive_contribution,2
+9,1,357,a,defensive_contribution,1
+9,1,362,a,defensive_contribution,1
+9,1,379,a,defensive_contribution,1
