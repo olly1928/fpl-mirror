@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-23T13:26:31.062222+00:00",
+  "fetched_at": "2026-08-23T14:16:00.002946+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,7 +8,7 @@
   "next_deadline": "2026-08-28T17:30:00Z",
   "preseason": false,
   "overall_points": 36,
-  "overall_rank": 1221241,
+  "overall_rank": 1284211,
   "bank": 0.0,
   "squad_value": 100.0,
   "squad_selling_value": 1000,
@@ -199,8 +199,8 @@
           "entry": 6758481,
           "entry_name": "chilli con Cairney",
           "manager": "Joe Raven",
-          "event_total": 12,
-          "total": 12,
+          "event_total": 13,
+          "total": 13,
           "is_me": false
         }
       ]
@@ -229,8 +229,18 @@
           "entry": 3820692,
           "entry_name": "somgorsi",
           "manager": "Hubert Kaźmierczak",
-          "event_total": 46,
-          "total": 46,
+          "event_total": 45,
+          "total": 45,
+          "is_me": false
+        },
+        {
+          "rank": 3,
+          "last_rank": 0,
+          "entry": 2840746,
+          "entry_name": "Matthew's Team",
+          "manager": "Matthew Evans",
+          "event_total": 36,
+          "total": 36,
           "is_me": false
         },
         {
@@ -242,16 +252,6 @@
           "event_total": 36,
           "total": 36,
           "is_me": true
-        },
-        {
-          "rank": 3,
-          "last_rank": 0,
-          "entry": 2840746,
-          "entry_name": "Matthew's Team",
-          "manager": "Matthew Evans",
-          "event_total": 36,
-          "total": 36,
-          "is_me": false
         },
         {
           "rank": 5,
@@ -276,9 +276,9 @@
         {
           "rank": 7,
           "last_rank": 0,
-          "entry": 5122358,
-          "entry_name": "Rohan Van Pedro",
-          "manager": "Rohan Holder",
+          "entry": 2527602,
+          "entry_name": "Peak Roy Hodgson FC",
+          "manager": "Andrew Hayes",
           "event_total": 31,
           "total": 31,
           "is_me": false
@@ -286,9 +286,9 @@
         {
           "rank": 7,
           "last_rank": 0,
-          "entry": 2527602,
-          "entry_name": "Peak Roy Hodgson FC",
-          "manager": "Andrew Hayes",
+          "entry": 5122358,
+          "entry_name": "Rohan Van Pedro",
+          "manager": "Rohan Holder",
           "event_total": 31,
           "total": 31,
           "is_me": false
@@ -306,6 +306,16 @@
         {
           "rank": 9,
           "last_rank": 0,
+          "entry": 1335880,
+          "entry_name": "The Szo Show",
+          "manager": "Chris Stern",
+          "event_total": 29,
+          "total": 29,
+          "is_me": false
+        },
+        {
+          "rank": 9,
+          "last_rank": 0,
           "entry": 2940306,
           "entry_name": "SomeRandomName",
           "manager": "Ania ER",
@@ -314,13 +324,13 @@
           "is_me": false
         },
         {
-          "rank": 9,
+          "rank": 12,
           "last_rank": 0,
-          "entry": 1335880,
-          "entry_name": "The Szo Show",
-          "manager": "Chris Stern",
-          "event_total": 29,
-          "total": 29,
+          "entry": 6423433,
+          "entry_name": "Real Contenders",
+          "manager": "Anthony Prior",
+          "event_total": 28,
+          "total": 28,
           "is_me": false
         },
         {
@@ -334,17 +344,17 @@
           "is_me": false
         },
         {
-          "rank": 13,
+          "rank": 14,
           "last_rank": 0,
-          "entry": 6423433,
-          "entry_name": "Real Contenders",
-          "manager": "Anthony Prior",
-          "event_total": 27,
-          "total": 27,
+          "entry": 548815,
+          "entry_name": "Sels Like TeamSpirit",
+          "manager": "John Braddock",
+          "event_total": 25,
+          "total": 25,
           "is_me": false
         },
         {
-          "rank": 14,
+          "rank": 15,
           "last_rank": 0,
           "entry": 5093062,
           "entry_name": "Saf London Fc",
@@ -354,17 +364,7 @@
           "is_me": false
         },
         {
-          "rank": 15,
-          "last_rank": 0,
-          "entry": 548815,
-          "entry_name": "Sels Like TeamSpirit",
-          "manager": "John Braddock",
-          "event_total": 23,
-          "total": 23,
-          "is_me": false
-        },
-        {
-          "rank": 15,
+          "rank": 16,
           "last_rank": 0,
           "entry": 4780428,
           "entry_name": "Viva Les Vegas",
@@ -374,13 +374,23 @@
           "is_me": false
         },
         {
-          "rank": 15,
+          "rank": 16,
           "last_rank": 0,
           "entry": 687538,
           "entry_name": "week_foot_11",
           "manager": "Samip Thakkar",
           "event_total": 23,
           "total": 23,
+          "is_me": false
+        },
+        {
+          "rank": 18,
+          "last_rank": 0,
+          "entry": 2328199,
+          "entry_name": "Super Saiyan Sarr",
+          "manager": "Michael Bird",
+          "event_total": 19,
+          "total": 19,
           "is_me": false
         },
         {
@@ -394,23 +404,13 @@
           "is_me": false
         },
         {
-          "rank": 19,
-          "last_rank": 0,
-          "entry": 2328199,
-          "entry_name": "Super Saiyan Sarr",
-          "manager": "Michael Bird",
-          "event_total": 18,
-          "total": 18,
-          "is_me": false
-        },
-        {
           "rank": 20,
           "last_rank": 0,
           "entry": 8853128,
           "entry_name": "Jesse's Team",
           "manager": "Jesse Huling",
-          "event_total": 17,
-          "total": 17,
+          "event_total": 18,
+          "total": 18,
           "is_me": false
         }
       ]
@@ -429,8 +429,8 @@
           "entry": 2316299,
           "entry_name": "Caput mensae",
           "manager": "Huw Meredith",
-          "event_total": 40,
-          "total": 40,
+          "event_total": 53,
+          "total": 53,
           "is_me": false
         },
         {
@@ -519,8 +519,8 @@
           "entry": 6389595,
           "entry_name": "A Grand Old Team",
           "manager": "Steve Organ",
-          "event_total": 32,
-          "total": 32,
+          "event_total": 33,
+          "total": 33,
           "is_me": false
         },
         {
