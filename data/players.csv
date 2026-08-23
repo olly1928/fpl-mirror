@@ -1,4 +1,4 @@
-# season=2026/27 preseason=False next_gw=2 deadline=2026-08-28T17:30:00Z players=604 fetched=2026-08-23T09:20:36+00:00
+# season=2026/27 preseason=False next_gw=2 deadline=2026-08-28T17:30:00Z players=604 fetched=2026-08-23T10:15:46+00:00
 # pts/ppg/mins/g/a/cs/bonus are LAST SEASON totals carried into the new game.
 # st: a=available i=injured d=doubtful s=suspended u=unavailable
 id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st,expected_goals,expected_goals_per_90,expected_assists,expected_assists_per_90,expected_goal_involvements,expected_goals_conceded,expected_goals_conceded_per_90,starts,starts_per_90,chance_of_playing_this_round,chance_of_playing_next_round,defensive_contribution,defensive_contribution_per_90,clean_sheets_per_90,goals_conceded_per_90,saves_per_90,penalties_order,penalties_text,direct_freekicks_order,direct_freekicks_text,corners_and_indirect_freekicks_order,corners_and_indirect_freekicks_text,yellow_cards,red_cards,own_goals,penalties_missed,penalties_saved,saves,bps,influence,creativity,threat,ict_index,form,ep_this,ep_next,value_form,value_season,clearances_blocks_interceptions,tackles,recoveries,expected_goal_involvements_per_90,goals_conceded
@@ -464,7 +464,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st,expected_goals,expected_
 359,Gomez,LIV,DEF,5.0,0.0,0,0.0,0,0,0,0,0,i,0.00,0,0.00,0,0.00,0.00,0,0,0,0,0,0,0,0,0,0,,,,,,,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,0,0
 360,Bradley,LIV,DEF,5.0,0.0,0,0.0,0,0,0,0,0,i,0.00,0,0.00,0,0.00,0.00,0,0,0,0,0,0,0,0,0,0,,,,,,,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,0,0
 361,Lucky,LIV,DEF,4.0,0.1,0,0.0,0,0,0,0,0,a,0.00,0,0.00,0,0.00,0.00,0,0,0,,,0,0,0,0,0,,,,,,,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0,0,0,0,0
-362,Jacquet,LIV,DEF,5.0,2.3,0,0.0,0,0,0,0,0,a,0.00,0,0.00,0,0.00,0.00,0,0,0,100,100,0,0,0,0,0,,,,,,,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,0.0,2.2,2.2,0.0,0.0,0,0,0,0,0
+362,Jacquet,LIV,DEF,5.0,2.4,0,0.0,0,0,0,0,0,a,0.00,0,0.00,0,0.00,0.00,0,0,0,100,100,0,0,0,0,0,,,,,,,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,0.0,2.2,2.2,0.0,0.0,0,0,0,0,0
 363,Leoni,LIV,DEF,4.0,0.0,0,0.0,0,0,0,0,0,i,0.00,0,0.00,0,0.00,0.00,0,0,0,0,0,0,0,0,0,0,,,,,,,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,0,0
 364,Tsimikas,LIV,DEF,5.0,0.1,0,0.0,0,0,0,0,0,a,0.00,0,0.00,0,0.00,0.00,0,0,0,,,0,0,0,0,0,,,,,,,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,0.0,2.2,2.2,0.0,0.0,0,0,0,0,0
 365,Ramsay,LIV,DEF,4.0,0.2,0,0.0,0,0,0,0,0,a,0.00,0,0.00,0,0.00,0.00,0,0,0,,,0,0,0,0,0,,,,,,,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0,0,0,0,0
@@ -556,7 +556,7 @@ id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st,expected_goals,expected_
 462,Steur,NEW,MID,5.0,0.1,0,0.0,0,0,0,0,0,a,0.00,0,0.00,0,0.00,0.00,0,0,0,,,0,0,0,0,0,,,,,,,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,0.0,1.5,1.5,0.0,0.0,0,0,0,0,0
 463,Woltemade,NEW,FWD,6.0,1.8,0,0.0,0,0,0,0,0,a,0.00,0,0.00,0,0.00,0.00,0,0,0,,,0,0,0,0,0,1,,,,,,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,0.0,2.0,2.0,0.0,0.0,0,0,0,0,0
 464,Wissa,NEW,FWD,6.0,1.7,0,0.0,0,0,0,0,0,a,0.00,0,0.00,0,0.00,0.00,0,0,0,,,0,0,0,0,0,3,,,,,,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,0.0,2.0,2.0,0.0,0.0,0,0,0,0,0
-465,Osula,NEW,FWD,6.0,0.9,0,0.0,0,0,0,0,0,a,0.00,0,0.00,0,0.00,0.00,0,0,0,,,0,0,0,0,0,2,,,,,,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,0.0,2.0,2.0,0.0,0.0,0,0,0,0,0
+465,Osula,NEW,FWD,6.0,1.0,0,0.0,0,0,0,0,0,a,0.00,0,0.00,0,0.00,0.00,0,0,0,,,0,0,0,0,0,2,,,,,,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,0.0,2.0,2.0,0.0,0.0,0,0,0,0,0
 466,Neave,NEW,FWD,4.5,0.8,0,0.0,0,0,0,0,0,a,0.00,0,0.00,0,0.00,0.00,0,0,0,,,0,0,0,0,0,,,,,,,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0,0,0,0,0
 559,Bamba,NEW,MID,5.0,0.1,0,0.0,0,0,0,0,0,a,0.00,0,0.00,0,0.00,0.00,0,0,0,,,0,0,0,0,0,,,,,,,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,0.0,1.5,1.5,0.0,0.0,0,0,0,0,0
 567,Horníček,NEW,GKP,5.0,0.7,0,0.0,0,0,0,0,0,a,0.00,0,0.00,0,0.00,0.00,0,0,0,,,0,0,0,0,0,,,,,,,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,0.0,2.6,2.6,0.0,0.0,0,0,0,0,0
