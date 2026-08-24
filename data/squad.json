@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-24T10:30:17.952233+00:00",
+  "fetched_at": "2026-08-24T11:19:55.413822+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -316,9 +316,9 @@
         {
           "rank": 11,
           "last_rank": 0,
-          "entry": 3747240,
-          "entry_name": "VAR-a-Lago",
-          "manager": "Mike Phillips",
+          "entry": 548815,
+          "entry_name": "Sels Like TeamSpirit",
+          "manager": "John Braddock",
           "event_total": 37,
           "total": 37,
           "is_me": false
@@ -326,9 +326,9 @@
         {
           "rank": 11,
           "last_rank": 0,
-          "entry": 548815,
-          "entry_name": "Sels Like TeamSpirit",
-          "manager": "John Braddock",
+          "entry": 3747240,
+          "entry_name": "VAR-a-Lago",
+          "manager": "Mike Phillips",
           "event_total": 37,
           "total": 37,
           "is_me": false
@@ -366,16 +366,6 @@
         {
           "rank": 16,
           "last_rank": 0,
-          "entry": 2328199,
-          "entry_name": "Super Saiyan Sarr",
-          "manager": "Michael Bird",
-          "event_total": 29,
-          "total": 29,
-          "is_me": false
-        },
-        {
-          "rank": 16,
-          "last_rank": 0,
           "entry": 2583053,
           "entry_name": "Proper Team Name 2",
           "manager": "Grzesiek Martinez",
@@ -389,6 +379,16 @@
           "entry": 5093062,
           "entry_name": "Saf London Fc",
           "manager": "Tony Huckle",
+          "event_total": 29,
+          "total": 29,
+          "is_me": false
+        },
+        {
+          "rank": 16,
+          "last_rank": 0,
+          "entry": 2328199,
+          "entry_name": "Super Saiyan Sarr",
+          "manager": "Michael Bird",
           "event_total": 29,
           "total": 29,
           "is_me": false
