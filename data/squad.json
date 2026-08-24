@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-24T02:18:55.747590+00:00",
+  "fetched_at": "2026-08-24T02:37:36.514160+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -256,9 +256,9 @@
         {
           "rank": 5,
           "last_rank": 0,
-          "entry": 2387148,
-          "entry_name": "Amadness",
-          "manager": "Michal Nowak",
+          "entry": 2527602,
+          "entry_name": "Peak Roy Hodgson FC",
+          "manager": "Andrew Hayes",
           "event_total": 42,
           "total": 42,
           "is_me": false
@@ -266,9 +266,9 @@
         {
           "rank": 5,
           "last_rank": 0,
-          "entry": 2527602,
-          "entry_name": "Peak Roy Hodgson FC",
-          "manager": "Andrew Hayes",
+          "entry": 2387148,
+          "entry_name": "Amadness",
+          "manager": "Michal Nowak",
           "event_total": 42,
           "total": 42,
           "is_me": false
@@ -296,16 +296,6 @@
         {
           "rank": 9,
           "last_rank": 0,
-          "entry": 2840746,
-          "entry_name": "Matthew's Team",
-          "manager": "Matthew Evans",
-          "event_total": 38,
-          "total": 38,
-          "is_me": false
-        },
-        {
-          "rank": 9,
-          "last_rank": 0,
           "entry": 1335880,
           "entry_name": "The Szo Show",
           "manager": "Chris Stern",
@@ -314,13 +304,13 @@
           "is_me": false
         },
         {
-          "rank": 11,
+          "rank": 9,
           "last_rank": 0,
-          "entry": 548815,
-          "entry_name": "Sels Like TeamSpirit",
-          "manager": "John Braddock",
-          "event_total": 37,
-          "total": 37,
+          "entry": 2840746,
+          "entry_name": "Matthew's Team",
+          "manager": "Matthew Evans",
+          "event_total": 38,
+          "total": 38,
           "is_me": false
         },
         {
@@ -329,6 +319,16 @@
           "entry": 3747240,
           "entry_name": "VAR-a-Lago",
           "manager": "Mike Phillips",
+          "event_total": 37,
+          "total": 37,
+          "is_me": false
+        },
+        {
+          "rank": 11,
+          "last_rank": 0,
+          "entry": 548815,
+          "entry_name": "Sels Like TeamSpirit",
+          "manager": "John Braddock",
           "event_total": 37,
           "total": 37,
           "is_me": false
@@ -366,9 +366,9 @@
         {
           "rank": 16,
           "last_rank": 0,
-          "entry": 5093062,
-          "entry_name": "Saf London Fc",
-          "manager": "Tony Huckle",
+          "entry": 2328199,
+          "entry_name": "Super Saiyan Sarr",
+          "manager": "Michael Bird",
           "event_total": 29,
           "total": 29,
           "is_me": false
@@ -376,9 +376,9 @@
         {
           "rank": 16,
           "last_rank": 0,
-          "entry": 2328199,
-          "entry_name": "Super Saiyan Sarr",
-          "manager": "Michael Bird",
+          "entry": 5093062,
+          "entry_name": "Saf London Fc",
+          "manager": "Tony Huckle",
           "event_total": 29,
           "total": 29,
           "is_me": false
