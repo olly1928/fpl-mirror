@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-24T08:39:08.753365+00:00",
+  "fetched_at": "2026-08-24T09:38:47.155526+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -256,16 +256,6 @@
         {
           "rank": 5,
           "last_rank": 0,
-          "entry": 2387148,
-          "entry_name": "Amadness",
-          "manager": "Michal Nowak",
-          "event_total": 42,
-          "total": 42,
-          "is_me": false
-        },
-        {
-          "rank": 5,
-          "last_rank": 0,
           "entry": 2527602,
           "entry_name": "Peak Roy Hodgson FC",
           "manager": "Andrew Hayes",
@@ -274,13 +264,13 @@
           "is_me": false
         },
         {
-          "rank": 7,
+          "rank": 5,
           "last_rank": 0,
-          "entry": 6423433,
-          "entry_name": "Real Contenders",
-          "manager": "Anthony Prior",
-          "event_total": 41,
-          "total": 41,
+          "entry": 2387148,
+          "entry_name": "Amadness",
+          "manager": "Michal Nowak",
+          "event_total": 42,
+          "total": 42,
           "is_me": false
         },
         {
@@ -292,6 +282,16 @@
           "event_total": 41,
           "total": 41,
           "is_me": true
+        },
+        {
+          "rank": 7,
+          "last_rank": 0,
+          "entry": 6423433,
+          "entry_name": "Real Contenders",
+          "manager": "Anthony Prior",
+          "event_total": 41,
+          "total": 41,
+          "is_me": false
         },
         {
           "rank": 9,
@@ -316,9 +316,9 @@
         {
           "rank": 11,
           "last_rank": 0,
-          "entry": 548815,
-          "entry_name": "Sels Like TeamSpirit",
-          "manager": "John Braddock",
+          "entry": 3747240,
+          "entry_name": "VAR-a-Lago",
+          "manager": "Mike Phillips",
           "event_total": 37,
           "total": 37,
           "is_me": false
@@ -326,9 +326,9 @@
         {
           "rank": 11,
           "last_rank": 0,
-          "entry": 3747240,
-          "entry_name": "VAR-a-Lago",
-          "manager": "Mike Phillips",
+          "entry": 548815,
+          "entry_name": "Sels Like TeamSpirit",
+          "manager": "John Braddock",
           "event_total": 37,
           "total": 37,
           "is_me": false
@@ -366,6 +366,16 @@
         {
           "rank": 16,
           "last_rank": 0,
+          "entry": 2583053,
+          "entry_name": "Proper Team Name 2",
+          "manager": "Grzesiek Martinez",
+          "event_total": 29,
+          "total": 29,
+          "is_me": false
+        },
+        {
+          "rank": 16,
+          "last_rank": 0,
           "entry": 5093062,
           "entry_name": "Saf London Fc",
           "manager": "Tony Huckle",
@@ -379,16 +389,6 @@
           "entry": 2328199,
           "entry_name": "Super Saiyan Sarr",
           "manager": "Michael Bird",
-          "event_total": 29,
-          "total": 29,
-          "is_me": false
-        },
-        {
-          "rank": 16,
-          "last_rank": 0,
-          "entry": 2583053,
-          "entry_name": "Proper Team Name 2",
-          "manager": "Grzesiek Martinez",
           "event_total": 29,
           "total": 29,
           "is_me": false
@@ -476,9 +476,9 @@
         {
           "rank": 5,
           "last_rank": 0,
-          "entry": 1732178,
-          "entry_name": "(Haa)Land Rover",
-          "manager": "Joe Meiklejohn",
+          "entry": 8668432,
+          "entry_name": "MMDGAF FC",
+          "manager": "Helen Maude",
           "event_total": 30,
           "total": 30,
           "is_me": false
@@ -486,9 +486,9 @@
         {
           "rank": 5,
           "last_rank": 0,
-          "entry": 8668432,
-          "entry_name": "MMDGAF FC",
-          "manager": "Helen Maude",
+          "entry": 1732178,
+          "entry_name": "(Haa)Land Rover",
+          "manager": "Joe Meiklejohn",
           "event_total": 30,
           "total": 30,
           "is_me": false
