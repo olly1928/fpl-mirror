@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-24T05:31:58.257264+00:00",
+  "fetched_at": "2026-08-24T06:40:52.177270+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,7 +8,7 @@
   "next_deadline": "2026-08-28T17:30:00Z",
   "preseason": false,
   "overall_points": 41,
-  "overall_rank": 2685590,
+  "overall_rank": 2685591,
   "bank": 0.0,
   "squad_value": 100.0,
   "squad_selling_value": 1000,
@@ -296,9 +296,9 @@
         {
           "rank": 9,
           "last_rank": 0,
-          "entry": 2840746,
-          "entry_name": "Matthew's Team",
-          "manager": "Matthew Evans",
+          "entry": 1335880,
+          "entry_name": "The Szo Show",
+          "manager": "Chris Stern",
           "event_total": 38,
           "total": 38,
           "is_me": false
@@ -306,9 +306,9 @@
         {
           "rank": 9,
           "last_rank": 0,
-          "entry": 1335880,
-          "entry_name": "The Szo Show",
-          "manager": "Chris Stern",
+          "entry": 2840746,
+          "entry_name": "Matthew's Team",
+          "manager": "Matthew Evans",
           "event_total": 38,
           "total": 38,
           "is_me": false
@@ -366,9 +366,9 @@
         {
           "rank": 16,
           "last_rank": 0,
-          "entry": 2328199,
-          "entry_name": "Super Saiyan Sarr",
-          "manager": "Michael Bird",
+          "entry": 2583053,
+          "entry_name": "Proper Team Name 2",
+          "manager": "Grzesiek Martinez",
           "event_total": 29,
           "total": 29,
           "is_me": false
@@ -376,9 +376,9 @@
         {
           "rank": 16,
           "last_rank": 0,
-          "entry": 2583053,
-          "entry_name": "Proper Team Name 2",
-          "manager": "Grzesiek Martinez",
+          "entry": 2328199,
+          "entry_name": "Super Saiyan Sarr",
+          "manager": "Michael Bird",
           "event_total": 29,
           "total": 29,
           "is_me": false

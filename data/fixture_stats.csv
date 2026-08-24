@@ -1,4 +1,4 @@
-# season=2026/27 preseason=False next_gw=2 deadline=2026-08-28T17:30:00Z players=609 fetched=2026-08-24T05:32:00+00:00
+# season=2026/27 preseason=False next_gw=2 deadline=2026-08-28T17:30:00Z players=609 fetched=2026-08-24T06:40:54+00:00
 # One row per fixture per player per stat, flattened from fixtures[].stats.
 # team_side: h=home side, a=away side. Empty until fixtures are played.
 # Unlike the other append-only files this one is rebuilt each run, so FPL's later bonus-point and stat corrections are picked up.
@@ -508,17 +508,17 @@ fixture_id,gw,player_id,team_side,identifier,value
 8,1,388,h,bps,31
 8,1,391,h,bps,28
 8,1,399,h,bps,28
-8,1,398,h,bps,18
-8,1,397,h,bps,15
+8,1,397,h,bps,16
+8,1,398,h,bps,15
 8,1,393,h,bps,14
 8,1,481,h,bps,14
 8,1,384,h,bps,12
 8,1,390,h,bps,11
-8,1,411,h,bps,7
+8,1,411,h,bps,6
+8,1,387,h,bps,5
 8,1,389,h,bps,4
 8,1,406,h,bps,3
 8,1,238,h,bps,2
-8,1,387,h,bps,2
 8,1,395,h,bps,-1
 8,1,68,a,bps,32
 8,1,69,a,bps,17
@@ -531,21 +531,20 @@ fixture_id,gw,player_id,team_side,identifier,value
 8,1,76,a,bps,5
 8,1,566,a,bps,5
 8,1,64,a,bps,4
+8,1,73,a,bps,4
 8,1,72,a,bps,3
-8,1,73,a,bps,3
-8,1,61,a,bps,-2
-8,1,481,h,defensive_contribution,7
+8,1,391,h,defensive_contribution,7
 8,1,390,h,defensive_contribution,6
 8,1,398,h,defensive_contribution,6
-8,1,391,h,defensive_contribution,5
+8,1,481,h,defensive_contribution,6
 8,1,397,h,defensive_contribution,5
 8,1,388,h,defensive_contribution,4
 8,1,393,h,defensive_contribution,4
 8,1,411,h,defensive_contribution,3
-8,1,238,h,defensive_contribution,2
 8,1,387,h,defensive_contribution,2
 8,1,395,h,defensive_contribution,2
 8,1,406,h,defensive_contribution,2
+8,1,238,h,defensive_contribution,1
 8,1,389,h,defensive_contribution,1
 8,1,566,a,defensive_contribution,13
 8,1,69,a,defensive_contribution,11
@@ -556,7 +555,7 @@ fixture_id,gw,player_id,team_side,identifier,value
 8,1,71,a,defensive_contribution,7
 8,1,60,a,defensive_contribution,6
 8,1,64,a,defensive_contribution,5
-8,1,73,a,defensive_contribution,2
+8,1,73,a,defensive_contribution,3
 8,1,76,a,defensive_contribution,2
 8,1,67,a,defensive_contribution,1
 8,1,72,a,defensive_contribution,1
