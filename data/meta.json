@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-24T02:37:38+00:00",
+  "fetched_at": "2026-08-24T03:47:33+00:00",
   "season": "2026/27",
   "preseason": false,
   "current_event": 1,
@@ -795,7 +795,7 @@
   ],
   "components": {
     "build_fpl": {
-      "last_run_at": "2026-08-24T02:37:38+00:00",
+      "last_run_at": "2026-08-24T03:47:33+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
@@ -807,19 +807,19 @@
       "stale": false
     },
     "build_player_history": {
-      "last_run_at": "2026-08-24T02:37:35+00:00",
+      "last_run_at": "2026-08-24T03:47:31+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
     },
     "build_snapshots": {
-      "last_run_at": "2026-08-24T02:37:35+00:00",
+      "last_run_at": "2026-08-24T03:47:31+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
     },
     "build_squad": {
-      "last_run_at": "2026-08-24T02:37:38+00:00",
+      "last_run_at": "2026-08-24T03:47:32+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
