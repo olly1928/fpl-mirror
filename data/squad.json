@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-25T00:51:21.990639+00:00",
+  "fetched_at": "2026-08-25T02:14:38.050810+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,7 +8,7 @@
   "next_deadline": "2026-08-28T17:30:00Z",
   "preseason": false,
   "overall_points": 52,
-  "overall_rank": 3191635,
+  "overall_rank": 3191632,
   "bank": 0.0,
   "squad_value": 100.0,
   "squad_selling_value": 1000,
@@ -336,6 +336,16 @@
         {
           "rank": 13,
           "last_rank": 0,
+          "entry": 3747240,
+          "entry_name": "VAR-a-Lago",
+          "manager": "Mike Phillips",
+          "event_total": 48,
+          "total": 48,
+          "is_me": false
+        },
+        {
+          "rank": 13,
+          "last_rank": 0,
           "entry": 2328199,
           "entry_name": "Super Saiyan Sarr",
           "manager": "Michael Bird",
@@ -349,16 +359,6 @@
           "entry": 548815,
           "entry_name": "Sels Like TeamSpirit",
           "manager": "John Braddock",
-          "event_total": 48,
-          "total": 48,
-          "is_me": false
-        },
-        {
-          "rank": 13,
-          "last_rank": 0,
-          "entry": 3747240,
-          "entry_name": "VAR-a-Lago",
-          "manager": "Mike Phillips",
           "event_total": 48,
           "total": 48,
           "is_me": false
