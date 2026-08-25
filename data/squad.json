@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-25T15:35:08.206424+00:00",
+  "fetched_at": "2026-08-25T16:27:42.346602+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,7 +8,7 @@
   "next_deadline": "2026-08-28T17:30:00Z",
   "preseason": false,
   "overall_points": 52,
-  "overall_rank": 3764288,
+  "overall_rank": 3764280,
   "bank": 0.0,
   "squad_value": 100.0,
   "squad_selling_value": 1000,
@@ -286,16 +286,6 @@
         {
           "rank": 8,
           "last_rank": 0,
-          "entry": 2527602,
-          "entry_name": "Peak Roy Hodgson FC",
-          "manager": "Andrew Hayes",
-          "event_total": 53,
-          "total": 53,
-          "is_me": false
-        },
-        {
-          "rank": 8,
-          "last_rank": 0,
           "entry": 2387148,
           "entry_name": "Amadness",
           "manager": "Michal Nowak",
@@ -304,13 +294,13 @@
           "is_me": false
         },
         {
-          "rank": 10,
+          "rank": 8,
           "last_rank": 0,
-          "entry": 3747240,
-          "entry_name": "VAR-a-Lago",
-          "manager": "Mike Phillips",
-          "event_total": 52,
-          "total": 52,
+          "entry": 2527602,
+          "entry_name": "Peak Roy Hodgson FC",
+          "manager": "Andrew Hayes",
+          "event_total": 53,
+          "total": 53,
           "is_me": false
         },
         {
@@ -324,13 +314,13 @@
           "is_me": true
         },
         {
-          "rank": 12,
+          "rank": 10,
           "last_rank": 0,
-          "entry": 2840746,
-          "entry_name": "Matthew's Team",
-          "manager": "Matthew Evans",
-          "event_total": 50,
-          "total": 50,
+          "entry": 3747240,
+          "entry_name": "VAR-a-Lago",
+          "manager": "Mike Phillips",
+          "event_total": 52,
+          "total": 52,
           "is_me": false
         },
         {
@@ -339,6 +329,16 @@
           "entry": 7359153,
           "entry_name": "ohforgodssaka",
           "manager": "Jack Wilkinson",
+          "event_total": 50,
+          "total": 50,
+          "is_me": false
+        },
+        {
+          "rank": 12,
+          "last_rank": 0,
+          "entry": 2840746,
+          "entry_name": "Matthew's Team",
+          "manager": "Matthew Evans",
           "event_total": 50,
           "total": 50,
           "is_me": false
