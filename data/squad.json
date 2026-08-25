@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-25T06:33:20.988046+00:00",
+  "fetched_at": "2026-08-25T07:37:46.467663+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,7 +8,7 @@
   "next_deadline": "2026-08-28T17:30:00Z",
   "preseason": false,
   "overall_points": 52,
-  "overall_rank": 3191625,
+  "overall_rank": 3191622,
   "bank": 0.0,
   "squad_value": 100.0,
   "squad_selling_value": 1000,
@@ -276,9 +276,9 @@
         {
           "rank": 7,
           "last_rank": 0,
-          "entry": 2527602,
-          "entry_name": "Peak Roy Hodgson FC",
-          "manager": "Andrew Hayes",
+          "entry": 2387148,
+          "entry_name": "Amadness",
+          "manager": "Michal Nowak",
           "event_total": 53,
           "total": 53,
           "is_me": false
@@ -286,9 +286,9 @@
         {
           "rank": 7,
           "last_rank": 0,
-          "entry": 2387148,
-          "entry_name": "Amadness",
-          "manager": "Michal Nowak",
+          "entry": 2527602,
+          "entry_name": "Peak Roy Hodgson FC",
+          "manager": "Andrew Hayes",
           "event_total": 53,
           "total": 53,
           "is_me": false
@@ -316,16 +316,6 @@
         {
           "rank": 11,
           "last_rank": 0,
-          "entry": 1335880,
-          "entry_name": "The Szo Show",
-          "manager": "Chris Stern",
-          "event_total": 49,
-          "total": 49,
-          "is_me": false
-        },
-        {
-          "rank": 11,
-          "last_rank": 0,
           "entry": 2840746,
           "entry_name": "Matthew's Team",
           "manager": "Matthew Evans",
@@ -334,11 +324,21 @@
           "is_me": false
         },
         {
+          "rank": 11,
+          "last_rank": 0,
+          "entry": 1335880,
+          "entry_name": "The Szo Show",
+          "manager": "Chris Stern",
+          "event_total": 49,
+          "total": 49,
+          "is_me": false
+        },
+        {
           "rank": 13,
           "last_rank": 0,
-          "entry": 3747240,
-          "entry_name": "VAR-a-Lago",
-          "manager": "Mike Phillips",
+          "entry": 548815,
+          "entry_name": "Sels Like TeamSpirit",
+          "manager": "John Braddock",
           "event_total": 48,
           "total": 48,
           "is_me": false
@@ -356,9 +356,9 @@
         {
           "rank": 13,
           "last_rank": 0,
-          "entry": 548815,
-          "entry_name": "Sels Like TeamSpirit",
-          "manager": "John Braddock",
+          "entry": 3747240,
+          "entry_name": "VAR-a-Lago",
+          "manager": "Mike Phillips",
           "event_total": 48,
           "total": 48,
           "is_me": false
@@ -466,9 +466,9 @@
         {
           "rank": 4,
           "last_rank": 0,
-          "entry": 2033083,
-          "entry_name": "Wirtz Case Scenario",
-          "manager": "Idris Jenkins",
+          "entry": 8668432,
+          "entry_name": "MMDGAF FC",
+          "manager": "Helen Maude",
           "event_total": 50,
           "total": 50,
           "is_me": false
@@ -476,9 +476,9 @@
         {
           "rank": 4,
           "last_rank": 0,
-          "entry": 8668432,
-          "entry_name": "MMDGAF FC",
-          "manager": "Helen Maude",
+          "entry": 2033083,
+          "entry_name": "Wirtz Case Scenario",
+          "manager": "Idris Jenkins",
           "event_total": 50,
           "total": 50,
           "is_me": false
