@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-25T11:20:32+00:00",
+  "fetched_at": "2026-08-25T12:32:56+00:00",
   "season": "2026/27",
   "preseason": false,
   "current_event": 1,
@@ -32,8 +32,8 @@
     {
       "id": 1,
       "deadline_time": "2026-08-21T17:30:00Z",
-      "finished": false,
-      "data_checked": false,
+      "finished": true,
+      "data_checked": true,
       "is_current": true,
       "is_next": false,
       "average_entry_score": 50,
@@ -791,11 +791,12 @@
   },
   "stale": false,
   "warnings": [
-    "bootstrap-static.elements: 4 new field(s) present in the API and not mirrored: price_change_calibrating, price_change_hourly_rate, price_change_locked_until, price_change_projections"
+    "bootstrap-static.elements: 4 new field(s) present in the API and not mirrored: price_change_calibrating, price_change_hourly_rate, price_change_locked_until, price_change_projections",
+    "[build_player_history] event/1/live.stats: 2 new field(s) present in the API and not mirrored: in_dreamteam, played"
   ],
   "components": {
     "build_fpl": {
-      "last_run_at": "2026-08-25T11:20:32+00:00",
+      "last_run_at": "2026-08-25T12:32:56+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
@@ -807,19 +808,19 @@
       "stale": false
     },
     "build_player_history": {
-      "last_run_at": "2026-08-25T11:20:29+00:00",
+      "last_run_at": "2026-08-25T12:32:55+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
     },
     "build_snapshots": {
-      "last_run_at": "2026-08-25T11:20:28+00:00",
+      "last_run_at": "2026-08-25T12:32:54+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
     },
     "build_squad": {
-      "last_run_at": "2026-08-25T11:20:31+00:00",
+      "last_run_at": "2026-08-25T12:32:56+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
