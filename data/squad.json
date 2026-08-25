@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-25T02:14:38.050810+00:00",
+  "fetched_at": "2026-08-25T02:31:12.999214+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -316,16 +316,6 @@
         {
           "rank": 11,
           "last_rank": 0,
-          "entry": 1335880,
-          "entry_name": "The Szo Show",
-          "manager": "Chris Stern",
-          "event_total": 49,
-          "total": 49,
-          "is_me": false
-        },
-        {
-          "rank": 11,
-          "last_rank": 0,
           "entry": 2840746,
           "entry_name": "Matthew's Team",
           "manager": "Matthew Evans",
@@ -334,11 +324,21 @@
           "is_me": false
         },
         {
+          "rank": 11,
+          "last_rank": 0,
+          "entry": 1335880,
+          "entry_name": "The Szo Show",
+          "manager": "Chris Stern",
+          "event_total": 49,
+          "total": 49,
+          "is_me": false
+        },
+        {
           "rank": 13,
           "last_rank": 0,
-          "entry": 3747240,
-          "entry_name": "VAR-a-Lago",
-          "manager": "Mike Phillips",
+          "entry": 548815,
+          "entry_name": "Sels Like TeamSpirit",
+          "manager": "John Braddock",
           "event_total": 48,
           "total": 48,
           "is_me": false
@@ -356,9 +356,9 @@
         {
           "rank": 13,
           "last_rank": 0,
-          "entry": 548815,
-          "entry_name": "Sels Like TeamSpirit",
-          "manager": "John Braddock",
+          "entry": 3747240,
+          "entry_name": "VAR-a-Lago",
+          "manager": "Mike Phillips",
           "event_total": 48,
           "total": 48,
           "is_me": false
