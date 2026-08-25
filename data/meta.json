@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-25T09:27:42+00:00",
+  "fetched_at": "2026-08-25T10:23:45+00:00",
   "season": "2026/27",
   "preseason": false,
   "current_event": 1,
@@ -36,7 +36,7 @@
       "data_checked": false,
       "is_current": true,
       "is_next": false,
-      "average_entry_score": 48,
+      "average_entry_score": 50,
       "highest_score": 131,
       "most_captained": 411,
       "most_selected": 411,
@@ -795,7 +795,7 @@
   ],
   "components": {
     "build_fpl": {
-      "last_run_at": "2026-08-25T09:27:43+00:00",
+      "last_run_at": "2026-08-25T10:23:45+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
@@ -807,19 +807,19 @@
       "stale": false
     },
     "build_player_history": {
-      "last_run_at": "2026-08-25T09:27:41+00:00",
+      "last_run_at": "2026-08-25T10:23:43+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
     },
     "build_snapshots": {
-      "last_run_at": "2026-08-25T09:27:41+00:00",
+      "last_run_at": "2026-08-25T10:23:43+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
     },
     "build_squad": {
-      "last_run_at": "2026-08-25T09:27:42+00:00",
+      "last_run_at": "2026-08-25T10:23:45+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
