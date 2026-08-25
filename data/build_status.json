@@ -1,27 +1,25 @@
 {
   "build_snapshots": {
-    "last_run_at": "2026-08-25T12:32:54+00:00",
+    "last_run_at": "2026-08-25T13:42:14+00:00",
     "expected_interval_minutes": 60,
     "warnings": [],
-    "last_snapshot_at": "2026-08-25T12:32:54+00:00",
+    "last_snapshot_at": "2026-08-25T13:42:14+00:00",
     "last_baseline_date": "2026-08-25",
-    "last_rows_written": 603,
+    "last_rows_written": 601,
     "current_file": "data/snapshots/2026-08.csv",
     "mode": "delta"
   },
   "build_player_history": {
-    "last_run_at": "2026-08-25T12:32:55+00:00",
+    "last_run_at": "2026-08-25T13:42:14+00:00",
     "expected_interval_minutes": 60,
-    "warnings": [
-      "event/1/live.stats: 2 new field(s) present in the API and not mirrored: in_dreamteam, played"
-    ],
+    "warnings": [],
     "captured_gameweeks": [
       1
     ],
-    "last_rows_written": 610
+    "last_rows_written": 0
   },
   "build_squad": {
-    "last_run_at": "2026-08-25T12:32:56+00:00",
+    "last_run_at": "2026-08-25T13:42:15+00:00",
     "expected_interval_minutes": 60,
     "warnings": [],
     "picks": 15,
@@ -31,7 +29,7 @@
     "selling_prices_confidence": "derived"
   },
   "build_fpl": {
-    "last_run_at": "2026-08-25T12:32:56+00:00",
+    "last_run_at": "2026-08-25T13:42:16+00:00",
     "expected_interval_minutes": 60,
     "warnings": [
       "bootstrap-static.elements: 4 new field(s) present in the API and not mirrored: price_change_calibrating, price_change_hourly_rate, price_change_locked_until, price_change_projections"
