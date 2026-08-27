@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-26T21:31:50.079399+00:00",
+  "fetched_at": "2026-08-27T02:29:00.205323+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -12,7 +12,7 @@
   "bank": 0.0,
   "squad_value": 100.0,
   "squad_selling_value": 1000,
-  "squad_market_value": 1000,
+  "squad_market_value": 1001,
   "available_budget": 1000,
   "notes": [
     "FREE TRANSFERS: ESTIMATE ONLY — the FPL API does not expose free transfers. Derived from transfer history assuming 1 earned per gameweek, banked to a maximum of 5, with wildcard/free-hit weeks not consuming any. Confirm on the FPL site before making transfer decisions.",
@@ -732,7 +732,7 @@
       "full_name": "João Pedro Junqueira de Jesus",
       "team": "CHE",
       "pos": "FWD",
-      "now_cost": 7.5,
+      "now_cost": 7.6,
       "multiplier": 1,
       "is_captain": false,
       "is_vice_captain": true,
@@ -903,7 +903,7 @@
       "suspect": false
     },
     "165": {
-      "now_cost": 75,
+      "now_cost": 76,
       "purchase": 75,
       "selling": 75,
       "source": "initial_squad",
