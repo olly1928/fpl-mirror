@@ -41,8 +41,9 @@ import time
 from datetime import datetime, timezone
 
 from fpl_common import (
-    DATA, atomic_write_json, check_fields, check_values, clean, die, fold_warnings,
-    now_iso, api_required, parse_iso, read_status, record_status, write_all,
+    DATA, atomic_write_json, check_fields, check_values, clean, dead_fields, die,
+    fold_warnings, now_iso, api_required, parse_iso, read_status, record_status,
+    write_all,
 )
 
 BOOTSTRAP_CACHE_TTL = 600  # seconds; several builders want it in the same job
@@ -120,6 +121,39 @@ TEAM_VALUE_CHECKED_FIELDS = [
     "strength_defence_home", "strength_defence_away",
     "played", "win", "draw", "loss", "points", "position",
 ]
+
+# Of those, the ones FPL has never populated. Same role as IGNORED_*, applied to
+# values rather than keys: these are reviewed, understood, not coming back, and
+# reporting them hourly makes a permanent upstream fact look like this week's
+# news. They are published in meta.json's known_empty block instead of
+# warnings[], so a consumer can state that they are expected rather than filing
+# the same bug report every gameweek. If any of them starts carrying values,
+# check_values says so — that would mean this list is stale.
+KNOWN_EMPTY_TEAM_FIELDS = [
+    # The 1-5 rating and the attack/defence split. Only strength_overall_home
+    # and strength_overall_away carry anything.
+    "strength",
+    "strength_attack_home", "strength_attack_away",
+    "strength_defence_home", "strength_defence_away",
+    # The league-table counters, zero all season while `position` beside them
+    # updates weekly. teams.csv's derived_* columns replace these.
+    "played", "win", "draw", "loss", "points",
+]
+
+# Published alongside the list so the reason travels with the data rather than
+# living only in this file.
+KNOWN_EMPTY_NOTE = (
+    "FPL sends these fields on every team and has never populated them: "
+    "'strength' and the attack/defence breakdown arrive empty or zero, and "
+    "played/win/draw/loss/points stay at 0 all season while 'position' beside them "
+    "updates weekly. This is upstream behaviour, not a mirror fault, and it is not "
+    "expected to change. It is reported here rather than in warnings[] so that "
+    "warnings[] stays a list of things that are new. Use teams.csv's derived_* "
+    "columns for the league table and strength_overall_home/strength_overall_away "
+    "for the ratings; both are populated. Nothing here needs reporting as a "
+    "problem — if one of them ever starts carrying values, that appears in "
+    "warnings[] instead."
+)
 
 EXPECTED_EVENT_FIELDS = [
     "id", "deadline_time", "finished", "data_checked", "is_current", "is_next",
@@ -407,7 +441,7 @@ def verify_outputs(fetched_at, started):
                 f"run is {fetched_at!r}. The write did not land."
             )
         for key in ("events", "element_types", "chips", "game_settings",
-                    "warnings", "components", "stale"):
+                    "warnings", "components", "stale", "known_empty"):
             if key not in on_disk:
                 problems.append(f"meta.json on disk is missing {key!r}")
 
@@ -495,9 +529,12 @@ def main():
                              ignore=IGNORED_TEAM_FIELDS)
     # Key presence is not enough here. Every one of these fields is present on
     # every team and has been since the mirror started, and most of them carry
-    # nothing at all. Without this the file goes out looking complete.
+    # nothing at all. Without this the file goes out looking complete. The ones
+    # already known dead are acknowledged rather than warned about — see
+    # KNOWN_EMPTY_TEAM_FIELDS.
     warnings += check_values(boot_teams, TEAM_VALUE_CHECKED_FIELDS,
-                             "bootstrap-static.teams")
+                             "bootstrap-static.teams", known=KNOWN_EMPTY_TEAM_FIELDS)
+    team_values = dead_fields(boot_teams, TEAM_VALUE_CHECKED_FIELDS)
     warnings += check_fields(events, EXPECTED_EVENT_FIELDS, "bootstrap-static.events",
                              ignore=IGNORED_EVENT_FIELDS)
     warnings += check_fields(fixtures, EXPECTED_FIXTURE_FIELDS, "fixtures",
@@ -599,16 +636,19 @@ def main():
     table = league_table(fixtures, teams)
     matches_played = sum(r["played"] for r in table.values()) // 2
 
+    dead_here = sorted(set(KNOWN_EMPTY_TEAM_FIELDS)
+                       & set(team_values["blank"] + team_values["zero"]))
     tlines = [
         header,
         "# FPL's own team strength ratings, then a league table this mirror computes.",
-        "# strength* are FPL's, mirrored verbatim. Check meta.json warnings[] before "
-        "using them: FPL has been sending some of them empty or zero.",
+        f"# EXPECTED, NOT A FAULT: {len(dead_here)} of FPL's columns are always empty or "
+        f"zero and always have been — {', '.join(dead_here)}. This is upstream, it is "
+        "not changing, and it does not need reporting. See known_empty in meta.json.",
+        "# USE INSTEAD: strength_overall_home/strength_overall_away for the ratings, and "
+        "the derived_* columns for the table. Both are populated.",
         f"# derived_* are computed here from the {matches_played} finished fixture(s) in "
-        "fixtures.csv, NOT mirrored. Use these for the table — FPL's own "
-        "played/win/draw/loss/points sit at 0 all season.",
-        "# derived_form is the last five results, most recent first. FPL's 'position' "
-        "is live and does update; the rest of its table columns do not.",
+        "fixtures.csv, NOT mirrored. derived_form is the last five results, most recent "
+        "first. FPL's 'position' is live and does update; its other table columns do not.",
         ",".join(TEAM_COLS),
     ]
     for t in sorted(boot_teams, key=lambda x: x.get("short_name") or ""):
@@ -742,6 +782,19 @@ def main():
     meta["stale"] = any_stale
     meta["warnings"] = warnings
     meta["components"] = components
+    # Separate from warnings[] on purpose. warnings[] is "something changed and
+    # you should look"; this is "we looked, it is upstream, it is not changing".
+    # A reader instructed to report everything in warnings[] would otherwise file
+    # the same ten columns as a fault every single gameweek.
+    meta["known_empty"] = [{
+        "source": "bootstrap-static.teams",
+        "file": "teams.csv",
+        "fields": sorted(set(KNOWN_EMPTY_TEAM_FIELDS)
+                         & set(team_values["blank"] + team_values["zero"])),
+        "still_populated": sorted(team_values["alive"]),
+        "expected": True,
+        "note": KNOWN_EMPTY_NOTE,
+    }]
     meta["notes"] = [
         "Columns form, ep_this, ep_next, value_form and value_season are FPL's own "
         "projections. They are mirrored for reference and comparison only and should "
@@ -754,6 +807,10 @@ def main():
         "whether a field is present, and whether it carries anything. A field named "
         "there is one whose column exists but is empty, zero, or missing — read the "
         "warning before treating that column as a genuine result.",
+        "known_empty[] is the list of columns FPL sends but has never populated. They "
+        "are expected, permanent, and deliberately kept out of warnings[] so that "
+        "warnings[] only ever holds things that are new. Do not report them as a fault. "
+        "The note on each entry names what to use instead.",
         "teams.csv: columns named derived_* are computed by this mirror from the "
         "finished fixtures in fixtures.csv. Everything else in that file is mirrored "
         "verbatim from FPL. Use derived_played/win/draw/loss/points for the league "

@@ -58,6 +58,10 @@ timestamp is old, the mirror really has stopped.
 | `data/odds.csv` | Bookmaker consensus, de-vigged, with clean-sheet probabilities | every 6 hours |
 | `data/build_status.json` | When each builder last ran and what it complained about | every run |
 
+`meta.json` carries two separate lists and they mean different things. `warnings[]`
+is *something changed, go and look*. `known_empty[]` is *we looked, it is upstream,
+it is not changing* — read it before calling any column broken.
+
 CSVs carry a leading `#` comment block with the season header and a `fetched=`
 timestamp. Drop lines starting with `#`, then parse normally:
 
@@ -101,17 +105,21 @@ Every cumulative column is **season-to-date**. For per-gameweek splits use
 
 Two halves, and the distinction matters.
 
-The unprefixed columns are FPL's, mirrored verbatim. Several of them carry
-nothing: `strength` comes through empty, and the attack/defence breakdowns come
-through as zeros. `strength_overall_home` and `strength_overall_away` are the
-ones with values in them. Check `meta.json` `warnings[]` — the value-level drift
-guard names every column that is empty or all-zero on the current run, so you
-never have to work out by hand which of these is real.
+The unprefixed columns are FPL's, mirrored verbatim. Ten of them carry nothing
+and never have: `strength` comes through empty, the attack/defence breakdowns
+come through as zeros, and `played`/`win`/`draw`/`loss`/`points` sit at zero
+**all season** — not just pre-season — while `position` right beside them updates
+every week. `strength_overall_home` and `strength_overall_away` are the two
+ratings with values in them.
 
-`played`, `win`, `draw`, `loss` and `points` are the worst of it: FPL ships them
-as zero **all season**, not just pre-season, while `position` right beside them
-updates every week. A league table with a real ordering and nothing to justify it
-is worse than no table at all.
+**That is upstream behaviour, not a fault, and it is not going to change.** It is
+recorded in `meta.json` `known_empty[]` rather than `warnings[]`, precisely so
+that `warnings[]` stays a list of things that are *new*. Don't report those ten
+columns as a data-quality problem. If FPL ever starts populating one, *that*
+appears in `warnings[]` — which is the signal worth acting on.
+
+A league table with a real ordering and nothing to justify it is worse than no
+table at all, which is why the computed half exists.
 
 So the `derived_*` columns are computed here from the finished fixtures in
 `fixtures.csv`: `derived_played`, `derived_win`, `derived_draw`, `derived_loss`,
@@ -305,6 +313,16 @@ record" is genuinely diagnostic, an all-empty or all-zero column is reported too
 with the two cases named separately because they mean different things. It is
 pointed at a short list on purpose — plenty of fields are legitimately zero in
 August, and a guard that cries wolf every hour is one nobody reads by September.
+
+**A known-dead column is acknowledged, not warned about.** Same idea as the
+`IGNORED_*` lists, applied to values instead of keys. FPL is never going to
+populate the team strength breakdown or the league-table counters, and reporting
+them hourly turns a permanent upstream fact into weekly news — a reader told to
+"read `warnings[]` in full" ends up filing the same bug every gameweek. Those
+fields live in `KNOWN_EMPTY_TEAM_FIELDS` and are published in `meta.json`
+`known_empty[]`, with a note saying what to use instead. The acknowledgement is
+not a silencer: if one of them starts carrying values, that *is* reported, because
+it means the list is stale and a column just became usable.
 
 Fields FPL has
 that this mirror deliberately does not carry (derived ranks, photo URLs, internal

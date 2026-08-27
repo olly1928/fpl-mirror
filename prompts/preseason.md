@@ -1,4 +1,4 @@
-<!-- preseason.md · v1 · 2026-08-15 -->
+<!-- preseason.md · v2 · 2026-08-27 -->
 
 # FPL SQUAD BUILD — MASTER PROMPT
 
@@ -55,7 +55,11 @@ Then from `meta.json`, check:
 * `teams_in_game` has the correct 20 clubs (no relegated sides, all three promoted present)
 * `next_deadline` is a real upcoming date, and `fetched_at` is recent
 * `warnings[]` is empty — if not, read them; they name any API field that arrived missing
-  and was written as an empty column, which is otherwise indistinguishable from a real zero
+  or stopped carrying values and was written as an empty column, which is otherwise
+  indistinguishable from a real zero
+* `known_empty[]` is **not** a warning list. It names columns FPL has never populated —
+  expected, permanent, already accounted for, and each entry says what to use instead.
+  Read it before calling any column broken, and leave it out of your report
 * `stale` is not true
 
 **Cross-check `meta.json.fetched_at` against the `fetched=` stamp in the `players.csv`
@@ -89,9 +93,14 @@ confident answer built on last season's prices is worse than no answer.
 
   Injury and suspension alerts are appended at the bottom as comment lines.
 
-* **teams.csv** — FPL's own team strength ratings (`strength_overall_home/away`,
-  `strength_attack_home/away`, `strength_defence_home/away`) plus the league table. Use as
-  an independent prior alongside the bookmaker-derived ratings, not instead of them.
+* **teams.csv** — FPL's team strength ratings plus a league table the mirror computes.
+  Use as an independent prior alongside the bookmaker-derived ratings, not instead of them.
+  * Ratings: **`strength_overall_home` and `strength_overall_away` only.** FPL's `strength`
+    and the `strength_attack_*` / `strength_defence_*` breakdown are always empty or zero.
+  * Table: the **`derived_*`** columns, computed from finished fixtures. FPL's own
+    `played`/`win`/`draw`/`loss`/`points` sit at zero all season; only its `position` is live.
+  * Both dead sets are listed in `meta.json` `known_empty[]`. They are expected upstream
+    behaviour — don't report them as a fault.
 * **fdr.csv** — per-team fixture difficulty over the opening six gameweeks, easiest first.
   Opponents UPPERCASE for home, lowercase for away.
 * **odds.csv** — bookmaker-derived numbers for the fixtures currently listed (usually just
@@ -235,4 +244,4 @@ season-to-date totals, and prefer it to FPL's own `form` field.
 * Don't hedge everything. Where you're confident, say so. Where you're guessing, label it as
   a guess.
 
-<!-- end of preseason.md v1 — confirm this line was reached -->
+<!-- end of preseason.md v2 — confirm this line was reached -->

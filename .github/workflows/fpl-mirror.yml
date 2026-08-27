@@ -106,7 +106,7 @@ jobs:
                   f"committed meta.json fetched_at={committed.get('fetched_at')!r} "
                   f"but the working copy says {disk.get('fetched_at')!r}")
           for key in ("events", "game_settings", "chips", "element_types",
-                      "warnings", "components", "stale"):
+                      "warnings", "components", "stale", "known_empty"):
               if key not in committed:
                   problems.append(f"committed meta.json is missing {key!r}")
           if problems:
