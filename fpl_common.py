@@ -276,7 +276,33 @@ def _is_zero(value):
     return False
 
 
-def check_values(records, fields, label):
+def dead_fields(records, fields):
+    """
+    Sort fields into those carrying nothing and those carrying something.
+
+    Returns {"blank": [...], "zero": [...], "alive": [...]}. Fields absent from
+    every record appear in none of the three — that is check_fields' job.
+
+    Blank and zero are kept apart because they mean different things. All-blank
+    is usually FPL having dropped a value it used to send. All-zero is usually a
+    counter FPL ships and never fills in: teams[].played and friends sit at 0 all
+    season while position next to them updates every week.
+    """
+    out = {"blank": [], "zero": [], "alive": []}
+    for field in fields:
+        seen = [r.get(field) for r in records if isinstance(r, dict) and field in r]
+        if not seen:
+            continue
+        if all(_is_blank(v) for v in seen):
+            out["blank"].append(field)
+        elif all(_is_zero(v) for v in seen):
+            out["zero"].append(field)
+        else:
+            out["alive"].append(field)
+    return out
+
+
+def check_values(records, fields, label, known=()):
     """
     Report fields that are present on every record but carry no information.
 
@@ -287,11 +313,19 @@ def check_values(records, fields, label):
     "silently null column" this module's docstring says it exists to prevent,
     and until this function existed it was the one case it could not see.
 
-    Empty and zero are reported separately because they mean different things.
-    All-empty is usually FPL having dropped a value it used to send. All-zero is
-    usually a counter FPL ships but never fills in — teams[].played and friends
-    have behaved that way for years, sitting at 0 all season while position next
-    to them updates weekly.
+    `known` is the same idea as check_fields' `ignore`, and exists for the same
+    reason. Some of these fields are not going to come back: FPL has shipped its
+    team strength breakdown as zeros and its league-table counters as zeros for
+    as long as anyone has looked. Reporting them as a fresh warning every hour
+    turns a permanent upstream fact into weekly news, and a reader who is told to
+    read warnings[] in full ends up reporting a broken feed every single week.
+    That is the failure this module already names: a guard that cries wolf is one
+    nobody reads. Acknowledged fields are published in meta.json's known_empty
+    block instead, where a consumer can see they are expected.
+
+    An acknowledged field that starts carrying values IS reported, because FPL
+    populating something it has never populated is genuinely worth knowing — it
+    means the acknowledgement is now stale and the column is usable again.
 
     Deliberately takes an explicit field list rather than scanning everything.
     Plenty of fields are legitimately zero across the board early in a season
@@ -302,28 +336,30 @@ def check_values(records, fields, label):
     if not records:
         return []
 
-    blank, zero = [], []
-    for field in fields:
-        seen = [r.get(field) for r in records if isinstance(r, dict) and field in r]
-        if not seen:
-            continue  # absent entirely — that is check_fields' job, not this one
-        if all(_is_blank(v) for v in seen):
-            blank.append(field)
-        elif all(_is_zero(v) for v in seen):
-            zero.append(field)
+    found = dead_fields(records, fields)
+    known = set(known)
 
     warnings = []
-    if blank:
+    for kind, phrasing in (
+        ("blank", "empty on all {n} record(s), so the column is blank rather than "
+                  "meaningful"),
+        ("zero", "zero on all {n} record(s), so the column cannot be told apart from "
+                 "a genuine nil"),
+    ):
+        unexpected = [f for f in found[kind] if f not in known]
+        if unexpected:
+            warnings.append(
+                f"{label}: {len(unexpected)} field(s) sent by the API but "
+                + phrasing.format(n=len(records))
+                + f": {', '.join(unexpected)}"
+            )
+
+    revived = [f for f in found["alive"] if f in known]
+    if revived:
         warnings.append(
-            f"{label}: {len(blank)} field(s) sent by the API but empty on all "
-            f"{len(records)} record(s), so the column is blank rather than "
-            f"meaningful: {', '.join(blank)}"
-        )
-    if zero:
-        warnings.append(
-            f"{label}: {len(zero)} field(s) sent by the API but zero on all "
-            f"{len(records)} record(s), so the column cannot be told apart from a "
-            f"genuine nil: {', '.join(zero)}"
+            f"{label}: {len(revived)} field(s) recorded as permanently empty are now "
+            f"carrying values: {', '.join(revived)}. FPL has started populating them — "
+            "drop them from the known-empty list and start using them."
         )
     return warnings
 

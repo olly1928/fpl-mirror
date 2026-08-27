@@ -97,7 +97,12 @@ def make_element(i):
     e["corners_and_indirect_freekicks_text"] = ""
     # FPL's price-change block. Scalars here; test_price_change_projections_shape
     # covers the case where the projections field arrives as a container instead.
-    e["price_change_projections"] = f"{(i % 30) / 10:.2f}"
+    # The real shape, as the live API sends it: three days, signed percentages.
+    e["price_change_projections"] = [
+        {"offset": d, "projected_percent": f"{(i % 30) - 15 + d * 9:.1f}",
+         "likelihood": (1 if i % 2 else -1) * min(5, 1 + d)}
+        for d in (0, 1, 2)
+    ]
     e["price_change_hourly_rate"] = i % 9
     e["price_change_locked_until"] = "2026-08-28T01:30:00Z" if i % 11 == 0 else None
     e["price_change_calibrating"] = i % 13 == 0
@@ -611,13 +616,15 @@ def test_new_defensive_and_fixture_stats():
           cols[:14] == ["id", "name", "team", "pos", "price", "own", "pts", "ppg",
                         "mins", "g", "a", "cs", "bonus", "st"])
     check("the five new columns sit together, ahead of the price-change block",
-          cols[-9:-4] == ["clearances_blocks_interceptions", "tackles", "recoveries",
-                          "expected_goal_involvements_per_90", "goals_conceded"],
-          str(cols[-9:]))
-    check("the price-change block is at the right-hand end",
-          cols[-4:] == ["price_change_projections", "price_change_hourly_rate",
-                        "price_change_locked_until", "price_change_calibrating"],
-          str(cols[-4:]))
+          cols[-15:-10] == ["clearances_blocks_interceptions", "tackles", "recoveries",
+                            "expected_goal_involvements_per_90", "goals_conceded"],
+          str(cols[-15:]))
+    check("the mirrored price-change block sits together",
+          cols[-10:-6] == ["price_change_projections", "price_change_hourly_rate",
+                           "price_change_locked_until", "price_change_calibrating"],
+          str(cols[-10:-6]))
+    check("the exploded projection columns are at the right-hand end",
+          cols[-6:] == build_fpl.PRICE_PROJECTION_COLS, str(cols[-6:]))
 
     fs = read_csv_like_a_consumer("data/fixture_stats.csv")
     check("fixture_stats.csv has the specified columns",
@@ -1077,21 +1084,19 @@ def test_value_level_drift_guard():
     load_api(completed_gws=1)
     boot = RESPONSES["/bootstrap-static/"]
     for t in boot["teams"]:
-        t["strength"] = None                # sent, never populated
-        t["strength_attack_home"] = 0       # sent, always zero
-        t["strength_attack_away"] = 0
+        # Neither of these is on the acknowledged list, so both are news.
+        t["strength_overall_home"] = None   # sent, stopped being populated
+        t["strength_overall_away"] = 0      # sent, now always zero
     run(build_fpl)
 
     meta = json.loads(pathlib.Path("data/meta.json").read_text())
     joined = " ".join(meta["warnings"])
     check("an all-empty field is reported as empty",
-          "empty on all" in joined and "strength" in joined, joined)
+          "empty on all" in joined and "strength_overall_home" in joined, joined)
     check("an all-zero field is reported separately from an all-empty one",
-          "zero on all" in joined and "strength_attack_home" in joined, joined)
-    check("FPL's dead league-table counters are named",
-          all(f in joined for f in ("played", "win", "draw", "loss", "points")), joined)
+          "zero on all" in joined and "strength_overall_away" in joined, joined)
     check("a field that does carry values is not reported",
-          "strength_overall_home" not in joined, joined)
+          "position" not in joined, joined)
 
     # The guard must not fire on a healthy response, or it becomes noise and
     # stops being read — which is how the original one ended up ignored.
@@ -1206,8 +1211,8 @@ def test_price_change_fields():
           joined)
 
     by_id = {r["id"]: r for r in rows}
-    check("a scalar projection is written through unchanged",
-          by_id["7"]["price_change_projections"] == "0.70",
+    check("the packed projection column mirrors the whole block",
+          by_id["7"]["price_change_projections"].startswith("offset=0;projected_percent="),
           by_id["7"]["price_change_projections"])
     check("a null lock timestamp is an empty cell, not the string None",
           by_id["7"]["price_change_locked_until"] == "",
@@ -1217,46 +1222,98 @@ def test_price_change_fields():
           by_id["11"]["price_change_locked_until"])
 
 
-def test_price_change_projections_shape():
+def test_price_change_projections_are_usable_columns():
     """
-    price_change_projections was mirrored without anyone having seen it, so the
-    one thing it must not do is produce a column of debris if it turns out to be
-    a container. A naive join would strip the commas out of a dict and leave
-    something that still looks populated.
+    The payoff from the shape guard. price_change_projections was mirrored before
+    anyone had seen it, arrived as a list of objects, was flattened safely and
+    reported its own type — and this is the pass that turns it into columns a
+    price watch can sort and threshold on.
     """
-    print("\n[17] a non-scalar price field is flattened and reported, not mangled")
+    print("\n[17] FPL's price projections land as columns, not a packed blob")
     scratch()
     load_api()
-    for e in RESPONSES["/bootstrap-static/"]["elements"]:
-        e["price_change_projections"] = {"rise": 0.82, "fall": 0.01}
     run(build_fpl)
 
-    text = pathlib.Path("data/players.csv").read_text()
     rows = read_csv_like_a_consumer("data/players.csv")
-    check("every row still has the right number of columns",
+    cols = list(rows[0])
+    check("the six projection columns exist",
+          all(c in cols for c in build_fpl.PRICE_PROJECTION_COLS), str(cols[-8:]))
+    check("they are at the right-hand end",
+          cols[-6:] == build_fpl.PRICE_PROJECTION_COLS, str(cols[-6:]))
+    check("every row still has the full column count",
           all(len(r) == len(build_fpl.PLAYER_COLS) and None not in r for r in rows))
-    check("the container is flattened to a comma-free cell",
-          rows[0]["price_change_projections"] == "rise=0.82;fall=0.01",
-          rows[0]["price_change_projections"])
-    check("no stray brace survives into the CSV", "{" not in text and "}" not in text)
+
+    src = {e["id"]: e for e in RESPONSES["/bootstrap-static/"]["elements"]}
+    row = rows[0]
+    want = {p["offset"]: p for p in src[int(row["id"])]["price_change_projections"]}
+    check("each day's percentage matches the API entry for that offset",
+          all(row[f"price_change_proj_pct_d{d}"] == want[d]["projected_percent"]
+              for d in (0, 1, 2)),
+          str([row[f"price_change_proj_pct_d{d}"] for d in (0, 1, 2)]))
+    check("each day's likelihood band matches too",
+          all(row[f"price_change_proj_likelihood_d{d}"] == str(want[d]["likelihood"])
+              for d in (0, 1, 2)))
+    check("a negative projection keeps its sign — that is the fall signal",
+          any(r["price_change_proj_pct_d0"].startswith("-") for r in rows))
+    check("the packed column still mirrors the block verbatim",
+          row["price_change_projections"].count("|") == 2
+          and "offset=0" in row["price_change_projections"],
+          row["price_change_projections"])
 
     meta = json.loads(pathlib.Path("data/meta.json").read_text())
     joined = " ".join(meta["warnings"])
-    check("the real shape is reported so it can be mirrored properly",
-          "price_change_projections arrived as a dict" in joined, joined)
-    check("and a sample of it is included", "rise" in joined, joined)
+    check("a shape that is already handled raises no warning",
+          "price_change_projections" not in joined, joined)
 
-    # A list of objects is the other plausible shape.
-    scratch()
-    load_api()
-    for e in RESPONSES["/bootstrap-static/"]["elements"]:
-        e["price_change_projections"] = [{"event": 2, "change": 1},
-                                         {"event": 3, "change": -1}]
-    run(build_fpl)
-    rows = read_csv_like_a_consumer("data/players.csv")
-    check("a list of objects flattens without breaking the row",
-          rows[0]["price_change_projections"] == "event=2;change=1|event=3;change=-1",
+
+def test_price_projection_shape_changes_are_reported():
+    """
+    The known shape is silent; a change to it must not be. Guessing a column into
+    place off a shape that moved is how a price watch ends up confidently wrong.
+    """
+    print("\n[17b] a projection block that changes shape is reported, not guessed at")
+
+    def build_with(projections):
+        scratch()
+        load_api()
+        for e in RESPONSES["/bootstrap-static/"]["elements"]:
+            e["price_change_projections"] = projections
+        run(build_fpl)
+        return (read_csv_like_a_consumer("data/players.csv"),
+                " ".join(json.loads(pathlib.Path("data/meta.json").read_text())["warnings"]))
+
+    rows, joined = build_with({"rise": 0.82})
+    check("a bare object is refused rather than force-fitted",
+          all(r["price_change_proj_pct_d0"] == "" for r in rows))
+    check("and reported as not a list of objects", "not a list of objects" in joined, joined)
+    check("the packed column still carries what FPL sent",
+          rows[0]["price_change_projections"] == "rise=0.82",
           rows[0]["price_change_projections"])
+
+    rows, joined = build_with(
+        [{"offset": d, "projected_percent": "1.0", "likelihood": 1} for d in (0, 1, 2, 3)])
+    check("a fourth day is reported", "offset(s) 3 beyond" in joined, joined)
+    check("but the three known days still populate",
+          all(r["price_change_proj_pct_d2"] == "1.0" for r in rows))
+
+    rows, joined = build_with(
+        [{"offset": d, "projected_percent": "1.0", "likelihood": 1, "certainty": 9}
+         for d in (0, 1, 2)])
+    check("a new key inside an entry is reported",
+          "new key(s) certainty" in joined, joined)
+
+    rows, joined = build_with(
+        [{"offset": d, "projected_percent": "1.0", "likelihood": 1} for d in (0, 1)])
+    check("a missing day is reported", "offset(s) 2 absent" in joined, joined)
+    check("and that day's cells are left empty rather than filled from another",
+          all(r["price_change_proj_pct_d2"] == "" for r in rows))
+
+    # No projection block at all is not drift — plenty of players may have none.
+    rows, joined = build_with(None)
+    check("a null projection block is silent",
+          "price_change_projections" not in joined, joined)
+    check("and leaves the columns empty",
+          all(r["price_change_proj_pct_d0"] == "" for r in rows))
 
 
 def test_odds_freshness():
@@ -1374,6 +1431,126 @@ def test_odds_cron_matches_the_code():
           cron.group(1).split()[0] != "0", cron.group(1))
 
 
+def test_known_empty_is_acknowledged_not_warned():
+    """
+    The regression test for a guard that was right but too loud.
+
+    FPL has never populated `strength`, the attack/defence breakdown, or the
+    league-table counters. Reporting those ten columns in warnings[] every hour
+    turned a permanent upstream fact into weekly news, and a reader told to
+    "read warnings[] in full" duly filed the same broken-feed report every
+    gameweek. They belong in known_empty, not in warnings.
+    """
+    print("\n[21] columns FPL never populates are acknowledged, not warned about")
+    scratch()
+    load_api(completed_gws=1)
+    for t in RESPONSES["/bootstrap-static/"]["teams"]:   # exactly what the live API sends
+        t["strength"] = None
+        for f in ("strength_attack_home", "strength_attack_away",
+                  "strength_defence_home", "strength_defence_away"):
+            t[f] = 0
+    run(build_fpl)
+
+    meta = json.loads(pathlib.Path("data/meta.json").read_text())
+    joined = " ".join(meta["warnings"])
+    check("the ten known-dead columns raise no warning at all",
+          "empty on all" not in joined and "zero on all" not in joined, joined)
+
+    block = meta["known_empty"][0]
+    check("they are published in known_empty instead",
+          sorted(block["fields"]) == sorted(build_fpl.KNOWN_EMPTY_TEAM_FIELDS),
+          str(block["fields"]))
+    check("the block is marked expected", block["expected"] is True)
+    check("and names the file it applies to", block["file"] == "teams.csv")
+    check("the note says what to use instead",
+          "derived_" in block["note"] and "strength_overall_home" in block["note"])
+    check("the note says it is not a mirror fault", "not a mirror fault" in block["note"])
+    check("the columns that DO work are listed as still populated",
+          "strength_overall_home" in block["still_populated"]
+          and "position" in block["still_populated"], str(block["still_populated"]))
+
+    teams_csv = pathlib.Path("data/teams.csv").read_text()
+    check("teams.csv says so in its own header, without deferring to warnings[]",
+          "EXPECTED, NOT A FAULT" in teams_csv)
+    check("and points the reader at the columns that work", "USE INSTEAD" in teams_csv)
+
+    # FPL fixing one of these is genuinely news, so it must not stay silent.
+    # Everything else stays dead, so the warning has to name only what revived.
+    scratch()
+    load_api(completed_gws=1)
+    for t in RESPONSES["/bootstrap-static/"]["teams"]:
+        t["strength"] = None
+        for f in ("strength_attack_home", "strength_attack_away",
+                  "strength_defence_home", "strength_defence_away",
+                  "draw", "loss"):
+            t[f] = 0
+        t["played"], t["win"], t["points"] = 1, 1, 3
+    run(build_fpl)
+    meta = json.loads(pathlib.Path("data/meta.json").read_text())
+    revival = [w for w in meta["warnings"] if "now carrying values" in w]
+    check("an acknowledged field that comes back to life IS reported", bool(revival),
+          " ".join(meta["warnings"]))
+    check("the revival warning names the fields",
+          all(f in revival[0] for f in ("played", "win", "points")) if revival else False,
+          str(revival))
+    check("and says the acknowledgement is now stale",
+          "drop them from the known-empty list" in revival[0] if revival else False)
+    check("only the revived fields are named",
+          bool(revival) and sorted(revival[0].split("values: ")[1].split(".")[0].split(", "))
+          == ["played", "points", "win"], str(revival))
+    check("fields that are still dead stay out of warnings[] entirely",
+          "empty on all" not in " ".join(meta["warnings"])
+          and "zero on all" not in " ".join(meta["warnings"]), str(meta["warnings"]))
+    check("and the ones still dead remain listed in known_empty",
+          sorted(meta["known_empty"][0]["fields"])
+          == ["draw", "loss", "strength", "strength_attack_away",
+              "strength_attack_home", "strength_defence_away", "strength_defence_home"],
+          str(meta["known_empty"][0]["fields"]))
+
+
+def test_playbooks_carry_the_version_convention():
+    """
+    Every playbook is fetched over curl into a context window, so a truncated
+    copy is a real failure mode — which is what the opening stamp and the closing
+    marker exist to catch. weekly.md had neither.
+    """
+    print("\n[22] every playbook can prove it arrived whole and current")
+    for name in ("weekly", "preseason", "smoke-test"):
+        text = (ROOT / "prompts" / f"{name}.md").read_text(encoding="utf-8")
+        first, last = text.split("\n")[0], text.rstrip().split("\n")[-1]
+
+        stamp = re.match(
+            rf"<!-- {re.escape(name)}\.md . v(\d+) . \d{{4}}-\d{{2}}-\d{{2}} -->$", first)
+        check(f"{name}.md opens with a version stamp", stamp is not None, first)
+        check(f"{name}.md closes with a matching end marker",
+              bool(stamp) and last ==
+              f"<!-- end of {name}.md v{stamp.group(1)} \u2014 confirm this line was reached -->",
+              last)
+        check(f"{name}.md asks for the stamp to be confirmed",
+              "version stamp (top line)" in text)
+        check(f"{name}.md tells the reader known_empty is not a fault", "known_empty" in text)
+
+
+def test_playbooks_describe_teams_csv_correctly():
+    """
+    The playbooks are what the consumer actually reads. weekly.md promised
+    "FPL's own strength ratings plus the live table", so a reader opened
+    teams.csv, found zeros where a live table had been promised, and reported a
+    broken file — correctly, given what it had been told.
+    """
+    print("\n[23] the playbooks point at the columns that actually work")
+    for name in ("weekly", "preseason"):
+        text = (ROOT / "prompts" / f"{name}.md").read_text(encoding="utf-8")
+        check(f"{name}.md sends the reader to derived_* for the table", "derived_" in text)
+        check(f"{name}.md names strength_overall_* as the usable rating",
+              "strength_overall_home" in text)
+        check(f"{name}.md no longer offers the dead breakdown as usable",
+              "`strength_attack_home/away`, `strength_defence_home/away`) plus" not in text)
+    weekly = (ROOT / "prompts" / "weekly.md").read_text(encoding="utf-8")
+    check("weekly.md no longer calls FPL's table live",
+          "FPL's own strength ratings plus the live table" not in weekly)
+
+
 def main():
     here = os.getcwd()
     try:
@@ -1391,10 +1568,14 @@ def main():
         test_selling_prices()
         test_selling_prices_edge_cases()
         test_value_level_drift_guard()
+        test_known_empty_is_acknowledged_not_warned()
+        test_playbooks_carry_the_version_convention()
+        test_playbooks_describe_teams_csv_correctly()
         test_derived_league_table()
         test_derived_table_cross_check()
         test_price_change_fields()
-        test_price_change_projections_shape()
+        test_price_change_projections_are_usable_columns()
+        test_price_projection_shape_changes_are_reported()
         test_odds_freshness()
         test_odds_run_refreshes_meta()
         test_odds_cron_matches_the_code()

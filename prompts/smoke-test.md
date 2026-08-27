@@ -1,4 +1,4 @@
-<!-- smoke-test.md · v1 · 2026-08-15 -->
+<!-- smoke-test.md · v2 · 2026-08-27 -->
 
 # FPL MIRROR — ACCESS SMOKE TEST
 
@@ -54,8 +54,12 @@ disagreement means a cached read; re-fetch before reporting it.
 * `next_deadline` is a real upcoming date
 * `fetched_at` is recent
 * `stale` is `false`
-* report `warnings[]` in full — these name API fields that arrived missing and were written
-  as empty columns, which is otherwise indistinguishable from a real zero
+* report `warnings[]` in full — these name API fields that arrived missing or stopped
+  carrying values and were written as empty columns, which is otherwise indistinguishable
+  from a real zero
+* report the count from `known_empty[]` and nothing more. It names columns FPL has never
+  populated: expected, permanent, and not a fault. A health check that flags them every
+  time is a health check that is always red for no reason
 
 **4. Component freshness** — from `build_status.json`, each component's `last_run_at` versus
 its `expected_interval_minutes`. Flag anything older than roughly twice its interval.
@@ -98,4 +102,4 @@ say so in one line. British English.
 
 Do not proceed to any analysis afterwards.
 
-<!-- end of smoke-test.md v1 — confirm this line was reached -->
+<!-- end of smoke-test.md v2 — confirm this line was reached -->

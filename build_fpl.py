@@ -41,8 +41,9 @@ import time
 from datetime import datetime, timezone
 
 from fpl_common import (
-    DATA, atomic_write_json, check_fields, check_values, clean, die, fold_warnings,
-    now_iso, api_required, parse_iso, read_status, record_status, write_all,
+    DATA, atomic_write_json, check_fields, check_values, clean, dead_fields, die,
+    fold_warnings, now_iso, api_required, parse_iso, read_status, record_status,
+    write_all,
 )
 
 BOOTSTRAP_CACHE_TTL = 600  # seconds; several builders want it in the same job
@@ -120,6 +121,39 @@ TEAM_VALUE_CHECKED_FIELDS = [
     "strength_defence_home", "strength_defence_away",
     "played", "win", "draw", "loss", "points", "position",
 ]
+
+# Of those, the ones FPL has never populated. Same role as IGNORED_*, applied to
+# values rather than keys: these are reviewed, understood, not coming back, and
+# reporting them hourly makes a permanent upstream fact look like this week's
+# news. They are published in meta.json's known_empty block instead of
+# warnings[], so a consumer can state that they are expected rather than filing
+# the same bug report every gameweek. If any of them starts carrying values,
+# check_values says so — that would mean this list is stale.
+KNOWN_EMPTY_TEAM_FIELDS = [
+    # The 1-5 rating and the attack/defence split. Only strength_overall_home
+    # and strength_overall_away carry anything.
+    "strength",
+    "strength_attack_home", "strength_attack_away",
+    "strength_defence_home", "strength_defence_away",
+    # The league-table counters, zero all season while `position` beside them
+    # updates weekly. teams.csv's derived_* columns replace these.
+    "played", "win", "draw", "loss", "points",
+]
+
+# Published alongside the list so the reason travels with the data rather than
+# living only in this file.
+KNOWN_EMPTY_NOTE = (
+    "FPL sends these fields on every team and has never populated them: "
+    "'strength' and the attack/defence breakdown arrive empty or zero, and "
+    "played/win/draw/loss/points stay at 0 all season while 'position' beside them "
+    "updates weekly. This is upstream behaviour, not a mirror fault, and it is not "
+    "expected to change. It is reported here rather than in warnings[] so that "
+    "warnings[] stays a list of things that are new. Use teams.csv's derived_* "
+    "columns for the league table and strength_overall_home/strength_overall_away "
+    "for the ratings; both are populated. Nothing here needs reporting as a "
+    "problem — if one of them ever starts carrying values, that appears in "
+    "warnings[] instead."
+)
 
 EXPECTED_EVENT_FIELDS = [
     "id", "deadline_time", "finished", "data_checked", "is_current", "is_next",
@@ -221,13 +255,40 @@ NEW_PLAYER_COLS = [
     "price_change_locked_until", "price_change_calibrating",
 ]
 
-# Cells that may not be scalars. See scalar_cell() — everything else in
-# players.csv has been a string or a number since the file was created, but a
-# field named *_projections is as likely to arrive as a list or an object, and
-# this file is written by naive string join.
-CONTAINER_PRONE_COLS = ["price_change_projections"]
+# Cells that may not be scalars. See scalar_cell(): everything else in
+# players.csv has been a string or a number since the file was created, so
+# anything that could arrive as a list or an object goes here and gets reported
+# rather than mangled. price_change_projections was the first entry and has
+# since been identified and given proper columns below, which is exactly what
+# the mechanism is for.
+CONTAINER_PRONE_COLS = []
 
-PLAYER_COLS = LEGACY_PLAYER_COLS + NEW_PLAYER_COLS
+# What price_change_projections actually turned out to be, once the shape guard
+# reported it off a live response: a list of three entries, one per day ahead.
+#
+#   [{"offset": 0, "projected_percent": "9.7",  "likelihood": 1},
+#    {"offset": 1, "projected_percent": "19.1", "likelihood": 1},
+#    {"offset": 2, "projected_percent": "28.4", "likelihood": 1}]
+#
+# projected_percent is signed progress towards FPL's next price change for that
+# player: positive is towards a rise, negative towards a fall, and crossing ±100
+# is the change happening. likelihood is a signed 1-5 band over the same number,
+# 0 when nothing is projected. Both are mirrored — likelihood looks derivable
+# from the percentage on the sample this was written against, but FPL has not
+# published the bands and a mirror does not get to assume.
+PRICE_PROJECTION_OFFSETS = [0, 1, 2]
+PRICE_PROJECTION_KEYS = ["offset", "projected_percent", "likelihood"]
+
+PRICE_PROJECTION_COLS = (
+    [f"price_change_proj_pct_d{o}" for o in PRICE_PROJECTION_OFFSETS]
+    + [f"price_change_proj_likelihood_d{o}" for o in PRICE_PROJECTION_OFFSETS]
+)
+
+# The packed price_change_projections column stays as the faithful mirror — it
+# survives FPL adding a fourth day or a new key without anything needing changed.
+# The exploded columns beside it are the usable form. Same split as teams.csv:
+# mirror verbatim, and publish something a consumer can actually do arithmetic on.
+PLAYER_COLS = LEGACY_PLAYER_COLS + NEW_PLAYER_COLS + PRICE_PROJECTION_COLS
 
 # What the mirror computes itself from finished fixtures, appended to the right
 # of FPL's own columns rather than overwriting them. The prefix is the whole
@@ -282,6 +343,62 @@ def scalar_cell(record, field, shapes):
 
     shapes.setdefault(field, (type(value).__name__, repr(value)[:200]))
     return clean(flatten(value))
+
+
+def price_projection_cells(element, drift):
+    """
+    Explode price_change_projections into one cell per day per field.
+
+    The shape guard reported this field off a live response, so it is no longer
+    a guess: three entries, offsets 0/1/2, each with a signed projected_percent
+    and a signed likelihood band. Those are the numbers behind a price watch, and
+    a packed 'k=v;k=v' cell is not something anyone can sort or threshold on.
+
+    Anything other than the known shape leaves the cells empty and is recorded in
+    `drift` rather than being force-fitted into columns that would then be wrong.
+    The known shape itself is silent — it has been seen, it is handled, and
+    reporting it hourly would be the same noise the acknowledgement list exists
+    to prevent.
+    """
+    blank = {c: "" for c in PRICE_PROJECTION_COLS}
+    value = element.get("price_change_projections")
+    if value is None:
+        return blank
+    if not isinstance(value, list) or not all(isinstance(e, dict) for e in value):
+        drift.setdefault("not a list of objects", repr(value)[:200])
+        return blank
+
+    by_offset, extra_keys = {}, set()
+    for entry in value:
+        extra_keys |= set(entry) - set(PRICE_PROJECTION_KEYS)
+        try:
+            by_offset[int(entry["offset"])] = entry
+        except (KeyError, TypeError, ValueError):
+            drift.setdefault("an entry has no usable 'offset'", repr(entry)[:200])
+            return blank
+
+    if extra_keys:
+        drift.setdefault(
+            f"new key(s) {', '.join(sorted(extra_keys))} that are not mirrored",
+            repr(value[0])[:200])
+    unknown = sorted(set(by_offset) - set(PRICE_PROJECTION_OFFSETS))
+    missing = sorted(set(PRICE_PROJECTION_OFFSETS) - set(by_offset))
+    if unknown:
+        drift.setdefault(
+            f"offset(s) {', '.join(map(str, unknown))} beyond the mirrored "
+            f"{PRICE_PROJECTION_OFFSETS}", repr(value)[:200])
+    if missing:
+        drift.setdefault(
+            f"offset(s) {', '.join(map(str, missing))} absent", repr(value)[:200])
+
+    cells = dict(blank)
+    for offset in PRICE_PROJECTION_OFFSETS:
+        entry = by_offset.get(offset)
+        if entry is None:
+            continue
+        cells[f"price_change_proj_pct_d{offset}"] = clean(entry.get("projected_percent"))
+        cells[f"price_change_proj_likelihood_d{offset}"] = clean(entry.get("likelihood"))
+    return cells
 
 
 def flatten(value):
@@ -407,7 +524,7 @@ def verify_outputs(fetched_at, started):
                 f"run is {fetched_at!r}. The write did not land."
             )
         for key in ("events", "element_types", "chips", "game_settings",
-                    "warnings", "components", "stale"):
+                    "warnings", "components", "stale", "known_empty"):
             if key not in on_disk:
                 problems.append(f"meta.json on disk is missing {key!r}")
 
@@ -495,9 +612,12 @@ def main():
                              ignore=IGNORED_TEAM_FIELDS)
     # Key presence is not enough here. Every one of these fields is present on
     # every team and has been since the mirror started, and most of them carry
-    # nothing at all. Without this the file goes out looking complete.
+    # nothing at all. Without this the file goes out looking complete. The ones
+    # already known dead are acknowledged rather than warned about — see
+    # KNOWN_EMPTY_TEAM_FIELDS.
     warnings += check_values(boot_teams, TEAM_VALUE_CHECKED_FIELDS,
-                             "bootstrap-static.teams")
+                             "bootstrap-static.teams", known=KNOWN_EMPTY_TEAM_FIELDS)
+    team_values = dead_fields(boot_teams, TEAM_VALUE_CHECKED_FIELDS)
     warnings += check_fields(events, EXPECTED_EVENT_FIELDS, "bootstrap-static.events",
                              ignore=IGNORED_EVENT_FIELDS)
     warnings += check_fields(fixtures, EXPECTED_FIXTURE_FIELDS, "fixtures",
@@ -540,6 +660,9 @@ def main():
     # Filled by scalar_cell when a field arrives as a dict or a list rather than
     # a scalar; turned into a warning below.
     container_shapes = {}
+    # Filled by price_projection_cells when FPL's projection block stops looking
+    # like the shape this mirrors. Same idea, one field further on.
+    projection_drift = {}
 
     # ---- players.csv -------------------------------------------------
     rows = []
@@ -557,11 +680,20 @@ def main():
         for col in NEW_PLAYER_COLS:
             row[col] = (scalar_cell(e, col, container_shapes)
                         if col in CONTAINER_PRONE_COLS else cell(e, col))
+        # The packed mirror of the projection block. Its shape is known now, so
+        # it goes through flatten() directly rather than the report-and-flatten
+        # path — an hourly warning about something already handled is noise.
+        row["price_change_projections"] = clean(
+            flatten(e.get("price_change_projections")))
+        row.update(price_projection_cells(e, projection_drift))
         rows.append(row)
     rows.sort(key=lambda r: -(r["pts"] or 0))
 
     # These three comment lines are the published header block. Their structure
-    # is part of the contract — the downstream integrity gate parses them.
+    # is part of the contract — the downstream integrity gate parses them, and
+    # counts them. A fourth line breaks it, so column documentation that does not
+    # fit in these three goes in meta.json notes[] and the README instead. The
+    # price_change_proj_* sign convention lives there for exactly that reason.
     lines = [
         header,
         "# pts/ppg/mins/g/a/cs/bonus are LAST SEASON totals carried into the new game.",
@@ -569,6 +701,14 @@ def main():
         ",".join(PLAYER_COLS),
     ]
     lines += [",".join(clean(r[c]) for c in PLAYER_COLS) for r in rows]
+
+    for what, sample in sorted(projection_drift.items()):
+        warnings.append(
+            f"bootstrap-static.elements: price_change_projections has {what}. The "
+            f"{', '.join(PRICE_PROJECTION_COLS)} columns are blank for the affected "
+            f"players — the packed price_change_projections column still carries "
+            f"everything FPL sent. Sample: {sample}"
+        )
 
     for field, (kind, sample) in sorted(container_shapes.items()):
         warnings.append(
@@ -599,16 +739,19 @@ def main():
     table = league_table(fixtures, teams)
     matches_played = sum(r["played"] for r in table.values()) // 2
 
+    dead_here = sorted(set(KNOWN_EMPTY_TEAM_FIELDS)
+                       & set(team_values["blank"] + team_values["zero"]))
     tlines = [
         header,
         "# FPL's own team strength ratings, then a league table this mirror computes.",
-        "# strength* are FPL's, mirrored verbatim. Check meta.json warnings[] before "
-        "using them: FPL has been sending some of them empty or zero.",
+        f"# EXPECTED, NOT A FAULT: {len(dead_here)} of FPL's columns are always empty or "
+        f"zero and always have been — {', '.join(dead_here)}. This is upstream, it is "
+        "not changing, and it does not need reporting. See known_empty in meta.json.",
+        "# USE INSTEAD: strength_overall_home/strength_overall_away for the ratings, and "
+        "the derived_* columns for the table. Both are populated.",
         f"# derived_* are computed here from the {matches_played} finished fixture(s) in "
-        "fixtures.csv, NOT mirrored. Use these for the table — FPL's own "
-        "played/win/draw/loss/points sit at 0 all season.",
-        "# derived_form is the last five results, most recent first. FPL's 'position' "
-        "is live and does update; the rest of its table columns do not.",
+        "fixtures.csv, NOT mirrored. derived_form is the last five results, most recent "
+        "first. FPL's 'position' is live and does update; its other table columns do not.",
         ",".join(TEAM_COLS),
     ]
     for t in sorted(boot_teams, key=lambda x: x.get("short_name") or ""):
@@ -742,6 +885,19 @@ def main():
     meta["stale"] = any_stale
     meta["warnings"] = warnings
     meta["components"] = components
+    # Separate from warnings[] on purpose. warnings[] is "something changed and
+    # you should look"; this is "we looked, it is upstream, it is not changing".
+    # A reader instructed to report everything in warnings[] would otherwise file
+    # the same ten columns as a fault every single gameweek.
+    meta["known_empty"] = [{
+        "source": "bootstrap-static.teams",
+        "file": "teams.csv",
+        "fields": sorted(set(KNOWN_EMPTY_TEAM_FIELDS)
+                         & set(team_values["blank"] + team_values["zero"])),
+        "still_populated": sorted(team_values["alive"]),
+        "expected": True,
+        "note": KNOWN_EMPTY_NOTE,
+    }]
     meta["notes"] = [
         "Columns form, ep_this, ep_next, value_form and value_season are FPL's own "
         "projections. They are mirrored for reference and comparison only and should "
@@ -754,6 +910,15 @@ def main():
         "whether a field is present, and whether it carries anything. A field named "
         "there is one whose column exists but is empty, zero, or missing — read the "
         "warning before treating that column as a genuine result.",
+        "price_change_proj_pct_d0/d1/d2 are FPL's own price-change projection, 0/1/2 "
+        "days ahead: signed progress towards the next change, positive for a rise and "
+        "negative for a fall, with ±100 being the change itself. Use these rather than "
+        "inferring price moves from transfer momentum. The packed "
+        "price_change_projections column is the verbatim mirror of the same block.",
+        "known_empty[] is the list of columns FPL sends but has never populated. They "
+        "are expected, permanent, and deliberately kept out of warnings[] so that "
+        "warnings[] only ever holds things that are new. Do not report them as a fault. "
+        "The note on each entry names what to use instead.",
         "teams.csv: columns named derived_* are computed by this mirror from the "
         "finished fixtures in fixtures.csv. Everything else in that file is mirrored "
         "verbatim from FPL. Use derived_played/win/draw/loss/points for the league "
