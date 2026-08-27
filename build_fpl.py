@@ -23,6 +23,13 @@ Two rules shape the whole file:
     exits non-zero — a stale-but-valid mirror is far more useful than a fresh
     corrupt one.
 
+  * A mirrored column and a computed one are never the same column. teams.csv
+    carries FPL's league-table fields exactly as sent, zeros and all, and the
+    table this file computes from finished fixtures beside them under a
+    derived_ prefix. Quietly substituting the second for the first would make
+    this a model rather than a mirror, and would hide the fact that FPL's own
+    numbers are not usable.
+
 This script runs LAST in the workflow, because it also folds every other
 builder's warnings and freshness into meta.json.
 """
@@ -31,13 +38,21 @@ import json
 import os
 import sys
 import time
+from datetime import datetime, timezone
 
 from fpl_common import (
-    DATA, atomic_write_json, check_fields, clean, die, now_iso,
-    api_required, read_status, record_status, staleness, write_all,
+    DATA, atomic_write_json, check_fields, check_values, clean, die, fold_warnings,
+    now_iso, api_required, parse_iso, read_status, record_status, write_all,
 )
 
 BOOTSTRAP_CACHE_TTL = 600  # seconds; several builders want it in the same job
+
+# How old odds may be before they stop being usable for the gameweek in hand, and
+# how close to a deadline that starts to matter. Twelve hours is the threshold the
+# consuming playbook already applies by hand; encoding it here is what makes the
+# mirror say it rather than the reader having to notice.
+ODDS_MAX_AGE_HOURS = 12
+DEADLINE_WINDOW_HOURS = 72
 
 POS = {1: "GKP", 2: "DEF", 3: "MID", 4: "FWD"}
 
@@ -78,6 +93,12 @@ EXPECTED_ELEMENT_FIELDS = [
     # snapshot fields, consumed by build_snapshots.py
     "cost_change_event", "cost_change_start",
     "transfers_in_event", "transfers_out_event",
+    # FPL's own price-change machinery. These shipped alongside price_change_percent
+    # (which is a derived rank and stays ignored) and went unmirrored for the first
+    # weeks of the season, which meant any price watch built off this mirror had to
+    # be inferred from transfer momentum while FPL was publishing its own answer.
+    "price_change_projections", "price_change_hourly_rate",
+    "price_change_locked_until", "price_change_calibrating",
 ]
 
 EXPECTED_TEAM_FIELDS = [
@@ -86,6 +107,18 @@ EXPECTED_TEAM_FIELDS = [
     "strength_attack_home", "strength_attack_away",
     "strength_defence_home", "strength_defence_away",
     "played", "win", "draw", "loss", "points", "position", "form",
+]
+
+# The subset of the above where "every team identical" is diagnostic rather than
+# normal, so check_values can be pointed at it without generating noise. Two
+# clusters, and they fail in different ways: FPL has been sending the strength
+# breakdown as zeros and 'strength' itself as null, and the league-table counters
+# have been zero all season while 'position' next to them updates every week.
+TEAM_VALUE_CHECKED_FIELDS = [
+    "strength", "strength_overall_home", "strength_overall_away",
+    "strength_attack_home", "strength_attack_away",
+    "strength_defence_home", "strength_defence_away",
+    "played", "win", "draw", "loss", "points", "position",
 ]
 
 EXPECTED_EVENT_FIELDS = [
@@ -178,11 +211,37 @@ NEW_PLAYER_COLS = [
     "clearances_blocks_interceptions", "tackles", "recoveries",
     "expected_goal_involvements_per_90",   # completes the per-90 set
     "goals_conceded",                      # raw count; only the per-90 was here
+
+    # FPL's own price-change machinery, appended for the same reason as
+    # everything above it. The drift guard had been naming these four every hour
+    # since the mirror's first run without anything acting on it, so a consumer
+    # reading this file had to infer price moves from transfer momentum while
+    # FPL's own projection sat one field away in the response.
+    "price_change_projections", "price_change_hourly_rate",
+    "price_change_locked_until", "price_change_calibrating",
 ]
+
+# Cells that may not be scalars. See scalar_cell() — everything else in
+# players.csv has been a string or a number since the file was created, but a
+# field named *_projections is as likely to arrive as a list or an object, and
+# this file is written by naive string join.
+CONTAINER_PRONE_COLS = ["price_change_projections"]
 
 PLAYER_COLS = LEGACY_PLAYER_COLS + NEW_PLAYER_COLS
 
-TEAM_COLS = EXPECTED_TEAM_FIELDS
+# What the mirror computes itself from finished fixtures, appended to the right
+# of FPL's own columns rather than overwriting them. The prefix is the whole
+# point: FPL's played/win/draw/loss/points sit at zero regardless of results, and
+# silently substituting a computed value for a mirrored one would make this file
+# a model rather than a mirror. Both are published, and the header block says
+# which is which.
+DERIVED_TEAM_COLS = [
+    "derived_played", "derived_win", "derived_draw", "derived_loss",
+    "derived_gf", "derived_ga", "derived_gd", "derived_points",
+    "derived_position", "derived_form",
+]
+
+TEAM_COLS = EXPECTED_TEAM_FIELDS + DERIVED_TEAM_COLS
 
 FIXTURE_COLS = ["gw", "home", "away", "h_diff", "a_diff", "kickoff",
                 "fixture_id", "finished", "provisional_start_time",
@@ -196,6 +255,107 @@ UNTRUSTED_COLS = ["form", "ep_this", "ep_next", "value_form", "value_season"]
 def cell(record, field):
     """One CSV cell from an API field, safe for a naively-joined row."""
     return clean(record.get(field))
+
+
+def scalar_cell(record, field, shapes):
+    """
+    Like cell(), but survives a field that turns out not to be a scalar.
+
+    players.csv is written by naive string join, so a dict or a list reaching
+    clean() would have its commas stripped and land as unparseable rubble in a
+    column that still looks populated. Every field mirrored here has been a
+    string or a number for as long as the file has existed, but the price-change
+    block was added without ever having been seen — this sandbox cannot reach the
+    FPL API, and a field called price_change_projections is at least as likely to
+    be a list of per-gameweek projections as a single number.
+
+    Guessing wrong in the quiet direction is the failure that matters, so this
+    does not guess. A scalar passes straight through. A container is recorded in
+    `shapes` — which becomes a meta.json warning naming the field, its type and a
+    truncated sample — and flattened to a compact 'k=v;k=v' form that is at least
+    readable and cannot break the row. One run is then enough to see the real
+    shape and mirror it properly, instead of shipping a column of debris.
+    """
+    value = record.get(field)
+    if value is None or isinstance(value, (str, int, float, bool)):
+        return clean(value)
+
+    shapes.setdefault(field, (type(value).__name__, repr(value)[:200]))
+    return clean(flatten(value))
+
+
+def flatten(value):
+    """A container as one comma-free cell. Readable, and never breaks the row."""
+    if isinstance(value, dict):
+        return ";".join(f"{k}={flatten(v)}" for k, v in value.items())
+    if isinstance(value, (list, tuple)):
+        return "|".join(flatten(v) for v in value)
+    return "" if value is None else str(value)
+
+
+def league_table(fixtures, teams):
+    """
+    Rebuild the league table from finished fixtures.
+
+    teams.csv mirrors played/win/draw/loss/points straight out of bootstrap, and
+    FPL ships them as zeros — all season, not just pre-season. Meanwhile
+    `position` right next to them is live and correct. So the file arrived
+    looking broken: a league table with a real ordering and nothing to justify
+    it, which is worse than having no table at all, because a reader cannot tell
+    a stuck counter from a team that has genuinely won nothing.
+
+    Everything needed to fix that is already in this run. fixtures carries every
+    finished result, so the table is computed rather than mirrored, and lands in
+    derived_* columns beside FPL's own so the two are never confused.
+
+    Ordering is points, then goal difference, then goals for, then short name —
+    the Premier League's own tiebreak, minus the head-to-head play-off that has
+    never actually been needed. That ordering reproduced FPL's `position` column
+    exactly, all twenty clubs, on the gameweek this was written against, which is
+    what makes the cross-check in the caller meaningful rather than decorative.
+    """
+    table = {short: {"played": 0, "win": 0, "draw": 0, "loss": 0,
+                     "gf": 0, "ga": 0, "points": 0, "results": []}
+             for short in teams.values()}
+
+    played = [f for f in fixtures
+              if f.get("finished") and f.get("team_h_score") is not None
+              and f.get("team_a_score") is not None
+              and f.get("team_h") in teams and f.get("team_a") in teams]
+    played.sort(key=lambda f: (f.get("kickoff_time") or "", f.get("id") or 0))
+
+    for f in played:
+        home, away = teams[f["team_h"]], teams[f["team_a"]]
+        hs, as_ = int(f["team_h_score"]), int(f["team_a_score"])
+        for side, gf, ga in ((home, hs, as_), (away, as_, hs)):
+            row = table[side]
+            row["played"] += 1
+            row["gf"] += gf
+            row["ga"] += ga
+            if gf > ga:
+                row["win"] += 1
+                row["points"] += 3
+                row["results"].append("W")
+            elif gf == ga:
+                row["draw"] += 1
+                row["points"] += 1
+                row["results"].append("D")
+            else:
+                row["loss"] += 1
+                row["results"].append("L")
+
+    for short, row in table.items():
+        row["gd"] = row["gf"] - row["ga"]
+        # Most recent first, capped at five — the same window FPL's own form
+        # column uses, and short enough to read at a glance.
+        row["form"] = "".join(reversed(row["results"][-5:]))
+
+    ranked = sorted(table, key=lambda t: (-table[t]["points"], -table[t]["gd"],
+                                          -table[t]["gf"], t))
+    for i, short in enumerate(ranked, 1):
+        table[short]["position"] = i if table[short]["played"] else ""
+
+    return table
 
 
 def verify_outputs(fetched_at, started):
@@ -268,6 +428,39 @@ def verify_outputs(fetched_at, started):
             + "\n  ".join(problems))
 
 
+def odds_age_warnings(status, next_deadline):
+    """
+    Say so when the odds are too old to price the gameweek being picked.
+
+    The generic staleness check is the wrong instrument for this. It fires at
+    twice a component's expected interval, which for odds means a day — but odds
+    move on team news, and a line built before a Friday press conference is not
+    a line you want to transfer on. What matters is not "has the job stopped
+    running" but "is this old relative to the deadline it is being used for",
+    and nothing was answering that: an eighteen-hour-old odds.csv reported
+    stale=false and produced no warning at all, and the reader only caught it by
+    checking the timestamp inside the file by hand.
+    """
+    entry = status.get("build_odds") or {}
+    last = parse_iso(entry.get("last_run_at"))
+    deadline = parse_iso(next_deadline)
+    if last is None or deadline is None:
+        return []
+
+    now = datetime.now(timezone.utc)
+    age_hours = (now - last).total_seconds() / 3600
+    to_deadline_hours = (deadline - now).total_seconds() / 3600
+
+    if 0 <= to_deadline_hours <= DEADLINE_WINDOW_HOURS and age_hours > ODDS_MAX_AGE_HOURS:
+        return [
+            f"odds.csv is {age_hours:.0f}h old (built {entry['last_run_at']}) with the "
+            f"GW deadline {to_deadline_hours:.0f}h away. Anything over "
+            f"{ODDS_MAX_AGE_HOURS}h this close to a deadline predates the team news the "
+            "market moves on — re-run the Odds mirror workflow before relying on it."
+        ]
+    return []
+
+
 def main():
     # Anchor for the post-write mtime check below.
     started = time.time()
@@ -300,6 +493,11 @@ def main():
                              ignore=IGNORED_ELEMENT_FIELDS)
     warnings += check_fields(boot_teams, EXPECTED_TEAM_FIELDS, "bootstrap-static.teams",
                              ignore=IGNORED_TEAM_FIELDS)
+    # Key presence is not enough here. Every one of these fields is present on
+    # every team and has been since the mirror started, and most of them carry
+    # nothing at all. Without this the file goes out looking complete.
+    warnings += check_values(boot_teams, TEAM_VALUE_CHECKED_FIELDS,
+                             "bootstrap-static.teams")
     warnings += check_fields(events, EXPECTED_EVENT_FIELDS, "bootstrap-static.events",
                              ignore=IGNORED_EVENT_FIELDS)
     warnings += check_fields(fixtures, EXPECTED_FIXTURE_FIELDS, "fixtures",
@@ -339,6 +537,10 @@ def main():
 
     pending = {}
 
+    # Filled by scalar_cell when a field arrives as a dict or a list rather than
+    # a scalar; turned into a warning below.
+    container_shapes = {}
+
     # ---- players.csv -------------------------------------------------
     rows = []
     for e in elements:
@@ -353,7 +555,8 @@ def main():
             "news": clean(e.get("news")), "chance": e.get("chance_of_playing_next_round"),
         }
         for col in NEW_PLAYER_COLS:
-            row[col] = cell(e, col)
+            row[col] = (scalar_cell(e, col, container_shapes)
+                        if col in CONTAINER_PRONE_COLS else cell(e, col))
         rows.append(row)
     rows.sort(key=lambda r: -(r["pts"] or 0))
 
@@ -367,6 +570,13 @@ def main():
     ]
     lines += [",".join(clean(r[c]) for c in PLAYER_COLS) for r in rows]
 
+    for field, (kind, sample) in sorted(container_shapes.items()):
+        warnings.append(
+            f"bootstrap-static.elements: {field} arrived as a {kind}, not a scalar. "
+            f"It has been flattened to a 'k=v;k=v' cell so the row stays valid, but "
+            f"the column deserves a proper shape. Sample: {sample}"
+        )
+
     alerts = [r for r in rows if r["st"] != "a"]
     if alerts:
         lines += ["", "# ALERTS — id,name,team,status,chance,news"]
@@ -375,18 +585,60 @@ def main():
                   for r in alerts]
     pending[DATA / "players.csv"] = "\n".join(lines)
 
-    # ---- teams.csv — FPL's own strength ratings ----------------------
+    # ---- teams.csv — FPL's ratings, plus a table the mirror computes -----
     # Worth having as an independent prior alongside the bookmaker-derived
     # numbers in odds.csv: they disagree often enough to be informative.
+    #
+    # The derived_* half exists because the mirrored half is not usable on its
+    # own. FPL sends played/win/draw/loss/points as zero whether or not games
+    # have been played, so the old header line promising they would fill in
+    # "until the season starts" was quietly false from the first kickoff — and a
+    # reader who believed it concluded the whole file was broken. The results are
+    # already in this run, so the table is computed here and both versions are
+    # published side by side.
+    table = league_table(fixtures, teams)
+    matches_played = sum(r["played"] for r in table.values()) // 2
+
     tlines = [
         header,
-        "# FPL's own team strength ratings (1-5 scale for 'strength', ~1000-1400 for the rest).",
-        "# played/win/draw/loss/points/position/form are 0 or blank until the season starts.",
+        "# FPL's own team strength ratings, then a league table this mirror computes.",
+        "# strength* are FPL's, mirrored verbatim. Check meta.json warnings[] before "
+        "using them: FPL has been sending some of them empty or zero.",
+        f"# derived_* are computed here from the {matches_played} finished fixture(s) in "
+        "fixtures.csv, NOT mirrored. Use these for the table — FPL's own "
+        "played/win/draw/loss/points sit at 0 all season.",
+        "# derived_form is the last five results, most recent first. FPL's 'position' "
+        "is live and does update; the rest of its table columns do not.",
         ",".join(TEAM_COLS),
     ]
     for t in sorted(boot_teams, key=lambda x: x.get("short_name") or ""):
-        tlines.append(",".join(cell(t, c) for c in TEAM_COLS))
+        row = table.get(t.get("short_name"), {})
+        tlines.append(",".join(
+            [cell(t, c) for c in EXPECTED_TEAM_FIELDS]
+            + [clean(row.get(c[len("derived_"):], "")) for c in DERIVED_TEAM_COLS]
+        ))
     pending[DATA / "teams.csv"] = "\n".join(tlines)
+
+    # Cross-check the computed ordering against FPL's own `position`, which is
+    # the one league-table field FPL does keep current. Agreement is the evidence
+    # that the derived table is right; disagreement means either FPL is using a
+    # tiebreak this does not model or a result is missing from fixtures, and
+    # either way the reader should know before trusting derived_position.
+    if matches_played:
+        disagree = [
+            f"{t['short_name']} (FPL {t.get('position')}, derived "
+            f"{table[t['short_name']]['position']})"
+            for t in boot_teams
+            if t.get("short_name") in table and t.get("position")
+            and t["position"] != table[t["short_name"]]["position"]
+        ]
+        if disagree:
+            warnings.append(
+                "teams.csv: the table computed from finished fixtures disagrees with "
+                f"FPL's own position column for {len(disagree)} club(s): "
+                f"{', '.join(disagree)}. Trust FPL's position and treat derived_* "
+                "with caution until this is explained."
+            )
 
     # ---- fdr.csv — per-team difficulty over the next 6 GWs ------------
     start = meta["next_event"] or 1
@@ -474,23 +726,18 @@ def main():
     if not meta["game_settings"]:
         warnings.append("bootstrap-static: game_settings missing — scoring rules unavailable")
 
+    # Raised before recording, so it lands in this component's own warnings
+    # rather than only in meta.json. refresh_meta_components rebuilds meta's
+    # warnings[] from build_status.json, and anything held only in memory here
+    # would be silently dropped the next time the odds job refreshed the file.
+    warnings += odds_age_warnings(read_status(), meta["next_deadline"])
+
     # Fold in every other builder's last run, so one place answers "is any part
     # of this mirror out of date?" rather than the consumer having to check six.
     record_status("build_fpl", expected_interval_minutes=60, warnings=warnings,
                   files=["players.csv", "teams.csv", "fdr.csv", "fixtures.csv",
                          "fixture_stats.csv", "meta.json"])
-    status = read_status()
-    components, any_stale = staleness(status)
-    for name, entry in sorted(status.items()):
-        for w in entry.get("warnings") or []:
-            if name != "build_fpl":
-                warnings.append(f"[{name}] {w}")
-    for name, comp in components.items():
-        if comp["stale"]:
-            warnings.append(
-                f"[{name}] STALE — last ran {comp['last_run_at']}, expected every "
-                f"{comp['expected_interval_minutes']} min"
-            )
+    warnings, components, any_stale = fold_warnings(read_status())
 
     meta["stale"] = any_stale
     meta["warnings"] = warnings
@@ -503,8 +750,16 @@ def main():
         "will not move. New columns are only ever appended to the right-hand end.",
         "pts/ppg/mins/g/a/cs/bonus and every cumulative stat in players.csv are "
         "season-to-date totals. For per-gameweek splits use player_history.csv.",
-        "warnings[] is populated by the schema drift guard. A named field in there is "
-        "one whose column is present but empty because the API stopped sending it.",
+        "warnings[] is populated by the schema drift guard, which checks two things: "
+        "whether a field is present, and whether it carries anything. A field named "
+        "there is one whose column exists but is empty, zero, or missing — read the "
+        "warning before treating that column as a genuine result.",
+        "teams.csv: columns named derived_* are computed by this mirror from the "
+        "finished fixtures in fixtures.csv. Everything else in that file is mirrored "
+        "verbatim from FPL. Use derived_played/win/draw/loss/points for the league "
+        "table — FPL sends its own copies of those as zero all season long. FPL's "
+        "'position' is the exception and is live; the derived table is cross-checked "
+        "against it every run and warns here on disagreement.",
         "stale is true when any component has gone longer than twice its expected "
         "refresh interval without running. Check components{} for which one.",
         "CACHE CHECK: every CSV in this mirror carries 'fetched=<timestamp>' in its "
