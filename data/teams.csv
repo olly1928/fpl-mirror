@@ -1,8 +1,8 @@
-# season=2026/27 preseason=False next_gw=2 deadline=2026-08-28T17:30:00Z players=616 fetched=2026-08-27T18:50:32+00:00
+# season=2026/27 preseason=False next_gw=2 deadline=2026-08-28T17:30:00Z players=616 fetched=2026-08-27T23:25:35+00:00
 # FPL's own team strength ratings, then a league table this mirror computes.
-# strength* are FPL's, mirrored verbatim. Check meta.json warnings[] before using them: FPL has been sending some of them empty or zero.
-# derived_* are computed here from the 10 finished fixture(s) in fixtures.csv, NOT mirrored. Use these for the table — FPL's own played/win/draw/loss/points sit at 0 all season.
-# derived_form is the last five results, most recent first. FPL's 'position' is live and does update; the rest of its table columns do not.
+# EXPECTED, NOT A FAULT: 10 of FPL's columns are always empty or zero and always have been — draw, loss, played, points, strength, strength_attack_away, strength_attack_home, strength_defence_away, strength_defence_home, win. This is upstream, it is not changing, and it does not need reporting. See known_empty in meta.json.
+# USE INSTEAD: strength_overall_home/strength_overall_away for the ratings, and the derived_* columns for the table. Both are populated.
+# derived_* are computed here from the 10 finished fixture(s) in fixtures.csv, NOT mirrored. derived_form is the last five results, most recent first. FPL's 'position' is live and does update; its other table columns do not.
 id,code,name,short_name,strength,strength_overall_home,strength_overall_away,strength_attack_home,strength_attack_away,strength_defence_home,strength_defence_away,played,win,draw,loss,points,position,form,derived_played,derived_win,derived_draw,derived_loss,derived_gf,derived_ga,derived_gd,derived_points,derived_position,derived_form
 1,3,Arsenal,ARS,,4,5,0,0,0,0,0,0,0,0,0,2,,1,1,0,0,3,0,3,3,2,W
 2,7,Aston Villa,AVL,,3,4,0,0,0,0,0,0,0,0,0,20,,1,0,0,1,0,4,-4,0,20,L

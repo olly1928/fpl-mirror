@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-27T18:50:30.113038+00:00",
+  "fetched_at": "2026-08-27T23:25:34.760659+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -11,9 +11,9 @@
   "overall_rank": 3770910,
   "bank": 0.0,
   "squad_value": 100.0,
-  "squad_selling_value": 1000,
-  "squad_market_value": 1001,
-  "available_budget": 1000,
+  "squad_selling_value": 999,
+  "squad_market_value": 1000,
+  "available_budget": 999,
   "notes": [
     "FREE TRANSFERS: ESTIMATE ONLY — the FPL API does not expose free transfers. Derived from transfer history assuming 1 earned per gameweek, banked to a maximum of 5, with wildcard/free-hit weeks not consuming any. Confirm on the FPL site before making transfer decisions.",
     "SELLING PRICES: DERIVED, not fetched — and they are the numbers to do transfer maths with, not 'now_cost'. Purchase price comes from one of two sources, recorded per player in selling_prices[id].source: 'transfer' means element_in_cost on the most recent non-Free-Hit transfer that brought the player in, which is literally what was paid; 'initial_squad' means the player has been held since GW1 and the purchase price is bootstrap-static's now_cost minus cost_change_start, which is the GW1 price because pre-season prices are static. Selling price is then the full fall, or the purchase price plus half of any rise rounded down. 0 from a transfer record, 15 derived from the initial squad — the latter assume the player was never sold and re-bought. Free Hit transfers are excluded; wildcard transfers count.",
@@ -664,7 +664,7 @@
       "full_name": "Elliot Anderson",
       "team": "MCI",
       "pos": "MID",
-      "now_cost": 6.5,
+      "now_cost": 6.4,
       "multiplier": 1,
       "is_captain": false,
       "is_vice_captain": false,
@@ -871,9 +871,9 @@
       "suspect": false
     },
     "481": {
-      "now_cost": 65,
+      "now_cost": 64,
       "purchase": 65,
-      "selling": 65,
+      "selling": 64,
       "source": "initial_squad",
       "bought_event": null,
       "suspect": false

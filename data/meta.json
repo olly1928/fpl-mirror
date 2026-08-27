@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-27T18:50:32+00:00",
+  "fetched_at": "2026-08-27T23:25:35+00:00",
   "season": "2026/27",
   "preseason": false,
   "current_event": 1,
@@ -790,14 +790,10 @@
     "timezone": "UTC"
   },
   "stale": false,
-  "warnings": [
-    "bootstrap-static.teams: 1 field(s) sent by the API but empty on all 20 record(s), so the column is blank rather than meaningful: strength",
-    "bootstrap-static.teams: 9 field(s) sent by the API but zero on all 20 record(s), so the column cannot be told apart from a genuine nil: strength_attack_home, strength_attack_away, strength_defence_home, strength_defence_away, played, win, draw, loss, points",
-    "bootstrap-static.elements: price_change_projections arrived as a list, not a scalar. It has been flattened to a 'k=v;k=v' cell so the row stays valid, but the column deserves a proper shape. Sample: [{'offset': 0, 'projected_percent': '9.3', 'likelihood': 1}, {'offset': 1, 'projected_percent': '11.1', 'likelihood': 1}, {'offset': 2, 'projected_percent': '12.6', 'likelihood': 1}]"
-  ],
+  "warnings": [],
   "components": {
     "build_fpl": {
-      "last_run_at": "2026-08-27T18:50:32+00:00",
+      "last_run_at": "2026-08-27T23:25:36+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
@@ -809,29 +805,56 @@
       "stale": false
     },
     "build_player_history": {
-      "last_run_at": "2026-08-27T18:50:29+00:00",
+      "last_run_at": "2026-08-27T23:25:34+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
     },
     "build_snapshots": {
-      "last_run_at": "2026-08-27T18:50:29+00:00",
+      "last_run_at": "2026-08-27T23:25:34+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
     },
     "build_squad": {
-      "last_run_at": "2026-08-27T18:50:32+00:00",
+      "last_run_at": "2026-08-27T23:25:35+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
     }
   },
+  "known_empty": [
+    {
+      "source": "bootstrap-static.teams",
+      "file": "teams.csv",
+      "fields": [
+        "draw",
+        "loss",
+        "played",
+        "points",
+        "strength",
+        "strength_attack_away",
+        "strength_attack_home",
+        "strength_defence_away",
+        "strength_defence_home",
+        "win"
+      ],
+      "still_populated": [
+        "position",
+        "strength_overall_away",
+        "strength_overall_home"
+      ],
+      "expected": true,
+      "note": "FPL sends these fields on every team and has never populated them: 'strength' and the attack/defence breakdown arrive empty or zero, and played/win/draw/loss/points stay at 0 all season while 'position' beside them updates weekly. This is upstream behaviour, not a mirror fault, and it is not expected to change. It is reported here rather than in warnings[] so that warnings[] stays a list of things that are new. Use teams.csv's derived_* columns for the league table and strength_overall_home/strength_overall_away for the ratings; both are populated. Nothing here needs reporting as a problem — if one of them ever starts carrying values, that appears in warnings[] instead."
+    }
+  ],
   "notes": [
     "Columns form, ep_this, ep_next, value_form and value_season are FPL's own projections. They are mirrored for reference and comparison only and should never be fed to a model as an input.",
     "players.csv columns up to and including 'st' are the original contract and will not move. New columns are only ever appended to the right-hand end.",
     "pts/ppg/mins/g/a/cs/bonus and every cumulative stat in players.csv are season-to-date totals. For per-gameweek splits use player_history.csv.",
     "warnings[] is populated by the schema drift guard, which checks two things: whether a field is present, and whether it carries anything. A field named there is one whose column exists but is empty, zero, or missing — read the warning before treating that column as a genuine result.",
+    "price_change_proj_pct_d0/d1/d2 are FPL's own price-change projection, 0/1/2 days ahead: signed progress towards the next change, positive for a rise and negative for a fall, with ±100 being the change itself. Use these rather than inferring price moves from transfer momentum. The packed price_change_projections column is the verbatim mirror of the same block.",
+    "known_empty[] is the list of columns FPL sends but has never populated. They are expected, permanent, and deliberately kept out of warnings[] so that warnings[] only ever holds things that are new. Do not report them as a fault. The note on each entry names what to use instead.",
     "teams.csv: columns named derived_* are computed by this mirror from the finished fixtures in fixtures.csv. Everything else in that file is mirrored verbatim from FPL. Use derived_played/win/draw/loss/points for the league table — FPL sends its own copies of those as zero all season long. FPL's 'position' is the exception and is live; the derived table is cross-checked against it every run and warns here on disagreement.",
     "stale is true when any component has gone longer than twice its expected refresh interval without running. Check components{} for which one.",
     "CACHE CHECK: every CSV in this mirror carries 'fetched=<timestamp>' in its first comment line, and it is always identical to this file's fetched_at within a single build. If they disagree, one of the two was served from a cache rather than being genuinely out of date — raw.githubusercontent.com caches per-path, so meta.json can lag while players.csv is current. Refetch with a cache-busting query string before concluding the mirror is stale."

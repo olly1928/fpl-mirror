@@ -1,16 +1,16 @@
 {
   "build_snapshots": {
-    "last_run_at": "2026-08-27T18:50:29+00:00",
+    "last_run_at": "2026-08-27T23:25:34+00:00",
     "expected_interval_minutes": 60,
     "warnings": [],
-    "last_snapshot_at": "2026-08-27T18:50:29+00:00",
+    "last_snapshot_at": "2026-08-27T23:25:34+00:00",
     "last_baseline_date": "2026-08-27",
-    "last_rows_written": 615,
+    "last_rows_written": 610,
     "current_file": "data/snapshots/2026-08.csv",
     "mode": "delta"
   },
   "build_player_history": {
-    "last_run_at": "2026-08-27T18:50:29+00:00",
+    "last_run_at": "2026-08-27T23:25:34+00:00",
     "expected_interval_minutes": 60,
     "warnings": [],
     "captured_gameweeks": [
@@ -19,7 +19,7 @@
     "last_rows_written": 0
   },
   "build_squad": {
-    "last_run_at": "2026-08-27T18:50:32+00:00",
+    "last_run_at": "2026-08-27T23:25:35+00:00",
     "expected_interval_minutes": 60,
     "warnings": [],
     "picks": 15,
@@ -29,13 +29,9 @@
     "selling_prices_confidence": "derived"
   },
   "build_fpl": {
-    "last_run_at": "2026-08-27T18:50:32+00:00",
+    "last_run_at": "2026-08-27T23:25:36+00:00",
     "expected_interval_minutes": 60,
-    "warnings": [
-      "bootstrap-static.teams: 1 field(s) sent by the API but empty on all 20 record(s), so the column is blank rather than meaningful: strength",
-      "bootstrap-static.teams: 9 field(s) sent by the API but zero on all 20 record(s), so the column cannot be told apart from a genuine nil: strength_attack_home, strength_attack_away, strength_defence_home, strength_defence_away, played, win, draw, loss, points",
-      "bootstrap-static.elements: price_change_projections arrived as a list, not a scalar. It has been flattened to a 'k=v;k=v' cell so the row stays valid, but the column deserves a proper shape. Sample: [{'offset': 0, 'projected_percent': '9.3', 'likelihood': 1}, {'offset': 1, 'projected_percent': '11.1', 'likelihood': 1}, {'offset': 2, 'projected_percent': '12.6', 'likelihood': 1}]"
-    ],
+    "warnings": [],
     "files": [
       "players.csv",
       "teams.csv",
