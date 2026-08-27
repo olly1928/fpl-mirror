@@ -255,13 +255,40 @@ NEW_PLAYER_COLS = [
     "price_change_locked_until", "price_change_calibrating",
 ]
 
-# Cells that may not be scalars. See scalar_cell() — everything else in
-# players.csv has been a string or a number since the file was created, but a
-# field named *_projections is as likely to arrive as a list or an object, and
-# this file is written by naive string join.
-CONTAINER_PRONE_COLS = ["price_change_projections"]
+# Cells that may not be scalars. See scalar_cell(): everything else in
+# players.csv has been a string or a number since the file was created, so
+# anything that could arrive as a list or an object goes here and gets reported
+# rather than mangled. price_change_projections was the first entry and has
+# since been identified and given proper columns below, which is exactly what
+# the mechanism is for.
+CONTAINER_PRONE_COLS = []
 
-PLAYER_COLS = LEGACY_PLAYER_COLS + NEW_PLAYER_COLS
+# What price_change_projections actually turned out to be, once the shape guard
+# reported it off a live response: a list of three entries, one per day ahead.
+#
+#   [{"offset": 0, "projected_percent": "9.7",  "likelihood": 1},
+#    {"offset": 1, "projected_percent": "19.1", "likelihood": 1},
+#    {"offset": 2, "projected_percent": "28.4", "likelihood": 1}]
+#
+# projected_percent is signed progress towards FPL's next price change for that
+# player: positive is towards a rise, negative towards a fall, and crossing ±100
+# is the change happening. likelihood is a signed 1-5 band over the same number,
+# 0 when nothing is projected. Both are mirrored — likelihood looks derivable
+# from the percentage on the sample this was written against, but FPL has not
+# published the bands and a mirror does not get to assume.
+PRICE_PROJECTION_OFFSETS = [0, 1, 2]
+PRICE_PROJECTION_KEYS = ["offset", "projected_percent", "likelihood"]
+
+PRICE_PROJECTION_COLS = (
+    [f"price_change_proj_pct_d{o}" for o in PRICE_PROJECTION_OFFSETS]
+    + [f"price_change_proj_likelihood_d{o}" for o in PRICE_PROJECTION_OFFSETS]
+)
+
+# The packed price_change_projections column stays as the faithful mirror — it
+# survives FPL adding a fourth day or a new key without anything needing changed.
+# The exploded columns beside it are the usable form. Same split as teams.csv:
+# mirror verbatim, and publish something a consumer can actually do arithmetic on.
+PLAYER_COLS = LEGACY_PLAYER_COLS + NEW_PLAYER_COLS + PRICE_PROJECTION_COLS
 
 # What the mirror computes itself from finished fixtures, appended to the right
 # of FPL's own columns rather than overwriting them. The prefix is the whole
@@ -316,6 +343,62 @@ def scalar_cell(record, field, shapes):
 
     shapes.setdefault(field, (type(value).__name__, repr(value)[:200]))
     return clean(flatten(value))
+
+
+def price_projection_cells(element, drift):
+    """
+    Explode price_change_projections into one cell per day per field.
+
+    The shape guard reported this field off a live response, so it is no longer
+    a guess: three entries, offsets 0/1/2, each with a signed projected_percent
+    and a signed likelihood band. Those are the numbers behind a price watch, and
+    a packed 'k=v;k=v' cell is not something anyone can sort or threshold on.
+
+    Anything other than the known shape leaves the cells empty and is recorded in
+    `drift` rather than being force-fitted into columns that would then be wrong.
+    The known shape itself is silent — it has been seen, it is handled, and
+    reporting it hourly would be the same noise the acknowledgement list exists
+    to prevent.
+    """
+    blank = {c: "" for c in PRICE_PROJECTION_COLS}
+    value = element.get("price_change_projections")
+    if value is None:
+        return blank
+    if not isinstance(value, list) or not all(isinstance(e, dict) for e in value):
+        drift.setdefault("not a list of objects", repr(value)[:200])
+        return blank
+
+    by_offset, extra_keys = {}, set()
+    for entry in value:
+        extra_keys |= set(entry) - set(PRICE_PROJECTION_KEYS)
+        try:
+            by_offset[int(entry["offset"])] = entry
+        except (KeyError, TypeError, ValueError):
+            drift.setdefault("an entry has no usable 'offset'", repr(entry)[:200])
+            return blank
+
+    if extra_keys:
+        drift.setdefault(
+            f"new key(s) {', '.join(sorted(extra_keys))} that are not mirrored",
+            repr(value[0])[:200])
+    unknown = sorted(set(by_offset) - set(PRICE_PROJECTION_OFFSETS))
+    missing = sorted(set(PRICE_PROJECTION_OFFSETS) - set(by_offset))
+    if unknown:
+        drift.setdefault(
+            f"offset(s) {', '.join(map(str, unknown))} beyond the mirrored "
+            f"{PRICE_PROJECTION_OFFSETS}", repr(value)[:200])
+    if missing:
+        drift.setdefault(
+            f"offset(s) {', '.join(map(str, missing))} absent", repr(value)[:200])
+
+    cells = dict(blank)
+    for offset in PRICE_PROJECTION_OFFSETS:
+        entry = by_offset.get(offset)
+        if entry is None:
+            continue
+        cells[f"price_change_proj_pct_d{offset}"] = clean(entry.get("projected_percent"))
+        cells[f"price_change_proj_likelihood_d{offset}"] = clean(entry.get("likelihood"))
+    return cells
 
 
 def flatten(value):
@@ -577,6 +660,9 @@ def main():
     # Filled by scalar_cell when a field arrives as a dict or a list rather than
     # a scalar; turned into a warning below.
     container_shapes = {}
+    # Filled by price_projection_cells when FPL's projection block stops looking
+    # like the shape this mirrors. Same idea, one field further on.
+    projection_drift = {}
 
     # ---- players.csv -------------------------------------------------
     rows = []
@@ -594,11 +680,20 @@ def main():
         for col in NEW_PLAYER_COLS:
             row[col] = (scalar_cell(e, col, container_shapes)
                         if col in CONTAINER_PRONE_COLS else cell(e, col))
+        # The packed mirror of the projection block. Its shape is known now, so
+        # it goes through flatten() directly rather than the report-and-flatten
+        # path — an hourly warning about something already handled is noise.
+        row["price_change_projections"] = clean(
+            flatten(e.get("price_change_projections")))
+        row.update(price_projection_cells(e, projection_drift))
         rows.append(row)
     rows.sort(key=lambda r: -(r["pts"] or 0))
 
     # These three comment lines are the published header block. Their structure
-    # is part of the contract — the downstream integrity gate parses them.
+    # is part of the contract — the downstream integrity gate parses them, and
+    # counts them. A fourth line breaks it, so column documentation that does not
+    # fit in these three goes in meta.json notes[] and the README instead. The
+    # price_change_proj_* sign convention lives there for exactly that reason.
     lines = [
         header,
         "# pts/ppg/mins/g/a/cs/bonus are LAST SEASON totals carried into the new game.",
@@ -606,6 +701,14 @@ def main():
         ",".join(PLAYER_COLS),
     ]
     lines += [",".join(clean(r[c]) for c in PLAYER_COLS) for r in rows]
+
+    for what, sample in sorted(projection_drift.items()):
+        warnings.append(
+            f"bootstrap-static.elements: price_change_projections has {what}. The "
+            f"{', '.join(PRICE_PROJECTION_COLS)} columns are blank for the affected "
+            f"players — the packed price_change_projections column still carries "
+            f"everything FPL sent. Sample: {sample}"
+        )
 
     for field, (kind, sample) in sorted(container_shapes.items()):
         warnings.append(
@@ -807,6 +910,11 @@ def main():
         "whether a field is present, and whether it carries anything. A field named "
         "there is one whose column exists but is empty, zero, or missing — read the "
         "warning before treating that column as a genuine result.",
+        "price_change_proj_pct_d0/d1/d2 are FPL's own price-change projection, 0/1/2 "
+        "days ahead: signed progress towards the next change, positive for a rise and "
+        "negative for a fall, with ±100 being the change itself. Use these rather than "
+        "inferring price moves from transfer momentum. The packed "
+        "price_change_projections column is the verbatim mirror of the same block.",
         "known_empty[] is the list of columns FPL sends but has never populated. They "
         "are expected, permanent, and deliberately kept out of warnings[] so that "
         "warnings[] only ever holds things that are new. Do not report them as a fault. "

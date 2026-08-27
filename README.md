@@ -97,6 +97,29 @@ bookmaker layer does.
 Every cumulative column is **season-to-date**. For per-gameweek splits use
 `player_history.csv`.
 
+### FPL's price-change projections
+
+`price_change_proj_pct_d0`, `_d1` and `_d2` are FPL's own projection of a player's
+next price change, 0/1/2 days ahead. The number is **signed progress towards that
+change**: positive is towards a rise, negative towards a fall, and crossing ±100 is
+the change itself. `price_change_proj_likelihood_d0/1/2` is FPL's 1–5 band over the
+same figure (±5 meaning projected to cross, 0 meaning nothing projected).
+
+Three columns qualify them. `price_change_hourly_rate` is signed net transfers per
+hour. `price_change_locked_until`, when set, is a timestamp before which the price
+cannot move whatever the projection says. `price_change_calibrating` is true while
+FPL's model has not settled on a player — usually a recent addition — so the
+projection is soft.
+
+`price_change_projections` beside them is the verbatim packed mirror of the same
+block, kept so that FPL adding a fourth day or a new key needs no code change. The
+exploded columns are the ones to do arithmetic on.
+
+This block was found by the shape guard rather than guessed at: the field was
+mirrored before anyone had seen it, arrived as a list of objects, was flattened
+safely, and reported its own type and a sample in `warnings[]` — which is what
+made the proper columns possible on the next pass.
+
 > `form`, `ep_this`, `ep_next`, `value_form` and `value_season` are FPL's own
 > projections. They are mirrored for reference and comparison. Do not feed them
 > to a model as inputs.

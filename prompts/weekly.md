@@ -1,4 +1,4 @@
-<!-- weekly.md · v2 · 2026-08-27 -->
+<!-- weekly.md · v3 · 2026-08-27 -->
 
 # FPL WEEKLY — MASTER PROMPT
 
@@ -105,6 +105,16 @@ no answer.
   and text; discipline and ICT. Also `form`, `ep_this`, `ep_next`, `value_form`,
   `value_season` — these are FPL's own projections, mirrored for reference only. **Never
   feed them into a model.**
+
+  For price moves, use FPL's own projection rather than inferring from transfer momentum:
+  `price_change_proj_pct_d0` / `_d1` / `_d2` are signed progress towards this player's next
+  price change, 0/1/2 days out. Positive is towards a rise, negative towards a fall, and
+  **±100 is the change happening** — so `d0` past 100 means tonight. `price_change_proj_
+  likelihood_d*` is FPL's own 1–5 band over the same number (±5 = projected to cross).
+  Alongside them: `price_change_hourly_rate` (signed net transfers per hour),
+  `price_change_locked_until` (price frozen until that timestamp — no change can happen
+  before it, whatever the projection says) and `price_change_calibrating` (FPL's model
+  hasn't settled on this player; treat their projection as soft).
 * **player_history.csv** — one row per player per completed gameweek. **Use this for form,
   not the `form` column and not season-to-date totals.** A cumulative figure can't tell you
   whether the returns came in August or last week.
@@ -219,7 +229,12 @@ Keep this tight. It's a weekly decision, not an essay.
    check your reasoning.
 6. **Team** — starting XI, formation, and bench in order.
 7. **Chip** — whether to play one this week, one line.
-8. **Price watch** — rises and falls that affect me in the next 48 hours.
+8. **Price watch** — rises and falls that affect me in the next 48 hours. Lead with
+   `price_change_proj_pct_d0/_d1/_d2` from `players.csv` — that is FPL's own projection,
+   not a guess. Say which of my players and targets are past ±100 and when. Note anyone
+   with `price_change_locked_until` in the future (they can't move yet) or
+   `price_change_calibrating=True` (soft number). Only fall back to transfer momentum
+   from `snapshots/` if those columns are missing, and say so if you do.
 9. **Before the deadline** — what to verify: press conferences, late fitness tests, penalty
    duties.
 10. **Confidence** — anything you inferred rather than confirmed, any thin odds line you
@@ -238,4 +253,4 @@ Keep this tight. It's a weekly decision, not an essay.
 * Don't hedge everything. Where you're confident, say so. Where you're guessing, label it a
   guess.
 
-<!-- end of weekly.md v2 — confirm this line was reached -->
+<!-- end of weekly.md v3 — confirm this line was reached -->
