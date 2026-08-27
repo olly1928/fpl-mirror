@@ -11,10 +11,14 @@ Four jobs, all of them in service of "set and forget":
     the target. A crash halfway through leaves the previous good file exactly
     where it was — the consumer's first move is a staleness check, and stale
     but well-formed beats fresh but truncated.
-  * Schema drift detection. The expected field list for each endpoint is an
-    explicit constant. FPL renames and adds fields between seasons and
-    occasionally mid-season (defensive_contribution only appeared in 2025/26),
-    and a silently null column is far worse than a loud one.
+  * Schema drift detection, at two levels. The expected field list for each
+    endpoint is an explicit constant, because FPL renames and adds fields
+    between seasons and occasionally mid-season (defensive_contribution only
+    appeared in 2025/26). Field presence is only half of it though: a field FPL
+    keeps sending but stops populating is invisible to a key check and lands in
+    the CSV as a column of blanks or zeros indistinguishable from a real result.
+    check_fields catches the first, check_values the second. A silently null
+    column is far worse than a loud one.
   * A shared status file so meta.json can report on components written by other
     processes — whether they ran, when, and what they complained about.
 """
@@ -247,6 +251,83 @@ def check_fields(records, expected, label, report_new=True, ignore=()):
     return warnings
 
 
+def _is_blank(value):
+    return value is None or (isinstance(value, str) and not value.strip())
+
+
+def _is_zero(value):
+    """
+    Numerically zero, including the string form.
+
+    FPL is inconsistent about this — selected_by_percent and the ICT columns
+    arrive as strings while the counters arrive as ints — so a check that only
+    understood int 0 would miss half the cases it exists for. False is not zero:
+    a boolean field that is False everywhere is carrying a real answer.
+    """
+    if isinstance(value, bool):
+        return False
+    if isinstance(value, (int, float)):
+        return value == 0
+    if isinstance(value, str):
+        try:
+            return float(value) == 0
+        except ValueError:
+            return False
+    return False
+
+
+def check_values(records, fields, label):
+    """
+    Report fields that are present on every record but carry no information.
+
+    check_fields above only ever looks at key presence, which leaves a blind
+    spot big enough to drive a season through: a field FPL keeps sending but
+    stops populating passes it silently, and the column lands in the CSV full
+    of blanks or zeros looking exactly like a genuine result. That is the
+    "silently null column" this module's docstring says it exists to prevent,
+    and until this function existed it was the one case it could not see.
+
+    Empty and zero are reported separately because they mean different things.
+    All-empty is usually FPL having dropped a value it used to send. All-zero is
+    usually a counter FPL ships but never fills in — teams[].played and friends
+    have behaved that way for years, sitting at 0 all season while position next
+    to them updates weekly.
+
+    Deliberately takes an explicit field list rather than scanning everything.
+    Plenty of fields are legitimately zero across the board early in a season
+    (own_goals, penalties_saved), and a guard that cries wolf every hour in
+    August is one nobody reads by September. Pass only the fields where "nothing
+    but zeros" is genuinely diagnostic.
+    """
+    if not records:
+        return []
+
+    blank, zero = [], []
+    for field in fields:
+        seen = [r.get(field) for r in records if isinstance(r, dict) and field in r]
+        if not seen:
+            continue  # absent entirely — that is check_fields' job, not this one
+        if all(_is_blank(v) for v in seen):
+            blank.append(field)
+        elif all(_is_zero(v) for v in seen):
+            zero.append(field)
+
+    warnings = []
+    if blank:
+        warnings.append(
+            f"{label}: {len(blank)} field(s) sent by the API but empty on all "
+            f"{len(records)} record(s), so the column is blank rather than "
+            f"meaningful: {', '.join(blank)}"
+        )
+    if zero:
+        warnings.append(
+            f"{label}: {len(zero)} field(s) sent by the API but zero on all "
+            f"{len(records)} record(s), so the column cannot be told apart from a "
+            f"genuine nil: {', '.join(zero)}"
+        )
+    return warnings
+
+
 # ---------------------------------------------------------------- status file
 
 def read_status():
@@ -313,3 +394,77 @@ def staleness(status, now=None):
         }
         any_stale = any_stale or is_stale
     return components, any_stale
+
+
+def fold_warnings(status, owner="build_fpl"):
+    """
+    Collapse the whole status map into one warnings list, plus freshness.
+
+    Every builder is a separate process, so meta.json's warnings[] is assembled
+    from build_status.json rather than in-memory state. That fold used to live
+    inline in build_fpl, which was fine while build_fpl was the only thing that
+    ever wrote meta.json — and stopped being fine the moment a second workflow
+    (odds) started running on its own schedule. Sharing it is what lets the odds
+    job refresh meta.json's freshness block without reimplementing the ordering.
+
+    The owner's own warnings come through unprefixed because they are already
+    phrased as this file's own complaints; everyone else's are tagged with the
+    component that raised them, so the reader knows which builder to go and look
+    at. Staleness lines come last, after the substantive warnings.
+    """
+    components, any_stale = staleness(status)
+
+    warnings = list((status.get(owner) or {}).get("warnings") or [])
+    for name, entry in sorted(status.items()):
+        if name == owner:
+            continue
+        for w in entry.get("warnings") or []:
+            warnings.append(f"[{name}] {w}")
+    for name, comp in components.items():
+        if comp["stale"]:
+            warnings.append(
+                f"[{name}] STALE — last ran {comp['last_run_at']}, expected every "
+                f"{comp['expected_interval_minutes']} min"
+            )
+    return warnings, components, any_stale
+
+
+def refresh_meta_components(path=None):
+    """
+    Rewrite only meta.json's freshness block, leaving everything else alone.
+
+    meta.json is documented as the one place to look to answer "is any part of
+    this mirror out of date?", but only build_fpl writes it, and build_fpl only
+    runs in the hourly FPL workflow. The odds workflow runs on its own schedule,
+    so between the two, meta.json reported an odds timestamp that was hours out
+    of date — a freshly pulled odds.csv sitting next to a meta.json still
+    insisting the odds were from yesterday. A consumer that trusts the documented
+    freshness check, as it should, gets the wrong answer.
+
+    So the odds job calls this after it writes: components{}, stale and
+    warnings[] are recomputed from build_status.json, and nothing else is
+    touched. In particular fetched_at is deliberately left alone — it belongs to
+    the bootstrap fetch that built the CSVs, and the CACHE CHECK note in
+    meta.json tells readers it always matches the 'fetched=' in their headers.
+
+    Returns True if meta.json was updated. A missing or unreadable meta.json is
+    not an error worth failing a build over: the next FPL run rewrites it whole.
+    """
+    path = pathlib.Path(path) if path else DATA / "meta.json"
+    try:
+        meta = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return False
+    if not isinstance(meta, dict):
+        return False
+
+    warnings, components, any_stale = fold_warnings(read_status())
+    meta["warnings"] = warnings
+    meta["components"] = components
+    meta["stale"] = any_stale
+    # Distinct from fetched_at on purpose: this says when the freshness block was
+    # last recomputed, which after an odds-only run is later than the bootstrap
+    # fetch that produced the rest of the file.
+    meta["components_refreshed_at"] = now_iso()
+    atomic_write_json(path, meta)
+    return True

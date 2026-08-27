@@ -14,6 +14,7 @@ Run with:  python tests/test_offline.py
 
 import copy
 import csv
+import datetime
 import io
 import json
 import os
@@ -45,6 +46,7 @@ def fake_http_json(url, *, headers=None, cache_ttl=0):
 fpl_common.http_json = fake_http_json
 
 import build_fpl  # noqa: E402
+import build_odds  # noqa: E402
 import build_player_history  # noqa: E402
 import build_snapshots  # noqa: E402
 import build_squad  # noqa: E402
@@ -93,10 +95,44 @@ def make_element(i):
     e["direct_freekicks_text"] = ""
     e["corners_and_indirect_freekicks_order"] = None
     e["corners_and_indirect_freekicks_text"] = ""
+    # FPL's price-change block. Scalars here; test_price_change_projections_shape
+    # covers the case where the projections field arrives as a container instead.
+    e["price_change_projections"] = f"{(i % 30) / 10:.2f}"
+    e["price_change_hourly_rate"] = i % 9
+    e["price_change_locked_until"] = "2026-08-28T01:30:00Z" if i % 11 == 0 else None
+    e["price_change_calibrating"] = i % 13 == 0
     return e
 
 
-def make_bootstrap(completed_gws=0):
+def fixture_positions(fixtures):
+    """
+    The league table the synthetic fixtures imply, ranked the way build_fpl ranks.
+
+    The fixture used to hand every club an arbitrary position, which was harmless
+    while nothing read it and became a permanent false alarm the moment build_fpl
+    started cross-checking its computed table against FPL's. Deriving it here
+    keeps the default suite quiet and leaves the alarm free to mean something —
+    test_derived_table_cross_check breaks it deliberately.
+    """
+    table = {}
+    for f in fixtures:
+        if not f["finished"] or f["team_h_score"] is None:
+            continue
+        hs, as_ = f["team_h_score"], f["team_a_score"]
+        for tid, gf, ga in ((f["team_h"], hs, as_), (f["team_a"], as_, hs)):
+            row = table.setdefault(tid, {"pts": 0, "gf": 0, "ga": 0})
+            row["gf"] += gf
+            row["ga"] += ga
+            row["pts"] += 3 if gf > ga else 1 if gf == ga else 0
+
+    shorts = {i + 1: s for i, s in enumerate(TEAMS)}
+    ranked = sorted(table, key=lambda t: (-table[t]["pts"],
+                                          -(table[t]["gf"] - table[t]["ga"]),
+                                          -table[t]["gf"], shorts[t]))
+    return {tid: i for i, tid in enumerate(ranked, 1)}
+
+
+def make_bootstrap(completed_gws=0, fixtures=None):
     events = []
     for gw in range(1, 39):
         done = gw <= completed_gws
@@ -111,13 +147,17 @@ def make_bootstrap(completed_gws=0):
             "most_selected": 411 if done else None,
             "chip_plays": [],
         })
+    # played/win/draw/loss/points are 0 whatever the results, because that is what
+    # the live API does — it ships those counters and never fills them in, all
+    # season. position is the one table field it does keep current.
+    positions = fixture_positions(fixtures) if fixtures else {}
     teams = [{
         "id": i + 1, "code": 100 + i, "name": f"Club {short}", "short_name": short,
         "strength": 3, "strength_overall_home": 1200, "strength_overall_away": 1180,
         "strength_attack_home": 1210, "strength_attack_away": 1190,
         "strength_defence_home": 1205, "strength_defence_away": 1170,
         "played": 0, "win": 0, "draw": 0, "loss": 0, "points": 0,
-        "position": i + 1, "form": None,
+        "position": positions.get(i + 1, 0), "form": None,
     } for i, short in enumerate(TEAMS)]
 
     return {
@@ -185,8 +225,8 @@ def make_live(gw, fixtures):
 
 def load_api(completed_gws=0):
     RESPONSES.clear()
-    RESPONSES["/bootstrap-static/"] = make_bootstrap(completed_gws)
     fixtures = make_fixtures(completed_gws)
+    RESPONSES["/bootstrap-static/"] = make_bootstrap(completed_gws, fixtures)
     RESPONSES["/fixtures/"] = fixtures
     for gw in range(1, completed_gws + 1):
         RESPONSES[f"/event/{gw}/live/"] = make_live(gw, fixtures)
@@ -570,10 +610,14 @@ def test_new_defensive_and_fixture_stats():
     check("the original 14 columns are still leftmost and in order",
           cols[:14] == ["id", "name", "team", "pos", "price", "own", "pts", "ppg",
                         "mins", "g", "a", "cs", "bonus", "st"])
-    check("the five new columns are at the right-hand end",
-          cols[-5:] == ["clearances_blocks_interceptions", "tackles", "recoveries",
-                        "expected_goal_involvements_per_90", "goals_conceded"],
-          str(cols[-5:]))
+    check("the five new columns sit together, ahead of the price-change block",
+          cols[-9:-4] == ["clearances_blocks_interceptions", "tackles", "recoveries",
+                          "expected_goal_involvements_per_90", "goals_conceded"],
+          str(cols[-9:]))
+    check("the price-change block is at the right-hand end",
+          cols[-4:] == ["price_change_projections", "price_change_hourly_rate",
+                        "price_change_locked_until", "price_change_calibrating"],
+          str(cols[-4:]))
 
     fs = read_csv_like_a_consumer("data/fixture_stats.csv")
     check("fixture_stats.csv has the specified columns",
@@ -1018,6 +1062,318 @@ def test_no_secrets():
     check("no credentials or session tokens in the tree", not bad, str(bad))
 
 
+def test_value_level_drift_guard():
+    """
+    The gap that let an unusable teams.csv out of the door reporting no warnings.
+
+    check_fields only ever asked whether a key was present. FPL kept sending the
+    strength breakdown and the league-table counters and stopped putting anything
+    in them, so every key was present, the guard stayed silent, and the file
+    published seven columns of zeros and blanks that a reader could not tell
+    apart from real results.
+    """
+    print("\n[13] the drift guard notices a field that is present but empty")
+    scratch()
+    load_api(completed_gws=1)
+    boot = RESPONSES["/bootstrap-static/"]
+    for t in boot["teams"]:
+        t["strength"] = None                # sent, never populated
+        t["strength_attack_home"] = 0       # sent, always zero
+        t["strength_attack_away"] = 0
+    run(build_fpl)
+
+    meta = json.loads(pathlib.Path("data/meta.json").read_text())
+    joined = " ".join(meta["warnings"])
+    check("an all-empty field is reported as empty",
+          "empty on all" in joined and "strength" in joined, joined)
+    check("an all-zero field is reported separately from an all-empty one",
+          "zero on all" in joined and "strength_attack_home" in joined, joined)
+    check("FPL's dead league-table counters are named",
+          all(f in joined for f in ("played", "win", "draw", "loss", "points")), joined)
+    check("a field that does carry values is not reported",
+          "strength_overall_home" not in joined, joined)
+
+    # The guard must not fire on a healthy response, or it becomes noise and
+    # stops being read — which is how the original one ended up ignored.
+    scratch()
+    load_api(completed_gws=1)
+    for t in RESPONSES["/bootstrap-static/"]["teams"]:
+        t["played"], t["win"], t["points"] = 1, 1, 3
+        t["draw"], t["loss"] = 1, 1
+    run(build_fpl)
+    meta = json.loads(pathlib.Path("data/meta.json").read_text())
+    joined = " ".join(meta["warnings"])
+    check("a fully populated teams response raises no value warnings",
+          "empty on all" not in joined and "zero on all" not in joined, joined)
+
+
+def test_derived_league_table():
+    """teams.csv has to be usable even though FPL's own table columns are zeros."""
+    print("\n[14] teams.csv carries a league table computed from results")
+    scratch()
+    load_api(completed_gws=3)
+    run(build_fpl)
+
+    teams = read_csv_like_a_consumer("data/teams.csv")
+    check("FPL's own counters are still mirrored verbatim, zeros and all",
+          all(t["played"] == "0" and t["points"] == "0" for t in teams),
+          str([t["played"] for t in teams][:3]))
+    check("derived_played reflects the fixtures actually finished",
+          all(int(t["derived_played"]) == 3 for t in teams),
+          str([t["derived_played"] for t in teams][:5]))
+    check("derived_points is consistent with derived W/D/L",
+          all(int(t["derived_points"]) == 3 * int(t["derived_win"]) + int(t["derived_draw"])
+              for t in teams))
+    check("W+D+L adds up to games played",
+          all(int(t["derived_win"]) + int(t["derived_draw"]) + int(t["derived_loss"])
+              == int(t["derived_played"]) for t in teams))
+    check("goal difference is goals for minus goals against",
+          all(int(t["derived_gd"]) == int(t["derived_gf"]) - int(t["derived_ga"])
+              for t in teams))
+    check("every club gets a unique position",
+          sorted(int(t["derived_position"]) for t in teams) == list(range(1, 21)))
+    check("derived_form is at most the last five results",
+          all(len(t["derived_form"]) == 3 and set(t["derived_form"]) <= set("WDL")
+              for t in teams),
+          str([t["derived_form"] for t in teams][:3]))
+    check("the derived columns are at the right-hand end",
+          list(teams[0])[-10:] == build_fpl.DERIVED_TEAM_COLS, str(list(teams[0])[-10:]))
+    check("the header no longer claims the table fills in once the season starts",
+          "until the season starts"
+          not in pathlib.Path("data/teams.csv").read_text())
+
+    # Nothing has been played, so there is nothing to compute and nothing to claim.
+    scratch()
+    load_api()
+    run(build_fpl)
+    teams = read_csv_like_a_consumer("data/teams.csv")
+    check("pre-season leaves the derived table at zero with no position",
+          all(t["derived_played"] == "0" and t["derived_position"] == ""
+              for t in teams))
+
+
+def test_derived_table_cross_check():
+    """
+    FPL's `position` is the one table field it keeps current, which makes it free
+    evidence that the computed table is right. Agreement is silence; disagreement
+    has to be loud, because it means either a result is missing or FPL is ranking
+    on something this does not model.
+    """
+    print("\n[15] the computed table is cross-checked against FPL's own position")
+    scratch()
+    load_api(completed_gws=2)
+    run(build_fpl)
+    meta = json.loads(pathlib.Path("data/meta.json").read_text())
+    check("a table matching FPL's position raises nothing",
+          not any("disagrees with" in w for w in meta["warnings"]),
+          " ".join(meta["warnings"]))
+
+    teams = read_csv_like_a_consumer("data/teams.csv")
+    check("and the two orderings really are identical",
+          all(t["position"] == t["derived_position"] for t in teams))
+
+    scratch()
+    load_api(completed_gws=2)
+    boot = RESPONSES["/bootstrap-static/"]
+    boot["teams"][0]["position"], boot["teams"][1]["position"] = (
+        boot["teams"][1]["position"], boot["teams"][0]["position"])
+    run(build_fpl)
+    meta = json.loads(pathlib.Path("data/meta.json").read_text())
+    check("a disagreement is raised as a warning",
+          any("disagrees with" in w for w in meta["warnings"]),
+          " ".join(meta["warnings"]))
+    check("the warning names the clubs that disagree",
+          any(boot["teams"][0]["short_name"] in w
+              for w in meta["warnings"] if "disagrees with" in w))
+
+
+def test_price_change_fields():
+    """The four fields the drift guard had been naming every hour since day one."""
+    print("\n[16] FPL's price-change block is mirrored")
+    scratch()
+    load_api()
+    run(build_fpl)
+
+    rows = read_csv_like_a_consumer("data/players.csv")
+    for col in ["price_change_projections", "price_change_hourly_rate",
+                "price_change_locked_until", "price_change_calibrating"]:
+        check(f"players.csv carries {col}", col in rows[0])
+
+    meta = json.loads(pathlib.Path("data/meta.json").read_text())
+    joined = " ".join(meta["warnings"])
+    check("and the drift guard stops reporting them as unmirrored",
+          "not mirrored" not in joined or "price_change_projections" not in joined,
+          joined)
+
+    by_id = {r["id"]: r for r in rows}
+    check("a scalar projection is written through unchanged",
+          by_id["7"]["price_change_projections"] == "0.70",
+          by_id["7"]["price_change_projections"])
+    check("a null lock timestamp is an empty cell, not the string None",
+          by_id["7"]["price_change_locked_until"] == "",
+          by_id["7"]["price_change_locked_until"])
+    check("a populated lock timestamp survives",
+          by_id["11"]["price_change_locked_until"] == "2026-08-28T01:30:00Z",
+          by_id["11"]["price_change_locked_until"])
+
+
+def test_price_change_projections_shape():
+    """
+    price_change_projections was mirrored without anyone having seen it, so the
+    one thing it must not do is produce a column of debris if it turns out to be
+    a container. A naive join would strip the commas out of a dict and leave
+    something that still looks populated.
+    """
+    print("\n[17] a non-scalar price field is flattened and reported, not mangled")
+    scratch()
+    load_api()
+    for e in RESPONSES["/bootstrap-static/"]["elements"]:
+        e["price_change_projections"] = {"rise": 0.82, "fall": 0.01}
+    run(build_fpl)
+
+    text = pathlib.Path("data/players.csv").read_text()
+    rows = read_csv_like_a_consumer("data/players.csv")
+    check("every row still has the right number of columns",
+          all(len(r) == len(build_fpl.PLAYER_COLS) and None not in r for r in rows))
+    check("the container is flattened to a comma-free cell",
+          rows[0]["price_change_projections"] == "rise=0.82;fall=0.01",
+          rows[0]["price_change_projections"])
+    check("no stray brace survives into the CSV", "{" not in text and "}" not in text)
+
+    meta = json.loads(pathlib.Path("data/meta.json").read_text())
+    joined = " ".join(meta["warnings"])
+    check("the real shape is reported so it can be mirrored properly",
+          "price_change_projections arrived as a dict" in joined, joined)
+    check("and a sample of it is included", "rise" in joined, joined)
+
+    # A list of objects is the other plausible shape.
+    scratch()
+    load_api()
+    for e in RESPONSES["/bootstrap-static/"]["elements"]:
+        e["price_change_projections"] = [{"event": 2, "change": 1},
+                                         {"event": 3, "change": -1}]
+    run(build_fpl)
+    rows = read_csv_like_a_consumer("data/players.csv")
+    check("a list of objects flattens without breaking the row",
+          rows[0]["price_change_projections"] == "event=2;change=1|event=3;change=-1",
+          rows[0]["price_change_projections"])
+
+
+def test_odds_freshness():
+    """
+    Two separate failures, both of which let 18-hour-old odds through as fine.
+
+    The generic stale flag sat at twice a 12-hour interval, so it could not fire
+    inside a day; and meta.json's freshness block was only ever written by the
+    FPL workflow, so an odds pull that ran on its own schedule did not update it.
+    """
+    print("\n[18] odds age is visible without opening odds.csv")
+    scratch()
+    load_api()
+    run(build_fpl)
+
+    deadline = json.loads(pathlib.Path("data/meta.json").read_text())["next_deadline"]
+    near = fpl_common.parse_iso(deadline) - datetime.timedelta(hours=24)
+
+    def set_odds_age(hours):
+        status = json.loads(pathlib.Path("data/build_status.json").read_text())
+        status["build_odds"] = {
+            "last_run_at": (near - datetime.timedelta(hours=hours)).isoformat(),
+            "expected_interval_minutes": build_odds.ODDS_INTERVAL_MINUTES,
+            "warnings": [], "rows": 10,
+        }
+        pathlib.Path("data/build_status.json").write_text(json.dumps(status))
+
+    real_now = build_fpl.datetime
+    class FrozenNow(real_now):
+        @classmethod
+        def now(cls, tz=None):
+            return near
+    build_fpl.datetime = FrozenNow
+    try:
+        set_odds_age(6)
+        run(build_fpl)
+        meta = json.loads(pathlib.Path("data/meta.json").read_text())
+        check("odds well inside the window are not complained about",
+              not any("odds.csv is" in w for w in meta["warnings"]),
+              " ".join(meta["warnings"]))
+
+        set_odds_age(18)
+        run(build_fpl)
+        meta = json.loads(pathlib.Path("data/meta.json").read_text())
+        check("18-hour-old odds near a deadline are warned about",
+              any("odds.csv is" in w for w in meta["warnings"]),
+              " ".join(meta["warnings"]))
+        check("the warning says how old and how far off the deadline is",
+              any("18h old" in w and "24h away" in w for w in meta["warnings"]),
+              " ".join(meta["warnings"]))
+    finally:
+        build_fpl.datetime = real_now
+
+    check("the stale threshold for odds is 12 hours, not 24",
+          build_odds.ODDS_INTERVAL_MINUTES * 2 == 720,
+          str(build_odds.ODDS_INTERVAL_MINUTES))
+
+
+def test_odds_run_refreshes_meta():
+    """An odds-only run must not leave meta.json quoting the previous pull."""
+    print("\n[19] an odds run updates meta.json's freshness block")
+    scratch()
+    load_api()
+    run(build_fpl)
+
+    before = json.loads(pathlib.Path("data/meta.json").read_text())
+    check("meta.json starts with no odds component", "build_odds" not in before["components"])
+
+    # What build_odds does on a successful pull, without the network.
+    fpl_common.record_status("build_odds",
+                             expected_interval_minutes=build_odds.ODDS_INTERVAL_MINUTES,
+                             warnings=["unmatched club name: Some FC"], rows=10)
+    check("refresh reports that it wrote", fpl_common.refresh_meta_components() is True)
+
+    after = json.loads(pathlib.Path("data/meta.json").read_text())
+    check("the odds component now appears in meta.json",
+          after["components"]["build_odds"]["last_run_at"] ==
+          json.loads(pathlib.Path("data/build_status.json").read_text())
+          ["build_odds"]["last_run_at"])
+    check("the odds job's own warnings reach meta.json warnings[]",
+          any("Some FC" in w for w in after["warnings"]), str(after["warnings"]))
+    check("build_fpl's warnings are preserved, not dropped",
+          [w for w in before["warnings"] if not w.startswith("[")]
+          == [w for w in after["warnings"] if not w.startswith("[")])
+    check("fetched_at is left alone — it belongs to the bootstrap fetch",
+          after["fetched_at"] == before["fetched_at"])
+    check("everything else in meta.json is untouched",
+          all(after[k] == before[k] for k in ("events", "element_types", "chips",
+                                              "game_settings", "season", "notes")))
+    check("and it records when the freshness block was recomputed",
+          "components_refreshed_at" in after)
+
+    # A mirror with no meta.json yet must not turn this into a failed odds run.
+    pathlib.Path("data/meta.json").unlink()
+    check("a missing meta.json is a no-op, not an error",
+          fpl_common.refresh_meta_components() is False)
+
+
+def test_odds_cron_matches_the_code():
+    """The stale threshold and the schedule have to agree, or one of them lies."""
+    print("\n[20] the odds workflow schedule matches ODDS_INTERVAL_MINUTES")
+    workflow = (ROOT / ".github/workflows/odds-mirror.yml").read_text()
+    cron = re.search(r"cron:\s*'([^']+)'", workflow)
+    check("the odds workflow has a cron", cron is not None)
+
+    hours = cron.group(1).split()[1]
+    runs = sorted(int(h) for h in hours.split(","))
+    check("it runs four times a day", len(runs) == 4, hours)
+    gaps = {(b - a) % 24 for a, b in zip(runs, runs[1:] + [runs[0] + 24])}
+    check("the gaps are even", gaps == {6}, str(gaps))
+    check("and they match the interval the stale flag is computed from",
+          build_odds.ODDS_INTERVAL_MINUTES == 6 * 60,
+          str(build_odds.ODDS_INTERVAL_MINUTES))
+    check("the odds cron never collides with the hourly FPL mirror",
+          cron.group(1).split()[0] != "0", cron.group(1))
+
+
 def main():
     here = os.getcwd()
     try:
@@ -1034,6 +1390,14 @@ def main():
         test_squad()
         test_selling_prices()
         test_selling_prices_edge_cases()
+        test_value_level_drift_guard()
+        test_derived_league_table()
+        test_derived_table_cross_check()
+        test_price_change_fields()
+        test_price_change_projections_shape()
+        test_odds_freshness()
+        test_odds_run_refreshes_meta()
+        test_odds_cron_matches_the_code()
         test_no_secrets()
     finally:
         os.chdir(here)

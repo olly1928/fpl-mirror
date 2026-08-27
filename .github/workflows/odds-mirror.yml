@@ -2,16 +2,25 @@ name: Odds mirror
 
 # Pulls bookmaker odds from The Odds API and writes data/odds.csv.
 #
-# Runs at 07:20 and 17:20 UTC — deliberately offset from the hourly FPL mirror
-# so the two jobs never try to push at the same minute.
+# Runs every six hours at :20 past — 01:20, 07:20, 13:20 and 19:20 UTC —
+# deliberately offset from the hourly FPL mirror so the two jobs never try to
+# push at the same minute.
 #
-# Cost is 2 API credits per run (2 markets x 1 region), so 4 a day.
+# It used to run twice a day, and that was not enough. GitHub's scheduler is
+# best effort: these runs landed 25 to 120 minutes late, and one was dropped
+# entirely, which on a two-a-day schedule left a 23-hour hole ending the evening
+# before a deadline. Four runs a day means a dropped one costs six hours instead
+# of twelve, and the extra pulls land close enough to a deadline to catch team
+# news. ODDS_INTERVAL_MINUTES in build_odds.py must stay in step with this cron.
+#
+# Cost is 2 API credits per run (2 markets x 1 region), so 8 a day and about 248
+# a month — inside the 500-a-month free tier with room for manual re-runs.
 # Needs the ODDS_API_KEY repository secret: gh secret set ODDS_API_KEY
 # Without it the job fails loudly rather than writing an empty file.
 
 on:
   schedule:
-    - cron: '20 7,17 * * *'
+    - cron: '20 1,7,13,19 * * *'
   workflow_dispatch:
 
 permissions:

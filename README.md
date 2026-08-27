@@ -48,14 +48,14 @@ timestamp is old, the mirror really has stopped.
 |---|---|---|
 | `data/meta.json` | Season state, gameweek list, scoring rules, chips, squad limits, freshness and warnings | hourly |
 | `data/players.csv` | Every player, season-to-date. Prices, ownership, underlying numbers, set pieces, availability | hourly |
-| `data/teams.csv` | FPL's own team strength ratings and league table | hourly |
+| `data/teams.csv` | FPL's team strength ratings, plus a league table this mirror computes from results | hourly |
 | `data/fixtures.csv` | Full season fixture list, with results once played | hourly |
 | `data/fdr.csv` | Per-team fixture difficulty over the next six gameweeks | hourly |
 | `data/fixture_stats.csv` | Per-fixture, per-player stat lines. Empty until games are played | hourly |
 | `data/squad.json` | My squad, transfers, chip usage, past seasons, mini-league standings | hourly |
 | `data/snapshots/YYYY-MM.csv` | Price / ownership / transfer / news history | hourly |
 | `data/player_history.csv` | Per-player, per-gameweek stats | once per gameweek |
-| `data/odds.csv` | Bookmaker consensus, de-vigged, with clean-sheet probabilities | twice daily |
+| `data/odds.csv` | Bookmaker consensus, de-vigged, with clean-sheet probabilities | every 6 hours |
 | `data/build_status.json` | When each builder last ran and what it complained about | every run |
 
 CSVs carry a leading `#` comment block with the season header and a `fetched=`
@@ -96,6 +96,35 @@ Every cumulative column is **season-to-date**. For per-gameweek splits use
 > `form`, `ep_this`, `ep_next`, `value_form` and `value_season` are FPL's own
 > projections. They are mirrored for reference and comparison. Do not feed them
 > to a model as inputs.
+
+### `teams.csv`
+
+Two halves, and the distinction matters.
+
+The unprefixed columns are FPL's, mirrored verbatim. Several of them carry
+nothing: `strength` comes through empty, and the attack/defence breakdowns come
+through as zeros. `strength_overall_home` and `strength_overall_away` are the
+ones with values in them. Check `meta.json` `warnings[]` — the value-level drift
+guard names every column that is empty or all-zero on the current run, so you
+never have to work out by hand which of these is real.
+
+`played`, `win`, `draw`, `loss` and `points` are the worst of it: FPL ships them
+as zero **all season**, not just pre-season, while `position` right beside them
+updates every week. A league table with a real ordering and nothing to justify it
+is worse than no table at all.
+
+So the `derived_*` columns are computed here from the finished fixtures in
+`fixtures.csv`: `derived_played`, `derived_win`, `derived_draw`, `derived_loss`,
+`derived_gf`, `derived_ga`, `derived_gd`, `derived_points`, `derived_position`
+and `derived_form` (last five results, most recent first). **Use these for the
+table.** They are computed, not mirrored, and the prefix is there so the two can
+never be confused.
+
+`derived_position` is ranked on points, goal difference, goals for, then club
+name, and is cross-checked against FPL's own `position` on every run. Agreement
+is silent; any disagreement is raised in `warnings[]` naming the clubs, because
+it means either a result is missing or FPL is ranking on something this does not
+model.
 
 ### `snapshots/YYYY-MM.csv`
 
@@ -264,7 +293,20 @@ header is refreshed, so its `fetched=` stays honest.
 **Schema drift is loud, but not noisy.** The expected field list for each
 endpoint is an explicit constant in the code. If FPL renames or drops a field, the
 column is still written — empty — *and* the discrepancy lands in `meta.json`
-`warnings[]`. A silently null column is far worse than a loud one. Fields FPL has
+`warnings[]`. A silently null column is far worse than a loud one.
+
+That check looks at whether a field is *present*, which is only half the problem.
+A field FPL keeps sending but stops populating passes it silently and lands in
+the CSV as a column of blanks or zeros indistinguishable from a real result —
+which is exactly what happened to `teams.csv`, and why it went out for weeks
+looking complete and reporting no warnings at all. So there is a second,
+value-level guard: for a curated set of fields where "identical across every
+record" is genuinely diagnostic, an all-empty or all-zero column is reported too,
+with the two cases named separately because they mean different things. It is
+pointed at a short list on purpose — plenty of fields are legitimately zero in
+August, and a guard that cries wolf every hour is one nobody reads by September.
+
+Fields FPL has
 that this mirror deliberately does not carry (derived ranks, photo URLs, internal
 flags) sit in a matching `IGNORED_*` constant, so the guard stays quiet about the
 forty already reviewed and still fires the moment something genuinely new
@@ -276,6 +318,19 @@ reads.
 `meta.json`: `stale` is true if any component has gone longer than twice its
 expected interval without running, with the culprit named in `warnings[]`. A
 partial failure therefore shows up in exactly the same place a total one does.
+The odds job runs on its own schedule rather than inside the hourly one, so it
+rewrites that freshness block itself when it finishes — otherwise a freshly
+pulled `odds.csv` would sit next to a `meta.json` still quoting the previous
+pull, and a reader doing the documented freshness check would get the wrong
+answer.
+
+**Odds age is checked against the deadline, not just the clock.** The generic
+stale flag fires at twice a component's interval, which is the wrong instrument
+for odds: they move on team news, and a line built before a Friday press
+conference is not one to transfer on. So `build_fpl` also warns whenever
+`odds.csv` is more than 12 hours old with a deadline inside 72 hours, naming both
+numbers. The odds job runs every six hours, which puts the generic stale flag at
+12 hours too.
 
 **Failures notify.** Repo-owner email on failed runs is on by default, but easy
 to miss. Both mirrors also open (or comment on) an issue labelled

@@ -19,6 +19,9 @@ Request budget
     fixture and every UK bookmaker comes back inside that single response, so
     there is never a reason to loop per fixture.
 
+    At the four-runs-a-day schedule this is 8 credits a day, about 248 a month,
+    which sits inside the 500-a-month free tier with room for manual re-runs.
+
 Both calls print x-requests-remaining and x-requests-used so the real allowance is
 visible in the Actions log.
 
@@ -41,7 +44,7 @@ import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
 
-from fpl_common import record_status
+from fpl_common import record_status, refresh_meta_components
 
 ODDS_BASE = "https://api.the-odds-api.com/v4"
 FPL_BOOTSTRAP = "https://fantasy.premierleague.com/api/bootstrap-static/"
@@ -49,6 +52,11 @@ SPORT = "soccer_epl"
 REGIONS = "uk"
 MARKETS = "h2h,totals"
 TOTALS_LINE = 2.5  # books list several lines; only 2.5 is comparable across them
+
+# Must match the workflow cron in .github/workflows/odds-mirror.yml. meta.json
+# calls a component stale at twice this, so 360 puts the odds stale flag at the
+# same 12 hours the consuming playbook treats as too old near a deadline.
+ODDS_INTERVAL_MINUTES = 360
 
 OUT = "data/odds.csv"
 COLUMNS = [
@@ -402,10 +410,22 @@ def write_csv(rows):
     os.replace(tmp, OUT)
     print(f"  wrote {OUT} ({len(rows)} rows)")
 
-    # Twice daily, so meta.json should only call this stale after 24 hours.
-    record_status("build_odds", expected_interval_minutes=720,
+    # Every six hours. staleness() fires at twice the stated interval, so this
+    # puts the stale flag at twelve hours — which is the threshold that actually
+    # matters, because odds move on team news and a line built before a Friday
+    # press conference is not one to transfer on. The previous value of 720 gave
+    # a 24-hour grace period, so an eighteen-hour-old odds.csv sailed through
+    # reporting stale=false and the only way to catch it was to read the
+    # timestamp inside the file by hand.
+    record_status("build_odds", expected_interval_minutes=ODDS_INTERVAL_MINUTES,
                   warnings=[f"unmatched club name: {n}" for n in sorted(UNMATCHED)],
                   rows=len(rows))
+
+    # This job runs on its own schedule, so between two FPL runs meta.json is the
+    # only thing a consumer reads for freshness and it would still be quoting the
+    # previous odds pull. Rewrites the components block and nothing else.
+    if refresh_meta_components():
+        print("  refreshed meta.json components/stale")
 
 
 # ------------------------------------------------------------------ main
