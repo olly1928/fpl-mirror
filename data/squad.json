@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-27T02:29:00.205323+00:00",
+  "fetched_at": "2026-08-27T11:10:50.974934+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -668,10 +668,10 @@
       "multiplier": 1,
       "is_captain": false,
       "is_vice_captain": false,
-      "status": "d",
-      "status_meaning": "doubtful",
-      "chance_of_playing_next_round": 75,
-      "news": "Knock - 75% chance of playing"
+      "status": "a",
+      "status_meaning": "available",
+      "chance_of_playing_next_round": 100,
+      "news": ""
     },
     {
       "slot": 7,
