@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-29T07:51:50.655184+00:00",
+  "fetched_at": "2026-08-29T09:49:22.260533+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,7 +8,7 @@
   "next_deadline": "2026-09-04T17:30:00Z",
   "preseason": false,
   "overall_points": 81,
-  "overall_rank": 2012334,
+  "overall_rank": 2012333,
   "bank": 0.5,
   "squad_value": 100.0,
   "squad_selling_value": 994,
@@ -513,21 +513,21 @@
         },
         {
           "rank": 4,
-          "last_rank": 1,
-          "entry": 2316299,
-          "entry_name": "Caput mensae",
-          "manager": "Huw Meredith",
-          "event_total": 13,
-          "total": 80,
-          "is_me": false
-        },
-        {
-          "rank": 4,
           "last_rank": 2,
           "entry": 5887119,
           "entry_name": "You Araujo",
           "manager": "Finn Meredith",
           "event_total": 26,
+          "total": 80,
+          "is_me": false
+        },
+        {
+          "rank": 4,
+          "last_rank": 1,
+          "entry": 2316299,
+          "entry_name": "Caput mensae",
+          "manager": "Huw Meredith",
+          "event_total": 13,
           "total": 80,
           "is_me": false
         },
