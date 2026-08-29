@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-29T21:26:50.069994+00:00",
+  "fetched_at": "2026-08-29T23:47:09.089336+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,7 +8,7 @@
   "next_deadline": "2026-09-04T17:30:00Z",
   "preseason": false,
   "overall_points": 86,
-  "overall_rank": 2928365,
+  "overall_rank": 2928363,
   "bank": 0.5,
   "squad_value": 100.0,
   "squad_selling_value": 994,
@@ -354,9 +354,9 @@
         {
           "rank": 11,
           "last_rank": 12,
-          "entry": 7359153,
-          "entry_name": "ohforgodssaka",
-          "manager": "Jack Wilkinson",
+          "entry": 2840746,
+          "entry_name": "Matthew's Team",
+          "manager": "Matthew Evans",
           "event_total": 27,
           "total": 77,
           "is_me": false
@@ -364,9 +364,9 @@
         {
           "rank": 11,
           "last_rank": 12,
-          "entry": 2840746,
-          "entry_name": "Matthew's Team",
-          "manager": "Matthew Evans",
+          "entry": 7359153,
+          "entry_name": "ohforgodssaka",
+          "manager": "Jack Wilkinson",
           "event_total": 27,
           "total": 77,
           "is_me": false
@@ -384,9 +384,9 @@
         {
           "rank": 14,
           "last_rank": 8,
-          "entry": 2387148,
-          "entry_name": "Amadness",
-          "manager": "Michal Nowak",
+          "entry": 2527602,
+          "entry_name": "Peak Roy Hodgson FC",
+          "manager": "Andrew Hayes",
           "event_total": 17,
           "total": 70,
           "is_me": false
@@ -394,9 +394,9 @@
         {
           "rank": 14,
           "last_rank": 8,
-          "entry": 2527602,
-          "entry_name": "Peak Roy Hodgson FC",
-          "manager": "Andrew Hayes",
+          "entry": 2387148,
+          "entry_name": "Amadness",
+          "manager": "Michal Nowak",
           "event_total": 17,
           "total": 70,
           "is_me": false
