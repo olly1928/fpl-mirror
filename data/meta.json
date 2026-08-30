@@ -1,11 +1,11 @@
 {
-  "fetched_at": "2026-08-30T18:19:36+00:00",
+  "fetched_at": "2026-08-30T21:46:59+00:00",
   "season": "2026/27",
   "preseason": false,
   "current_event": 2,
   "next_event": 3,
   "next_deadline": "2026-09-04T17:30:00Z",
-  "player_count": 623,
+  "player_count": 626,
   "teams_in_game": [
     "ARS",
     "AVL",
@@ -58,8 +58,8 @@
       "data_checked": false,
       "is_current": true,
       "is_next": false,
-      "average_entry_score": 29,
-      "highest_score": 104,
+      "average_entry_score": 66,
+      "highest_score": 158,
       "most_captained": 411,
       "most_selected": 165,
       "chip_plays": [
@@ -566,7 +566,7 @@
       "sub_positions_locked": [
         12
       ],
-      "element_count": 69
+      "element_count": 70
     },
     {
       "id": 2,
@@ -596,7 +596,7 @@
       "squad_max_play": 5,
       "ui_shirt_specific": false,
       "sub_positions_locked": [],
-      "element_count": 274
+      "element_count": 276
     },
     {
       "id": 4,
@@ -793,7 +793,7 @@
   "warnings": [],
   "components": {
     "build_fpl": {
-      "last_run_at": "2026-08-30T18:19:36+00:00",
+      "last_run_at": "2026-08-30T21:46:59+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
@@ -805,19 +805,19 @@
       "stale": false
     },
     "build_player_history": {
-      "last_run_at": "2026-08-30T18:19:33+00:00",
+      "last_run_at": "2026-08-30T21:46:56+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
     },
     "build_snapshots": {
-      "last_run_at": "2026-08-30T18:19:33+00:00",
+      "last_run_at": "2026-08-30T21:46:56+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
     },
     "build_squad": {
-      "last_run_at": "2026-08-30T18:19:36+00:00",
+      "last_run_at": "2026-08-30T21:46:58+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
