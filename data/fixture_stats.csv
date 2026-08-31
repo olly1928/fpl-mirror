@@ -1,4 +1,4 @@
-# season=2026/27 preseason=False next_gw=3 deadline=2026-09-04T17:30:00Z players=626 fetched=2026-08-31T07:01:33+00:00
+# season=2026/27 preseason=False next_gw=3 deadline=2026-09-04T17:30:00Z players=626 fetched=2026-08-31T14:41:41+00:00
 # One row per fixture per player per stat, flattened from fixtures[].stats.
 # team_side: h=home side, a=away side. Empty until fixtures are played.
 # Unlike the other append-only files this one is rebuilt each run, so FPL's later bonus-point and stat corrections are picked up.
@@ -1240,10 +1240,10 @@ fixture_id,gw,player_id,team_side,identifier,value
 18,2,426,h,bonus,3
 18,2,427,h,bonus,2
 18,2,428,h,bonus,1
-18,2,426,h,bps,86
-18,2,427,h,bps,41
+18,2,426,h,bps,87
+18,2,427,h,bps,37
 18,2,428,h,bps,31
-18,2,43,h,bps,29
+18,2,43,h,bps,26
 18,2,432,h,bps,25
 18,2,429,h,bps,17
 18,2,418,h,bps,13
@@ -1253,17 +1253,18 @@ fixture_id,gw,player_id,team_side,identifier,value
 18,2,439,h,bps,5
 18,2,415,h,bps,4
 18,2,162,h,bps,2
+18,2,419,h,bps,2
 18,2,422,h,bps,-1
 18,2,420,h,bps,-2
 18,2,320,a,bps,30
 18,2,315,a,bps,25
-18,2,591,a,bps,24
+18,2,591,a,bps,25
 18,2,267,a,bps,11
 18,2,619,a,bps,11
-18,2,562,a,bps,9
+18,2,562,a,bps,10
 18,2,564,a,bps,9
+18,2,259,a,bps,7
 18,2,316,a,bps,7
-18,2,259,a,bps,6
 18,2,309,a,bps,6
 18,2,323,a,bps,3
 18,2,305,a,bps,1
@@ -1271,29 +1272,29 @@ fixture_id,gw,player_id,team_side,identifier,value
 18,2,592,a,bps,-1
 18,2,306,a,bps,-13
 18,2,304,a,bps,-14
-18,2,432,h,defensive_contribution,14
-18,2,43,h,defensive_contribution,12
+18,2,432,h,defensive_contribution,15
+18,2,43,h,defensive_contribution,13
 18,2,423,h,defensive_contribution,8
-18,2,426,h,defensive_contribution,7
-18,2,427,h,defensive_contribution,6
+18,2,426,h,defensive_contribution,8
 18,2,429,h,defensive_contribution,6
 18,2,162,h,defensive_contribution,5
 18,2,418,h,defensive_contribution,5
-18,2,417,h,defensive_contribution,3
+18,2,427,h,defensive_contribution,5
+18,2,417,h,defensive_contribution,4
 18,2,439,h,defensive_contribution,3
 18,2,415,h,defensive_contribution,2
 18,2,420,h,defensive_contribution,2
 18,2,428,h,defensive_contribution,2
-18,2,259,a,defensive_contribution,11
+18,2,259,a,defensive_contribution,12
 18,2,267,a,defensive_contribution,11
 18,2,306,a,defensive_contribution,10
 18,2,309,a,defensive_contribution,9
 18,2,591,a,defensive_contribution,8
 18,2,619,a,defensive_contribution,6
+18,2,562,a,defensive_contribution,5
 18,2,305,a,defensive_contribution,4
 18,2,315,a,defensive_contribution,4
-18,2,562,a,defensive_contribution,4
-18,2,308,a,defensive_contribution,2
+18,2,308,a,defensive_contribution,3
 18,2,304,a,defensive_contribution,1
 18,2,316,a,defensive_contribution,1
 18,2,323,a,defensive_contribution,1
