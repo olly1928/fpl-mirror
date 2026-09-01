@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-01T00:16:22.670901+00:00",
+  "fetched_at": "2026-09-01T05:56:05.959387+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,7 +8,7 @@
   "next_deadline": "2026-09-04T17:30:00Z",
   "preseason": false,
   "overall_points": 126,
-  "overall_rank": 4981130,
+  "overall_rank": 5027084,
   "bank": 0.5,
   "squad_value": 100.0,
   "squad_selling_value": 994,
@@ -237,8 +237,8 @@
           "entry": 6758481,
           "entry_name": "chilli con Cairney",
           "manager": "Joe Raven",
-          "event_total": 77,
-          "total": 107,
+          "event_total": 79,
+          "total": 109,
           "is_me": false
         }
       ]
@@ -246,7 +246,7 @@
     {
       "id": 572297,
       "name": "Box 26/27",
-      "my_rank": 15,
+      "my_rank": 16,
       "my_last_rank": 10,
       "entries": 22,
       "standings_truncated_to": null,
@@ -263,21 +263,21 @@
         },
         {
           "rank": 2,
-          "last_rank": 10,
-          "entry": 3747240,
-          "entry_name": "VAR-a-Lago",
-          "manager": "Mike Phillips",
-          "event_total": 110,
-          "total": 162,
-          "is_me": false
-        },
-        {
-          "rank": 2,
           "last_rank": 17,
           "entry": 2940306,
           "entry_name": "SomeRandomName",
           "manager": "Ania ER",
           "event_total": 119,
+          "total": 162,
+          "is_me": false
+        },
+        {
+          "rank": 2,
+          "last_rank": 10,
+          "entry": 3747240,
+          "entry_name": "VAR-a-Lago",
+          "manager": "Mike Phillips",
+          "event_total": 110,
           "total": 162,
           "is_me": false
         },
@@ -293,22 +293,22 @@
         },
         {
           "rank": 5,
+          "last_rank": 12,
+          "entry": 2840746,
+          "entry_name": "Matthew's Team",
+          "manager": "Matthew Evans",
+          "event_total": 109,
+          "total": 159,
+          "is_me": false
+        },
+        {
+          "rank": 5,
           "last_rank": 2,
           "entry": 3820692,
           "entry_name": "somgorsi",
           "manager": "Hubert Kaźmierczak",
           "event_total": 93,
           "total": 159,
-          "is_me": false
-        },
-        {
-          "rank": 6,
-          "last_rank": 12,
-          "entry": 2840746,
-          "entry_name": "Matthew's Team",
-          "manager": "Matthew Evans",
-          "event_total": 107,
-          "total": 157,
           "is_me": false
         },
         {
@@ -393,6 +393,16 @@
         },
         {
           "rank": 15,
+          "last_rank": 20,
+          "entry": 5984664,
+          "entry_name": "Wishing4Wigan",
+          "manager": "Micajah Dudley",
+          "event_total": 88,
+          "total": 126,
+          "is_me": false
+        },
+        {
+          "rank": 16,
           "last_rank": 10,
           "entry": 790889,
           "entry_name": "Meeks Freeks",
@@ -402,7 +412,7 @@
           "is_me": true
         },
         {
-          "rank": 16,
+          "rank": 17,
           "last_rank": 3,
           "entry": 8853128,
           "entry_name": "Jesse's Team",
@@ -412,17 +422,7 @@
           "is_me": false
         },
         {
-          "rank": 17,
-          "last_rank": 20,
-          "entry": 5984664,
-          "entry_name": "Wishing4Wigan",
-          "manager": "Micajah Dudley",
-          "event_total": 86,
-          "total": 124,
-          "is_me": false
-        },
-        {
-          "rank": 17,
+          "rank": 18,
           "last_rank": 16,
           "entry": 5093062,
           "entry_name": "Saf London Fc",
@@ -437,8 +437,8 @@
           "entry": 6423433,
           "entry_name": "Real Contenders",
           "manager": "Anthony Prior",
-          "event_total": 59,
-          "total": 119,
+          "event_total": 61,
+          "total": 121,
           "is_me": false
         },
         {
@@ -597,8 +597,8 @@
           "entry": 636134,
           "entry_name": "Hobblers 2",
           "manager": "Andrew Hasler",
-          "event_total": 83,
-          "total": 122,
+          "event_total": 85,
+          "total": 124,
           "is_me": false
         },
         {
