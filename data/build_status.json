@@ -42,7 +42,7 @@
     ]
   },
   "build_odds": {
-    "last_run_at": "2026-09-01T06:17:26+00:00",
+    "last_run_at": "2026-09-01T12:37:26+00:00",
     "expected_interval_minutes": 360,
     "warnings": [],
     "rows": 20
