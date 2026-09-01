@@ -1,26 +1,26 @@
-# season=2026/27 preseason=False next_gw=3 deadline=2026-09-04T17:30:00Z players=626 fetched=2026-09-01T06:14:00+00:00
+# season=2026/27 preseason=False next_gw=3 deadline=2026-09-04T17:30:00Z players=626 fetched=2026-09-01T10:58:14+00:00
 # FPL's own team strength ratings, then a league table this mirror computes.
 # EXPECTED, NOT A FAULT: 10 of FPL's columns are always empty or zero and always have been — draw, loss, played, points, strength, strength_attack_away, strength_attack_home, strength_defence_away, strength_defence_home, win. This is upstream, it is not changing, and it does not need reporting. See known_empty in meta.json.
 # USE INSTEAD: strength_overall_home/strength_overall_away for the ratings, and the derived_* columns for the table. Both are populated.
-# derived_* are computed here from the 10 finished fixture(s) in fixtures.csv, NOT mirrored. derived_form is the last five results, most recent first. FPL's 'position' is live and does update; its other table columns do not.
+# derived_* are computed here from the 20 finished fixture(s) in fixtures.csv, NOT mirrored. derived_form is the last five results, most recent first. FPL's 'position' is live and does update; its other table columns do not.
 id,code,name,short_name,strength,strength_overall_home,strength_overall_away,strength_attack_home,strength_attack_away,strength_defence_home,strength_defence_away,played,win,draw,loss,points,position,form,derived_played,derived_win,derived_draw,derived_loss,derived_gf,derived_ga,derived_gd,derived_points,derived_position,derived_form
-1,3,Arsenal,ARS,,4,5,0,0,0,0,0,0,0,0,0,2,,1,1,0,0,3,0,3,3,2,W
-2,7,Aston Villa,AVL,,3,4,0,0,0,0,0,0,0,0,0,20,,1,0,0,1,0,4,-4,0,20,L
-5,36,Brighton,BHA,,2,3,0,0,0,0,0,0,0,0,0,1,,1,1,0,0,4,0,4,3,1,W
-3,91,Bournemouth,BOU,,3,3,0,0,0,0,0,0,0,0,0,13,,1,0,0,1,1,2,-1,0,13,L
-4,94,Brentford,BRE,,3,3,0,0,0,0,0,0,0,0,0,3,,1,1,0,0,3,0,3,3,3,W
-6,8,Chelsea,CHE,,4,4,0,0,0,0,0,0,0,0,0,6,,1,1,0,0,3,2,1,3,6,W
-7,9,Coventry City,COV,,2,2,0,0,0,0,0,0,0,0,0,18,,1,0,0,1,0,3,-3,0,18,L
-8,31,Crystal Palace,CRY,,3,3,0,0,0,0,0,0,0,0,0,16,,1,0,0,1,0,2,-2,0,16,L
-9,11,Everton,EVE,,3,3,0,0,0,0,0,0,0,0,0,4,,1,1,0,0,2,0,2,3,4,W
-10,54,Fulham,FUL,,2,3,0,0,0,0,0,0,0,0,0,12,,1,0,0,1,2,3,-1,0,12,L
-11,88,Hull City,HUL,,2,2,0,0,0,0,0,0,0,0,0,5,,1,1,0,0,2,0,2,3,5,W
-12,40,Ipswich Town,IPS,,2,2,0,0,0,0,0,0,0,0,0,7,,1,1,0,0,2,1,1,3,7,W
-13,2,Leeds,LEE,,2,3,0,0,0,0,0,0,0,0,0,9,,1,1,0,0,1,0,1,3,9,W
-14,14,Liverpool,LIV,,4,4,0,0,0,0,0,0,0,0,0,10,,1,0,1,0,2,2,0,1,10,D
-15,43,Man City,MCI,,4,5,0,0,0,0,0,0,0,0,0,8,,1,1,0,0,2,1,1,3,8,W
-16,1,Man Utd,MUN,,4,4,0,0,0,0,0,0,0,0,0,17,,1,0,0,1,0,2,-2,0,17,L
-17,4,Newcastle,NEW,,2,3,0,0,0,0,0,0,0,0,0,11,,1,0,1,0,2,2,0,1,11,D
-18,17,Nott'm Forest,NFO,,3,3,0,0,0,0,0,0,0,0,0,15,,1,0,0,1,0,1,-1,0,15,L
-20,56,Sunderland,SUN,,2,3,0,0,0,0,0,0,0,0,0,14,,1,0,0,1,1,2,-1,0,14,L
-19,6,Spurs,TOT,,3,3,0,0,0,0,0,0,0,0,0,19,,1,0,0,1,0,3,-3,0,19,L
+1,3,Arsenal,ARS,,4,5,0,0,0,0,0,0,0,0,0,2,,2,2,0,0,4,0,4,6,2,WW
+2,7,Aston Villa,AVL,,3,4,0,0,0,0,0,0,0,0,0,19,,2,0,0,2,0,5,-5,0,19,LL
+5,36,Brighton,BHA,,2,3,0,0,0,0,0,0,0,0,0,9,,2,1,0,1,7,4,3,3,9,LW
+3,91,Bournemouth,BOU,,3,3,0,0,0,0,0,0,0,0,0,14,,2,0,1,1,2,3,-1,1,14,DL
+4,94,Brentford,BRE,,3,3,0,0,0,0,0,0,0,0,0,5,,2,1,1,0,4,1,3,4,5,DW
+6,8,Chelsea,CHE,,4,4,0,0,0,0,0,0,0,0,0,4,,2,2,0,0,7,5,2,6,4,WW
+7,9,Coventry City,COV,,2,2,0,0,0,0,0,0,0,0,0,17,,2,0,0,2,0,4,-4,0,17,LL
+8,31,Crystal Palace,CRY,,3,3,0,0,0,0,0,0,0,0,0,18,,2,0,0,2,1,6,-5,0,18,LL
+9,11,Everton,EVE,,3,3,0,0,0,0,0,0,0,0,0,7,,2,1,1,0,3,1,2,4,7,DW
+10,54,Fulham,FUL,,2,3,0,0,0,0,0,0,0,0,0,16,,2,0,0,2,2,4,-2,0,16,LL
+11,88,Hull City,HUL,,2,2,0,0,0,0,0,0,0,0,0,3,,2,2,0,0,3,0,3,6,3,WW
+12,40,Ipswich Town,IPS,,2,2,0,0,0,0,0,0,0,0,0,12,,2,1,0,1,4,6,-2,3,12,LW
+13,2,Leeds,LEE,,2,3,0,0,0,0,0,0,0,0,0,8,,2,1,1,0,2,1,1,4,8,DW
+14,14,Liverpool,LIV,,4,4,0,0,0,0,0,0,0,0,0,13,,2,0,2,0,4,4,0,2,13,DD
+15,43,Man City,MCI,,4,5,0,0,0,0,0,0,0,0,0,1,,2,2,0,0,6,2,4,6,1,WW
+16,1,Man Utd,MUN,,4,4,0,0,0,0,0,0,0,0,0,10,,2,1,0,1,5,4,1,3,10,WL
+17,4,Newcastle,NEW,,2,3,0,0,0,0,0,0,0,0,0,6,,2,1,1,0,4,2,2,4,6,WD
+18,17,Nott'm Forest,NFO,,3,3,0,0,0,0,0,0,0,0,0,15,,2,0,1,1,2,3,-1,1,15,DL
+20,56,Sunderland,SUN,,2,3,0,0,0,0,0,0,0,0,0,11,,2,1,0,1,2,2,0,3,11,WL
+19,6,Spurs,TOT,,3,3,0,0,0,0,0,0,0,0,0,20,,2,0,0,2,0,5,-5,0,20,LL
