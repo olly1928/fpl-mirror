@@ -1,11 +1,11 @@
 {
-  "fetched_at": "2026-09-01T10:58:14+00:00",
+  "fetched_at": "2026-09-01T15:24:01+00:00",
   "season": "2026/27",
   "preseason": false,
   "current_event": 2,
   "next_event": 3,
   "next_deadline": "2026-09-04T17:30:00Z",
-  "player_count": 626,
+  "player_count": 629,
   "teams_in_game": [
     "ARS",
     "AVL",
@@ -54,8 +54,8 @@
     {
       "id": 2,
       "deadline_time": "2026-08-28T17:30:00Z",
-      "finished": false,
-      "data_checked": false,
+      "finished": true,
+      "data_checked": true,
       "is_current": true,
       "is_next": false,
       "average_entry_score": 81,
@@ -566,7 +566,7 @@
       "sub_positions_locked": [
         12
       ],
-      "element_count": 70
+      "element_count": 71
     },
     {
       "id": 2,
@@ -596,7 +596,7 @@
       "squad_max_play": 5,
       "ui_shirt_specific": false,
       "sub_positions_locked": [],
-      "element_count": 276
+      "element_count": 278
     },
     {
       "id": 4,
@@ -790,10 +790,13 @@
     "timezone": "UTC"
   },
   "stale": false,
-  "warnings": [],
+  "warnings": [
+    "[build_player_history] 1 fixture(s) could not be resolved to an opponent — most likely players who changed club mid-season, since bootstrap only reports their current one. opponent_team/was_home are blank for those.",
+    "[build_player_history] event/2/live.stats: 2 new field(s) present in the API and not mirrored: in_dreamteam, played"
+  ],
   "components": {
     "build_fpl": {
-      "last_run_at": "2026-09-01T10:58:14+00:00",
+      "last_run_at": "2026-09-01T15:24:01+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
@@ -805,19 +808,19 @@
       "stale": false
     },
     "build_player_history": {
-      "last_run_at": "2026-09-01T10:58:10+00:00",
+      "last_run_at": "2026-09-01T15:23:57+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
     },
     "build_snapshots": {
-      "last_run_at": "2026-09-01T10:58:10+00:00",
+      "last_run_at": "2026-09-01T15:23:56+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
     },
     "build_squad": {
-      "last_run_at": "2026-09-01T10:58:14+00:00",
+      "last_run_at": "2026-09-01T15:24:01+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
@@ -858,6 +861,5 @@
     "teams.csv: columns named derived_* are computed by this mirror from the finished fixtures in fixtures.csv. Everything else in that file is mirrored verbatim from FPL. Use derived_played/win/draw/loss/points for the league table — FPL sends its own copies of those as zero all season long. FPL's 'position' is the exception and is live; the derived table is cross-checked against it every run and warns here on disagreement.",
     "stale is true when any component has gone longer than twice its expected refresh interval without running. Check components{} for which one.",
     "CACHE CHECK: every CSV in this mirror carries 'fetched=<timestamp>' in its first comment line, and it is always identical to this file's fetched_at within a single build. If they disagree, one of the two was served from a cache rather than being genuinely out of date — raw.githubusercontent.com caches per-path, so meta.json can lag while players.csv is current. Refetch with a cache-busting query string before concluding the mirror is stale."
-  ],
-  "components_refreshed_at": "2026-09-01T12:37:26+00:00"
+  ]
 }

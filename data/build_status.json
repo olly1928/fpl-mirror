@@ -1,25 +1,29 @@
 {
   "build_snapshots": {
-    "last_run_at": "2026-09-01T10:58:10+00:00",
+    "last_run_at": "2026-09-01T15:23:56+00:00",
     "expected_interval_minutes": 60,
     "warnings": [],
-    "last_snapshot_at": "2026-09-01T10:58:10+00:00",
+    "last_snapshot_at": "2026-09-01T15:23:56+00:00",
     "last_baseline_date": "2026-09-01",
-    "last_rows_written": 623,
+    "last_rows_written": 628,
     "current_file": "data/snapshots/2026-09.csv",
     "mode": "delta"
   },
   "build_player_history": {
-    "last_run_at": "2026-09-01T10:58:10+00:00",
+    "last_run_at": "2026-09-01T15:23:57+00:00",
     "expected_interval_minutes": 60,
-    "warnings": [],
-    "captured_gameweeks": [
-      1
+    "warnings": [
+      "1 fixture(s) could not be resolved to an opponent — most likely players who changed club mid-season, since bootstrap only reports their current one. opponent_team/was_home are blank for those.",
+      "event/2/live.stats: 2 new field(s) present in the API and not mirrored: in_dreamteam, played"
     ],
-    "last_rows_written": 0
+    "captured_gameweeks": [
+      1,
+      2
+    ],
+    "last_rows_written": 626
   },
   "build_squad": {
-    "last_run_at": "2026-09-01T10:58:14+00:00",
+    "last_run_at": "2026-09-01T15:24:01+00:00",
     "expected_interval_minutes": 60,
     "warnings": [],
     "picks": 15,
@@ -29,7 +33,7 @@
     "selling_prices_confidence": "derived"
   },
   "build_fpl": {
-    "last_run_at": "2026-09-01T10:58:14+00:00",
+    "last_run_at": "2026-09-01T15:24:01+00:00",
     "expected_interval_minutes": 60,
     "warnings": [],
     "files": [

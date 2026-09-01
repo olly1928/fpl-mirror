@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-01T10:58:11.959142+00:00",
+  "fetched_at": "2026-09-01T15:23:58.336141+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,7 +8,7 @@
   "next_deadline": "2026-09-04T17:30:00Z",
   "preseason": false,
   "overall_points": 128,
-  "overall_rank": 4960320,
+  "overall_rank": 4961780,
   "bank": 0.5,
   "squad_value": 100.0,
   "squad_selling_value": 994,
@@ -155,7 +155,7 @@
           "rank": 4,
           "last_rank": 6,
           "entry": 7267539,
-          "entry_name": "Pending Moderation",
+          "entry_name": "Chilli Con Cairney",
           "manager": "Paddy Hagger",
           "event_total": 96,
           "total": 137,
@@ -293,21 +293,21 @@
         },
         {
           "rank": 5,
-          "last_rank": 2,
-          "entry": 3820692,
-          "entry_name": "somgorsi",
-          "manager": "Hubert Kaźmierczak",
-          "event_total": 93,
-          "total": 159,
-          "is_me": false
-        },
-        {
-          "rank": 5,
           "last_rank": 12,
           "entry": 2840746,
           "entry_name": "Matthew's Team",
           "manager": "Matthew Evans",
           "event_total": 109,
+          "total": 159,
+          "is_me": false
+        },
+        {
+          "rank": 5,
+          "last_rank": 2,
+          "entry": 3820692,
+          "entry_name": "somgorsi",
+          "manager": "Hubert Kaźmierczak",
+          "event_total": 93,
           "total": 159,
           "is_me": false
         },
