@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-01T22:15:37.854739+00:00",
+  "fetched_at": "2026-09-02T00:43:49.065358+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -780,7 +780,7 @@
       "full_name": "João Pedro Junqueira de Jesus",
       "team": "CHE",
       "pos": "FWD",
-      "now_cost": 7.6,
+      "now_cost": 7.7,
       "multiplier": 1,
       "is_captain": false,
       "is_vice_captain": true,
@@ -831,7 +831,7 @@
       "full_name": "Marcos Senesi Barón",
       "team": "TOT",
       "pos": "DEF",
-      "now_cost": 6.0,
+      "now_cost": 5.9,
       "multiplier": 0,
       "is_captain": false,
       "is_vice_captain": false,
@@ -951,9 +951,9 @@
       "suspect": false
     },
     "165": {
-      "now_cost": 76,
+      "now_cost": 77,
       "purchase": 75,
-      "selling": 75,
+      "selling": 76,
       "source": "initial_squad",
       "bought_event": null,
       "suspect": false
@@ -975,9 +975,9 @@
       "suspect": false
     },
     "498": {
-      "now_cost": 60,
+      "now_cost": 59,
       "purchase": 60,
-      "selling": 60,
+      "selling": 59,
       "source": "initial_squad",
       "bought_event": null,
       "suspect": false
