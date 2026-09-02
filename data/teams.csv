@@ -1,4 +1,4 @@
-# season=2026/27 preseason=False next_gw=3 deadline=2026-09-04T17:30:00Z players=629 fetched=2026-09-02T00:43:51+00:00
+# season=2026/27 preseason=False next_gw=3 deadline=2026-09-04T17:30:00Z players=629 fetched=2026-09-02T05:18:38+00:00
 # FPL's own team strength ratings, then a league table this mirror computes.
 # EXPECTED, NOT A FAULT: 10 of FPL's columns are always empty or zero and always have been — draw, loss, played, points, strength, strength_attack_away, strength_attack_home, strength_defence_away, strength_defence_home, win. This is upstream, it is not changing, and it does not need reporting. See known_empty in meta.json.
 # USE INSTEAD: strength_overall_home/strength_overall_away for the ratings, and the derived_* columns for the table. Both are populated.
