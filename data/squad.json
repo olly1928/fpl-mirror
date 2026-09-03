@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-03T12:25:47.139856+00:00",
+  "fetched_at": "2026-09-03T16:48:30.641105+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -155,7 +155,7 @@
           "rank": 4,
           "last_rank": 6,
           "entry": 7267539,
-          "entry_name": "Chilli Con Cairney",
+          "entry_name": "Pending Moderation",
           "manager": "Paddy Hagger",
           "event_total": 96,
           "total": 137,
@@ -263,21 +263,21 @@
         },
         {
           "rank": 2,
-          "last_rank": 17,
-          "entry": 2940306,
-          "entry_name": "SomeRandomName",
-          "manager": "Ania ER",
-          "event_total": 119,
-          "total": 162,
-          "is_me": false
-        },
-        {
-          "rank": 2,
           "last_rank": 10,
           "entry": 3747240,
           "entry_name": "VAR-a-Lago",
           "manager": "Mike Phillips",
           "event_total": 110,
+          "total": 162,
+          "is_me": false
+        },
+        {
+          "rank": 2,
+          "last_rank": 17,
+          "entry": 2940306,
+          "entry_name": "SomeRandomName",
+          "manager": "Ania ER",
+          "event_total": 119,
           "total": 162,
           "is_me": false
         },
