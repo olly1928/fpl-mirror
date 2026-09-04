@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-04T10:17:14.541293+00:00",
+  "fetched_at": "2026-09-04T14:40:00.429522+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,7 +8,7 @@
   "next_deadline": "2026-09-04T17:30:00Z",
   "preseason": false,
   "overall_points": 128,
-  "overall_rank": 4961475,
+  "overall_rank": 4961780,
   "bank": 0.5,
   "squad_value": 100.0,
   "squad_selling_value": 994,
@@ -573,21 +573,21 @@
         },
         {
           "rank": 2,
-          "last_rank": 4,
-          "entry": 6418014,
-          "entry_name": "Murrays Marauders FC",
-          "manager": "Ross Murray",
-          "event_total": 87,
-          "total": 129,
-          "is_me": false
-        },
-        {
-          "rank": 2,
           "last_rank": 5,
           "entry": 636134,
           "entry_name": "Hobblers 2",
           "manager": "Andrew Hasler",
           "event_total": 90,
+          "total": 129,
+          "is_me": false
+        },
+        {
+          "rank": 2,
+          "last_rank": 4,
+          "entry": 6418014,
+          "entry_name": "Murrays Marauders FC",
+          "manager": "Ross Murray",
+          "event_total": 87,
           "total": 129,
           "is_me": false
         },
