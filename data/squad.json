@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-04T05:18:21.949774+00:00",
+  "fetched_at": "2026-09-04T05:52:27.663014+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -263,21 +263,21 @@
         },
         {
           "rank": 2,
-          "last_rank": 10,
-          "entry": 3747240,
-          "entry_name": "VAR-a-Lago",
-          "manager": "Mike Phillips",
-          "event_total": 110,
-          "total": 162,
-          "is_me": false
-        },
-        {
-          "rank": 2,
           "last_rank": 17,
           "entry": 2940306,
           "entry_name": "SomeRandomName",
           "manager": "Ania ER",
           "event_total": 119,
+          "total": 162,
+          "is_me": false
+        },
+        {
+          "rank": 2,
+          "last_rank": 10,
+          "entry": 3747240,
+          "entry_name": "VAR-a-Lago",
+          "manager": "Mike Phillips",
+          "event_total": 110,
           "total": 162,
           "is_me": false
         },
@@ -293,21 +293,21 @@
         },
         {
           "rank": 5,
-          "last_rank": 2,
-          "entry": 3820692,
-          "entry_name": "somgorsi",
-          "manager": "Hubert Kaźmierczak",
-          "event_total": 93,
-          "total": 159,
-          "is_me": false
-        },
-        {
-          "rank": 5,
           "last_rank": 12,
           "entry": 2840746,
           "entry_name": "Matthew's Team",
           "manager": "Matthew Evans",
           "event_total": 109,
+          "total": 159,
+          "is_me": false
+        },
+        {
+          "rank": 5,
+          "last_rank": 2,
+          "entry": 3820692,
+          "entry_name": "somgorsi",
+          "manager": "Hubert Kaźmierczak",
+          "event_total": 93,
           "total": 159,
           "is_me": false
         },
@@ -573,21 +573,21 @@
         },
         {
           "rank": 2,
-          "last_rank": 5,
-          "entry": 636134,
-          "entry_name": "Hobblers 2",
-          "manager": "Andrew Hasler",
-          "event_total": 90,
-          "total": 129,
-          "is_me": false
-        },
-        {
-          "rank": 2,
           "last_rank": 4,
           "entry": 6418014,
           "entry_name": "Murrays Marauders FC",
           "manager": "Ross Murray",
           "event_total": 87,
+          "total": 129,
+          "is_me": false
+        },
+        {
+          "rank": 2,
+          "last_rank": 5,
+          "entry": 636134,
+          "entry_name": "Hobblers 2",
+          "manager": "Andrew Hasler",
+          "event_total": 90,
           "total": 129,
           "is_me": false
         },
