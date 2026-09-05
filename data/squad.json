@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-05T16:26:15.099640+00:00",
+  "fetched_at": "2026-09-05T18:42:44.161755+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,7 +8,7 @@
   "next_deadline": "2026-09-12T12:30:00Z",
   "preseason": false,
   "overall_points": 167,
-  "overall_rank": 4355473,
+  "overall_rank": 4544113,
   "bank": 1.3,
   "squad_value": 100.0,
   "squad_selling_value": 986,
@@ -174,8 +174,8 @@
           "entry": 4199979,
           "entry_name": "Cold Bridge",
           "manager": "Joy Jesuthasan",
-          "event_total": 35,
-          "total": 183,
+          "event_total": 41,
+          "total": 189,
           "is_me": false
         },
         {
@@ -204,8 +204,8 @@
           "entry": 5038162,
           "entry_name": "Quantum of Tzolis",
           "manager": "Ed Shropshire",
-          "event_total": 40,
-          "total": 160,
+          "event_total": 43,
+          "total": 163,
           "is_me": false
         },
         {
@@ -364,8 +364,18 @@
           "entry": 2328199,
           "entry_name": "Super Saiyan Sarr",
           "manager": "Michael Bird",
-          "event_total": 43,
-          "total": 182,
+          "event_total": 48,
+          "total": 187,
+          "is_me": false
+        },
+        {
+          "rank": 10,
+          "last_rank": 11,
+          "entry": 2387148,
+          "entry_name": "Amadness",
+          "manager": "Michal Nowak",
+          "event_total": 36,
+          "total": 176,
           "is_me": false
         },
         {
@@ -379,7 +389,7 @@
           "is_me": false
         },
         {
-          "rank": 11,
+          "rank": 12,
           "last_rank": 20,
           "entry": 687538,
           "entry_name": "week_foot_11",
@@ -389,17 +399,17 @@
           "is_me": false
         },
         {
-          "rank": 12,
-          "last_rank": 11,
-          "entry": 2387148,
-          "entry_name": "Amadness",
-          "manager": "Michal Nowak",
-          "event_total": 31,
-          "total": 171,
+          "rank": 13,
+          "last_rank": 7,
+          "entry": 1335880,
+          "entry_name": "The Szo Show",
+          "manager": "Chris Stern",
+          "event_total": 20,
+          "total": 173,
           "is_me": false
         },
         {
-          "rank": 13,
+          "rank": 14,
           "last_rank": 19,
           "entry": 6423433,
           "entry_name": "Real Contenders",
@@ -409,22 +419,12 @@
           "is_me": false
         },
         {
-          "rank": 14,
+          "rank": 15,
           "last_rank": 8,
           "entry": 4780428,
           "entry_name": "Viva Les Vegas",
           "manager": "James Davies",
           "event_total": 20,
-          "total": 168,
-          "is_me": false
-        },
-        {
-          "rank": 14,
-          "last_rank": 7,
-          "entry": 1335880,
-          "entry_name": "The Szo Show",
-          "manager": "Chris Stern",
-          "event_total": 15,
           "total": 168,
           "is_me": false
         },
@@ -494,8 +494,8 @@
           "entry": 9302863,
           "entry_name": "Yoro Wizard Harry",
           "manager": "Nishaad Joshi",
-          "event_total": 24,
-          "total": 96,
+          "event_total": 26,
+          "total": 98,
           "is_me": false
         }
       ]
