@@ -1,4 +1,4 @@
-# season=2026/27 preseason=False next_gw=4 deadline=2026-09-12T12:30:00Z players=653 fetched=2026-09-05T22:32:23+00:00
+# season=2026/27 preseason=False next_gw=4 deadline=2026-09-12T12:30:00Z players=653 fetched=2026-09-06T00:27:12+00:00
 # One row per fixture per player per stat, flattened from fixtures[].stats.
 # team_side: h=home side, a=away side. Empty until fixtures are played.
 # Unlike the other append-only files this one is rebuilt each run, so FPL's later bonus-point and stat corrections are picked up.
@@ -1701,11 +1701,10 @@ fixture_id,gw,player_id,team_side,identifier,value
 25,3,597,a,saves,4
 25,3,282,h,bonus,2
 25,3,597,a,bonus,3
-25,3,33,a,bonus,1
 25,3,36,a,bonus,1
 25,3,282,h,bps,30
-25,3,572,h,bps,26
-25,3,586,h,bps,24
+25,3,572,h,bps,25
+25,3,586,h,bps,22
 25,3,280,h,bps,19
 25,3,277,h,bps,18
 25,3,279,h,bps,17
@@ -1713,21 +1712,21 @@ fixture_id,gw,player_id,team_side,identifier,value
 25,3,290,h,bps,10
 25,3,589,h,bps,7
 25,3,576,h,bps,5
-25,3,295,h,bps,4
+25,3,617,h,bps,5
+25,3,642,h,bps,5
 25,3,574,h,bps,4
-25,3,642,h,bps,4
 25,3,638,h,bps,3
+25,3,295,h,bps,2
 25,3,585,h,bps,2
-25,3,617,h,bps,2
-25,3,597,a,bps,37
+25,3,597,a,bps,38
+25,3,36,a,bps,29
 25,3,33,a,bps,28
-25,3,36,a,bps,28
-25,3,37,a,bps,27
+25,3,37,a,bps,28
 25,3,32,a,bps,23
 25,3,47,a,bps,20
-25,3,46,a,bps,16
+25,3,46,a,bps,15
+25,3,51,a,bps,12
 25,3,166,a,bps,10
-25,3,51,a,bps,8
 25,3,45,a,bps,6
 25,3,160,a,bps,4
 25,3,52,a,bps,3
@@ -1736,8 +1735,8 @@ fixture_id,gw,player_id,team_side,identifier,value
 25,3,611,a,bps,3
 25,3,41,a,bps,2
 25,3,286,h,defensive_contribution,12
-25,3,589,h,defensive_contribution,11
 25,3,586,h,defensive_contribution,10
+25,3,589,h,defensive_contribution,10
 25,3,277,h,defensive_contribution,7
 25,3,279,h,defensive_contribution,6
 25,3,290,h,defensive_contribution,6
@@ -1747,6 +1746,7 @@ fixture_id,gw,player_id,team_side,identifier,value
 25,3,585,h,defensive_contribution,2
 25,3,574,h,defensive_contribution,1
 25,3,638,h,defensive_contribution,1
+25,3,642,h,defensive_contribution,1
 25,3,47,a,defensive_contribution,10
 25,3,51,a,defensive_contribution,7
 25,3,46,a,defensive_contribution,6
