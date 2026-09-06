@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-06T20:58:51+00:00",
+  "fetched_at": "2026-09-06T22:45:27+00:00",
   "season": "2026/27",
   "preseason": false,
   "current_event": 3,
@@ -810,7 +810,7 @@
   "warnings": [],
   "components": {
     "build_fpl": {
-      "last_run_at": "2026-09-06T20:58:51+00:00",
+      "last_run_at": "2026-09-06T22:45:27+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
@@ -822,19 +822,19 @@
       "stale": false
     },
     "build_player_history": {
-      "last_run_at": "2026-09-06T20:58:47+00:00",
+      "last_run_at": "2026-09-06T22:45:25+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
     },
     "build_snapshots": {
-      "last_run_at": "2026-09-06T20:58:47+00:00",
+      "last_run_at": "2026-09-06T22:45:25+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
     },
     "build_squad": {
-      "last_run_at": "2026-09-06T20:58:50+00:00",
+      "last_run_at": "2026-09-06T22:45:27+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
@@ -875,6 +875,5 @@
     "teams.csv: columns named derived_* are computed by this mirror from the finished fixtures in fixtures.csv. Everything else in that file is mirrored verbatim from FPL. Use derived_played/win/draw/loss/points for the league table — FPL sends its own copies of those as zero all season long. FPL's 'position' is the exception and is live; the derived table is cross-checked against it every run and warns here on disagreement.",
     "stale is true when any component has gone longer than twice its expected refresh interval without running. Check components{} for which one.",
     "CACHE CHECK: every CSV in this mirror carries 'fetched=<timestamp>' in its first comment line, and it is always identical to this file's fetched_at within a single build. If they disagree, one of the two was served from a cache rather than being genuinely out of date — raw.githubusercontent.com caches per-path, so meta.json can lag while players.csv is current. Refetch with a cache-busting query string before concluding the mirror is stale."
-  ],
-  "components_refreshed_at": "2026-09-06T21:26:43+00:00"
+  ]
 }
