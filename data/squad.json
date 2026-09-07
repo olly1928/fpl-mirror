@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-06T22:45:26.391008+00:00",
+  "fetched_at": "2026-09-07T00:34:34.478453+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,12 +8,12 @@
   "next_deadline": "2026-09-12T12:30:00Z",
   "preseason": false,
   "overall_points": 172,
-  "overall_rank": 5652570,
+  "overall_rank": 5652568,
   "bank": 1.3,
   "squad_value": 100.0,
-  "squad_selling_value": 986,
-  "squad_market_value": 987,
-  "available_budget": 999,
+  "squad_selling_value": 985,
+  "squad_market_value": 986,
+  "available_budget": 998,
   "notes": [
     "FREE TRANSFERS: ESTIMATE ONLY — the FPL API does not expose free transfers. Derived from transfer history assuming 1 earned per gameweek, banked to a maximum of 5, with wildcard/free-hit weeks not consuming any. Confirm on the FPL site before making transfer decisions.",
     "SELLING PRICES: DERIVED, not fetched — and they are the numbers to do transfer maths with, not 'now_cost'. Purchase price comes from one of two sources, recorded per player in selling_prices[id].source: 'transfer' means element_in_cost on the most recent non-Free-Hit transfer that brought the player in, which is literally what was paid; 'initial_squad' means the player has been held since GW1 and the purchase price is bootstrap-static's now_cost minus cost_change_start, which is the GW1 price because pre-season prices are static. Selling price is then the full fall, or the purchase price plus half of any rise rounded down. 2 from a transfer record, 13 derived from the initial squad — the latter assume the player was never sold and re-bought. Free Hit transfers are excluded; wildcard transfers count.",
@@ -540,21 +540,21 @@
         },
         {
           "rank": 4,
-          "last_rank": 6,
-          "entry": 2033083,
-          "entry_name": "Wirtz Case Scenario",
-          "manager": "Idris Jenkins",
-          "event_total": 60,
-          "total": 185,
-          "is_me": false
-        },
-        {
-          "rank": 4,
           "last_rank": 3,
           "entry": 1732178,
           "entry_name": "(Haa)Land Rover",
           "manager": "Joe Meiklejohn",
           "event_total": 55,
+          "total": 185,
+          "is_me": false
+        },
+        {
+          "rank": 4,
+          "last_rank": 6,
+          "entry": 2033083,
+          "entry_name": "Wirtz Case Scenario",
+          "manager": "Idris Jenkins",
+          "event_total": 60,
           "total": 185,
           "is_me": false
         },
@@ -739,7 +739,7 @@
       "full_name": "Elliot Anderson",
       "team": "MCI",
       "pos": "MID",
-      "now_cost": 6.4,
+      "now_cost": 6.3,
       "multiplier": 1,
       "is_captain": false,
       "is_vice_captain": false,
@@ -946,9 +946,9 @@
       "suspect": false
     },
     "481": {
-      "now_cost": 64,
+      "now_cost": 63,
       "purchase": 65,
-      "selling": 64,
+      "selling": 63,
       "source": "initial_squad",
       "bought_event": null,
       "suspect": false
