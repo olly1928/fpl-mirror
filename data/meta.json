@@ -816,7 +816,7 @@
       "stale": false
     },
     "build_odds": {
-      "last_run_at": "2026-09-08T16:59:23+00:00",
+      "last_run_at": "2026-09-08T17:17:19+00:00",
       "expected_interval_minutes": 360,
       "stale_after_minutes": 720,
       "stale": false
@@ -876,5 +876,5 @@
     "stale is true when any component has gone longer than twice its expected refresh interval without running. Check components{} for which one.",
     "CACHE CHECK: every CSV in this mirror carries 'fetched=<timestamp>' in its first comment line, and it is always identical to this file's fetched_at within a single build. If they disagree, one of the two was served from a cache rather than being genuinely out of date — raw.githubusercontent.com caches per-path, so meta.json can lag while players.csv is current. Refetch with a cache-busting query string before concluding the mirror is stale."
   ],
-  "components_refreshed_at": "2026-09-08T16:59:23+00:00"
+  "components_refreshed_at": "2026-09-08T17:17:19+00:00"
 }
