@@ -1,11 +1,11 @@
 {
-  "fetched_at": "2026-09-10T12:34:10+00:00",
+  "fetched_at": "2026-09-10T16:48:33+00:00",
   "season": "2026/27",
   "preseason": false,
   "current_event": 3,
   "next_event": 4,
   "next_deadline": "2026-09-12T12:30:00Z",
-  "player_count": 654,
+  "player_count": 655,
   "teams_in_game": [
     "ARS",
     "AVL",
@@ -282,7 +282,7 @@
     },
     {
       "id": 17,
-      "deadline_time": "2026-12-26T13:30:00Z",
+      "deadline_time": "2026-12-26T11:00:00Z",
       "finished": false,
       "data_checked": false,
       "is_current": false,
@@ -295,7 +295,7 @@
     },
     {
       "id": 18,
-      "deadline_time": "2026-12-30T18:30:00Z",
+      "deadline_time": "2026-12-29T18:00:00Z",
       "finished": false,
       "data_checked": false,
       "is_current": false,
@@ -308,7 +308,7 @@
     },
     {
       "id": 19,
-      "deadline_time": "2027-01-02T13:30:00Z",
+      "deadline_time": "2027-01-01T18:30:00Z",
       "finished": false,
       "data_checked": false,
       "is_current": false,
@@ -321,7 +321,7 @@
     },
     {
       "id": 20,
-      "deadline_time": "2027-01-06T18:30:00Z",
+      "deadline_time": "2027-01-05T18:00:00Z",
       "finished": false,
       "data_checked": false,
       "is_current": false,
@@ -613,7 +613,7 @@
       "squad_max_play": 5,
       "ui_shirt_specific": false,
       "sub_positions_locked": [],
-      "element_count": 291
+      "element_count": 292
     },
     {
       "id": 4,
@@ -810,7 +810,7 @@
   "warnings": [],
   "components": {
     "build_fpl": {
-      "last_run_at": "2026-09-10T12:34:10+00:00",
+      "last_run_at": "2026-09-10T16:48:33+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
@@ -822,19 +822,19 @@
       "stale": false
     },
     "build_player_history": {
-      "last_run_at": "2026-09-10T12:34:08+00:00",
+      "last_run_at": "2026-09-10T16:48:30+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
     },
     "build_snapshots": {
-      "last_run_at": "2026-09-10T12:34:08+00:00",
+      "last_run_at": "2026-09-10T16:48:30+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
     },
     "build_squad": {
-      "last_run_at": "2026-09-10T12:34:10+00:00",
+      "last_run_at": "2026-09-10T16:48:33+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
