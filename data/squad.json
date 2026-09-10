@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-10T19:23:51.558717+00:00",
+  "fetched_at": "2026-09-10T22:09:00.155348+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -550,21 +550,21 @@
         },
         {
           "rank": 4,
-          "last_rank": 3,
-          "entry": 1732178,
-          "entry_name": "(Haa)Land Rover",
-          "manager": "Joe Meiklejohn",
-          "event_total": 55,
-          "total": 185,
-          "is_me": false
-        },
-        {
-          "rank": 4,
           "last_rank": 6,
           "entry": 2033083,
           "entry_name": "Wirtz Case Scenario",
           "manager": "Idris Jenkins",
           "event_total": 60,
+          "total": 185,
+          "is_me": false
+        },
+        {
+          "rank": 4,
+          "last_rank": 3,
+          "entry": 1732178,
+          "entry_name": "(Haa)Land Rover",
+          "manager": "Joe Meiklejohn",
+          "event_total": 55,
           "total": 185,
           "is_me": false
         },
