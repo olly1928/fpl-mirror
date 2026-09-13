@@ -1,4 +1,4 @@
-# season=2026/27 preseason=False next_gw=5 deadline=2026-09-18T17:30:00Z players=657 fetched=2026-09-12T23:41:30+00:00
+# season=2026/27 preseason=False next_gw=5 deadline=2026-09-18T17:30:00Z players=657 fetched=2026-09-13T02:27:16+00:00
 # One row per fixture per player per stat, flattened from fixtures[].stats.
 # team_side: h=home side, a=away side. Empty until fixtures are played.
 # Unlike the other append-only files this one is rebuilt each run, so FPL's later bonus-point and stat corrections are picked up.
@@ -2493,27 +2493,26 @@ fixture_id,gw,player_id,team_side,identifier,value
 36,4,1,a,saves,2
 36,4,1,a,bonus,3
 36,4,4,a,bonus,2
-36,4,452,a,bonus,2
-36,4,544,h,bps,20
+36,4,452,a,bonus,1
+36,4,544,h,bps,19
 36,4,545,h,bps,11
 36,4,529,h,bps,9
 36,4,551,h,bps,7
-36,4,501,h,bps,5
+36,4,501,h,bps,6
+36,4,542,h,bps,6
 36,4,541,h,bps,5
-36,4,542,h,bps,5
 36,4,552,h,bps,4
 36,4,646,h,bps,2
 36,4,553,h,bps,1
-36,4,532,h,bps,-1
-36,4,533,h,bps,-6
-36,4,536,h,bps,-13
+36,4,533,h,bps,-5
+36,4,536,h,bps,-12
 36,4,1,a,bps,38
 36,4,4,a,bps,30
-36,4,452,a,bps,30
+36,4,452,a,bps,29
 36,4,12,a,bps,28
 36,4,13,a,bps,27
 36,4,15,a,bps,26
-36,4,8,a,bps,20
+36,4,8,a,bps,18
 36,4,31,a,bps,16
 36,4,557,a,bps,10
 36,4,19,a,bps,5
@@ -2522,7 +2521,7 @@ fixture_id,gw,player_id,team_side,identifier,value
 36,4,14,a,bps,3
 36,4,17,a,bps,3
 36,4,7,a,bps,2
-36,4,544,h,defensive_contribution,12
+36,4,544,h,defensive_contribution,11
 36,4,545,h,defensive_contribution,10
 36,4,536,h,defensive_contribution,7
 36,4,532,h,defensive_contribution,6
@@ -2532,11 +2531,11 @@ fixture_id,gw,player_id,team_side,identifier,value
 36,4,552,h,defensive_contribution,4
 36,4,551,h,defensive_contribution,3
 36,4,541,h,defensive_contribution,2
-36,4,553,h,defensive_contribution,2
+36,4,553,h,defensive_contribution,1
 36,4,4,a,defensive_contribution,11
-36,4,12,a,defensive_contribution,9
-36,4,13,a,defensive_contribution,9
-36,4,31,a,defensive_contribution,9
+36,4,13,a,defensive_contribution,10
+36,4,31,a,defensive_contribution,8
+36,4,12,a,defensive_contribution,7
 36,4,15,a,defensive_contribution,5
 36,4,8,a,defensive_contribution,4
 36,4,5,a,defensive_contribution,3
@@ -2545,7 +2544,6 @@ fixture_id,gw,player_id,team_side,identifier,value
 36,4,557,a,defensive_contribution,3
 36,4,19,a,defensive_contribution,2
 36,4,26,a,defensive_contribution,2
-36,4,7,a,defensive_contribution,1
 37,4,236,a,yellow_cards,1
 37,4,239,a,yellow_cards,1
 37,4,496,h,saves,3
