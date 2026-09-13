@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-13T17:09:49.961330+00:00",
+  "fetched_at": "2026-09-13T20:04:16.489180+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,7 +8,7 @@
   "next_deadline": "2026-09-18T17:30:00Z",
   "preseason": false,
   "overall_points": 240,
-  "overall_rank": 5162451,
+  "overall_rank": 5163798,
   "bank": 0.0,
   "squad_value": 99.9,
   "squad_selling_value": 997,
@@ -50,9 +50,9 @@
     },
     {
       "event": 4,
-      "points": 60,
-      "overall_rank": 3761918,
-      "rank": 1105537,
+      "points": 68,
+      "overall_rank": 5163810,
+      "rank": 4193225,
       "transfers": 1,
       "transfer_cost": 0,
       "points_on_bench": 1
@@ -261,8 +261,8 @@
           "entry": 5749977,
           "entry_name": "SEAN",
           "manager": "Sean McGonigle",
-          "event_total": 55,
-          "total": 244,
+          "event_total": 56,
+          "total": 245,
           "is_me": false
         },
         {
@@ -281,8 +281,8 @@
           "entry": 3822576,
           "entry_name": "Yoan Wissa Harry",
           "manager": "Matty Fairgrieve",
-          "event_total": 45,
-          "total": 232,
+          "event_total": 46,
+          "total": 233,
           "is_me": false
         },
         {
@@ -561,8 +561,8 @@
           "entry": 8668432,
           "entry_name": "MMDGAF FC",
           "manager": "Helen Maude",
-          "event_total": 70,
-          "total": 259,
+          "event_total": 69,
+          "total": 258,
           "is_me": false
         },
         {
@@ -581,8 +581,8 @@
           "entry": 2033083,
           "entry_name": "Wirtz Case Scenario",
           "manager": "Idris Jenkins",
-          "event_total": 62,
-          "total": 247,
+          "event_total": 63,
+          "total": 248,
           "is_me": false
         },
         {
@@ -601,8 +601,8 @@
           "entry": 7113295,
           "entry_name": "Eze does, Eze goes",
           "manager": "Gus Price",
-          "event_total": 58,
-          "total": 218,
+          "event_total": 59,
+          "total": 219,
           "is_me": false
         }
       ]
