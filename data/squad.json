@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-14T21:14:39.615098+00:00",
+  "fetched_at": "2026-09-15T00:06:59.008716+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,12 +8,12 @@
   "next_deadline": "2026-09-18T17:30:00Z",
   "preseason": false,
   "overall_points": 251,
-  "overall_rank": 4483121,
+  "overall_rank": 4483115,
   "bank": 0.0,
   "squad_value": 99.9,
-  "squad_selling_value": 997,
-  "squad_market_value": 1001,
-  "available_budget": 997,
+  "squad_selling_value": 996,
+  "squad_market_value": 1000,
+  "available_budget": 996,
   "notes": [
     "FREE TRANSFERS: ESTIMATE ONLY — the FPL API does not expose free transfers. Derived from transfer history assuming 1 earned per gameweek, banked to a maximum of 5, with wildcard/free-hit weeks not consuming any. Confirm on the FPL site before making transfer decisions.",
     "SELLING PRICES: DERIVED, not fetched — and they are the numbers to do transfer maths with, not 'now_cost'. Purchase price comes from one of two sources, recorded per player in selling_prices[id].source: 'transfer' means element_in_cost on the most recent non-Free-Hit transfer that brought the player in, which is literally what was paid; 'initial_squad' means the player has been held since GW1 and the purchase price is bootstrap-static's now_cost minus cost_change_start, which is the GW1 price because pre-season prices are static. Selling price is then the full fall, or the purchase price plus half of any rise rounded down. 3 from a transfer record, 12 derived from the initial squad — the latter assume the player was never sold and re-bought. Free Hit transfers are excluded; wildcard transfers count.",
@@ -50,12 +50,12 @@
     },
     {
       "event": 4,
-      "points": 68,
-      "overall_rank": 5163810,
-      "rank": 4193225,
+      "points": 79,
+      "overall_rank": 4483121,
+      "rank": 2492390,
       "transfers": 1,
       "transfer_cost": 0,
-      "points_on_bench": 1
+      "points_on_bench": 8
     }
   ],
   "past_seasons": [
@@ -919,7 +919,7 @@
       "full_name": "Will Hughes",
       "team": "CRY",
       "pos": "MID",
-      "now_cost": 4.5,
+      "now_cost": 4.4,
       "multiplier": 0,
       "is_captain": false,
       "is_vice_captain": false,
@@ -1045,9 +1045,9 @@
       "suspect": false
     },
     "212": {
-      "now_cost": 45,
+      "now_cost": 44,
       "purchase": 45,
-      "selling": 45,
+      "selling": 44,
       "source": "initial_squad",
       "bought_event": null,
       "suspect": false
