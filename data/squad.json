@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-15T22:35:40.801166+00:00",
+  "fetched_at": "2026-09-16T00:55:59.000183+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -407,21 +407,21 @@
         },
         {
           "rank": 11,
-          "last_rank": 16,
-          "entry": 687538,
-          "entry_name": "week_foot_11",
-          "manager": "Samip Thakkar",
-          "event_total": 93,
-          "total": 271,
-          "is_me": false
-        },
-        {
-          "rank": 11,
           "last_rank": 17,
           "entry": 7359153,
           "entry_name": "ohforgodssaka",
           "manager": "Jack Wilkinson",
           "event_total": 97,
+          "total": 271,
+          "is_me": false
+        },
+        {
+          "rank": 11,
+          "last_rank": 16,
+          "entry": 687538,
+          "entry_name": "week_foot_11",
+          "manager": "Samip Thakkar",
+          "event_total": 93,
           "total": 271,
           "is_me": false
         },
