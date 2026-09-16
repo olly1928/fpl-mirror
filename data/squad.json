@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-16T05:59:05.903474+00:00",
+  "fetched_at": "2026-09-16T10:35:32.374296+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,7 +8,7 @@
   "next_deadline": "2026-09-18T17:30:00Z",
   "preseason": false,
   "overall_points": 251,
-  "overall_rank": 4619808,
+  "overall_rank": 4619785,
   "bank": 0.0,
   "squad_value": 99.9,
   "squad_selling_value": 996,
@@ -407,21 +407,21 @@
         },
         {
           "rank": 11,
-          "last_rank": 17,
-          "entry": 7359153,
-          "entry_name": "ohforgodssaka",
-          "manager": "Jack Wilkinson",
-          "event_total": 97,
-          "total": 271,
-          "is_me": false
-        },
-        {
-          "rank": 11,
           "last_rank": 16,
           "entry": 687538,
           "entry_name": "week_foot_11",
           "manager": "Samip Thakkar",
           "event_total": 93,
+          "total": 271,
+          "is_me": false
+        },
+        {
+          "rank": 11,
+          "last_rank": 17,
+          "entry": 7359153,
+          "entry_name": "ohforgodssaka",
+          "manager": "Jack Wilkinson",
+          "event_total": 97,
           "total": 271,
           "is_me": false
         },
