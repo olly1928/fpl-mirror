@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-17T19:27:03.834658+00:00",
+  "fetched_at": "2026-09-17T22:33:50.444910+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,7 +8,7 @@
   "next_deadline": "2026-09-18T17:30:00Z",
   "preseason": false,
   "overall_points": 251,
-  "overall_rank": 4619695,
+  "overall_rank": 4619693,
   "bank": 0.0,
   "squad_value": 99.9,
   "squad_selling_value": 996,
@@ -300,9 +300,9 @@
     {
       "id": 572297,
       "name": "Box 26/27",
-      "my_rank": 18,
+      "my_rank": 19,
       "my_last_rank": 19,
-      "entries": 22,
+      "entries": 23,
       "standings_truncated_to": null,
       "standings": [
         {
@@ -327,6 +327,16 @@
         },
         {
           "rank": 3,
+          "last_rank": 0,
+          "entry": 662743,
+          "entry_name": "Haaland Globetroterz",
+          "manager": "Kelly Millsaps",
+          "event_total": 91,
+          "total": 311,
+          "is_me": false
+        },
+        {
+          "rank": 4,
           "last_rank": 7,
           "entry": 5122358,
           "entry_name": "Rohan Van Pedro",
@@ -336,7 +346,7 @@
           "is_me": false
         },
         {
-          "rank": 4,
+          "rank": 5,
           "last_rank": 2,
           "entry": 3820692,
           "entry_name": "somgorsi",
@@ -346,7 +356,7 @@
           "is_me": false
         },
         {
-          "rank": 5,
+          "rank": 6,
           "last_rank": 8,
           "entry": 2583053,
           "entry_name": "Proper Team Name 2",
@@ -356,7 +366,7 @@
           "is_me": false
         },
         {
-          "rank": 6,
+          "rank": 7,
           "last_rank": 9,
           "entry": 2940306,
           "entry_name": "SomeRandomName",
@@ -366,7 +376,7 @@
           "is_me": false
         },
         {
-          "rank": 7,
+          "rank": 8,
           "last_rank": 4,
           "entry": 2840746,
           "entry_name": "Matthew's Team",
@@ -376,7 +386,7 @@
           "is_me": false
         },
         {
-          "rank": 8,
+          "rank": 9,
           "last_rank": 5,
           "entry": 2328199,
           "entry_name": "Super Saiyan Sarr",
@@ -386,7 +396,7 @@
           "is_me": false
         },
         {
-          "rank": 9,
+          "rank": 10,
           "last_rank": 3,
           "entry": 3747240,
           "entry_name": "VAR-a-Lago",
@@ -396,7 +406,7 @@
           "is_me": false
         },
         {
-          "rank": 10,
+          "rank": 11,
           "last_rank": 12,
           "entry": 4780428,
           "entry_name": "Viva Les Vegas",
@@ -406,17 +416,7 @@
           "is_me": false
         },
         {
-          "rank": 11,
-          "last_rank": 17,
-          "entry": 7359153,
-          "entry_name": "ohforgodssaka",
-          "manager": "Jack Wilkinson",
-          "event_total": 97,
-          "total": 271,
-          "is_me": false
-        },
-        {
-          "rank": 11,
+          "rank": 12,
           "last_rank": 16,
           "entry": 687538,
           "entry_name": "week_foot_11",
@@ -426,7 +426,17 @@
           "is_me": false
         },
         {
-          "rank": 13,
+          "rank": 12,
+          "last_rank": 17,
+          "entry": 7359153,
+          "entry_name": "ohforgodssaka",
+          "manager": "Jack Wilkinson",
+          "event_total": 97,
+          "total": 271,
+          "is_me": false
+        },
+        {
+          "rank": 14,
           "last_rank": 6,
           "entry": 548815,
           "entry_name": "Sels Like TeamSpirit",
@@ -436,7 +446,7 @@
           "is_me": false
         },
         {
-          "rank": 14,
+          "rank": 15,
           "last_rank": 10,
           "entry": 2387148,
           "entry_name": "Amadness",
@@ -446,7 +456,7 @@
           "is_me": false
         },
         {
-          "rank": 15,
+          "rank": 16,
           "last_rank": 15,
           "entry": 5984664,
           "entry_name": "Wishing4Wigan",
@@ -456,7 +466,7 @@
           "is_me": false
         },
         {
-          "rank": 16,
+          "rank": 17,
           "last_rank": 11,
           "entry": 1335880,
           "entry_name": "The Szo Show",
@@ -466,7 +476,7 @@
           "is_me": false
         },
         {
-          "rank": 17,
+          "rank": 18,
           "last_rank": 13,
           "entry": 6423433,
           "entry_name": "Real Contenders",
@@ -476,7 +486,7 @@
           "is_me": false
         },
         {
-          "rank": 18,
+          "rank": 19,
           "last_rank": 19,
           "entry": 790889,
           "entry_name": "Meeks Freeks",
@@ -486,7 +496,7 @@
           "is_me": true
         },
         {
-          "rank": 19,
+          "rank": 20,
           "last_rank": 20,
           "entry": 5093062,
           "entry_name": "Saf London Fc",
@@ -496,7 +506,7 @@
           "is_me": false
         },
         {
-          "rank": 20,
+          "rank": 21,
           "last_rank": 14,
           "entry": 2527602,
           "entry_name": "Peak Roy Hodgson FC",
@@ -506,7 +516,7 @@
           "is_me": false
         },
         {
-          "rank": 21,
+          "rank": 22,
           "last_rank": 18,
           "entry": 8853128,
           "entry_name": "Jesse's Team",
@@ -516,7 +526,7 @@
           "is_me": false
         },
         {
-          "rank": 22,
+          "rank": 23,
           "last_rank": 22,
           "entry": 9302863,
           "entry_name": "Yoro Wizard Harry",
