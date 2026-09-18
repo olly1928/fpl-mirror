@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-17T22:33:50.444910+00:00",
+  "fetched_at": "2026-09-18T00:55:40.225457+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,11 +8,11 @@
   "next_deadline": "2026-09-18T17:30:00Z",
   "preseason": false,
   "overall_points": 251,
-  "overall_rank": 4619693,
+  "overall_rank": 4619692,
   "bank": 0.0,
   "squad_value": 99.9,
   "squad_selling_value": 996,
-  "squad_market_value": 1000,
+  "squad_market_value": 1001,
   "available_budget": 996,
   "notes": [
     "FREE TRANSFERS: ESTIMATE ONLY — the FPL API does not expose free transfers. Derived from transfer history assuming 1 earned per gameweek, banked to a maximum of 5, with wildcard/free-hit weeks not consuming any. Confirm on the FPL site before making transfer decisions.",
@@ -417,21 +417,21 @@
         },
         {
           "rank": 12,
-          "last_rank": 16,
-          "entry": 687538,
-          "entry_name": "week_foot_11",
-          "manager": "Samip Thakkar",
-          "event_total": 93,
-          "total": 271,
-          "is_me": false
-        },
-        {
-          "rank": 12,
           "last_rank": 17,
           "entry": 7359153,
           "entry_name": "ohforgodssaka",
           "manager": "Jack Wilkinson",
           "event_total": 97,
+          "total": 271,
+          "is_me": false
+        },
+        {
+          "rank": 12,
+          "last_rank": 16,
+          "entry": 687538,
+          "entry_name": "week_foot_11",
+          "manager": "Samip Thakkar",
+          "event_total": 93,
           "total": 271,
           "is_me": false
         },
@@ -827,7 +827,7 @@
       "full_name": "Erling Haaland",
       "team": "MCI",
       "pos": "FWD",
-      "now_cost": 15.5,
+      "now_cost": 15.6,
       "multiplier": 1,
       "is_captain": false,
       "is_vice_captain": false,
@@ -1007,7 +1007,7 @@
       "suspect": false
     },
     "411": {
-      "now_cost": 155,
+      "now_cost": 156,
       "purchase": 155,
       "selling": 155,
       "source": "initial_squad",
