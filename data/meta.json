@@ -1,10 +1,10 @@
 {
-  "fetched_at": "2026-09-18T17:59:47+00:00",
+  "fetched_at": "2026-09-18T20:37:53+00:00",
   "season": "2026/27",
   "preseason": false,
-  "current_event": 4,
-  "next_event": 5,
-  "next_deadline": "2026-09-18T17:30:00Z",
+  "current_event": 5,
+  "next_event": 6,
+  "next_deadline": "2026-10-10T10:00:00Z",
   "player_count": 659,
   "teams_in_game": [
     "ARS",
@@ -116,7 +116,7 @@
       "deadline_time": "2026-09-12T12:30:00Z",
       "finished": true,
       "data_checked": true,
-      "is_current": true,
+      "is_current": false,
       "is_next": false,
       "average_entry_score": 69,
       "highest_score": 151,
@@ -146,13 +146,30 @@
       "deadline_time": "2026-09-18T17:30:00Z",
       "finished": false,
       "data_checked": false,
-      "is_current": false,
-      "is_next": true,
+      "is_current": true,
+      "is_next": false,
       "average_entry_score": 0,
       "highest_score": null,
-      "most_captained": null,
-      "most_selected": null,
-      "chip_plays": []
+      "most_captained": 411,
+      "most_selected": 411,
+      "chip_plays": [
+        {
+          "chip_name": "bboost",
+          "num_played": 135186
+        },
+        {
+          "chip_name": "freehit",
+          "num_played": 295196
+        },
+        {
+          "chip_name": "wildcard",
+          "num_played": 467900
+        },
+        {
+          "chip_name": "3xc",
+          "num_played": 226208
+        }
+      ]
     },
     {
       "id": 6,
@@ -160,7 +177,7 @@
       "finished": false,
       "data_checked": false,
       "is_current": false,
-      "is_next": false,
+      "is_next": true,
       "average_entry_score": 0,
       "highest_score": null,
       "most_captained": null,
@@ -823,13 +840,11 @@
     ],
     "timezone": "UTC"
   },
-  "stale": true,
-  "warnings": [
-    "[build_squad] STALE — last ran 2026-09-18T14:43:17+00:00, expected every 60 min"
-  ],
+  "stale": false,
+  "warnings": [],
   "components": {
     "build_fpl": {
-      "last_run_at": "2026-09-18T17:59:47+00:00",
+      "last_run_at": "2026-09-18T20:37:53+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
@@ -841,22 +856,22 @@
       "stale": false
     },
     "build_player_history": {
-      "last_run_at": "2026-09-18T17:59:14+00:00",
+      "last_run_at": "2026-09-18T20:37:51+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
     },
     "build_snapshots": {
-      "last_run_at": "2026-09-18T17:59:14+00:00",
+      "last_run_at": "2026-09-18T20:37:50+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
     },
     "build_squad": {
-      "last_run_at": "2026-09-18T14:43:17+00:00",
+      "last_run_at": "2026-09-18T20:37:53+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
-      "stale": true
+      "stale": false
     }
   },
   "known_empty": [
