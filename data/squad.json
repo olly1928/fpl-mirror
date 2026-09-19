@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-19T19:51:00.611472+00:00",
+  "fetched_at": "2026-09-19T22:00:05.749645+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,7 +8,7 @@
   "next_deadline": "2026-10-10T10:00:00Z",
   "preseason": false,
   "overall_points": 281,
-  "overall_rank": 3441675,
+  "overall_rank": 3447061,
   "bank": 2.0,
   "squad_value": 99.9,
   "squad_selling_value": 976,
@@ -59,12 +59,12 @@
     },
     {
       "event": 5,
-      "points": 8,
-      "overall_rank": 4081759,
-      "rank": 1444054,
+      "points": 30,
+      "overall_rank": 3441670,
+      "rank": 1396169,
       "transfers": 1,
       "transfer_cost": 0,
-      "points_on_bench": 0
+      "points_on_bench": 4
     }
   ],
   "past_seasons": [
@@ -208,8 +208,8 @@
           "entry": 1868009,
           "entry_name": "No More Mr Rice Kai",
           "manager": "Anai Patel",
-          "event_total": 28,
-          "total": 348,
+          "event_total": 29,
+          "total": 349,
           "is_me": false
         },
         {
@@ -238,8 +238,8 @@
           "entry": 4199979,
           "entry_name": "Cold Bridge",
           "manager": "Joy Jesuthasan",
-          "event_total": 10,
-          "total": 273,
+          "event_total": 11,
+          "total": 274,
           "is_me": false
         },
         {
@@ -248,8 +248,8 @@
           "entry": 7267539,
           "entry_name": "Pending Moderation",
           "manager": "Paddy Hagger",
-          "event_total": 17,
-          "total": 262,
+          "event_total": 18,
+          "total": 263,
           "is_me": false
         },
         {
@@ -258,8 +258,8 @@
           "entry": 5038162,
           "entry_name": "Quantum of Tzolis",
           "manager": "Ed Shropshire",
-          "event_total": 18,
-          "total": 261,
+          "event_total": 17,
+          "total": 260,
           "is_me": false
         },
         {
@@ -268,8 +268,8 @@
           "entry": 9754942,
           "entry_name": "Aldo FC",
           "manager": "Hannah Alderson",
-          "event_total": 10,
-          "total": 245,
+          "event_total": 11,
+          "total": 246,
           "is_me": false
         }
       ]
@@ -384,21 +384,21 @@
         },
         {
           "rank": 6,
+          "last_rank": 6,
+          "entry": 2940306,
+          "entry_name": "SomeRandomName",
+          "manager": "Ania ER",
+          "event_total": 32,
+          "total": 332,
+          "is_me": false
+        },
+        {
+          "rank": 7,
           "last_rank": 7,
           "entry": 2840746,
           "entry_name": "Matthew's Team",
           "manager": "Matthew Evans",
           "event_total": 36,
-          "total": 331,
-          "is_me": false
-        },
-        {
-          "rank": 7,
-          "last_rank": 6,
-          "entry": 2940306,
-          "entry_name": "SomeRandomName",
-          "manager": "Ania ER",
-          "event_total": 31,
           "total": 331,
           "is_me": false
         },
@@ -538,8 +538,8 @@
           "entry": 2527602,
           "entry_name": "Peak Roy Hodgson FC",
           "manager": "Andrew Hayes",
-          "event_total": 14,
-          "total": 261,
+          "event_total": 15,
+          "total": 262,
           "is_me": false
         },
         {
@@ -658,8 +658,8 @@
           "entry": 6418014,
           "entry_name": "Murrays Marauders FC",
           "manager": "Ross Murray",
-          "event_total": 33,
-          "total": 317,
+          "event_total": 32,
+          "total": 316,
           "is_me": false
         },
         {
