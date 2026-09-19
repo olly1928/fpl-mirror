@@ -1,16 +1,16 @@
 {
   "build_snapshots": {
-    "last_run_at": "2026-09-19T17:38:23+00:00",
+    "last_run_at": "2026-09-19T19:51:00+00:00",
     "expected_interval_minutes": 60,
     "warnings": [],
-    "last_snapshot_at": "2026-09-19T17:38:23+00:00",
+    "last_snapshot_at": "2026-09-19T19:50:59+00:00",
     "last_baseline_date": "2026-09-19",
-    "last_rows_written": 654,
+    "last_rows_written": 638,
     "current_file": "data/snapshots/2026-09.csv",
     "mode": "delta"
   },
   "build_player_history": {
-    "last_run_at": "2026-09-19T17:38:23+00:00",
+    "last_run_at": "2026-09-19T19:51:00+00:00",
     "expected_interval_minutes": 60,
     "warnings": [],
     "captured_gameweeks": [
@@ -22,7 +22,7 @@
     "last_rows_written": 0
   },
   "build_squad": {
-    "last_run_at": "2026-09-19T17:38:26+00:00",
+    "last_run_at": "2026-09-19T19:51:01+00:00",
     "expected_interval_minutes": 60,
     "warnings": [],
     "picks": 15,
@@ -32,7 +32,7 @@
     "selling_prices_confidence": "derived"
   },
   "build_fpl": {
-    "last_run_at": "2026-09-19T17:38:26+00:00",
+    "last_run_at": "2026-09-19T19:51:01+00:00",
     "expected_interval_minutes": 60,
     "warnings": [],
     "files": [
