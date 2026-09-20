@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-20T17:12:11.403262+00:00",
+  "fetched_at": "2026-09-20T20:05:02.354993+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,7 +8,7 @@
   "next_deadline": "2026-10-10T10:00:00Z",
   "preseason": false,
   "overall_points": 310,
-  "overall_rank": 3230135,
+  "overall_rank": 3248923,
   "bank": 2.0,
   "squad_value": 99.9,
   "squad_selling_value": 976,
@@ -59,9 +59,9 @@
     },
     {
       "event": 5,
-      "points": 30,
-      "overall_rank": 3441670,
-      "rank": 1396169,
+      "points": 59,
+      "overall_rank": 3249373,
+      "rank": 1232774,
       "transfers": 1,
       "transfer_cost": 0,
       "points_on_bench": 4
@@ -318,8 +318,8 @@
           "entry": 6758481,
           "entry_name": "chilli con Cairney",
           "manager": "Joe Raven",
-          "event_total": 63,
-          "total": 282,
+          "event_total": 51,
+          "total": 270,
           "is_me": false
         }
       ]
@@ -454,21 +454,21 @@
         },
         {
           "rank": 13,
-          "last_rank": 11,
-          "entry": 7359153,
-          "entry_name": "ohforgodssaka",
-          "manager": "Jack Wilkinson",
-          "event_total": 43,
-          "total": 314,
-          "is_me": false
-        },
-        {
-          "rank": 13,
           "last_rank": 8,
           "entry": 2328199,
           "entry_name": "Super Saiyan Sarr",
           "manager": "Michael Bird",
           "event_total": 29,
+          "total": 314,
+          "is_me": false
+        },
+        {
+          "rank": 13,
+          "last_rank": 11,
+          "entry": 7359153,
+          "entry_name": "ohforgodssaka",
+          "manager": "Jack Wilkinson",
+          "event_total": 43,
           "total": 314,
           "is_me": false
         },
@@ -578,8 +578,8 @@
           "entry": 2316299,
           "entry_name": "Caput mensae",
           "manager": "Huw Meredith",
-          "event_total": 57,
-          "total": 358,
+          "event_total": 56,
+          "total": 357,
           "is_me": false
         },
         {
@@ -614,22 +614,22 @@
         },
         {
           "rank": 5,
-          "last_rank": 4,
-          "entry": 8668432,
-          "entry_name": "MMDGAF FC",
-          "manager": "Helen Maude",
-          "event_total": 46,
-          "total": 306,
-          "is_me": false
-        },
-        {
-          "rank": 6,
           "last_rank": 3,
           "entry": 2033083,
           "entry_name": "Wirtz Case Scenario",
           "manager": "Idris Jenkins",
           "event_total": 43,
           "total": 306,
+          "is_me": false
+        },
+        {
+          "rank": 6,
+          "last_rank": 4,
+          "entry": 8668432,
+          "entry_name": "MMDGAF FC",
+          "manager": "Helen Maude",
+          "event_total": 44,
+          "total": 304,
           "is_me": false
         },
         {
