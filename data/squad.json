@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-21T21:30:34.914065+00:00",
+  "fetched_at": "2026-09-22T00:27:36.653468+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,12 +8,12 @@
   "next_deadline": "2026-10-10T10:00:00Z",
   "preseason": false,
   "overall_points": 310,
-  "overall_rank": 3566377,
+  "overall_rank": 3566376,
   "bank": 2.0,
   "squad_value": 99.9,
-  "squad_selling_value": 976,
-  "squad_market_value": 979,
-  "available_budget": 996,
+  "squad_selling_value": 977,
+  "squad_market_value": 980,
+  "available_budget": 997,
   "notes": [
     "FREE TRANSFERS: ESTIMATE ONLY — the FPL API does not expose free transfers. Derived from transfer history assuming 1 earned per gameweek, banked to a maximum of 5, with wildcard/free-hit weeks not consuming any. Confirm on the FPL site before making transfer decisions.",
     "SELLING PRICES: DERIVED, not fetched — and they are the numbers to do transfer maths with, not 'now_cost'. Purchase price comes from one of two sources, recorded per player in selling_prices[id].source: 'transfer' means element_in_cost on the most recent non-Free-Hit transfer that brought the player in, which is literally what was paid; 'initial_squad' means the player has been held since GW1 and the purchase price is bootstrap-static's now_cost minus cost_change_start, which is the GW1 price because pre-season prices are static. Selling price is then the full fall, or the purchase price plus half of any rise rounded down. 4 from a transfer record, 11 derived from the initial squad — the latter assume the player was never sold and re-bought. Free Hit transfers are excluded; wildcard transfers count.",
@@ -769,7 +769,7 @@
       "full_name": "Lewis Hall",
       "team": "NEW",
       "pos": "DEF",
-      "now_cost": 5.2,
+      "now_cost": 5.3,
       "multiplier": 1,
       "is_captain": false,
       "is_vice_captain": false,
@@ -994,9 +994,9 @@
       "suspect": false
     },
     "449": {
-      "now_cost": 52,
+      "now_cost": 53,
       "purchase": 51,
-      "selling": 51,
+      "selling": 52,
       "source": "transfer",
       "bought_event": 3,
       "suspect": false
