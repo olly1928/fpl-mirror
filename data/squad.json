@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-27T21:46:21.448276+00:00",
+  "fetched_at": "2026-09-28T00:11:39.446792+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -12,7 +12,7 @@
   "bank": 2.0,
   "squad_value": 99.9,
   "squad_selling_value": 977,
-  "squad_market_value": 980,
+  "squad_market_value": 981,
   "available_budget": 997,
   "notes": [
     "FREE TRANSFERS: ESTIMATE ONLY — the FPL API does not expose free transfers. Derived from transfer history assuming 1 earned per gameweek, banked to a maximum of 5, with wildcard/free-hit weeks not consuming any. Confirm on the FPL site before making transfer decisions.",
@@ -871,7 +871,7 @@
       "full_name": "Thierno Barry",
       "team": "EVE",
       "pos": "FWD",
-      "now_cost": 5.6,
+      "now_cost": 5.7,
       "multiplier": 1,
       "is_captain": false,
       "is_vice_captain": false,
@@ -1042,7 +1042,7 @@
       "suspect": false
     },
     "249": {
-      "now_cost": 56,
+      "now_cost": 57,
       "purchase": 56,
       "selling": 56,
       "source": "transfer",
