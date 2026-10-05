@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-05T17:39:12.593802+00:00",
+  "fetched_at": "2026-10-05T23:32:25.039466+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,11 +8,11 @@
   "next_deadline": "2026-10-10T10:00:00Z",
   "preseason": false,
   "overall_points": 310,
-  "overall_rank": 3566060,
+  "overall_rank": 3566056,
   "bank": 2.0,
   "squad_value": 99.9,
   "squad_selling_value": 976,
-  "squad_market_value": 980,
+  "squad_market_value": 981,
   "available_budget": 996,
   "notes": [
     "FREE TRANSFERS: ESTIMATE ONLY — the FPL API does not expose free transfers. Derived from transfer history assuming 1 earned per gameweek, banked to a maximum of 5, with wildcard/free-hit weeks not consuming any. Confirm on the FPL site before making transfer decisions.",
@@ -786,7 +786,7 @@
       "full_name": "Bukayo Saka",
       "team": "ARS",
       "pos": "MID",
-      "now_cost": 9.5,
+      "now_cost": 9.6,
       "multiplier": 1,
       "is_captain": false,
       "is_vice_captain": true,
@@ -1002,7 +1002,7 @@
       "suspect": false
     },
     "12": {
-      "now_cost": 95,
+      "now_cost": 96,
       "purchase": 95,
       "selling": 95,
       "source": "initial_squad",
