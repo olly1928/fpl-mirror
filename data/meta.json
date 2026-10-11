@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-11T18:33:39+00:00",
+  "fetched_at": "2026-10-11T22:37:08+00:00",
   "season": "2026/27",
   "preseason": false,
   "current_event": 6,
@@ -178,8 +178,8 @@
       "data_checked": false,
       "is_current": true,
       "is_next": false,
-      "average_entry_score": 37,
-      "highest_score": 114,
+      "average_entry_score": 54,
+      "highest_score": 131,
       "most_captained": 411,
       "most_selected": 411,
       "chip_plays": [
@@ -861,7 +861,7 @@
   "warnings": [],
   "components": {
     "build_fpl": {
-      "last_run_at": "2026-10-11T18:33:39+00:00",
+      "last_run_at": "2026-10-11T22:37:08+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
@@ -873,19 +873,19 @@
       "stale": false
     },
     "build_player_history": {
-      "last_run_at": "2026-10-11T18:33:37+00:00",
+      "last_run_at": "2026-10-11T22:37:06+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
     },
     "build_snapshots": {
-      "last_run_at": "2026-10-11T18:33:37+00:00",
+      "last_run_at": "2026-10-11T22:37:05+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
     },
     "build_squad": {
-      "last_run_at": "2026-10-11T18:33:39+00:00",
+      "last_run_at": "2026-10-11T22:37:08+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
