@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-10T20:25:45.553974+00:00",
+  "fetched_at": "2026-10-11T00:02:21.288646+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,12 +8,12 @@
   "next_deadline": "2026-10-17T10:00:00Z",
   "preseason": false,
   "overall_points": 335,
-  "overall_rank": 4713173,
+  "overall_rank": 4719945,
   "bank": 0.5,
   "squad_value": 100.2,
-  "squad_selling_value": 992,
+  "squad_selling_value": 991,
   "squad_market_value": 997,
-  "available_budget": 997,
+  "available_budget": 996,
   "notes": [
     "FREE TRANSFERS: ESTIMATE ONLY — the FPL API does not expose free transfers. Derived from transfer history assuming 1 earned per gameweek, banked to a maximum of 5, with wildcard/free-hit weeks not consuming any. Confirm on the FPL site before making transfer decisions.",
     "SELLING PRICES: DERIVED, not fetched — and they are the numbers to do transfer maths with, not 'now_cost'. Purchase price comes from one of two sources, recorded per player in selling_prices[id].source: 'transfer' means element_in_cost on the most recent non-Free-Hit transfer that brought the player in, which is literally what was paid; 'initial_squad' means the player has been held since GW1 and the purchase price is bootstrap-static's now_cost minus cost_change_start, which is the GW1 price because pre-season prices are static. Selling price is then the full fall, or the purchase price plus half of any rise rounded down. 5 from a transfer record, 10 derived from the initial squad — the latter assume the player was never sold and re-bought. Free Hit transfers are excluded; wildcard transfers count.",
@@ -68,12 +68,12 @@
     },
     {
       "event": 6,
-      "points": 0,
-      "overall_rank": 3566390,
-      "rank": null,
+      "points": 25,
+      "overall_rank": 4711689,
+      "rank": 8505983,
       "transfers": 1,
       "transfer_cost": 0,
-      "points_on_bench": 0
+      "points_on_bench": 3
     }
   ],
   "past_seasons": [
@@ -304,13 +304,23 @@
     {
       "id": 568696,
       "name": "Box LeadGen",
-      "my_rank": 1,
+      "my_rank": 2,
       "my_last_rank": 1,
       "entries": 4,
       "standings_truncated_to": null,
       "standings": [
         {
           "rank": 1,
+          "last_rank": 3,
+          "entry": 5749977,
+          "entry_name": "SEAN",
+          "manager": "Sean McGonigle",
+          "event_total": 47,
+          "total": 336,
+          "is_me": false
+        },
+        {
+          "rank": 2,
           "last_rank": 1,
           "entry": 790889,
           "entry_name": "Meeks Freeks",
@@ -318,16 +328,6 @@
           "event_total": 25,
           "total": 335,
           "is_me": true
-        },
-        {
-          "rank": 2,
-          "last_rank": 3,
-          "entry": 5749977,
-          "entry_name": "SEAN",
-          "manager": "Sean McGonigle",
-          "event_total": 45,
-          "total": 334,
-          "is_me": false
         },
         {
           "rank": 3,
@@ -531,6 +531,16 @@
         },
         {
           "rank": 18,
+          "last_rank": 17,
+          "entry": 5984664,
+          "entry_name": "Wishing4Wigan",
+          "manager": "Micajah Dudley",
+          "event_total": 28,
+          "total": 338,
+          "is_me": false
+        },
+        {
+          "rank": 19,
           "last_rank": 18,
           "entry": 5093062,
           "entry_name": "Saf London Fc",
@@ -540,23 +550,13 @@
           "is_me": false
         },
         {
-          "rank": 19,
+          "rank": 20,
           "last_rank": 20,
           "entry": 1335880,
           "entry_name": "The Szo Show",
           "manager": "Chris Stern",
           "event_total": 48,
           "total": 337,
-          "is_me": false
-        },
-        {
-          "rank": 20,
-          "last_rank": 17,
-          "entry": 5984664,
-          "entry_name": "Wishing4Wigan",
-          "manager": "Micajah Dudley",
-          "event_total": 26,
-          "total": 336,
           "is_me": false
         },
         {
@@ -605,8 +605,8 @@
           "entry": 5887119,
           "entry_name": "You Araujo",
           "manager": "Finn Meredith",
-          "event_total": 45,
-          "total": 406,
+          "event_total": 47,
+          "total": 408,
           "is_me": false
         },
         {
@@ -635,8 +635,8 @@
           "entry": 8668432,
           "entry_name": "MMDGAF FC",
           "manager": "Helen Maude",
-          "event_total": 54,
-          "total": 358,
+          "event_total": 56,
+          "total": 360,
           "is_me": false
         },
         {
@@ -762,7 +762,7 @@
       "full_name": "Gabriel dos Santos Magalhães",
       "team": "ARS",
       "pos": "DEF",
-      "now_cost": 8.0,
+      "now_cost": 7.9,
       "multiplier": 1,
       "is_captain": false,
       "is_vice_captain": false,
@@ -881,7 +881,7 @@
       "full_name": "Pascal Groß",
       "team": "BHA",
       "pos": "MID",
-      "now_cost": 5.9,
+      "now_cost": 6.0,
       "multiplier": 1,
       "is_captain": false,
       "is_vice_captain": false,
@@ -1005,9 +1005,9 @@
       "suspect": false
     },
     "4": {
-      "now_cost": 80,
+      "now_cost": 79,
       "purchase": 80,
-      "selling": 80,
+      "selling": 79,
       "source": "initial_squad",
       "bought_event": null,
       "suspect": false
@@ -1061,7 +1061,7 @@
       "suspect": false
     },
     "124": {
-      "now_cost": 59,
+      "now_cost": 60,
       "purchase": 59,
       "selling": 59,
       "source": "transfer",
