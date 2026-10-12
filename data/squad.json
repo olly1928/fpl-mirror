@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-11T22:37:06.869565+00:00",
+  "fetched_at": "2026-10-12T01:57:52.372617+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,11 +8,11 @@
   "next_deadline": "2026-10-17T10:00:00Z",
   "preseason": false,
   "overall_points": 347,
-  "overall_rank": 5115034,
+  "overall_rank": 5115032,
   "bank": 0.5,
   "squad_value": 100.2,
   "squad_selling_value": 991,
-  "squad_market_value": 997,
+  "squad_market_value": 998,
   "available_budget": 996,
   "notes": [
     "FREE TRANSFERS: ESTIMATE ONLY — the FPL API does not expose free transfers. Derived from transfer history assuming 1 earned per gameweek, banked to a maximum of 5, with wildcard/free-hit weeks not consuming any. Confirm on the FPL site before making transfer decisions.",
@@ -847,7 +847,7 @@
       "full_name": "Morgan Rogers",
       "team": "CHE",
       "pos": "MID",
-      "now_cost": 7.8,
+      "now_cost": 7.9,
       "multiplier": 1,
       "is_captain": false,
       "is_vice_captain": false,
@@ -1045,7 +1045,7 @@
       "suspect": false
     },
     "40": {
-      "now_cost": 78,
+      "now_cost": 79,
       "purchase": 76,
       "selling": 77,
       "source": "transfer",
