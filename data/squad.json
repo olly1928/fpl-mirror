@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-13T08:47:32.383919+00:00",
+  "fetched_at": "2026-10-13T16:38:43.231332+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -7,8 +7,8 @@
   "next_event": 7,
   "next_deadline": "2026-10-17T10:00:00Z",
   "preseason": false,
-  "overall_points": 347,
-  "overall_rank": 5174856,
+  "overall_points": 348,
+  "overall_rank": 5324453,
   "bank": 0.5,
   "squad_value": 100.2,
   "squad_selling_value": 990,
@@ -68,12 +68,12 @@
     },
     {
       "event": 6,
-      "points": 37,
-      "overall_rank": 5174872,
-      "rank": 9782593,
+      "points": 38,
+      "overall_rank": 5324461,
+      "rank": 10222526,
       "transfers": 1,
       "transfer_cost": 0,
-      "points_on_bench": 9
+      "points_on_bench": 8
     }
   ],
   "past_seasons": [
@@ -215,8 +215,8 @@
           "entry": 790889,
           "entry_name": "Meeks Freeks",
           "manager": "Oliver Meiklejohn",
-          "event_total": 37,
-          "total": 347,
+          "event_total": 38,
+          "total": 348,
           "is_me": true
         }
       ]
@@ -224,7 +224,7 @@
     {
       "id": 358630,
       "name": "twentyAI FPL New",
-      "my_rank": 7,
+      "my_rank": 6,
       "my_last_rank": 3,
       "entries": 7,
       "standings_truncated_to": null,
@@ -275,12 +275,22 @@
           "entry": 7267539,
           "entry_name": "Pending Moderation",
           "manager": "Paddy Hagger",
-          "event_total": 74,
-          "total": 356,
+          "event_total": 77,
+          "total": 359,
           "is_me": false
         },
         {
           "rank": 6,
+          "last_rank": 3,
+          "entry": 790889,
+          "entry_name": "Meeks Freeks",
+          "manager": "Oliver Meiklejohn",
+          "event_total": 38,
+          "total": 348,
+          "is_me": true
+        },
+        {
+          "rank": 7,
           "last_rank": 7,
           "entry": 9754942,
           "entry_name": "Aldo FC",
@@ -288,16 +298,6 @@
           "event_total": 72,
           "total": 347,
           "is_me": false
-        },
-        {
-          "rank": 7,
-          "last_rank": 3,
-          "entry": 790889,
-          "entry_name": "Meeks Freeks",
-          "manager": "Oliver Meiklejohn",
-          "event_total": 37,
-          "total": 347,
-          "is_me": true
         }
       ]
     },
@@ -315,8 +315,8 @@
           "entry": 3822576,
           "entry_name": "Yoan Wissa Harry",
           "manager": "Matty Fairgrieve",
-          "event_total": 47,
-          "total": 352,
+          "event_total": 50,
+          "total": 355,
           "is_me": false
         },
         {
@@ -335,8 +335,8 @@
           "entry": 790889,
           "entry_name": "Meeks Freeks",
           "manager": "Oliver Meiklejohn",
-          "event_total": 37,
-          "total": 347,
+          "event_total": 38,
+          "total": 348,
           "is_me": true
         },
         {
@@ -345,8 +345,8 @@
           "entry": 6758481,
           "entry_name": "chilli con Cairney",
           "manager": "Joe Raven",
-          "event_total": 39,
-          "total": 313,
+          "event_total": 41,
+          "total": 315,
           "is_me": false
         }
       ]
@@ -385,28 +385,28 @@
           "entry": 5122358,
           "entry_name": "Rohan Van Pedro",
           "manager": "Rohan Holder",
-          "event_total": 70,
-          "total": 433,
+          "event_total": 71,
+          "total": 434,
           "is_me": false
         },
         {
           "rank": 4,
+          "last_rank": 7,
+          "entry": 3820692,
+          "entry_name": "somgorsi",
+          "manager": "Hubert Kaźmierczak",
+          "event_total": 79,
+          "total": 425,
+          "is_me": false
+        },
+        {
+          "rank": 5,
           "last_rank": 2,
           "entry": 662743,
           "entry_name": "Haaland Globetroterz",
           "manager": "Kelly Millsaps",
           "event_total": 64,
           "total": 423,
-          "is_me": false
-        },
-        {
-          "rank": 5,
-          "last_rank": 7,
-          "entry": 3820692,
-          "entry_name": "somgorsi",
-          "manager": "Hubert Kaźmierczak",
-          "event_total": 75,
-          "total": 421,
           "is_me": false
         },
         {
@@ -465,8 +465,8 @@
           "entry": 687538,
           "entry_name": "week_foot_11",
           "manager": "Samip Thakkar",
-          "event_total": 50,
-          "total": 389,
+          "event_total": 52,
+          "total": 391,
           "is_me": false
         },
         {
@@ -511,6 +511,16 @@
         },
         {
           "rank": 16,
+          "last_rank": 17,
+          "entry": 5984664,
+          "entry_name": "Wishing4Wigan",
+          "manager": "Micajah Dudley",
+          "event_total": 52,
+          "total": 362,
+          "is_me": false
+        },
+        {
+          "rank": 17,
           "last_rank": 22,
           "entry": 2527602,
           "entry_name": "Peak Roy Hodgson FC",
@@ -520,23 +530,13 @@
           "is_me": false
         },
         {
-          "rank": 17,
+          "rank": 18,
           "last_rank": 14,
           "entry": 6423433,
           "entry_name": "Real Contenders",
           "manager": "Anthony Prior",
-          "event_total": 41,
-          "total": 358,
-          "is_me": false
-        },
-        {
-          "rank": 17,
-          "last_rank": 17,
-          "entry": 5984664,
-          "entry_name": "Wishing4Wigan",
-          "manager": "Micajah Dudley",
-          "event_total": 48,
-          "total": 358,
+          "event_total": 43,
+          "total": 360,
           "is_me": false
         },
         {
@@ -545,8 +545,8 @@
           "entry": 2387148,
           "entry_name": "Amadness",
           "manager": "Michal Nowak",
-          "event_total": 51,
-          "total": 348,
+          "event_total": 52,
+          "total": 349,
           "is_me": false
         },
         {
@@ -555,8 +555,8 @@
           "entry": 790889,
           "entry_name": "Meeks Freeks",
           "manager": "Oliver Meiklejohn",
-          "event_total": 37,
-          "total": 347,
+          "event_total": 38,
+          "total": 348,
           "is_me": true
         },
         {
@@ -565,8 +565,8 @@
           "entry": 1335880,
           "entry_name": "The Szo Show",
           "manager": "Chris Stern",
-          "event_total": 56,
-          "total": 345,
+          "event_total": 57,
+          "total": 346,
           "is_me": false
         },
         {
@@ -575,8 +575,8 @@
           "entry": 8853128,
           "entry_name": "Jesse's Team",
           "manager": "Jesse Huling",
-          "event_total": 52,
-          "total": 336,
+          "event_total": 54,
+          "total": 338,
           "is_me": false
         },
         {
@@ -625,8 +625,8 @@
           "entry": 1732178,
           "entry_name": "(Haa)Land Rover",
           "manager": "Joe Meiklejohn",
-          "event_total": 68,
-          "total": 396,
+          "event_total": 69,
+          "total": 397,
           "is_me": false
         },
         {
@@ -655,8 +655,8 @@
           "entry": 790889,
           "entry_name": "Meeks Freeks",
           "manager": "Oliver Meiklejohn",
-          "event_total": 37,
-          "total": 347,
+          "event_total": 38,
+          "total": 348,
           "is_me": true
         },
         {
@@ -685,8 +685,8 @@
           "entry": 6418014,
           "entry_name": "Murrays Marauders FC",
           "manager": "Ross Murray",
-          "event_total": 66,
-          "total": 405,
+          "event_total": 67,
+          "total": 406,
           "is_me": false
         },
         {
@@ -695,8 +695,8 @@
           "entry": 1732178,
           "entry_name": "(Haa)Land Rover",
           "manager": "Joe Meiklejohn",
-          "event_total": 68,
-          "total": 396,
+          "event_total": 69,
+          "total": 397,
           "is_me": false
         },
         {
@@ -705,8 +705,8 @@
           "entry": 790889,
           "entry_name": "Meeks Freeks",
           "manager": "Oliver Meiklejohn",
-          "event_total": 37,
-          "total": 347,
+          "event_total": 38,
+          "total": 348,
           "is_me": true
         },
         {
@@ -715,8 +715,8 @@
           "entry": 6389595,
           "entry_name": "A Grand Old Team",
           "manager": "Steve Organ",
-          "event_total": 45,
-          "total": 292,
+          "event_total": 62,
+          "total": 309,
           "is_me": false
         },
         {
@@ -791,12 +791,12 @@
     {
       "slot": 4,
       "role": "starting XI",
-      "element": 449,
-      "name": "Hall",
-      "full_name": "Lewis Hall",
-      "team": "NEW",
+      "element": 259,
+      "name": "Diop",
+      "full_name": "Issa Diop",
+      "team": "IPS",
       "pos": "DEF",
-      "now_cost": 5.3,
+      "now_cost": 4.0,
       "multiplier": 1,
       "is_captain": false,
       "is_vice_captain": false,
@@ -808,12 +808,12 @@
     {
       "slot": 5,
       "role": "starting XI",
-      "element": 259,
-      "name": "Diop",
-      "full_name": "Issa Diop",
-      "team": "IPS",
+      "element": 449,
+      "name": "Hall",
+      "full_name": "Lewis Hall",
+      "team": "NEW",
       "pos": "DEF",
-      "now_cost": 4.0,
+      "now_cost": 5.3,
       "multiplier": 1,
       "is_captain": false,
       "is_vice_captain": false,
@@ -859,29 +859,29 @@
     {
       "slot": 8,
       "role": "starting XI",
-      "element": 368,
-      "name": "Szoboszlai",
-      "full_name": "Dominik Szoboszlai",
-      "team": "LIV",
-      "pos": "MID",
-      "now_cost": 6.9,
-      "multiplier": 1,
-      "is_captain": false,
-      "is_vice_captain": false,
-      "status": "d",
-      "status_meaning": "doubtful",
-      "chance_of_playing_next_round": 75,
-      "news": "Hamstring injury - 75% chance of playing"
-    },
-    {
-      "slot": 9,
-      "role": "starting XI",
       "element": 124,
       "name": "Groß",
       "full_name": "Pascal Groß",
       "team": "BHA",
       "pos": "MID",
       "now_cost": 6.0,
+      "multiplier": 1,
+      "is_captain": false,
+      "is_vice_captain": false,
+      "status": "a",
+      "status_meaning": "available",
+      "chance_of_playing_next_round": null,
+      "news": ""
+    },
+    {
+      "slot": 9,
+      "role": "starting XI",
+      "element": 338,
+      "name": "Ampadu",
+      "full_name": "Ethan Ampadu",
+      "team": "LEE",
+      "pos": "MID",
+      "now_cost": 5.4,
       "multiplier": 1,
       "is_captain": false,
       "is_vice_captain": false,
@@ -944,19 +944,19 @@
     {
       "slot": 13,
       "role": "bench",
-      "element": 338,
-      "name": "Ampadu",
-      "full_name": "Ethan Ampadu",
-      "team": "LEE",
+      "element": 368,
+      "name": "Szoboszlai",
+      "full_name": "Dominik Szoboszlai",
+      "team": "LIV",
       "pos": "MID",
-      "now_cost": 5.4,
+      "now_cost": 6.9,
       "multiplier": 0,
       "is_captain": false,
       "is_vice_captain": false,
-      "status": "a",
-      "status_meaning": "available",
-      "chance_of_playing_next_round": null,
-      "news": ""
+      "status": "d",
+      "status_meaning": "doubtful",
+      "chance_of_playing_next_round": 75,
+      "news": "Hamstring injury - 75% chance of playing"
     },
     {
       "slot": 14,
@@ -1020,20 +1020,20 @@
       "bought_event": null,
       "suspect": false
     },
-    "449": {
-      "now_cost": 53,
-      "purchase": 51,
-      "selling": 52,
-      "source": "transfer",
-      "bought_event": 3,
-      "suspect": false
-    },
     "259": {
       "now_cost": 40,
       "purchase": 40,
       "selling": 40,
       "source": "initial_squad",
       "bought_event": null,
+      "suspect": false
+    },
+    "449": {
+      "now_cost": 53,
+      "purchase": 51,
+      "selling": 52,
+      "source": "transfer",
+      "bought_event": 3,
       "suspect": false
     },
     "12": {
@@ -1052,20 +1052,20 @@
       "bought_event": 4,
       "suspect": false
     },
-    "368": {
-      "now_cost": 69,
-      "purchase": 70,
-      "selling": 69,
-      "source": "transfer",
-      "bought_event": 2,
-      "suspect": false
-    },
     "124": {
       "now_cost": 60,
       "purchase": 59,
       "selling": 59,
       "source": "transfer",
       "bought_event": 6,
+      "suspect": false
+    },
+    "338": {
+      "now_cost": 54,
+      "purchase": 55,
+      "selling": 54,
+      "source": "initial_squad",
+      "bought_event": null,
       "suspect": false
     },
     "411": {
@@ -1092,12 +1092,12 @@
       "bought_event": null,
       "suspect": false
     },
-    "338": {
-      "now_cost": 54,
-      "purchase": 55,
-      "selling": 54,
-      "source": "initial_squad",
-      "bought_event": null,
+    "368": {
+      "now_cost": 69,
+      "purchase": 70,
+      "selling": 69,
+      "source": "transfer",
+      "bought_event": 2,
       "suspect": false
     },
     "346": {

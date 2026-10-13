@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-13T08:47:35+00:00",
+  "fetched_at": "2026-10-13T16:38:45+00:00",
   "season": "2026/27",
   "preseason": false,
   "current_event": 6,
@@ -174,11 +174,11 @@
     {
       "id": 6,
       "deadline_time": "2026-10-10T10:00:00Z",
-      "finished": false,
-      "data_checked": false,
+      "finished": true,
+      "data_checked": true,
       "is_current": true,
       "is_next": false,
-      "average_entry_score": 55,
+      "average_entry_score": 58,
       "highest_score": 131,
       "most_captained": 411,
       "most_selected": 411,
@@ -858,10 +858,12 @@
     "timezone": "UTC"
   },
   "stale": false,
-  "warnings": [],
+  "warnings": [
+    "[build_player_history] event/6/live.stats: 2 new field(s) present in the API and not mirrored: in_dreamteam, played"
+  ],
   "components": {
     "build_fpl": {
-      "last_run_at": "2026-10-13T08:47:35+00:00",
+      "last_run_at": "2026-10-13T16:38:45+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
@@ -873,19 +875,19 @@
       "stale": false
     },
     "build_player_history": {
-      "last_run_at": "2026-10-13T08:47:31+00:00",
+      "last_run_at": "2026-10-13T16:38:42+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
     },
     "build_snapshots": {
-      "last_run_at": "2026-10-13T08:47:31+00:00",
+      "last_run_at": "2026-10-13T16:38:41+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
     },
     "build_squad": {
-      "last_run_at": "2026-10-13T08:47:35+00:00",
+      "last_run_at": "2026-10-13T16:38:45+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
