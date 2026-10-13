@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-12T18:26:29.994212+00:00",
+  "fetched_at": "2026-10-13T01:03:40.039176+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,12 +8,12 @@
   "next_deadline": "2026-10-17T10:00:00Z",
   "preseason": false,
   "overall_points": 347,
-  "overall_rank": 5115015,
+  "overall_rank": 5174868,
   "bank": 0.5,
   "squad_value": 100.2,
-  "squad_selling_value": 991,
-  "squad_market_value": 998,
-  "available_budget": 996,
+  "squad_selling_value": 990,
+  "squad_market_value": 997,
+  "available_budget": 995,
   "notes": [
     "FREE TRANSFERS: ESTIMATE ONLY — the FPL API does not expose free transfers. Derived from transfer history assuming 1 earned per gameweek, banked to a maximum of 5, with wildcard/free-hit weeks not consuming any. Confirm on the FPL site before making transfer decisions.",
     "SELLING PRICES: DERIVED, not fetched — and they are the numbers to do transfer maths with, not 'now_cost'. Purchase price comes from one of two sources, recorded per player in selling_prices[id].source: 'transfer' means element_in_cost on the most recent non-Free-Hit transfer that brought the player in, which is literally what was paid; 'initial_squad' means the player has been held since GW1 and the purchase price is bootstrap-static's now_cost minus cost_change_start, which is the GW1 price because pre-season prices are static. Selling price is then the full fall, or the purchase price plus half of any rise rounded down. 5 from a transfer record, 10 derived from the initial squad — the latter assume the player was never sold and re-bought. Free Hit transfers are excluded; wildcard transfers count.",
@@ -69,11 +69,11 @@
     {
       "event": 6,
       "points": 37,
-      "overall_rank": 5115368,
-      "rank": 9649079,
+      "overall_rank": 5174872,
+      "rank": 9782593,
       "transfers": 1,
       "transfer_cost": 0,
-      "points_on_bench": 3
+      "points_on_bench": 9
     }
   ],
   "past_seasons": [
@@ -205,8 +205,8 @@
           "entry": 62697,
           "entry_name": "Cherki Dinosaurs",
           "manager": "Jamie Howson",
-          "event_total": 93,
-          "total": 454,
+          "event_total": 95,
+          "total": 456,
           "is_me": false
         },
         {
@@ -265,8 +265,8 @@
           "entry": 4199979,
           "entry_name": "Cold Bridge",
           "manager": "Joy Jesuthasan",
-          "event_total": 74,
-          "total": 375,
+          "event_total": 76,
+          "total": 377,
           "is_me": false
         },
         {
@@ -311,22 +311,22 @@
       "standings": [
         {
           "rank": 1,
+          "last_rank": 2,
+          "entry": 3822576,
+          "entry_name": "Yoan Wissa Harry",
+          "manager": "Matty Fairgrieve",
+          "event_total": 47,
+          "total": 352,
+          "is_me": false
+        },
+        {
+          "rank": 2,
           "last_rank": 3,
           "entry": 5749977,
           "entry_name": "SEAN",
           "manager": "Sean McGonigle",
           "event_total": 62,
           "total": 351,
-          "is_me": false
-        },
-        {
-          "rank": 2,
-          "last_rank": 2,
-          "entry": 3822576,
-          "entry_name": "Yoan Wissa Harry",
-          "manager": "Matty Fairgrieve",
-          "event_total": 45,
-          "total": 350,
           "is_me": false
         },
         {
@@ -354,7 +354,7 @@
     {
       "id": 572297,
       "name": "Box 26/27",
-      "my_rank": 19,
+      "my_rank": 20,
       "my_last_rank": 16,
       "entries": 23,
       "standings_truncated_to": null,
@@ -365,28 +365,28 @@
           "entry": 351753,
           "entry_name": "XabiDooWhereAreYou",
           "manager": "Andrii Makarenko",
-          "event_total": 78,
-          "total": 449,
+          "event_total": 80,
+          "total": 451,
           "is_me": false
         },
         {
           "rank": 2,
+          "last_rank": 4,
+          "entry": 2753182,
+          "entry_name": "Daizen & Confused",
+          "manager": "Jamie McGachy",
+          "event_total": 73,
+          "total": 434,
+          "is_me": false
+        },
+        {
+          "rank": 3,
           "last_rank": 3,
           "entry": 5122358,
           "entry_name": "Rohan Van Pedro",
           "manager": "Rohan Holder",
           "event_total": 70,
           "total": 433,
-          "is_me": false
-        },
-        {
-          "rank": 3,
-          "last_rank": 4,
-          "entry": 2753182,
-          "entry_name": "Daizen & Confused",
-          "manager": "Jamie McGachy",
-          "event_total": 71,
-          "total": 432,
           "is_me": false
         },
         {
@@ -401,22 +401,22 @@
         },
         {
           "rank": 5,
-          "last_rank": 5,
-          "entry": 2940306,
-          "entry_name": "SomeRandomName",
-          "manager": "Ania ER",
-          "event_total": 55,
-          "total": 416,
-          "is_me": false
-        },
-        {
-          "rank": 6,
           "last_rank": 7,
           "entry": 3820692,
           "entry_name": "somgorsi",
           "manager": "Hubert Kaźmierczak",
-          "event_total": 69,
-          "total": 415,
+          "event_total": 75,
+          "total": 421,
+          "is_me": false
+        },
+        {
+          "rank": 6,
+          "last_rank": 5,
+          "entry": 2940306,
+          "entry_name": "SomeRandomName",
+          "manager": "Ania ER",
+          "event_total": 57,
+          "total": 418,
           "is_me": false
         },
         {
@@ -441,22 +441,22 @@
         },
         {
           "rank": 9,
+          "last_rank": 9,
+          "entry": 3747240,
+          "entry_name": "VAR-a-Lago",
+          "manager": "Mike Phillips",
+          "event_total": 62,
+          "total": 395,
+          "is_me": false
+        },
+        {
+          "rank": 10,
           "last_rank": 15,
           "entry": 7359153,
           "entry_name": "ohforgodssaka",
           "manager": "Jack Wilkinson",
           "event_total": 78,
           "total": 394,
-          "is_me": false
-        },
-        {
-          "rank": 10,
-          "last_rank": 9,
-          "entry": 3747240,
-          "entry_name": "VAR-a-Lago",
-          "manager": "Mike Phillips",
-          "event_total": 60,
-          "total": 393,
           "is_me": false
         },
         {
@@ -495,8 +495,8 @@
           "entry": 2583053,
           "entry_name": "Proper Team Name 2",
           "manager": "Grzesiek Martinez",
-          "event_total": 44,
-          "total": 372,
+          "event_total": 46,
+          "total": 374,
           "is_me": false
         },
         {
@@ -515,8 +515,8 @@
           "entry": 2527602,
           "entry_name": "Peak Roy Hodgson FC",
           "manager": "Andrew Hayes",
-          "event_total": 77,
-          "total": 359,
+          "event_total": 79,
+          "total": 361,
           "is_me": false
         },
         {
@@ -541,6 +541,16 @@
         },
         {
           "rank": 19,
+          "last_rank": 19,
+          "entry": 2387148,
+          "entry_name": "Amadness",
+          "manager": "Michal Nowak",
+          "event_total": 51,
+          "total": 348,
+          "is_me": false
+        },
+        {
+          "rank": 20,
           "last_rank": 16,
           "entry": 790889,
           "entry_name": "Meeks Freeks",
@@ -548,16 +558,6 @@
           "event_total": 37,
           "total": 347,
           "is_me": true
-        },
-        {
-          "rank": 20,
-          "last_rank": 19,
-          "entry": 2387148,
-          "entry_name": "Amadness",
-          "manager": "Michal Nowak",
-          "event_total": 49,
-          "total": 346,
-          "is_me": false
         },
         {
           "rank": 21,
@@ -615,8 +615,8 @@
           "entry": 2316299,
           "entry_name": "Caput mensae",
           "manager": "Huw Meredith",
-          "event_total": 51,
-          "total": 408,
+          "event_total": 53,
+          "total": 410,
           "is_me": false
         },
         {
@@ -645,8 +645,8 @@
           "entry": 2033083,
           "entry_name": "Wirtz Case Scenario",
           "manager": "Idris Jenkins",
-          "event_total": 56,
-          "total": 363,
+          "event_total": 58,
+          "total": 365,
           "is_me": false
         },
         {
@@ -665,8 +665,8 @@
           "entry": 7113295,
           "entry_name": "Eze does, Eze goes",
           "manager": "Gus Price",
-          "event_total": 62,
-          "total": 325,
+          "event_total": 64,
+          "total": 327,
           "is_me": false
         }
       ]
@@ -725,8 +725,8 @@
           "entry": 636134,
           "entry_name": "Hobblers 2",
           "manager": "Andrew Hasler",
-          "event_total": 35,
-          "total": 288,
+          "event_total": 37,
+          "total": 290,
           "is_me": false
         }
       ]
@@ -983,7 +983,7 @@
       "full_name": "Milan van Ewijk",
       "team": "COV",
       "pos": "DEF",
-      "now_cost": 4.0,
+      "now_cost": 3.9,
       "multiplier": 0,
       "is_captain": false,
       "is_vice_captain": false,
@@ -1109,9 +1109,9 @@
       "suspect": false
     },
     "175": {
-      "now_cost": 40,
+      "now_cost": 39,
       "purchase": 40,
-      "selling": 40,
+      "selling": 39,
       "source": "initial_squad",
       "bought_event": null,
       "suspect": false
