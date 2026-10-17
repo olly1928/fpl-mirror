@@ -1,4 +1,4 @@
-# season=2026/27 preseason=False next_gw=7 deadline=2026-10-17T10:00:00Z players=667 fetched=2026-10-17T07:23:36+00:00
+# season=2026/27 preseason=False next_gw=8 deadline=2026-10-23T17:30:00Z players=667 fetched=2026-10-17T11:54:16+00:00
 # One row per fixture per player per stat, flattened from fixtures[].stats.
 # team_side: h=home side, a=away side. Empty until fixtures are played.
 # Unlike the other append-only files this one is rebuilt each run, so FPL's later bonus-point and stat corrections are picked up.
@@ -4232,3 +4232,38 @@ fixture_id,gw,player_id,team_side,identifier,value
 60,6,115,a,defensive_contribution,3
 60,6,129,a,defensive_contribution,2
 60,6,614,a,defensive_contribution,1
+64,7,226,h,saves,1
+64,7,226,h,bps,5
+64,7,230,h,bps,5
+64,7,233,h,bps,4
+64,7,236,h,bps,4
+64,7,649,h,bps,4
+64,7,229,h,bps,3
+64,7,244,h,bps,3
+64,7,246,h,bps,3
+64,7,249,h,bps,3
+64,7,238,h,bps,2
+64,7,239,h,bps,2
+64,7,154,a,bps,6
+64,7,156,a,bps,6
+64,7,40,a,bps,5
+64,7,148,a,bps,5
+64,7,28,a,bps,3
+64,7,101,a,bps,3
+64,7,149,a,bps,3
+64,7,151,a,bps,3
+64,7,165,a,bps,3
+64,7,200,a,bps,3
+64,7,159,a,bps,2
+64,7,238,h,defensive_contribution,3
+64,7,229,h,defensive_contribution,2
+64,7,230,h,defensive_contribution,2
+64,7,236,h,defensive_contribution,2
+64,7,239,h,defensive_contribution,2
+64,7,649,h,defensive_contribution,1
+64,7,156,a,defensive_contribution,3
+64,7,151,a,defensive_contribution,2
+64,7,159,a,defensive_contribution,2
+64,7,40,a,defensive_contribution,1
+64,7,148,a,defensive_contribution,1
+64,7,149,a,defensive_contribution,1
