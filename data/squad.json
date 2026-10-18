@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-17T23:41:14.214826+00:00",
+  "fetched_at": "2026-10-18T02:26:22.409153+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -448,21 +448,21 @@
         },
         {
           "rank": 8,
-          "last_rank": 8,
-          "entry": 548815,
-          "entry_name": "Sels Like TeamSpirit",
-          "manager": "John Braddock",
-          "event_total": 34,
-          "total": 432,
-          "is_me": false
-        },
-        {
-          "rank": 8,
           "last_rank": 11,
           "entry": 687538,
           "entry_name": "week_foot_11",
           "manager": "Samip Thakkar",
           "event_total": 41,
+          "total": 432,
+          "is_me": false
+        },
+        {
+          "rank": 8,
+          "last_rank": 8,
+          "entry": 548815,
+          "entry_name": "Sels Like TeamSpirit",
+          "manager": "John Braddock",
+          "event_total": 34,
           "total": 432,
           "is_me": false
         },
