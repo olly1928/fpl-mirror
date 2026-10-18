@@ -1,4 +1,4 @@
-# season=2026/27 preseason=False next_gw=8 deadline=2026-10-23T17:30:00Z players=668 fetched=2026-10-18T19:08:37+00:00
+# season=2026/27 preseason=False next_gw=8 deadline=2026-10-23T17:30:00Z players=668 fetched=2026-10-18T22:08:12+00:00
 # One row per fixture per player per stat, flattened from fixtures[].stats.
 # team_side: h=home side, a=away side. Empty until fixtures are played.
 # Unlike the other append-only files this one is rebuilt each run, so FPL's later bonus-point and stat corrections are picked up.
@@ -4394,11 +4394,11 @@ fixture_id,gw,player_id,team_side,identifier,value
 63,7,109,h,saves,1
 63,7,199,a,saves,5
 63,7,138,h,bonus,3
-63,7,114,h,bonus,2
 63,7,129,h,bonus,2
+63,7,114,h,bonus,1
 63,7,138,h,bps,49
-63,7,114,h,bps,39
 63,7,129,h,bps,39
+63,7,114,h,bps,38
 63,7,504,h,bps,36
 63,7,127,h,bps,32
 63,7,115,h,bps,29
@@ -4422,6 +4422,7 @@ fixture_id,gw,player_id,team_side,identifier,value
 63,7,212,a,bps,3
 63,7,223,a,bps,2
 63,7,224,a,bps,2
+63,7,199,a,bps,1
 63,7,633,a,bps,-4
 63,7,202,a,bps,-7
 63,7,204,a,bps,-7
