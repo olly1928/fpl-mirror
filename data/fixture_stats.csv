@@ -1,4 +1,4 @@
-# season=2026/27 preseason=False next_gw=8 deadline=2026-10-23T17:30:00Z players=668 fetched=2026-10-18T22:08:12+00:00
+# season=2026/27 preseason=False next_gw=8 deadline=2026-10-23T17:30:00Z players=668 fetched=2026-10-19T00:39:34+00:00
 # One row per fixture per player per stat, flattened from fixtures[].stats.
 # team_side: h=home side, a=away side. Empty until fixtures are played.
 # Unlike the other append-only files this one is rebuilt each run, so FPL's later bonus-point and stat corrections are picked up.
@@ -4814,17 +4814,17 @@ fixture_id,gw,player_id,team_side,identifier,value
 69,7,16,a,yellow_cards,1
 69,7,1,a,saves,2
 69,7,1,a,bonus,3
+69,7,13,a,bonus,3
 69,7,31,a,bonus,3
-69,7,13,a,bonus,1
-69,7,558,h,bps,20
+69,7,558,h,bps,16
 69,7,472,h,bps,15
-69,7,487,h,bps,12
+69,7,167,h,bps,10
 69,7,486,h,bps,10
-69,7,167,h,bps,9
+69,7,487,h,bps,8
 69,7,581,h,bps,8
 69,7,469,h,bps,7
+69,7,474,h,bps,5
 69,7,467,h,bps,4
-69,7,474,h,bps,4
 69,7,482,h,bps,4
 69,7,493,h,bps,4
 69,7,483,h,bps,3
@@ -4832,21 +4832,21 @@ fixture_id,gw,player_id,team_side,identifier,value
 69,7,201,h,bps,2
 69,7,488,h,bps,1
 69,7,1,a,bps,29
+69,7,13,a,bps,29
 69,7,31,a,bps,29
-69,7,13,a,bps,28
 69,7,4,a,bps,27
-69,7,8,a,bps,24
+69,7,8,a,bps,23
 69,7,10,a,bps,23
 69,7,16,a,bps,22
 69,7,452,a,bps,18
 69,7,12,a,bps,16
 69,7,15,a,bps,13
+69,7,14,a,bps,5
 69,7,17,a,bps,5
 69,7,5,a,bps,4
-69,7,14,a,bps,4
 69,7,26,a,bps,3
 69,7,25,a,bps,2
-69,7,558,h,defensive_contribution,13
+69,7,558,h,defensive_contribution,14
 69,7,469,h,defensive_contribution,10
 69,7,472,h,defensive_contribution,9
 69,7,486,h,defensive_contribution,9
@@ -4861,11 +4861,11 @@ fixture_id,gw,player_id,team_side,identifier,value
 69,7,493,h,defensive_contribution,1
 69,7,4,a,defensive_contribution,12
 69,7,452,a,defensive_contribution,10
-69,7,13,a,defensive_contribution,8
+69,7,13,a,defensive_contribution,9
 69,7,12,a,defensive_contribution,7
 69,7,31,a,defensive_contribution,5
-69,7,8,a,defensive_contribution,3
 69,7,5,a,defensive_contribution,2
+69,7,8,a,defensive_contribution,2
 69,7,15,a,defensive_contribution,2
 69,7,17,a,defensive_contribution,2
 69,7,10,a,defensive_contribution,1
