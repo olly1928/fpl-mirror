@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-19T18:05:05.581949+00:00",
+  "fetched_at": "2026-10-19T22:43:08.755930+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,7 +8,7 @@
   "next_deadline": "2026-10-23T17:30:00Z",
   "preseason": false,
   "overall_points": 415,
-  "overall_rank": 4543402,
+  "overall_rank": 4604120,
   "bank": 1.3,
   "squad_value": 100.3,
   "squad_selling_value": 981,
@@ -78,11 +78,11 @@
     {
       "event": 7,
       "points": 67,
-      "overall_rank": 4530267,
-      "rank": 2394589,
+      "overall_rank": 4604120,
+      "rank": 2667291,
       "transfers": 1,
       "transfer_cost": 0,
-      "points_on_bench": 4
+      "points_on_bench": 5
     }
   ],
   "past_seasons": [
@@ -272,8 +272,8 @@
           "entry": 3886598,
           "entry_name": "Col's Trolls",
           "manager": "James Collins",
-          "event_total": 82,
-          "total": 469,
+          "event_total": 84,
+          "total": 471,
           "is_me": false
         },
         {
@@ -352,8 +352,8 @@
           "entry": 5749977,
           "entry_name": "SEAN",
           "manager": "Sean McGonigle",
-          "event_total": 49,
-          "total": 400,
+          "event_total": 55,
+          "total": 406,
           "is_me": false
         },
         {
@@ -412,8 +412,8 @@
           "entry": 2753182,
           "entry_name": "Daizen & Confused",
           "manager": "Jamie McGachy",
-          "event_total": 52,
-          "total": 486,
+          "event_total": 54,
+          "total": 488,
           "is_me": false
         },
         {
@@ -422,18 +422,18 @@
           "entry": 3820692,
           "entry_name": "somgorsi",
           "manager": "Hubert Kaźmierczak",
-          "event_total": 48,
-          "total": 473,
+          "event_total": 50,
+          "total": 475,
           "is_me": false
         },
         {
-          "rank": 6,
+          "rank": 5,
           "last_rank": 6,
           "entry": 2940306,
           "entry_name": "SomeRandomName",
           "manager": "Ania ER",
-          "event_total": 52,
-          "total": 470,
+          "event_total": 57,
+          "total": 475,
           "is_me": false
         },
         {
@@ -468,22 +468,22 @@
         },
         {
           "rank": 10,
+          "last_rank": 10,
+          "entry": 7359153,
+          "entry_name": "ohforgodssaka",
+          "manager": "Jack Wilkinson",
+          "event_total": 68,
+          "total": 462,
+          "is_me": false
+        },
+        {
+          "rank": 11,
           "last_rank": 12,
           "entry": 2328199,
           "entry_name": "Super Saiyan Sarr",
           "manager": "Michael Bird",
           "event_total": 72,
           "total": 461,
-          "is_me": false
-        },
-        {
-          "rank": 11,
-          "last_rank": 10,
-          "entry": 7359153,
-          "entry_name": "ohforgodssaka",
-          "manager": "Jack Wilkinson",
-          "event_total": 66,
-          "total": 460,
           "is_me": false
         },
         {
@@ -512,8 +512,8 @@
           "entry": 687538,
           "entry_name": "week_foot_11",
           "manager": "Samip Thakkar",
-          "event_total": 55,
-          "total": 446,
+          "event_total": 59,
+          "total": 450,
           "is_me": false
         },
         {
@@ -522,8 +522,8 @@
           "entry": 5984664,
           "entry_name": "Wishing4Wigan",
           "manager": "Micajah Dudley",
-          "event_total": 66,
-          "total": 428,
+          "event_total": 70,
+          "total": 432,
           "is_me": false
         },
         {
@@ -622,8 +622,8 @@
           "entry": 5887119,
           "entry_name": "You Araujo",
           "manager": "Finn Meredith",
-          "event_total": 70,
-          "total": 490,
+          "event_total": 76,
+          "total": 496,
           "is_me": false
         },
         {
@@ -652,8 +652,8 @@
           "entry": 8668432,
           "entry_name": "MMDGAF FC",
           "manager": "Helen Maude",
-          "event_total": 63,
-          "total": 439,
+          "event_total": 67,
+          "total": 443,
           "is_me": false
         },
         {
@@ -742,8 +742,8 @@
           "entry": 6389595,
           "entry_name": "A Grand Old Team",
           "manager": "Steve Organ",
-          "event_total": 27,
-          "total": 336,
+          "event_total": 32,
+          "total": 341,
           "is_me": false
         }
       ]
