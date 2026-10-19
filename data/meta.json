@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-19T11:44:13+00:00",
+  "fetched_at": "2026-10-19T18:05:07+00:00",
   "season": "2026/27",
   "preseason": false,
   "current_event": 7,
@@ -210,9 +210,26 @@
       "is_next": false,
       "average_entry_score": 55,
       "highest_score": 122,
-      "most_captained": null,
+      "most_captained": 411,
       "most_selected": 411,
-      "chip_plays": []
+      "chip_plays": [
+        {
+          "chip_name": "bboost",
+          "num_played": 179094
+        },
+        {
+          "chip_name": "freehit",
+          "num_played": 93126
+        },
+        {
+          "chip_name": "wildcard",
+          "num_played": 335228
+        },
+        {
+          "chip_name": "3xc",
+          "num_played": 724286
+        }
+      ]
     },
     {
       "id": 8,
@@ -281,7 +298,7 @@
     },
     {
       "id": 13,
-      "deadline_time": "2026-12-02T18:30:00Z",
+      "deadline_time": "2026-12-01T18:30:00Z",
       "finished": false,
       "data_checked": false,
       "is_current": false,
@@ -294,7 +311,7 @@
     },
     {
       "id": 14,
-      "deadline_time": "2026-12-05T13:30:00Z",
+      "deadline_time": "2026-12-05T11:00:00Z",
       "finished": false,
       "data_checked": false,
       "is_current": false,
@@ -320,7 +337,7 @@
     },
     {
       "id": 16,
-      "deadline_time": "2026-12-19T13:30:00Z",
+      "deadline_time": "2026-12-19T11:00:00Z",
       "finished": false,
       "data_checked": false,
       "is_current": false,
@@ -857,19 +874,14 @@
     ],
     "timezone": "UTC"
   },
-  "stale": true,
-  "warnings": [
-    "[build_fpl] STALE — last ran 2026-10-19T11:44:13+00:00, expected every 60 min",
-    "[build_player_history] STALE — last ran 2026-10-19T11:44:11+00:00, expected every 60 min",
-    "[build_snapshots] STALE — last ran 2026-10-19T11:44:11+00:00, expected every 60 min",
-    "[build_squad] STALE — last ran 2026-10-19T11:44:13+00:00, expected every 60 min"
-  ],
+  "stale": false,
+  "warnings": [],
   "components": {
     "build_fpl": {
-      "last_run_at": "2026-10-19T11:44:13+00:00",
+      "last_run_at": "2026-10-19T18:05:07+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
-      "stale": true
+      "stale": false
     },
     "build_odds": {
       "last_run_at": "2026-10-19T14:45:44+00:00",
@@ -878,22 +890,22 @@
       "stale": false
     },
     "build_player_history": {
-      "last_run_at": "2026-10-19T11:44:11+00:00",
+      "last_run_at": "2026-10-19T18:05:05+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
-      "stale": true
+      "stale": false
     },
     "build_snapshots": {
-      "last_run_at": "2026-10-19T11:44:11+00:00",
+      "last_run_at": "2026-10-19T18:05:04+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
-      "stale": true
+      "stale": false
     },
     "build_squad": {
-      "last_run_at": "2026-10-19T11:44:13+00:00",
+      "last_run_at": "2026-10-19T18:05:07+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
-      "stale": true
+      "stale": false
     }
   },
   "known_empty": [
@@ -931,6 +943,5 @@
     "teams.csv: columns named derived_* are computed by this mirror from the finished fixtures in fixtures.csv. Everything else in that file is mirrored verbatim from FPL. Use derived_played/win/draw/loss/points for the league table — FPL sends its own copies of those as zero all season long. FPL's 'position' is the exception and is live; the derived table is cross-checked against it every run and warns here on disagreement.",
     "stale is true when any component has gone longer than twice its expected refresh interval without running. Check components{} for which one.",
     "CACHE CHECK: every CSV in this mirror carries 'fetched=<timestamp>' in its first comment line, and it is always identical to this file's fetched_at within a single build. If they disagree, one of the two was served from a cache rather than being genuinely out of date — raw.githubusercontent.com caches per-path, so meta.json can lag while players.csv is current. Refetch with a cache-busting query string before concluding the mirror is stale."
-  ],
-  "components_refreshed_at": "2026-10-19T14:45:45+00:00"
+  ]
 }
