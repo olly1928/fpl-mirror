@@ -28,9 +28,9 @@ hours behind another even though both were written by the same run. A cached
 completely as a broken build would, and it looks entirely plausible while doing
 it.
 
-Every CSV carries `fetched=<timestamp>` in its first comment line, and within a
-single build that is always **identical** to `meta.json`'s `fetched_at`. So the
-check is free:
+The core CSVs rebuilt by `build_fpl` (`players`, `teams`, `fixtures`, `fdr` and
+`fixture_stats`) carry `fetched=<timestamp>` matching `meta.json`'s `fetched_at`.
+Check that core set together:
 
 ```bash
 BASE=https://raw.githubusercontent.com/olly1928/fpl-mirror/main/data
@@ -38,9 +38,14 @@ curl -s "$BASE/meta.json?v=$(date +%s)"   | head -2      # "fetched_at": ...
 curl -s "$BASE/players.csv?v=$(date +%s)" | head -1      # # season=... fetched=...
 ```
 
-If those two timestamps disagree, you are holding a cached copy, not a stale
-mirror — refetch with the cache-busting query string. If they agree and the
-timestamp is old, the mirror really has stopped.
+If those timestamps disagree, re-fetch the core set or use the GitHub contents
+API. Query strings do not reliably defeat caching. Prefer pinning downloads to
+one commit SHA. If coherent timestamps are old, check the component status.
+
+Player history only changes when a completed gameweek is appended; an older
+header is normal when coverage is complete and its builder is healthy. Snapshots
+and odds have independent clocks. Odds use a per-row `fetched_at`, not the core
+comment header. Never require all CSV timestamps to equal the core timestamp.
 
 ## Files
 
@@ -62,8 +67,8 @@ timestamp is old, the mirror really has stopped.
 is *something changed, go and look*. `known_empty[]` is *we looked, it is upstream,
 it is not changing* — read it before calling any column broken.
 
-CSVs carry a leading `#` comment block with the season header and a `fetched=`
-timestamp. Drop lines starting with `#`, then parse normally:
+Most CSVs carry a leading `#` comment block; odds instead have row-level
+timestamps. Drop any lines starting with `#`, then parse normally:
 
 ```python
 body = [ln for ln in text.split("\n") if ln and not ln.startswith("#")]
@@ -414,6 +419,7 @@ the others' status into `meta.json`.
 
 ```bash
 python tests/test_offline.py
+python tests/test_advisor.py
 ```
 
 Runs the spec's acceptance checks against synthetic API payloads — no network, no
@@ -424,11 +430,42 @@ has renamed away.
 ## What this deliberately does not solve
 
 **Predicted line-ups.** The FPL API has no view on who will start next weekend.
-`starts_per_90` and `chance_of_playing_next_round` are the closest available
-proxies and they are not close. This stays a manual input from Fantasy Football
-Scout or similar, and it is the largest single source of error in anything built
-on top of this mirror. The expanded data here has not closed that gap.
+Actual recent starts/minutes and fitness flags supply a baseline, not verified
+team news. `starts_per_90` is a rate that may exceed 1, not a starting probability.
+The advisor accepts sourced news/minutes overrides; this remains a major input
+uncertainty.
 
-**Player-level betting odds.** Out of scope by decision. Anytime-goalscorer
-prices are largely derivable from team xG (already in `odds.csv`) times a
-player's share of chances (from `expected_goals` once the season starts).
+**Player-level betting odds.** Out of scope by decision. Team goal rates scaled
+by a player's underlying involvement are an approximation; they are not a
+replacement for observed player-level bookmaker prices.
+
+## Claude decision workflow
+
+The existing project instructions continue to work unchanged. Their canonical
+copy is [prompts/project.md](prompts/project.md). All entry points remain on `main`:
+
+- [Weekly decision v4](prompts/weekly.md), the default.
+- [Full preseason/wildcard build v4](prompts/preseason.md).
+- [Feed health only v3](prompts/smoke-test.md).
+
+The two advice playbooks fetch the standard-library-only
+[fpl_advisor.py](fpl_advisor.py) and [model method/configuration](model/README.md).
+The helper provides a fixed, explicitly uncalibrated points baseline, sourced
+minutes/role overrides, legal XI/bench/captain choices, sale-price transfer-plan
+comparisons, constrained full builds and immutable pre-deadline advice records.
+No ingestion job, public data schema, credential or FPL account action changes.
+
+The frozen 2026/27 prior uses the previous-season totals saved before GW1, rather
+than using current results as retrospective training evidence. Six-gameweek plan
+comparisons include holding, hits and scheduled moves on one common horizon.
+Ownership explains relative risk; it is never a points bonus for being different.
+Build/lineup searches disclose their bounded heuristics instead of claiming a
+proven global optimum.
+
+Records embed forecasts, rejected alternatives, assumptions, model version and
+input hashes. They describe advice, not confirmed execution. Claude can attach
+the JSON and input packet without authentication; this does not automatically
+commit them to [decisions/](decisions/README.md). Retain them for prospective
+reviews of points and minutes calibration. Installing the workflow creates no
+invented historical forecasts and proves no predictive edge.
+

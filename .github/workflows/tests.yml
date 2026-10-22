@@ -51,3 +51,7 @@ jobs:
 
       - name: Acceptance checks
         run: python tests/test_offline.py
+
+      - name: Advisor scoring, budgets and prospective records
+        run: python tests/test_advisor.py
+

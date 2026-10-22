@@ -444,8 +444,11 @@ def test_snapshots():
     check("only the changed players were appended", len(rows) == N_PLAYERS + 2)
     check("news with a comma in it round-trips intact",
           any(r["news"] == "Hamstring injury, out for three weeks" for r in rows))
-    check("the monthly file is named by month",
-          month_file.name.startswith("2026-08"), month_file.name)
+    # The builder selects its file from the UTC clock, independently of the
+    # row timestamp patched above. This check must still pass after August.
+    check("the monthly file is named by UTC month",
+          month_file.name == datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m.csv"),
+          month_file.name)
 
     # A thin API response must never be appended to the one unrebuildable file.
     RESPONSES["/bootstrap-static/"] = {"elements": make_bootstrap()["elements"][:5]}
@@ -1592,3 +1595,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

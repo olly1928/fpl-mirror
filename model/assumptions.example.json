@@ -1,0 +1,13 @@
+{
+  "players": {},
+  "free_transfers": null,
+  "free_transfers_confirmed": false,
+  "sources": [],
+  "plans": [
+    {
+      "name": "roll",
+      "moves": []
+    }
+  ],
+  "notes": []
+}

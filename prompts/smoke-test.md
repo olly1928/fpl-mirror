@@ -1,105 +1,127 @@
-<!-- smoke-test.md · v2 · 2026-08-27 -->
+<!-- smoke-test.md · v3 · 2026-10-22 -->
 
 # FPL MIRROR — ACCESS SMOKE TEST
 
-This is a health check, not an analysis. Verify the feed is reachable and coherent, report a
-pass/fail table, and stop. Do not build a squad, project points, search the web, or give FPL
-advice, even if something looks interesting.
+This is a **feed health check only**. Check reachability/coherence, report a
+pass/fail table and stop. Do not forecast points, build a squad, recommend
+transfers/captains/chips, run the advisor model, or search football news.
 
-## How to fetch
+First response line: "Loaded smoke-test.md v3 — feed health only."
+Confirm this playbook's version stamp (top line) and the closing marker were
+reached. Re-fetch a truncated copy. Use **bash + curl, never web_fetch**.
+The same three project routing URLs remain valid.
 
-Use **bash and curl**, not web_fetch — the sandbox reaches `raw.githubusercontent.com`
-directly and web_fetch has URL-allowlist problems with it.
+## Fetch and capture evidence
 
-```
-B=https://raw.githubusercontent.com/olly1928/fpl-mirror/main/data
-```
+Use curl to record HTTP status and byte size for each path below. Read
+`meta.json` first. Prefer a pinned repository SHA, resolved via curl to
+`https://api.github.com/repos/olly1928/fpl-mirror/commits/main`, then fetch
+`https://raw.githubusercontent.com/olly1928/fpl-mirror/<SHA>/data/<path>`.
+If that API is unavailable, use raw `main` and verify coherence before claiming
+a fault.
 
-**Cache warning — read before reporting any failure.** `raw.githubusercontent.com` caches per
-path for a few minutes, independently per file. You can fetch six files from one build and
-get a mix of current and several-minutes-old copies. Query strings do **not** reliably defeat
-this. If something looks stale, wait a minute and re-fetch, or pull that file via
-`https://api.github.com/repos/olly1928/fpl-mirror/contents/data/<file>`, which is not behind
-the same cache. Do not report a stale feed on a single mismatched read.
-
-## Files to check
-
-| Path | Expect |
+| Path | Expected |
 |---|---|
-| `meta.json` | present |
-| `build_status.json` | present |
-| `players.csv` | present, ~587 rows |
-| `teams.csv` | present, 20 rows |
-| `fdr.csv` | present, 20 rows |
-| `fixtures.csv` | present, 380 rows |
-| `odds.csv` | present, 10 rows |
-| `squad.json` | present |
-| `snapshots/2026-08.csv` | present, non-empty |
-| `player_history.csv` | **may be absent or empty — this is correct pre-season**, not a failure |
-| `fixture_stats.csv` | **may be absent — correct until games are played** |
+| `meta.json` | Present and parseable |
+| `build_status.json` | Present and parseable |
+| `players.csv` | Count equals `meta.player_count`; do not hardcode 587 |
+| `teams.csv` | 20 distinct clubs |
+| `fdr.csv` | 20 clubs |
+| `fixtures.csv` | 380 fixtures in this 20-club/38-GW season |
+| `odds.csv` | Non-empty, fixture count varies; do not hardcode 10 |
+| `squad.json` | Correct team 790889 and expected locked-GW state |
+| `snapshots/YYYY-MM.csv` | Current UTC month; daily baseline then deltas |
+| `player_history.csv` | May be absent/empty only before completed GWs |
+| `fixture_stats.csv` | May be absent/empty before any matches have been played |
 
-## Checks to run
+Use the month of the core fetch around a UTC month boundary if the new month's
+first snapshot has not yet been written; explain that boundary rather than
+silently choosing an old arbitrary month. Fetching a monthly snapshot can be
+large; do not print its entire contents.
 
-Write one Python script that does all of this and prints a table. Don't narrate each curl.
+Raw GitHub CDN caching is per path. Query strings do not reliably defeat it.
+A core timestamp mismatch calls for a re-fetch of the core set or contents API
+reads via curl. Do not declare a frozen mirror from one mismatched read.
 
-**1. Reachability** — HTTP status and byte size for every path above.
+## Checks
 
-**2. Cache coherence** — the `fetched=` stamp in the `#` header of `players.csv`,
-`teams.csv`, `fdr.csv` and `fixtures.csv` must all equal `meta.json`'s `fetched_at`. Any
-disagreement means a cached read; re-fetch before reporting it.
+Run the arithmetic and parsing in one Python script; don't narrate each curl.
 
-**3. Integrity gate** — from `meta.json`:
-* `season` is `2026/27`
-* `teams_in_game` has 20 clubs, no duplicates
-* `next_deadline` is a real upcoming date
-* `fetched_at` is recent
-* `stale` is `false`
-* report `warnings[]` in full — these name API fields that arrived missing or stopped
-  carrying values and were written as empty columns, which is otherwise indistinguishable
-  from a real zero
-* report the count from `known_empty[]` and nothing more. It names columns FPL has never
-  populated: expected, permanent, and not a fault. A health check that flags them every
-  time is a health check that is always red for no reason
+1. **Reachability:** HTTP status, bytes, parse success and required/optional status.
+   Ignore CSV comment lines when reading headers/data. JSON must be a JSON
+   document, not an HTML error page saved as one.
 
-**4. Component freshness** — from `build_status.json`, each component's `last_run_at` versus
-its `expected_interval_minutes`. Flag anything older than roughly twice its interval.
+2. **Core coherence:** `players.csv`, `teams.csv`, `fdr.csv`,
+   `fixtures.csv` and `fixture_stats.csv` are rebuilt by `build_fpl`.
+   Their first comment's `fetched=` must equal `meta.fetched_at`.
+   Do **not** apply that equality test to player history, snapshots or odds.
 
-**5. Column contract** — `players.csv` must begin with exactly these fourteen, in order:
+3. **Metadata:** correct season derived from event deadlines; 20 distinct clubs;
+   correct player count; an upcoming next deadline while the season is active;
+   recent core timestamp; `stale=false`; all `warnings[]` reviewed.
+   After GW38, report "season complete" instead of failing because no next deadline
+   exists. Report the count in `known_empty[]` only: these are acknowledged
+   upstream columns, not new faults.
 
-```
-id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st
-```
+4. **Component freshness:** use each builder's own `last_run_at` and
+   `expected_interval_minutes` in `build_status.json`. More than twice its
+   interval is stale. Do not confuse an unchanged historical file with a builder
+   that stopped running.
 
-Then report the total column count. **52** means the expansion landed but PR #3 hasn't;
-**57** means PR #3 merged and `clearances_blocks_interceptions`, `tackles`, `recoveries`,
-`expected_goal_involvements_per_90` and `goals_conceded` are live. Say which state it's in.
+5. **Column contract:** the first fourteen players columns remain exactly:
 
-**6. Data is actually populated, not just present** — print these rows so I can eyeball them:
+   `id,name,team,pos,price,own,pts,ppg,mins,g,a,cs,bonus,st`
 
-* Haaland (MCI) — `goals_scored`, `expected_goals`, `starts`, `defensive_contribution`
-* B.Fernandes (MUN) — `assists`, `expected_assists`, `starts`
-* Raya (ARS) — `cs`, `saves`, `starts`
+   Report the actual total column count; appended columns are expected.
+   Check the current fields needed by the advisor: xG, xA, starts, defensive
+   contributions, saves, cards and price projections. Do not infer an old PR's
+   state from a hardcoded count of 52/57.
 
-Expected-goals and defensive-contribution fields carry **last season's totals**, not zeros.
-If they read zero, the columns exist but aren't populated — that's a failure. `form` and the
-transfer counts *should* read zero pre-season; that's correct.
+6. **Values:** print a compact sample using actual CSV names: Haaland's
+   `g,expected_goals,starts`; a playing midfielder's
+   `a,expected_assists,defensive_contribution`; a playing goalkeeper's
+   `cs,saves,starts`. Before GW1 these may be carried previous-season totals;
+   in-season they are cumulative current-season values. A legitimate zero
+   (for example a goalkeeper's xG or a forward's defensive contribution) is not
+   proof of a failed column. Use schema warnings and cross-record checks.
 
-**7. Snapshots sanity** — row count in `snapshots/2026-08.csv`, number of distinct
-`snapshot_at` values, and whether the earliest timestamp of each UTC day carries a full
-baseline for every player. It's delta-encoded: a daily baseline, then only players whose
-values moved.
+7. **History coverage:** every `meta.events[]` entry with `data_checked=true`
+   must exist in `player_history.csv`. An older file-header timestamp is normal
+   when no new GW has completed. Check unique (GW,player) rows and coherent numeric
+   values. Where complete, reconcile cumulative points/minutes/goals/assists/xG/xA
+   against `players.csv`; report real discrepancies without rewriting history.
+   DGW rows aggregate multiple fixtures: don't interpret them as one match.
 
-**8. Odds freshness** — `fetched_at` in `odds.csv`, how many fixtures it covers, and the
-`n_books_totals` distribution. Flag any row where `n_books_totals` is 1 or 2.
+8. **Teams/fixtures:** club references and fixture IDs should join cleanly.
+   Use the populated `derived_*` table and `strength_overall_home/away`.
+   The known-empty FPL table counters and attack/defence breakdown stay expected.
 
-## Output
+9. **Snapshots:** report row count, distinct timestamps and the first snapshot of
+   each UTC day. Validate daily anchors and forward-fill delta rows. The player
+   population may grow during a day/month, so do not demand that an old anchor
+   contain every player who exists today. Distinguish newly added players from a
+   truncated baseline.
 
-A pass/fail table, then a short list of anything that needs attention. If everything passes,
-say so in one line. British English.
-* Confirm this playbook's version stamp (top line) in your output, and that you reached
-  the closing comment at the bottom. If you didn't, you have a truncated copy — say so and
-  re-fetch before doing anything else.
+10. **Odds:** inspect row-level timestamps, exact teams/kickoff dates, upcoming
+    fixture coverage, bookmaker-count distributions, normalised 1X2 probabilities,
+    nonnegative fitted goal rates and clean-sheet probabilities in [0,1].
+    Flag totals coverage of 0/1/2 books as a limitation. Odds have an independent
+    six-hour clock and no requirement to equal `meta.fetched_at`. Odds more than
+    12 hours old near a deadline need attention even if the file parses.
 
-Do not proceed to any analysis afterwards.
+11. **Squad:** team ID, `picks_event`, chip/transfer history, bank units and
+    selling-price confidence. Last-deadline picks are expected; upcoming-GW
+    transfers mean a decision consumer must reconcile current edits. They do not
+    by themselves mean the public feed failed.
 
-<!-- end of smoke-test.md v2 — confirm this line was reached -->
+## Output and stop
+
+Return a compact pass/fail table and the short list of material faults or
+limitations, with the snapshot time. Separate expected upstream empty fields and
+normal historical timestamps from actual faults. A successful fetch alone is not
+proof of correct contents.
+
+If healthy, say so. If blocked, say exactly which required input/check failed.
+Confirm the closing marker was reached. Do not continue to football advice.
+
+<!-- end of smoke-test.md v3 — confirm this line was reached -->

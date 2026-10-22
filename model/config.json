@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "season": "2026/27",
+  "team_id": 790889,
+  "horizon": 6,
+  "prior_file": "priors-2026-27.csv",
+  "rate_prior_minutes": 900,
+  "position_prior_minutes": 180,
+  "history_half_life_gameweeks": 8,
+  "minutes_window": 6,
+  "minutes_prior_matches": 2,
+  "dc_prior_matches": 3,
+  "team_prior_matches": 8,
+  "neutral_team_goals": 1.45,
+  "home_goal_factor": 1.12,
+  "away_goal_factor": 0.88,
+  "fallback_attack_home_exponent": 0.5,
+  "fallback_defence_exponent": 0.5,
+  "pool_per_position": 20,
+  "beam_width": 400,
+  "notes": [
+    "Transparent baseline, not a backtested or calibrated edge. Keep parameters fixed until a prospective review justifies a versioned change.",
+    "Prior season IDs are valid only for the configured season. Prior club labels already reflect summer moves: verify roles manually.",
+    "No FPL form, ep_this, ep_next, value_form or ownership enters the points model.",
+    "Odds-derived goal rates are an approximation; non-market fixture estimates are explicitly labelled."
+  ]
+}
