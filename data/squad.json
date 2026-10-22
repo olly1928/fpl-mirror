@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-22T06:06:15.303416+00:00",
+  "fetched_at": "2026-10-22T06:54:58.803973+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -428,21 +428,21 @@
         },
         {
           "rank": 6,
-          "last_rank": 4,
-          "entry": 3820692,
-          "entry_name": "somgorsi",
-          "manager": "Hubert Kaźmierczak",
-          "event_total": 50,
-          "total": 475,
-          "is_me": false
-        },
-        {
-          "rank": 6,
           "last_rank": 6,
           "entry": 2940306,
           "entry_name": "SomeRandomName",
           "manager": "Ania ER",
           "event_total": 57,
+          "total": 475,
+          "is_me": false
+        },
+        {
+          "rank": 6,
+          "last_rank": 4,
+          "entry": 3820692,
+          "entry_name": "somgorsi",
+          "manager": "Hubert Kaźmierczak",
+          "event_total": 50,
           "total": 475,
           "is_me": false
         },
