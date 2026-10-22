@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-21T22:56:27.982283+00:00",
+  "fetched_at": "2026-10-22T01:09:48.851399+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,11 +8,11 @@
   "next_deadline": "2026-10-23T17:30:00Z",
   "preseason": false,
   "overall_points": 415,
-  "overall_rank": 4770006,
+  "overall_rank": 4770005,
   "bank": 1.3,
   "squad_value": 100.3,
   "squad_selling_value": 982,
-  "squad_market_value": 990,
+  "squad_market_value": 991,
   "available_budget": 995,
   "notes": [
     "FREE TRANSFERS: ESTIMATE ONLY — the FPL API does not expose free transfers. Derived from transfer history assuming 1 earned per gameweek, banked to a maximum of 5, with wildcard/free-hit weeks not consuming any. Confirm on the FPL site before making transfer decisions.",
@@ -428,21 +428,21 @@
         },
         {
           "rank": 6,
-          "last_rank": 4,
-          "entry": 3820692,
-          "entry_name": "somgorsi",
-          "manager": "Hubert Kaźmierczak",
-          "event_total": 50,
-          "total": 475,
-          "is_me": false
-        },
-        {
-          "rank": 6,
           "last_rank": 6,
           "entry": 2940306,
           "entry_name": "SomeRandomName",
           "manager": "Ania ER",
           "event_total": 57,
+          "total": 475,
+          "is_me": false
+        },
+        {
+          "rank": 6,
+          "last_rank": 4,
+          "entry": 3820692,
+          "entry_name": "somgorsi",
+          "manager": "Hubert Kaźmierczak",
+          "event_total": 50,
           "total": 475,
           "is_me": false
         },
@@ -932,7 +932,7 @@
       "full_name": "Dominic Calvert-Lewin",
       "team": "LEE",
       "pos": "FWD",
-      "now_cost": 6.0,
+      "now_cost": 6.1,
       "multiplier": 1,
       "is_captain": false,
       "is_vice_captain": false,
@@ -1094,7 +1094,7 @@
       "suspect": false
     },
     "346": {
-      "now_cost": 60,
+      "now_cost": 61,
       "purchase": 60,
       "selling": 60,
       "source": "initial_squad",
