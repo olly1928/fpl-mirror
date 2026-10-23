@@ -14,6 +14,7 @@ from research import prepare
 from research.estimators import candidates,minutes_candidates,scoring_target
 from research.selection import select,fit_weights
 from research.finalize import paired_blocks
+from research.refinements import poisson_blocks,calibrate,conditional_means
 
 
 class ChronologyTests(unittest.TestCase):
@@ -120,6 +121,24 @@ class SelectionTests(unittest.TestCase):
         self.assertGreaterEqual(len(candidates()),60)
         self.assertGreaterEqual(len(set(c.family for c in candidates())),10)
         self.assertEqual(len(minutes_candidates()),12)
+
+    def test_exact_block_expectations_match_direct_poisson_sum(self):
+        import math
+        for mean in (.01,.4,1.4,3,8,20):
+            for size in (2,3):
+                p=math.exp(-mean);expected=0.
+                for n in range(1,200):
+                    p*=mean/n;expected+=(n//size)*p
+                self.assertAlmostEqual(float(poisson_blocks(mean,size)),expected,places=10)
+
+    def test_probability_calibration_is_coherent_and_identity_preserves_minutes(self):
+        raw=np.array([[.9,.8,70.,.1,.1,.8],[.2,.05,9.,.8,.15,.05]])
+        identity=calibrate(raw,[0,0,0])
+        np.testing.assert_allclose(identity,raw,atol=1e-9)
+        changed=calibrate(raw,[.2,.1,-.1])
+        np.testing.assert_allclose(changed[:,3:].sum(axis=1),1)
+        self.assertTrue((changed[:,0]>=changed[:,1]).all())
+        self.assertTrue((changed[:,2]>=60*changed[:,1]+changed[:,4]-1e-9).all())
 
 
 if __name__=='__main__':

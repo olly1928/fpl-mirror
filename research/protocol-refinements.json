@@ -1,0 +1,11 @@
+{
+  "version": "structural-refinements-1.0",
+  "reason": "Implementation review identified useful structural comparisons beyond the broad library: preserve the production scoring/odds model while replacing minutes, calibrate the disjoint state probabilities, and calculate exact Poisson save/conceded blocks rather than mean divided by block size.",
+  "timing": "Declared during the broad retrospective run, after development diagnostics. All seasons were previously inspected; no claim of a newly untouched holdout.",
+  "minutes": "Choose the minute configuration on earlier OOF seasons only; optional temperature plus state-offset calibration fits only earlier OOF active cases, before news gating.",
+  "calibration": "Bound temperature to [0.5,2] and two state offsets to [-0.5,0.5], third offset fixed zero, identity penalty 0.01, equal season influence. Always report raw and calibrated variants.",
+  "hybrid": "Keep v1 rates, markets, exact scoring and captured flags; replace disjoint minute probabilities and conditional minute means. Historical comparison restricted to exact existing v1 cases, current conditional owned15 replay with genuine snapshots.",
+  "exact_components": "Refit the two declared Poisson-component configurations for 2023/24, 2024/25, 2025/26 and current; replace save/conceded approximations by exact state-mixture Poisson-block expectations. Select current configuration on the three earlier OOF seasons only.",
+  "selection": "Final recommendation considers consistency, MAE, minutes probabilities, owned decisions and uncertainty. Current seven outcomes do not choose a configuration or ensemble weight.",
+  "production": "No automatic promotion; the research hybrid does not yet implement sourced manual overrides. Preserve all playbook URLs and live model."
+}

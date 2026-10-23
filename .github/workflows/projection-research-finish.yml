@@ -1,0 +1,90 @@
+name: Complete projection research
+
+on:
+  push:
+    branches: [research/broad-projection-models]
+    paths: [research/finish-request.json]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+env:
+  OMP_NUM_THREADS: '2'
+  OPENBLAS_NUM_THREADS: '1'
+  MPLBACKEND: Agg
+
+jobs:
+  finish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/broad-projection-models
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.7'
+          cache: pip
+          cache-dependency-path: research/requirements.txt
+      - run: python -m pip install -r research/requirements.txt
+      - uses: actions/download-artifact@v4
+        with:
+          name: model-feature-cache
+          path: research/work/canonical-features
+          run-id: 39936706280
+          github-token: ${{ github.token }}
+      - name: Check immutable feature cache
+        run: cd research/work/canonical-features && sha256sum -c cache.sha256
+      - name: Reproduce original comparison baselines
+        run: |
+          python history/unpack.py --output research/work/source
+          python backtests/history_data.py --root research/work/source/archive --output history/work/normalised
+          python backtests/acquire.py --scope current --output research/work/replay-inputs
+          python backtests/replay_current.py --data-root research/work/replay-inputs/raw/current-core --refs backtests/sources/current-core-refs.json --actuals research/work/replay-inputs/outcomes/player_history.csv --squads backtests/fixtures --output research/work/current-v1
+          python history/research.py --panel history/work/normalised/normalised.csv --archive research/work/source/archive --output research/work/legacy --current-data research/work/replay-inputs/raw/current-core --refs backtests/sources/current-core-refs.json --actuals research/work/replay-inputs/outcomes/player_history.csv --squads backtests/fixtures --baseline-predictions research/work/current-v1/player_predictions.csv
+          mkdir -p research/work/baselines
+          cp research/work/legacy/historical-player-predictions.csv research/work/baselines/historical.csv
+          cp research/work/current-v1/player_predictions.csv research/work/baselines/current-v1.csv
+          cp research/work/current-v1/forecasts.replay.json research/work/baselines/current-v1-forecasts.json
+          cp research/work/current-v1/summary.json research/work/baselines/current-v1-summary.json
+          cp research/work/legacy/learned_minutes/player_predictions.csv research/work/baselines/current-v2.csv
+      - name: Validate actual feature population
+        run: python -m research.audit
+      - name: Test exact Poisson save and conceded blocks
+        run: python -m research.refinements --components-only
+      - name: Fit six-week current candidates without current outcomes in training
+        run: python -m research.prepare_six_cache --fit-current
+      - name: Await independent chronological folds and import verified evidence
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run watch 39936706280 --exit-status --interval 20
+          git pull --ff-only origin research/broad-projection-models
+          python -m research.import_folds
+      - name: Assess nested procedures and fit current finalists
+        run: python -m research.finalize --features research/work/canonical-features --experiments research/work/remote/experiments
+      - name: Assess frozen six-week forecasts
+        run: python -m research.six_week --features research/work/canonical-features --work research/work/remote/six-week --reuse-labels --first-year 2026 --last-year 2026
+      - name: Probability calibration and original-scoring minutes hybrids
+        run: python -m research.refinements --skip-components
+      - name: Repeat outer finalists across seeds
+        run: python -m research.stability
+      - name: Generate executed notebook and evidence report
+        run: python -m research.report
+      - name: Validate calculations and production compatibility
+        run: |
+          python -m unittest research.test_research
+          python tests/test_offline.py
+          python tests/test_advisor.py
+          python tests/test_backtests.py
+          python tests/test_history.py
+      - name: Commit research evidence and artifacts
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/results research/artifacts research/comparison.ipynb research/REPORT.md
+          git commit -m 'Report broad projection comparison and retain selected research artifacts'
+          git pull --rebase origin research/broad-projection-models
+          git push origin HEAD:research/broad-projection-models
