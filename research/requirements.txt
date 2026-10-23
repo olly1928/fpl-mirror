@@ -1,0 +1,11 @@
+# Optional isolated research environment. Production remains standard library only.
+numpy==2.3.5
+pandas==2.2.3
+scipy==1.17.0
+scikit-learn==1.8.0
+lightgbm==4.6.0
+xgboost==3.0.5
+catboost==1.2.8
+matplotlib==3.10.8
+nbformat==5.10.4
+nbconvert==7.16.6

@@ -1,0 +1,39 @@
+{
+  "version": "broad-projection-research-1.0",
+  "locked_before_fitting": true,
+  "runtime_amendment": "2016/17 development pilot only: unrestricted bagging took over two minutes per small fit. Before any 2018+ outer fits, bound bagged trees to 64 trees, depth 14 and 5 training seasons. Discard pilot fits; other families retain expanding histories and explicit 3/5-year ablations. No outer score used for this amendment.",
+  "source_commit": "806c9d265f111322e4ee4ef1f3120926a4d87426",
+  "purpose": "Find useful improvements to expected FPL points, minutes and decisions; do not promote automatically.",
+  "forecast_grain": "player-fixture, with predictions and outcomes summed to player-gameweek for primary points evaluation",
+  "headline_population": "same lag-defined active pool for every model: mean minutes in last 3 observed fixtures >=45, or GW<=3 and previous-season minutes>=900",
+  "secondary_populations": ["all observed target rows", "cold starts", "positions", "double gameweeks", "current owned 15", "current v1 fixed candidate pool"],
+  "sources": {
+    "full_panels": "12 complete fixture seasons 2014/15 through 2025/26",
+    "warmup": "partial 2013/14 FPL panel, training only",
+    "annual": "explicit-code previous-season totals only, no future-year aggregate",
+    "understat": "explicit FPL crosswalk only, matches on strictly earlier calendar days; provider-specific missingness and exposure",
+    "team": "1993/94 onward match results, conservative completed-date cutoff; no bookmaker odds without proven deadline timestamps",
+    "partial_sqlite": "quarantined from main scores due to identity conflicts and selective missing outcomes; auxiliary sensitivity only if a safe common feature schema is possible"
+  },
+  "feature_cutoff": "strictly smaller GW and kickoff+3h < earliest target GW kickoff-90m; Understat and date-only team results available next UTC day",
+  "historical_limitations": ["realised fixture assignments, no historic schedule/roster/news vintages", "season position may come from an end-season snapshot", "all old outcomes already inspected, so retrospective outer tests are not untouched external holdouts", "zero is never substituted for unavailable provider statistics"],
+  "known_rule_changes": "Direct and hurdle models train points with realised DC awards removed from labels, then add a lag-only expected DC component at inference. This prevents asking a pre-2025 learner to invent the new scoring rule. No target DC is used in features.",
+  "search": {
+    "budget": "up to 100 declared configurations across at least 9 distinct families; no selecting hyperparameters on outer test outcomes",
+    "families": ["shrunk rolling", "empirical scoring components", "ridge", "elastic net", "random forest", "extra trees", "histogram boosting", "LightGBM", "XGBoost", "CatBoost", "minutes hurdle", "Poisson scoring components", "chronological ensembles"],
+    "training": "expanding seasons; declared recency and source ablations may use rolling 3/5-season windows",
+    "folds": "inner OOF predictions start 2016/17; reported nested outer tests 2018/19 through 2025/26",
+    "selection": "at each outer season select configurations and families using only the preceding 3 seasons of OOF active-pool MSE, equal weight per season",
+    "preprocessing": "fit imputation/scaling on training subset only; fixed feature definitions; no random-row validation or early stopping on outer data",
+    "ensembles": "nonnegative weights summing to one fitted on earlier chronological OOF predictions, with equal season weights; report a selected single model too",
+    "calibration": "fit only on earlier OOF predictions; report raw and calibrated results",
+    "seeds": [1729, 2718, 3141],
+    "primary_seed": 1729,
+    "secondary_seeds": "retrain finalist configurations for stability, never select the best seed"
+  },
+  "metrics": ["RMSE primary", "MAE", "bias", "calibration intercept and slope", "calibration bins", "appearance and >=60 Brier", "three-state log loss", "minutes RMSE", "within-GW ranking", "top captain actual points", "legal owned-squad lineup with actual autosubs"],
+  "uncertainty": "paired temporal block bootstrap of consecutive gameweeks, and season-level variation; current 7 weeks too few for precise intervals; all-model comparisons descriptive",
+  "six_gameweek": "separate start-GW forecast of next six realised GW outcomes with all player features frozen at start cutoff; only complete future windows; purge labels crossing training/validation boundaries; retrospective schedule oracle caveat",
+  "current": "seven pinned pre-deadline snapshots; no refitting on current outcomes; apply only captured availability flags; no invented past Claude overrides; conditional owned-squad test is not a transfer-policy backtest",
+  "promotion": "research-only artifact; require useful consistency across recent seasons, minutes calibration and owned decisions, preserve sourced override interface, then prospective confirmation"
+}

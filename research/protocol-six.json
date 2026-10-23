@@ -1,0 +1,13 @@
+{
+  "version": "six-gameweek-secondary-1.0",
+  "locked_before_six_week_fitting": true,
+  "purpose": "Separate diagnostic for transfer-horizon forecasts; do not infer multi-transfer policy gains from one-week RMSE.",
+  "labels": "sum next six actual numbered gameweeks, including start; all features frozen at start cutoff",
+  "admission": "Every future GW must have an observed player target, or a verified blank for the origin club. Unknown registration/coverage is excluded and counted, never turned into zero. This conditional-coverage population is not the entire deadline roster.",
+  "schedule": "fixture counts use realised retrospective schedules; no claim of archived schedule foresight",
+  "purge": "training labels end within a completed earlier season and finish before first outer deadline",
+  "models": "rolling-rate baseline, 2 ridge penalties, 4 LightGBM size/recency combinations, 2 CatBoost depths",
+  "selection": "same earlier three available OOF seasons, equal season MSE; no outer test selection",
+  "tests": "2018/19 through 2025/26; current only two heavily overlapping six-week windows, no precise current inference",
+  "DC": "remove summed actual DC awards from training labels only, add lag-only expected DC for known future fixture count"
+}

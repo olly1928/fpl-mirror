@@ -5,4 +5,6 @@ __pycache__/
 backtests/work/
 history/work/
 history/extended/work/
+research/work/
+research/.venv/
 

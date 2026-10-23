@@ -1,0 +1,8 @@
+{
+  "run": "broad-projection-research-1",
+  "protocol": "research/protocol.json",
+  "six_week_protocol": "research/protocol-six.json",
+  "one_week_configurations": 79,
+  "historical_folds": 10,
+  "production_promotion": false
+}
