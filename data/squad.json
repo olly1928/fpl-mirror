@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-23T19:41:07.334777+00:00",
+  "fetched_at": "2026-10-23T22:47:43.699123+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,7 +8,7 @@
   "next_deadline": "2026-10-31T11:00:00Z",
   "preseason": false,
   "overall_points": 416,
-  "overall_rank": 4575484,
+  "overall_rank": 4584894,
   "bank": 2.9,
   "squad_value": 100.2,
   "squad_selling_value": 965,
@@ -86,9 +86,9 @@
     },
     {
       "event": 8,
-      "points": 0,
-      "overall_rank": 4770039,
-      "rank": null,
+      "points": 1,
+      "overall_rank": 4751176,
+      "rank": 2923928,
       "transfers": 1,
       "transfer_cost": 0,
       "points_on_bench": 0
@@ -289,8 +289,8 @@
           "entry": 1868009,
           "entry_name": "No More Mr Rice Kai",
           "manager": "Anai Patel",
-          "event_total": 11,
-          "total": 520,
+          "event_total": 10,
+          "total": 519,
           "is_me": false
         },
         {
@@ -319,8 +319,8 @@
           "entry": 5038162,
           "entry_name": "Quantum of Tzolis",
           "manager": "Ed Shropshire",
-          "event_total": 1,
-          "total": 444,
+          "event_total": 2,
+          "total": 445,
           "is_me": false
         },
         {
@@ -389,8 +389,8 @@
           "entry": 6758481,
           "entry_name": "chilli con Cairney",
           "manager": "Joe Raven",
-          "event_total": 6,
-          "total": 385,
+          "event_total": 7,
+          "total": 386,
           "is_me": false
         }
       ]
@@ -439,8 +439,8 @@
           "entry": 2753182,
           "entry_name": "Daizen & Confused",
           "manager": "Jamie McGachy",
-          "event_total": 1,
-          "total": 489,
+          "event_total": 2,
+          "total": 490,
           "is_me": false
         },
         {
@@ -469,8 +469,8 @@
           "entry": 7359153,
           "entry_name": "ohforgodssaka",
           "manager": "Jack Wilkinson",
-          "event_total": 8,
-          "total": 470,
+          "event_total": 10,
+          "total": 472,
           "is_me": false
         },
         {
@@ -529,8 +529,8 @@
           "entry": 4780428,
           "entry_name": "Viva Les Vegas",
           "manager": "James Davies",
-          "event_total": 1,
-          "total": 455,
+          "event_total": 2,
+          "total": 456,
           "is_me": false
         },
         {
@@ -549,8 +549,8 @@
           "entry": 5984664,
           "entry_name": "Wishing4Wigan",
           "manager": "Micajah Dudley",
-          "event_total": 1,
-          "total": 433,
+          "event_total": 2,
+          "total": 434,
           "is_me": false
         },
         {
@@ -619,8 +619,8 @@
           "entry": 8853128,
           "entry_name": "Jesse's Team",
           "manager": "Jesse Huling",
-          "event_total": 1,
-          "total": 362,
+          "event_total": 2,
+          "total": 363,
           "is_me": false
         },
         {
@@ -689,8 +689,8 @@
           "entry": 2033083,
           "entry_name": "Wirtz Case Scenario",
           "manager": "Idris Jenkins",
-          "event_total": 11,
-          "total": 429,
+          "event_total": 10,
+          "total": 428,
           "is_me": false
         },
         {
