@@ -64,6 +64,7 @@ def main():
         require(min(chosen['ensemble_weights']) >= 0, 'Negative ensemble weight')
     trials = list((OUT / 'folds').glob('fold-*/one-week/*-seed1729.json'))
     require(len(trials) == 790, 'Incomplete registered trial population')
+    targets = {}
     for path in trials:
         record = json.loads(path.read_text())
         require(record['status'] == 'ok', 'Unsuccessful trial')
@@ -73,6 +74,28 @@ def main():
                 'Training used test season')
         require(hashlib.sha256(path.with_suffix('.npz').read_bytes()).hexdigest()
                 == record['prediction_sha256'], 'Changed trial forecasts')
+        if record['year'] not in targets:
+            target = pd.read_csv(path.parent / 'targets.csv.gz')
+            groups, _ = pd.factorize(pd.MultiIndex.from_frame(target[['season', 'gw', 'player_id']]), sort=False)
+            active = np.zeros(groups.max() + 1, dtype=int)
+            np.maximum.at(active, groups, target.active.to_numpy(int))
+            targets[record['year']] = (target, groups, active == 1)
+        target, groups, active = targets[record['year']]
+        with np.load(path.with_suffix('.npz')) as arrays:
+            if 'points' in arrays:
+                observed = np.bincount(groups, weights=target.y_total_points.to_numpy())
+                forecast = np.bincount(groups, weights=arrays['points'])
+                mse = float(np.square(forecast[active] - observed[active]).mean())
+                require(np.isclose(mse, record['metrics']['active']['mse'], atol=1e-6),
+                        'Saved point forecasts do not reproduce trial metrics')
+            else:
+                use = target.active.to_numpy() == 1
+                minutes = target.y_minutes.to_numpy()[use]
+                state = np.where(minutes <= 0, 0, np.where(minutes < 60, 1, 2))
+                probability = arrays['minutes'][use, 3:]
+                loss = -np.log(np.maximum(1e-9, probability[np.arange(len(state)), state])).mean()
+                require(np.isclose(loss, record['metrics']['active']['log_loss'], atol=1e-6),
+                        'Saved minute forecasts do not reproduce trial metrics')
     lineups = json.loads((OUT / 'lineup-assessment.json').read_text())
     sums = defaultdict(float)
     weeks = defaultdict(set)
@@ -93,6 +116,7 @@ def main():
                 f'Production contract changed: {name}')
     report = {'status': 'passed', 'independently_recomputed_score_rows': checks,
               'chronological_trials_and_hashes_checked': len(trials),
+              'saved_trial_metrics_recomputed': len(trials),
               'executed_code_cells': len(cells),
               'unchanged_production_files': list(contract['files']),
               'limits': 'Arithmetic and artifact checks do not remove retrospective selection, archive vintage or prospective uncertainty.'}

@@ -258,6 +258,8 @@ Each family selects its own configuration from preceding seasons. The macro RMSE
 
 The notebook includes the full season-by-family heatmap, modern/current comparisons, points and minute calibration, conditional decisions and the six-week experiment. Raw and calibrated variants, source/recency controls, cold starts, positions and DGWs are retained rather than reporting only a winning aggregate.
 
+Some convergence warnings were emitted in the broad parallel fits. Python warning capture is shared across threads, so warning text may be associated with a concurrent trial rather than its emitting estimator; the retained per-trial warning attribution is not definitive. Trials were not removed on this basis. Saved forecasts and trial metrics are independently reconciled by [independent-verification.json](results/independent-verification.json).
+
 ## Limits and recommendation
 
 Use the historical choice as a **research candidate**, and review the complete set of accuracy and probability metrics before promotion. Preserve the existing Claude playbook URLs, bash/curl routing, sourced news/role overrides and decision provenance. The research minute hybrid currently rejects manual overrides, so it is not a production drop-in. Confirm a versioned candidate at future unseen deadlines before claiming a reliable edge; do not automatically switch the live team advisor on the basis of these results.
