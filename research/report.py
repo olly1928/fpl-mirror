@@ -41,6 +41,20 @@ def markdown_table(df):
 def consolidate():
     modern=pd.read_csv(OUT/'modern-matched-predictions.csv.gz')
     hybrid=pd.read_csv(OUT/'v1-new-minutes-historical.csv.gz')
+    baseline=pd.read_csv(ROOT/'research/work/baselines/historical.csv')
+    baseline=baseline[baseline.model=='v1'].assign(variant='v1')
+    minutes=pd.concat([baseline,hybrid],ignore_index=True)
+    minute_scores=[]
+    for (season,variant),a in minutes.groupby(['season','variant']):
+        y=a.actual_minutes.to_numpy();app=a.p_appear.to_numpy();long=a.p60.to_numpy()
+        state=np.where(y<=0,0,np.where(y<60,1,2))
+        probability=np.column_stack([1-app,app-long,long])
+        minute_scores.append({'season':season,'variant':variant,'n':len(a),
+            'appearance_brier':float(np.mean((app-(y>0))**2)),
+            'p60_brier':float(np.mean((long-(y>=60))**2)),
+            'log_loss':float(-np.log(np.maximum(1e-9,probability[np.arange(len(y)),state])).mean()),
+            'mean_p60':float(long.mean()),'actual_p60':float((y>=60).mean())})
+    dump(OUT/'matched-minute-comparison.json',safe(minute_scores))
     h=hybrid.pivot(index=['season','gw','player_id'],columns='variant',values='xp').reset_index()
     h=h.rename(columns={'raw':'v1_new_minutes_raw','calibrated':'v1_new_minutes_calibrated'})
     modern=modern.merge(h,on=['season','gw','player_id'],validate='one_to_one')
@@ -213,6 +227,9 @@ def report(table,chosen):
     family=families.groupby('family').agg(macro_mse=('mse','mean'),worst_rmse=('rmse','max')).reset_index()
     family['macro_rmse']=np.sqrt(family.macro_mse);family=family.sort_values('macro_rmse')
     coverage=read('data-quality.json')
+    minute_table=pd.DataFrame(read('matched-minute-comparison.json')).pivot(index='season',columns='variant',values='p60_brier').reset_index()
+    minute_table=minute_table.rename(columns={'season':'Season','v1':'Live v1','raw':'Boosted minutes','calibrated':'Calibrated minutes'})
+    minute_table=minute_table[['Season','Live v1','Boosted minutes','Calibrated minutes']]
     ci=uncertainty[0] if uncertainty else None
     ci_text=(f"The pooled matched-case RMSE improvement is {ci['rmse_improvement_percent']:.2f}%, with a descriptive 95% four-GW-block interval of [{ci['interval_95_percent'][0]:.2f}%, {ci['interval_95_percent'][1]:.2f}%]." if ci else '')
     source=read('workflow-run.json')
@@ -249,6 +266,12 @@ The actual team scored **{lineups['actual_points']:g}** points. Numerical polici
 {markdown_table(pd.DataFrame([{'Procedure':k,'Conditional points':v} for k,v in totals.items()]))}
 
 This compares XI/captain/bench decisions conditional on the actual squads. It does not simulate transfers, hits, chips, changing budgets or season rank, and does not reconstruct missing Claude news overrides. All weekly selections are retained in the lineup JSON reports. Probability Brier scores, log loss and mean predicted/observed ≥60 frequencies are in [probability-calibration.json](results/probability-calibration.json). A correct aggregate mean alone is insufficient to establish good individual forecasts.
+
+On the same recent historical cases as the v1 comparison, ≥60-minute Brier scores were as follows (lower is better):
+
+{markdown_table(minute_table)}
+
+The learned minute-state model improves these probability scores substantially even where the resulting points gain is modest. Extra probability rescaling does not improve every season or metric. Appearance Brier, state log loss and predicted/observed frequencies are retained in [matched-minute-comparison.json](results/matched-minute-comparison.json); there is no claim of perfect calibration.
 
 ## Full family comparison
 
