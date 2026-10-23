@@ -420,6 +420,7 @@ the others' status into `meta.json`.
 ```bash
 python tests/test_offline.py
 python tests/test_advisor.py
+python tests/test_backtests.py
 ```
 
 Runs the spec's acceptance checks against synthetic API payloads — no network, no
@@ -444,13 +445,13 @@ replacement for observed player-level bookmaker prices.
 The existing project instructions continue to work unchanged. Their canonical
 copy is [prompts/project.md](prompts/project.md). All entry points remain on `main`:
 
-- [Weekly decision v4](prompts/weekly.md), the default.
-- [Full preseason/wildcard build v4](prompts/preseason.md).
+- [Weekly decision v5](prompts/weekly.md), the default.
+- [Full preseason/wildcard build v5](prompts/preseason.md).
 - [Feed health only v3](prompts/smoke-test.md).
 
 The two advice playbooks fetch the standard-library-only
 [fpl_advisor.py](fpl_advisor.py) and [model method/configuration](model/README.md).
-The helper provides a fixed, explicitly uncalibrated points baseline, sourced
+The helper provides a fixed points baseline with limited historical validation, sourced
 minutes/role overrides, legal XI/bench/captain choices, sale-price transfer-plan
 comparisons, constrained full builds and immutable pre-deadline advice records.
 No ingestion job, public data schema, credential or FPL account action changes.
@@ -467,5 +468,12 @@ input hashes. They describe advice, not confirmed execution. Claude can attach
 the JSON and input packet without authentication; this does not automatically
 commit them to [decisions/](decisions/README.md). Retain them for prospective
 reviews of points and minutes calibration. Installing the workflow creates no
-invented historical forecasts and proves no predictive edge.
+prospective decision record and establishes no predictive edge.
+
+The [historical predictive backtest](backtests/README.md) replays the first seven
+2026/27 gameweeks from pinned pre-deadline inputs and profiles ten previous
+seasons. It separates development, selection and two held-out years. A tested
+minutes-parameter change did not meet the promotion rule, so numerical model
+v1.0.0 remains unchanged. New match data updates forecasts on each run; parameters
+do not retune automatically. The original Claude project routing URLs still work.
 

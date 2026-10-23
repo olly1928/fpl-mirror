@@ -55,3 +55,6 @@ jobs:
       - name: Advisor scoring, budgets and prospective records
         run: python tests/test_advisor.py
 
+      - name: Backtest temporal boundaries and pinned sources
+        run: python tests/test_backtests.py
+

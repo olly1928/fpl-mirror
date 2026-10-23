@@ -1,0 +1,142 @@
+{
+  "team_id": 790889,
+  "picks_event": 6,
+  "picks": [
+    {
+      "slot": 1,
+      "element": 82,
+      "name": "Kelleher",
+      "pos": "GKP",
+      "multiplier": 1,
+      "is_captain": false,
+      "is_vice_captain": false
+    },
+    {
+      "slot": 2,
+      "element": 4,
+      "name": "Gabriel",
+      "pos": "DEF",
+      "multiplier": 1,
+      "is_captain": false,
+      "is_vice_captain": false
+    },
+    {
+      "slot": 3,
+      "element": 356,
+      "name": "Virgil",
+      "pos": "DEF",
+      "multiplier": 1,
+      "is_captain": false,
+      "is_vice_captain": false
+    },
+    {
+      "slot": 4,
+      "element": 259,
+      "name": "Diop",
+      "pos": "DEF",
+      "multiplier": 1,
+      "is_captain": false,
+      "is_vice_captain": false
+    },
+    {
+      "slot": 5,
+      "element": 449,
+      "name": "Hall",
+      "pos": "DEF",
+      "multiplier": 1,
+      "is_captain": false,
+      "is_vice_captain": false
+    },
+    {
+      "slot": 6,
+      "element": 12,
+      "name": "Saka",
+      "pos": "MID",
+      "multiplier": 2,
+      "is_captain": true,
+      "is_vice_captain": false
+    },
+    {
+      "slot": 7,
+      "element": 40,
+      "name": "Rogers",
+      "pos": "MID",
+      "multiplier": 1,
+      "is_captain": false,
+      "is_vice_captain": false
+    },
+    {
+      "slot": 8,
+      "element": 124,
+      "name": "Gro\u00df",
+      "pos": "MID",
+      "multiplier": 1,
+      "is_captain": false,
+      "is_vice_captain": false
+    },
+    {
+      "slot": 9,
+      "element": 338,
+      "name": "Ampadu",
+      "pos": "MID",
+      "multiplier": 1,
+      "is_captain": false,
+      "is_vice_captain": false
+    },
+    {
+      "slot": 10,
+      "element": 411,
+      "name": "Haaland",
+      "pos": "FWD",
+      "multiplier": 1,
+      "is_captain": false,
+      "is_vice_captain": true
+    },
+    {
+      "slot": 11,
+      "element": 249,
+      "name": "Barry",
+      "pos": "FWD",
+      "multiplier": 1,
+      "is_captain": false,
+      "is_vice_captain": false
+    },
+    {
+      "slot": 12,
+      "element": 301,
+      "name": "Palmer",
+      "pos": "GKP",
+      "multiplier": 0,
+      "is_captain": false,
+      "is_vice_captain": false
+    },
+    {
+      "slot": 13,
+      "element": 368,
+      "name": "Szoboszlai",
+      "pos": "MID",
+      "multiplier": 0,
+      "is_captain": false,
+      "is_vice_captain": false
+    },
+    {
+      "slot": 14,
+      "element": 346,
+      "name": "Calvert-Lewin",
+      "pos": "FWD",
+      "multiplier": 0,
+      "is_captain": false,
+      "is_vice_captain": false
+    },
+    {
+      "slot": 15,
+      "element": 175,
+      "name": "van Ewijk",
+      "pos": "DEF",
+      "multiplier": 0,
+      "is_captain": false,
+      "is_vice_captain": false
+    }
+  ],
+  "provenance": "FPL public locked picks, captured from fpl-mirror historical squad.json; ownership is conditioned on, not predicted."
+}

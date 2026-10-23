@@ -12,10 +12,22 @@ only; no pip install, account connection or new secret is required.
 
 ## What the numbers mean
 
-These are **uncalibrated expected-points estimates**, not a demonstrated edge over
-other managers or projection providers. Parameters are fixed in `config.json`.
-Do not retune them each conversation. Review prospective results before a
-versioned change. An optimiser cannot make poor forecasts accurate.
+These are **baseline expected-points estimates with limited retrospective
+validation**, not a demonstrated edge over other managers or projection providers.
+Parameters are fixed in `config.json`. Do not retune them each conversation.
+Review prospective results before a versioned change. An optimiser cannot make
+poor forecasts accurate.
+
+The [historical backtest](../backtests/README.md) covers the first seven 2026/27
+weeks and ten previous seasons, with modern component selection/holdouts where
+xG/starts are available. The proposed shorter minutes window failed its
+predeclared promotion rule; live v1.0.0 parameters remain unchanged. The current
+seven-week result is conditional on actual owned squads, not a transfer-policy
+backtest. Do not claim the system is fully calibrated or optimal.
+
+New results update forecasts when this helper runs. Parameters and frozen priors
+do not automatically retrain. There is no weekly user calibration task; retain
+prospective decision packets so a later versioned change can be assessed.
 
 ### Rates and priors
 

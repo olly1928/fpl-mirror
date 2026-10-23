@@ -1,0 +1,471 @@
+{
+  "primary_metric": "RMSE on the common lag-defined candidate pool",
+  "variant": "minutes_w3_p0.5",
+  "config": {
+    "version": "1.0.0",
+    "season": "2026/27",
+    "team_id": 790889,
+    "horizon": 6,
+    "prior_file": "priors-2026-27.csv",
+    "rate_prior_minutes": 900,
+    "position_prior_minutes": 180,
+    "history_half_life_gameweeks": 8,
+    "minutes_window": 3,
+    "minutes_prior_matches": 0.5,
+    "dc_prior_matches": 3,
+    "team_prior_matches": 8,
+    "neutral_team_goals": 1.45,
+    "home_goal_factor": 1.12,
+    "away_goal_factor": 0.88,
+    "fallback_attack_home_exponent": 0.5,
+    "fallback_defence_exponent": 0.5,
+    "pool_per_position": 20,
+    "beam_width": 400,
+    "notes": [
+      "Transparent baseline, not a backtested or calibrated edge. Keep parameters fixed until a prospective review justifies a versioned change.",
+      "Prior season IDs are valid only for the configured season. Prior club labels already reflect summer moves: verify roles manually.",
+      "No FPL form, ep_this, ep_next, value_form or ownership enters the points model.",
+      "Odds-derived goal rates are an approximation; non-market fixture estimates are explicitly labelled."
+    ]
+  },
+  "rolling_window": 10,
+  "development_rolling_metrics": {
+    "3": {
+      "n": 54131,
+      "mae": 2.2378599605606997,
+      "rmse": 3.0946925035812582,
+      "bias_actual_minus_forecast": -0.014723798062169894,
+      "appearance_brier": 0.12402132254410875,
+      "p60_brier": 0.17252272149720602
+    },
+    "6": {
+      "n": 54131,
+      "mae": 2.225996697346341,
+      "rmse": 3.06640921559147,
+      "bias_actual_minus_forecast": -0.015408447600703786,
+      "appearance_brier": 0.12643741599172462,
+      "p60_brier": 0.17690689193032078
+    },
+    "10": {
+      "n": 54131,
+      "mae": 2.208574237150656,
+      "rmse": 3.058500173120768,
+      "bias_actual_minus_forecast": 0.037546511402980105,
+      "appearance_brier": 0.13149099625256633,
+      "p60_brier": 0.1826648529662693
+    }
+  },
+  "scores": {
+    "2016-17": {
+      "cases": 21854,
+      "eligible": 7861,
+      "excluded": {
+        "no_previously_observed_archive_row": 679,
+        "double_gameweek_target_rows": 1146
+      },
+      "rolling_points": {
+        "3": {
+          "n": 7861,
+          "mae": 2.262089216808718,
+          "rmse": 3.155720714942474,
+          "bias_actual_minus_forecast": 0.14045922910571174,
+          "appearance_brier": 0.12541721437758838,
+          "p60_brier": 0.17272804138574396
+        },
+        "6": {
+          "n": 7861,
+          "mae": 2.264338264246037,
+          "rmse": 3.1315939360960847,
+          "bias_actual_minus_forecast": 0.10796442352542085,
+          "appearance_brier": 0.12679697246748423,
+          "p60_brier": 0.1763549832463198
+        },
+        "10": {
+          "n": 7861,
+          "mae": 2.2502595557773017,
+          "rmse": 3.118430564256696,
+          "bias_actual_minus_forecast": 0.1512224072553547,
+          "appearance_brier": 0.13278696954694336,
+          "p60_brier": 0.1841295601838841
+        }
+      }
+    },
+    "2017-18": {
+      "cases": 20483,
+      "eligible": 7970,
+      "excluded": {
+        "no_previously_observed_archive_row": 644,
+        "double_gameweek_target_rows": 1340
+      },
+      "rolling_points": {
+        "3": {
+          "n": 7970,
+          "mae": 2.2178134354069043,
+          "rmse": 3.0483237176068507,
+          "bias_actual_minus_forecast": -0.018383790802360946,
+          "appearance_brier": 0.12692639426643906,
+          "p60_brier": 0.1728462236595725
+        },
+        "6": {
+          "n": 7970,
+          "mae": 2.2031393067547995,
+          "rmse": 3.0275145960515064,
+          "bias_actual_minus_forecast": -0.020731427295444655,
+          "appearance_brier": 0.12896118768035028,
+          "p60_brier": 0.17579916571754028
+        },
+        "10": {
+          "n": 7970,
+          "mae": 2.1896974355372745,
+          "rmse": 3.0206805990922336,
+          "bias_actual_minus_forecast": 0.022364896835258823,
+          "appearance_brier": 0.13396474000964978,
+          "p60_brier": 0.18243803595869654
+        }
+      }
+    },
+    "2018-19": {
+      "cases": 19855,
+      "eligible": 7959,
+      "excluded": {
+        "no_previously_observed_archive_row": 623,
+        "double_gameweek_target_rows": 1312
+      },
+      "rolling_points": {
+        "3": {
+          "n": 7959,
+          "mae": 2.21930802316435,
+          "rmse": 3.080464297480502,
+          "bias_actual_minus_forecast": -0.043163819759529605,
+          "appearance_brier": 0.12394937127237947,
+          "p60_brier": 0.1699385783993611
+        },
+        "6": {
+          "n": 7959,
+          "mae": 2.2190983996459868,
+          "rmse": 3.061938947101977,
+          "bias_actual_minus_forecast": -0.034509469677862024,
+          "appearance_brier": 0.12569237687926457,
+          "p60_brier": 0.17313610241330313
+        },
+        "10": {
+          "n": 7959,
+          "mae": 2.190981763443925,
+          "rmse": 3.0417932087708612,
+          "bias_actual_minus_forecast": 0.020055963580311018,
+          "appearance_brier": 0.13011677708777827,
+          "p60_brier": 0.17789464365550722
+        }
+      }
+    },
+    "2019-20": {
+      "cases": 21460,
+      "eligible": 8308,
+      "excluded": {
+        "no_previously_observed_archive_row": 665,
+        "double_gameweek_target_rows": 376
+      },
+      "rolling_points": {
+        "3": {
+          "n": 8308,
+          "mae": 2.2054510419213647,
+          "rmse": 3.067542487420556,
+          "bias_actual_minus_forecast": -0.03920913327321713,
+          "appearance_brier": 0.11672982180029912,
+          "p60_brier": 0.17061632559126755
+        },
+        "6": {
+          "n": 8308,
+          "mae": 2.184218666816964,
+          "rmse": 3.031981993266934,
+          "bias_actual_minus_forecast": -0.031852933047793824,
+          "appearance_brier": 0.11939086727695902,
+          "p60_brier": 0.17539085045467998
+        },
+        "10": {
+          "n": 8308,
+          "mae": 2.172631775084475,
+          "rmse": 3.0308426473992838,
+          "bias_actual_minus_forecast": 0.023850234740909346,
+          "appearance_brier": 0.1257117301262969,
+          "p60_brier": 0.18091907834571783
+        }
+      }
+    },
+    "2020-21": {
+      "cases": 20755,
+      "eligible": 7436,
+      "excluded": {
+        "no_previously_observed_archive_row": 697,
+        "double_gameweek_target_rows": 2913
+      },
+      "rolling_points": {
+        "3": {
+          "n": 7436,
+          "mae": 2.2317107133432916,
+          "rmse": 3.0701734232688045,
+          "bias_actual_minus_forecast": -0.09344865086588303,
+          "appearance_brier": 0.13071274766143004,
+          "p60_brier": 0.17213203783268594
+        },
+        "6": {
+          "n": 7436,
+          "mae": 2.2219173813426987,
+          "rmse": 3.044792065827721,
+          "bias_actual_minus_forecast": -0.087536173587479,
+          "appearance_brier": 0.13372782524074306,
+          "p60_brier": 0.17908738175999883
+        },
+        "10": {
+          "n": 7436,
+          "mae": 2.2057846176199667,
+          "rmse": 3.0475727089570865,
+          "bias_actual_minus_forecast": -0.02659723446521494,
+          "appearance_brier": 0.1386643665493069,
+          "p60_brier": 0.18471595815881853
+        }
+      }
+    },
+    "2021-22": {
+      "cases": 20295,
+      "eligible": 7096,
+      "excluded": {
+        "no_previously_observed_archive_row": 718,
+        "double_gameweek_target_rows": 4434
+      },
+      "rolling_points": {
+        "3": {
+          "n": 7096,
+          "mae": 2.278374996126778,
+          "rmse": 3.1187966514259946,
+          "bias_actual_minus_forecast": -0.08508630969645531,
+          "appearance_brier": 0.13566668445796257,
+          "p60_brier": 0.1771651001817039
+        },
+        "6": {
+          "n": 7096,
+          "mae": 2.2534335994405157,
+          "rmse": 3.0777256134145663,
+          "bias_actual_minus_forecast": -0.0699657587124114,
+          "appearance_brier": 0.1401578085255675,
+          "p60_brier": 0.18526557271273547
+        },
+        "10": {
+          "n": 7096,
+          "mae": 2.2338270207015802,
+          "rmse": 3.0706308417900887,
+          "bias_actual_minus_forecast": -0.003609668653636365,
+          "appearance_brier": 0.14454748348204624,
+          "p60_brier": 0.18998403602697075
+        }
+      }
+    },
+    "2022-23": {
+      "cases": 22647,
+      "eligible": 7501,
+      "excluded": {
+        "no_previously_observed_archive_row": 762,
+        "double_gameweek_target_rows": 3096
+      },
+      "rolling_points": {
+        "3": {
+          "n": 7501,
+          "mae": 2.2571165793895176,
+          "rmse": 3.1251736193425446,
+          "bias_actual_minus_forecast": 0.028436454064289487,
+          "appearance_brier": 0.10997399494888142,
+          "p60_brier": 0.17281281679231347
+        },
+        "6": {
+          "n": 7501,
+          "mae": 2.241782234100653,
+          "rmse": 3.0916167034262494,
+          "bias_actual_minus_forecast": 0.022548661869697915,
+          "appearance_brier": 0.11176739474231771,
+          "p60_brier": 0.17427348268100193
+        },
+        "10": {
+          "n": 7501,
+          "mae": 2.2222974941784064,
+          "rmse": 3.0824087029406093,
+          "bias_actual_minus_forecast": 0.07079598952536081,
+          "appearance_brier": 0.11590082888709367,
+          "p60_brier": 0.1794085829161492
+        }
+      }
+    },
+    "2023-24": {
+      "cases": 26904,
+      "eligible": 7876,
+      "excluded": {
+        "no_previously_observed_archive_row": 855,
+        "double_gameweek_target_rows": 1966
+      },
+      "rolling_points": {
+        "3": {
+          "n": 7876,
+          "mae": 2.2387767985406155,
+          "rmse": 3.1507796690956775,
+          "bias_actual_minus_forecast": -0.033817844542064664,
+          "appearance_brier": 0.11765723118894772,
+          "p60_brier": 0.17384315169996178
+        },
+        "6": {
+          "n": 7876,
+          "mae": 2.2117844702455076,
+          "rmse": 3.110974987897331,
+          "bias_actual_minus_forecast": -0.0235321977934898,
+          "appearance_brier": 0.12053784045361696,
+          "p60_brier": 0.18097587814969826
+        },
+        "10": {
+          "n": 7876,
+          "mae": 2.1836063367585608,
+          "rmse": 3.094287135769339,
+          "bias_actual_minus_forecast": 0.04566277529759579,
+          "appearance_brier": 0.12690897783223612,
+          "p60_brier": 0.18799794308678208
+        }
+      },
+      "variants": {
+        "v1": {
+          "n": 7876,
+          "mae": 2.0942742486073382,
+          "rmse": 3.0228291722725826,
+          "bias_actual_minus_forecast": 0.17309633131195348,
+          "appearance_brier": 0.12337363650926295,
+          "p60_brier": 0.18683923067886066
+        },
+        "minutes_w3_p0.5": {
+          "n": 7876,
+          "mae": 2.1701259865818403,
+          "rmse": 3.004853528469218,
+          "bias_actual_minus_forecast": -0.06853664845580022,
+          "appearance_brier": 0.11069958936209776,
+          "p60_brier": 0.17102942096190205
+        },
+        "minutes_w3_p2": {
+          "n": 7876,
+          "mae": 2.070486092774462,
+          "rmse": 3.0175830393811935,
+          "bias_actual_minus_forecast": 0.21310178316444303,
+          "appearance_brier": 0.12227618776962172,
+          "p60_brier": 0.18317343042822962
+        },
+        "minutes_w3_p6": {
+          "n": 7876,
+          "mae": 2.0386930265023526,
+          "rmse": 3.087066201079139,
+          "bias_actual_minus_forecast": 0.5043509064805765,
+          "appearance_brier": 0.15742692661097557,
+          "p60_brier": 0.22905007853820844
+        },
+        "minutes_w6_p0.5": {
+          "n": 7876,
+          "mae": 2.15578099988517,
+          "rmse": 3.021675762449313,
+          "bias_actual_minus_forecast": 0.008515073535513465,
+          "appearance_brier": 0.11877065134213735,
+          "p60_brier": 0.18252096010831206
+        },
+        "minutes_w6_p6": {
+          "n": 7876,
+          "mae": 2.0451286813016005,
+          "rmse": 3.059455816390468,
+          "bias_actual_minus_forecast": 0.3975848591902174,
+          "appearance_brier": 0.1428586840772934,
+          "p60_brier": 0.2136771523640493
+        },
+        "minutes_w10_p0.5": {
+          "n": 7876,
+          "mae": 2.13129384243641,
+          "rmse": 3.030393263501171,
+          "bias_actual_minus_forecast": 0.09587453964466662,
+          "appearance_brier": 0.12606371507893646,
+          "p60_brier": 0.18921158499390434
+        },
+        "minutes_w10_p2": {
+          "n": 7876,
+          "mae": 2.0908824264497388,
+          "rmse": 3.0310378789903996,
+          "bias_actual_minus_forecast": 0.2079208030146909,
+          "appearance_brier": 0.12965720116882304,
+          "p60_brier": 0.19280660331944705
+        },
+        "minutes_w10_p6": {
+          "n": 7876,
+          "mae": 2.0513776058681352,
+          "rmse": 3.0540285746386666,
+          "bias_actual_minus_forecast": 0.37685654941860786,
+          "appearance_brier": 0.14250546793798113,
+          "p60_brier": 0.21092241030278375
+        },
+        "rates_h4_p450": {
+          "n": 7876,
+          "mae": 2.096937872126739,
+          "rmse": 3.0241119282742974,
+          "bias_actual_minus_forecast": 0.16782041421126062,
+          "appearance_brier": 0.12337363650926295,
+          "p60_brier": 0.18683923067886066
+        },
+        "rates_h4_p900": {
+          "n": 7876,
+          "mae": 2.094490813295234,
+          "rmse": 3.02485979989256,
+          "bias_actual_minus_forecast": 0.17678697453657402,
+          "appearance_brier": 0.12337363650926295,
+          "p60_brier": 0.18683923067886066
+        },
+        "rates_h4_p1800": {
+          "n": 7876,
+          "mae": 2.0929472583263276,
+          "rmse": 3.026119126511804,
+          "bias_actual_minus_forecast": 0.18299749060569687,
+          "appearance_brier": 0.12337363650926295,
+          "p60_brier": 0.18683923067886066
+        },
+        "rates_h8_p450": {
+          "n": 7876,
+          "mae": 2.096959717826613,
+          "rmse": 3.022215043311403,
+          "bias_actual_minus_forecast": 0.1630701232534455,
+          "appearance_brier": 0.12337363650926295,
+          "p60_brier": 0.18683923067886066
+        },
+        "rates_h8_p1800": {
+          "n": 7876,
+          "mae": 2.092284787959204,
+          "rmse": 3.024101291179756,
+          "bias_actual_minus_forecast": 0.18095320255254174,
+          "appearance_brier": 0.12337363650926295,
+          "p60_brier": 0.18683923067886066
+        },
+        "rates_h16_p450": {
+          "n": 7876,
+          "mae": 2.097147952807993,
+          "rmse": 3.0215401161620328,
+          "bias_actual_minus_forecast": 0.16014947240621316,
+          "appearance_brier": 0.12337363650926295,
+          "p60_brier": 0.18683923067886066
+        },
+        "rates_h16_p900": {
+          "n": 7876,
+          "mae": 2.0943479896112245,
+          "rmse": 3.021904173009256,
+          "bias_actual_minus_forecast": 0.1703856762411426,
+          "appearance_brier": 0.12337363650926295,
+          "p60_brier": 0.18683923067886066
+        },
+        "rates_h16_p1800": {
+          "n": 7876,
+          "mae": 2.0920627054288405,
+          "rmse": 3.0230157243119207,
+          "bias_actual_minus_forecast": 0.17909141391544586,
+          "appearance_brier": 0.12337363650926295,
+          "p60_brier": 0.18683923067886066
+        }
+      }
+    }
+  },
+  "promotion_rule": "Select once on 2023/24; promote only if RMSE improves >=0.5% on EACH held-out season; never select a new variant from holdout results."
+}

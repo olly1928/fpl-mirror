@@ -1,0 +1,85 @@
+{
+  "2023-24": {
+    "selected_vs_v1": {
+      "n": 7876,
+      "gw_clusters": 37,
+      "resamples": 2000,
+      "rmse_improvement_percent": 0.5946629061360564,
+      "bootstrap_95_percent_interval": [
+        0.22229140462813352,
+        1.0310468839267974
+      ],
+      "interpretation": "Descriptive paired GW-cluster bootstrap; not adjusted for validation search or season dependence."
+    },
+    "v1_vs_rolling": {
+      "n": 7876,
+      "gw_clusters": 37,
+      "resamples": 2000,
+      "rmse_improvement_percent": 2.3093514066847898,
+      "bootstrap_95_percent_interval": [
+        1.654223757232601,
+        2.962209919380257
+      ],
+      "interpretation": "Descriptive paired GW-cluster bootstrap; not adjusted for validation search or season dependence."
+    }
+  },
+  "2024-25": {
+    "selected_vs_v1": {
+      "n": 8213,
+      "gw_clusters": 37,
+      "resamples": 2000,
+      "rmse_improvement_percent": 0.0855509758405315,
+      "bootstrap_95_percent_interval": [
+        -0.2509550318595605,
+        0.42266822448540897
+      ],
+      "interpretation": "Descriptive paired GW-cluster bootstrap; not adjusted for validation search or season dependence."
+    },
+    "v1_vs_rolling": {
+      "n": 8213,
+      "gw_clusters": 37,
+      "resamples": 2000,
+      "rmse_improvement_percent": 2.312678649169986,
+      "bootstrap_95_percent_interval": [
+        1.42304513284751,
+        3.2129176960082457
+      ],
+      "interpretation": "Descriptive paired GW-cluster bootstrap; not adjusted for validation search or season dependence."
+    }
+  },
+  "2025-26": {
+    "selected_vs_v1": {
+      "n": 8133,
+      "gw_clusters": 37,
+      "resamples": 2000,
+      "rmse_improvement_percent": 1.0797371930392874,
+      "bootstrap_95_percent_interval": [
+        0.724225922914461,
+        1.4526611712326414
+      ],
+      "interpretation": "Descriptive paired GW-cluster bootstrap; not adjusted for validation search or season dependence."
+    },
+    "v1_vs_rolling": {
+      "n": 8133,
+      "gw_clusters": 37,
+      "resamples": 2000,
+      "rmse_improvement_percent": 2.426220708172233,
+      "bootstrap_95_percent_interval": [
+        1.8638534156698117,
+        2.9750964362456394
+      ],
+      "interpretation": "Descriptive paired GW-cluster bootstrap; not adjusted for validation search or season dependence."
+    }
+  },
+  "2026-27/GW1-7": {
+    "n": 1205,
+    "gw_clusters": 7,
+    "resamples": 2000,
+    "rmse_improvement_percent": -0.35241843062316924,
+    "bootstrap_95_percent_interval": [
+      -3.26392600845347,
+      1.228968409182315
+    ],
+    "interpretation": "Descriptive paired GW-cluster bootstrap; not adjusted for validation search or season dependence."
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/30c3b83f77321b2fe56cf71fa8f9a64a5717956c/data/player_history.csv",
+      "path": "outcomes/player_history.csv",
+      "bytes": 427031,
+      "sha256": "b7645feae086cd68aa3c3b35efec99f8ff57ce30255bc58e124ad1c613c80907"
+    }
+  ]
+}

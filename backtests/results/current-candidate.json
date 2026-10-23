@@ -1,0 +1,530 @@
+{
+  "model_version": "1.0.0",
+  "replay": true,
+  "weeks": [
+    {
+      "gw": 1,
+      "snapshot_sha": "62f698b3fc0e8af00998d0cd998bb2ea91b61bd8",
+      "snapshot_time": "2026-08-21T17:21:39Z",
+      "hours_before_deadline": 0.13916666666666666,
+      "legacy_warnings": [
+        "bootstrap-static.elements: 4 new field(s) present in the API and not mirrored: price_change_calibrating, price_change_hourly_rate, price_change_locked_until, price_change_projections"
+      ],
+      "model_version": "1.0.0",
+      "conditional_squad_score": 52.0,
+      "actual_score": 52.0,
+      "team_xp": 31.08744,
+      "captain": "Haaland",
+      "captain_base_points": 2.0,
+      "haaland_base_points": 2.0,
+      "actual_captain_base_points": 2.0,
+      "xi": [
+        82,
+        4,
+        356,
+        498,
+        12,
+        481,
+        13,
+        338,
+        411,
+        165,
+        346
+      ],
+      "bench": [
+        301,
+        212,
+        259,
+        175
+      ],
+      "all_players": {
+        "n": 600,
+        "mean_xp": 0.6519813166666667,
+        "mean_points": 1.5766666666666667,
+        "bias_actual_minus_forecast": 0.92468535,
+        "mae": 1.3865514166666666,
+        "rmse": 2.7718371801868464,
+        "appearance_brier": 0.24274312976782003,
+        "p60_brier": 0.23435612678795834
+      },
+      "likely_players": {
+        "n": 133,
+        "mean_xp": 1.6704970676691728,
+        "mean_points": 3.172932330827068,
+        "bias_actual_minus_forecast": 1.5024352631578948,
+        "mae": 2.4127295488721803,
+        "rmse": 3.6609611011546774,
+        "appearance_brier": 0.23692999554294736,
+        "p60_brier": 0.33662222657857144
+      },
+      "owned_players": {
+        "n": 15,
+        "mean_xp": 1.7794113333333332,
+        "mean_points": 3.533333333333333,
+        "bias_actual_minus_forecast": 1.7539220000000002,
+        "mae": 2.282144666666667,
+        "rmse": 3.40614879048758,
+        "appearance_brier": 0.2378281886612,
+        "p60_brier": 0.3926416251339333
+      }
+    },
+    {
+      "gw": 2,
+      "snapshot_sha": "6105b3792d0c53b9db7e3939873af61477564149",
+      "snapshot_time": "2026-08-28T12:45:31Z",
+      "hours_before_deadline": 4.741388888888889,
+      "legacy_warnings": [],
+      "model_version": "1.0.0",
+      "conditional_squad_score": 76.0,
+      "actual_score": 76.0,
+      "team_xp": 56.43834,
+      "captain": "Haaland",
+      "captain_base_points": 13.0,
+      "haaland_base_points": 13.0,
+      "actual_captain_base_points": 13.0,
+      "xi": [
+        82,
+        4,
+        356,
+        175,
+        12,
+        368,
+        338,
+        411,
+        165,
+        346,
+        498
+      ],
+      "bench": [
+        301,
+        481,
+        212,
+        259
+      ],
+      "all_players": {
+        "n": 616,
+        "mean_xp": 1.3091170616883117,
+        "mean_points": 1.4399350649350648,
+        "bias_actual_minus_forecast": 0.13081800324675324,
+        "mae": 1.1165183279220778,
+        "rmse": 2.0776334405506467,
+        "appearance_brier": 0.1214275028198604,
+        "p60_brier": 0.09642523283317207
+      },
+      "likely_players": {
+        "n": 151,
+        "mean_xp": 3.124266622516556,
+        "mean_points": 3.205298013245033,
+        "bias_actual_minus_forecast": 0.08103139072847683,
+        "mae": 2.271340927152318,
+        "rmse": 3.2232897958351647,
+        "appearance_brier": 0.08733506191072848,
+        "p60_brier": 0.1424316524294106
+      },
+      "owned_players": {
+        "n": 15,
+        "mean_xp": 3.599947333333333,
+        "mean_points": 4.333333333333333,
+        "bias_actual_minus_forecast": 0.733386,
+        "mae": 2.711094,
+        "rmse": 3.5188239468502354,
+        "appearance_brier": 0.0795007595856,
+        "p60_brier": 0.08264342647293334
+      }
+    },
+    {
+      "gw": 3,
+      "snapshot_sha": "4b8c690b80db64aa0acba4b557887f9045a79dc4",
+      "snapshot_time": "2026-09-04T14:40:02Z",
+      "hours_before_deadline": 2.832777777777778,
+      "legacy_warnings": [],
+      "model_version": "1.0.0",
+      "conditional_squad_score": 44.0,
+      "actual_score": 44.0,
+      "team_xp": 60.28567,
+      "captain": "Haaland",
+      "captain_base_points": 9.0,
+      "haaland_base_points": 9.0,
+      "actual_captain_base_points": 9.0,
+      "xi": [
+        82,
+        4,
+        356,
+        449,
+        12,
+        481,
+        368,
+        338,
+        411,
+        165,
+        346
+      ],
+      "bench": [
+        301,
+        259,
+        212,
+        175
+      ],
+      "all_players": {
+        "n": 652,
+        "mean_xp": 1.2885497239263803,
+        "mean_points": 1.3987730061349692,
+        "bias_actual_minus_forecast": 0.11022328220858896,
+        "mae": 1.036986717791411,
+        "rmse": 1.917400247590423,
+        "appearance_brier": 0.08848497415269478,
+        "p60_brier": 0.08721911246934048
+      },
+      "likely_players": {
+        "n": 171,
+        "mean_xp": 3.3410379532163743,
+        "mean_points": 3.3801169590643276,
+        "bias_actual_minus_forecast": 0.03907900584795322,
+        "mae": 2.29240567251462,
+        "rmse": 3.022658991014891,
+        "appearance_brier": 0.03880206346024562,
+        "p60_brier": 0.11353790996471345
+      },
+      "owned_players": {
+        "n": 15,
+        "mean_xp": 3.703371333333333,
+        "mean_points": 2.8,
+        "bias_actual_minus_forecast": -0.9033713333333333,
+        "mae": 1.67397,
+        "rmse": 1.9132994137126926,
+        "appearance_brier": 0.050783909852133324,
+        "p60_brier": 0.011868333333333331
+      }
+    },
+    {
+      "gw": 4,
+      "snapshot_sha": "fed63ac11366f3653e652bc48d53a813cee9fc2c",
+      "snapshot_time": "2026-09-12T11:51:19Z",
+      "hours_before_deadline": 0.6447222222222222,
+      "legacy_warnings": [],
+      "model_version": "1.0.0",
+      "conditional_squad_score": 86.0,
+      "actual_score": 79.0,
+      "team_xp": 59.1166,
+      "captain": "Haaland",
+      "captain_base_points": 9.0,
+      "haaland_base_points": 9.0,
+      "actual_captain_base_points": 8.0,
+      "xi": [
+        82,
+        4,
+        356,
+        449,
+        12,
+        40,
+        368,
+        411,
+        165,
+        346,
+        338
+      ],
+      "bench": [
+        301,
+        259,
+        175,
+        212
+      ],
+      "all_players": {
+        "n": 656,
+        "mean_xp": 1.2993500762195123,
+        "mean_points": 1.4039634146341464,
+        "bias_actual_minus_forecast": 0.10461333841463415,
+        "mae": 1.1585419969512196,
+        "rmse": 2.1565076959009515,
+        "appearance_brier": 0.10205210316163262,
+        "p60_brier": 0.08684277470248171
+      },
+      "likely_players": {
+        "n": 190,
+        "mean_xp": 3.2738994736842106,
+        "mean_points": 3.431578947368421,
+        "bias_actual_minus_forecast": 0.1576794736842105,
+        "mae": 2.604237789473684,
+        "rmse": 3.4129598590257477,
+        "appearance_brier": 0.06876235972978421,
+        "p60_brier": 0.14047365011490526
+      },
+      "owned_players": {
+        "n": 15,
+        "mean_xp": 3.89111,
+        "mean_points": 5.266666666666667,
+        "bias_actual_minus_forecast": 1.3755566666666668,
+        "mae": 2.7777446666666665,
+        "rmse": 3.228119058922703,
+        "appearance_brier": 0.030092327552800002,
+        "p60_brier": 0.006678119899933336
+      }
+    },
+    {
+      "gw": 5,
+      "snapshot_sha": "e8c360d0077ea9879c6acc9290d35d7b32092196",
+      "snapshot_time": "2026-09-18T14:43:17Z",
+      "hours_before_deadline": 2.778611111111111,
+      "legacy_warnings": [],
+      "model_version": "1.0.0",
+      "conditional_squad_score": 59.0,
+      "actual_score": 59.0,
+      "team_xp": 59.78256,
+      "captain": "Haaland",
+      "captain_base_points": 6.0,
+      "haaland_base_points": 6.0,
+      "actual_captain_base_points": 6.0,
+      "xi": [
+        82,
+        4,
+        356,
+        449,
+        12,
+        40,
+        368,
+        338,
+        411,
+        249,
+        346
+      ],
+      "bench": [
+        301,
+        259,
+        175,
+        212
+      ],
+      "all_players": {
+        "n": 659,
+        "mean_xp": 1.2563304855842186,
+        "mean_points": 1.464339908952959,
+        "bias_actual_minus_forecast": 0.2080094233687405,
+        "mae": 1.0656749468892261,
+        "rmse": 2.125876334575293,
+        "appearance_brier": 0.09628781885033232,
+        "p60_brier": 0.07686445678374204
+      },
+      "likely_players": {
+        "n": 189,
+        "mean_xp": 3.300295291005291,
+        "mean_points": 3.613756613756614,
+        "bias_actual_minus_forecast": 0.31346132275132277,
+        "mae": 2.4069276719576718,
+        "rmse": 3.312347043160463,
+        "appearance_brier": 0.07227690886577778,
+        "p60_brier": 0.10084788119283598
+      },
+      "owned_players": {
+        "n": 15,
+        "mean_xp": 3.8092746666666666,
+        "mean_points": 3.8,
+        "bias_actual_minus_forecast": -0.009274666666666619,
+        "mae": 2.504761333333333,
+        "rmse": 3.162732782711812,
+        "appearance_brier": 0.07609161528773332,
+        "p60_brier": 0.05012659799593333
+      }
+    },
+    {
+      "gw": 6,
+      "snapshot_sha": "65e02b4d9bfdf2a9b5490df8569495c6b81256f7",
+      "snapshot_time": "2026-10-10T07:03:54Z",
+      "hours_before_deadline": 2.935,
+      "legacy_warnings": [],
+      "model_version": "1.0.0",
+      "conditional_squad_score": 38.0,
+      "actual_score": 38.0,
+      "team_xp": 55.90386,
+      "captain": "Saka",
+      "captain_base_points": 2.0,
+      "haaland_base_points": 6.0,
+      "actual_captain_base_points": 2.0,
+      "xi": [
+        82,
+        4,
+        356,
+        259,
+        449,
+        12,
+        40,
+        124,
+        411,
+        249,
+        368
+      ],
+      "bench": [
+        301,
+        338,
+        346,
+        175
+      ],
+      "all_players": {
+        "n": 667,
+        "mean_xp": 1.2075787706146928,
+        "mean_points": 1.3478260869565217,
+        "bias_actual_minus_forecast": 0.14024731634182908,
+        "mae": 1.0347618290854572,
+        "rmse": 2.0308876758076817,
+        "appearance_brier": 0.09988125918604347,
+        "p60_brier": 0.0856087260572039
+      },
+      "likely_players": {
+        "n": 184,
+        "mean_xp": 3.203392717391304,
+        "mean_points": 2.989130434782609,
+        "bias_actual_minus_forecast": -0.21426228260869568,
+        "mae": 2.1514039130434783,
+        "rmse": 2.770113768132999,
+        "appearance_brier": 0.05817988468919565,
+        "p60_brier": 0.1289291263377174
+      },
+      "owned_players": {
+        "n": 15,
+        "mean_xp": 3.7760753333333335,
+        "mean_points": 2.933333333333333,
+        "bias_actual_minus_forecast": -0.8427419999999999,
+        "mae": 2.652858,
+        "rmse": 3.060683904152796,
+        "appearance_brier": 0.08669412529113332,
+        "p60_brier": 0.08935336083619999
+      }
+    },
+    {
+      "gw": 7,
+      "snapshot_sha": "379e334d988bd8d9051fb3afa6c3a7bbf5cb4f65",
+      "snapshot_time": "2026-10-17T07:23:36Z",
+      "hours_before_deadline": 2.6066666666666665,
+      "legacy_warnings": [],
+      "model_version": "1.0.0",
+      "conditional_squad_score": 67.0,
+      "actual_score": 67.0,
+      "team_xp": 58.05867,
+      "captain": "Haaland",
+      "captain_base_points": 13.0,
+      "haaland_base_points": 13.0,
+      "actual_captain_base_points": 13.0,
+      "xi": [
+        82,
+        4,
+        356,
+        449,
+        12,
+        40,
+        335,
+        124,
+        411,
+        249,
+        346
+      ],
+      "bench": [
+        301,
+        338,
+        175,
+        259
+      ],
+      "all_players": {
+        "n": 667,
+        "mean_xp": 1.2437019190404797,
+        "mean_points": 1.3268365817091454,
+        "bias_actual_minus_forecast": 0.08313466266866566,
+        "mae": 1.054215652173913,
+        "rmse": 1.9562381909352866,
+        "appearance_brier": 0.11288132185696852,
+        "p60_brier": 0.08126197013890854
+      },
+      "likely_players": {
+        "n": 187,
+        "mean_xp": 3.259293155080214,
+        "mean_points": 3.3475935828877006,
+        "bias_actual_minus_forecast": 0.08830042780748663,
+        "mae": 2.3417732620320857,
+        "rmse": 3.023478022752856,
+        "appearance_brier": 0.052456255355192515,
+        "p60_brier": 0.12940647805010697
+      },
+      "owned_players": {
+        "n": 15,
+        "mean_xp": 3.8001620000000003,
+        "mean_points": 3.933333333333333,
+        "bias_actual_minus_forecast": 0.13317133333333328,
+        "mae": 1.9526686666666666,
+        "rmse": 2.52365979713986,
+        "appearance_brier": 0.011417073651133333,
+        "p60_brier": 0.019719790741266667
+      }
+    }
+  ],
+  "research_variant": "minutes_w3_p0.5; not promoted",
+  "candidate_pool": "Frozen from supplied baseline predictions",
+  "all_players": {
+    "n": 4517,
+    "mean_xp": 1.1850872216072614,
+    "mean_points": 1.420190391853,
+    "bias_actual_minus_forecast": 0.23510317024573832,
+    "mae": 1.1183203010847909,
+    "rmse": 2.1560978940403195,
+    "appearance_brier": 0.12186183674947355,
+    "p60_brier": 0.10533623476115564
+  },
+  "likely_players": {
+    "n": 1205,
+    "mean_xp": 3.078810497925311,
+    "mean_points": 3.315352697095436,
+    "bias_actual_minus_forecast": 0.23654219917012448,
+    "mae": 2.3563081410788382,
+    "rmse": 3.1977568971536425,
+    "appearance_brier": 0.08180418196345063,
+    "p60_brier": 0.14885073192078424
+  },
+  "owned_players": {
+    "n": 105,
+    "mean_xp": 3.4799074285714284,
+    "mean_points": 3.8,
+    "bias_actual_minus_forecast": 0.32009257142857145,
+    "mae": 2.365034476190476,
+    "rmse": 3.0191049346415806,
+    "appearance_brier": 0.0817725714116762,
+    "p60_brier": 0.09329017920193333
+  },
+  "conditional_squad_score": 422.0,
+  "actual_score": 415.0,
+  "limitations": [
+    "Conditional on actual owned squads; not a transfer-policy backtest.",
+    "No historical Claude news overrides are available; only pre-deadline feed flags are used.",
+    "Model design post-dates these seven outcomes, even though features are strictly time-bounded.",
+    "GW1 numerical replay acknowledges irrelevant new-price-column schema warnings."
+  ],
+  "untouched_gw1_control": {
+    "definition": "Hold GW1 owned15, starting XI, bench order and captain/vice unchanged; legal actual autosubs; no transfers/hits/chips.",
+    "weeks": [
+      {
+        "gw": 1,
+        "points": 52.0
+      },
+      {
+        "gw": 2,
+        "points": 77.0
+      },
+      {
+        "gw": 3,
+        "points": 45.0
+      },
+      {
+        "gw": 4,
+        "points": 87.0
+      },
+      {
+        "gw": 5,
+        "points": 43.0
+      },
+      {
+        "gw": 6,
+        "points": 48.0
+      },
+      {
+        "gw": 7,
+        "points": 68.0
+      }
+    ],
+    "points": 420.0
+  }
+}

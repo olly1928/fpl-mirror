@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-22",
+  "offline_acceptance_checks": 230,
+  "advisor_unit_tests": 30,
+  "backtest_methodology_tests": 8,
+  "all_passed": true,
+  "stdlib_import_scan": "passed",
+  "source_manifest_successful_files_verified": 91,
+  "notebook_executed_code_cells": 6,
+  "numerical_model_unchanged": true,
+  "expected_missing_source_files": 6,
+  "independent_current_replay": "All player predictions and metrics reproduced exactly; scores422/415, hold control420"
+}

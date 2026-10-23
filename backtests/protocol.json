@@ -1,0 +1,51 @@
+{
+  "created": "2026-10-22",
+  "current_season": "2026/27",
+  "current_gameweeks": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "original_model_commit": "30c3b83f77321b2fe56cf71fa8f9a64a5717956c",
+  "archive_repository": "vaastav/Fantasy-Premier-League",
+  "archive_commit": "d7b05b51d137bfefef4b692386d18c610975b9b9",
+  "scope": [
+    "All available previous-season gameweek panels will be acquired and quality-profiled.",
+    "The 2026/27 seven-GW test uses pinned pre-deadline snapshots and no reconstructed news overrides.",
+    "Older-season features must be lagged and player IDs matched within season; cross-season codes are checked.",
+    "Contemporaneous odds/news unavailable in older archives will not be invented.",
+    "Data before 2022/23 may lack xG/starts; pre-2025/26 lacks current defensive scoring.",
+    "Fit on older data, select on a later validation season, then evaluate held-out later seasons/current weeks.",
+    "The model was designed after the first seven 2026/27 results were observed: retrospective predictions are not pristine prospective evidence.",
+    "No claim of historical Claude decisions or full transfer-policy returns will be made from absent decision records."
+  ],
+  "development_seasons": [
+    "2016-17",
+    "2017-18",
+    "2018-19",
+    "2019-20",
+    "2020-21",
+    "2021-22",
+    "2022-23"
+  ],
+  "validation_season": "2023-24",
+  "holdout_seasons": [
+    "2024-25",
+    "2025-26"
+  ],
+  "final_current_evaluation": "2026-27 GW1-7",
+  "component_design": {
+    "old_seasons": "Lagged FPL points/minutes benchmarks, 2016/17-2022/23 development; no invented xG or starts.",
+    "full_points_validation": "2023/24: first validation year with archived xG/starts priors from a previous season.",
+    "candidate_pool": "Single-fixture targets after first observation; prior three fixture mean minutes >=45, or GW<=3 and previous-season minutes>=900. Identical pool across variants.",
+    "statistical_grid": "17 variants: baseline plus window{3,6,10}/minutes-prior{0.5,2,6}, or rate half-life{4,8,16}/prior-minutes{450,900,1800}; one group varies at a time.",
+    "selection": "Lowest validation RMSE, frozen before opening holdout scores.",
+    "promotion": "At least 0.5% RMSE improvement in each of 2024/25 and 2025/26. No replacement winner chosen after holdout.",
+    "cutoff": "Earliest gameweek kickoff minus 90min; features need kickoff+3h earlier, and lower GW.",
+    "schedules": "Realised fixture assignments; older results are component tests without odds/news/schedule vintages."
+  }
+}

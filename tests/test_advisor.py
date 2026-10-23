@@ -301,7 +301,7 @@ class IntegrityAndRecordsTests(unittest.TestCase):
 class PlaybookContractTests(unittest.TestCase):
     def test_project_routes_stay_exactly_where_existing_instructions_point(self):
         project = (ROOT / "prompts/project.md").read_text()
-        for name, version in [("weekly", 4), ("preseason", 4), ("smoke-test", 3)]:
+        for name, version in [("weekly", 5), ("preseason", 5), ("smoke-test", 3)]:
             url = "https://raw.githubusercontent.com/olly1928/fpl-mirror/main/prompts/" + name + ".md"
             self.assertIn(url, project)
             text = (ROOT / "prompts" / (name + ".md")).read_text()

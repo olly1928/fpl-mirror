@@ -1,0 +1,111 @@
+{
+  "selected_variant": "minutes_w3_p0.5",
+  "promote": false,
+  "scores": {
+    "2023-24": {
+      "cases": 26904,
+      "excluded": {
+        "no_previously_observed_archive_row": 855,
+        "double_gameweek_target_rows": 1966
+      },
+      "models": {
+        "v1": {
+          "n": 7876,
+          "mae": 2.0942742486073382,
+          "rmse": 3.0228291722725826,
+          "bias_actual_minus_forecast": 0.17309633131195348,
+          "appearance_brier": 0.12337363650926295,
+          "p60_brier": 0.18683923067886066
+        },
+        "selected": {
+          "n": 7876,
+          "mae": 2.1701259865818403,
+          "rmse": 3.004853528469218,
+          "bias_actual_minus_forecast": -0.06853664845580022,
+          "appearance_brier": 0.11069958936209776,
+          "p60_brier": 0.17102942096190205
+        },
+        "rolling": {
+          "n": 7876,
+          "mae": 2.1836063367585608,
+          "rmse": 3.094287135769339,
+          "bias_actual_minus_forecast": 0.04566277529759579,
+          "appearance_brier": 0.12690897783223612,
+          "p60_brier": 0.18799794308678208
+        }
+      }
+    },
+    "2024-25": {
+      "cases": 25773,
+      "excluded": {
+        "no_previously_observed_archive_row": 782,
+        "double_gameweek_target_rows": 728
+      },
+      "models": {
+        "v1": {
+          "n": 8213,
+          "mae": 2.069639108588246,
+          "rmse": 2.9205852161900556,
+          "bias_actual_minus_forecast": 0.09768752153059594,
+          "appearance_brier": 0.1139976643578586,
+          "p60_brier": 0.18504457916671735
+        },
+        "selected": {
+          "n": 8213,
+          "mae": 2.1497082895839266,
+          "rmse": 2.9180866270373502,
+          "bias_actual_minus_forecast": -0.12196178747169423,
+          "appearance_brier": 0.10398938794855793,
+          "p60_brier": 0.17574814799351715
+        },
+        "rolling": {
+          "n": 8213,
+          "mae": 2.1275576709804778,
+          "rmse": 2.989728017724217,
+          "bias_actual_minus_forecast": 0.036208428588409565,
+          "appearance_brier": 0.11553476155270778,
+          "p60_brier": 0.1862868073280848
+        }
+      }
+    },
+    "2025-26": {
+      "cases": 28089,
+      "excluded": {
+        "no_previously_observed_archive_row": 840,
+        "double_gameweek_target_rows": 818
+      },
+      "models": {
+        "v1": {
+          "n": 8133,
+          "mae": 2.2215669344702196,
+          "rmse": 3.067750512747187,
+          "bias_actual_minus_forecast": 0.21990089852883432,
+          "appearance_brier": 0.11788129426448014,
+          "p60_brier": 0.1895501945488257
+        },
+        "selected": {
+          "n": 8133,
+          "mae": 2.2693352769523445,
+          "rmse": 3.0346268694714023,
+          "bias_actual_minus_forecast": -0.03804141386698592,
+          "appearance_brier": 0.10350670693681917,
+          "p60_brier": 0.17422082145423837
+        },
+        "rolling": {
+          "n": 8133,
+          "mae": 2.30846183113533,
+          "rmse": 3.1440316599524447,
+          "bias_actual_minus_forecast": 0.08776469705015455,
+          "appearance_brier": 0.12108652265828354,
+          "p60_brier": 0.1910715484491112
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Archive component test: no historical odds/news or vintage fixture schedules.",
+    "Only single-fixture targets after the first observed player row; no transfer-policy simulation.",
+    "Pre-2025/26 defensive contribution disabled; historical bonus/scoring outcomes retained.",
+    "Both holdouts and seven current GWs are retrospective tests, not prospective records."
+  ]
+}

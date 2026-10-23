@@ -1,0 +1,438 @@
+{
+  "snapshots": [
+    {
+      "gw": 1,
+      "cutoff": "2026-08-21T17:29:59Z",
+      "sha": "62f698b3fc0e8af00998d0cd998bb2ea91b61bd8",
+      "committed_at": "2026-08-21T17:21:39Z"
+    },
+    {
+      "gw": 2,
+      "cutoff": "2026-08-28T17:29:59Z",
+      "sha": "6105b3792d0c53b9db7e3939873af61477564149",
+      "committed_at": "2026-08-28T12:45:31Z"
+    },
+    {
+      "gw": 3,
+      "cutoff": "2026-09-04T17:29:59Z",
+      "sha": "4b8c690b80db64aa0acba4b557887f9045a79dc4",
+      "committed_at": "2026-09-04T14:40:02Z"
+    },
+    {
+      "gw": 4,
+      "cutoff": "2026-09-12T12:29:59Z",
+      "sha": "fed63ac11366f3653e652bc48d53a813cee9fc2c",
+      "committed_at": "2026-09-12T11:51:19Z"
+    },
+    {
+      "gw": 5,
+      "cutoff": "2026-09-18T17:29:59Z",
+      "sha": "e8c360d0077ea9879c6acc9290d35d7b32092196",
+      "committed_at": "2026-09-18T14:43:17Z"
+    },
+    {
+      "gw": 6,
+      "cutoff": "2026-10-10T09:59:59Z",
+      "sha": "65e02b4d9bfdf2a9b5490df8569495c6b81256f7",
+      "committed_at": "2026-10-10T07:03:54Z"
+    },
+    {
+      "gw": 7,
+      "cutoff": "2026-10-17T09:59:59Z",
+      "sha": "379e334d988bd8d9051fb3afa6c3a7bbf5cb4f65",
+      "committed_at": "2026-10-17T07:23:36Z"
+    }
+  ],
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/62f698b3fc0e8af00998d0cd998bb2ea91b61bd8/data/meta.json",
+      "path": "raw/current-core/GW01/meta.json",
+      "bytes": 20555,
+      "sha256": "718b1670a52c2b59910587de679b48c547be429ff64998f297330fcd717509ef",
+      "fetched_at": "2026-10-22T20:55:50.380174+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/62f698b3fc0e8af00998d0cd998bb2ea91b61bd8/data/build_status.json",
+      "path": "raw/current-core/GW01/build_status.json",
+      "bytes": 1386,
+      "sha256": "fad24a20172268bdb5e4bfbf86c67b759ba035d7b965eef99efeafe3a246eb94",
+      "fetched_at": "2026-10-22T20:55:50.346019+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/62f698b3fc0e8af00998d0cd998bb2ea91b61bd8/data/players.csv",
+      "path": "raw/current-core/GW01/players.csv",
+      "bytes": 116587,
+      "sha256": "0957b895765328528400de2a1215bd424e76f4f91092dd487c19c12652b05b80",
+      "fetched_at": "2026-10-22T20:55:50.391928+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/62f698b3fc0e8af00998d0cd998bb2ea91b61bd8/data/player_history.csv",
+      "path": "raw/current-core/GW01/player_history.csv",
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/62f698b3fc0e8af00998d0cd998bb2ea91b61bd8/data/teams.csv",
+      "path": "raw/current-core/GW01/teams.csv",
+      "bytes": 1396,
+      "sha256": "150dea878ee1ec036ae25a6e06b8a1cec7e477cacbfc966eb525424f0beaf349",
+      "fetched_at": "2026-10-22T20:55:50.341409+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/62f698b3fc0e8af00998d0cd998bb2ea91b61bd8/data/fixtures.csv",
+      "path": "raw/current-core/GW01/fixtures.csv",
+      "bytes": 17660,
+      "sha256": "b7b7c86e5cc9994adb46763f442a44f5b157e24bdc87df34992feefabe95fc28",
+      "fetched_at": "2026-10-22T20:55:53.609152+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/62f698b3fc0e8af00998d0cd998bb2ea91b61bd8/data/odds.csv",
+      "path": "raw/current-core/GW01/odds.csv",
+      "bytes": 1594,
+      "sha256": "879fbeddcb55f6d132a00f65c25c762b042e6829b8e430ce1b5a3ec1ad37f5e6",
+      "fetched_at": "2026-10-22T20:55:53.521375+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/62f698b3fc0e8af00998d0cd998bb2ea91b61bd8/data/squad.json",
+      "path": "raw/current-core/GW01/squad.json",
+      "bytes": 3212,
+      "sha256": "e34fc73008ca28a82b7d25c1ed956fbad174af9507cb2d3278d9f3545c51d84c",
+      "fetched_at": "2026-10-22T20:55:53.562715+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/6105b3792d0c53b9db7e3939873af61477564149/data/meta.json",
+      "path": "raw/current-core/GW02/meta.json",
+      "bytes": 23297,
+      "sha256": "6387aacc44d72796d5994f66da6ee0289baed0414ca6fbe600b062344317e1f8",
+      "fetched_at": "2026-10-22T20:55:53.608603+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/6105b3792d0c53b9db7e3939873af61477564149/data/build_status.json",
+      "path": "raw/current-core/GW02/build_status.json",
+      "bytes": 1211,
+      "sha256": "5d585a67f76467aa3e53f31f5b44a04b694e41aebd101ade43f549e69790d266",
+      "fetched_at": "2026-10-22T20:55:53.564401+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/6105b3792d0c53b9db7e3939873af61477564149/data/players.csv",
+      "path": "raw/current-core/GW02/players.csv",
+      "bytes": 219827,
+      "sha256": "409b3a058a831cd8be53dde9cb192b341928d8103f3b43ba9c1b42e23793f620",
+      "fetched_at": "2026-10-22T20:55:56.720611+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/6105b3792d0c53b9db7e3939873af61477564149/data/player_history.csv",
+      "path": "raw/current-core/GW02/player_history.csv",
+      "bytes": 57541,
+      "sha256": "62b459bbf91f76aab0e0c641de1b560bdb843111ce220a70890d54af75c09ef3",
+      "fetched_at": "2026-10-22T20:55:56.720026+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/6105b3792d0c53b9db7e3939873af61477564149/data/teams.csv",
+      "path": "raw/current-core/GW02/teams.csv",
+      "bytes": 2555,
+      "sha256": "0799cbf327e57d217cda31bdac63f6e0d8d36aabecf9d566fafae89b2867e3f7",
+      "fetched_at": "2026-10-22T20:55:56.670337+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/6105b3792d0c53b9db7e3939873af61477564149/data/fixtures.csv",
+      "path": "raw/current-core/GW02/fixtures.csv",
+      "bytes": 17681,
+      "sha256": "e77c4714f7aa9f83d19b70c5e845484d7ec5a7ef86f2a1d6df0b99db7420ef7f",
+      "fetched_at": "2026-10-22T20:55:56.712290+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/6105b3792d0c53b9db7e3939873af61477564149/data/odds.csv",
+      "path": "raw/current-core/GW02/odds.csv",
+      "bytes": 3044,
+      "sha256": "774dd917c5848ac59bfd9cc68b2eb708e5a65aea90578323e1fa118225e360b4",
+      "fetched_at": "2026-10-22T20:55:56.622365+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/6105b3792d0c53b9db7e3939873af61477564149/data/squad.json",
+      "path": "raw/current-core/GW02/squad.json",
+      "bytes": 24345,
+      "sha256": "d8662e457c2f49fa38ebc71a72ee2364f9c8f390e0aad7362e6a59c7ff77dffa",
+      "fetched_at": "2026-10-22T20:55:59.772380+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/4b8c690b80db64aa0acba4b557887f9045a79dc4/data/meta.json",
+      "path": "raw/current-core/GW03/meta.json",
+      "bytes": 23298,
+      "sha256": "f9e6f37e6389920429aaa1452de8f0e3a29dc93e67a9955f8b470e5607c06918",
+      "fetched_at": "2026-10-22T20:55:59.951835+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/4b8c690b80db64aa0acba4b557887f9045a79dc4/data/build_status.json",
+      "path": "raw/current-core/GW03/build_status.json",
+      "bytes": 1220,
+      "sha256": "12977fa24751bd51bc80a071c129a3ef33271240f4844a8717bb336a07e676be",
+      "fetched_at": "2026-10-22T20:55:59.896347+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/4b8c690b80db64aa0acba4b557887f9045a79dc4/data/players.csv",
+      "path": "raw/current-core/GW03/players.csv",
+      "bytes": 237453,
+      "sha256": "d7e79a99f10423906e5a4ffca2d88769f10843dba99079db815c7c9d4a0a5360",
+      "fetched_at": "2026-10-22T20:56:00.068396+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/4b8c690b80db64aa0acba4b557887f9045a79dc4/data/player_history.csv",
+      "path": "raw/current-core/GW03/player_history.csv",
+      "bytes": 116247,
+      "sha256": "462a9bf2c8f5c988993ad813f165cb64fefaec8cb6e135aad21e59097e3f756c",
+      "fetched_at": "2026-10-22T20:55:59.968062+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/4b8c690b80db64aa0acba4b557887f9045a79dc4/data/teams.csv",
+      "path": "raw/current-core/GW03/teams.csv",
+      "bytes": 2574,
+      "sha256": "9961231fc622caf1f017d63d35146dfa5e02918b1f7d3807d6acf22eedaa36c7",
+      "fetched_at": "2026-10-22T20:56:03.103083+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/4b8c690b80db64aa0acba4b557887f9045a79dc4/data/fixtures.csv",
+      "path": "raw/current-core/GW03/fixtures.csv",
+      "bytes": 17701,
+      "sha256": "ce4169781ae7473a3baaf67c8d5a2ea1d6115dbb0887e8c3e7b4bc8fa97156d5",
+      "fetched_at": "2026-10-22T20:56:03.104456+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/4b8c690b80db64aa0acba4b557887f9045a79dc4/data/odds.csv",
+      "path": "raw/current-core/GW03/odds.csv",
+      "bytes": 3043,
+      "sha256": "a5ab2a8a42f8effd2bbe75b2cafe0ff9772c8d44ed49a679d3fd81fbd90ec4f8",
+      "fetched_at": "2026-10-22T20:56:03.054065+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/4b8c690b80db64aa0acba4b557887f9045a79dc4/data/squad.json",
+      "path": "raw/current-core/GW03/squad.json",
+      "bytes": 25484,
+      "sha256": "f0b457b49a7f41131a7ddeb50d037595dd5845337f71ad8d0296403f4f71bbe8",
+      "fetched_at": "2026-10-22T20:56:03.140084+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/fed63ac11366f3653e652bc48d53a813cee9fc2c/data/meta.json",
+      "path": "raw/current-core/GW04/meta.json",
+      "bytes": 23641,
+      "sha256": "fad27c35a181e078039c9350e11425b4697ab541b7485f1d66aba571a784c07a",
+      "fetched_at": "2026-10-22T20:56:02.967955+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/fed63ac11366f3653e652bc48d53a813cee9fc2c/data/build_status.json",
+      "path": "raw/current-core/GW04/build_status.json",
+      "bytes": 1229,
+      "sha256": "a3a84d91415f7d252e9b0856d8502665a3e103c1a8277143e1d5ef492e7f016e",
+      "fetched_at": "2026-10-22T20:56:06.116254+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/fed63ac11366f3653e652bc48d53a813cee9fc2c/data/players.csv",
+      "path": "raw/current-core/GW04/players.csv",
+      "bytes": 240217,
+      "sha256": "cb1088ff72759861162be0a31b5dc01e3e271ca35fab43c1a5035b6623cd41d3",
+      "fetched_at": "2026-10-22T20:56:06.124011+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/fed63ac11366f3653e652bc48d53a813cee9fc2c/data/player_history.csv",
+      "path": "raw/current-core/GW04/player_history.csv",
+      "bytes": 177560,
+      "sha256": "f13abdb7aa5e1e9ef2b831ea6e26965a26c383f8d18a27fb23080e9911070a4f",
+      "fetched_at": "2026-10-22T20:56:06.124634+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/fed63ac11366f3653e652bc48d53a813cee9fc2c/data/teams.csv",
+      "path": "raw/current-core/GW04/teams.csv",
+      "bytes": 2594,
+      "sha256": "e44cc8b8547d6f900e11c800173199f5809f79af34e6429ca88ec915ea0f2534",
+      "fetched_at": "2026-10-22T20:56:06.071639+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/fed63ac11366f3653e652bc48d53a813cee9fc2c/data/fixtures.csv",
+      "path": "raw/current-core/GW04/fixtures.csv",
+      "bytes": 17721,
+      "sha256": "7c8c11c6672ea63d06066755f09ea6bb41f92985360142d4f3e1918e43347a0a",
+      "fetched_at": "2026-10-22T20:56:06.116796+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/fed63ac11366f3653e652bc48d53a813cee9fc2c/data/odds.csv",
+      "path": "raw/current-core/GW04/odds.csv",
+      "bytes": 3050,
+      "sha256": "5910ab1f41f6dade72096f7ae027f6e2cfb1d7d4a59f8e3f803ec69a77ccbe82",
+      "fetched_at": "2026-10-22T20:56:09.099633+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/fed63ac11366f3653e652bc48d53a813cee9fc2c/data/squad.json",
+      "path": "raw/current-core/GW04/squad.json",
+      "bytes": 26272,
+      "sha256": "83041585470db722c49a79fcb7bb2fde3b05826bc6cab4d6547183e16072beae",
+      "fetched_at": "2026-10-22T20:56:09.095809+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/e8c360d0077ea9879c6acc9290d35d7b32092196/data/meta.json",
+      "path": "raw/current-core/GW05/meta.json",
+      "bytes": 23983,
+      "sha256": "1d292cc20f71663776a95637d36b3010aec888390afd57ccd9479336a093d27a",
+      "fetched_at": "2026-10-22T20:56:09.239772+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/e8c360d0077ea9879c6acc9290d35d7b32092196/data/build_status.json",
+      "path": "raw/current-core/GW05/build_status.json",
+      "bytes": 1238,
+      "sha256": "9258e61576731e0ec4fb0e777e9f90aa090ed078e61256019ce772998ccf47a3",
+      "fetched_at": "2026-10-22T20:56:09.153306+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/e8c360d0077ea9879c6acc9290d35d7b32092196/data/players.csv",
+      "path": "raw/current-core/GW05/players.csv",
+      "bytes": 242543,
+      "sha256": "072bbce049cf768c2bad356846b0b515187a86c47435861d3bd97c9dd6ba220d",
+      "fetched_at": "2026-10-22T20:56:09.292321+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/e8c360d0077ea9879c6acc9290d35d7b32092196/data/player_history.csv",
+      "path": "raw/current-core/GW05/player_history.csv",
+      "bytes": 239326,
+      "sha256": "3370eb7aa1f701c00a182668dbcddfe39b25c8bcf11096f80fcb74bf5f7ff142",
+      "fetched_at": "2026-10-22T20:56:12.416013+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/e8c360d0077ea9879c6acc9290d35d7b32092196/data/teams.csv",
+      "path": "raw/current-core/GW05/teams.csv",
+      "bytes": 2623,
+      "sha256": "577971d4c06f05fda464293d60ed361c0282cf7e549c7041cac35db18a726a5b",
+      "fetched_at": "2026-10-22T20:56:12.244397+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/e8c360d0077ea9879c6acc9290d35d7b32092196/data/fixtures.csv",
+      "path": "raw/current-core/GW05/fixtures.csv",
+      "bytes": 17741,
+      "sha256": "262fd0df9a2fe70527441216080b63d1e8eccc096dc6eb334acfa441fe2b6275",
+      "fetched_at": "2026-10-22T20:56:12.384118+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/e8c360d0077ea9879c6acc9290d35d7b32092196/data/odds.csv",
+      "path": "raw/current-core/GW05/odds.csv",
+      "bytes": 3051,
+      "sha256": "18a248d8ddc7b3601ffe0317aef301e071a5a3bf095a630370534b951c24e844",
+      "fetched_at": "2026-10-22T20:56:12.339855+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/e8c360d0077ea9879c6acc9290d35d7b32092196/data/squad.json",
+      "path": "raw/current-core/GW05/squad.json",
+      "bytes": 26860,
+      "sha256": "351d805cde26a09c742a6891af020b156a00084d4edb3868cf560162e9bfea6b",
+      "fetched_at": "2026-10-22T20:56:12.331787+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/65e02b4d9bfdf2a9b5490df8569495c6b81256f7/data/meta.json",
+      "path": "raw/current-core/GW06/meta.json",
+      "bytes": 24668,
+      "sha256": "4977fa7048f291eede53e5a5119cd155a5fe0502afb30cabdb49ce1de7c36378",
+      "fetched_at": "2026-10-22T20:56:15.779798+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/65e02b4d9bfdf2a9b5490df8569495c6b81256f7/data/build_status.json",
+      "path": "raw/current-core/GW06/build_status.json",
+      "bytes": 1247,
+      "sha256": "7dbf43d0672112e8e587bcc04b32317d4ff7b9f060c05791454c4bef2a94ed08",
+      "fetched_at": "2026-10-22T20:56:15.777174+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/65e02b4d9bfdf2a9b5490df8569495c6b81256f7/data/players.csv",
+      "path": "raw/current-core/GW06/players.csv",
+      "bytes": 246044,
+      "sha256": "e5508913fc6dee6943d086654a0b523309fb18d6221d14dd6b561080af8a0bb7",
+      "fetched_at": "2026-10-22T20:56:15.832425+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/65e02b4d9bfdf2a9b5490df8569495c6b81256f7/data/player_history.csv",
+      "path": "raw/current-core/GW06/player_history.csv",
+      "bytes": 301900,
+      "sha256": "b58bfa1ae8dcd2ad084d22af5dacc89dd441532f8d5c9a504b5b43d5bf269122",
+      "fetched_at": "2026-10-22T20:56:15.880025+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/65e02b4d9bfdf2a9b5490df8569495c6b81256f7/data/teams.csv",
+      "path": "raw/current-core/GW06/teams.csv",
+      "bytes": 2649,
+      "sha256": "aecd8ec8141f3ffb370025675828eecfdb1d2a203c1842f1876a959015f6f805",
+      "fetched_at": "2026-10-22T20:56:15.755479+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/65e02b4d9bfdf2a9b5490df8569495c6b81256f7/data/fixtures.csv",
+      "path": "raw/current-core/GW06/fixtures.csv",
+      "bytes": 17761,
+      "sha256": "8f025bef08f05fc12fe4156d4d10c44e6a977e491d1578af80fe1f3a887e7a7a",
+      "fetched_at": "2026-10-22T20:56:18.916111+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/65e02b4d9bfdf2a9b5490df8569495c6b81256f7/data/odds.csv",
+      "path": "raw/current-core/GW06/odds.csv",
+      "bytes": 3040,
+      "sha256": "e373c7e525dd20d5345a8cad5ba8efa86e3b0273bd9965b496c4f566c2eb60a8",
+      "fetched_at": "2026-10-22T20:56:18.851245+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/65e02b4d9bfdf2a9b5490df8569495c6b81256f7/data/squad.json",
+      "path": "raw/current-core/GW06/squad.json",
+      "bytes": 27381,
+      "sha256": "685e0641923124b82c88bb53dcb3feaefcb0dedb19f8245dd79aa8e4c9df6091",
+      "fetched_at": "2026-10-22T20:56:18.931803+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/379e334d988bd8d9051fb3afa6c3a7bbf5cb4f65/data/meta.json",
+      "path": "raw/current-core/GW07/meta.json",
+      "bytes": 24666,
+      "sha256": "95858b2ed7ea3f7a2106582255834bde9db50eeccc3c5423f95dfa87be993a48",
+      "fetched_at": "2026-10-22T20:56:18.796068+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/379e334d988bd8d9051fb3afa6c3a7bbf5cb4f65/data/build_status.json",
+      "path": "raw/current-core/GW07/build_status.json",
+      "bytes": 1256,
+      "sha256": "f4ef8cd739374fd0d30e392447e5d6089378004b7f3dc8a1c6f51f2baaeab755",
+      "fetched_at": "2026-10-22T20:56:18.756117+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/379e334d988bd8d9051fb3afa6c3a7bbf5cb4f65/data/players.csv",
+      "path": "raw/current-core/GW07/players.csv",
+      "bytes": 246531,
+      "sha256": "363ceacbaf43866715d0be971946c7a5152a29a6d26a1dd797b0efa61f94540c",
+      "fetched_at": "2026-10-22T20:56:22.192167+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/379e334d988bd8d9051fb3afa6c3a7bbf5cb4f65/data/player_history.csv",
+      "path": "raw/current-core/GW07/player_history.csv",
+      "bytes": 364422,
+      "sha256": "c4f68c06b2af6e47f86eec52534da060053c27627e0ab5dc0c6eecf516c5041f",
+      "fetched_at": "2026-10-22T20:56:22.192368+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/379e334d988bd8d9051fb3afa6c3a7bbf5cb4f65/data/teams.csv",
+      "path": "raw/current-core/GW07/teams.csv",
+      "bytes": 2659,
+      "sha256": "629f69a31ae2fc0e61807b8b21a3532a4cfa65c769fc6e9dfe549f1f2a5b1d3c",
+      "fetched_at": "2026-10-22T20:56:22.136252+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/379e334d988bd8d9051fb3afa6c3a7bbf5cb4f65/data/fixtures.csv",
+      "path": "raw/current-core/GW07/fixtures.csv",
+      "bytes": 17781,
+      "sha256": "3f2c779fe510275d198c6993d066f36b4c9cc6ec7e6a58629605d719da4080fe",
+      "fetched_at": "2026-10-22T20:56:22.179997+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/379e334d988bd8d9051fb3afa6c3a7bbf5cb4f65/data/odds.csv",
+      "path": "raw/current-core/GW07/odds.csv",
+      "bytes": 3049,
+      "sha256": "6eec92acf5145ed611446b8455b749198d1c4a6556a424ce18b01a5ec70db681",
+      "fetched_at": "2026-10-22T20:56:22.132153+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/olly1928/fpl-mirror/379e334d988bd8d9051fb3afa6c3a7bbf5cb4f65/data/squad.json",
+      "path": "raw/current-core/GW07/squad.json",
+      "bytes": 27681,
+      "sha256": "5d31b79f382ad5bcadca61bc2492faacebf44264515c78a947af8c4586a1868e",
+      "fetched_at": "2026-10-22T20:56:25.303870+00:00"
+    }
+  ]
+}
