@@ -1,0 +1,38 @@
+name: Historical data extension (one-off)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['history/extended/collection-request.json']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: historical-extension
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.7'
+      - name: Install isolated one-time R-data conversion dependencies
+        run: python -m pip install pyreadr==0.5.7 pandas==2.2.3 numpy==2.2.6
+      - name: Collect, normalise, package and verify historical data
+        run: bash history/collect_extended.sh
+      - name: Commit the verified historical files
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add history/extended/data history/extended/raw history/extended/coverage.json history/extended/validation.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Import departed-player archives and expanded historical training data'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi

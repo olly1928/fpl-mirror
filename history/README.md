@@ -1,5 +1,11 @@
 # Historical FPL data and calibration research — 23 October 2026
 
+**Later data expansion:** [departed-player and older-season imports](extended/README.md)
+extend the complete FPL outcome panel to 303,126 rows across 2014/15–2025/26,
+with additional partial years, 9,994 explicit player-season aggregates, Understat
+career data and historical team odds. The experiments below used the original
+ten-season panel; they have not been rerun or promoted by this data import.
+
 **The first model was not proved nearly perfect.** The original test compared 17
 fixed configurations; its failure to justify one specific parameter change did
 not establish optimal calibration. This follow-up collects the official raw

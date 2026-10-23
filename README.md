@@ -484,3 +484,10 @@ and an explicit-season prior repair proposal. The first 17-configuration sweep
 is not evidence of optimal calibration. Research candidates do not replace the
 live advisor automatically.
 
+The [historical data extension](history/extended/README.md) adds departed-player
+archives and two older full seasons: a combined 303,126 FPL player/fixture rows
+for 2014/15–2025/26, plus separately labelled older partial data, season totals,
+Understat careers and 33 seasons of team results/odds. Raw source packages and
+plain CSV exports are retained. This one-time import does not retrain the live
+advisor or change the three existing Claude project playbook URLs.
+
