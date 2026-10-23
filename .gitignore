@@ -3,4 +3,5 @@ __pycache__/
 .fpl-cache/
 *.tmp
 backtests/work/
+history/work/
 

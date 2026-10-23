@@ -1,0 +1,6 @@
+{
+  "request_id": "2026-10-23-history-research-v2",
+  "purpose": "Collect raw official FPL responses and every previous season in the pinned gameweek archive; distinguish season totals from match-level history.",
+  "archive_commit": "d7b05b51d137bfefef4b692386d18c610975b9b9",
+  "trigger_policy": "One collection when this request file changes, or a manual workflow run. No recurring schedule."
+}

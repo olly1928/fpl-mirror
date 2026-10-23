@@ -1,0 +1,69 @@
+name: Historical FPL data
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [history/collection-request.json]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: historical-fpl-collection
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.7'
+      - name: Capture public official responses and archived seasons
+        run: python history/collect_history.py --output history/work/collection
+      - name: Prepare immutable raw packages and coverage index
+        env:
+          COLLECTION_RUN_ID: ${{ github.run_id }}
+        run: |
+          python - <<'PY'
+          import json, os, pathlib, shutil
+          source = pathlib.Path('history/work/collection')
+          destination = pathlib.Path('history/raw') / os.environ['COLLECTION_RUN_ID']
+          destination.mkdir(parents=True, exist_ok=False)
+          for path in (source / 'packages').glob('*.tar.gz'):
+              shutil.copyfile(path, destination / path.name)
+          shutil.copyfile(source / 'collection-summary.json', destination / 'collection-summary.json')
+          shutil.copyfile(source / 'official/coverage.json', destination / 'official-api-coverage.json')
+          index = {'run_id': os.environ['COLLECTION_RUN_ID'], 'directory': str(destination),
+                   'summary': json.loads((source / 'collection-summary.json').read_text())}
+          pathlib.Path('history/collections').mkdir(exist_ok=True)
+          pathlib.Path('history/collections/latest.json').write_text(json.dumps(index, indent=2)+'\n')
+          PY
+      - name: Commit collected data without changing production feeds
+        env:
+          COLLECTION_RUN_ID: ${{ github.run_id }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- "history/raw/$COLLECTION_RUN_ID" history/collections/latest.json
+          git commit -m "Archive historical FPL data collection $COLLECTION_RUN_ID"
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+          done
+          exit 1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: historical-fpl-${{ github.run_id }}
+          path: |
+            history/work/collection/packages/
+            history/work/collection/collection-summary.json
+            history/work/collection/official/coverage.json
+          retention-days: 90
