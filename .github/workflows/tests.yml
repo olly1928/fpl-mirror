@@ -58,3 +58,6 @@ jobs:
       - name: Backtest temporal boundaries and pinned sources
         run: python tests/test_backtests.py
 
+      - name: Historical research chronology and raw-byte retention
+        run: python tests/test_history.py
+

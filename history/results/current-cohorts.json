@@ -1,0 +1,80 @@
+{
+  "v1": {
+    "fixed_candidate_pool": {
+      "n": 1205,
+      "mae": 2.3335453526970955,
+      "rmse": 3.1865269887485113,
+      "bias_actual_minus_forecast": 0.3010732033195021,
+      "appearance_brier": 0.08163952366698589,
+      "p60_brier": 0.14846652410406805
+    },
+    "owned15": {
+      "n": 105,
+      "mae": 2.376652857142857,
+      "rmse": 2.9722982049622653,
+      "bias_actual_minus_forecast": 0.23316485714285715,
+      "appearance_brier": 0.06719809354058096,
+      "p60_brier": 0.07517478312200952
+    },
+    "thin_prior_all_players": {
+      "n": 2340,
+      "mae": 0.6908519145299146,
+      "rmse": 1.6878439798796772,
+      "bias_actual_minus_forecast": 0.30207940170940173,
+      "appearance_brier": 0.12233516189568121,
+      "p60_brier": 0.09162147200810342
+    }
+  },
+  "learned_minutes": {
+    "fixed_candidate_pool": {
+      "n": 1205,
+      "mae": 2.3484352531120334,
+      "rmse": 3.1794409106642703,
+      "bias_actual_minus_forecast": 0.20200665560165976,
+      "appearance_brier": 0.0720350400421975,
+      "p60_brier": 0.13022501374451287
+    },
+    "owned15": {
+      "n": 105,
+      "mae": 2.3778270476190477,
+      "rmse": 2.984508920130269,
+      "bias_actual_minus_forecast": 0.2656241904761905,
+      "appearance_brier": 0.06771374504353334,
+      "p60_brier": 0.0690757608083619
+    },
+    "thin_prior_all_players": {
+      "n": 2340,
+      "mae": 0.7038469829059829,
+      "rmse": 1.616600853781083,
+      "bias_actual_minus_forecast": 0.12023452991452992,
+      "appearance_brier": 0.1127384369708376,
+      "p60_brier": 0.0703620628659564
+    }
+  },
+  "learned_plus_points_calibration": {
+    "fixed_candidate_pool": {
+      "n": 1205,
+      "mae": 2.3628021161825727,
+      "rmse": 3.177140068525851,
+      "bias_actual_minus_forecast": 0.14523705394190872,
+      "appearance_brier": 0.0720350400421975,
+      "p60_brier": 0.13022501374451287
+    },
+    "owned15": {
+      "n": 105,
+      "mae": 2.3848052380952383,
+      "rmse": 2.97549575258901,
+      "bias_actual_minus_forecast": 0.19009990476190475,
+      "appearance_brier": 0.06771374504353334,
+      "p60_brier": 0.0690757608083619
+    },
+    "thin_prior_all_players": {
+      "n": 2340,
+      "mae": 0.707842782051282,
+      "rmse": 1.6168830066504238,
+      "bias_actual_minus_forecast": 0.10858582478632478,
+      "appearance_brier": 0.1127384369708376,
+      "p60_brier": 0.0703620628659564
+    }
+  }
+}

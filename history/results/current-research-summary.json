@@ -1,0 +1,390 @@
+{
+  "learned_minutes": {
+    "conditional_squad_score": 422.0,
+    "actual_score": 415.0,
+    "likely_players": {
+      "n": 1205,
+      "mean_xp": 3.113346041493776,
+      "mean_points": 3.315352697095436,
+      "bias_actual_minus_forecast": 0.20200665560165976,
+      "mae": 2.3484352531120334,
+      "rmse": 3.1794409106642703,
+      "appearance_brier": 0.0720350400421975,
+      "p60_brier": 0.13022501374451287
+    },
+    "owned_players": {
+      "n": 105,
+      "mean_xp": 3.5343758095238096,
+      "mean_points": 3.8,
+      "bias_actual_minus_forecast": 0.2656241904761905,
+      "mae": 2.3778270476190477,
+      "rmse": 2.984508920130269,
+      "appearance_brier": 0.06771374504353334,
+      "p60_brier": 0.0690757608083619
+    },
+    "weekly_scores": [
+      {
+        "gw": 1,
+        "conditional_squad_score": 52.0,
+        "captain": "Haaland",
+        "xi": [
+          82,
+          4,
+          356,
+          498,
+          12,
+          481,
+          13,
+          338,
+          411,
+          165,
+          346
+        ],
+        "bench": [
+          301,
+          259,
+          212,
+          175
+        ]
+      },
+      {
+        "gw": 2,
+        "conditional_squad_score": 76.0,
+        "captain": "Haaland",
+        "xi": [
+          82,
+          4,
+          356,
+          12,
+          481,
+          368,
+          338,
+          411,
+          165,
+          346,
+          498
+        ],
+        "bench": [
+          301,
+          175,
+          259,
+          212
+        ]
+      },
+      {
+        "gw": 3,
+        "conditional_squad_score": 44.0,
+        "captain": "Haaland",
+        "xi": [
+          82,
+          4,
+          356,
+          449,
+          12,
+          481,
+          368,
+          338,
+          411,
+          165,
+          346
+        ],
+        "bench": [
+          301,
+          259,
+          212,
+          175
+        ]
+      },
+      {
+        "gw": 4,
+        "conditional_squad_score": 86.0,
+        "captain": "Haaland",
+        "xi": [
+          82,
+          4,
+          356,
+          449,
+          12,
+          40,
+          368,
+          411,
+          165,
+          346,
+          338
+        ],
+        "bench": [
+          301,
+          259,
+          175,
+          212
+        ]
+      },
+      {
+        "gw": 5,
+        "conditional_squad_score": 59.0,
+        "captain": "Haaland",
+        "xi": [
+          82,
+          4,
+          356,
+          449,
+          12,
+          40,
+          368,
+          338,
+          411,
+          249,
+          346
+        ],
+        "bench": [
+          301,
+          259,
+          175,
+          212
+        ]
+      },
+      {
+        "gw": 6,
+        "conditional_squad_score": 38.0,
+        "captain": "Saka",
+        "xi": [
+          82,
+          4,
+          356,
+          259,
+          449,
+          12,
+          40,
+          124,
+          411,
+          249,
+          368
+        ],
+        "bench": [
+          301,
+          338,
+          346,
+          175
+        ]
+      },
+      {
+        "gw": 7,
+        "conditional_squad_score": 67.0,
+        "captain": "Haaland",
+        "xi": [
+          82,
+          4,
+          356,
+          449,
+          12,
+          40,
+          335,
+          124,
+          411,
+          249,
+          346
+        ],
+        "bench": [
+          301,
+          338,
+          175,
+          259
+        ]
+      }
+    ]
+  },
+  "learned_plus_points_calibration": {
+    "conditional_squad_score": 422.0,
+    "actual_score": 415.0,
+    "likely_players": {
+      "n": 1205,
+      "mean_xp": 3.170115643153527,
+      "mean_points": 3.315352697095436,
+      "bias_actual_minus_forecast": 0.14523705394190872,
+      "mae": 2.3628021161825727,
+      "rmse": 3.177140068525851,
+      "appearance_brier": 0.0720350400421975,
+      "p60_brier": 0.13022501374451287
+    },
+    "owned_players": {
+      "n": 105,
+      "mean_xp": 3.6099000952380953,
+      "mean_points": 3.8,
+      "bias_actual_minus_forecast": 0.19009990476190475,
+      "mae": 2.3848052380952383,
+      "rmse": 2.97549575258901,
+      "appearance_brier": 0.06771374504353334,
+      "p60_brier": 0.0690757608083619
+    },
+    "weekly_scores": [
+      {
+        "gw": 1,
+        "conditional_squad_score": 52.0,
+        "captain": "Haaland",
+        "xi": [
+          82,
+          4,
+          356,
+          498,
+          12,
+          481,
+          13,
+          338,
+          411,
+          165,
+          346
+        ],
+        "bench": [
+          301,
+          259,
+          212,
+          175
+        ]
+      },
+      {
+        "gw": 2,
+        "conditional_squad_score": 76.0,
+        "captain": "Haaland",
+        "xi": [
+          82,
+          4,
+          356,
+          12,
+          481,
+          368,
+          338,
+          411,
+          165,
+          346,
+          498
+        ],
+        "bench": [
+          301,
+          175,
+          259,
+          212
+        ]
+      },
+      {
+        "gw": 3,
+        "conditional_squad_score": 44.0,
+        "captain": "Haaland",
+        "xi": [
+          82,
+          4,
+          356,
+          449,
+          12,
+          481,
+          368,
+          338,
+          411,
+          165,
+          346
+        ],
+        "bench": [
+          301,
+          259,
+          212,
+          175
+        ]
+      },
+      {
+        "gw": 4,
+        "conditional_squad_score": 86.0,
+        "captain": "Haaland",
+        "xi": [
+          82,
+          4,
+          356,
+          449,
+          12,
+          40,
+          368,
+          411,
+          165,
+          346,
+          338
+        ],
+        "bench": [
+          301,
+          259,
+          175,
+          212
+        ]
+      },
+      {
+        "gw": 5,
+        "conditional_squad_score": 59.0,
+        "captain": "Haaland",
+        "xi": [
+          82,
+          4,
+          356,
+          449,
+          12,
+          40,
+          368,
+          338,
+          411,
+          249,
+          346
+        ],
+        "bench": [
+          301,
+          259,
+          175,
+          212
+        ]
+      },
+      {
+        "gw": 6,
+        "conditional_squad_score": 38.0,
+        "captain": "Saka",
+        "xi": [
+          82,
+          4,
+          356,
+          259,
+          449,
+          12,
+          40,
+          124,
+          411,
+          249,
+          368
+        ],
+        "bench": [
+          301,
+          338,
+          346,
+          175
+        ]
+      },
+      {
+        "gw": 7,
+        "conditional_squad_score": 67.0,
+        "captain": "Haaland",
+        "xi": [
+          82,
+          4,
+          356,
+          449,
+          12,
+          40,
+          335,
+          124,
+          411,
+          249,
+          346
+        ],
+        "bench": [
+          301,
+          338,
+          175,
+          259
+        ]
+      }
+    ]
+  }
+}

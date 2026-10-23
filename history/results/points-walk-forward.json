@@ -1,0 +1,176 @@
+{
+  "2023-24": {
+    "v1": {
+      "n": 7876,
+      "mae": 2.0942742486073382,
+      "rmse": 3.0228291722725826,
+      "bias_actual_minus_forecast": 0.17309633131195348,
+      "appearance_brier": 0.12337363650926295,
+      "p60_brier": 0.18683923067886066
+    },
+    "learned_minutes": {
+      "n": 7876,
+      "mae": 2.108440670336809,
+      "rmse": 3.0010874208358564,
+      "bias_actual_minus_forecast": 0.06451530363331143,
+      "appearance_brier": 0.10015999900050047,
+      "p60_brier": 0.15802257787966376
+    },
+    "rolling10": {
+      "n": 7876,
+      "mae": 2.1836063367585608,
+      "rmse": 3.094287135769339,
+      "bias_actual_minus_forecast": 0.04566277529759579,
+      "appearance_brier": 0.12690897783223612,
+      "p60_brier": 0.18799794308678208
+    },
+    "learned_plus_points_calibration": {
+      "n": 7876,
+      "mae": 2.108440670336809,
+      "rmse": 3.0010874208358564,
+      "bias_actual_minus_forecast": 0.06451530363331143,
+      "appearance_brier": 0.10015999900050047,
+      "p60_brier": 0.15802257787966376
+    },
+    "paired_uncertainty": {
+      "learned_minutes": {
+        "n": 7876,
+        "gw_clusters": 37,
+        "resamples": 2000,
+        "rmse_improvement_percent": 0.7192517405930854,
+        "bootstrap_95_percent_interval": [
+          0.21870090441640344,
+          1.2627693263975006
+        ],
+        "interpretation": "Descriptive paired GW-cluster bootstrap; not adjusted for validation search or season dependence."
+      },
+      "learned_plus_points_calibration": {
+        "n": 7876,
+        "gw_clusters": 37,
+        "resamples": 2000,
+        "rmse_improvement_percent": 0.7192517405930854,
+        "bootstrap_95_percent_interval": [
+          0.21870090441640344,
+          1.2627693263975006
+        ],
+        "interpretation": "Descriptive paired GW-cluster bootstrap; not adjusted for validation search or season dependence."
+      }
+    }
+  },
+  "2024-25": {
+    "v1": {
+      "n": 8213,
+      "mae": 2.069639108588246,
+      "rmse": 2.9205852161900556,
+      "bias_actual_minus_forecast": 0.09768752153059594,
+      "appearance_brier": 0.1139976643578586,
+      "p60_brier": 0.18504457916671735
+    },
+    "learned_minutes": {
+      "n": 8213,
+      "mae": 2.1050438912481515,
+      "rmse": 2.9086516099808932,
+      "bias_actual_minus_forecast": -0.02488452682220744,
+      "appearance_brier": 0.09645045983556748,
+      "p60_brier": 0.16503570490214645
+    },
+    "rolling10": {
+      "n": 8213,
+      "mae": 2.1275576709804778,
+      "rmse": 2.989728017724217,
+      "bias_actual_minus_forecast": 0.036208428588409565,
+      "appearance_brier": 0.11553476155270778,
+      "p60_brier": 0.1862868073280848
+    },
+    "learned_plus_points_calibration": {
+      "n": 8213,
+      "mae": 2.141875716671382,
+      "rmse": 2.9108767789958505,
+      "bias_actual_minus_forecast": -0.11829968947199071,
+      "appearance_brier": 0.09645045983556748,
+      "p60_brier": 0.16503570490214645
+    },
+    "paired_uncertainty": {
+      "learned_minutes": {
+        "n": 8213,
+        "gw_clusters": 37,
+        "resamples": 2000,
+        "rmse_improvement_percent": 0.4086032533140771,
+        "bootstrap_95_percent_interval": [
+          0.054494603983208656,
+          0.7739154158621113
+        ],
+        "interpretation": "Descriptive paired GW-cluster bootstrap; not adjusted for validation search or season dependence."
+      },
+      "learned_plus_points_calibration": {
+        "n": 8213,
+        "gw_clusters": 37,
+        "resamples": 2000,
+        "rmse_improvement_percent": 0.33241410455641107,
+        "bootstrap_95_percent_interval": [
+          -0.05152661385772361,
+          0.6965550707177149
+        ],
+        "interpretation": "Descriptive paired GW-cluster bootstrap; not adjusted for validation search or season dependence."
+      }
+    }
+  },
+  "2025-26": {
+    "v1": {
+      "n": 8133,
+      "mae": 2.2215669344702196,
+      "rmse": 3.067750512747187,
+      "bias_actual_minus_forecast": 0.21990089852883432,
+      "appearance_brier": 0.11788129426448014,
+      "p60_brier": 0.1895501945488257
+    },
+    "learned_minutes": {
+      "n": 8133,
+      "mae": 2.2177447867824998,
+      "rmse": 3.023435159973289,
+      "bias_actual_minus_forecast": 0.085510932765974,
+      "appearance_brier": 0.09640838936992428,
+      "p60_brier": 0.16147795067305964
+    },
+    "rolling10": {
+      "n": 8133,
+      "mae": 2.30846183113533,
+      "rmse": 3.1440316599524447,
+      "bias_actual_minus_forecast": 0.08776469705015455,
+      "appearance_brier": 0.12108652265828354,
+      "p60_brier": 0.1910715484491112
+    },
+    "learned_plus_points_calibration": {
+      "n": 8133,
+      "mae": 2.231197874141351,
+      "rmse": 3.023790207071671,
+      "bias_actual_minus_forecast": 0.044788116512522846,
+      "appearance_brier": 0.09640838936992428,
+      "p60_brier": 0.16147795067305964
+    },
+    "paired_uncertainty": {
+      "learned_minutes": {
+        "n": 8133,
+        "gw_clusters": 37,
+        "resamples": 2000,
+        "rmse_improvement_percent": 1.4445553049297177,
+        "bootstrap_95_percent_interval": [
+          1.0097155152224293,
+          1.9133434414683992
+        ],
+        "interpretation": "Descriptive paired GW-cluster bootstrap; not adjusted for validation search or season dependence."
+      },
+      "learned_plus_points_calibration": {
+        "n": 8133,
+        "gw_clusters": 37,
+        "resamples": 2000,
+        "rmse_improvement_percent": 1.4329817725675986,
+        "bootstrap_95_percent_interval": [
+          1.0055240760538406,
+          1.8814853373415297
+        ],
+        "interpretation": "Descriptive paired GW-cluster bootstrap; not adjusted for validation search or season dependence."
+      }
+    }
+  }
+}

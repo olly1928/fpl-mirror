@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-23",
+  "raw_collection_run": "39909712054",
+  "raw_packages_verified": 11,
+  "end_to_end_from_committed_raw_data": "Numerical results reproduce the independently generated first run exactly.",
+  "current_outcomes_reconciled": 4551,
+  "current_outcome_differences": 0,
+  "frozen_prior_repaired": false,
+  "live_model_changed": false,
+  "chronological_test_seasons": 9,
+  "chronological_minute_test_rows": 206261,
+  "chronological_active_rows": 70492,
+  "final_minutes_training_rows": 228115,
+  "modern_component_test_rows": 24222
+}

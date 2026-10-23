@@ -30,9 +30,11 @@ def fetch(record, output):
     return {'path': record['path'], 'bytes': len(data)}
 
 
-def main(output):
+def main(output, scope='all'):
     records = []
-    for filename in ('archive-manifest.json', 'current-core-manifest.json', 'outcomes-manifest.json'):
+    filenames = ('current-core-manifest.json', 'outcomes-manifest.json') if scope == 'current' else (
+        'archive-manifest.json', 'current-core-manifest.json', 'outcomes-manifest.json')
+    for filename in filenames:
         records.extend(json.loads((ROOT/'sources'/filename).read_text())['files'])
     with concurrent.futures.ThreadPoolExecutor(max_workers=5) as pool:
         for result in pool.map(lambda r: fetch(r, output), records):
@@ -42,4 +44,5 @@ def main(output):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=pathlib.Path, default=ROOT/'work')
-    main(parser.parse_args().output)
+    parser.add_argument('--scope', choices=('all', 'current'), default='all')
+    args = parser.parse_args(); main(args.output, args.scope)

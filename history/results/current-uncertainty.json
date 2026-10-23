@@ -1,0 +1,89 @@
+{
+  "paired": {
+    "learned_minutes": {
+      "xp": {
+        "relative_error_reduction_percent": 0.22237621426909326,
+        "gw_cluster_bootstrap_95_interval": [
+          -0.8592915473557738,
+          1.2484059719041891
+        ],
+        "clusters": 7,
+        "n": 1205
+      },
+      "p60": {
+        "relative_error_reduction_percent": 12.286615093627951,
+        "gw_cluster_bootstrap_95_interval": [
+          0.11865028373664321,
+          22.499694224810362
+        ],
+        "clusters": 7,
+        "n": 1205
+      },
+      "p_appear": {
+        "relative_error_reduction_percent": 11.764502281965584,
+        "gw_cluster_bootstrap_95_interval": [
+          -2.9698626007446993,
+          25.181034007995883
+        ],
+        "clusters": 7,
+        "n": 1205
+      }
+    },
+    "learned_plus_points_calibration": {
+      "xp": {
+        "relative_error_reduction_percent": 0.29458153832699896,
+        "gw_cluster_bootstrap_95_interval": [
+          -0.6972197615630726,
+          1.2229926240241762
+        ],
+        "clusters": 7,
+        "n": 1205
+      },
+      "p60": {
+        "relative_error_reduction_percent": 12.286615093627951,
+        "gw_cluster_bootstrap_95_interval": [
+          0.11865028373664321,
+          22.499694224810362
+        ],
+        "clusters": 7,
+        "n": 1205
+      },
+      "p_appear": {
+        "relative_error_reduction_percent": 11.764502281965584,
+        "gw_cluster_bootstrap_95_interval": [
+          -2.9698626007446993,
+          25.181034007995883
+        ],
+        "clusters": 7,
+        "n": 1205
+      }
+    }
+  },
+  "means": {
+    "v1": {
+      "xp": 3.0142794937759336,
+      "actual_points": 3.315352697095436,
+      "p60": 0.7330405692946058,
+      "reached60": 0.8224066390041493,
+      "p_appear": 0.8406394190871369,
+      "appeared": 0.9195020746887966
+    },
+    "learned_minutes": {
+      "xp": 3.113346041493776,
+      "actual_points": 3.315352697095436,
+      "p60": 0.7669761278008299,
+      "reached60": 0.8224066390041493,
+      "p_appear": 0.8590856780082987,
+      "appeared": 0.9195020746887966
+    },
+    "learned_plus_points_calibration": {
+      "xp": 3.170115643153527,
+      "actual_points": 3.315352697095436,
+      "p60": 0.7669761278008299,
+      "reached60": 0.8224066390041493,
+      "p_appear": 0.8590856780082987,
+      "appeared": 0.9195020746887966
+    }
+  },
+  "caveat": "Seven retrospective GW clusters; intervals are descriptive, not independent player-trial confidence or proof of a deployment edge."
+}

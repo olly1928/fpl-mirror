@@ -477,3 +477,10 @@ minutes-parameter change did not meet the promotion rule, so numerical model
 v1.0.0 remains unchanged. New match data updates forecasts on each run; parameters
 do not retune automatically. The original Claude project routing URLs still work.
 
+The separate [historical-data and calibration research area](history/README.md)
+stores raw official responses and ten archived match-level seasons, with a
+manual collection/research workflow, chronological learned-minutes experiments
+and an explicit-season prior repair proposal. The first 17-configuration sweep
+is not evidence of optimal calibration. Research candidates do not replace the
+live advisor automatically.
+

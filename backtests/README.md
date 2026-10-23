@@ -1,5 +1,11 @@
 # Historical predictive backtest — 22 October 2026
 
+**Scope correction:** this first experiment searched 17 fixed configurations.
+Failure to promote one of them does not show that v1 is nearly optimal or well
+calibrated. See the [broader follow-up](../history/README.md) for direct official
+API collection, learned minute probabilities, explicit source-prior conflicts
+and chronological tests that use all ten archived seasons for model fitting.
+
 The live model remains **v1.0.0**. It beats a simple lagged-points benchmark in
 the two held-out seasons, but the calibration candidate did not meet the
 predeclared promotion rule. There is no reliable evidence here for a dramatic

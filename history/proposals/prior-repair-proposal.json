@@ -1,0 +1,222 @@
+{
+  "source_season": "2025/26",
+  "original_sha256": "2660d4e8fb3ecf6b58d87a9b49b7215cb7072d086b59ebb99fc69f65bf209f6b",
+  "changed_rows": 6,
+  "total_rows": 600,
+  "changes": [
+    {
+      "player_id": 54,
+      "name": "Gomes",
+      "source_season": "2025/26",
+      "code": 448089,
+      "fields": {
+        "mins": {
+          "old": "2207",
+          "proposed": 2829
+        },
+        "starts": {
+          "old": "25",
+          "proposed": 32
+        },
+        "expected_goals": {
+          "old": "1.15",
+          "proposed": "1.29"
+        },
+        "expected_assists": {
+          "old": "1.34",
+          "proposed": "2.09"
+        },
+        "bonus": {
+          "old": "4",
+          "proposed": 6
+        },
+        "yellow_cards": {
+          "old": "9",
+          "proposed": 10
+        },
+        "a": {
+          "old": "1",
+          "proposed": 2
+        }
+      }
+    },
+    {
+      "player_id": 105,
+      "name": "Anthony",
+      "source_season": "2025/26",
+      "code": 444180,
+      "fields": {
+        "mins": {
+          "old": "0",
+          "proposed": 2717
+        },
+        "starts": {
+          "old": "0",
+          "proposed": 32
+        },
+        "expected_goals": {
+          "old": "0.00",
+          "proposed": "5.11"
+        },
+        "expected_assists": {
+          "old": "0.00",
+          "proposed": "2.85"
+        },
+        "bonus": {
+          "old": "0",
+          "proposed": 6
+        },
+        "yellow_cards": {
+          "old": "0",
+          "proposed": 4
+        },
+        "a": {
+          "old": "0",
+          "proposed": 4
+        }
+      }
+    },
+    {
+      "player_id": 108,
+      "name": "Wilson",
+      "source_season": "2025/26",
+      "code": 75115,
+      "fields": {
+        "mins": {
+          "old": "0",
+          "proposed": 1234
+        },
+        "starts": {
+          "old": "0",
+          "proposed": 11
+        },
+        "expected_goals": {
+          "old": "0.00",
+          "proposed": "7.60"
+        },
+        "expected_assists": {
+          "old": "0.00",
+          "proposed": "0.54"
+        },
+        "bonus": {
+          "old": "0",
+          "proposed": 7
+        },
+        "yellow_cards": {
+          "old": "0",
+          "proposed": 1
+        },
+        "a": {
+          "old": "0",
+          "proposed": 2
+        }
+      }
+    },
+    {
+      "player_id": 153,
+      "name": "Disasi",
+      "source_season": "2025/26",
+      "code": 220362,
+      "fields": {
+        "mins": {
+          "old": "0",
+          "proposed": 1254
+        },
+        "starts": {
+          "old": "0",
+          "proposed": 14
+        },
+        "expected_goals": {
+          "old": "0.00",
+          "proposed": "1.10"
+        },
+        "expected_assists": {
+          "old": "0.00",
+          "proposed": "0.03"
+        },
+        "bonus": {
+          "old": "0",
+          "proposed": 1
+        },
+        "yellow_cards": {
+          "old": "0",
+          "proposed": 1
+        },
+        "own_goals": {
+          "old": "0",
+          "proposed": 1
+        }
+      }
+    },
+    {
+      "player_id": 190,
+      "name": "Tchaouna",
+      "source_season": "2025/26",
+      "code": 469272,
+      "fields": {
+        "mins": {
+          "old": "0",
+          "proposed": 1259
+        },
+        "starts": {
+          "old": "0",
+          "proposed": 14
+        },
+        "expected_goals": {
+          "old": "0.00",
+          "proposed": "1.27"
+        },
+        "expected_assists": {
+          "old": "0.00",
+          "proposed": "0.91"
+        },
+        "yellow_cards": {
+          "old": "0",
+          "proposed": 2
+        },
+        "a": {
+          "old": "0",
+          "proposed": 2
+        }
+      }
+    },
+    {
+      "player_id": 571,
+      "name": "Florentino",
+      "source_season": "2025/26",
+      "code": 216055,
+      "fields": {
+        "mins": {
+          "old": "0",
+          "proposed": 2100
+        },
+        "starts": {
+          "old": "0",
+          "proposed": 25
+        },
+        "expected_goals": {
+          "old": "0.00",
+          "proposed": "0.64"
+        },
+        "expected_assists": {
+          "old": "0.00",
+          "proposed": "0.52"
+        },
+        "defensive_contribution": {
+          "old": "0",
+          "proposed": 313
+        },
+        "yellow_cards": {
+          "old": "0",
+          "proposed": 6
+        },
+        "a": {
+          "old": "0",
+          "proposed": 2
+        }
+      }
+    }
+  ],
+  "not_a_historical_forecast_input": true,
+  "live_model_changed": false
+}

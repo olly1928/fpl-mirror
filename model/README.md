@@ -25,6 +25,15 @@ predeclared promotion rule; live v1.0.0 parameters remain unchanged. The current
 seven-week result is conditional on actual owned squads, not a transfer-policy
 backtest. Do not claim the system is fully calibrated or optimal.
 
+The [broader follow-up](../history/README.md) found better retrospective minute-
+probability scores from learned historical transitions, with much smaller and
+mixed improvements in points errors. Research models are not installed here.
+The official-history audit also corroborates six source-prior conflicts for
+IDs 54, 105, 108, 153, 190 and 571. A proposed explicit-season repair is saved under
+`history/proposals/`; it has not replaced the frozen pre-GW1 prior. Review those
+players' rates/minutes carefully if they enter a decision. The seven historical
+owned squads contain none of them, and old replay inputs must remain immutable.
+
 New results update forecasts when this helper runs. Parameters and frozen priors
 do not automatically retrain. There is no weekly user calibration task; retain
 prospective decision packets so a later versioned change can be assessed.

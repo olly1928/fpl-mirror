@@ -1,0 +1,344 @@
+{
+  "2017-18": {
+    "active": {
+      "learned": {
+        "n": 7970,
+        "multiclass_logloss": 1.0008391801189536,
+        "appearance_brier": 0.2521502257006904,
+        "p60_brier": 0.3077892075556069,
+        "minutes_mae": 42.35927460372863,
+        "minutes_rmse": 46.451073877739304
+      },
+      "rolling6": {
+        "n": 7970,
+        "multiclass_logloss": 0.8016003916575422,
+        "appearance_brier": 0.12896118768035147,
+        "p60_brier": 0.17579916571754148,
+        "minutes_mae": 26.33520940625297,
+        "minutes_rmse": 33.462960005344506
+      }
+    },
+    "all_previously_observed": {
+      "learned": {
+        "n": 20483,
+        "multiclass_logloss": 0.8160368408672939,
+        "appearance_brier": 0.2101901550272491,
+        "p60_brier": 0.19778423554842284,
+        "minutes_mae": 32.33176695028492,
+        "minutes_rmse": 37.66842904445812
+      },
+      "rolling6": {
+        "n": 20483,
+        "multiclass_logloss": 0.7131720318661183,
+        "appearance_brier": 0.12906858894795462,
+        "p60_brier": 0.12533887378571681,
+        "minutes_mae": 21.017667459954907,
+        "minutes_rmse": 28.80822463936424
+      }
+    }
+  },
+  "2018-19": {
+    "active": {
+      "learned": {
+        "n": 7959,
+        "multiclass_logloss": 0.6732597183336523,
+        "appearance_brier": 0.12025959356256867,
+        "p60_brier": 0.16975502573344278,
+        "minutes_mae": 26.061900502162164,
+        "minutes_rmse": 32.5532525643773
+      },
+      "rolling6": {
+        "n": 7959,
+        "multiclass_logloss": 0.8189290562749518,
+        "appearance_brier": 0.12569237687926663,
+        "p60_brier": 0.1731361024133043,
+        "minutes_mae": 25.706466651387917,
+        "minutes_rmse": 32.88904783028314
+      }
+    },
+    "all_previously_observed": {
+      "learned": {
+        "n": 19855,
+        "multiclass_logloss": 0.6045306812717531,
+        "appearance_brier": 0.12488319061749763,
+        "p60_brier": 0.11849526260127001,
+        "minutes_mae": 19.668602044479247,
+        "minutes_rmse": 27.815183166586884
+      },
+      "rolling6": {
+        "n": 19855,
+        "multiclass_logloss": 0.7204195819069067,
+        "appearance_brier": 0.1323469280795043,
+        "p60_brier": 0.12647938549281734,
+        "minutes_mae": 21.19195519069708,
+        "minutes_rmse": 28.81104392202563
+      }
+    }
+  },
+  "2019-20": {
+    "active": {
+      "learned": {
+        "n": 8308,
+        "multiclass_logloss": 0.6480214832152402,
+        "appearance_brier": 0.10016554351544932,
+        "p60_brier": 0.15898469543103863,
+        "minutes_mae": 23.37126596271171,
+        "minutes_rmse": 30.686157764767238
+      },
+      "rolling6": {
+        "n": 8308,
+        "multiclass_logloss": 0.8445352631160788,
+        "appearance_brier": 0.1193908672769597,
+        "p60_brier": 0.1753908504546796,
+        "minutes_mae": 25.142964734404522,
+        "minutes_rmse": 32.52013477131797
+      }
+    },
+    "all_previously_observed": {
+      "learned": {
+        "n": 21460,
+        "multiclass_logloss": 0.5710336957635571,
+        "appearance_brier": 0.11164998666752092,
+        "p60_brier": 0.1079835007176129,
+        "minutes_mae": 17.225805502133177,
+        "minutes_rmse": 26.097409048865078
+      },
+      "rolling6": {
+        "n": 21460,
+        "multiclass_logloss": 0.7350501437348764,
+        "appearance_brier": 0.12829707862297116,
+        "p60_brier": 0.12361540833619816,
+        "minutes_mae": 20.27707486354797,
+        "minutes_rmse": 28.171749411796302
+      }
+    }
+  },
+  "2020-21": {
+    "active": {
+      "learned": {
+        "n": 7436,
+        "multiclass_logloss": 0.6571218087451105,
+        "appearance_brier": 0.11751174497649763,
+        "p60_brier": 0.16205175082614304,
+        "minutes_mae": 24.311339133172368,
+        "minutes_rmse": 31.905138053191624
+      },
+      "rolling6": {
+        "n": 7436,
+        "multiclass_logloss": 0.846581359502362,
+        "appearance_brier": 0.13372782524074356,
+        "p60_brier": 0.17908738175999903,
+        "minutes_mae": 26.20422252298765,
+        "minutes_rmse": 33.65663723870466
+      }
+    },
+    "all_previously_observed": {
+      "learned": {
+        "n": 20755,
+        "multiclass_logloss": 0.5440870524464266,
+        "appearance_brier": 0.11286842560735814,
+        "p60_brier": 0.10524248096282793,
+        "minutes_mae": 16.93591782149104,
+        "minutes_rmse": 26.34258487024641
+      },
+      "rolling6": {
+        "n": 20755,
+        "multiclass_logloss": 0.7014343301830546,
+        "appearance_brier": 0.12766935408251204,
+        "p60_brier": 0.11996244447740724,
+        "minutes_mae": 20.15061950556108,
+        "minutes_rmse": 28.24286060055242
+      }
+    }
+  },
+  "2021-22": {
+    "active": {
+      "learned": {
+        "n": 7096,
+        "multiclass_logloss": 0.6678086625830799,
+        "appearance_brier": 0.12186415612667809,
+        "p60_brier": 0.1652402097516461,
+        "minutes_mae": 24.86543128596434,
+        "minutes_rmse": 32.398772443557355
+      },
+      "rolling6": {
+        "n": 7096,
+        "multiclass_logloss": 0.8506925582697403,
+        "appearance_brier": 0.14015780852556844,
+        "p60_brier": 0.1852655727127347,
+        "minutes_mae": 27.045187935513486,
+        "minutes_rmse": 34.34540101494832
+      }
+    },
+    "all_previously_observed": {
+      "learned": {
+        "n": 20295,
+        "multiclass_logloss": 0.5402032490946866,
+        "appearance_brier": 0.11228596395900312,
+        "p60_brier": 0.1025470342925532,
+        "minutes_mae": 16.684207287841847,
+        "minutes_rmse": 26.013953784700174
+      },
+      "rolling6": {
+        "n": 20295,
+        "multiclass_logloss": 0.706608894074572,
+        "appearance_brier": 0.12666971027622634,
+        "p60_brier": 0.11852013353704266,
+        "minutes_mae": 19.83348852547727,
+        "minutes_rmse": 28.004151659283675
+      }
+    }
+  },
+  "2022-23": {
+    "active": {
+      "learned": {
+        "n": 7501,
+        "multiclass_logloss": 0.6586278228623719,
+        "appearance_brier": 0.0945246509509966,
+        "p60_brier": 0.15849678107228965,
+        "minutes_mae": 22.656285651571963,
+        "minutes_rmse": 29.580086008757686
+      },
+      "rolling6": {
+        "n": 7501,
+        "multiclass_logloss": 0.8138078537801385,
+        "appearance_brier": 0.11176739474231887,
+        "p60_brier": 0.17427348268100198,
+        "minutes_mae": 24.446921591280173,
+        "minutes_rmse": 31.4547506412883
+      }
+    },
+    "all_previously_observed": {
+      "learned": {
+        "n": 22647,
+        "multiclass_logloss": 0.5306482893640652,
+        "appearance_brier": 0.09927685189416836,
+        "p60_brier": 0.09302530160618254,
+        "minutes_mae": 15.052086085817447,
+        "minutes_rmse": 23.476277748483636
+      },
+      "rolling6": {
+        "n": 22647,
+        "multiclass_logloss": 0.6560927961226278,
+        "appearance_brier": 0.11364394485548322,
+        "p60_brier": 0.10680286671845923,
+        "minutes_mae": 18.00918023633287,
+        "minutes_rmse": 25.49085802338878
+      }
+    }
+  },
+  "2023-24": {
+    "active": {
+      "learned": {
+        "n": 7876,
+        "multiclass_logloss": 0.6573240332794511,
+        "appearance_brier": 0.10015999900050003,
+        "p60_brier": 0.15802257787966403,
+        "minutes_mae": 22.920856544893233,
+        "minutes_rmse": 29.9046685699207
+      },
+      "rolling6": {
+        "n": 7876,
+        "multiclass_logloss": 0.879850276944798,
+        "appearance_brier": 0.12053784045361984,
+        "p60_brier": 0.18097587814969865,
+        "minutes_mae": 25.52804819898492,
+        "minutes_rmse": 32.473826960049244
+      }
+    },
+    "all_previously_observed": {
+      "learned": {
+        "n": 26904,
+        "multiclass_logloss": 0.4857325855933489,
+        "appearance_brier": 0.09324352795841738,
+        "p60_brier": 0.08249408871824702,
+        "minutes_mae": 13.560416809275257,
+        "minutes_rmse": 22.319327140117974
+      },
+      "rolling6": {
+        "n": 26904,
+        "multiclass_logloss": 0.6511577111348736,
+        "appearance_brier": 0.11114985993081647,
+        "p60_brier": 0.09989077666372753,
+        "minutes_mae": 17.17945641654071,
+        "minutes_rmse": 24.993242868285108
+      }
+    }
+  },
+  "2024-25": {
+    "active": {
+      "learned": {
+        "n": 8213,
+        "multiclass_logloss": 0.6769370253198116,
+        "appearance_brier": 0.09645045983556787,
+        "p60_brier": 0.1650357049021484,
+        "minutes_mae": 22.954922112790566,
+        "minutes_rmse": 30.013371406826206
+      },
+      "rolling6": {
+        "n": 8213,
+        "multiclass_logloss": 0.8272403480178586,
+        "appearance_brier": 0.11219914889791391,
+        "p60_brier": 0.18110882341441284,
+        "minutes_mae": 24.797013263639396,
+        "minutes_rmse": 31.756463199300402
+      }
+    },
+    "all_previously_observed": {
+      "learned": {
+        "n": 25773,
+        "multiclass_logloss": 0.5259560685349909,
+        "appearance_brier": 0.09777932029464996,
+        "p60_brier": 0.0922539796433206,
+        "minutes_mae": 14.531219195887875,
+        "minutes_rmse": 23.224728311053727
+      },
+      "rolling6": {
+        "n": 25773,
+        "multiclass_logloss": 0.6566882847085157,
+        "appearance_brier": 0.11240947101540825,
+        "p60_brier": 0.10560976296895949,
+        "minutes_mae": 17.378392460903562,
+        "minutes_rmse": 25.167589904901607
+      }
+    }
+  },
+  "2025-26": {
+    "active": {
+      "learned": {
+        "n": 8133,
+        "multiclass_logloss": 0.6677520376213135,
+        "appearance_brier": 0.0964083893699227,
+        "p60_brier": 0.16147795067305834,
+        "minutes_mae": 22.80900908169642,
+        "minutes_rmse": 29.861031816310984
+      },
+      "rolling6": {
+        "n": 8133,
+        "multiclass_logloss": 0.8799596395077351,
+        "appearance_brier": 0.11667367078213367,
+        "p60_brier": 0.18550366753877637,
+        "minutes_mae": 25.434364978861858,
+        "minutes_rmse": 32.45111962285678
+      }
+    },
+    "all_previously_observed": {
+      "learned": {
+        "n": 28089,
+        "multiclass_logloss": 0.47196106385373776,
+        "appearance_brier": 0.08663059704867476,
+        "p60_brier": 0.08301719611677195,
+        "minutes_mae": 13.107162694719927,
+        "minutes_rmse": 21.998157636649093
+      },
+      "rolling6": {
+        "n": 28089,
+        "multiclass_logloss": 0.6209977990801702,
+        "appearance_brier": 0.1040098529329427,
+        "p60_brier": 0.1001789016114702,
+        "minutes_mae": 16.60358966379789,
+        "minutes_rmse": 24.638574277945267
+      }
+    }
+  }
+}

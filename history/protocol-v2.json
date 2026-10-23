@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-23",
+  "purpose": "Broader research after a narrow parameter sweep; explicitly not a claim that v1 is perfectly calibrated.",
+  "original_commit": "e4b2155ffb919738de22e7ef9346337cb7c91eee",
+  "data": "Official public API raw responses plus the checksum-pinned 2016/17-2025/26 gameweek archive.",
+  "official_limits": "Verify history_past grain, current-player survivor coverage, and whether a tested season query actually changes the season. Do not relabel aggregate totals as gameweek history.",
+  "minutes_hypothesis": "Learn disjoint no-appearance/1-59/>=60-minute states from prior seasons instead of imposing fixed conditional-start/cameo probabilities.",
+  "minutes_features": ["position", "previous-season total-minutes bucket", "last observed minute state", "recent appearance and >=60 frequencies", "consecutive zero-minute observations"],
+  "candidate_grid": {"recent_fixture_window": [3, 6, 10], "hierarchical_pseudocount": [10, 50, 200]},
+  "rolling_origin": "For each test year 2017/18-2025/26, select on the immediately previous year using only years before that year; refit through the previous year. First fold uses declared window6/pseudocount50 defaults.",
+  "minutes_selection_metric": "Multiclass log loss on a fixed lag-defined active-candidate pool. Also report all previously observed players, appearance/P60 Brier scores and minute errors.",
+  "historical_pool": "Same single-fixture targets and conservative kickoff cutoff as the original backtest. No target outcomes choose eligibility. First observed rows are excluded because historical registration vintages are unavailable.",
+  "points_test": "Plug the independently learned minute states into the unchanged v1 component formula on 2023/24-2025/26; compare v1 and the existing rolling-points benchmark.",
+  "points_recalibration": "One fixed ridge regression: points ~ slope*xP + position intercept*P(appear), with ridge1000 and identity prior. Fit only earlier-season chronological predictions; no target-season outcomes. No additional parameter search.",
+  "current_seven": "Fit through2025/26; reuse exact pre-deadline 2026/27 GW1-7 snapshots. Freeze the original candidate pool and actual owned15. Evaluate new/thin-prior cohorts separately. No current results select or tune parameters.",
+  "honesty": "All these old seasons/current seven outcomes have now been inspected. Chronological fitting prevents feature/target leakage but does not make this a fresh untouched external test. GW8 onward remains prospective evidence.",
+  "promotion": "Research results only. Do not automatically replace the live numerical model or claim optimal calibration. Report mixed metrics, uncertainty, scoring-era limits and full-policy gaps.",
+  "additional_diagnostic_benchmarks": {
+    "added_after_initial_v2_results": true,
+    "used_for_parameter_selection": false,
+    "items": ["Position-constant minute probabilities fitted only on earlier active-candidate observations", "Official ep_next scores from the genuine pre-deadline snapshots, with a clearly labelled common-appearance lineup diagnostic"]
+  }
+}

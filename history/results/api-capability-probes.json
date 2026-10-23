@@ -1,0 +1,111 @@
+[
+  {
+    "name": "bootstrap",
+    "url": "https://fantasy.premierleague.com/api/bootstrap-static/",
+    "status": 200,
+    "bytes": 1785986,
+    "sha256": "31e894a8577d4d5fddec4ae94d27352f93c324d68f4fe95bf40c212b2f145e8e",
+    "captured_at": "2026-10-23T05:46:58.965196+00:00",
+    "keys": [
+      "chips",
+      "events",
+      "game_settings",
+      "game_config",
+      "phases",
+      "teams",
+      "total_players",
+      "element_stats",
+      "element_types",
+      "elements"
+    ],
+    "history_rows": 0,
+    "history_past_seasons": [],
+    "players": 668
+  },
+  {
+    "name": "haaland",
+    "url": "https://fantasy.premierleague.com/api/element-summary/411/",
+    "status": 200,
+    "bytes": 15750,
+    "sha256": "dc15daa131e107d44e3326cc8fb0e74610311ec4748707113cb01c8ba2224066",
+    "captured_at": "2026-10-23T05:47:02.855693+00:00",
+    "keys": [
+      "fixtures",
+      "history",
+      "history_past"
+    ],
+    "history_rows": 7,
+    "history_past_seasons": [
+      "2022/23",
+      "2023/24",
+      "2024/25",
+      "2025/26"
+    ],
+    "players": 0
+  },
+  {
+    "name": "player1",
+    "url": "https://fantasy.premierleague.com/api/element-summary/1/",
+    "status": 200,
+    "bytes": 16238,
+    "sha256": "4839ccfb8ce784b41000b06e9f131c757a8cd15db378845e045aaf637e060859",
+    "captured_at": "2026-10-23T05:47:06.758780+00:00",
+    "keys": [
+      "fixtures",
+      "history",
+      "history_past"
+    ],
+    "history_rows": 7,
+    "history_past_seasons": [
+      "2021/22",
+      "2022/23",
+      "2023/24",
+      "2024/25",
+      "2025/26"
+    ],
+    "players": 0
+  },
+  {
+    "name": "bootstrap_season_query",
+    "url": "https://fantasy.premierleague.com/api/bootstrap-static/?season=2025-26",
+    "status": 200,
+    "bytes": 1785986,
+    "sha256": "e82683387f3e466906df70854fcf0bebac8ae7afca6b9e1f9f5ff5bc9595313d",
+    "captured_at": "2026-10-23T05:47:11.382278+00:00",
+    "keys": [
+      "chips",
+      "events",
+      "game_settings",
+      "game_config",
+      "phases",
+      "teams",
+      "total_players",
+      "element_stats",
+      "element_types",
+      "elements"
+    ],
+    "history_rows": 0,
+    "history_past_seasons": [],
+    "players": 668
+  },
+  {
+    "name": "fixtures",
+    "url": "https://fantasy.premierleague.com/api/fixtures/",
+    "status": 200,
+    "bytes": 278235,
+    "sha256": "329c685135e8003188b287de09d28b8329b70b485824b22667b1d1e807a69a8d",
+    "captured_at": "2026-10-23T05:47:15.258803+00:00",
+    "rows": 380,
+    "first_kickoff": "2026-08-21T19:00:00Z"
+  },
+  {
+    "name": "fixtures_season_query",
+    "url": "https://fantasy.premierleague.com/api/fixtures/?season=2025-26",
+    "status": 200,
+    "bytes": 278235,
+    "sha256": "329c685135e8003188b287de09d28b8329b70b485824b22667b1d1e807a69a8d",
+    "captured_at": "2026-10-23T05:47:19.541987+00:00",
+    "rows": 380,
+    "first_kickoff": "2026-08-21T19:00:00Z"
+  }
+]

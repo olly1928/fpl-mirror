@@ -1,0 +1,74 @@
+{
+  "scope": "Pre-deadline snapshot ep_next only; archived post-match xP is excluded.",
+  "pools": {
+    "fixed_candidate_pool": {
+      "v1": {
+        "n": 1205,
+        "rmse": 3.1865269887485113,
+        "mae": 2.3335453526970955,
+        "bias_actual_minus_forecast": 0.3010732033195021
+      },
+      "ep_next": {
+        "n": 1205,
+        "rmse": 3.682540391420009,
+        "mae": 2.6980082987551866,
+        "bias_actual_minus_forecast": 0.007551867219917015
+      }
+    },
+    "owned15": {
+      "v1": {
+        "n": 105,
+        "rmse": 2.9722982049622653,
+        "mae": 2.376652857142857,
+        "bias_actual_minus_forecast": 0.23316485714285715
+      },
+      "ep_next": {
+        "n": 105,
+        "rmse": 3.8529147902532674,
+        "mae": 2.942857142857143,
+        "bias_actual_minus_forecast": 0.0019047619047619128
+      }
+    }
+  },
+  "conditional_lineup_diagnostic": {
+    "weeks": [
+      {
+        "gw": 1,
+        "score": 51.0,
+        "captain": "Gabriel"
+      },
+      {
+        "gw": 2,
+        "score": 71.0,
+        "captain": "Palmer"
+      },
+      {
+        "gw": 3,
+        "score": 34.0,
+        "captain": "Saka"
+      },
+      {
+        "gw": 4,
+        "score": 79.0,
+        "captain": "Haaland"
+      },
+      {
+        "gw": 5,
+        "score": 59.0,
+        "captain": "Haaland"
+      },
+      {
+        "gw": 6,
+        "score": 42.0,
+        "captain": "Gro\u00df"
+      },
+      {
+        "gw": 7,
+        "score": 44.0,
+        "captain": "Gro\u00df"
+      }
+    ],
+    "total": 380.0,
+    "caveat": "Ranks the same owned15 by official ep_next but retains common v1 appearance/autosub assumptions. This is not an official FPL recommended strategy or a transfer backtest."
+  }
+}

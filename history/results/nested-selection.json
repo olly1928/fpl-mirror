@@ -1,0 +1,1114 @@
+{
+  "2017-18": {
+    "target": "2017-18",
+    "training_seasons": [
+      "2016-17"
+    ],
+    "training_rows": 21854,
+    "inner_validation": null,
+    "inner_training_seasons": [],
+    "selected": {
+      "window": 6,
+      "strength": 50
+    },
+    "grid": []
+  },
+  "2018-19": {
+    "target": "2018-19",
+    "training_seasons": [
+      "2016-17",
+      "2017-18"
+    ],
+    "training_rows": 42337,
+    "inner_validation": "2017-18",
+    "inner_training_seasons": [
+      "2016-17"
+    ],
+    "selected": {
+      "window": 3,
+      "strength": 200,
+      "n": 7970,
+      "multiclass_logloss": 0.9999504334735961,
+      "appearance_brier": 0.2509803723232028,
+      "p60_brier": 0.3071287264133572,
+      "minutes_mae": 42.40563976876482,
+      "minutes_rmse": 46.44205656656531
+    },
+    "grid": [
+      {
+        "window": 3,
+        "strength": 10,
+        "n": 7970,
+        "multiclass_logloss": 1.002568696859981,
+        "appearance_brier": 0.252323192781179,
+        "p60_brier": 0.3081601201763853,
+        "minutes_mae": 42.40334542822314,
+        "minutes_rmse": 46.46104602533064
+      },
+      {
+        "window": 3,
+        "strength": 50,
+        "n": 7970,
+        "multiclass_logloss": 1.0017729306544971,
+        "appearance_brier": 0.2519920970224177,
+        "p60_brier": 0.3078916246120304,
+        "minutes_mae": 42.394096467774794,
+        "minutes_rmse": 46.4568007095556
+      },
+      {
+        "window": 3,
+        "strength": 200,
+        "n": 7970,
+        "multiclass_logloss": 0.9999504334735961,
+        "appearance_brier": 0.2509803723232028,
+        "p60_brier": 0.3071287264133572,
+        "minutes_mae": 42.40563976876482,
+        "minutes_rmse": 46.44205656656531
+      },
+      {
+        "window": 6,
+        "strength": 10,
+        "n": 7970,
+        "multiclass_logloss": 1.0011255981611222,
+        "appearance_brier": 0.2523109917290901,
+        "p60_brier": 0.30788087375471496,
+        "minutes_mae": 42.3624472643496,
+        "minutes_rmse": 46.44075716919393
+      },
+      {
+        "window": 6,
+        "strength": 50,
+        "n": 7970,
+        "multiclass_logloss": 1.0008391801189536,
+        "appearance_brier": 0.2521502257006904,
+        "p60_brier": 0.3077892075556069,
+        "minutes_mae": 42.35927460372863,
+        "minutes_rmse": 46.451073877739304
+      },
+      {
+        "window": 6,
+        "strength": 200,
+        "n": 7970,
+        "multiclass_logloss": 1.0003219814305946,
+        "appearance_brier": 0.25150150259777937,
+        "p60_brier": 0.3073587454249374,
+        "minutes_mae": 42.42069366646476,
+        "minutes_rmse": 46.46168644099992
+      },
+      {
+        "window": 10,
+        "strength": 10,
+        "n": 7970,
+        "multiclass_logloss": 1.0027146803077793,
+        "appearance_brier": 0.252527373840708,
+        "p60_brier": 0.3083675303778967,
+        "minutes_mae": 42.41137693779965,
+        "minutes_rmse": 46.47470823898609
+      },
+      {
+        "window": 10,
+        "strength": 50,
+        "n": 7970,
+        "multiclass_logloss": 1.0020801672859292,
+        "appearance_brier": 0.25229299990926785,
+        "p60_brier": 0.3082198248861633,
+        "minutes_mae": 42.40712013150454,
+        "minutes_rmse": 46.47956861860771
+      },
+      {
+        "window": 10,
+        "strength": 200,
+        "n": 7970,
+        "multiclass_logloss": 1.0013675894098484,
+        "appearance_brier": 0.25161922781890333,
+        "p60_brier": 0.30768558057717627,
+        "minutes_mae": 42.47694985734182,
+        "minutes_rmse": 46.48123264812579
+      }
+    ]
+  },
+  "2019-20": {
+    "target": "2019-20",
+    "training_seasons": [
+      "2016-17",
+      "2017-18",
+      "2018-19"
+    ],
+    "training_rows": 62192,
+    "inner_validation": "2018-19",
+    "inner_training_seasons": [
+      "2016-17",
+      "2017-18"
+    ],
+    "selected": {
+      "window": 3,
+      "strength": 10,
+      "n": 7959,
+      "multiclass_logloss": 0.6519956421518835,
+      "appearance_brier": 0.11024413325759849,
+      "p60_brier": 0.1596482813724263,
+      "minutes_mae": 23.84783334774826,
+      "minutes_rmse": 31.242676276735114
+    },
+    "grid": [
+      {
+        "window": 3,
+        "strength": 10,
+        "n": 7959,
+        "multiclass_logloss": 0.6519956421518835,
+        "appearance_brier": 0.11024413325759849,
+        "p60_brier": 0.1596482813724263,
+        "minutes_mae": 23.84783334774826,
+        "minutes_rmse": 31.242676276735114
+      },
+      {
+        "window": 3,
+        "strength": 50,
+        "n": 7959,
+        "multiclass_logloss": 0.6540539420025656,
+        "appearance_brier": 0.1129304337528373,
+        "p60_brier": 0.16220632550487232,
+        "minutes_mae": 24.376510012714483,
+        "minutes_rmse": 31.605319929903583
+      },
+      {
+        "window": 3,
+        "strength": 200,
+        "n": 7959,
+        "multiclass_logloss": 0.6732597183336523,
+        "appearance_brier": 0.12025959356256867,
+        "p60_brier": 0.16975502573344278,
+        "minutes_mae": 26.061900502162164,
+        "minutes_rmse": 32.5532525643773
+      },
+      {
+        "window": 6,
+        "strength": 10,
+        "n": 7959,
+        "multiclass_logloss": 0.6588290385614468,
+        "appearance_brier": 0.1117694230223895,
+        "p60_brier": 0.16059076690387103,
+        "minutes_mae": 23.958327049716516,
+        "minutes_rmse": 31.397978221898992
+      },
+      {
+        "window": 6,
+        "strength": 50,
+        "n": 7959,
+        "multiclass_logloss": 0.6587666841769625,
+        "appearance_brier": 0.1150385714906352,
+        "p60_brier": 0.16353582080091103,
+        "minutes_mae": 24.647892271550806,
+        "minutes_rmse": 31.808474202434255
+      },
+      {
+        "window": 6,
+        "strength": 200,
+        "n": 7959,
+        "multiclass_logloss": 0.6823005978422818,
+        "appearance_brier": 0.12362520474137002,
+        "p60_brier": 0.1729266577527471,
+        "minutes_mae": 26.802406665624098,
+        "minutes_rmse": 32.96156969872894
+      },
+      {
+        "window": 10,
+        "strength": 10,
+        "n": 7959,
+        "multiclass_logloss": 0.664238077559123,
+        "appearance_brier": 0.11235646900240388,
+        "p60_brier": 0.16137483823944182,
+        "minutes_mae": 24.16481417996678,
+        "minutes_rmse": 31.470517246478373
+      },
+      {
+        "window": 10,
+        "strength": 50,
+        "n": 7959,
+        "multiclass_logloss": 0.6633047406622229,
+        "appearance_brier": 0.11619668164010219,
+        "p60_brier": 0.16487766600936202,
+        "minutes_mae": 24.90214409969646,
+        "minutes_rmse": 31.952310240785984
+      },
+      {
+        "window": 10,
+        "strength": 200,
+        "n": 7959,
+        "multiclass_logloss": 0.6884702238617944,
+        "appearance_brier": 0.1253569847170385,
+        "p60_brier": 0.17502507940803083,
+        "minutes_mae": 27.24884017784885,
+        "minutes_rmse": 33.19480904920791
+      }
+    ]
+  },
+  "2020-21": {
+    "target": "2020-21",
+    "training_seasons": [
+      "2016-17",
+      "2017-18",
+      "2018-19",
+      "2019-20"
+    ],
+    "training_rows": 83652,
+    "inner_validation": "2019-20",
+    "inner_training_seasons": [
+      "2016-17",
+      "2017-18",
+      "2018-19"
+    ],
+    "selected": {
+      "window": 3,
+      "strength": 50,
+      "n": 8308,
+      "multiclass_logloss": 0.6473267103134365,
+      "appearance_brier": 0.10072152533451811,
+      "p60_brier": 0.158982235886856,
+      "minutes_mae": 23.487528358188698,
+      "minutes_rmse": 30.696457458000786
+    },
+    "grid": [
+      {
+        "window": 3,
+        "strength": 10,
+        "n": 8308,
+        "multiclass_logloss": 0.6480214832152402,
+        "appearance_brier": 0.10016554351544932,
+        "p60_brier": 0.15898469543103863,
+        "minutes_mae": 23.37126596271171,
+        "minutes_rmse": 30.686157764767238
+      },
+      {
+        "window": 3,
+        "strength": 50,
+        "n": 8308,
+        "multiclass_logloss": 0.6473267103134365,
+        "appearance_brier": 0.10072152533451811,
+        "p60_brier": 0.158982235886856,
+        "minutes_mae": 23.487528358188698,
+        "minutes_rmse": 30.696457458000786
+      },
+      {
+        "window": 3,
+        "strength": 200,
+        "n": 8308,
+        "multiclass_logloss": 0.6603040246139456,
+        "appearance_brier": 0.10649387864568634,
+        "p60_brier": 0.16295597906840972,
+        "minutes_mae": 24.418963515076623,
+        "minutes_rmse": 31.26432843445009
+      },
+      {
+        "window": 6,
+        "strength": 10,
+        "n": 8308,
+        "multiclass_logloss": 0.6523377114249339,
+        "appearance_brier": 0.10167158120368862,
+        "p60_brier": 0.15932613064458678,
+        "minutes_mae": 23.446961308222082,
+        "minutes_rmse": 30.6948658710809
+      },
+      {
+        "window": 6,
+        "strength": 50,
+        "n": 8308,
+        "multiclass_logloss": 0.6497761932794457,
+        "appearance_brier": 0.10254101318247696,
+        "p60_brier": 0.1595750779798263,
+        "minutes_mae": 23.64554314497018,
+        "minutes_rmse": 30.772805005643217
+      },
+      {
+        "window": 6,
+        "strength": 200,
+        "n": 8308,
+        "multiclass_logloss": 0.6669525944717588,
+        "appearance_brier": 0.11002867504587839,
+        "p60_brier": 0.16533487739722527,
+        "minutes_mae": 24.88696439780423,
+        "minutes_rmse": 31.583068967767463
+      },
+      {
+        "window": 10,
+        "strength": 10,
+        "n": 8308,
+        "multiclass_logloss": 0.6502289955181026,
+        "appearance_brier": 0.10130816998428177,
+        "p60_brier": 0.1598848119360916,
+        "minutes_mae": 23.56641477887604,
+        "minutes_rmse": 30.77456369525442
+      },
+      {
+        "window": 10,
+        "strength": 50,
+        "n": 8308,
+        "multiclass_logloss": 0.6490709673324365,
+        "appearance_brier": 0.10269677585127268,
+        "p60_brier": 0.16023572100383962,
+        "minutes_mae": 23.788632852115445,
+        "minutes_rmse": 30.86507270655383
+      },
+      {
+        "window": 10,
+        "strength": 200,
+        "n": 8308,
+        "multiclass_logloss": 0.6692934034608986,
+        "appearance_brier": 0.11122916925289708,
+        "p60_brier": 0.16688338246836332,
+        "minutes_mae": 25.198745769278304,
+        "minutes_rmse": 31.787420783670004
+      }
+    ]
+  },
+  "2021-22": {
+    "target": "2021-22",
+    "training_seasons": [
+      "2016-17",
+      "2017-18",
+      "2018-19",
+      "2019-20",
+      "2020-21"
+    ],
+    "training_rows": 104407,
+    "inner_validation": "2020-21",
+    "inner_training_seasons": [
+      "2016-17",
+      "2017-18",
+      "2018-19",
+      "2019-20"
+    ],
+    "selected": {
+      "window": 3,
+      "strength": 50,
+      "n": 7436,
+      "multiclass_logloss": 0.6571218087451105,
+      "appearance_brier": 0.11751174497649763,
+      "p60_brier": 0.16205175082614304,
+      "minutes_mae": 24.311339133172368,
+      "minutes_rmse": 31.905138053191624
+    },
+    "grid": [
+      {
+        "window": 3,
+        "strength": 10,
+        "n": 7436,
+        "multiclass_logloss": 0.6589434523852117,
+        "appearance_brier": 0.11720173940405951,
+        "p60_brier": 0.16229753286047094,
+        "minutes_mae": 24.3003138805499,
+        "minutes_rmse": 31.909899997060762
+      },
+      {
+        "window": 3,
+        "strength": 50,
+        "n": 7436,
+        "multiclass_logloss": 0.6571218087451105,
+        "appearance_brier": 0.11751174497649763,
+        "p60_brier": 0.16205175082614304,
+        "minutes_mae": 24.311339133172368,
+        "minutes_rmse": 31.905138053191624
+      },
+      {
+        "window": 3,
+        "strength": 200,
+        "n": 7436,
+        "multiclass_logloss": 0.6616133049319068,
+        "appearance_brier": 0.12007401756215541,
+        "p60_brier": 0.16381827468317964,
+        "minutes_mae": 24.864381900559433,
+        "minutes_rmse": 32.15355808541363
+      },
+      {
+        "window": 6,
+        "strength": 10,
+        "n": 7436,
+        "multiclass_logloss": 0.6624944703125815,
+        "appearance_brier": 0.11784459419917186,
+        "p60_brier": 0.1624444045546906,
+        "minutes_mae": 24.254286041520437,
+        "minutes_rmse": 31.93179962709888
+      },
+      {
+        "window": 6,
+        "strength": 50,
+        "n": 7436,
+        "multiclass_logloss": 0.6588029331590368,
+        "appearance_brier": 0.11862867382296106,
+        "p60_brier": 0.1623262158624733,
+        "minutes_mae": 24.322700658917178,
+        "minutes_rmse": 31.952598042486347
+      },
+      {
+        "window": 6,
+        "strength": 200,
+        "n": 7436,
+        "multiclass_logloss": 0.666889029396283,
+        "appearance_brier": 0.12274083982275089,
+        "p60_brier": 0.16565140147638233,
+        "minutes_mae": 25.14426158921213,
+        "minutes_rmse": 32.39036639251232
+      },
+      {
+        "window": 10,
+        "strength": 10,
+        "n": 7436,
+        "multiclass_logloss": 0.6655611234497782,
+        "appearance_brier": 0.11889108128990587,
+        "p60_brier": 0.16351418406390578,
+        "minutes_mae": 24.477632507989792,
+        "minutes_rmse": 32.070804376577286
+      },
+      {
+        "window": 10,
+        "strength": 50,
+        "n": 7436,
+        "multiclass_logloss": 0.6614924440983326,
+        "appearance_brier": 0.11951423461049392,
+        "p60_brier": 0.1635085317657279,
+        "minutes_mae": 24.567344666751364,
+        "minutes_rmse": 32.096165244528486
+      },
+      {
+        "window": 10,
+        "strength": 200,
+        "n": 7436,
+        "multiclass_logloss": 0.6695797405010016,
+        "appearance_brier": 0.12372036394165863,
+        "p60_brier": 0.16690193804748407,
+        "minutes_mae": 25.441932816920502,
+        "minutes_rmse": 32.54427129453795
+      }
+    ]
+  },
+  "2022-23": {
+    "target": "2022-23",
+    "training_seasons": [
+      "2016-17",
+      "2017-18",
+      "2018-19",
+      "2019-20",
+      "2020-21",
+      "2021-22"
+    ],
+    "training_rows": 124702,
+    "inner_validation": "2021-22",
+    "inner_training_seasons": [
+      "2016-17",
+      "2017-18",
+      "2018-19",
+      "2019-20",
+      "2020-21"
+    ],
+    "selected": {
+      "window": 3,
+      "strength": 50,
+      "n": 7096,
+      "multiclass_logloss": 0.6678086625830799,
+      "appearance_brier": 0.12186415612667809,
+      "p60_brier": 0.1652402097516461,
+      "minutes_mae": 24.86543128596434,
+      "minutes_rmse": 32.398772443557355
+    },
+    "grid": [
+      {
+        "window": 3,
+        "strength": 10,
+        "n": 7096,
+        "multiclass_logloss": 0.669777356749053,
+        "appearance_brier": 0.12214904577808376,
+        "p60_brier": 0.16542706556385678,
+        "minutes_mae": 24.900005938537156,
+        "minutes_rmse": 32.41739880538308
+      },
+      {
+        "window": 3,
+        "strength": 50,
+        "n": 7096,
+        "multiclass_logloss": 0.6678086625830799,
+        "appearance_brier": 0.12186415612667809,
+        "p60_brier": 0.1652402097516461,
+        "minutes_mae": 24.86543128596434,
+        "minutes_rmse": 32.398772443557355
+      },
+      {
+        "window": 3,
+        "strength": 200,
+        "n": 7096,
+        "multiclass_logloss": 0.6699365596157058,
+        "appearance_brier": 0.12273615136095736,
+        "p60_brier": 0.16620893837040962,
+        "minutes_mae": 25.17871068118506,
+        "minutes_rmse": 32.52612471854873
+      },
+      {
+        "window": 6,
+        "strength": 10,
+        "n": 7096,
+        "multiclass_logloss": 0.6756878108660103,
+        "appearance_brier": 0.12298374781892016,
+        "p60_brier": 0.16661069526166958,
+        "minutes_mae": 25.009031467113587,
+        "minutes_rmse": 32.501176036167664
+      },
+      {
+        "window": 6,
+        "strength": 50,
+        "n": 7096,
+        "multiclass_logloss": 0.6715520851484172,
+        "appearance_brier": 0.12270952286945398,
+        "p60_brier": 0.16608313602962332,
+        "minutes_mae": 24.97741579082681,
+        "minutes_rmse": 32.474677323805544
+      },
+      {
+        "window": 6,
+        "strength": 200,
+        "n": 7096,
+        "multiclass_logloss": 0.6759387021136432,
+        "appearance_brier": 0.12485110025906115,
+        "p60_brier": 0.16809848975927996,
+        "minutes_mae": 25.468800065651156,
+        "minutes_rmse": 32.756880907498044
+      },
+      {
+        "window": 10,
+        "strength": 10,
+        "n": 7096,
+        "multiclass_logloss": 0.6746383249702279,
+        "appearance_brier": 0.1219986238571024,
+        "p60_brier": 0.16516727103542006,
+        "minutes_mae": 24.997349785717606,
+        "minutes_rmse": 32.3623074996857
+      },
+      {
+        "window": 10,
+        "strength": 50,
+        "n": 7096,
+        "multiclass_logloss": 0.6710207369859255,
+        "appearance_brier": 0.122231354434876,
+        "p60_brier": 0.16527239395430013,
+        "minutes_mae": 25.0436439224624,
+        "minutes_rmse": 32.40538234371818
+      },
+      {
+        "window": 10,
+        "strength": 200,
+        "n": 7096,
+        "multiclass_logloss": 0.6768904801582862,
+        "appearance_brier": 0.1252703975503364,
+        "p60_brier": 0.16835447633889428,
+        "minutes_mae": 25.659057802877754,
+        "minutes_rmse": 32.80497389727769
+      }
+    ]
+  },
+  "2023-24": {
+    "target": "2023-24",
+    "training_seasons": [
+      "2016-17",
+      "2017-18",
+      "2018-19",
+      "2019-20",
+      "2020-21",
+      "2021-22",
+      "2022-23"
+    ],
+    "training_rows": 147349,
+    "inner_validation": "2022-23",
+    "inner_training_seasons": [
+      "2016-17",
+      "2017-18",
+      "2018-19",
+      "2019-20",
+      "2020-21",
+      "2021-22"
+    ],
+    "selected": {
+      "window": 6,
+      "strength": 50,
+      "n": 7501,
+      "multiclass_logloss": 0.656581917120124,
+      "appearance_brier": 0.09539497542562514,
+      "p60_brier": 0.15726989307130468,
+      "minutes_mae": 22.5915184739825,
+      "minutes_rmse": 29.507422180776622
+    },
+    "grid": [
+      {
+        "window": 3,
+        "strength": 10,
+        "n": 7501,
+        "multiclass_logloss": 0.6592261305621743,
+        "appearance_brier": 0.09457856524059681,
+        "p60_brier": 0.15880966389389758,
+        "minutes_mae": 22.66299697914044,
+        "minutes_rmse": 29.61186064498445
+      },
+      {
+        "window": 3,
+        "strength": 50,
+        "n": 7501,
+        "multiclass_logloss": 0.6586278228623719,
+        "appearance_brier": 0.0945246509509966,
+        "p60_brier": 0.15849678107228965,
+        "minutes_mae": 22.656285651571963,
+        "minutes_rmse": 29.580086008757686
+      },
+      {
+        "window": 3,
+        "strength": 200,
+        "n": 7501,
+        "multiclass_logloss": 0.6656723050182278,
+        "appearance_brier": 0.09679689708875172,
+        "p60_brier": 0.1601516516075913,
+        "minutes_mae": 23.056853595903323,
+        "minutes_rmse": 29.805636335667756
+      },
+      {
+        "window": 6,
+        "strength": 10,
+        "n": 7501,
+        "multiclass_logloss": 0.6585440538358661,
+        "appearance_brier": 0.09550197123450399,
+        "p60_brier": 0.157469140252999,
+        "minutes_mae": 22.581922418766926,
+        "minutes_rmse": 29.534080000621305
+      },
+      {
+        "window": 6,
+        "strength": 50,
+        "n": 7501,
+        "multiclass_logloss": 0.656581917120124,
+        "appearance_brier": 0.09539497542562514,
+        "p60_brier": 0.15726989307130468,
+        "minutes_mae": 22.5915184739825,
+        "minutes_rmse": 29.507422180776622
+      },
+      {
+        "window": 6,
+        "strength": 200,
+        "n": 7501,
+        "multiclass_logloss": 0.6674900820474957,
+        "appearance_brier": 0.09888101728855261,
+        "p60_brier": 0.16048692566531952,
+        "minutes_mae": 23.166757362475444,
+        "minutes_rmse": 29.911737739498573
+      },
+      {
+        "window": 10,
+        "strength": 10,
+        "n": 7501,
+        "multiclass_logloss": 0.6639390746507696,
+        "appearance_brier": 0.09642378789977549,
+        "p60_brier": 0.1589231902523296,
+        "minutes_mae": 22.729261275444497,
+        "minutes_rmse": 29.713022847755717
+      },
+      {
+        "window": 10,
+        "strength": 50,
+        "n": 7501,
+        "multiclass_logloss": 0.6605226356714379,
+        "appearance_brier": 0.09609020737564815,
+        "p60_brier": 0.1586282886058631,
+        "minutes_mae": 22.76841286526267,
+        "minutes_rmse": 29.66650606879351
+      },
+      {
+        "window": 10,
+        "strength": 200,
+        "n": 7501,
+        "multiclass_logloss": 0.6727231296152439,
+        "appearance_brier": 0.10012791715124862,
+        "p60_brier": 0.16220814866232544,
+        "minutes_mae": 23.421119758586045,
+        "minutes_rmse": 30.124861809935204
+      }
+    ]
+  },
+  "2024-25": {
+    "target": "2024-25",
+    "training_seasons": [
+      "2016-17",
+      "2017-18",
+      "2018-19",
+      "2019-20",
+      "2020-21",
+      "2021-22",
+      "2022-23",
+      "2023-24"
+    ],
+    "training_rows": 174253,
+    "inner_validation": "2023-24",
+    "inner_training_seasons": [
+      "2016-17",
+      "2017-18",
+      "2018-19",
+      "2019-20",
+      "2020-21",
+      "2021-22",
+      "2022-23"
+    ],
+    "selected": {
+      "window": 3,
+      "strength": 50,
+      "n": 7876,
+      "multiclass_logloss": 0.6538189672541924,
+      "appearance_brier": 0.0992473191735784,
+      "p60_brier": 0.15747436214637545,
+      "minutes_mae": 22.82462312238948,
+      "minutes_rmse": 29.88286307510827
+    },
+    "grid": [
+      {
+        "window": 3,
+        "strength": 10,
+        "n": 7876,
+        "multiclass_logloss": 0.6543118036722773,
+        "appearance_brier": 0.09923722847219639,
+        "p60_brier": 0.15770829110632087,
+        "minutes_mae": 22.847787377407407,
+        "minutes_rmse": 29.917567743874308
+      },
+      {
+        "window": 3,
+        "strength": 50,
+        "n": 7876,
+        "multiclass_logloss": 0.6538189672541924,
+        "appearance_brier": 0.0992473191735784,
+        "p60_brier": 0.15747436214637545,
+        "minutes_mae": 22.82462312238948,
+        "minutes_rmse": 29.88286307510827
+      },
+      {
+        "window": 3,
+        "strength": 200,
+        "n": 7876,
+        "multiclass_logloss": 0.6589420664475537,
+        "appearance_brier": 0.10104599724732614,
+        "p60_brier": 0.1584837476669254,
+        "minutes_mae": 23.106062505791677,
+        "minutes_rmse": 30.020750479515794
+      },
+      {
+        "window": 6,
+        "strength": 10,
+        "n": 7876,
+        "multiclass_logloss": 0.6597347527824555,
+        "appearance_brier": 0.10014865248061007,
+        "p60_brier": 0.15858049955593445,
+        "minutes_mae": 22.950566539267076,
+        "minutes_rmse": 29.950705093831406
+      },
+      {
+        "window": 6,
+        "strength": 50,
+        "n": 7876,
+        "multiclass_logloss": 0.6573240332794511,
+        "appearance_brier": 0.10015999900050003,
+        "p60_brier": 0.15802257787966403,
+        "minutes_mae": 22.920856544893233,
+        "minutes_rmse": 29.9046685699207
+      },
+      {
+        "window": 6,
+        "strength": 200,
+        "n": 7876,
+        "multiclass_logloss": 0.6658588753646123,
+        "appearance_brier": 0.1036525996565142,
+        "p60_brier": 0.1604353292837032,
+        "minutes_mae": 23.416149588883886,
+        "minutes_rmse": 30.245806049595444
+      },
+      {
+        "window": 10,
+        "strength": 10,
+        "n": 7876,
+        "multiclass_logloss": 0.6628627752211926,
+        "appearance_brier": 0.10121563177447426,
+        "p60_brier": 0.1590469386287582,
+        "minutes_mae": 23.08340671333537,
+        "minutes_rmse": 30.04590154186446
+      },
+      {
+        "window": 10,
+        "strength": 50,
+        "n": 7876,
+        "multiclass_logloss": 0.6597213021594127,
+        "appearance_brier": 0.10116723296957834,
+        "p60_brier": 0.15848887335684622,
+        "minutes_mae": 23.07646353847177,
+        "minutes_rmse": 29.994546491588775
+      },
+      {
+        "window": 10,
+        "strength": 200,
+        "n": 7876,
+        "multiclass_logloss": 0.6694799236110055,
+        "appearance_brier": 0.10489959550913122,
+        "p60_brier": 0.16132896861766283,
+        "minutes_mae": 23.67193230036328,
+        "minutes_rmse": 30.38732727067095
+      }
+    ]
+  },
+  "2025-26": {
+    "target": "2025-26",
+    "training_seasons": [
+      "2016-17",
+      "2017-18",
+      "2018-19",
+      "2019-20",
+      "2020-21",
+      "2021-22",
+      "2022-23",
+      "2023-24",
+      "2024-25"
+    ],
+    "training_rows": 200026,
+    "inner_validation": "2024-25",
+    "inner_training_seasons": [
+      "2016-17",
+      "2017-18",
+      "2018-19",
+      "2019-20",
+      "2020-21",
+      "2021-22",
+      "2022-23",
+      "2023-24"
+    ],
+    "selected": {
+      "window": 6,
+      "strength": 50,
+      "n": 8213,
+      "multiclass_logloss": 0.675660733276729,
+      "appearance_brier": 0.09727576895581898,
+      "p60_brier": 0.16412826145939008,
+      "minutes_mae": 22.923799095602597,
+      "minutes_rmse": 29.981645739032633
+    },
+    "grid": [
+      {
+        "window": 3,
+        "strength": 10,
+        "n": 8213,
+        "multiclass_logloss": 0.6777938015052393,
+        "appearance_brier": 0.09623222111652333,
+        "p60_brier": 0.1650101300151012,
+        "minutes_mae": 22.969180127279014,
+        "minutes_rmse": 30.004220893008082
+      },
+      {
+        "window": 3,
+        "strength": 50,
+        "n": 8213,
+        "multiclass_logloss": 0.6769370253198116,
+        "appearance_brier": 0.09645045983556787,
+        "p60_brier": 0.1650357049021484,
+        "minutes_mae": 22.954922112790566,
+        "minutes_rmse": 30.013371406826206
+      },
+      {
+        "window": 3,
+        "strength": 200,
+        "n": 8213,
+        "multiclass_logloss": 0.6811105916792725,
+        "appearance_brier": 0.09847813680730896,
+        "p60_brier": 0.16604856594179965,
+        "minutes_mae": 23.276290068952168,
+        "minutes_rmse": 30.170918146634833
+      },
+      {
+        "window": 6,
+        "strength": 10,
+        "n": 8213,
+        "multiclass_logloss": 0.6773721070796196,
+        "appearance_brier": 0.09694072765337,
+        "p60_brier": 0.16406545382818652,
+        "minutes_mae": 22.910644531224605,
+        "minutes_rmse": 29.95116977023484
+      },
+      {
+        "window": 6,
+        "strength": 50,
+        "n": 8213,
+        "multiclass_logloss": 0.675660733276729,
+        "appearance_brier": 0.09727576895581898,
+        "p60_brier": 0.16412826145939008,
+        "minutes_mae": 22.923799095602597,
+        "minutes_rmse": 29.981645739032633
+      },
+      {
+        "window": 6,
+        "strength": 200,
+        "n": 8213,
+        "multiclass_logloss": 0.6832846059203651,
+        "appearance_brier": 0.10065111507579799,
+        "p60_brier": 0.16630666385602103,
+        "minutes_mae": 23.41355389648947,
+        "minutes_rmse": 30.297908717740768
+      },
+      {
+        "window": 10,
+        "strength": 10,
+        "n": 8213,
+        "multiclass_logloss": 0.6788162867808228,
+        "appearance_brier": 0.09696001157145338,
+        "p60_brier": 0.16398895928197874,
+        "minutes_mae": 22.910546336915747,
+        "minutes_rmse": 29.937109011081553
+      },
+      {
+        "window": 10,
+        "strength": 50,
+        "n": 8213,
+        "multiclass_logloss": 0.6759565525110136,
+        "appearance_brier": 0.09737074967395169,
+        "p60_brier": 0.16400208156739451,
+        "minutes_mae": 22.960967548451347,
+        "minutes_rmse": 29.961565055687547
+      },
+      {
+        "window": 10,
+        "strength": 200,
+        "n": 8213,
+        "multiclass_logloss": 0.6855889610077134,
+        "appearance_brier": 0.10150350988120785,
+        "p60_brier": 0.16692614981933446,
+        "minutes_mae": 23.582865594188394,
+        "minutes_rmse": 30.368559180492294
+      }
+    ]
+  },
+  "2026-27": {
+    "target": "2026-27",
+    "training_seasons": [
+      "2016-17",
+      "2017-18",
+      "2018-19",
+      "2019-20",
+      "2020-21",
+      "2021-22",
+      "2022-23",
+      "2023-24",
+      "2024-25",
+      "2025-26"
+    ],
+    "training_rows": 228115,
+    "inner_validation": "2025-26",
+    "inner_training_seasons": [
+      "2016-17",
+      "2017-18",
+      "2018-19",
+      "2019-20",
+      "2020-21",
+      "2021-22",
+      "2022-23",
+      "2023-24",
+      "2024-25"
+    ],
+    "selected": {
+      "window": 10,
+      "strength": 50,
+      "n": 8133,
+      "multiclass_logloss": 0.6644912559982598,
+      "appearance_brier": 0.09627191327426735,
+      "p60_brier": 0.16060661047654917,
+      "minutes_mae": 22.839536654322732,
+      "minutes_rmse": 29.773896230267237
+    },
+    "grid": [
+      {
+        "window": 3,
+        "strength": 10,
+        "n": 8133,
+        "multiclass_logloss": 0.6657633918888707,
+        "appearance_brier": 0.0949855819984717,
+        "p60_brier": 0.16151632685362657,
+        "minutes_mae": 22.83741473139164,
+        "minutes_rmse": 29.85074974688034
+      },
+      {
+        "window": 3,
+        "strength": 50,
+        "n": 8133,
+        "multiclass_logloss": 0.6651473239238317,
+        "appearance_brier": 0.09503871364171536,
+        "p60_brier": 0.16130767124387718,
+        "minutes_mae": 22.798058795643946,
+        "minutes_rmse": 29.834674585564322
+      },
+      {
+        "window": 3,
+        "strength": 200,
+        "n": 8133,
+        "multiclass_logloss": 0.6680305858207555,
+        "appearance_brier": 0.09614494611845319,
+        "p60_brier": 0.16185600839356476,
+        "minutes_mae": 22.96616665992101,
+        "minutes_rmse": 29.924922251473276
+      },
+      {
+        "window": 6,
+        "strength": 10,
+        "n": 8133,
+        "multiclass_logloss": 0.6695698724413045,
+        "appearance_brier": 0.09655231060014234,
+        "p60_brier": 0.1618380449367704,
+        "minutes_mae": 22.87494827588968,
+        "minutes_rmse": 29.90125826696125
+      },
+      {
+        "window": 6,
+        "strength": 50,
+        "n": 8133,
+        "multiclass_logloss": 0.6677520376213135,
+        "appearance_brier": 0.0964083893699227,
+        "p60_brier": 0.16147795067305834,
+        "minutes_mae": 22.80900908169642,
+        "minutes_rmse": 29.861031816310984
+      },
+      {
+        "window": 6,
+        "strength": 200,
+        "n": 8133,
+        "multiclass_logloss": 0.6724456810719951,
+        "appearance_brier": 0.09825391943515939,
+        "p60_brier": 0.16272871497833155,
+        "minutes_mae": 23.08926274429221,
+        "minutes_rmse": 30.0404553448922
+      },
+      {
+        "window": 10,
+        "strength": 10,
+        "n": 8133,
+        "multiclass_logloss": 0.6661744289582983,
+        "appearance_brier": 0.09630859060637835,
+        "p60_brier": 0.16100376584662807,
+        "minutes_mae": 22.896518767130217,
+        "minutes_rmse": 29.80474783056909
+      },
+      {
+        "window": 10,
+        "strength": 50,
+        "n": 8133,
+        "multiclass_logloss": 0.6644912559982598,
+        "appearance_brier": 0.09627191327426735,
+        "p60_brier": 0.16060661047654917,
+        "minutes_mae": 22.839536654322732,
+        "minutes_rmse": 29.773896230267237
+      },
+      {
+        "window": 10,
+        "strength": 200,
+        "n": 8133,
+        "multiclass_logloss": 0.671290789244079,
+        "appearance_brier": 0.09867931059414796,
+        "p60_brier": 0.1623969981338024,
+        "minutes_mae": 23.216659540388637,
+        "minutes_rmse": 30.03201640807364
+      }
+    ]
+  }
+}

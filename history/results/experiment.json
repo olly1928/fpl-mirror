@@ -1,0 +1,9 @@
+{
+  "protocol": "history/protocol-v2.json",
+  "source_panel_sha256": "6a84e47b1da694f00661ad3734d3ddd16fdac48c25a2cb4780a5e7cef0cafec6",
+  "source_code_sha256": "af8a70bee64a7451aa9b37d8e166c147dcb4c12d45c103d50cc96c19cd5f7c3e",
+  "minutes_code_sha256": "4d63c431d6d62c5a2fb656718b4bca32b4fd54f9c48270cbfd7179b7eb219c57",
+  "training_is_chronological": true,
+  "fresh_untouched_holdout": false,
+  "live_model_changed": false
+}

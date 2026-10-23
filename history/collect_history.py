@@ -14,12 +14,26 @@ import json
 import os
 import pathlib
 import tarfile
+import threading
 import time
 import urllib.error
 import urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 API = 'https://fantasy.premierleague.com/api/'
+REQUEST_LOCK = threading.Lock()
+NEXT_REQUEST = 0.0
+
+
+def pace(url):
+    global NEXT_REQUEST
+    if not url.startswith(API):
+        return
+    with REQUEST_LOCK:
+        current = time.monotonic(); delay = max(0.0, NEXT_REQUEST-current)
+        NEXT_REQUEST = max(current, NEXT_REQUEST)+0.3
+    if delay:
+        time.sleep(delay)
 
 
 def digest(data):
@@ -40,6 +54,7 @@ def capture(url, path, expected=None):
     else:
         for attempt in range(3):
             try:
+                pace(url)
                 request = urllib.request.Request(url, headers={'User-Agent': 'FPL-historical-research/2.0'})
                 with urllib.request.urlopen(request, timeout=30) as response:
                     raw = response.read(); status = response.status

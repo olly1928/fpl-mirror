@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-23",
+  "offline_acceptance_checks": 230,
+  "advisor_unit_tests": 30,
+  "original_backtest_tests": 8,
+  "historical_research_tests": 10,
+  "total_checks_passed": 278,
+  "stdlib_import_scan": "passed",
+  "bash_syntax": "passed",
+  "notebook_executed_cells": 8,
+  "end_to_end_numerical_reproduction": "exact",
+  "live_numerical_model_unchanged": true
+}
