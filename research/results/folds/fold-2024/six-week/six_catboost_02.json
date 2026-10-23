@@ -1,0 +1,44 @@
+{
+  "identity": "8db655dc0eb1b11362c8e7c0bb1011749af28737ef1fdcea40d026d5a2638c06",
+  "candidate": {
+    "name": "six_catboost_02",
+    "family": "catboost",
+    "params": {
+      "depth": 6,
+      "iterations": 450,
+      "l2_leaf_reg": 50,
+      "learning_rate": 0.04
+    },
+    "feature_set": "full",
+    "train_years": 99
+  },
+  "year": 2024,
+  "training_rows": 217105,
+  "test_rows": 23160,
+  "max_training_season": 2023,
+  "max_training_window_end_gw": 47,
+  "status": "ok",
+  "seconds": 59.734134674072266,
+  "scores": {
+    "active": {
+      "n": 7551,
+      "rmse": 8.902504016967951,
+      "mae": 6.831822132779172,
+      "bias_forecast_minus_actual": -0.2213613175904409,
+      "mean_prediction": 14.747119678304143,
+      "mean_actual": 14.968480995894584,
+      "calibration_slope": 1.0177508954715868,
+      "calibration_intercept": -0.040413262326117305
+    },
+    "all": {
+      "n": 23160,
+      "rmse": 6.3443366328704105,
+      "mae": 3.9710110285986344,
+      "bias_forecast_minus_actual": -0.02942519980508666,
+      "mean_prediction": 6.909219014357261,
+      "mean_actual": 6.938644214162349,
+      "calibration_slope": 1.0154681641631813,
+      "calibration_intercept": -0.0774477341483637
+    }
+  }
+}

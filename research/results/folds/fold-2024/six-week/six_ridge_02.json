@@ -1,0 +1,41 @@
+{
+  "identity": "8db655dc0eb1b11362c8e7c0bb1011749af28737ef1fdcea40d026d5a2638c06",
+  "candidate": {
+    "name": "six_ridge_02",
+    "family": "ridge",
+    "params": {
+      "alpha": 1000
+    },
+    "feature_set": "full",
+    "train_years": 99
+  },
+  "year": 2024,
+  "training_rows": 217105,
+  "test_rows": 23160,
+  "max_training_season": 2023,
+  "max_training_window_end_gw": 47,
+  "status": "ok",
+  "seconds": 18.03404140472412,
+  "scores": {
+    "active": {
+      "n": 7551,
+      "rmse": 8.91332245758268,
+      "mae": 6.860351451667498,
+      "bias_forecast_minus_actual": -0.3352454704492927,
+      "mean_prediction": 14.633235525445292,
+      "mean_actual": 14.968480995894584,
+      "calibration_slope": 1.001669512259439,
+      "calibration_intercept": 0.3108151043443037
+    },
+    "all": {
+      "n": 23160,
+      "rmse": 6.4186067634255375,
+      "mae": 4.136299719440528,
+      "bias_forecast_minus_actual": -0.26970655780393993,
+      "mean_prediction": 6.668937656358409,
+      "mean_actual": 6.938644214162349,
+      "calibration_slope": 0.9859815483635781,
+      "calibration_intercept": 0.36319473780591327
+    }
+  }
+}

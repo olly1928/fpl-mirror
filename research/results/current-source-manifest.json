@@ -1,0 +1,105 @@
+{
+  "snapshots": [
+    {
+      "gw": 1,
+      "cutoff": "2026-08-21T17:29:59Z",
+      "sha": "62f698b3fc0e8af00998d0cd998bb2ea91b61bd8",
+      "committed_at": "2026-08-21T17:21:39Z"
+    },
+    {
+      "gw": 2,
+      "cutoff": "2026-08-28T17:29:59Z",
+      "sha": "6105b3792d0c53b9db7e3939873af61477564149",
+      "committed_at": "2026-08-28T12:45:31Z"
+    },
+    {
+      "gw": 3,
+      "cutoff": "2026-09-04T17:29:59Z",
+      "sha": "4b8c690b80db64aa0acba4b557887f9045a79dc4",
+      "committed_at": "2026-09-04T14:40:02Z"
+    },
+    {
+      "gw": 4,
+      "cutoff": "2026-09-12T12:29:59Z",
+      "sha": "fed63ac11366f3653e652bc48d53a813cee9fc2c",
+      "committed_at": "2026-09-12T11:51:19Z"
+    },
+    {
+      "gw": 5,
+      "cutoff": "2026-09-18T17:29:59Z",
+      "sha": "e8c360d0077ea9879c6acc9290d35d7b32092196",
+      "committed_at": "2026-09-18T14:43:17Z"
+    },
+    {
+      "gw": 6,
+      "cutoff": "2026-10-10T09:59:59Z",
+      "sha": "65e02b4d9bfdf2a9b5490df8569495c6b81256f7",
+      "committed_at": "2026-10-10T07:03:54Z"
+    },
+    {
+      "gw": 7,
+      "cutoff": "2026-10-17T09:59:59Z",
+      "sha": "379e334d988bd8d9051fb3afa6c3a7bbf5cb4f65",
+      "committed_at": "2026-10-17T07:23:36Z"
+    }
+  ],
+  "files": {
+    "GW03/teams.csv": "9961231fc622caf1f017d63d35146dfa5e02918b1f7d3807d6acf22eedaa36c7",
+    "GW03/odds.csv": "a5ab2a8a42f8effd2bbe75b2cafe0ff9772c8d44ed49a679d3fd81fbd90ec4f8",
+    "GW03/build_status.json": "12977fa24751bd51bc80a071c129a3ef33271240f4844a8717bb336a07e676be",
+    "GW03/squad.json": "f0b457b49a7f41131a7ddeb50d037595dd5845337f71ad8d0296403f4f71bbe8",
+    "GW03/meta.json": "f9e6f37e6389920429aaa1452de8f0e3a29dc93e67a9955f8b470e5607c06918",
+    "GW03/players.csv": "d7e79a99f10423906e5a4ffca2d88769f10843dba99079db815c7c9d4a0a5360",
+    "GW03/fixtures.csv": "ce4169781ae7473a3baaf67c8d5a2ea1d6115dbb0887e8c3e7b4bc8fa97156d5",
+    "GW03/player_history.csv": "462a9bf2c8f5c988993ad813f165cb64fefaec8cb6e135aad21e59097e3f756c",
+    "GW05/teams.csv": "577971d4c06f05fda464293d60ed361c0282cf7e549c7041cac35db18a726a5b",
+    "GW05/odds.csv": "18a248d8ddc7b3601ffe0317aef301e071a5a3bf095a630370534b951c24e844",
+    "GW05/build_status.json": "9258e61576731e0ec4fb0e777e9f90aa090ed078e61256019ce772998ccf47a3",
+    "GW05/squad.json": "351d805cde26a09c742a6891af020b156a00084d4edb3868cf560162e9bfea6b",
+    "GW05/meta.json": "1d292cc20f71663776a95637d36b3010aec888390afd57ccd9479336a093d27a",
+    "GW05/players.csv": "072bbce049cf768c2bad356846b0b515187a86c47435861d3bd97c9dd6ba220d",
+    "GW05/fixtures.csv": "262fd0df9a2fe70527441216080b63d1e8eccc096dc6eb334acfa441fe2b6275",
+    "GW05/player_history.csv": "3370eb7aa1f701c00a182668dbcddfe39b25c8bcf11096f80fcb74bf5f7ff142",
+    "GW02/teams.csv": "0799cbf327e57d217cda31bdac63f6e0d8d36aabecf9d566fafae89b2867e3f7",
+    "GW02/odds.csv": "774dd917c5848ac59bfd9cc68b2eb708e5a65aea90578323e1fa118225e360b4",
+    "GW02/build_status.json": "5d585a67f76467aa3e53f31f5b44a04b694e41aebd101ade43f549e69790d266",
+    "GW02/squad.json": "d8662e457c2f49fa38ebc71a72ee2364f9c8f390e0aad7362e6a59c7ff77dffa",
+    "GW02/meta.json": "6387aacc44d72796d5994f66da6ee0289baed0414ca6fbe600b062344317e1f8",
+    "GW02/players.csv": "409b3a058a831cd8be53dde9cb192b341928d8103f3b43ba9c1b42e23793f620",
+    "GW02/fixtures.csv": "e77c4714f7aa9f83d19b70c5e845484d7ec5a7ef86f2a1d6df0b99db7420ef7f",
+    "GW02/player_history.csv": "62b459bbf91f76aab0e0c641de1b560bdb843111ce220a70890d54af75c09ef3",
+    "GW04/teams.csv": "e44cc8b8547d6f900e11c800173199f5809f79af34e6429ca88ec915ea0f2534",
+    "GW04/odds.csv": "5910ab1f41f6dade72096f7ae027f6e2cfb1d7d4a59f8e3f803ec69a77ccbe82",
+    "GW04/build_status.json": "a3a84d91415f7d252e9b0856d8502665a3e103c1a8277143e1d5ef492e7f016e",
+    "GW04/squad.json": "83041585470db722c49a79fcb7bb2fde3b05826bc6cab4d6547183e16072beae",
+    "GW04/meta.json": "fad27c35a181e078039c9350e11425b4697ab541b7485f1d66aba571a784c07a",
+    "GW04/players.csv": "cb1088ff72759861162be0a31b5dc01e3e271ca35fab43c1a5035b6623cd41d3",
+    "GW04/fixtures.csv": "7c8c11c6672ea63d06066755f09ea6bb41f92985360142d4f3e1918e43347a0a",
+    "GW04/player_history.csv": "f13abdb7aa5e1e9ef2b831ea6e26965a26c383f8d18a27fb23080e9911070a4f",
+    "GW01/teams.csv": "150dea878ee1ec036ae25a6e06b8a1cec7e477cacbfc966eb525424f0beaf349",
+    "GW01/odds.csv": "879fbeddcb55f6d132a00f65c25c762b042e6829b8e430ce1b5a3ec1ad37f5e6",
+    "GW01/build_status.json": "fad24a20172268bdb5e4bfbf86c67b759ba035d7b965eef99efeafe3a246eb94",
+    "GW01/squad.json": "e34fc73008ca28a82b7d25c1ed956fbad174af9507cb2d3278d9f3545c51d84c",
+    "GW01/meta.json": "718b1670a52c2b59910587de679b48c547be429ff64998f297330fcd717509ef",
+    "GW01/players.csv": "0957b895765328528400de2a1215bd424e76f4f91092dd487c19c12652b05b80",
+    "GW01/fixtures.csv": "b7b7c86e5cc9994adb46763f442a44f5b157e24bdc87df34992feefabe95fc28",
+    "GW07/teams.csv": "629f69a31ae2fc0e61807b8b21a3532a4cfa65c769fc6e9dfe549f1f2a5b1d3c",
+    "GW07/odds.csv": "6eec92acf5145ed611446b8455b749198d1c4a6556a424ce18b01a5ec70db681",
+    "GW07/build_status.json": "f4ef8cd739374fd0d30e392447e5d6089378004b7f3dc8a1c6f51f2baaeab755",
+    "GW07/squad.json": "5d31b79f382ad5bcadca61bc2492faacebf44264515c78a947af8c4586a1868e",
+    "GW07/meta.json": "95858b2ed7ea3f7a2106582255834bde9db50eeccc3c5423f95dfa87be993a48",
+    "GW07/players.csv": "363ceacbaf43866715d0be971946c7a5152a29a6d26a1dd797b0efa61f94540c",
+    "GW07/fixtures.csv": "3f2c779fe510275d198c6993d066f36b4c9cc6ec7e6a58629605d719da4080fe",
+    "GW07/player_history.csv": "c4f68c06b2af6e47f86eec52534da060053c27627e0ab5dc0c6eecf516c5041f",
+    "GW06/teams.csv": "aecd8ec8141f3ffb370025675828eecfdb1d2a203c1842f1876a959015f6f805",
+    "GW06/odds.csv": "e373c7e525dd20d5345a8cad5ba8efa86e3b0273bd9965b496c4f566c2eb60a8",
+    "GW06/build_status.json": "7dbf43d0672112e8e587bcc04b32317d4ff7b9f060c05791454c4bef2a94ed08",
+    "GW06/squad.json": "685e0641923124b82c88bb53dcb3feaefcb0dedb19f8245dd79aa8e4c9df6091",
+    "GW06/meta.json": "4977fa7048f291eede53e5a5119cd155a5fe0502afb30cabdb49ce1de7c36378",
+    "GW06/players.csv": "e5508913fc6dee6943d086654a0b523309fb18d6221d14dd6b561080af8a0bb7",
+    "GW06/fixtures.csv": "8f025bef08f05fc12fe4156d4d10c44e6a977e491d1578af80fe1f3a887e7a7a",
+    "GW06/player_history.csv": "b58bfa1ae8dcd2ad084d22af5dacc89dd441532f8d5c9a504b5b43d5bf269122"
+  },
+  "actuals_sha256": "b7645feae086cd68aa3c3b35efec99f8ff57ce30255bc58e124ad1c613c80907",
+  "prior_caveat": "Previous-season outcomes captured later; six frozen-v1 prior discrepancies are not copied into the research features. This is retrospective reconstruction, not a pristine archived complete feature vintage."
+}

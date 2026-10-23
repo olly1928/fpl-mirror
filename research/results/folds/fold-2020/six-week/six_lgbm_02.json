@@ -1,0 +1,45 @@
+{
+  "identity": "8db655dc0eb1b11362c8e7c0bb1011749af28737ef1fdcea40d026d5a2638c06",
+  "candidate": {
+    "name": "six_lgbm_02",
+    "family": "lightgbm",
+    "params": {
+      "num_leaves": 15,
+      "min_child_samples": 200,
+      "n_estimators": 400,
+      "learning_rate": 0.035,
+      "reg_lambda": 50
+    },
+    "feature_set": "full",
+    "train_years": 99
+  },
+  "year": 2020,
+  "training_rows": 132343,
+  "test_rows": 19577,
+  "max_training_season": 2019,
+  "max_training_window_end_gw": 47,
+  "status": "ok",
+  "seconds": 24.81120991706848,
+  "scores": {
+    "active": {
+      "n": 7160,
+      "rmse": 9.442874530291736,
+      "mae": 7.346301493589556,
+      "bias_forecast_minus_actual": -0.4853493876727303,
+      "mean_prediction": 14.940767930763025,
+      "mean_actual": 15.426117318435754,
+      "calibration_slope": 0.9954330547712111,
+      "calibration_intercept": 0.5535830564885682
+    },
+    "all": {
+      "n": 19577,
+      "rmse": 7.119325622641512,
+      "mae": 4.699600697002886,
+      "bias_forecast_minus_actual": -0.06063891387580017,
+      "mean_prediction": 7.872547989122616,
+      "mean_actual": 7.933186902998417,
+      "calibration_slope": 1.028760388000181,
+      "calibration_intercept": -0.16577862084140982
+    }
+  }
+}

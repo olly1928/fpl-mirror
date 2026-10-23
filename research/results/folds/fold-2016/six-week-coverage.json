@@ -1,0 +1,86 @@
+[
+  {
+    "season": "2013-14",
+    "admitted": 15029,
+    "unknown_future_coverage_excluded": 0,
+    "last_origin_gw": 25
+  },
+  {
+    "season": "2014-15",
+    "admitted": 21025,
+    "unknown_future_coverage_excluded": 2,
+    "last_origin_gw": 33
+  },
+  {
+    "season": "2015-16",
+    "admitted": 20648,
+    "unknown_future_coverage_excluded": 2,
+    "last_origin_gw": 33
+  },
+  {
+    "season": "2016-17",
+    "admitted": 19775,
+    "unknown_future_coverage_excluded": 5,
+    "last_origin_gw": 33
+  },
+  {
+    "season": "2017-18",
+    "admitted": 18801,
+    "unknown_future_coverage_excluded": 10,
+    "last_origin_gw": 33
+  },
+  {
+    "season": "2018-19",
+    "admitted": 18053,
+    "unknown_future_coverage_excluded": 0,
+    "last_origin_gw": 33
+  },
+  {
+    "season": "2019-20",
+    "admitted": 19012,
+    "unknown_future_coverage_excluded": 2,
+    "last_origin_gw": 42
+  },
+  {
+    "season": "2020-21",
+    "admitted": 19577,
+    "unknown_future_coverage_excluded": 0,
+    "last_origin_gw": 33
+  },
+  {
+    "season": "2021-22",
+    "admitted": 19598,
+    "unknown_future_coverage_excluded": 0,
+    "last_origin_gw": 33
+  },
+  {
+    "season": "2022-23",
+    "admitted": 21104,
+    "unknown_future_coverage_excluded": 10,
+    "last_origin_gw": 33
+  },
+  {
+    "season": "2023-24",
+    "admitted": 24483,
+    "unknown_future_coverage_excluded": 0,
+    "last_origin_gw": 33
+  },
+  {
+    "season": "2024-25",
+    "admitted": 23160,
+    "unknown_future_coverage_excluded": 3,
+    "last_origin_gw": 33
+  },
+  {
+    "season": "2025-26",
+    "admitted": 25405,
+    "unknown_future_coverage_excluded": 0,
+    "last_origin_gw": 33
+  },
+  {
+    "season": "2026-27",
+    "admitted": 1216,
+    "unknown_future_coverage_excluded": 0,
+    "last_origin_gw": 2
+  }
+]
