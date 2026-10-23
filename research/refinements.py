@@ -52,7 +52,8 @@ def fit_probability_calibration(folder,year,name):
     minute=np.vstack(arrays);target=np.concatenate(targets);w=np.array(weights)
     def loss(params):
         p=calibrate(minute,params)[:,3:]
-        return float(-np.sum(w*np.log(np.maximum(1e-9,p[np.arange(len(p)),target])))+.01*np.sum(np.array(params)**2)
+        nll=-np.sum(w*np.log(np.maximum(1e-9,p[np.arange(len(p)),target])))
+        return float(nll+.01*np.sum(np.array(params)**2))
     opt=minimize(loss,[0.,0.,0.],method='L-BFGS-B',bounds=[(np.log(.5),np.log(2)),(-.5,.5),(-.5,.5)])
     if not opt.success:raise RuntimeError(opt.message)
     return {'parameters':opt.x.tolist(),'training_years':years,'rows':len(target),'OOF_only':True}
