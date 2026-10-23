@@ -1,0 +1,700 @@
+{
+  "coverage": [
+    {
+      "season": "2013-14",
+      "admitted": 15029,
+      "unknown_future_coverage_excluded": 0,
+      "last_origin_gw": 25
+    },
+    {
+      "season": "2014-15",
+      "admitted": 21025,
+      "unknown_future_coverage_excluded": 2,
+      "last_origin_gw": 33
+    },
+    {
+      "season": "2015-16",
+      "admitted": 20648,
+      "unknown_future_coverage_excluded": 2,
+      "last_origin_gw": 33
+    },
+    {
+      "season": "2016-17",
+      "admitted": 19775,
+      "unknown_future_coverage_excluded": 5,
+      "last_origin_gw": 33
+    },
+    {
+      "season": "2017-18",
+      "admitted": 18801,
+      "unknown_future_coverage_excluded": 10,
+      "last_origin_gw": 33
+    },
+    {
+      "season": "2018-19",
+      "admitted": 18053,
+      "unknown_future_coverage_excluded": 0,
+      "last_origin_gw": 33
+    },
+    {
+      "season": "2019-20",
+      "admitted": 19012,
+      "unknown_future_coverage_excluded": 2,
+      "last_origin_gw": 42
+    },
+    {
+      "season": "2020-21",
+      "admitted": 19577,
+      "unknown_future_coverage_excluded": 0,
+      "last_origin_gw": 33
+    },
+    {
+      "season": "2021-22",
+      "admitted": 19598,
+      "unknown_future_coverage_excluded": 0,
+      "last_origin_gw": 33
+    },
+    {
+      "season": "2022-23",
+      "admitted": 21104,
+      "unknown_future_coverage_excluded": 10,
+      "last_origin_gw": 33
+    },
+    {
+      "season": "2023-24",
+      "admitted": 24483,
+      "unknown_future_coverage_excluded": 0,
+      "last_origin_gw": 33
+    },
+    {
+      "season": "2024-25",
+      "admitted": 23160,
+      "unknown_future_coverage_excluded": 3,
+      "last_origin_gw": 33
+    },
+    {
+      "season": "2025-26",
+      "admitted": 25405,
+      "unknown_future_coverage_excluded": 0,
+      "last_origin_gw": 33
+    },
+    {
+      "season": "2026-27",
+      "admitted": 1216,
+      "unknown_future_coverage_excluded": 0,
+      "last_origin_gw": 2
+    }
+  ],
+  "scores": [
+    {
+      "year": 2018,
+      "model": "rolling_six",
+      "n": 7388,
+      "rmse": 9.713671881409285,
+      "mae": 7.61340535691077,
+      "bias_forecast_minus_actual": 0.8375311222146782,
+      "mean_prediction": 16.0078072456581,
+      "mean_actual": 15.170276123443422,
+      "calibration_slope": 0.6082597485389637,
+      "calibration_intercept": 5.433371313539226
+    },
+    {
+      "year": 2018,
+      "model": "selected_six",
+      "n": 7388,
+      "rmse": 8.58734839954208,
+      "mae": 6.735199401458664,
+      "bias_forecast_minus_actual": 0.20488626048832115,
+      "mean_prediction": 15.375162124633789,
+      "mean_actual": 15.170276123443422,
+      "calibration_slope": 1.1343326937825733,
+      "calibration_intercept": -2.2702718196718124
+    },
+    {
+      "year": 2019,
+      "model": "rolling_six",
+      "n": 7509,
+      "rmse": 9.286250515244683,
+      "mae": 7.099957717001537,
+      "bias_forecast_minus_actual": 0.8303614546088096,
+      "mean_prediction": 14.803593576063063,
+      "mean_actual": 13.973232121454254,
+      "calibration_slope": 0.648038715226404,
+      "calibration_intercept": 4.379930359688499
+    },
+    {
+      "year": 2019,
+      "model": "selected_six",
+      "n": 7509,
+      "rmse": 8.82518748604934,
+      "mae": 7.068055998978975,
+      "bias_forecast_minus_actual": 1.3961183027669297,
+      "mean_prediction": 15.36935043334961,
+      "mean_actual": 13.973232121454254,
+      "calibration_slope": 1.0281178590793694,
+      "calibration_intercept": -1.8282720136775819
+    },
+    {
+      "year": 2020,
+      "model": "rolling_six",
+      "n": 7160,
+      "rmse": 10.289361661058726,
+      "mae": 7.992069211620306,
+      "bias_forecast_minus_actual": 1.1569947592196543,
+      "mean_prediction": 16.583112077655407,
+      "mean_actual": 15.426117318435754,
+      "calibration_slope": 0.5787877198644599,
+      "calibration_intercept": 5.828015690752794
+    },
+    {
+      "year": 2020,
+      "model": "selected_six",
+      "n": 7160,
+      "rmse": 9.405999263899139,
+      "mae": 7.325370617652073,
+      "bias_forecast_minus_actual": -0.19685797881147715,
+      "mean_prediction": 15.229259490966797,
+      "mean_actual": 15.426117318435754,
+      "calibration_slope": 1.0212258819474547,
+      "calibration_intercept": -0.12639771147147272
+    },
+    {
+      "year": 2021,
+      "model": "rolling_six",
+      "n": 6969,
+      "rmse": 10.056498703352634,
+      "mae": 7.792285525430643,
+      "bias_forecast_minus_actual": 1.081517048271644,
+      "mean_prediction": 16.048944225772004,
+      "mean_actual": 14.967427177500358,
+      "calibration_slope": 0.5772621199900947,
+      "calibration_intercept": 5.702979610128422
+    },
+    {
+      "year": 2021,
+      "model": "selected_six",
+      "n": 6969,
+      "rmse": 9.105164640066823,
+      "mae": 7.1242637427812125,
+      "bias_forecast_minus_actual": 0.19387562647151851,
+      "mean_prediction": 15.16130256652832,
+      "mean_actual": 14.967427177500358,
+      "calibration_slope": 1.0526860230910606,
+      "calibration_intercept": -0.992663459706673
+    },
+    {
+      "year": 2022,
+      "model": "rolling_six",
+      "n": 7120,
+      "rmse": 9.74225454454203,
+      "mae": 7.61132259816787,
+      "bias_forecast_minus_actual": 0.9389607209844736,
+      "mean_prediction": 16.159747237838406,
+      "mean_actual": 15.220786516853932,
+      "calibration_slope": 0.6412139799590744,
+      "calibration_intercept": 4.85893067534691
+    },
+    {
+      "year": 2022,
+      "model": "selected_six",
+      "n": 7120,
+      "rmse": 9.020897191308611,
+      "mae": 6.945970428408532,
+      "bias_forecast_minus_actual": -0.2585261308577623,
+      "mean_prediction": 14.962259292602539,
+      "mean_actual": 15.220786516853932,
+      "calibration_slope": 1.1187543927384862,
+      "calibration_intercept": -1.5183072636636457
+    },
+    {
+      "year": 2023,
+      "model": "rolling_six",
+      "n": 7295,
+      "rmse": 10.013223891896166,
+      "mae": 7.699753485232313,
+      "bias_forecast_minus_actual": 0.8602824665552818,
+      "mean_prediction": 15.395854776356515,
+      "mean_actual": 14.535572309801234,
+      "calibration_slope": 0.6143588420354463,
+      "calibration_intercept": 5.0769927972529505
+    },
+    {
+      "year": 2023,
+      "model": "selected_six",
+      "n": 7295,
+      "rmse": 9.077665780175549,
+      "mae": 7.016401540767338,
+      "bias_forecast_minus_actual": -0.18395569262396724,
+      "mean_prediction": 14.351615905761719,
+      "mean_actual": 14.535572309801234,
+      "calibration_slope": 1.0811566929996748,
+      "calibration_intercept": -0.9807736679819694
+    },
+    {
+      "year": 2024,
+      "model": "rolling_six",
+      "n": 7551,
+      "rmse": 9.633375616491023,
+      "mae": 7.384586149304787,
+      "bias_forecast_minus_actual": 0.7892770719281655,
+      "mean_prediction": 15.75775806782275,
+      "mean_actual": 14.968480995894584,
+      "calibration_slope": 0.6392472929214332,
+      "calibration_intercept": 4.895376808528017
+    },
+    {
+      "year": 2024,
+      "model": "selected_six",
+      "n": 7551,
+      "rmse": 8.882122797700527,
+      "mae": 6.833898790576351,
+      "bias_forecast_minus_actual": -0.0727584630570622,
+      "mean_prediction": 14.895722389221191,
+      "mean_actual": 14.968480995894584,
+      "calibration_slope": 1.029157952816632,
+      "calibration_intercept": -0.3615704262245565
+    },
+    {
+      "year": 2025,
+      "model": "rolling_six",
+      "n": 7472,
+      "rmse": 10.281766096223706,
+      "mae": 8.097503798676282,
+      "bias_forecast_minus_actual": 0.6653117059093345,
+      "mean_prediction": 17.019032262654516,
+      "mean_actual": 16.35372055674518,
+      "calibration_slope": 0.5081596783562999,
+      "calibration_intercept": 7.705334596219171
+    },
+    {
+      "year": 2025,
+      "model": "selected_six",
+      "n": 7472,
+      "rmse": 9.25481504394481,
+      "mae": 7.354588341741669,
+      "bias_forecast_minus_actual": 0.1875520800848589,
+      "mean_prediction": 16.54127311706543,
+      "mean_actual": 16.35372055674518,
+      "calibration_slope": 0.8912066821985705,
+      "calibration_intercept": 1.612027060041079
+    },
+    {
+      "year": 2026,
+      "model": "rolling_six",
+      "n": 619,
+      "rmse": 10.582542005361132,
+      "mae": 8.498483281922066,
+      "bias_forecast_minus_actual": 1.784722426803682,
+      "mean_prediction": 15.056127919533893,
+      "mean_actual": 13.27140549273021,
+      "calibration_slope": 0.6794396568767023,
+      "calibration_intercept": 3.0416751051903645
+    },
+    {
+      "year": 2026,
+      "model": "selected_six",
+      "n": 619,
+      "rmse": 9.810950929136993,
+      "mae": 7.715295218496985,
+      "bias_forecast_minus_actual": -0.6158927161011827,
+      "mean_prediction": 12.655512809753418,
+      "mean_actual": 13.27140549273021,
+      "calibration_slope": 1.1320872042699819,
+      "calibration_intercept": -1.0557391300725243
+    }
+  ],
+  "selection": {
+    "2018": {
+      "selected": "six_catboost_01",
+      "selection_years": [
+        2016,
+        2017
+      ],
+      "ranking": [
+        [
+          78.5084981450608,
+          "six_catboost_01"
+        ],
+        [
+          78.71094026316561,
+          "six_catboost_02"
+        ],
+        [
+          79.0206909621478,
+          "six_lgbm_03"
+        ],
+        [
+          79.1351867826132,
+          "six_lgbm_01"
+        ],
+        [
+          79.84962121724155,
+          "six_lgbm_02"
+        ],
+        [
+          80.02765352572993,
+          "six_lgbm_04"
+        ],
+        [
+          108.53188144461797,
+          "six_ridge_02"
+        ],
+        [
+          150.7297290392399,
+          "six_ridge_01"
+        ]
+      ]
+    },
+    "2019": {
+      "selected": "six_catboost_01",
+      "selection_years": [
+        2016,
+        2017,
+        2018
+      ],
+      "ranking": [
+        [
+          76.91984957432824,
+          "six_catboost_01"
+        ],
+        [
+          77.03908285509638,
+          "six_catboost_02"
+        ],
+        [
+          77.33578319586616,
+          "six_lgbm_01"
+        ],
+        [
+          77.35662686344934,
+          "six_lgbm_03"
+        ],
+        [
+          78.06077661653846,
+          "six_lgbm_04"
+        ],
+        [
+          78.09170601678919,
+          "six_lgbm_02"
+        ],
+        [
+          97.39976271501162,
+          "six_ridge_02"
+        ],
+        [
+          125.6659859892422,
+          "six_ridge_01"
+        ]
+      ]
+    },
+    "2020": {
+      "selected": "six_catboost_01",
+      "selection_years": [
+        2017,
+        2018,
+        2019
+      ],
+      "ranking": [
+        [
+          76.08588466608613,
+          "six_catboost_01"
+        ],
+        [
+          76.22365081224643,
+          "six_catboost_02"
+        ],
+        [
+          76.62284858347164,
+          "six_lgbm_01"
+        ],
+        [
+          76.99724879503765,
+          "six_lgbm_02"
+        ],
+        [
+          77.1141895398526,
+          "six_lgbm_03"
+        ],
+        [
+          77.62865358038647,
+          "six_lgbm_04"
+        ],
+        [
+          78.30533414214646,
+          "six_ridge_02"
+        ],
+        [
+          78.77482236996023,
+          "six_ridge_01"
+        ]
+      ]
+    },
+    "2021": {
+      "selected": "six_catboost_01",
+      "selection_years": [
+        2018,
+        2019,
+        2020
+      ],
+      "ranking": [
+        [
+          80.03310291362088,
+          "six_catboost_01"
+        ],
+        [
+          80.0551295119988,
+          "six_catboost_02"
+        ],
+        [
+          80.33318479961433,
+          "six_lgbm_01"
+        ],
+        [
+          80.83964517002921,
+          "six_lgbm_02"
+        ],
+        [
+          81.55331532181543,
+          "six_lgbm_03"
+        ],
+        [
+          82.0211531712042,
+          "six_lgbm_04"
+        ],
+        [
+          82.50104582035297,
+          "six_ridge_02"
+        ],
+        [
+          82.81941036940613,
+          "six_ridge_01"
+        ]
+      ]
+    },
+    "2022": {
+      "selected": "six_catboost_01",
+      "selection_years": [
+        2019,
+        2020,
+        2021
+      ],
+      "ranking": [
+        [
+          83.08692641897305,
+          "six_catboost_01"
+        ],
+        [
+          83.18990844917744,
+          "six_catboost_02"
+        ],
+        [
+          83.3166661747685,
+          "six_lgbm_01"
+        ],
+        [
+          83.93217853272192,
+          "six_lgbm_02"
+        ],
+        [
+          84.65100823854117,
+          "six_lgbm_03"
+        ],
+        [
+          85.94301852209558,
+          "six_lgbm_04"
+        ],
+        [
+          86.30180934251727,
+          "six_ridge_02"
+        ],
+        [
+          86.48626670075383,
+          "six_ridge_01"
+        ]
+      ]
+    },
+    "2023": {
+      "selected": "six_catboost_01",
+      "selection_years": [
+        2020,
+        2021,
+        2022
+      ],
+      "ranking": [
+        [
+          84.25114374580839,
+          "six_catboost_01"
+        ],
+        [
+          84.2810369579471,
+          "six_lgbm_01"
+        ],
+        [
+          84.32036991545148,
+          "six_catboost_02"
+        ],
+        [
+          85.11602449604713,
+          "six_lgbm_03"
+        ],
+        [
+          85.1590593911253,
+          "six_lgbm_02"
+        ],
+        [
+          86.75984927156384,
+          "six_ridge_02"
+        ],
+        [
+          86.7661910166109,
+          "six_ridge_01"
+        ],
+        [
+          86.97817242191627,
+          "six_lgbm_04"
+        ]
+      ]
+    },
+    "2024": {
+      "selected": "six_catboost_01",
+      "selection_years": [
+        2021,
+        2022,
+        2023
+      ],
+      "ranking": [
+        [
+          82.228208409478,
+          "six_catboost_01"
+        ],
+        [
+          82.41130773019441,
+          "six_lgbm_01"
+        ],
+        [
+          82.44589735591254,
+          "six_catboost_02"
+        ],
+        [
+          82.93189267068857,
+          "six_lgbm_03"
+        ],
+        [
+          83.20044653357698,
+          "six_lgbm_02"
+        ],
+        [
+          85.01721071884769,
+          "six_lgbm_04"
+        ],
+        [
+          85.49499424569565,
+          "six_ridge_02"
+        ],
+        [
+          85.69806213010015,
+          "six_ridge_01"
+        ]
+      ]
+    },
+    "2025": {
+      "selected": "six_catboost_01",
+      "selection_years": [
+        2022,
+        2023,
+        2024
+      ],
+      "ranking": [
+        [
+          80.89090255302891,
+          "six_catboost_01"
+        ],
+        [
+          81.07222514863285,
+          "six_lgbm_01"
+        ],
+        [
+          81.16418832979144,
+          "six_catboost_02"
+        ],
+        [
+          81.74023431716847,
+          "six_lgbm_02"
+        ],
+        [
+          81.81994120000144,
+          "six_lgbm_03"
+        ],
+        [
+          83.13149471588095,
+          "six_ridge_02"
+        ],
+        [
+          83.2990576570691,
+          "six_ridge_01"
+        ],
+        [
+          83.61046163436033,
+          "six_lgbm_04"
+        ]
+      ]
+    },
+    "2026": {
+      "selected": "six_catboost_01",
+      "selection_years": [
+        2023,
+        2024,
+        2025
+      ],
+      "ranking": [
+        [
+          82.31590766456371,
+          "six_catboost_01"
+        ],
+        [
+          82.4001376832467,
+          "six_lgbm_01"
+        ],
+        [
+          82.49025783783954,
+          "six_catboost_02"
+        ],
+        [
+          82.92769139525467,
+          "six_lgbm_02"
+        ],
+        [
+          83.63035994741247,
+          "six_lgbm_03"
+        ],
+        [
+          84.10275558641,
+          "six_ridge_02"
+        ],
+        [
+          84.34006603321565,
+          "six_ridge_01"
+        ],
+        [
+          85.01659637648596,
+          "six_lgbm_04"
+        ]
+      ]
+    }
+  },
+  "uncertainty": {
+    "rows": 58464,
+    "seasons": 8,
+    "gameweeks": 263,
+    "rmse_improvement_percent": 8.68720677493139,
+    "interval_95_percent": [
+      7.470623978855375,
+      9.837423793195667
+    ],
+    "draws": 2000,
+    "block_length": 8,
+    "caveat": "Conditional on the retrospective protocol and available archive population; not a guarantee against future regime or selection effects."
+  },
+  "protocol": "research/protocol-six.json",
+  "caveat": "Six-GW labels overlap, realised schedule counts are used, and windows with unknown future registration are excluded. Current has two overlapping windows only."
+}

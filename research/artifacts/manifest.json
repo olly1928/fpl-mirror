@@ -1,0 +1,1000 @@
+{
+  "research_only": true,
+  "live_model_changed": false,
+  "selection": {
+    "year": 2026,
+    "selected_using_years": [
+      2023,
+      2024,
+      2025
+    ],
+    "single": "hurdle_03",
+    "family_champions": {
+      "hurdle": {
+        "name": "hurdle_03",
+        "family": "hurdle",
+        "score": 8.881677604222778,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      "catboost": {
+        "name": "catboost_03",
+        "family": "catboost",
+        "score": 8.896828324084327,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      "lightgbm": {
+        "name": "lightgbm_11",
+        "family": "lightgbm",
+        "score": 8.90362890951971,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      "poisson_components": {
+        "name": "poisson_components_02",
+        "family": "poisson_components",
+        "score": 8.907679374814597,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      "xgboost": {
+        "name": "xgboost_01",
+        "family": "xgboost",
+        "score": 8.909042372999624,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      "hist_boost": {
+        "name": "hist_boost_03",
+        "family": "hist_boost",
+        "score": 8.914412982294671,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      "extra_trees": {
+        "name": "extra_trees_01",
+        "family": "extra_trees",
+        "score": 8.934928020575887,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      "elasticnet": {
+        "name": "elasticnet_03",
+        "family": "elasticnet",
+        "score": 8.938660684057547,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      "ridge": {
+        "name": "ridge_05",
+        "family": "ridge",
+        "score": 8.942586865551688,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      "random_forest": {
+        "name": "random_forest_02",
+        "family": "random_forest",
+        "score": 8.945205836784336,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      "empirical": {
+        "name": "empirical_07",
+        "family": "empirical",
+        "score": 9.200760253229289,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      "rolling": {
+        "name": "rolling_04",
+        "family": "rolling",
+        "score": 9.633298871845549,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      }
+    },
+    "ensemble_names": [
+      "hurdle_03",
+      "catboost_03",
+      "lightgbm_11",
+      "poisson_components_02",
+      "xgboost_01"
+    ],
+    "ensemble_weights": [
+      0.35809572888210733,
+      0.18656083912786875,
+      0.18202488674840128,
+      0.21929713151988814,
+      0.05402141372173468
+    ],
+    "calibration": {
+      "intercept": 0.0035461682161580413,
+      "slope": 1.008650300901209,
+      "training_rows": 25511
+    },
+    "minutes": "minutes_10",
+    "ranking": [
+      {
+        "name": "hurdle_03",
+        "family": "hurdle",
+        "score": 8.881677604222778,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "hurdle_04",
+        "family": "hurdle",
+        "score": 8.892358160962692,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "hurdle_02",
+        "family": "hurdle",
+        "score": 8.893078120355128,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "hurdle_01",
+        "family": "hurdle",
+        "score": 8.896594377739758,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "catboost_03",
+        "family": "catboost",
+        "score": 8.896828324084327,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "catboost_04",
+        "family": "catboost",
+        "score": 8.897186455658785,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "lightgbm_11",
+        "family": "lightgbm",
+        "score": 8.90362890951971,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "lightgbm_07",
+        "family": "lightgbm",
+        "score": 8.90670731447407,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "poisson_components_02",
+        "family": "poisson_components",
+        "score": 8.907679374814597,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "catboost_02",
+        "family": "catboost",
+        "score": 8.908918150966596,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "catboost_01",
+        "family": "catboost",
+        "score": 8.909024683186436,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "lightgbm_05",
+        "family": "lightgbm",
+        "score": 8.909029177267925,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "xgboost_01",
+        "family": "xgboost",
+        "score": 8.909042372999624,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "xgboost_02",
+        "family": "xgboost",
+        "score": 8.910269528793439,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "xgboost_03",
+        "family": "xgboost",
+        "score": 8.910918474531192,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "hist_boost_03",
+        "family": "hist_boost",
+        "score": 8.914412982294671,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "poisson_components_01",
+        "family": "poisson_components",
+        "score": 8.91813712251657,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "hist_boost_04",
+        "family": "hist_boost",
+        "score": 8.919134250803038,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "lightgbm_15",
+        "family": "lightgbm",
+        "score": 8.919532966722565,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "hist_boost_02",
+        "family": "hist_boost",
+        "score": 8.919565710540004,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "lightgbm_09",
+        "family": "lightgbm",
+        "score": 8.919646431579208,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "lightgbm_02",
+        "family": "lightgbm",
+        "score": 8.919850159893016,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "lightgbm_04",
+        "family": "lightgbm",
+        "score": 8.923315600436482,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "lightgbm_01",
+        "family": "lightgbm",
+        "score": 8.924482569635218,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "lightgbm_08",
+        "family": "lightgbm",
+        "score": 8.924772701294039,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "lightgbm_03",
+        "family": "lightgbm",
+        "score": 8.928111183300594,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "hist_boost_01",
+        "family": "hist_boost",
+        "score": 8.929696311493734,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "lightgbm_06",
+        "family": "lightgbm",
+        "score": 8.93106582099272,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "extra_trees_01",
+        "family": "extra_trees",
+        "score": 8.934928020575887,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "lightgbm_18",
+        "family": "lightgbm",
+        "score": 8.935476526288554,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "extra_trees_04",
+        "family": "extra_trees",
+        "score": 8.936139594860162,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "lightgbm_13",
+        "family": "lightgbm",
+        "score": 8.937140152869441,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "elasticnet_03",
+        "family": "elasticnet",
+        "score": 8.938660684057547,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "lightgbm_12",
+        "family": "lightgbm",
+        "score": 8.939039022300499,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "extra_trees_03",
+        "family": "extra_trees",
+        "score": 8.941025713733318,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "ridge_05",
+        "family": "ridge",
+        "score": 8.942586865551688,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "elasticnet_02",
+        "family": "elasticnet",
+        "score": 8.942611659579446,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "elasticnet_01",
+        "family": "elasticnet",
+        "score": 8.943754078782208,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "ridge_04",
+        "family": "ridge",
+        "score": 8.944919082039624,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "random_forest_02",
+        "family": "random_forest",
+        "score": 8.945205836784336,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "elasticnet_04",
+        "family": "elasticnet",
+        "score": 8.946164623556617,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "ridge_03",
+        "family": "ridge",
+        "score": 8.946902789069698,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "xgboost_04",
+        "family": "xgboost",
+        "score": 8.947579441591204,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "ridge_02",
+        "family": "ridge",
+        "score": 8.948613433607207,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "ridge_01",
+        "family": "ridge",
+        "score": 8.948829699730522,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "extra_trees_02",
+        "family": "extra_trees",
+        "score": 8.95080112687183,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "lightgbm_10",
+        "family": "lightgbm",
+        "score": 8.955534063860084,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "random_forest_01",
+        "family": "random_forest",
+        "score": 8.961716913964127,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "lightgbm_17",
+        "family": "lightgbm",
+        "score": 8.962543672044571,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "elasticnet_05",
+        "family": "elasticnet",
+        "score": 8.968639843250934,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "lightgbm_14",
+        "family": "lightgbm",
+        "score": 8.978715890372742,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "lightgbm_16",
+        "family": "lightgbm",
+        "score": 9.002698895081457,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "elasticnet_06",
+        "family": "elasticnet",
+        "score": 9.029705533988833,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "empirical_07",
+        "family": "empirical",
+        "score": 9.200760253229289,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "empirical_04",
+        "family": "empirical",
+        "score": 9.20191877640787,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "empirical_08",
+        "family": "empirical",
+        "score": 9.204351937920253,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "empirical_05",
+        "family": "empirical",
+        "score": 9.209072941978683,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "empirical_01",
+        "family": "empirical",
+        "score": 9.211369119079693,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "empirical_09",
+        "family": "empirical",
+        "score": 9.213629967008751,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "empirical_06",
+        "family": "empirical",
+        "score": 9.2208881457789,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "empirical_02",
+        "family": "empirical",
+        "score": 9.22253237540576,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "empirical_03",
+        "family": "empirical",
+        "score": 9.235856159545158,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "rolling_04",
+        "family": "rolling",
+        "score": 9.633298871845549,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "rolling_03",
+        "family": "rolling",
+        "score": 9.64421956098743,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "rolling_02",
+        "family": "rolling",
+        "score": 9.804195453066315,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "rolling_01",
+        "family": "rolling",
+        "score": 9.985225233545938,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "hist_boost_05",
+        "family": "hist_boost",
+        "score": 15.333991799109318,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      }
+    ],
+    "minute_ranking": [
+      {
+        "name": "minutes_10",
+        "family": "minutes",
+        "score": 0.6337106077717386,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "minutes_12",
+        "family": "minutes",
+        "score": 0.6339041231942842,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "minutes_09",
+        "family": "minutes",
+        "score": 0.6339681431355788,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "minutes_11",
+        "family": "minutes",
+        "score": 0.634125082973877,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "minutes_06",
+        "family": "minutes",
+        "score": 0.6350180143201151,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "minutes_08",
+        "family": "minutes",
+        "score": 0.6352518450855554,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "minutes_05",
+        "family": "minutes",
+        "score": 0.6362424575243372,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "minutes_07",
+        "family": "minutes",
+        "score": 0.6363519660571354,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "minutes_04",
+        "family": "minutes",
+        "score": 0.6374233515871843,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "minutes_02",
+        "family": "minutes",
+        "score": 0.63744750919015,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "minutes_03",
+        "family": "minutes",
+        "score": 0.6400468288467805,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      },
+      {
+        "name": "minutes_01",
+        "family": "minutes",
+        "score": 0.6400496671224051,
+        "years": [
+          2023,
+          2024,
+          2025
+        ]
+      }
+    ]
+  },
+  "feature_manifest_sha256": "8dd1e1971c92c7e02fbc95df19c1338614d5ca08bb627495bc2748678e46b43b",
+  "artifacts": [
+    {
+      "file": "hurdle_03.joblib",
+      "sha256": "a22f3c66bcef40ed6255a90ed13fd37ef6e890f876cacd41d48ef6407fd19964",
+      "bytes": 1509304
+    },
+    {
+      "file": "catboost_03.joblib",
+      "sha256": "2edb02e5f52d0ac7caa6ffc727e9dc8eb4099c60d3dcdb2e4d09538e0d0a850d",
+      "bytes": 194343
+    },
+    {
+      "file": "lightgbm_11.joblib",
+      "sha256": "17c16ed913c1075dbb544cd2cd15f47d524ec5e8886014631c0c3e54baaded19",
+      "bytes": 300894
+    },
+    {
+      "file": "poisson_components_02.joblib",
+      "sha256": "df824426867d5ff6ab48872680c6eb4c63b873e701f3a5ca64bbfdce749b1f32",
+      "bytes": 3109206
+    },
+    {
+      "file": "xgboost_01.joblib",
+      "sha256": "03358ebfcbf14290d5a06e0ba9caf7940e8bf8a02188654f4363ed16f8f45740",
+      "bytes": 67642
+    },
+    {
+      "file": "minutes.joblib",
+      "sha256": "5a2a33e16e5ea4d5226742f1470a67d406d066ba47c4332b88be2e14e6270a21",
+      "bytes": 3035838
+    }
+  ],
+  "trusted_artifact_only": "joblib artifacts are executable serialisations; load only these hash-verified files from this repository.",
+  "training_seasons": [
+    "2013-14",
+    "2014-15",
+    "2015-16",
+    "2016-17",
+    "2017-18",
+    "2018-19",
+    "2019-20",
+    "2020-21",
+    "2021-22",
+    "2022-23",
+    "2023-24",
+    "2024-25",
+    "2025-26"
+  ],
+  "current_prior_vintage_caveat": true,
+  "production_override_interface_implemented": false
+}

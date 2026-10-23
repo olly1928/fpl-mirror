@@ -1,0 +1,42 @@
+{
+  "historical_choice": "equal_top3",
+  "label": "Top-three mean",
+  "annual_improvements_percent": [
+    {
+      "period": "2023-24",
+      "improvement_vs_v1_percent": 2.0239107390975173
+    },
+    {
+      "period": "2024-25",
+      "improvement_vs_v1_percent": 1.343160526994676
+    },
+    {
+      "period": "2025-26",
+      "improvement_vs_v1_percent": 2.2913443397363755
+    }
+  ],
+  "current_fixed_pool": {
+    "period": "2026-27_GW1-7",
+    "pool": "fixed_candidates",
+    "model": "equal_top3",
+    "label": "Top-three mean",
+    "improvement_vs_v1_percent": -0.058736276072176276,
+    "n": 1205,
+    "rmse": 3.188398636037737,
+    "mae": 2.3452152591444118,
+    "bias_forecast_minus_actual": -0.24962509465662933,
+    "mean_prediction": 3.0657276024388063,
+    "mean_actual": 3.315352697095436,
+    "calibration_slope": 0.9720674368330336,
+    "calibration_intercept": 0.33525872456446404
+  },
+  "conditional_points": {
+    "Live v1": 422.0,
+    "Nested ensemble": 429.0,
+    "V1 + boosted minutes": 422.0,
+    "V1 + calibrated minutes": 422.0
+  },
+  "actual_points": 415.0,
+  "live_changed": false,
+  "fresh_untouched_holdout": false
+}

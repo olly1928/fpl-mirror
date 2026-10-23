@@ -1,0 +1,74 @@
+[
+  {
+    "season": "2023-24",
+    "variant": "calibrated",
+    "n": 7876,
+    "rmse": 2.9884361814304916,
+    "mae": 2.086387956441544,
+    "bias_forecast_minus_actual": -0.09258736782676828,
+    "mean_prediction": 2.5609169490853696,
+    "mean_actual": 2.653504316912138,
+    "calibration_slope": 1.133869606253798,
+    "calibration_intercept": -0.25024157579596773
+  },
+  {
+    "season": "2023-24",
+    "variant": "raw",
+    "n": 7876,
+    "rmse": 2.987766487566639,
+    "mae": 2.0894627495626215,
+    "bias_forecast_minus_actual": -0.08343239087709695,
+    "mean_prediction": 2.5700719260350415,
+    "mean_actual": 2.653504316912138,
+    "calibration_slope": 1.127609033723665,
+    "calibration_intercept": -0.24453200420455357
+  },
+  {
+    "season": "2024-25",
+    "variant": "calibrated",
+    "n": 8213,
+    "rmse": 2.8954002213050227,
+    "mae": 2.1048192309344453,
+    "bias_forecast_minus_actual": 0.05853772164363207,
+    "mean_prediction": 2.7302776461535556,
+    "mean_actual": 2.6717399245099234,
+    "calibration_slope": 1.0399847009410492,
+    "calibration_intercept": -0.16770705681111409
+  },
+  {
+    "season": "2024-25",
+    "variant": "raw",
+    "n": 8213,
+    "rmse": 2.8949878390197687,
+    "mae": 2.093536174741904,
+    "bias_forecast_minus_actual": 0.030235454289177933,
+    "mean_prediction": 2.701975378799101,
+    "mean_actual": 2.6717399245099234,
+    "calibration_slope": 1.037904001363527,
+    "calibration_intercept": -0.13265113273139528
+  },
+  {
+    "season": "2025-26",
+    "variant": "calibrated",
+    "n": 8133,
+    "rmse": 3.0033050047658145,
+    "mae": 2.229538666484588,
+    "bias_forecast_minus_actual": 0.01905836841405575,
+    "mean_prediction": 2.968523510428073,
+    "mean_actual": 2.949465142014017,
+    "calibration_slope": 0.9855464101440732,
+    "calibration_intercept": 0.023847452883347664
+  },
+  {
+    "season": "2025-26",
+    "variant": "raw",
+    "n": 8133,
+    "rmse": 3.0028906207847377,
+    "mae": 2.2126039203839882,
+    "bias_forecast_minus_actual": -0.03056536571148283,
+    "mean_prediction": 2.9188997763025344,
+    "mean_actual": 2.949465142014017,
+    "calibration_slope": 0.9836500771453299,
+    "calibration_intercept": 0.078289151874543
+  }
+]

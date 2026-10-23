@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "independently_recomputed_score_rows": 72,
+  "chronological_trials_and_hashes_checked": 790,
+  "saved_trial_metrics_recomputed": 790,
+  "executed_code_cells": 8,
+  "unchanged_production_files": [
+    "fpl_advisor.py",
+    "model/README.md",
+    "model/assumptions.example.json",
+    "model/config.json",
+    "model/priors-2026-27.csv",
+    "prompts/preseason.md",
+    "prompts/project.md",
+    "prompts/smoke-test.md",
+    "prompts/weekly.md"
+  ],
+  "limits": "Arithmetic and artifact checks do not remove retrospective selection, archive vintage or prospective uncertainty."
+}

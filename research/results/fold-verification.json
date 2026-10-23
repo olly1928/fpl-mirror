@@ -1,0 +1,10 @@
+{
+  "verified_one_week_trials": 790,
+  "identities": [
+    "59ed7c5db511a9105297b229e9f386d6f8e10bbc995b5312b86d1d554e15f6d3"
+  ],
+  "nonfinite_predictions": 0,
+  "incoherent_minute_states": 0,
+  "asof_violations": 0,
+  "live_model_changed": false
+}

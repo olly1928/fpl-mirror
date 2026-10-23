@@ -1,0 +1,15 @@
+{
+  "code_cells": 8,
+  "figures": [
+    "comparison-01.png",
+    "comparison-02.png",
+    "comparison-03.png",
+    "comparison-04.png",
+    "comparison-05.png",
+    "comparison-06.png"
+  ],
+  "errors": 0,
+  "engine": "python-in-process",
+  "top_to_bottom": true,
+  "normal_jupyter_kernel_execution_claimed": false
+}

@@ -1,0 +1,1655 @@
+{
+  "totals": {
+    "rolling12": 402.0,
+    "empirical_h8_p900": 426.0,
+    "selected_single": 429.0,
+    "nested_ensemble": 429.0,
+    "calibrated_ensemble": 429.0,
+    "equal_top3": 429.0,
+    "v1": 422.0,
+    "learned_minutes": 406.0,
+    "v1_ml_blend": 429.0
+  },
+  "weeks": [
+    {
+      "model": "rolling12",
+      "gw": 1,
+      "points": 48.0,
+      "captain": "Palmer",
+      "xi": [
+        301,
+        4,
+        356,
+        498,
+        12,
+        481,
+        13,
+        411,
+        165,
+        346,
+        175
+      ],
+      "bench": [
+        82,
+        338,
+        259,
+        212
+      ],
+      "vice_captain": 411
+    },
+    {
+      "model": "rolling12",
+      "gw": 2,
+      "points": 72.0,
+      "captain": "Palmer",
+      "xi": [
+        301,
+        4,
+        356,
+        12,
+        481,
+        368,
+        338,
+        411,
+        165,
+        346,
+        498
+      ],
+      "bench": [
+        82,
+        212,
+        175,
+        259
+      ],
+      "vice_captain": 165
+    },
+    {
+      "model": "rolling12",
+      "gw": 3,
+      "points": 36.0,
+      "captain": "Palmer",
+      "xi": [
+        301,
+        4,
+        356,
+        449,
+        12,
+        481,
+        368,
+        338,
+        411,
+        165,
+        346
+      ],
+      "bench": [
+        82,
+        212,
+        175,
+        259
+      ],
+      "vice_captain": 165
+    },
+    {
+      "model": "rolling12",
+      "gw": 4,
+      "points": 86.0,
+      "captain": "Palmer",
+      "xi": [
+        301,
+        4,
+        356,
+        449,
+        12,
+        40,
+        368,
+        411,
+        165,
+        346,
+        338
+      ],
+      "bench": [
+        82,
+        175,
+        259,
+        212
+      ],
+      "vice_captain": 411
+    },
+    {
+      "model": "rolling12",
+      "gw": 5,
+      "points": 59.0,
+      "captain": "Palmer",
+      "xi": [
+        301,
+        4,
+        356,
+        449,
+        12,
+        40,
+        368,
+        338,
+        411,
+        249,
+        346
+      ],
+      "bench": [
+        82,
+        259,
+        175,
+        212
+      ],
+      "vice_captain": 411
+    },
+    {
+      "model": "rolling12",
+      "gw": 6,
+      "points": 42.0,
+      "captain": "Palmer",
+      "xi": [
+        301,
+        4,
+        356,
+        449,
+        12,
+        40,
+        124,
+        338,
+        411,
+        368,
+        346
+      ],
+      "bench": [
+        82,
+        249,
+        175,
+        259
+      ],
+      "vice_captain": 124
+    },
+    {
+      "model": "rolling12",
+      "gw": 7,
+      "points": 59.0,
+      "captain": "Palmer",
+      "xi": [
+        301,
+        4,
+        356,
+        449,
+        12,
+        40,
+        335,
+        124,
+        411,
+        249,
+        346
+      ],
+      "bench": [
+        82,
+        338,
+        175,
+        259
+      ],
+      "vice_captain": 124
+    },
+    {
+      "model": "empirical_h8_p900",
+      "gw": 1,
+      "points": 52.0,
+      "captain": "Palmer",
+      "xi": [
+        301,
+        4,
+        356,
+        498,
+        12,
+        481,
+        13,
+        338,
+        411,
+        165,
+        346
+      ],
+      "bench": [
+        82,
+        175,
+        259,
+        212
+      ],
+      "vice_captain": 411
+    },
+    {
+      "model": "empirical_h8_p900",
+      "gw": 2,
+      "points": 76.0,
+      "captain": "Palmer",
+      "xi": [
+        301,
+        4,
+        356,
+        12,
+        481,
+        368,
+        338,
+        411,
+        165,
+        346,
+        498
+      ],
+      "bench": [
+        82,
+        212,
+        175,
+        259
+      ],
+      "vice_captain": 411
+    },
+    {
+      "model": "empirical_h8_p900",
+      "gw": 3,
+      "points": 44.0,
+      "captain": "Palmer",
+      "xi": [
+        301,
+        4,
+        356,
+        449,
+        12,
+        481,
+        368,
+        338,
+        411,
+        165,
+        346
+      ],
+      "bench": [
+        82,
+        212,
+        259,
+        175
+      ],
+      "vice_captain": 411
+    },
+    {
+      "model": "empirical_h8_p900",
+      "gw": 4,
+      "points": 86.0,
+      "captain": "Palmer",
+      "xi": [
+        301,
+        4,
+        356,
+        449,
+        12,
+        40,
+        368,
+        411,
+        165,
+        346,
+        338
+      ],
+      "bench": [
+        82,
+        175,
+        259,
+        212
+      ],
+      "vice_captain": 411
+    },
+    {
+      "model": "empirical_h8_p900",
+      "gw": 5,
+      "points": 59.0,
+      "captain": "Palmer",
+      "xi": [
+        301,
+        4,
+        356,
+        449,
+        12,
+        40,
+        368,
+        338,
+        411,
+        249,
+        346
+      ],
+      "bench": [
+        82,
+        259,
+        175,
+        212
+      ],
+      "vice_captain": 411
+    },
+    {
+      "model": "empirical_h8_p900",
+      "gw": 6,
+      "points": 42.0,
+      "captain": "Palmer",
+      "xi": [
+        301,
+        4,
+        356,
+        449,
+        12,
+        40,
+        124,
+        338,
+        411,
+        368,
+        346
+      ],
+      "bench": [
+        82,
+        175,
+        249,
+        259
+      ],
+      "vice_captain": 411
+    },
+    {
+      "model": "empirical_h8_p900",
+      "gw": 7,
+      "points": 67.0,
+      "captain": "Haaland",
+      "xi": [
+        301,
+        4,
+        356,
+        449,
+        12,
+        40,
+        335,
+        124,
+        411,
+        249,
+        346
+      ],
+      "bench": [
+        82,
+        338,
+        175,
+        259
+      ],
+      "vice_captain": 124
+    },
+    {
+      "model": "selected_single",
+      "gw": 1,
+      "points": 55.0,
+      "captain": "Gabriel",
+      "xi": [
+        301,
+        4,
+        356,
+        498,
+        12,
+        481,
+        13,
+        338,
+        411,
+        165,
+        346
+      ],
+      "bench": [
+        82,
+        259,
+        212,
+        175
+      ],
+      "vice_captain": 411
+    },
+    {
+      "model": "selected_single",
+      "gw": 2,
+      "points": 76.0,
+      "captain": "Haaland",
+      "xi": [
+        82,
+        4,
+        356,
+        175,
+        12,
+        368,
+        338,
+        411,
+        165,
+        346,
+        498
+      ],
+      "bench": [
+        301,
+        481,
+        212,
+        259
+      ],
+      "vice_captain": 12
+    },
+    {
+      "model": "selected_single",
+      "gw": 3,
+      "points": 44.0,
+      "captain": "Haaland",
+      "xi": [
+        82,
+        4,
+        356,
+        449,
+        12,
+        481,
+        368,
+        338,
+        411,
+        165,
+        346
+      ],
+      "bench": [
+        301,
+        259,
+        212,
+        175
+      ],
+      "vice_captain": 4
+    },
+    {
+      "model": "selected_single",
+      "gw": 4,
+      "points": 86.0,
+      "captain": "Haaland",
+      "xi": [
+        82,
+        4,
+        356,
+        449,
+        12,
+        40,
+        368,
+        411,
+        165,
+        346,
+        338
+      ],
+      "bench": [
+        301,
+        175,
+        259,
+        212
+      ],
+      "vice_captain": 4
+    },
+    {
+      "model": "selected_single",
+      "gw": 5,
+      "points": 59.0,
+      "captain": "Haaland",
+      "xi": [
+        82,
+        4,
+        356,
+        449,
+        12,
+        40,
+        368,
+        338,
+        411,
+        249,
+        346
+      ],
+      "bench": [
+        301,
+        259,
+        175,
+        212
+      ],
+      "vice_captain": 346
+    },
+    {
+      "model": "selected_single",
+      "gw": 6,
+      "points": 42.0,
+      "captain": "Haaland",
+      "xi": [
+        82,
+        4,
+        356,
+        449,
+        12,
+        40,
+        124,
+        338,
+        411,
+        368,
+        346
+      ],
+      "bench": [
+        301,
+        249,
+        259,
+        175
+      ],
+      "vice_captain": 12
+    },
+    {
+      "model": "selected_single",
+      "gw": 7,
+      "points": 67.0,
+      "captain": "Haaland",
+      "xi": [
+        82,
+        4,
+        356,
+        449,
+        12,
+        40,
+        335,
+        124,
+        411,
+        249,
+        346
+      ],
+      "bench": [
+        301,
+        338,
+        175,
+        259
+      ],
+      "vice_captain": 12
+    },
+    {
+      "model": "nested_ensemble",
+      "gw": 1,
+      "points": 55.0,
+      "captain": "Gabriel",
+      "xi": [
+        301,
+        4,
+        356,
+        498,
+        12,
+        481,
+        13,
+        338,
+        411,
+        165,
+        346
+      ],
+      "bench": [
+        82,
+        259,
+        175,
+        212
+      ],
+      "vice_captain": 411
+    },
+    {
+      "model": "nested_ensemble",
+      "gw": 2,
+      "points": 76.0,
+      "captain": "Haaland",
+      "xi": [
+        82,
+        4,
+        356,
+        175,
+        12,
+        368,
+        338,
+        411,
+        165,
+        346,
+        498
+      ],
+      "bench": [
+        301,
+        481,
+        212,
+        259
+      ],
+      "vice_captain": 368
+    },
+    {
+      "model": "nested_ensemble",
+      "gw": 3,
+      "points": 44.0,
+      "captain": "Haaland",
+      "xi": [
+        82,
+        4,
+        356,
+        449,
+        12,
+        481,
+        368,
+        338,
+        411,
+        165,
+        346
+      ],
+      "bench": [
+        301,
+        259,
+        212,
+        175
+      ],
+      "vice_captain": 12
+    },
+    {
+      "model": "nested_ensemble",
+      "gw": 4,
+      "points": 86.0,
+      "captain": "Haaland",
+      "xi": [
+        82,
+        4,
+        356,
+        449,
+        12,
+        40,
+        368,
+        411,
+        165,
+        346,
+        338
+      ],
+      "bench": [
+        301,
+        175,
+        259,
+        212
+      ],
+      "vice_captain": 4
+    },
+    {
+      "model": "nested_ensemble",
+      "gw": 5,
+      "points": 59.0,
+      "captain": "Haaland",
+      "xi": [
+        82,
+        4,
+        356,
+        449,
+        12,
+        40,
+        368,
+        338,
+        411,
+        249,
+        346
+      ],
+      "bench": [
+        301,
+        259,
+        175,
+        212
+      ],
+      "vice_captain": 346
+    },
+    {
+      "model": "nested_ensemble",
+      "gw": 6,
+      "points": 42.0,
+      "captain": "Haaland",
+      "xi": [
+        301,
+        4,
+        356,
+        449,
+        12,
+        40,
+        124,
+        338,
+        411,
+        249,
+        368
+      ],
+      "bench": [
+        82,
+        346,
+        259,
+        175
+      ],
+      "vice_captain": 12
+    },
+    {
+      "model": "nested_ensemble",
+      "gw": 7,
+      "points": 67.0,
+      "captain": "Haaland",
+      "xi": [
+        82,
+        4,
+        356,
+        449,
+        12,
+        40,
+        335,
+        124,
+        411,
+        249,
+        346
+      ],
+      "bench": [
+        301,
+        338,
+        175,
+        259
+      ],
+      "vice_captain": 12
+    },
+    {
+      "model": "calibrated_ensemble",
+      "gw": 1,
+      "points": 55.0,
+      "captain": "Gabriel",
+      "xi": [
+        301,
+        4,
+        356,
+        498,
+        12,
+        481,
+        13,
+        338,
+        411,
+        165,
+        346
+      ],
+      "bench": [
+        82,
+        259,
+        175,
+        212
+      ],
+      "vice_captain": 411
+    },
+    {
+      "model": "calibrated_ensemble",
+      "gw": 2,
+      "points": 76.0,
+      "captain": "Haaland",
+      "xi": [
+        301,
+        4,
+        356,
+        175,
+        12,
+        368,
+        338,
+        411,
+        165,
+        346,
+        498
+      ],
+      "bench": [
+        82,
+        481,
+        212,
+        259
+      ],
+      "vice_captain": 368
+    },
+    {
+      "model": "calibrated_ensemble",
+      "gw": 3,
+      "points": 44.0,
+      "captain": "Haaland",
+      "xi": [
+        82,
+        4,
+        356,
+        449,
+        12,
+        481,
+        368,
+        338,
+        411,
+        165,
+        346
+      ],
+      "bench": [
+        301,
+        259,
+        212,
+        175
+      ],
+      "vice_captain": 12
+    },
+    {
+      "model": "calibrated_ensemble",
+      "gw": 4,
+      "points": 86.0,
+      "captain": "Haaland",
+      "xi": [
+        82,
+        4,
+        356,
+        449,
+        12,
+        40,
+        368,
+        411,
+        165,
+        346,
+        338
+      ],
+      "bench": [
+        301,
+        175,
+        259,
+        212
+      ],
+      "vice_captain": 4
+    },
+    {
+      "model": "calibrated_ensemble",
+      "gw": 5,
+      "points": 59.0,
+      "captain": "Haaland",
+      "xi": [
+        82,
+        4,
+        356,
+        449,
+        12,
+        40,
+        368,
+        338,
+        411,
+        249,
+        346
+      ],
+      "bench": [
+        301,
+        259,
+        175,
+        212
+      ],
+      "vice_captain": 346
+    },
+    {
+      "model": "calibrated_ensemble",
+      "gw": 6,
+      "points": 42.0,
+      "captain": "Haaland",
+      "xi": [
+        301,
+        4,
+        356,
+        449,
+        12,
+        40,
+        124,
+        338,
+        411,
+        249,
+        368
+      ],
+      "bench": [
+        82,
+        346,
+        259,
+        175
+      ],
+      "vice_captain": 12
+    },
+    {
+      "model": "calibrated_ensemble",
+      "gw": 7,
+      "points": 67.0,
+      "captain": "Haaland",
+      "xi": [
+        82,
+        4,
+        356,
+        449,
+        12,
+        40,
+        335,
+        124,
+        411,
+        249,
+        346
+      ],
+      "bench": [
+        301,
+        338,
+        175,
+        259
+      ],
+      "vice_captain": 12
+    },
+    {
+      "model": "equal_top3",
+      "gw": 1,
+      "points": 55.0,
+      "captain": "Gabriel",
+      "xi": [
+        301,
+        4,
+        356,
+        498,
+        12,
+        481,
+        13,
+        338,
+        411,
+        165,
+        346
+      ],
+      "bench": [
+        82,
+        259,
+        175,
+        212
+      ],
+      "vice_captain": 411
+    },
+    {
+      "model": "equal_top3",
+      "gw": 2,
+      "points": 76.0,
+      "captain": "Haaland",
+      "xi": [
+        301,
+        4,
+        356,
+        175,
+        12,
+        368,
+        338,
+        411,
+        165,
+        346,
+        498
+      ],
+      "bench": [
+        82,
+        481,
+        212,
+        259
+      ],
+      "vice_captain": 498
+    },
+    {
+      "model": "equal_top3",
+      "gw": 3,
+      "points": 44.0,
+      "captain": "Haaland",
+      "xi": [
+        82,
+        4,
+        356,
+        449,
+        12,
+        481,
+        368,
+        338,
+        411,
+        165,
+        346
+      ],
+      "bench": [
+        301,
+        259,
+        175,
+        212
+      ],
+      "vice_captain": 12
+    },
+    {
+      "model": "equal_top3",
+      "gw": 4,
+      "points": 86.0,
+      "captain": "Haaland",
+      "xi": [
+        82,
+        4,
+        356,
+        449,
+        12,
+        40,
+        368,
+        411,
+        165,
+        346,
+        338
+      ],
+      "bench": [
+        301,
+        175,
+        259,
+        212
+      ],
+      "vice_captain": 4
+    },
+    {
+      "model": "equal_top3",
+      "gw": 5,
+      "points": 59.0,
+      "captain": "Haaland",
+      "xi": [
+        82,
+        4,
+        356,
+        449,
+        12,
+        40,
+        368,
+        338,
+        411,
+        249,
+        346
+      ],
+      "bench": [
+        301,
+        259,
+        175,
+        212
+      ],
+      "vice_captain": 346
+    },
+    {
+      "model": "equal_top3",
+      "gw": 6,
+      "points": 42.0,
+      "captain": "Haaland",
+      "xi": [
+        301,
+        4,
+        356,
+        449,
+        12,
+        40,
+        124,
+        338,
+        411,
+        249,
+        368
+      ],
+      "bench": [
+        82,
+        346,
+        259,
+        175
+      ],
+      "vice_captain": 12
+    },
+    {
+      "model": "equal_top3",
+      "gw": 7,
+      "points": 67.0,
+      "captain": "Haaland",
+      "xi": [
+        82,
+        4,
+        356,
+        449,
+        12,
+        40,
+        335,
+        124,
+        411,
+        249,
+        346
+      ],
+      "bench": [
+        301,
+        338,
+        175,
+        259
+      ],
+      "vice_captain": 124
+    },
+    {
+      "model": "v1",
+      "gw": 1,
+      "points": 52.0,
+      "captain": "Haaland",
+      "xi": [
+        82,
+        4,
+        356,
+        498,
+        12,
+        481,
+        13,
+        338,
+        411,
+        165,
+        346
+      ],
+      "bench": [
+        301,
+        212,
+        259,
+        175
+      ],
+      "vice_captain": 13
+    },
+    {
+      "model": "v1",
+      "gw": 2,
+      "points": 76.0,
+      "captain": "Haaland",
+      "xi": [
+        82,
+        4,
+        356,
+        12,
+        481,
+        368,
+        338,
+        411,
+        165,
+        346,
+        498
+      ],
+      "bench": [
+        301,
+        175,
+        212,
+        259
+      ],
+      "vice_captain": 356
+    },
+    {
+      "model": "v1",
+      "gw": 3,
+      "points": 44.0,
+      "captain": "Haaland",
+      "xi": [
+        82,
+        4,
+        356,
+        449,
+        12,
+        481,
+        368,
+        338,
+        411,
+        165,
+        346
+      ],
+      "bench": [
+        301,
+        212,
+        259,
+        175
+      ],
+      "vice_captain": 368
+    },
+    {
+      "model": "v1",
+      "gw": 4,
+      "points": 86.0,
+      "captain": "Haaland",
+      "xi": [
+        82,
+        4,
+        356,
+        449,
+        12,
+        40,
+        368,
+        411,
+        165,
+        346,
+        338
+      ],
+      "bench": [
+        301,
+        259,
+        175,
+        212
+      ],
+      "vice_captain": 165
+    },
+    {
+      "model": "v1",
+      "gw": 5,
+      "points": 59.0,
+      "captain": "Haaland",
+      "xi": [
+        82,
+        4,
+        356,
+        449,
+        12,
+        40,
+        368,
+        338,
+        411,
+        249,
+        346
+      ],
+      "bench": [
+        301,
+        259,
+        175,
+        212
+      ],
+      "vice_captain": 12
+    },
+    {
+      "model": "v1",
+      "gw": 6,
+      "points": 38.0,
+      "captain": "Saka",
+      "xi": [
+        82,
+        4,
+        356,
+        449,
+        12,
+        40,
+        124,
+        338,
+        411,
+        249,
+        368
+      ],
+      "bench": [
+        301,
+        259,
+        346,
+        175
+      ],
+      "vice_captain": 411
+    },
+    {
+      "model": "v1",
+      "gw": 7,
+      "points": 67.0,
+      "captain": "Haaland",
+      "xi": [
+        82,
+        4,
+        356,
+        449,
+        12,
+        40,
+        335,
+        124,
+        411,
+        249,
+        346
+      ],
+      "bench": [
+        301,
+        338,
+        175,
+        259
+      ],
+      "vice_captain": 12
+    },
+    {
+      "model": "learned_minutes",
+      "gw": 1,
+      "points": 49.0,
+      "captain": "Haaland",
+      "xi": [
+        82,
+        4,
+        356,
+        498,
+        12,
+        481,
+        13,
+        411,
+        165,
+        346,
+        259
+      ],
+      "bench": [
+        301,
+        338,
+        212,
+        175
+      ],
+      "vice_captain": 13
+    },
+    {
+      "model": "learned_minutes",
+      "gw": 2,
+      "points": 65.0,
+      "captain": "van Ewijk",
+      "xi": [
+        82,
+        4,
+        356,
+        175,
+        12,
+        481,
+        368,
+        411,
+        165,
+        346,
+        498
+      ],
+      "bench": [
+        301,
+        338,
+        259,
+        212
+      ],
+      "vice_captain": 411
+    },
+    {
+      "model": "learned_minutes",
+      "gw": 3,
+      "points": 44.0,
+      "captain": "Haaland",
+      "xi": [
+        82,
+        4,
+        356,
+        449,
+        12,
+        481,
+        368,
+        338,
+        411,
+        165,
+        346
+      ],
+      "bench": [
+        301,
+        259,
+        175,
+        212
+      ],
+      "vice_captain": 12
+    },
+    {
+      "model": "learned_minutes",
+      "gw": 4,
+      "points": 83.0,
+      "captain": "Jo\u00e3o Pedro",
+      "xi": [
+        82,
+        4,
+        356,
+        449,
+        259,
+        12,
+        40,
+        368,
+        411,
+        165,
+        346
+      ],
+      "bench": [
+        301,
+        338,
+        175,
+        212
+      ],
+      "vice_captain": 411
+    },
+    {
+      "model": "learned_minutes",
+      "gw": 5,
+      "points": 59.0,
+      "captain": "Haaland",
+      "xi": [
+        82,
+        4,
+        356,
+        449,
+        12,
+        40,
+        368,
+        338,
+        411,
+        249,
+        346
+      ],
+      "bench": [
+        301,
+        259,
+        175,
+        212
+      ],
+      "vice_captain": 12
+    },
+    {
+      "model": "learned_minutes",
+      "gw": 6,
+      "points": 39.0,
+      "captain": "Saka",
+      "xi": [
+        82,
+        4,
+        356,
+        259,
+        449,
+        12,
+        40,
+        124,
+        411,
+        249,
+        368
+      ],
+      "bench": [
+        301,
+        346,
+        338,
+        175
+      ],
+      "vice_captain": 411
+    },
+    {
+      "model": "learned_minutes",
+      "gw": 7,
+      "points": 67.0,
+      "captain": "Haaland",
+      "xi": [
+        82,
+        4,
+        356,
+        449,
+        12,
+        40,
+        335,
+        124,
+        411,
+        249,
+        346
+      ],
+      "bench": [
+        301,
+        338,
+        175,
+        259
+      ],
+      "vice_captain": 12
+    },
+    {
+      "model": "v1_ml_blend",
+      "gw": 1,
+      "points": 55.0,
+      "captain": "Gabriel",
+      "xi": [
+        301,
+        4,
+        356,
+        498,
+        12,
+        481,
+        13,
+        338,
+        411,
+        165,
+        346
+      ],
+      "bench": [
+        82,
+        259,
+        175,
+        212
+      ],
+      "vice_captain": 411
+    },
+    {
+      "model": "v1_ml_blend",
+      "gw": 2,
+      "points": 76.0,
+      "captain": "Haaland",
+      "xi": [
+        82,
+        4,
+        356,
+        175,
+        12,
+        368,
+        338,
+        411,
+        165,
+        346,
+        498
+      ],
+      "bench": [
+        301,
+        481,
+        212,
+        259
+      ],
+      "vice_captain": 368
+    },
+    {
+      "model": "v1_ml_blend",
+      "gw": 3,
+      "points": 44.0,
+      "captain": "Haaland",
+      "xi": [
+        82,
+        4,
+        356,
+        449,
+        12,
+        481,
+        368,
+        338,
+        411,
+        165,
+        346
+      ],
+      "bench": [
+        301,
+        259,
+        212,
+        175
+      ],
+      "vice_captain": 12
+    },
+    {
+      "model": "v1_ml_blend",
+      "gw": 4,
+      "points": 86.0,
+      "captain": "Haaland",
+      "xi": [
+        82,
+        4,
+        356,
+        449,
+        12,
+        40,
+        368,
+        411,
+        165,
+        346,
+        338
+      ],
+      "bench": [
+        301,
+        175,
+        259,
+        212
+      ],
+      "vice_captain": 4
+    },
+    {
+      "model": "v1_ml_blend",
+      "gw": 5,
+      "points": 59.0,
+      "captain": "Haaland",
+      "xi": [
+        82,
+        4,
+        356,
+        449,
+        12,
+        40,
+        368,
+        338,
+        411,
+        249,
+        346
+      ],
+      "bench": [
+        301,
+        259,
+        175,
+        212
+      ],
+      "vice_captain": 346
+    },
+    {
+      "model": "v1_ml_blend",
+      "gw": 6,
+      "points": 42.0,
+      "captain": "Haaland",
+      "xi": [
+        301,
+        4,
+        356,
+        449,
+        12,
+        40,
+        124,
+        338,
+        411,
+        249,
+        368
+      ],
+      "bench": [
+        82,
+        346,
+        259,
+        175
+      ],
+      "vice_captain": 12
+    },
+    {
+      "model": "v1_ml_blend",
+      "gw": 7,
+      "points": 67.0,
+      "captain": "Haaland",
+      "xi": [
+        82,
+        4,
+        356,
+        449,
+        12,
+        40,
+        335,
+        124,
+        411,
+        249,
+        346
+      ],
+      "bench": [
+        301,
+        338,
+        175,
+        259
+      ],
+      "vice_captain": 12
+    }
+  ],
+  "actual_points": 415.0,
+  "scope": "Conditional on actual owned15, legal formations, captain/vice and actual autosubs. No transfer-policy, wildcard or full-season rank claim. No missing historical Claude overrides invented."
+}

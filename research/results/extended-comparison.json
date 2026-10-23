@@ -1,0 +1,276 @@
+{
+  "historical_procedure_choice": "equal_top3",
+  "choice_uses_current_outcomes": false,
+  "historical_macro_mse": {
+    "v1": 9.026135806076898,
+    "learned_minutes": 8.86931335410212,
+    "selected_single": 8.71371504424584,
+    "nested_ensemble": 8.688817727060224,
+    "calibrated_ensemble": 8.690715370979033,
+    "equal_top3": 8.686113771343459,
+    "rolling12": 9.43652208271678,
+    "empirical_h8_p900": 9.001917486454632,
+    "v1_ml_blend": 8.721947399958882,
+    "v1_new_minutes_raw": 8.775018417565198,
+    "v1_new_minutes_calibrated": 8.777978067889139,
+    "exact_components_selected": 8.691754059139944
+  },
+  "exact_component_selection": {
+    "2023-24": {
+      "selected": "poisson_components_01",
+      "scores": {
+        "poisson_components_01": 0.0,
+        "poisson_components_02": 1.0
+      },
+      "training_rows": 0
+    },
+    "2024-25": {
+      "selected": "poisson_components_02",
+      "scores": {
+        "poisson_components_01": 8.794054180578348,
+        "poisson_components_02": 8.791456543526783
+      },
+      "training_rows": 7876
+    },
+    "2025-26": {
+      "selected": "poisson_components_02",
+      "scores": {
+        "poisson_components_01": 8.552553097202457,
+        "poisson_components_02": 8.546161005781752
+      },
+      "training_rows": 16089
+    }
+  },
+  "exact_component_current": "poisson_components_02",
+  "exact_component_current_selection_scores": {
+    "poisson_components_01": 8.699278432094488,
+    "poisson_components_02": 8.690888180122755
+  },
+  "uncertainty": [
+    {
+      "pool": "matched_modern",
+      "model": "learned_minutes",
+      "rows": 24222,
+      "seasons": 3,
+      "gameweeks": 111,
+      "rmse_improvement_percent": 0.8727158188921768,
+      "interval_95_percent": [
+        0.597303989810493,
+        1.1516964848947708
+      ],
+      "draws": 2000,
+      "block_length": 4,
+      "caveat": "Conditional on the retrospective protocol and available archive population; not a guarantee against future regime or selection effects."
+    },
+    {
+      "pool": "matched_modern",
+      "model": "selected_single",
+      "rows": 24222,
+      "seasons": 3,
+      "gameweeks": 111,
+      "rmse_improvement_percent": 1.7430618196975711,
+      "interval_95_percent": [
+        1.4283932574520721,
+        2.054023574800837
+      ],
+      "draws": 2000,
+      "block_length": 4,
+      "caveat": "Conditional on the retrospective protocol and available archive population; not a guarantee against future regime or selection effects."
+    },
+    {
+      "pool": "matched_modern",
+      "model": "nested_ensemble",
+      "rows": 24222,
+      "seasons": 3,
+      "gameweeks": 111,
+      "rmse_improvement_percent": 1.8838746037046556,
+      "interval_95_percent": [
+        1.583718842019278,
+        2.1867804644292135
+      ],
+      "draws": 2000,
+      "block_length": 4,
+      "caveat": "Conditional on the retrospective protocol and available archive population; not a guarantee against future regime or selection effects."
+    },
+    {
+      "pool": "matched_modern",
+      "model": "calibrated_ensemble",
+      "rows": 24222,
+      "seasons": 3,
+      "gameweeks": 111,
+      "rmse_improvement_percent": 1.8730303876645003,
+      "interval_95_percent": [
+        1.5629002491941644,
+        2.1821767865825
+      ],
+      "draws": 2000,
+      "block_length": 4,
+      "caveat": "Conditional on the retrospective protocol and available archive population; not a guarantee against future regime or selection effects."
+    },
+    {
+      "pool": "matched_modern",
+      "model": "equal_top3",
+      "rows": 24222,
+      "seasons": 3,
+      "gameweeks": 111,
+      "rmse_improvement_percent": 1.898560759670181,
+      "interval_95_percent": [
+        1.5910317254302482,
+        2.2029551282607915
+      ],
+      "draws": 2000,
+      "block_length": 4,
+      "caveat": "Conditional on the retrospective protocol and available archive population; not a guarantee against future regime or selection effects."
+    },
+    {
+      "pool": "matched_modern",
+      "model": "rolling12",
+      "rows": 24222,
+      "seasons": 3,
+      "gameweeks": 111,
+      "rmse_improvement_percent": -2.2474196219654776,
+      "interval_95_percent": [
+        -2.7602956347277203,
+        -1.7783468710403543
+      ],
+      "draws": 2000,
+      "block_length": 4,
+      "caveat": "Conditional on the retrospective protocol and available archive population; not a guarantee against future regime or selection effects."
+    },
+    {
+      "pool": "matched_modern",
+      "model": "empirical_h8_p900",
+      "rows": 24222,
+      "seasons": 3,
+      "gameweeks": 111,
+      "rmse_improvement_percent": 0.13244149813155331,
+      "interval_95_percent": [
+        -0.08761954893194653,
+        0.3716321233828739
+      ],
+      "draws": 2000,
+      "block_length": 4,
+      "caveat": "Conditional on the retrospective protocol and available archive population; not a guarantee against future regime or selection effects."
+    },
+    {
+      "pool": "matched_modern",
+      "model": "v1_ml_blend",
+      "rows": 24222,
+      "seasons": 3,
+      "gameweeks": 111,
+      "rmse_improvement_percent": 1.7012695223993137,
+      "interval_95_percent": [
+        1.4650448161936818,
+        1.9426461174145842
+      ],
+      "draws": 2000,
+      "block_length": 4,
+      "caveat": "Conditional on the retrospective protocol and available archive population; not a guarantee against future regime or selection effects."
+    },
+    {
+      "pool": "matched_modern",
+      "model": "v1_new_minutes_raw",
+      "rows": 24222,
+      "seasons": 3,
+      "gameweeks": 111,
+      "rmse_improvement_percent": 1.4018194295409248,
+      "interval_95_percent": [
+        1.148935248382827,
+        1.6640646725424646
+      ],
+      "draws": 2000,
+      "block_length": 4,
+      "caveat": "Conditional on the retrospective protocol and available archive population; not a guarantee against future regime or selection effects."
+    },
+    {
+      "pool": "matched_modern",
+      "model": "v1_new_minutes_calibrated",
+      "rows": 24222,
+      "seasons": 3,
+      "gameweeks": 111,
+      "rmse_improvement_percent": 1.3852604175260144,
+      "interval_95_percent": [
+        1.1363466695836804,
+        1.6449035075544134
+      ],
+      "draws": 2000,
+      "block_length": 4,
+      "caveat": "Conditional on the retrospective protocol and available archive population; not a guarantee against future regime or selection effects."
+    },
+    {
+      "pool": "matched_modern",
+      "model": "exact_components_selected",
+      "rows": 24222,
+      "seasons": 3,
+      "gameweeks": 111,
+      "rmse_improvement_percent": 1.8678586858347581,
+      "interval_95_percent": [
+        1.5361358082583902,
+        2.2163637166242967
+      ],
+      "draws": 2000,
+      "block_length": 4,
+      "caveat": "Conditional on the retrospective protocol and available archive population; not a guarantee against future regime or selection effects."
+    },
+    {
+      "pool": "current_fixed_candidates",
+      "model": "nested_ensemble",
+      "rows": 1205,
+      "seasons": 1,
+      "gameweeks": 7,
+      "rmse_improvement_percent": -0.09446182862968315,
+      "interval_95_percent": [
+        -1.5174232474420215,
+        1.163897250927179
+      ],
+      "draws": 2000,
+      "block_length": 4,
+      "caveat": "Conditional on the retrospective protocol and available archive population; not a guarantee against future regime or selection effects."
+    },
+    {
+      "pool": "current_fixed_candidates",
+      "model": "v1_new_minutes_raw",
+      "rows": 1205,
+      "seasons": 1,
+      "gameweeks": 7,
+      "rmse_improvement_percent": 0.4624301545887958,
+      "interval_95_percent": [
+        -0.2358713364303632,
+        1.1193803235778554
+      ],
+      "draws": 2000,
+      "block_length": 4,
+      "caveat": "Conditional on the retrospective protocol and available archive population; not a guarantee against future regime or selection effects."
+    },
+    {
+      "pool": "current_fixed_candidates",
+      "model": "v1_new_minutes_calibrated",
+      "rows": 1205,
+      "seasons": 1,
+      "gameweeks": 7,
+      "rmse_improvement_percent": 0.5238712185160604,
+      "interval_95_percent": [
+        -0.1536813308888622,
+        1.157905430859613
+      ],
+      "draws": 2000,
+      "block_length": 4,
+      "caveat": "Conditional on the retrospective protocol and available archive population; not a guarantee against future regime or selection effects."
+    },
+    {
+      "pool": "current_fixed_candidates",
+      "model": "equal_top3",
+      "rows": 1205,
+      "seasons": 1,
+      "gameweeks": 7,
+      "rmse_improvement_percent": -0.058736276072176276,
+      "interval_95_percent": [
+        -1.534395381402767,
+        1.2468823741691604
+      ],
+      "draws": 2000,
+      "block_length": 4,
+      "caveat": "Conditional on the retrospective protocol and available archive population; not a guarantee against future regime or selection effects."
+    }
+  ]
+}

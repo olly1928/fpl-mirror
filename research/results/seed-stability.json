@@ -1,0 +1,79 @@
+{
+  "scores": [
+    {
+      "year": 2025,
+      "seed": 1729,
+      "active": {
+        "n": 8507,
+        "rmse": 3.0082356763641105,
+        "mse": 9.049481884549836,
+        "mae": 2.2218480859643073,
+        "bias_forecast_minus_actual": -0.00938200490212939,
+        "mean_prediction": 2.9647569394966014,
+        "mean_actual": 2.9741389443987303,
+        "calibration_slope": 0.9260235799111637
+      },
+      "all": {
+        "n": 29338,
+        "rmse": 1.923437213614631,
+        "mse": 3.699610714717615,
+        "mae": 0.9762507751372622,
+        "bias_forecast_minus_actual": -0.009070582695150263,
+        "mean_prediction": 1.1628566107058995,
+        "mean_actual": 1.1719271934010498,
+        "calibration_slope": 0.99740839309422
+      }
+    },
+    {
+      "year": 2025,
+      "seed": 2718,
+      "active": {
+        "n": 8507,
+        "rmse": 3.00916265768099,
+        "mse": 9.05505990038172,
+        "mae": 2.2242203460683077,
+        "bias_forecast_minus_actual": -0.0052177719817128555,
+        "mean_prediction": 2.9689211724170175,
+        "mean_actual": 2.9741389443987303,
+        "calibration_slope": 0.9245449668386972
+      },
+      "all": {
+        "n": 29338,
+        "rmse": 1.9236988040346235,
+        "mse": 3.7006170886442407,
+        "mae": 0.9779098562252476,
+        "bias_forecast_minus_actual": -0.0060809247690833505,
+        "mean_prediction": 1.1658462686319664,
+        "mean_actual": 1.1719271934010498,
+        "calibration_slope": 0.9968299180032865
+      }
+    },
+    {
+      "year": 2025,
+      "seed": 3141,
+      "active": {
+        "n": 8507,
+        "rmse": 3.0090283282512735,
+        "mse": 9.054251480218655,
+        "mae": 2.223411722237485,
+        "bias_forecast_minus_actual": -0.008193092762815246,
+        "mean_prediction": 2.965945851635915,
+        "mean_actual": 2.9741389443987303,
+        "calibration_slope": 0.9269710953444622
+      },
+      "all": {
+        "n": 29338,
+        "rmse": 1.9236388802313706,
+        "mse": 3.7003865415378017,
+        "mae": 0.9776799936024697,
+        "bias_forecast_minus_actual": -0.007441091098475557,
+        "mean_prediction": 1.1644861023025743,
+        "mean_actual": 1.1719271934010498,
+        "calibration_slope": 0.9982314415828853
+      }
+    }
+  ],
+  "seed_selection": false,
+  "configuration_and_weights_selected_before_2025_outcomes": true,
+  "caveat": "Three seeds diagnose numerical/algorithmic variance, not all future uncertainty. Some boosting configurations are deterministic across seeds."
+}
