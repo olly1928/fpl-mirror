@@ -1,0 +1,35 @@
+{
+  "schema": "fpl-extended-packages-v1",
+  "packages": [
+    {
+      "file": "player-histories.tar.gz",
+      "bytes": 1917783,
+      "sha256": "0a93fe746df4bf552f95a2dd24d48cf767df8ad0d21ffedac2e7a19e58cfb924",
+      "group": "player-histories"
+    },
+    {
+      "file": "early-archives.tar.gz",
+      "bytes": 20082535,
+      "sha256": "93a1a97f66a2201a1975a26428db61a494dde8e952a9d92d072c3ee116931f81",
+      "group": "early-archives"
+    },
+    {
+      "file": "understat.tar.gz",
+      "bytes": 14634086,
+      "sha256": "8a4948df478220ae3fb17ef4ef48fe8072049b60f37f60e63b775d255e167b9d",
+      "group": "understat"
+    },
+    {
+      "file": "auxiliary.tar.gz",
+      "bytes": 907234,
+      "sha256": "ef664b30daf3ebc918778ae23b2ea81e2cf6bba3e2ffd2944b4bedec9aec4d54",
+      "group": "auxiliary"
+    },
+    {
+      "file": "api-probes.tar.gz",
+      "bytes": 7337,
+      "sha256": "b61c45c977b181be8131594960604d143ebc69b47d8c15f9dde13750b1dbd3df",
+      "group": "api-probes"
+    }
+  ]
+}

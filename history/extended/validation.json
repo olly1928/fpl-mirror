@@ -1,0 +1,29 @@
+{
+  "checks_passed": 7,
+  "checks": [
+    "All derived artifact hashes and row counts agree",
+    "303126 unique player fixtures; 12 seasons; observed minutes/points; missing historical xG retained",
+    "All 24876 2014/15 R-data player/GW/minutes/points observations reconcile with the closed JSON source; shared FPL lineage",
+    "Annual identities and season aliases reconciled; no core numerical source conflicts",
+    "Unknown database targets and identity conflicts cannot be admitted as complete observed labels",
+    "Understat player/match keys unique; cross-provider IDs use explicit season-bound crosswalks",
+    "Every packaged raw object matches its captured source hash; archive paths are bounded"
+  ],
+  "complete_panel": {
+    "rows": 303126,
+    "seasons": 12,
+    "distinct_player_codes": 3020,
+    "absent_current_codes": 2486,
+    "absent_current_rows": 230128,
+    "original_rows": 253509,
+    "additional_complete_panel_rows": 49617,
+    "duplicate_player_fixture_keys": 0,
+    "base_panel_sha256": "6a84e47b1da694f00661ad3734d3ddd16fdac48c25a2cb4780a5e7cef0cafec6"
+  },
+  "limits": [
+    "Full panels cover 380 fixtures, not a proved complete historical deadline roster.",
+    "Partial source tables overlap each other and must not be summed as independent training examples.",
+    "The R and JSON reconciliation shares an upstream FPL source; it is not independent truth.",
+    "Historic odds timestamps and archive final metadata cannot be treated as deadline-vintage features."
+  ]
+}
