@@ -31,12 +31,13 @@
     "calibration_intercept": 0.33525872456446404
   },
   "conditional_points": {
-    "Live v1": 422.0,
-    "Nested ensemble": 429.0,
-    "V1 + boosted minutes": 422.0,
-    "V1 + calibrated minutes": 422.0
+    "Live v1": 422,
+    "Nested ensemble": 429,
+    "V1 + boosted minutes": 422,
+    "V1 + calibrated minutes": 422,
+    "Top-three mean": 429
   },
-  "actual_points": 415.0,
+  "actual_points": 415,
   "live_changed": false,
   "fresh_untouched_holdout": false
 }

@@ -14,11 +14,12 @@ The feature population contains **320,931 historical player-fixture rows**, incl
 
 The following table uses exactly the existing v1 modern benchmark cases. It inherits that old benchmark's exclusions of DGWs and first-observed rows; the broader eight-season tests include those cases.
 
-| label | 2023-24 | 2024-25 | 2025-26 |
+| Procedure | 2023-24 | 2024-25 | 2025-26 |
 | --- | --- | --- | --- |
 | Exact Poisson components | 2.965 | 2.881 | 2.997 |
 | Live v1 | 3.023 | 2.921 | 3.068 |
 | Nested ensemble | 2.964 | 2.882 | 2.996 |
+| Top-three mean | 2.962 | 2.881 | 2.997 |
 | V1 + boosted minutes | 2.988 | 2.895 | 3.003 |
 | V1 + calibrated minutes | 2.988 | 2.895 | 3.003 |
 
@@ -31,9 +32,19 @@ Current seven-week results on the same fixed candidate pool:
 | Live v1 | 1205 | 3.187 | 2.334 | 0.000 |
 | Earlier learned minutes | 1205 | 3.179 | 2.348 | 0.222 |
 | Nested ensemble | 1205 | 3.190 | 2.347 | -0.094 |
+| Top-three mean | 1205 | 3.188 | 2.345 | -0.059 |
 | V1 + boosted minutes | 1205 | 3.172 | 2.359 | 0.462 |
 | V1 + calibrated minutes | 1205 | 3.170 | 2.367 | 0.524 |
 | Exact Poisson components | 1205 | 3.193 | 2.358 | -0.198 |
+
+On the actual owned 15 over the same seven weeks:
+
+| Procedure | Cases | RMSE | MAE | RMSE improvement % |
+| --- | --- | --- | --- | --- |
+| Live v1 | 105 | 2.972 | 2.377 | 0.000 |
+| Top-three mean | 105 | 3.051 | 2.365 | -2.659 |
+| V1 + boosted minutes | 105 | 2.969 | 2.379 | 0.099 |
+| V1 + calibrated minutes | 105 | 2.965 | 2.381 | 0.232 |
 
 The seven weeks are too few for a precise independent validation. They were already known during research design, although they did not fit weights, calibrators or hyperparameters. Current previous-season inputs are later-captured completed outcomes and include corrections to six frozen-v1 priors; none of those six players was owned in these weeks. This is not a pristine archived complete feature vintage.
 
@@ -45,6 +56,7 @@ The actual team scored **415** points. Numerical policies on the actual owned 15
 | --- | --- |
 | Live v1 | 422.000 |
 | Nested ensemble | 429.000 |
+| Top-three mean | 429.000 |
 | V1 + boosted minutes | 422.000 |
 | V1 + calibrated minutes | 422.000 |
 
@@ -85,7 +97,7 @@ Some convergence warnings were emitted in the broad parallel fits. Python warnin
 
 ## Limits and recommendation
 
-Use the historical choice as a **research candidate**, and review the complete set of accuracy and probability metrics before promotion. Preserve the existing Claude playbook URLs, bash/curl routing, sourced news/role overrides and decision provenance. The research minute hybrid currently rejects manual overrides, so it is not a production drop-in. Confirm a versioned candidate at future unseen deadlines before claiming a reliable edge; do not automatically switch the live team advisor on the basis of these results.
+**Keep v1 live while trialling the learned minutes model alongside it.** The historical winning ensemble has no demonstrated current-season points advantage and has worse RMSE on the owned-squad sample. The minutes hybrids show small current points gains; their paired seven-week uncertainty intervals include zero. Their stronger probability results make minutes the most promising incremental change, rather than a reason for an immediate wholesale replacement. Preserve the existing Claude playbook URLs, bash/curl routing, sourced news/role overrides and decision provenance. The research minute hybrid currently rejects manual overrides, so it is not a production drop-in. Confirm a versioned candidate at future unseen deadlines before claiming a reliable edge; do not automatically switch the live team advisor on the basis of these results.
 
 Historical fixtures, registrations, prices and position labels are not complete pre-deadline vintages. Fixture assignments are realised schedules; historical odds without provable deadline timestamps and post-match archive xP are excluded. Provider statistics stay missing when unobserved. Understat's match archive ends **2025-04-07**: none of the current rows has one-year Understat coverage, and only 1,352 has two-year coverage. Source diagnostics therefore do not establish the benefit of a current fresh feed. Very old annual/team records are not falsely converted into per-GW player labels; conflicted early SQLite targets remain quarantined. Fourteen historical zero-minute/nonzero-point records remain in the signed points targets; the basic hurdle approximation does not model their rare bench-card mechanism explicitly.
 
@@ -94,6 +106,8 @@ Six-week labels overlap, require known future coverage and use realised fixture 
 **Readiness: share with these caveats; research evidence is reviewable, production promotion remains separate.**
 
 ## Reproduce and inspect
+
+The [completion workflow](https://github.com/olly1928/fpl-mirror/actions/runs/39960356523) passed report generation, independent score reconciliation and production compatibility tests.
 
 Use Python 3.12 and `research/requirements.txt` in an isolated environment. `research/run.sh` reproduces the pipeline; the one-off GitHub workflows parallelise independent folds and have no schedule. [comparison.ipynb](comparison.ipynb) is an executed, portable companion with saved outputs. Its plain Python cells were executed top-to-bottom in a socket-free in-process engine, explicitly recorded in metadata; normal Jupyter kernel execution is not claimed. Training results and models live only under `research/`; production retains its stdlib-only gate and separate acceptance tests.
 

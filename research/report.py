@@ -215,14 +215,17 @@ def report(table,chosen):
     historical=table[table.pool=='matched_modern']
     current=table[(table.pool=='fixed_candidates')&(table.model==chosen)].iloc[0]
     recent=historical[historical.model==chosen]
-    main=table[(table.pool=='fixed_candidates')&table.model.isin(['v1','learned_minutes','nested_ensemble','v1_new_minutes_raw','v1_new_minutes_calibrated','exact_components_selected'])]
+    main=table[(table.pool=='fixed_candidates')&table.model.isin(['v1','learned_minutes','nested_ensemble','v1_new_minutes_raw','v1_new_minutes_calibrated','exact_components_selected']+[chosen])]
     main=main[['label','n','rmse','mae','improvement_vs_v1_percent']].rename(columns={'label':'Procedure','n':'Cases','rmse':'RMSE','mae':'MAE','improvement_vs_v1_percent':'RMSE improvement %'})
-    methods=historical[historical.model.isin(['v1','nested_ensemble','v1_new_minutes_raw','v1_new_minutes_calibrated','exact_components_selected'])].pivot(index='label',columns='period',values='rmse').reset_index()
+    methods=historical[historical.model.isin(['v1','nested_ensemble','v1_new_minutes_raw','v1_new_minutes_calibrated','exact_components_selected']+[chosen])].pivot(index='label',columns='period',values='rmse').reset_index()
     ext=read('extended-comparison.json');uncertainty=[r for r in ext['uncertainty'] if r['pool']=='matched_modern' and r['model']==chosen]
     lineups=read('lineup-assessment.json');hybrids=read('v1-new-minutes-current.json')
     totals={'Live v1':lineups['totals']['v1'],'Nested ensemble':lineups['totals']['nested_ensemble'],
             'V1 + boosted minutes':hybrids['raw']['conditional_squad_score'],
             'V1 + calibrated minutes':hybrids['calibrated']['conditional_squad_score']}
+    if chosen in lineups['totals']:totals[LABELS[chosen]]=lineups['totals'][chosen]
+    owned=table[(table.pool=='owned15')&table.model.isin(['v1',chosen,'v1_new_minutes_raw','v1_new_minutes_calibrated'])]
+    owned=owned[['label','n','rmse','mae','improvement_vs_v1_percent']].rename(columns={'label':'Procedure','n':'Cases','rmse':'RMSE','mae':'MAE','improvement_vs_v1_percent':'RMSE improvement %'})
     families=pd.read_csv(OUT/'family-comparison.csv')
     family=families.groupby('family').agg(macro_mse=('mse','mean'),worst_rmse=('rmse','max')).reset_index()
     family['macro_rmse']=np.sqrt(family.macro_mse);family=family.sort_values('macro_rmse')
@@ -257,6 +260,10 @@ Current seven-week results on the same fixed candidate pool:
 
 {markdown_table(main)}
 
+On the actual owned 15 over the same seven weeks:
+
+{markdown_table(owned)}
+
 The seven weeks are too few for a precise independent validation. They were already known during research design, although they did not fit weights, calibrators or hyperparameters. Current previous-season inputs are later-captured completed outcomes and include corrections to six frozen-v1 priors; none of those six players was owned in these weeks. This is not a pristine archived complete feature vintage.
 
 ## Decisions and probabilities
@@ -285,7 +292,7 @@ Some convergence warnings were emitted in the broad parallel fits. Python warnin
 
 ## Limits and recommendation
 
-Use the historical choice as a **research candidate**, and review the complete set of accuracy and probability metrics before promotion. Preserve the existing Claude playbook URLs, bash/curl routing, sourced news/role overrides and decision provenance. The research minute hybrid currently rejects manual overrides, so it is not a production drop-in. Confirm a versioned candidate at future unseen deadlines before claiming a reliable edge; do not automatically switch the live team advisor on the basis of these results.
+**Keep v1 live while trialling the learned minutes model alongside it.** The historical winning ensemble has no demonstrated current-season points advantage and has worse RMSE on the owned-squad sample. The minutes hybrids show small current points gains; their paired seven-week uncertainty intervals include zero. Their stronger probability results make minutes the most promising incremental change, rather than a reason for an immediate wholesale replacement. Preserve the existing Claude playbook URLs, bash/curl routing, sourced news/role overrides and decision provenance. The research minute hybrid currently rejects manual overrides, so it is not a production drop-in. Confirm a versioned candidate at future unseen deadlines before claiming a reliable edge; do not automatically switch the live team advisor on the basis of these results.
 
 Historical fixtures, registrations, prices and position labels are not complete pre-deadline vintages. Fixture assignments are realised schedules; historical odds without provable deadline timestamps and post-match archive xP are excluded. Provider statistics stay missing when unobserved. Understat's match archive ends **2025-04-07**: none of the current rows has one-year Understat coverage, and only {coverage['current']['understat_recent_730_rows']:,} has two-year coverage. Source diagnostics therefore do not establish the benefit of a current fresh feed. Very old annual/team records are not falsely converted into per-GW player labels; conflicted early SQLite targets remain quarantined. Fourteen historical zero-minute/nonzero-point records remain in the signed points targets; the basic hurdle approximation does not model their rare bench-card mechanism explicitly.
 
