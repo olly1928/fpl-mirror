@@ -29,6 +29,8 @@ jobs:
           cache: pip
           cache-dependency-path: research/requirements.txt
       - run: python -m pip install -r research/requirements.txt
+      - name: Check report entry points before fitting
+        run: python -m compileall -q research && python -c 'import research.report, research.verify_results'
       - uses: actions/download-artifact@v4
         with:
           name: model-feature-cache
@@ -75,11 +77,25 @@ jobs:
         run: python -m research.report
       - name: Validate calculations and production compatibility
         run: |
+          python -m research.verify_results
           python -m unittest research.test_research
           python tests/test_offline.py
           python tests/test_advisor.py
           python tests/test_backtests.py
           python tests/test_history.py
+      - name: Preserve research outputs even if reporting fails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: projection-research-evidence
+          retention-days: 7
+          if-no-files-found: warn
+          path: |
+            research/results
+            !research/results/folds
+            research/artifacts
+            research/comparison.ipynb
+            research/REPORT.md
       - name: Commit research evidence and artifacts
         run: |
           git config user.name 'github-actions[bot]'

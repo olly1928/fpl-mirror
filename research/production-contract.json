@@ -1,0 +1,14 @@
+{
+  "source_commit": "8f915dfd42666a5a832389b2a6756504eed2c974",
+  "files": {
+    "fpl_advisor.py": "419fbc55175e90f7ef441ed3d9b308c3b09b428d3e8860881653e2562deee4e3",
+    "model/README.md": "5355fddd479944976d9850d06dcf581da754e44449c782b5f03d5161f5ec6d95",
+    "model/assumptions.example.json": "bef88fbc11f3eb94603d430a22e57caccc597fb6ea59c2b512a3c72b4b94a133",
+    "model/config.json": "1ebed2f02d4e48ebdc0cc352c14e6b0abac3210e549f9f23d0656d7545fb7d4d",
+    "model/priors-2026-27.csv": "2660d4e8fb3ecf6b58d87a9b49b7215cb7072d086b59ebb99fc69f65bf209f6b",
+    "prompts/preseason.md": "8245f39ee1f7341970d19d81de060f01a674d03df07cf6b4fd8593c3fe84a52b",
+    "prompts/project.md": "fc69bc6199f725e642d75adc0963d80e1caf4c9bcd655dbe6fc606658491a33f",
+    "prompts/smoke-test.md": "7a02373ad7937de4f8abe2ab0af6a8f2781a2510f27cccff3e33c5fa371d3714",
+    "prompts/weekly.md": "56b9f22430dc0abc945454e833972445aa03c8c9d189d6887dbebda86817ec3f"
+  }
+}
