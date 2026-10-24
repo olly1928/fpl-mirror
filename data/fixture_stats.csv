@@ -1,4 +1,4 @@
-# season=2026/27 preseason=False next_gw=9 deadline=2026-10-31T11:00:00Z players=668 fetched=2026-10-24T01:17:47+00:00
+# season=2026/27 preseason=False next_gw=9 deadline=2026-10-31T11:00:00Z players=668 fetched=2026-10-24T05:49:20+00:00
 # One row per fixture per player per stat, flattened from fixtures[].stats.
 # team_side: h=home side, a=away side. Empty until fixtures are played.
 # Unlike the other append-only files this one is rebuilt each run, so FPL's later bonus-point and stat corrections are picked up.
@@ -4954,16 +4954,16 @@ fixture_id,gw,player_id,team_side,identifier,value
 77,8,591,h,bonus,3
 77,8,201,a,bonus,2
 77,8,486,a,bonus,1
-77,8,591,h,bps,35
+77,8,591,h,bps,39
 77,8,305,h,bps,20
 77,8,619,h,bps,19
 77,8,571,h,bps,15
 77,8,300,h,bps,13
-77,8,592,h,bps,9
-77,8,316,h,bps,8
+77,8,318,h,bps,11
+77,8,592,h,bps,11
 77,8,304,h,bps,7
-77,8,318,h,bps,7
 77,8,259,h,bps,5
+77,8,316,h,bps,5
 77,8,562,h,bps,5
 77,8,640,h,bps,5
 77,8,315,h,bps,4
@@ -4973,27 +4973,27 @@ fixture_id,gw,player_id,team_side,identifier,value
 77,8,201,a,bps,28
 77,8,486,a,bps,23
 77,8,469,a,bps,21
-77,8,558,a,bps,19
+77,8,558,a,bps,17
 77,8,480,a,bps,15
 77,8,467,a,bps,10
 77,8,474,a,bps,10
-77,8,483,a,bps,8
 77,8,471,a,bps,7
-77,8,472,a,bps,5
+77,8,472,a,bps,6
+77,8,482,a,bps,5
+77,8,483,a,bps,5
 77,8,490,a,bps,3
 77,8,478,a,bps,2
-77,8,482,a,bps,2
 77,8,167,a,bps,1
 77,8,619,h,defensive_contribution,17
-77,8,571,h,defensive_contribution,11
-77,8,304,h,defensive_contribution,7
+77,8,571,h,defensive_contribution,12
+77,8,304,h,defensive_contribution,8
+77,8,592,h,defensive_contribution,7
 77,8,259,h,defensive_contribution,6
 77,8,305,h,defensive_contribution,6
-77,8,592,h,defensive_contribution,6
+77,8,591,h,defensive_contribution,5
+77,8,640,h,defensive_contribution,4
 77,8,313,h,defensive_contribution,3
 77,8,318,h,defensive_contribution,3
-77,8,591,h,defensive_contribution,3
-77,8,640,h,defensive_contribution,3
 77,8,315,h,defensive_contribution,2
 77,8,316,h,defensive_contribution,2
 77,8,310,h,defensive_contribution,1
