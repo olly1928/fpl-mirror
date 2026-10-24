@@ -1,4 +1,4 @@
-# season=2026/27 preseason=False next_gw=9 deadline=2026-10-31T11:00:00Z players=668 fetched=2026-10-24T18:29:57+00:00
+# season=2026/27 preseason=False next_gw=9 deadline=2026-10-31T11:00:00Z players=669 fetched=2026-10-24T21:21:34+00:00
 # One row per fixture per player per stat, flattened from fixtures[].stats.
 # team_side: h=home side, a=away side. Empty until fixtures are played.
 # Unlike the other append-only files this one is rebuilt each run, so FPL's later bonus-point and stat corrections are picked up.
@@ -5119,12 +5119,12 @@ fixture_id,gw,player_id,team_side,identifier,value
 73,8,502,a,bps,27
 73,8,525,a,bps,26
 73,8,503,a,bps,23
+73,8,455,a,bps,17
 73,8,512,a,bps,17
-73,8,455,a,bps,16
 73,8,522,a,bps,13
 73,8,515,a,bps,11
+73,8,526,a,bps,7
 73,8,521,a,bps,5
-73,8,526,a,bps,5
 73,8,401,a,bps,4
 73,8,499,a,bps,4
 73,8,519,a,bps,4
@@ -5136,7 +5136,7 @@ fixture_id,gw,player_id,team_side,identifier,value
 73,8,148,h,defensive_contribution,8
 73,8,164,h,defensive_contribution,7
 73,8,40,h,defensive_contribution,6
-73,8,101,h,defensive_contribution,5
+73,8,101,h,defensive_contribution,6
 73,8,151,h,defensive_contribution,5
 73,8,154,h,defensive_contribution,3
 73,8,152,h,defensive_contribution,1
@@ -5148,8 +5148,8 @@ fixture_id,gw,player_id,team_side,identifier,value
 73,8,514,a,defensive_contribution,4
 73,8,515,a,defensive_contribution,4
 73,8,519,a,defensive_contribution,4
-73,8,526,a,defensive_contribution,3
-73,8,401,a,defensive_contribution,2
+73,8,526,a,defensive_contribution,4
+73,8,401,a,defensive_contribution,3
 73,8,502,a,defensive_contribution,2
 73,8,503,a,defensive_contribution,1
 73,8,521,a,defensive_contribution,1
@@ -5162,25 +5162,25 @@ fixture_id,gw,player_id,team_side,identifier,value
 74,8,264,a,bonus,3
 74,8,250,a,bonus,2
 74,8,258,a,bonus,1
-74,8,183,h,bps,22
+74,8,183,h,bps,20
 74,8,184,h,bps,13
 74,8,185,h,bps,13
 74,8,175,h,bps,10
 74,8,194,h,bps,10
-74,8,91,h,bps,8
+74,8,91,h,bps,9
 74,8,110,h,bps,8
 74,8,176,h,bps,8
 74,8,575,h,bps,8
 74,8,599,h,bps,8
 74,8,104,h,bps,7
+74,8,173,h,bps,7
 74,8,186,h,bps,4
-74,8,173,h,bps,3
 74,8,584,h,bps,3
 74,8,492,h,bps,2
 74,8,264,a,bps,39
 74,8,250,a,bps,33
 74,8,258,a,bps,32
-74,8,257,a,bps,27
+74,8,257,a,bps,28
 74,8,650,a,bps,27
 74,8,268,a,bps,24
 74,8,254,a,bps,19
@@ -5195,8 +5195,8 @@ fixture_id,gw,player_id,team_side,identifier,value
 74,8,271,a,bps,3
 74,8,91,h,defensive_contribution,14
 74,8,183,h,defensive_contribution,9
+74,8,185,h,defensive_contribution,8
 74,8,175,h,defensive_contribution,7
-74,8,185,h,defensive_contribution,7
 74,8,575,h,defensive_contribution,6
 74,8,184,h,defensive_contribution,5
 74,8,104,h,defensive_contribution,4
@@ -5207,10 +5207,10 @@ fixture_id,gw,player_id,team_side,identifier,value
 74,8,186,h,defensive_contribution,1
 74,8,599,h,defensive_contribution,1
 74,8,254,a,defensive_contribution,12
-74,8,257,a,defensive_contribution,10
+74,8,257,a,defensive_contribution,11
 74,8,580,a,defensive_contribution,10
-74,8,258,a,defensive_contribution,9
 74,8,650,a,defensive_contribution,9
+74,8,258,a,defensive_contribution,8
 74,8,261,a,defensive_contribution,6
 74,8,265,a,defensive_contribution,5
 74,8,256,a,defensive_contribution,3

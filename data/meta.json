@@ -1,11 +1,11 @@
 {
-  "fetched_at": "2026-10-24T18:29:57+00:00",
+  "fetched_at": "2026-10-24T21:21:34+00:00",
   "season": "2026/27",
   "preseason": false,
   "current_event": 8,
   "next_event": 9,
   "next_deadline": "2026-10-31T11:00:00Z",
-  "player_count": 668,
+  "player_count": 669,
   "teams_in_game": [
     "ARS",
     "AVL",
@@ -238,8 +238,8 @@
       "data_checked": false,
       "is_current": true,
       "is_next": false,
-      "average_entry_score": 1,
-      "highest_score": 45,
+      "average_entry_score": 27,
+      "highest_score": 102,
       "most_captained": 411,
       "most_selected": 411,
       "chip_plays": [
@@ -668,7 +668,7 @@
       "sub_positions_locked": [
         12
       ],
-      "element_count": 73
+      "element_count": 74
     },
     {
       "id": 2,
@@ -895,7 +895,7 @@
   "warnings": [],
   "components": {
     "build_fpl": {
-      "last_run_at": "2026-10-24T18:29:57+00:00",
+      "last_run_at": "2026-10-24T21:21:34+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
@@ -907,19 +907,19 @@
       "stale": false
     },
     "build_player_history": {
-      "last_run_at": "2026-10-24T18:29:55+00:00",
+      "last_run_at": "2026-10-24T21:21:32+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
     },
     "build_snapshots": {
-      "last_run_at": "2026-10-24T18:29:55+00:00",
+      "last_run_at": "2026-10-24T21:21:32+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
     },
     "build_squad": {
-      "last_run_at": "2026-10-24T18:29:57+00:00",
+      "last_run_at": "2026-10-24T21:21:34+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
