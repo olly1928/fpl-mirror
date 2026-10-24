@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-24T21:21:32.944120+00:00",
+  "fetched_at": "2026-10-24T23:54:01.228929+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -7,8 +7,8 @@
   "next_event": 9,
   "next_deadline": "2026-10-31T11:00:00Z",
   "preseason": false,
-  "overall_points": 451,
-  "overall_rank": 4264727,
+  "overall_points": 452,
+  "overall_rank": 4206532,
   "bank": 2.9,
   "squad_value": 100.2,
   "squad_selling_value": 965,
@@ -259,8 +259,8 @@
           "entry": 62697,
           "entry_name": "Cherki Dinosaurs",
           "manager": "Jamie Howson",
-          "event_total": 41,
-          "total": 568,
+          "event_total": 40,
+          "total": 567,
           "is_me": false
         },
         {
@@ -269,8 +269,8 @@
           "entry": 790889,
           "entry_name": "Meeks Freeks",
           "manager": "Oliver Meiklejohn",
-          "event_total": 36,
-          "total": 451,
+          "event_total": 37,
+          "total": 452,
           "is_me": true
         }
       ]
@@ -299,8 +299,8 @@
           "entry": 3886598,
           "entry_name": "Col's Trolls",
           "manager": "James Collins",
-          "event_total": 26,
-          "total": 497,
+          "event_total": 25,
+          "total": 496,
           "is_me": false
         },
         {
@@ -309,8 +309,8 @@
           "entry": 4199979,
           "entry_name": "Cold Bridge",
           "manager": "Joy Jesuthasan",
-          "event_total": 30,
-          "total": 487,
+          "event_total": 29,
+          "total": 486,
           "is_me": false
         },
         {
@@ -329,8 +329,8 @@
           "entry": 790889,
           "entry_name": "Meeks Freeks",
           "manager": "Oliver Meiklejohn",
-          "event_total": 36,
-          "total": 451,
+          "event_total": 37,
+          "total": 452,
           "is_me": true
         },
         {
@@ -359,8 +359,8 @@
           "entry": 3822576,
           "entry_name": "Yoan Wissa Harry",
           "manager": "Matty Fairgrieve",
-          "event_total": 36,
-          "total": 465,
+          "event_total": 37,
+          "total": 466,
           "is_me": false
         },
         {
@@ -369,8 +369,8 @@
           "entry": 790889,
           "entry_name": "Meeks Freeks",
           "manager": "Oliver Meiklejohn",
-          "event_total": 36,
-          "total": 451,
+          "event_total": 37,
+          "total": 452,
           "is_me": true
         },
         {
@@ -389,8 +389,8 @@
           "entry": 6758481,
           "entry_name": "chilli con Cairney",
           "manager": "Joe Raven",
-          "event_total": 57,
-          "total": 436,
+          "event_total": 58,
+          "total": 437,
           "is_me": false
         }
       ]
@@ -409,8 +409,8 @@
           "entry": 351753,
           "entry_name": "XabiDooWhereAreYou",
           "manager": "Andrii Makarenko",
-          "event_total": 31,
-          "total": 554,
+          "event_total": 30,
+          "total": 553,
           "is_me": false
         },
         {
@@ -419,8 +419,8 @@
           "entry": 5122358,
           "entry_name": "Rohan Van Pedro",
           "manager": "Rohan Holder",
-          "event_total": 38,
-          "total": 547,
+          "event_total": 37,
+          "total": 546,
           "is_me": false
         },
         {
@@ -429,8 +429,8 @@
           "entry": 2753182,
           "entry_name": "Daizen & Confused",
           "manager": "Jamie McGachy",
-          "event_total": 38,
-          "total": 535,
+          "event_total": 37,
+          "total": 534,
           "is_me": false
         },
         {
@@ -439,8 +439,8 @@
           "entry": 662743,
           "entry_name": "Haaland Globetroterz",
           "manager": "Kelly Millsaps",
-          "event_total": 32,
-          "total": 534,
+          "event_total": 31,
+          "total": 533,
           "is_me": false
         },
         {
@@ -449,8 +449,8 @@
           "entry": 3820692,
           "entry_name": "somgorsi",
           "manager": "Hubert Kaźmierczak",
-          "event_total": 46,
-          "total": 521,
+          "event_total": 45,
+          "total": 520,
           "is_me": false
         },
         {
@@ -459,8 +459,8 @@
           "entry": 2940306,
           "entry_name": "SomeRandomName",
           "manager": "Ania ER",
-          "event_total": 33,
-          "total": 508,
+          "event_total": 32,
+          "total": 507,
           "is_me": false
         },
         {
@@ -469,8 +469,8 @@
           "entry": 3747240,
           "entry_name": "VAR-a-Lago",
           "manager": "Mike Phillips",
-          "event_total": 40,
-          "total": 506,
+          "event_total": 39,
+          "total": 505,
           "is_me": false
         },
         {
@@ -479,8 +479,8 @@
           "entry": 4780428,
           "entry_name": "Viva Les Vegas",
           "manager": "James Davies",
-          "event_total": 47,
-          "total": 501,
+          "event_total": 48,
+          "total": 502,
           "is_me": false
         },
         {
@@ -489,8 +489,8 @@
           "entry": 2840746,
           "entry_name": "Matthew's Team",
           "manager": "Matthew Evans",
-          "event_total": 25,
-          "total": 501,
+          "event_total": 24,
+          "total": 500,
           "is_me": false
         },
         {
@@ -509,8 +509,8 @@
           "entry": 2583053,
           "entry_name": "Proper Team Name 2",
           "manager": "Grzesiek Martinez",
-          "event_total": 35,
-          "total": 494,
+          "event_total": 34,
+          "total": 493,
           "is_me": false
         },
         {
@@ -549,8 +549,8 @@
           "entry": 5984664,
           "entry_name": "Wishing4Wigan",
           "manager": "Micajah Dudley",
-          "event_total": 41,
-          "total": 475,
+          "event_total": 42,
+          "total": 476,
           "is_me": false
         },
         {
@@ -559,8 +559,8 @@
           "entry": 790889,
           "entry_name": "Meeks Freeks",
           "manager": "Oliver Meiklejohn",
-          "event_total": 36,
-          "total": 451,
+          "event_total": 37,
+          "total": 452,
           "is_me": true
         },
         {
@@ -569,8 +569,8 @@
           "entry": 2387148,
           "entry_name": "Amadness",
           "manager": "Michal Nowak",
-          "event_total": 31,
-          "total": 439,
+          "event_total": 30,
+          "total": 438,
           "is_me": false
         },
         {
@@ -629,8 +629,8 @@
           "entry": 9302863,
           "entry_name": "Yoro Wizard Harry",
           "manager": "Nishaad Joshi",
-          "event_total": 31,
-          "total": 346,
+          "event_total": 32,
+          "total": 347,
           "is_me": false
         }
       ]
@@ -699,8 +699,8 @@
           "entry": 790889,
           "entry_name": "Meeks Freeks",
           "manager": "Oliver Meiklejohn",
-          "event_total": 36,
-          "total": 451,
+          "event_total": 37,
+          "total": 452,
           "is_me": true
         },
         {
@@ -709,8 +709,8 @@
           "entry": 7113295,
           "entry_name": "Eze does, Eze goes",
           "manager": "Gus Price",
-          "event_total": 24,
-          "total": 403,
+          "event_total": 25,
+          "total": 404,
           "is_me": false
         }
       ]
@@ -729,8 +729,8 @@
           "entry": 6418014,
           "entry_name": "Murrays Marauders FC",
           "manager": "Ross Murray",
-          "event_total": 36,
-          "total": 521,
+          "event_total": 37,
+          "total": 522,
           "is_me": false
         },
         {
@@ -749,8 +749,8 @@
           "entry": 790889,
           "entry_name": "Meeks Freeks",
           "manager": "Oliver Meiklejohn",
-          "event_total": 36,
-          "total": 451,
+          "event_total": 37,
+          "total": 452,
           "is_me": true
         },
         {
@@ -759,8 +759,8 @@
           "entry": 636134,
           "entry_name": "Hobblers 2",
           "manager": "Andrew Hasler",
-          "event_total": 29,
-          "total": 372,
+          "event_total": 30,
+          "total": 373,
           "is_me": false
         },
         {
