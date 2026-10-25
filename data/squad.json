@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-25T20:13:27.430013+00:00",
+  "fetched_at": "2026-10-25T22:57:23.872255+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,7 +8,7 @@
   "next_deadline": "2026-10-31T11:00:00Z",
   "preseason": false,
   "overall_points": 472,
-  "overall_rank": 3730613,
+  "overall_rank": 3734828,
   "bank": 2.9,
   "squad_value": 100.2,
   "squad_selling_value": 965,
@@ -465,16 +465,16 @@
         },
         {
           "rank": 7,
-          "last_rank": 13,
-          "entry": 4780428,
-          "entry_name": "Viva Les Vegas",
-          "manager": "James Davies",
-          "event_total": 59,
-          "total": 513,
+          "last_rank": 5,
+          "entry": 2840746,
+          "entry_name": "Matthew's Team",
+          "manager": "Matthew Evans",
+          "event_total": 38,
+          "total": 514,
           "is_me": false
         },
         {
-          "rank": 7,
+          "rank": 8,
           "last_rank": 9,
           "entry": 3747240,
           "entry_name": "VAR-a-Lago",
@@ -484,13 +484,13 @@
           "is_me": false
         },
         {
-          "rank": 9,
-          "last_rank": 5,
-          "entry": 2840746,
-          "entry_name": "Matthew's Team",
-          "manager": "Matthew Evans",
-          "event_total": 36,
-          "total": 512,
+          "rank": 8,
+          "last_rank": 13,
+          "entry": 4780428,
+          "entry_name": "Viva Les Vegas",
+          "manager": "James Davies",
+          "event_total": 59,
+          "total": 513,
           "is_me": false
         },
         {
@@ -599,8 +599,8 @@
           "entry": 1335880,
           "entry_name": "The Szo Show",
           "manager": "Chris Stern",
-          "event_total": 33,
-          "total": 427,
+          "event_total": 35,
+          "total": 429,
           "is_me": false
         },
         {
