@@ -893,7 +893,6 @@
   },
   "stale": true,
   "warnings": [
-    "[build_odds] STALE — last ran 2026-10-24T16:42:17+00:00, expected every 360 min",
     "[build_snapshots] STALE — last ran 2026-10-24T21:21:32+00:00, expected every 60 min"
   ],
   "components": {
@@ -904,10 +903,10 @@
       "stale": false
     },
     "build_odds": {
-      "last_run_at": "2026-10-24T16:42:17+00:00",
+      "last_run_at": "2026-10-26T07:04:45+00:00",
       "expected_interval_minutes": 360,
       "stale_after_minutes": 720,
-      "stale": true
+      "stale": false
     },
     "build_player_history": {
       "last_run_at": "2026-10-26T06:09:55+00:00",
@@ -963,5 +962,6 @@
     "teams.csv: columns named derived_* are computed by this mirror from the finished fixtures in fixtures.csv. Everything else in that file is mirrored verbatim from FPL. Use derived_played/win/draw/loss/points for the league table — FPL sends its own copies of those as zero all season long. FPL's 'position' is the exception and is live; the derived table is cross-checked against it every run and warns here on disagreement.",
     "stale is true when any component has gone longer than twice its expected refresh interval without running. Check components{} for which one.",
     "CACHE CHECK: every CSV in this mirror carries 'fetched=<timestamp>' in its first comment line, and it is always identical to this file's fetched_at within a single build. If they disagree, one of the two was served from a cache rather than being genuinely out of date — raw.githubusercontent.com caches per-path, so meta.json can lag while players.csv is current. Refetch with a cache-busting query string before concluding the mirror is stale."
-  ]
+  ],
+  "components_refreshed_at": "2026-10-26T07:04:45+00:00"
 }
