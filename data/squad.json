@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-26T05:50:12.043762+00:00",
+  "fetched_at": "2026-10-26T06:09:56.554696+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -475,21 +475,21 @@
         },
         {
           "rank": 8,
-          "last_rank": 9,
-          "entry": 3747240,
-          "entry_name": "VAR-a-Lago",
-          "manager": "Mike Phillips",
-          "event_total": 47,
-          "total": 513,
-          "is_me": false
-        },
-        {
-          "rank": 8,
           "last_rank": 13,
           "entry": 4780428,
           "entry_name": "Viva Les Vegas",
           "manager": "James Davies",
           "event_total": 59,
+          "total": 513,
+          "is_me": false
+        },
+        {
+          "rank": 8,
+          "last_rank": 9,
+          "entry": 3747240,
+          "entry_name": "VAR-a-Lago",
+          "manager": "Mike Phillips",
+          "event_total": 47,
           "total": 513,
           "is_me": false
         },
