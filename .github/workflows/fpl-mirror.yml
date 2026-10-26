@@ -9,8 +9,10 @@ name: FPL mirror
 # missed is an hour gone. build_fpl runs last because it folds every other
 # builder's warnings and freshness into meta.json.
 #
-# Every step after the first runs even if an earlier one failed, so a broken
-# squad endpoint cannot cost us a price snapshot. The job still reports failure.
+# Once Python setup succeeds, each builder runs even if an earlier builder
+# failed, so a broken squad endpoint cannot cost us a price snapshot. If setup
+# fails, no data step runs with the runner's unpinned system Python instead.
+# The job still reports failure.
 
 on:
   schedule:
@@ -30,7 +32,8 @@ concurrency:
 
 jobs:
   mirror:
-    runs-on: ubuntu-latest
+    # Python 3.12.7 has an Ubuntu 24.04 build, but no Ubuntu 26.04 build.
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
         with:
@@ -39,6 +42,7 @@ jobs:
           fetch-depth: 0
 
       - uses: actions/setup-python@v5
+        id: python
         with:
           # Pinned to an exact patch. A pipeline meant to run unattended for nine
           # months should not change interpreter underneath itself in February.
@@ -50,24 +54,24 @@ jobs:
 
       # No-op unless a gameweek has just been marked data_checked.
       - name: Capture any newly completed gameweek
-        if: ${{ !cancelled() }}
+        if: ${{ !cancelled() && steps.python.outcome == 'success' }}
         run: python build_player_history.py
 
       # Pre-season this writes "picks": null and exits 0 — the picks endpoint
       # does not exist until a gameweek has started. That is not a failure.
       - name: Mirror my squad
-        if: ${{ !cancelled() }}
+        if: ${{ !cancelled() && steps.python.outcome == 'success' }}
         run: python build_squad.py
         env:
           FPL_TEAM_ID: '790889'
 
       # Last, so meta.json can report on everything above it.
       - name: Build CSVs from the FPL API
-        if: ${{ !cancelled() }}
+        if: ${{ !cancelled() && steps.python.outcome == 'success' }}
         run: python build_fpl.py
 
       - name: Commit if anything changed
-        if: ${{ !cancelled() }}
+        if: ${{ !cancelled() && steps.python.outcome == 'success' }}
         run: |
           git config user.name  "fpl-mirror"
           git config user.email "actions@github.com"
@@ -81,7 +85,7 @@ jobs:
       # rule or a path the add step never staged would leave the published
       # mirror frozen while every local check passed.
       - name: Verify meta.json reached the commit
-        if: ${{ !cancelled() }}
+        if: ${{ !cancelled() && steps.python.outcome == 'success' }}
         run: |
           if git check-ignore -q data/meta.json; then
             echo "FATAL: data/meta.json is gitignored — it can never be published." >&2

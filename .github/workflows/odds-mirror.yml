@@ -33,7 +33,8 @@ concurrency:
 
 jobs:
   odds:
-    runs-on: ubuntu-latest
+    # Python 3.12.7 has an Ubuntu 24.04 build, but no Ubuntu 26.04 build.
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
         with:
