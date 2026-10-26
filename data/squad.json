@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-26T12:00:39.349613+00:00",
+  "fetched_at": "2026-10-26T18:57:49.771239+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,7 +8,7 @@
   "next_deadline": "2026-10-31T11:00:00Z",
   "preseason": false,
   "overall_points": 472,
-  "overall_rank": 4037130,
+  "overall_rank": 4037122,
   "bank": 2.9,
   "squad_value": 100.2,
   "squad_selling_value": 965,
@@ -398,9 +398,9 @@
     {
       "id": 572297,
       "name": "Box 26/27",
-      "my_rank": 16,
+      "my_rank": 15,
       "my_last_rank": 18,
-      "entries": 22,
+      "entries": 21,
       "standings_truncated_to": null,
       "standings": [
         {
@@ -515,16 +515,6 @@
         },
         {
           "rank": 12,
-          "last_rank": 11,
-          "entry": 7359153,
-          "entry_name": "ohforgodssaka",
-          "manager": "Jack Wilkinson",
-          "event_total": 44,
-          "total": 506,
-          "is_me": false
-        },
-        {
-          "rank": 12,
           "last_rank": 12,
           "entry": 2328199,
           "entry_name": "Super Saiyan Sarr",
@@ -534,7 +524,7 @@
           "is_me": false
         },
         {
-          "rank": 14,
+          "rank": 13,
           "last_rank": 14,
           "entry": 687538,
           "entry_name": "week_foot_11",
@@ -544,7 +534,7 @@
           "is_me": false
         },
         {
-          "rank": 15,
+          "rank": 14,
           "last_rank": 15,
           "entry": 5984664,
           "entry_name": "Wishing4Wigan",
@@ -554,7 +544,7 @@
           "is_me": false
         },
         {
-          "rank": 16,
+          "rank": 15,
           "last_rank": 18,
           "entry": 790889,
           "entry_name": "Meeks Freeks",
@@ -564,7 +554,7 @@
           "is_me": true
         },
         {
-          "rank": 17,
+          "rank": 16,
           "last_rank": 17,
           "entry": 5093062,
           "entry_name": "Saf London Fc",
@@ -574,7 +564,7 @@
           "is_me": false
         },
         {
-          "rank": 18,
+          "rank": 17,
           "last_rank": 19,
           "entry": 2387148,
           "entry_name": "Amadness",
@@ -584,7 +574,7 @@
           "is_me": false
         },
         {
-          "rank": 19,
+          "rank": 18,
           "last_rank": 16,
           "entry": 2527602,
           "entry_name": "Peak Roy Hodgson FC",
@@ -594,7 +584,7 @@
           "is_me": false
         },
         {
-          "rank": 20,
+          "rank": 19,
           "last_rank": 20,
           "entry": 1335880,
           "entry_name": "The Szo Show",
@@ -604,7 +594,7 @@
           "is_me": false
         },
         {
-          "rank": 21,
+          "rank": 20,
           "last_rank": 21,
           "entry": 6423433,
           "entry_name": "Real Contenders",
@@ -614,7 +604,7 @@
           "is_me": false
         },
         {
-          "rank": 22,
+          "rank": 21,
           "last_rank": 22,
           "entry": 8853128,
           "entry_name": "Jesse's Team",
