@@ -1,20 +1,18 @@
 {
   "build_snapshots": {
-    "last_run_at": "2026-10-26T18:57:48+00:00",
+    "last_run_at": "2026-10-26T23:01:26+00:00",
     "expected_interval_minutes": 60,
     "warnings": [],
-    "last_snapshot_at": "2026-10-26T18:57:48+00:00",
+    "last_snapshot_at": "2026-10-26T23:01:26+00:00",
     "last_baseline_date": "2026-10-26",
-    "last_rows_written": 648,
+    "last_rows_written": 627,
     "current_file": "data/snapshots/2026-10.csv",
     "mode": "delta"
   },
   "build_player_history": {
-    "last_run_at": "2026-10-26T18:57:49+00:00",
+    "last_run_at": "2026-10-26T23:01:26+00:00",
     "expected_interval_minutes": 60,
-    "warnings": [
-      "event/8/live.stats: 2 new field(s) present in the API and not mirrored: in_dreamteam, played"
-    ],
+    "warnings": [],
     "captured_gameweeks": [
       1,
       2,
@@ -25,10 +23,10 @@
       7,
       8
     ],
-    "last_rows_written": 669
+    "last_rows_written": 0
   },
   "build_squad": {
-    "last_run_at": "2026-10-26T18:57:51+00:00",
+    "last_run_at": "2026-10-26T23:01:28+00:00",
     "expected_interval_minutes": 60,
     "warnings": [],
     "picks": 15,
@@ -38,7 +36,7 @@
     "selling_prices_confidence": "derived"
   },
   "build_fpl": {
-    "last_run_at": "2026-10-26T18:57:51+00:00",
+    "last_run_at": "2026-10-26T23:01:29+00:00",
     "expected_interval_minutes": 60,
     "warnings": [],
     "files": [
