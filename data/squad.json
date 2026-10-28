@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-27T20:20:20.129125+00:00",
+  "fetched_at": "2026-10-28T00:10:32.582649+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -12,7 +12,7 @@
   "bank": 2.9,
   "squad_value": 100.2,
   "squad_selling_value": 965,
-  "squad_market_value": 972,
+  "squad_market_value": 973,
   "available_budget": 994,
   "notes": [
     "FREE TRANSFERS: ESTIMATE ONLY — the FPL API does not expose free transfers. Derived from transfer history assuming 1 earned per gameweek, banked to a maximum of 5, with wildcard/free-hit weeks not consuming any. Confirm on the FPL site before making transfer decisions.",
@@ -922,7 +922,7 @@
       "full_name": "Erling Haaland",
       "team": "MCI",
       "pos": "FWD",
-      "now_cost": 15.7,
+      "now_cost": 15.8,
       "multiplier": 2,
       "is_captain": true,
       "is_vice_captain": false,
@@ -1093,7 +1093,7 @@
       "suspect": false
     },
     "411": {
-      "now_cost": 157,
+      "now_cost": 158,
       "purchase": 155,
       "selling": 156,
       "source": "initial_squad",
