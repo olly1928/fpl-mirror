@@ -1,0 +1,36 @@
+{
+  "clearance_scope": "Local relocation and exported CSV/JSON parity plus real-model Linux offline CI; not proof of predictive superiority or a completed fresh hosted run.",
+  "created_at": "2026-10-31T22:47:03.693381+00:00",
+  "fresh_hosted_execution": {
+    "status": "pending_authenticated_manual_dispatch",
+    "validated": false,
+    "workflow_url": "https://github.com/olly1928/fpl-mirror/actions/workflows/fpl-forecast-on-demand.yml"
+  },
+  "linux_offline_ci": {
+    "evidence_file": "linux-parity-evidence.json",
+    "evidence_sha256": "518a0d73e702b3b60e180bcada4331ab76c2cded5d4bc3d6f69d77cdc6666518",
+    "head_sha": "feb525113f76467432b3431cb6a8db64b4ba4e67",
+    "run_url": "https://github.com/olly1928/fpl-mirror/actions/runs/41250558816",
+    "runtime_models_data_unchanged": true,
+    "status": "passed"
+  },
+  "local_package_validation_passed": true,
+  "prepublication_engineering_clearance": true,
+  "privacy": "No raw captures or private owned-squad rows included. Public aggregate research and fixed-model inputs only.",
+  "protocol_sha256": "003f76f1088d332e8a6ba0e8f92d8fb571dab0d0e6e78d00252eac14f2aec676",
+  "public_aggregate_sha256": "c7c8969d476216a50aa545ac5d5fa61fb3add71abecb2c5fd5871a7215de1f38",
+  "report_sha256": "316ee604bb5dddc159cf0830aad818fa0391b164b40de8172c8ba9bcbd08e318",
+  "scientific_recommendation": "retain_existing_advisor_primary",
+  "selection_sha256": "6b28262ac9a12e060066fdf78caf3ff78491165d865c39ff2587b307a51884b1",
+  "source_sha256": {
+    "candidate_manifest": "a5f54f380a3a9e4d4cddc181f8831245974cbfdd41c327c683af78a1a26b9833",
+    "horizon_union": "d420c8c8a8ff2d993cc3a68d8905ad2e86af01aa751d2729c74b76f8dce72933",
+    "independent_package_review": "21eae40428cbc5e01cefa3e8a10e18421f858aa3f0e756d782815cb40d3bb67e",
+    "independent_scientific_review": "1e5abbe40383b5506201033f46c07ee174352484cca6748262b795e793535360",
+    "local_actual_model_offline": "7b449f68bf2822af1736b358dbeddcdece5314dab02394ee71b2a8b5cfa948fb",
+    "local_package_parity": "fc321ba9e775d14fd4b917ee5b0c8dcbdb84f16f989aef593c416d5dd6e9f466",
+    "release_checks": "5268665622c1b74a54643dc96fcc2401c2e169147240399f0628b3722aff0281"
+  },
+  "updated_at": "2026-10-31T23:02:52.730040+00:00",
+  "version": "qualification-release-evidence-v1"
+}

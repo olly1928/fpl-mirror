@@ -1,0 +1,47 @@
+# Copy to .github/workflows/fpl-forecast-offline.yml with the reviewed package.
+name: FPL fixed-model offline parity
+
+on:
+  pull_request:
+    paths:
+      - 'forecast-model/**'
+      - '.github/workflows/fpl-forecast-offline.yml'
+      - '.github/workflows/fpl-forecast-on-demand.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  offline-parity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      OMP_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      NUMEXPR_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: forecast-model/requirements.lock.txt
+      - name: Install the fixed runtime and test runner
+        run: |
+          python -m pip install -r forecast-model/requirements.lock.txt
+          python -m pip install --no-deps -e forecast-model
+          python -m pip install pytest==8.3.5
+      - name: Synthetic temporal and artifact checks
+        run: python -m pytest -q forecast-model/tests
+      - name: Actual fitted-model at-origin parity without public API access
+        run: python -m fpl_forecast.offline_check --package-root forecast-model --output hosted-offline-parity.json
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: fpl-offline-parity-${{ github.run_id }}
+          path: hosted-offline-parity.json
+          if-no-files-found: error
+          retention-days: 14

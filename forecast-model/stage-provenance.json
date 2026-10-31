@@ -1,0 +1,171 @@
+{
+  "assets": {
+    "club-map.json": {
+      "bytes": 3608,
+      "path": "data/club-map.json",
+      "sha256": "58f8a6e531792cadbdd32ccc4f232b15955251848584ca365bc1a11c122b0a63"
+    },
+    "history/2013-14.parquet": {
+      "bytes": 771167,
+      "path": "data/history/2013-14.parquet",
+      "sha256": "179135e4c43b650202bb6988bb0cc5c554739608303ecf21de5d41849ccc5393"
+    },
+    "history/2014-15.parquet": {
+      "bytes": 1062571,
+      "path": "data/history/2014-15.parquet",
+      "sha256": "f2b09b380dda7c898ff811d552e0bafc740c2bcc81923e00064f05d417d3afed"
+    },
+    "history/2015-16.parquet": {
+      "bytes": 1050436,
+      "path": "data/history/2015-16.parquet",
+      "sha256": "d59404fd401b40ea97cd4153382e57c6b572858ad031b7584a61ce2a1452670e"
+    },
+    "history/2016-17.parquet": {
+      "bytes": 1006768,
+      "path": "data/history/2016-17.parquet",
+      "sha256": "2a89f3d1b03dbb75169f8dd7b8844d1170fc719ab3e0f7fa78a06ba27f574634"
+    },
+    "history/2017-18.parquet": {
+      "bytes": 954171,
+      "path": "data/history/2017-18.parquet",
+      "sha256": "a1329c524867340b1261675560fa179d3b41a4c21bec32e264f7c60ed0a2bcea"
+    },
+    "history/2018-19.parquet": {
+      "bytes": 931267,
+      "path": "data/history/2018-19.parquet",
+      "sha256": "1c8f4659ccc0a406234025b3a2a5148cf8e73f2772ae121d76955ef2a2e6d6a8"
+    },
+    "history/2019-20.parquet": {
+      "bytes": 963157,
+      "path": "data/history/2019-20.parquet",
+      "sha256": "7886a581da963bd8092a7286679ecf88aad80695cd3019232fa23d6dc252ba69"
+    },
+    "history/2020-21.parquet": {
+      "bytes": 1031628,
+      "path": "data/history/2020-21.parquet",
+      "sha256": "ff1264b9dbe6895c70831c3465fe9e15b8bfc963f32dc2229c865458586f6b78"
+    },
+    "history/2021-22.parquet": {
+      "bytes": 1079561,
+      "path": "data/history/2021-22.parquet",
+      "sha256": "aa363294fafe24c9597d03ecc03adfca5376d0493aa70876af5b52440cbfd5b8"
+    },
+    "history/2022-23.parquet": {
+      "bytes": 1122402,
+      "path": "data/history/2022-23.parquet",
+      "sha256": "14727aef2eaf7d57e27d896c970a0478f8d47f26d7ee7a1e05d190b32aaa01f6"
+    },
+    "history/2023-24.parquet": {
+      "bytes": 1254444,
+      "path": "data/history/2023-24.parquet",
+      "sha256": "ce38aae27709d4813f7cb9754402be1f32a39458007e420a782ce9dd98b32304"
+    },
+    "history/2024-25.parquet": {
+      "bytes": 1172404,
+      "path": "data/history/2024-25.parquet",
+      "sha256": "14d6ffee0867ccea02808895845683b5da0e17c257f56c5257ca4a9a2518b018"
+    },
+    "history/2025-26.parquet": {
+      "bytes": 1258896,
+      "path": "data/history/2025-26.parquet",
+      "sha256": "1f0a727764bebe5015d0c2a49175fb99b72e0e3d45005f7273244a6ae3651351"
+    },
+    "player-history-index.json": {
+      "bytes": 4238,
+      "path": "data/player-history-index.json",
+      "sha256": "8346e098d70d65538ddf453960d63203774f874baa2ee2399c89f599ffb6ec2b"
+    },
+    "team-history.parquet": {
+      "bytes": 233023,
+      "path": "data/team-history.parquet",
+      "sha256": "79fef991501c26ce126f4d02ba95d725afef6bfc152cc4b85c8f06cecb937a67"
+    }
+  },
+  "complete": false,
+  "copied_v1_source_sha256": {
+    "__init__.py": "bc0bd82237470a888b43ac36683fddab19a28ca1f8c26dda8dff041d10a04494",
+    "cli.py:source": "0bd4bd9f325c7bfb0de016585f5a1ce15a2183106b664dfdc92ccd0503affb5d",
+    "fetch.py": "dff825cf61962d8831f0a94453ba36ba5980a630f9e90199d4438e663367ca58",
+    "inputs.py": "3b39342718dc66a3f762e4f9cd13d2d8f600482b39b20b649ce7fcb658eebdf4",
+    "model.py": "10dd5e1f2887e9556d979d5a4ff1efd61a9a65b19a95a1e30a8d72d30399a481",
+    "utils.py": "b043553ab91ec1c53818bf6125b08640f2cbbe7bc41f4f0176d919e207f3b3c4"
+  },
+  "final_models_present": false,
+  "frozen_current_team_rows_excluded": 160,
+  "history_exact_parity": true,
+  "history_largest_partition_bytes": 1258896,
+  "history_partition_count": 13,
+  "mirror_adapter": "Not implemented: current mirror player_history aggregates DGW columns with pipes and loses per-fixture nonlinear target blocks. Official per-fixture summaries or another lossless per-fixture feed required.",
+  "physical_fits": 0,
+  "player_history_rows": 320931,
+  "real_forecasts": 0,
+  "required_release_gates": [
+    "lockedselectedmodel export",
+    "same-capture lab/package parity",
+    "fresh-process exact replay",
+    "relocated independent inference",
+    "hosted execution separately checked"
+  ],
+  "source_package_manifest_sha256": "a2429a0469d14539252a2780fd355339c9dfcfb85be9d7c0bf589f17fa4b432b",
+  "source_transforms": {
+    "__init__.py": "Package __version__ updated to2.0.0; original source hash retained."
+  },
+  "supported_season": "2026-27",
+  "team_history_rows": 26332,
+  "vendored_sources": {
+    "assembly.py": {
+      "definitions": [
+        "GOAL_WEIGHTS",
+        "assemble_supported_score",
+        "probabilities",
+        "reference_map"
+      ],
+      "source_name": "qualification_evaluation.py",
+      "source_sha256": "5318e22685fd48e2d98b58f3a9e05ebc51127fba00053d987544c5d7d2ead70a",
+      "vendored_sha256": "aada750486f24938abfe9e3e61eb07981f568add1b4471a0ffddaaf843893f87"
+    },
+    "context_features.py": {
+      "definitions": [
+        "DEFAULTS",
+        "VALUES",
+        "VERSION",
+        "WINDOWS",
+        "_side_features",
+        "build_context_features",
+        "ns"
+      ],
+      "source_name": "qualification_data.py",
+      "source_sha256": "6eff0fa893a2eb689598ae187de4eac1f6adea7b6abdb7c831b394fbfeca2c3e",
+      "vendored_sha256": "1f7c9ee57bed346dc3a421e435b6f4c7dfd8a042059225d1c5ef8e189dac1734"
+    },
+    "qualification_models.py": {
+      "definitions": [
+        "ASSEMBLY",
+        "FOCUS",
+        "KINDS",
+        "POPULATIONS",
+        "POSITIONS",
+        "SEED",
+        "TARGETS",
+        "VERSION",
+        "_array",
+        "_normalize",
+        "_values",
+        "build_rolling_features",
+        "predict_model",
+        "rolling_columns",
+        "target_arrays"
+      ],
+      "source_name": "qualification_models.py",
+      "source_sha256": "4fe2cad63e1a2b8495cdc658bdf73ca1c033bfb5ac49ab3a1100889114ec6a9a",
+      "vendored_sha256": "7ff4697f2c44cf353bd28a78a3e6d39bedec4893cf76f781a9901515704c7213"
+    },
+    "qualification_predict.py": {
+      "source_name": "qualification_predict.py",
+      "source_sha256": "ee22f61729cfc0268a4000dbfe9a6183367c4f751fb95dfad17606dc8a5aea2b",
+      "transform": "Only relative module aliases changed; dependency-report helper removed. Prediction arithmetic unchanged.",
+      "vendored_sha256": "1d6bdbedbbd374d892dbb6fd40e23f78d855be04a5ed4ec7c2cf4b12bf2cdb41"
+    }
+  },
+  "version": "qualification-portable-stage-v1"
+}

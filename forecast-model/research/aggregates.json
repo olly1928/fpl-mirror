@@ -1,0 +1,2909 @@
+{
+  "as_of": "2026-10-31T21:25:01.032899+00:00",
+  "budget": {
+    "additional_charged_seconds": 1095.0058350407053,
+    "batches": [
+      {
+        "phase": "confirmation",
+        "seconds": 151.89523420797195,
+        "status": "complete"
+      },
+      {
+        "phase": "development",
+        "seconds": 6345.686612874968,
+        "status": "complete"
+      },
+      {
+        "phase": "evaluate-confirmation",
+        "seconds": 35.90326754201669,
+        "status": "complete"
+      },
+      {
+        "phase": "evaluate-development",
+        "seconds": 126.69974758301396,
+        "status": "complete"
+      },
+      {
+        "phase": "independent-audit",
+        "seconds": 81.52211412496399,
+        "status": "complete"
+      },
+      {
+        "phase": "latest-model-export",
+        "seconds": 1460.830085542053,
+        "status": "complete"
+      },
+      {
+        "phase": "lock",
+        "seconds": 33.20246145792771,
+        "status": "complete"
+      },
+      {
+        "phase": "matched-current-replay",
+        "seconds": 230.76376012491528,
+        "status": "complete"
+      },
+      {
+        "phase": "matched-historical-decisions",
+        "seconds": 401.7735044580186,
+        "status": "complete"
+      },
+      {
+        "phase": "package-capture-parity",
+        "seconds": 203.9911538750166,
+        "status": "complete"
+      },
+      {
+        "phase": "package-current-independent",
+        "seconds": 6.500460166949779,
+        "status": "complete"
+      },
+      {
+        "phase": "package-export",
+        "seconds": 18.91508404200431,
+        "status": "complete"
+      },
+      {
+        "phase": "package-offline-check",
+        "seconds": 21.1235885421047,
+        "status": "complete"
+      },
+      {
+        "phase": "package-offline-fixture",
+        "seconds": 8.700936708017252,
+        "status": "complete"
+      },
+      {
+        "phase": "release-artifact-checks",
+        "seconds": 339.46859850001056,
+        "status": "complete"
+      },
+      {
+        "phase": "same-procedure-horizons",
+        "seconds": 381.3117515828926,
+        "status": "incomplete_failures"
+      },
+      {
+        "phase": "same-procedure-horizons-recovery1",
+        "seconds": 971.7360375419958,
+        "status": "complete"
+      },
+      {
+        "phase": "saved-current-replay",
+        "seconds": 16.061532750027254,
+        "status": "complete"
+      },
+      {
+        "phase": "score-seed-stability",
+        "seconds": 3.4735196250258014,
+        "status": "complete"
+      },
+      {
+        "phase": "screen",
+        "seconds": 1782.368784082937,
+        "status": "complete"
+      },
+      {
+        "phase": "seed-stability",
+        "seconds": 152.8969574160874,
+        "status": "complete"
+      },
+      {
+        "phase": "selected-fold-exports",
+        "seconds": 348.4996872500051,
+        "status": "complete"
+      }
+    ],
+    "maximum_total_seconds": 86400.0,
+    "prior_charged_seconds": 7087.167941170074,
+    "remaining_seconds": 65094.501343790296,
+    "total_charged_seconds": 21305.498656209704
+  },
+  "calibration": {
+    "current_full": {
+      "corrected_data_v1": {
+        "appearance_brier": 0.1212037888835785,
+        "bias_forecast_minus_actual": -0.22364763781270758,
+        "minutes_mae": 15.902350453841045,
+        "sixty_brier": 0.10911470429864889
+      },
+      "frozen_v1": {
+        "appearance_brier": 0.12171519338807836,
+        "bias_forecast_minus_actual": -0.22767030994022583,
+        "minutes_mae": 15.89834912552579,
+        "sixty_brier": 0.10919472303935089
+      },
+      "selected_final": {
+        "appearance_brier": 0.17939756254915892,
+        "bias_forecast_minus_actual": 0.022692374238934557,
+        "minutes_mae": 25.626432231783983,
+        "sixty_brier": 0.15325252398095987
+      },
+      "selected_final_availability_diagnostic": {
+        "appearance_brier": 0.14170961527020123,
+        "bias_forecast_minus_actual": -0.15398144378506542,
+        "minutes_mae": 20.75276942430012,
+        "sixty_brier": 0.13427416464315461
+      }
+    },
+    "outer_equal_season_brier": {
+      "appearance": 0.1388581369864091,
+      "sixty": 0.12577157334528516
+    }
+  },
+  "coverage": {
+    "2021-22": {
+      "arms": [
+        "portable",
+        "rolling20"
+      ],
+      "calibration_fixture_rows": 25447,
+      "horizon_gate_count": 0,
+      "matched_horizon_decision_blocks": 198,
+      "matched_one_week_decision_blocks": 38,
+      "matched_six_week_origins_per_arm": 19556,
+      "one_week_gate_count": 0
+    },
+    "2022-23": {
+      "arms": [
+        "portable",
+        "rolling20"
+      ],
+      "calibration_fixture_rows": 26505,
+      "horizon_gate_count": 15,
+      "matched_horizon_decision_blocks": 177,
+      "matched_one_week_decision_blocks": 37,
+      "matched_six_week_origins_per_arm": 20985,
+      "one_week_gate_count": 0
+    },
+    "2023-24": {
+      "arms": [
+        "portable",
+        "rolling20"
+      ],
+      "calibration_fixture_rows": 29725,
+      "horizon_gate_count": 5,
+      "matched_horizon_decision_blocks": 193,
+      "matched_one_week_decision_blocks": 38,
+      "matched_six_week_origins_per_arm": 24395,
+      "one_week_gate_count": 0
+    },
+    "2024-25": {
+      "arms": [
+        "portable",
+        "rolling20"
+      ],
+      "calibration_fixture_rows": 27283,
+      "horizon_gate_count": 0,
+      "matched_horizon_decision_blocks": 198,
+      "matched_one_week_decision_blocks": 38,
+      "matched_six_week_origins_per_arm": 23075,
+      "one_week_gate_count": 0
+    },
+    "2025-26": {
+      "arms": [
+        "blend_direct_football_050",
+        "rolling20",
+        "portable"
+      ],
+      "calibration_fixture_rows": 29747,
+      "horizon_gate_count": 24,
+      "matched_horizon_decision_blocks": 174,
+      "matched_one_week_decision_blocks": 38,
+      "matched_six_week_origins_per_arm": 25303,
+      "one_week_gate_count": 0
+    }
+  },
+  "current": {
+    "conditional_owned_squad_points": {
+      "corrected_data_v1": 422.0,
+      "frozen_v1": 422.0,
+      "selected_final": 392.0,
+      "selected_final_availability_diagnostic": 392.0
+    },
+    "origin_roster_counts": [
+      {
+        "fixtures": 10,
+        "gw": 1,
+        "max_club_fixture_count": 1,
+        "roster_rows": 600
+      },
+      {
+        "fixtures": 10,
+        "gw": 2,
+        "max_club_fixture_count": 1,
+        "roster_rows": 616
+      },
+      {
+        "fixtures": 10,
+        "gw": 3,
+        "max_club_fixture_count": 1,
+        "roster_rows": 652
+      },
+      {
+        "fixtures": 10,
+        "gw": 4,
+        "max_club_fixture_count": 1,
+        "roster_rows": 656
+      },
+      {
+        "fixtures": 10,
+        "gw": 5,
+        "max_club_fixture_count": 1,
+        "roster_rows": 659
+      },
+      {
+        "fixtures": 10,
+        "gw": 6,
+        "max_club_fixture_count": 1,
+        "roster_rows": 667
+      },
+      {
+        "fixtures": 10,
+        "gw": 7,
+        "max_club_fixture_count": 1,
+        "roster_rows": 667
+      }
+    ],
+    "paired_gameweek_loss_differences": [
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final",
+        "gw": 1,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.17926613683901804,
+        "mask": "full",
+        "mse_delta": -0.09534822411489972,
+        "n": 600
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final",
+        "gw": 1,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.1732208035056847,
+        "mask": "full",
+        "mse_delta": -0.11175267298923316,
+        "n": 600
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 1,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": -0.000518709095151928,
+        "mask": "full",
+        "mse_delta": -0.45428840848613133,
+        "n": 600
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 1,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": -0.006564042428485264,
+        "mask": "full",
+        "mse_delta": -0.4706928573604646,
+        "n": 600
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final",
+        "gw": 1,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": -0.06936337320044023,
+        "mask": "likely",
+        "mse_delta": -0.25513749014482556,
+        "n": 133
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final",
+        "gw": 1,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": -0.06851510252374854,
+        "mask": "likely",
+        "mse_delta": -0.2572611961688858,
+        "n": 133
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 1,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": -0.0736175104136871,
+        "mask": "likely",
+        "mse_delta": -0.25791228168040586,
+        "n": 133
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 1,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": -0.07276923973699538,
+        "mask": "likely",
+        "mse_delta": -0.2600359877044661,
+        "n": 133
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final",
+        "gw": 1,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": -0.12102194062715155,
+        "mask": "owned",
+        "mse_delta": 0.9712326819034237,
+        "n": 15
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final",
+        "gw": 1,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": -0.1203779406271516,
+        "mask": "owned",
+        "mse_delta": 0.9726583541434236,
+        "n": 15
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 1,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": -0.12102194062715155,
+        "mask": "owned",
+        "mse_delta": 0.9712326819034237,
+        "n": 15
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 1,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": -0.1203779406271516,
+        "mask": "owned",
+        "mse_delta": 0.9726583541434236,
+        "n": 15
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final",
+        "gw": 2,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.2203414568526642,
+        "mask": "full",
+        "mse_delta": 0.5042521347821916,
+        "n": 616
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final",
+        "gw": 2,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.21997428152798895,
+        "mask": "full",
+        "mse_delta": 0.5021278169633606,
+        "n": 616
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 2,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.08479138410199386,
+        "mask": "full",
+        "mse_delta": 0.2370612791302554,
+        "n": 616
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 2,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.08442420877731854,
+        "mask": "full",
+        "mse_delta": 0.23493696131142444,
+        "n": 616
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final",
+        "gw": 2,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.07921910999993528,
+        "mask": "likely",
+        "mse_delta": 0.7003417579004181,
+        "n": 151
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final",
+        "gw": 2,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.0796328186092068,
+        "mask": "likely",
+        "mse_delta": 0.6962147608586966,
+        "n": 151
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 2,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.07533915921028202,
+        "mask": "likely",
+        "mse_delta": 0.6844296607368697,
+        "n": 151
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 2,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.07575286781955355,
+        "mask": "likely",
+        "mse_delta": 0.6803026636951482,
+        "n": 151
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final",
+        "gw": 2,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.3708062423725435,
+        "mask": "owned",
+        "mse_delta": 3.4846864830519886,
+        "n": 15
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final",
+        "gw": 2,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.37243357570587693,
+        "mask": "owned",
+        "mse_delta": 3.4890973016586555,
+        "n": 15
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 2,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.3708062423725435,
+        "mask": "owned",
+        "mse_delta": 3.4846864830519886,
+        "n": 15
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 2,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.37243357570587693,
+        "mask": "owned",
+        "mse_delta": 3.4890973016586555,
+        "n": 15
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final",
+        "gw": 3,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.2459894981878078,
+        "mask": "full",
+        "mse_delta": 0.6079764523822291,
+        "n": 652
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final",
+        "gw": 3,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.242646568739955,
+        "mask": "full",
+        "mse_delta": 0.6041855222514008,
+        "n": 652
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 3,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.06893439343492704,
+        "mask": "full",
+        "mse_delta": 0.2912125132806248,
+        "n": 652
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 3,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.06559146398707427,
+        "mask": "full",
+        "mse_delta": 0.28742158314979654,
+        "n": 652
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final",
+        "gw": 3,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.09588928409955218,
+        "mask": "likely",
+        "mse_delta": 1.266040058769132,
+        "n": 171
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final",
+        "gw": 3,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.09646659404107268,
+        "mask": "likely",
+        "mse_delta": 1.2648605555784889,
+        "n": 171
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 3,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.09588928409955218,
+        "mask": "likely",
+        "mse_delta": 1.266040058769132,
+        "n": 171
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 3,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.09646659404107268,
+        "mask": "likely",
+        "mse_delta": 1.2648605555784889,
+        "n": 171
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final",
+        "gw": 3,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.30403660291389306,
+        "mask": "owned",
+        "mse_delta": 1.488481626238635,
+        "n": 15
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final",
+        "gw": 3,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.3054352695805598,
+        "mask": "owned",
+        "mse_delta": 1.4945877771719682,
+        "n": 15
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 3,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.30403660291389306,
+        "mask": "owned",
+        "mse_delta": 1.488481626238635,
+        "n": 15
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 3,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.3054352695805598,
+        "mask": "owned",
+        "mse_delta": 1.4945877771719682,
+        "n": 15
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final",
+        "gw": 4,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.2274680037708877,
+        "mask": "full",
+        "mse_delta": 0.5373227716045571,
+        "n": 656
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final",
+        "gw": 4,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.2262455952343023,
+        "mask": "full",
+        "mse_delta": 0.5272407619167522,
+        "n": 656
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 4,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.05243742249374836,
+        "mask": "full",
+        "mse_delta": 0.24117047147814774,
+        "n": 656
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 4,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.051215013957163005,
+        "mask": "full",
+        "mse_delta": 0.23108846179034284,
+        "n": 656
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final",
+        "gw": 4,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.01624981645756635,
+        "mask": "likely",
+        "mse_delta": 0.5780703223853841,
+        "n": 190
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final",
+        "gw": 4,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.01668655329967161,
+        "mask": "likely",
+        "mse_delta": 0.5768788358917001,
+        "n": 190
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 4,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.0004166408719307051,
+        "mask": "likely",
+        "mse_delta": 0.5006792389869623,
+        "n": 190
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 4,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.0008533777140359733,
+        "mask": "likely",
+        "mse_delta": 0.4994877524932782,
+        "n": 190
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final",
+        "gw": 4,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.4776394892599291,
+        "mask": "owned",
+        "mse_delta": 3.77751088767249,
+        "n": 15
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final",
+        "gw": 4,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.47728948925992914,
+        "mask": "owned",
+        "mse_delta": 3.7755932423058245,
+        "n": 15
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 4,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.4776394892599291,
+        "mask": "owned",
+        "mse_delta": 3.77751088767249,
+        "n": 15
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 4,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.47728948925992914,
+        "mask": "owned",
+        "mse_delta": 3.7755932423058245,
+        "n": 15
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final",
+        "gw": 5,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.2338983624365046,
+        "mask": "full",
+        "mse_delta": 0.45258104003161953,
+        "n": 659
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final",
+        "gw": 5,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.2351662380055486,
+        "mask": "full",
+        "mse_delta": 0.46545850513951037,
+        "n": 659
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 5,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.03577725422897402,
+        "mask": "full",
+        "mse_delta": 0.0952193657095044,
+        "n": 659
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 5,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.03704512979801804,
+        "mask": "full",
+        "mse_delta": 0.10809683081739528,
+        "n": 659
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final",
+        "gw": 5,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": -0.006803082161170934,
+        "mask": "likely",
+        "mse_delta": 0.2827034913429096,
+        "n": 189
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final",
+        "gw": 5,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": -0.006532394330483099,
+        "mask": "likely",
+        "mse_delta": 0.2807020412825923,
+        "n": 189
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 5,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": -0.014978771308002145,
+        "mask": "likely",
+        "mse_delta": 0.2290934669545044,
+        "n": 189
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 5,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": -0.01470808347731431,
+        "mask": "likely",
+        "mse_delta": 0.22709201689418704,
+        "n": 189
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final",
+        "gw": 5,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": -0.050783974408148205,
+        "mask": "owned",
+        "mse_delta": 0.38878365695130007,
+        "n": 15
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final",
+        "gw": 5,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": -0.050335974408148146,
+        "mask": "owned",
+        "mse_delta": 0.39024207867130134,
+        "n": 15
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 5,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": -0.050783974408148205,
+        "mask": "owned",
+        "mse_delta": 0.38878365695130007,
+        "n": 15
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 5,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": -0.050335974408148146,
+        "mask": "owned",
+        "mse_delta": 0.39024207867130134,
+        "n": 15
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final",
+        "gw": 6,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.23185546817007885,
+        "mask": "full",
+        "mse_delta": 0.42139952447747653,
+        "n": 667
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final",
+        "gw": 6,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.2325332192945166,
+        "mask": "full",
+        "mse_delta": 0.4231825608034133,
+        "n": 667
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 6,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.045544627660959916,
+        "mask": "full",
+        "mse_delta": 0.0896019034784472,
+        "n": 667
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 6,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.04622237878539768,
+        "mask": "full",
+        "mse_delta": 0.09138493980438396,
+        "n": 667
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final",
+        "gw": 6,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.06299495746011687,
+        "mask": "likely",
+        "mse_delta": 0.34056343845513526,
+        "n": 184
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final",
+        "gw": 6,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.06325332702533423,
+        "mask": "likely",
+        "mse_delta": 0.3398743496790478,
+        "n": 184
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 6,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.05337907304624045,
+        "mask": "likely",
+        "mse_delta": 0.3239145968039184,
+        "n": 184
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 6,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.05363744261145781,
+        "mask": "likely",
+        "mse_delta": 0.3232255080278309,
+        "n": 184
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final",
+        "gw": 6,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": -0.14039846318150626,
+        "mask": "owned",
+        "mse_delta": -1.0219410089735288,
+        "n": 15
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final",
+        "gw": 6,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": -0.13951779651483961,
+        "mask": "owned",
+        "mse_delta": -1.0174824993135296,
+        "n": 15
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 6,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": -0.10807597075098592,
+        "mask": "owned",
+        "mse_delta": -0.7437691690839948,
+        "n": 15
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 6,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": -0.10719530408431928,
+        "mask": "owned",
+        "mse_delta": -0.7393106594239952,
+        "n": 15
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final",
+        "gw": 7,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.1715234577907828,
+        "mask": "full",
+        "mse_delta": 0.4164139944552795,
+        "n": 667
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final",
+        "gw": 7,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.17131771566184725,
+        "mask": "full",
+        "mse_delta": 0.4162097969189976,
+        "n": 667
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 7,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.03779319856428298,
+        "mask": "full",
+        "mse_delta": 0.21519083512776255,
+        "n": 667
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 7,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.03758745643534744,
+        "mask": "full",
+        "mse_delta": 0.2149866375914806,
+        "n": 667
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final",
+        "gw": 7,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.11508567236038628,
+        "mask": "likely",
+        "mse_delta": 0.9560036638636067,
+        "n": 187
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final",
+        "gw": 7,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.11431176861707074,
+        "mask": "likely",
+        "mse_delta": 0.95482203947858,
+        "n": 187
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 7,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.09511401114806041,
+        "mask": "likely",
+        "mse_delta": 0.8506315885108631,
+        "n": 187
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 7,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.09434010740474487,
+        "mask": "likely",
+        "mse_delta": 0.8494499641258361,
+        "n": 187
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final",
+        "gw": 7,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.08142447336009902,
+        "mask": "owned",
+        "mse_delta": 1.3131594963351034,
+        "n": 15
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final",
+        "gw": 7,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.08229314002676562,
+        "mask": "owned",
+        "mse_delta": 1.3200991602751027,
+        "n": 15
+      },
+      {
+        "baseline": "frozen_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 7,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.08142447336009902,
+        "mask": "owned",
+        "mse_delta": 1.3131594963351034,
+        "n": 15
+      },
+      {
+        "baseline": "corrected_data_v1",
+        "candidate": "selected_final_availability_diagnostic",
+        "gw": 7,
+        "interpretation": "Negative favors candidate; one paired gameweek block, not independent player trials.",
+        "mae_delta": 0.08229314002676562,
+        "mask": "owned",
+        "mse_delta": 1.3200991602751027,
+        "n": 15
+      }
+    ],
+    "period": "2026-27 GW1-7",
+    "previously_exposed": true,
+    "relative_changes": {
+      "selected_final": {
+        "full": {
+          "mae_percent_change_vs_frozen_v1": 19.056833802156838,
+          "rmse_percent_change_vs_frozen_v1": 4.320315369158778
+        },
+        "likely": {
+          "mae_percent_change_vs_frozen_v1": 1.9220873542990846,
+          "rmse_percent_change_vs_frozen_v1": 2.7929652035803
+        },
+        "owned": {
+          "mae_percent_change_vs_frozen_v1": 5.540219105799182,
+          "rmse_percent_change_vs_frozen_v1": 8.08338114391336
+        }
+      },
+      "selected_final_availability_diagnostic": {
+        "full": {
+          "mae_percent_change_vs_frozen_v1": 4.1083338744361875,
+          "rmse_percent_change_vs_frozen_v1": 1.150766632140865
+        },
+        "likely": {
+          "mae_percent_change_vs_frozen_v1": 1.523455948110275,
+          "rmse_percent_change_vs_frozen_v1": 2.5925020092743223
+        },
+        "owned": {
+          "mae_percent_change_vs_frozen_v1": 5.734504901672488,
+          "rmse_percent_change_vs_frozen_v1": 8.291266544586652
+        }
+      }
+    },
+    "scores": {
+      "corrected_data_v1": {
+        "full": {
+          "appearance_brier": 0.1212037888835785,
+          "bias_forecast_minus_actual": -0.22364763781270758,
+          "mae": 1.135192185078592,
+          "mean_actual": 1.420190391853,
+          "mean_forecast": 1.1965427540402922,
+          "minutes_mae": 15.902350453841045,
+          "mse": 4.665611771471109,
+          "n": 4517,
+          "rmse": 2.160002724875853,
+          "sixty_brier": 0.10911470429864889
+        },
+        "likely": {
+          "appearance_brier": 0.08162971542662074,
+          "bias_forecast_minus_actual": -0.30325384232365143,
+          "mae": 2.333287286307054,
+          "mean_actual": 3.315352697095436,
+          "mean_forecast": 3.012098854771784,
+          "minutes_mae": 23.26077012448133,
+          "mse": 10.155663575408632,
+          "n": 1205,
+          "rmse": 3.1867951888078143,
+          "sixty_brier": 0.14832234189099006
+        },
+        "owned": {
+          "appearance_brier": 0.06719809354058096,
+          "bias_forecast_minus_actual": -0.2351635238095238,
+          "mae": 2.3758646666666667,
+          "mean_actual": 3.8,
+          "mean_forecast": 3.5648364761904765,
+          "minutes_mae": 15.885523809523809,
+          "mse": 8.831287820402858,
+          "n": 105,
+          "rmse": 2.9717482767561014,
+          "sixty_brier": 0.07517478312200952
+        }
+      },
+      "frozen_v1": {
+        "full": {
+          "appearance_brier": 0.12171519338807836,
+          "bias_forecast_minus_actual": -0.22767030994022583,
+          "mae": 1.1339337148549924,
+          "mean_actual": 1.420190391853,
+          "mean_forecast": 1.192520081912774,
+          "minutes_mae": 15.89834912552579,
+          "mse": 4.663243518444166,
+          "n": 4517,
+          "rmse": 2.1594544492635555,
+          "sixty_brier": 0.10919472303935089
+        },
+        "likely": {
+          "appearance_brier": 0.08163952366698589,
+          "bias_forecast_minus_actual": -0.301073203319502,
+          "mae": 2.3335453526970955,
+          "mean_actual": 3.315352697095436,
+          "mean_forecast": 3.0142794937759336,
+          "minutes_mae": 23.268912033195022,
+          "mse": 10.153954250022656,
+          "n": 1205,
+          "rmse": 3.1865269887485113,
+          "sixty_brier": 0.14846652410406805
+        },
+        "owned": {
+          "appearance_brier": 0.06719809354058096,
+          "bias_forecast_minus_actual": -0.23316485714285717,
+          "mae": 2.3766528571428576,
+          "mean_actual": 3.8,
+          "mean_forecast": 3.566835142857143,
+          "minutes_mae": 15.885523809523809,
+          "mse": 8.834556619221907,
+          "n": 105,
+          "rmse": 2.9722982049622657,
+          "sixty_brier": 0.07517478312200952
+        }
+      },
+      "selected_final": {
+        "full": {
+          "appearance_brier": 0.17939756254915892,
+          "bias_forecast_minus_actual": 0.022692374238934557,
+          "mae": 1.3500255783215314,
+          "mean_actual": 1.420190391853,
+          "mean_forecast": 1.4428827660919343,
+          "minutes_mae": 25.626432231783983,
+          "mse": 5.074881173567407,
+          "n": 4517,
+          "rmse": 2.252749691725072,
+          "sixty_brier": 0.15325252398095987
+        },
+        "likely": {
+          "appearance_brier": 0.13896663684213756,
+          "bias_forecast_minus_actual": -0.4482404022214614,
+          "mae": 2.3783981328281203,
+          "mean_actual": 3.315352697095436,
+          "mean_forecast": 2.8671122948739742,
+          "minutes_mae": 32.26601526569639,
+          "mse": 10.729067817025557,
+          "n": 1205,
+          "rmse": 3.275525578746952,
+          "sixty_brier": 0.21940185174424223
+        },
+        "owned": {
+          "appearance_brier": 0.11368052160371851,
+          "bias_forecast_minus_actual": -0.40436611194127264,
+          "mae": 2.5083246328128084,
+          "mean_actual": 3.8,
+          "mean_forecast": 3.3956338880587276,
+          "minutes_mae": 28.339677951990105,
+          "mse": 10.320544308247534,
+          "n": 105,
+          "rmse": 3.2125603976030606,
+          "sixty_brier": 0.1424390475648134
+        }
+      },
+      "selected_final_availability_diagnostic": {
+        "full": {
+          "appearance_brier": 0.14170961527020123,
+          "bias_forecast_minus_actual": -0.15398144378506542,
+          "mae": 1.1805194977760327,
+          "mean_actual": 1.420190391853,
+          "mean_forecast": 1.2662089480679344,
+          "minutes_mae": 20.75276942430012,
+          "mse": 4.771187155693247,
+          "n": 4517,
+          "rmse": 2.1843047305019616,
+          "sixty_brier": 0.13427416464315461
+        },
+        "likely": {
+          "appearance_brier": 0.13786302566488237,
+          "bias_forecast_minus_actual": -0.4630760722111387,
+          "mae": 2.3690958881746105,
+          "mean_actual": 3.315352697095436,
+          "mean_forecast": 2.8522766248842966,
+          "minutes_mae": 32.21868968845243,
+          "mse": 10.687261726273833,
+          "n": 1205,
+          "rmse": 3.2691377649578848,
+          "sixty_brier": 0.21809585478721463
+        },
+        "owned": {
+          "appearance_brier": 0.11503861384395857,
+          "bias_forecast_minus_actual": -0.40898361085991847,
+          "mae": 2.512942131731454,
+          "mean_actual": 3.8,
+          "mean_forecast": 3.3910163891400815,
+          "minutes_mae": 28.460761919607428,
+          "mse": 10.360283142517467,
+          "n": 105,
+          "rmse": 3.2187393716356514,
+          "sixty_brier": 0.14379892433053204
+        }
+      }
+    },
+    "weekly_lineup_points": [
+      {
+        "gw": 1,
+        "points": 52.0,
+        "variant": "frozen_v1"
+      },
+      {
+        "gw": 1,
+        "points": 52.0,
+        "variant": "corrected_data_v1"
+      },
+      {
+        "gw": 1,
+        "points": 46.0,
+        "variant": "selected_final"
+      },
+      {
+        "gw": 1,
+        "points": 46.0,
+        "variant": "selected_final_availability_diagnostic"
+      },
+      {
+        "gw": 2,
+        "points": 76.0,
+        "variant": "frozen_v1"
+      },
+      {
+        "gw": 2,
+        "points": 76.0,
+        "variant": "corrected_data_v1"
+      },
+      {
+        "gw": 2,
+        "points": 67.0,
+        "variant": "selected_final"
+      },
+      {
+        "gw": 2,
+        "points": 67.0,
+        "variant": "selected_final_availability_diagnostic"
+      },
+      {
+        "gw": 3,
+        "points": 44.0,
+        "variant": "frozen_v1"
+      },
+      {
+        "gw": 3,
+        "points": 44.0,
+        "variant": "corrected_data_v1"
+      },
+      {
+        "gw": 3,
+        "points": 37.0,
+        "variant": "selected_final"
+      },
+      {
+        "gw": 3,
+        "points": 37.0,
+        "variant": "selected_final_availability_diagnostic"
+      },
+      {
+        "gw": 4,
+        "points": 86.0,
+        "variant": "frozen_v1"
+      },
+      {
+        "gw": 4,
+        "points": 86.0,
+        "variant": "corrected_data_v1"
+      },
+      {
+        "gw": 4,
+        "points": 81.0,
+        "variant": "selected_final"
+      },
+      {
+        "gw": 4,
+        "points": 81.0,
+        "variant": "selected_final_availability_diagnostic"
+      },
+      {
+        "gw": 5,
+        "points": 59.0,
+        "variant": "frozen_v1"
+      },
+      {
+        "gw": 5,
+        "points": 59.0,
+        "variant": "corrected_data_v1"
+      },
+      {
+        "gw": 5,
+        "points": 57.0,
+        "variant": "selected_final"
+      },
+      {
+        "gw": 5,
+        "points": 57.0,
+        "variant": "selected_final_availability_diagnostic"
+      },
+      {
+        "gw": 6,
+        "points": 38.0,
+        "variant": "frozen_v1"
+      },
+      {
+        "gw": 6,
+        "points": 38.0,
+        "variant": "corrected_data_v1"
+      },
+      {
+        "gw": 6,
+        "points": 38.0,
+        "variant": "selected_final"
+      },
+      {
+        "gw": 6,
+        "points": 38.0,
+        "variant": "selected_final_availability_diagnostic"
+      },
+      {
+        "gw": 7,
+        "points": 67.0,
+        "variant": "frozen_v1"
+      },
+      {
+        "gw": 7,
+        "points": 67.0,
+        "variant": "corrected_data_v1"
+      },
+      {
+        "gw": 7,
+        "points": 66.0,
+        "variant": "selected_final"
+      },
+      {
+        "gw": 7,
+        "points": 66.0,
+        "variant": "selected_final_availability_diagnostic"
+      }
+    ]
+  },
+  "definitions": {
+    "balanced_relative_mse": "Within each season, half full-pool MSE/rolling20 MSE plus half likely-pool MSE/rolling20 MSE; average seasons equally.",
+    "current_likely_pool": "The fixed original-advisor expected-minutes >=45 mask.",
+    "current_total": "Locked supported-score blend plus 2 times lag-only defensive-hit prior; historical assist/bonus definitions remain approximate.",
+    "historical_likely_pool": "Prior-six mean minutes >=45 and positive prior history at the shared origin.",
+    "portable": "Earlier trained learned-subtotal procedure, refitted on each earlier fold; not the original GitHub advisor.",
+    "six_week_decision_interval": "Candidate minus reference supported points per complete frozen six-GW squad plan, equal season weight.",
+    "supported_score": "Known scoring subtotal + 3 times historical FPL assists + historical bonus; defensive awards excluded."
+  },
+  "engineering": {
+    "complete_score_metrics_replayed": 1309,
+    "component_records_independently_replayed": 1031,
+    "current_lineups": 28,
+    "current_maximum_metric_absolute_difference": 3.552713678800501e-15,
+    "current_metric_groups": 12,
+    "current_saved_process_replay_complete": true,
+    "hosted_linux_status_at_pipeline_checkpoint": "pending",
+    "offline_actual_model_rows": 32,
+    "offline_maximum_absolute_difference": 0.0,
+    "package_fixture_rows": 4014,
+    "package_fresh_process_exact": true,
+    "package_gameweeks": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "package_independent_comparisons": 60,
+    "package_players": 669,
+    "python_level_workspace_guard_passed": true,
+    "release_validation_complete_at_pipeline_checkpoint": false
+  },
+  "final_selection": {
+    "arm": "blend_direct_football_050",
+    "components": {
+      "assists": "q-assists-xgboost-context",
+      "bonus": "q-bonus-hist-small-context",
+      "clean_sheet_points": "q-clean_sheet_points-lightgbm-small-context",
+      "conceded_blocks": "q-conceded_blocks-hist-small-context",
+      "goals": "q-goals-hist-small-context",
+      "historical_points": "q-historical_points-catboost-context",
+      "known_subtotal": "q-known_subtotal-catboost-context",
+      "minute_state": "q-minute_state-hist-small-base",
+      "minutes": "q-minutes-hist-large-context",
+      "negative_cost": "q-negative_cost-lightgbm-small-context",
+      "penalties_saved": "q-penalties_saved-lightgbm-small-context",
+      "save_blocks": "q-save_blocks-lightgbm-small-context",
+      "supported_score": "q-supported_score-catboost-context"
+    },
+    "frozen_at": "2026-10-31T19:33:35.112190+00:00",
+    "no_postconfirmation_reselection": true,
+    "primary_seed": 20261028,
+    "runtime_models": 12,
+    "secondary_seed": 20261029
+  },
+  "historical": [
+    {
+      "arms": {
+        "blend_direct_football_050": {
+          "balanced_relative_mse": 0.9999764531847092,
+          "full": {
+            "bias": 0.023925818523534672,
+            "mae": 1.36644828462776,
+            "mse": 5.033561292846396,
+            "mse_delta": -0.0002951241923607739,
+            "n": 22313,
+            "reference_mse": 5.0338564170387565,
+            "relative_mse": 0.9999413721473338,
+            "rmse": 2.243559959717234
+          },
+          "likely": {
+            "bias": -0.33518728041831397,
+            "mae": 2.0927801393370786,
+            "mse": 9.154933306838071,
+            "mse_delta": 0.0001055938159879588,
+            "n": 8395,
+            "reference_mse": 9.154827713022083,
+            "relative_mse": 1.0000115342220846,
+            "rmse": 3.0257120330325673
+          }
+        },
+        "portable": {
+          "balanced_relative_mse": 0.9462575247228711,
+          "full": {
+            "bias": 0.01205112333211118,
+            "mae": 1.2547301125970083,
+            "mse": 4.728863261421192,
+            "mse_delta": -0.3049931556175647,
+            "n": 22313,
+            "reference_mse": 5.0338564170387565,
+            "relative_mse": 0.9394116299016368,
+            "rmse": 2.174594964912131
+          },
+          "likely": {
+            "bias": 0.012833189934489486,
+            "mae": 2.150464139695947,
+            "mse": 8.725497598618487,
+            "mse_delta": -0.42933011440359614,
+            "n": 8395,
+            "reference_mse": 9.154827713022083,
+            "relative_mse": 0.9531034195441052,
+            "rmse": 2.9538953262799423
+          }
+        },
+        "rolling20": {
+          "balanced_relative_mse": 1.0,
+          "full": {
+            "bias": 0.024089772946389327,
+            "mae": 1.3666120999227296,
+            "mse": 5.0338564170387565,
+            "mse_delta": 0.0,
+            "n": 22313,
+            "reference_mse": 5.0338564170387565,
+            "relative_mse": 1.0,
+            "rmse": 2.2436257301606157
+          },
+          "likely": {
+            "bias": -0.3349843880616157,
+            "mae": 2.0929977855934787,
+            "mse": 9.154827713022083,
+            "mse_delta": 0.0,
+            "n": 8395,
+            "reference_mse": 9.154827713022083,
+            "relative_mse": 1.0,
+            "rmse": 3.0256945835662403
+          }
+        }
+      },
+      "season": "2019-20",
+      "selected_arm": "rolling20",
+      "selection_uses_earlier_seasons_only": true
+    },
+    {
+      "arms": {
+        "blend_direct_football_050": {
+          "balanced_relative_mse": 0.9446995323782761,
+          "full": {
+            "bias": -0.023923201929999218,
+            "mae": 1.2314991264368498,
+            "mse": 4.965773004912068,
+            "mse_delta": -0.3451465802971452,
+            "n": 22889,
+            "reference_mse": 5.310919585209213,
+            "relative_mse": 0.9350118986439994,
+            "rmse": 2.2284014460846295
+          },
+          "likely": {
+            "bias": -0.09632766405719811,
+            "mae": 2.2392121050980993,
+            "mse": 9.803181730755826,
+            "mse_delta": -0.46852149288089784,
+            "n": 8064,
+            "reference_mse": 10.271703223636724,
+            "relative_mse": 0.9543871661125528,
+            "rmse": 3.131003310562898
+          }
+        },
+        "portable": {
+          "balanced_relative_mse": 0.9544368709978621,
+          "full": {
+            "bias": 0.004210074579883288,
+            "mae": 1.249818376057431,
+            "mse": 5.01321127554731,
+            "mse_delta": -0.2977083096619024,
+            "n": 22889,
+            "reference_mse": 5.310919585209213,
+            "relative_mse": 0.9439441127124174,
+            "rmse": 2.2390201597009596
+          },
+          "likely": {
+            "bias": -0.02422369382755576,
+            "mae": 2.283511612076647,
+            "mse": 9.91147078369193,
+            "mse_delta": -0.36023243994479337,
+            "n": 8064,
+            "reference_mse": 10.271703223636724,
+            "relative_mse": 0.9649296292833067,
+            "rmse": 3.1482488439912006
+          }
+        },
+        "rolling20": {
+          "balanced_relative_mse": 1.0,
+          "full": {
+            "bias": 0.0739657916808346,
+            "mae": 1.3891286834412786,
+            "mse": 5.310919585209213,
+            "mse_delta": 0.0,
+            "n": 22889,
+            "reference_mse": 5.310919585209213,
+            "relative_mse": 1.0,
+            "rmse": 2.3045432487174575
+          },
+          "likely": {
+            "bias": -0.3284703283788283,
+            "mae": 2.2287714547969366,
+            "mse": 10.271703223636724,
+            "mse_delta": 0.0,
+            "n": 8064,
+            "reference_mse": 10.271703223636724,
+            "relative_mse": 1.0,
+            "rmse": 3.20494980048623
+          }
+        }
+      },
+      "season": "2020-21",
+      "selected_arm": "portable",
+      "selection_uses_earlier_seasons_only": true
+    },
+    {
+      "arms": {
+        "blend_direct_football_050": {
+          "balanced_relative_mse": 0.9456480269597096,
+          "full": {
+            "bias": -0.0016634024547952926,
+            "mae": 1.2348907323021951,
+            "mse": 5.054710909489556,
+            "mse_delta": -0.33840254395528113,
+            "n": 23230,
+            "reference_mse": 5.393113453444837,
+            "relative_mse": 0.9372528416328554,
+            "rmse": 2.248268424697006
+          },
+          "likely": {
+            "bias": -0.03885614038512639,
+            "mae": 2.286070403533325,
+            "mse": 10.027138466001887,
+            "mse_delta": -0.4830127901133956,
+            "n": 7875,
+            "reference_mse": 10.510151256115282,
+            "relative_mse": 0.9540432122865637,
+            "rmse": 3.1665657210931037
+          }
+        },
+        "portable": {
+          "balanced_relative_mse": 0.9633328129914374,
+          "full": {
+            "bias": 0.006290003680338469,
+            "mae": 1.249186947521716,
+            "mse": 5.138036356168257,
+            "mse_delta": -0.2550770972765797,
+            "n": 23230,
+            "reference_mse": 5.393113453444837,
+            "relative_mse": 0.9527031835175561,
+            "rmse": 2.2667237052998446
+          },
+          "likely": {
+            "bias": -0.019232233525084224,
+            "mae": 2.3230329035447554,
+            "mse": 10.236492588085978,
+            "mse_delta": -0.27365866802930405,
+            "n": 7875,
+            "reference_mse": 10.510151256115282,
+            "relative_mse": 0.9739624424653187,
+            "rmse": 3.199451919952225
+          }
+        },
+        "rolling20": {
+          "balanced_relative_mse": 1.0,
+          "full": {
+            "bias": 0.07392824788492428,
+            "mae": 1.3904188291265558,
+            "mse": 5.393113453444837,
+            "mse_delta": 0.0,
+            "n": 23230,
+            "reference_mse": 5.393113453444837,
+            "relative_mse": 1.0,
+            "rmse": 2.3223077861138126
+          },
+          "likely": {
+            "bias": -0.3635768708802305,
+            "mae": 2.2524056190950166,
+            "mse": 10.510151256115282,
+            "mse_delta": 0.0,
+            "n": 7875,
+            "reference_mse": 10.510151256115282,
+            "relative_mse": 1.0,
+            "rmse": 3.2419363436247917
+          }
+        }
+      },
+      "season": "2021-22",
+      "selected_arm": "portable",
+      "selection_uses_earlier_seasons_only": true
+    },
+    {
+      "arms": {
+        "blend_direct_football_050": {
+          "balanced_relative_mse": 0.9293054450591882,
+          "full": {
+            "bias": 0.010293569313396863,
+            "mae": 1.1237252854450948,
+            "mse": 4.2646667419782425,
+            "mse_delta": -0.38244436557035133,
+            "n": 24957,
+            "reference_mse": 4.647111107548594,
+            "relative_mse": 0.9177027713090132,
+            "rmse": 2.065106956546862
+          },
+          "likely": {
+            "bias": -0.06555980883951965,
+            "mae": 2.203385588279772,
+            "mse": 9.29218593118185,
+            "mse_delta": -0.5835774355327423,
+            "n": 7942,
+            "reference_mse": 9.875763366714592,
+            "relative_mse": 0.9409081188093632,
+            "rmse": 3.0483087001125475
+          }
+        },
+        "portable": {
+          "balanced_relative_mse": 0.9392612249309644,
+          "full": {
+            "bias": 0.016789876274961365,
+            "mae": 1.133293341009291,
+            "mse": 4.3079653066949275,
+            "mse_delta": -0.3391458008536663,
+            "n": 24957,
+            "reference_mse": 4.647111107548594,
+            "relative_mse": 0.9270200791406148,
+            "rmse": 2.075563852714468
+          },
+          "likely": {
+            "bias": -0.05301550643584592,
+            "mae": 2.225907627414537,
+            "mse": 9.39681225611164,
+            "mse_delta": -0.4789511106029529,
+            "n": 7942,
+            "reference_mse": 9.875763366714592,
+            "relative_mse": 0.9515023707213139,
+            "rmse": 3.065422035562418
+          }
+        },
+        "rolling20": {
+          "balanced_relative_mse": 1.0,
+          "full": {
+            "bias": 0.09215015514014545,
+            "mae": 1.2827273397148613,
+            "mse": 4.647111107548594,
+            "mse_delta": 0.0,
+            "n": 24957,
+            "reference_mse": 4.647111107548594,
+            "relative_mse": 1.0,
+            "rmse": 2.1557159153164394
+          },
+          "likely": {
+            "bias": -0.3650246693384989,
+            "mae": 2.181740573266439,
+            "mse": 9.875763366714592,
+            "mse_delta": 0.0,
+            "n": 7942,
+            "reference_mse": 9.875763366714592,
+            "relative_mse": 1.0,
+            "rmse": 3.142572730536971
+          }
+        }
+      },
+      "season": "2022-23",
+      "selected_arm": "portable",
+      "selection_uses_earlier_seasons_only": true
+    },
+    {
+      "arms": {
+        "blend_direct_football_050": {
+          "balanced_relative_mse": 0.9373125515051537,
+          "full": {
+            "bias": 0.0320233027887766,
+            "mae": 1.015302700928906,
+            "mse": 3.9387466222190244,
+            "mse_delta": -0.316245911804216,
+            "n": 28742,
+            "reference_mse": 4.25499253402324,
+            "relative_mse": 0.9256765060630565,
+            "rmse": 1.9846275777130138
+          },
+          "likely": {
+            "bias": 0.01822971500547082,
+            "mae": 2.1940997294673497,
+            "mse": 9.508309410511648,
+            "mse_delta": -0.511526691359089,
+            "n": 8088,
+            "reference_mse": 10.019836101870737,
+            "relative_mse": 0.948948596947251,
+            "rmse": 3.083554671237669
+          }
+        },
+        "portable": {
+          "balanced_relative_mse": 0.9515967198471427,
+          "full": {
+            "bias": 0.03132287419095625,
+            "mae": 1.0265207142498138,
+            "mse": 3.9919961027107758,
+            "mse_delta": -0.26299643131246464,
+            "n": 28742,
+            "reference_mse": 4.25499253402324,
+            "relative_mse": 0.9381910945296553,
+            "rmse": 1.997998023700418
+          },
+          "likely": {
+            "bias": 0.012585684797260554,
+            "mae": 2.219471173871388,
+            "mse": 9.669165336470487,
+            "mse_delta": -0.3506707654002508,
+            "n": 8088,
+            "reference_mse": 10.019836101870737,
+            "relative_mse": 0.96500234516463,
+            "rmse": 3.1095281533490713
+          }
+        },
+        "rolling20": {
+          "balanced_relative_mse": 1.0,
+          "full": {
+            "bias": 0.1091323501019706,
+            "mae": 1.1748975119966365,
+            "mse": 4.25499253402324,
+            "mse_delta": 0.0,
+            "n": 28742,
+            "reference_mse": 4.25499253402324,
+            "relative_mse": 1.0,
+            "rmse": 2.0627633247717103
+          },
+          "likely": {
+            "bias": -0.3782605591351043,
+            "mae": 2.130010058204104,
+            "mse": 10.019836101870737,
+            "mse_delta": 0.0,
+            "n": 8088,
+            "reference_mse": 10.019836101870737,
+            "relative_mse": 1.0,
+            "rmse": 3.165412469469143
+          }
+        }
+      },
+      "season": "2023-24",
+      "selected_arm": "portable",
+      "selection_uses_earlier_seasons_only": true
+    },
+    {
+      "arms": {
+        "blend_direct_football_050": {
+          "balanced_relative_mse": 0.9408627150867052,
+          "full": {
+            "bias": 0.019593762225510562,
+            "mae": 1.0427248307622554,
+            "mse": 3.852963027624973,
+            "mse_delta": -0.2908865622855674,
+            "n": 26919,
+            "reference_mse": 4.14384958991054,
+            "relative_mse": 0.9298028183759809,
+            "rmse": 1.962896591169533
+          },
+          "likely": {
+            "bias": -0.003025759577068563,
+            "mae": 2.1244586708341116,
+            "mse": 8.764014324290786,
+            "mse_delta": -0.44263148459749146,
+            "n": 8290,
+            "reference_mse": 9.206645808888277,
+            "relative_mse": 0.9519226117974294,
+            "rmse": 2.9604077969581803
+          }
+        },
+        "portable": {
+          "balanced_relative_mse": 0.9526775048408354,
+          "full": {
+            "bias": 0.022631148342448726,
+            "mae": 1.0536952199821925,
+            "mse": 3.8981079956272664,
+            "mse_delta": -0.2457415942832739,
+            "n": 26919,
+            "reference_mse": 4.14384958991054,
+            "relative_mse": 0.9406972697846934,
+            "rmse": 1.9743626808738222
+          },
+          "likely": {
+            "bias": 0.00021752708532455967,
+            "mae": 2.1462291110465515,
+            "mse": 8.881262138034144,
+            "mse_delta": -0.32538367085413356,
+            "n": 8290,
+            "reference_mse": 9.206645808888277,
+            "relative_mse": 0.9646577398969772,
+            "rmse": 2.9801446505218743
+          }
+        },
+        "rolling20": {
+          "balanced_relative_mse": 1.0,
+          "full": {
+            "bias": 0.07363430657014625,
+            "mae": 1.1789202055347567,
+            "mse": 4.14384958991054,
+            "mse_delta": 0.0,
+            "n": 26919,
+            "reference_mse": 4.14384958991054,
+            "relative_mse": 1.0,
+            "rmse": 2.0356447602444145
+          },
+          "likely": {
+            "bias": -0.3407394293927108,
+            "mae": 2.072734432298464,
+            "mse": 9.206645808888277,
+            "mse_delta": 0.0,
+            "n": 8290,
+            "reference_mse": 9.206645808888277,
+            "relative_mse": 1.0,
+            "rmse": 3.034245509000265
+          }
+        }
+      },
+      "season": "2024-25",
+      "selected_arm": "portable",
+      "selection_uses_earlier_seasons_only": true
+    },
+    {
+      "arms": {
+        "blend_direct_football_050": {
+          "balanced_relative_mse": 0.9391696018727173,
+          "full": {
+            "bias": 0.028421137048758087,
+            "mae": 0.9766434336666101,
+            "mse": 3.58471029560728,
+            "mse_delta": -0.2744005157228071,
+            "n": 29338,
+            "reference_mse": 3.859110811330087,
+            "relative_mse": 0.9288954038538656,
+            "rmse": 1.893333117971394
+          },
+          "likely": {
+            "bias": 0.07410147232980006,
+            "mae": 2.1434183362699577,
+            "mse": 8.465645465425567,
+            "mse_delta": -0.4507806215027852,
+            "n": 8189,
+            "reference_mse": 8.916426086928352,
+            "relative_mse": 0.9494437998915689,
+            "rmse": 2.9095782280986304
+          }
+        },
+        "portable": {
+          "balanced_relative_mse": 0.9506742983095484,
+          "full": {
+            "bias": 0.030750130319035982,
+            "mae": 0.9866907487585521,
+            "mse": 3.623672157250547,
+            "mse_delta": -0.23543865407954012,
+            "n": 29338,
+            "reference_mse": 3.859110811330087,
+            "relative_mse": 0.9389914761223471,
+            "rmse": 1.9035945359373532
+          },
+          "likely": {
+            "bias": 0.07765504218773228,
+            "mae": 2.1679288175214713,
+            "mse": 8.58078613413847,
+            "mse_delta": -0.33563995278988124,
+            "n": 8189,
+            "reference_mse": 8.916426086928352,
+            "relative_mse": 0.9623571204967497,
+            "rmse": 2.9292978909865877
+          }
+        },
+        "rolling20": {
+          "balanced_relative_mse": 1.0,
+          "full": {
+            "bias": 0.09155414267442356,
+            "mae": 1.1247277216009142,
+            "mse": 3.859110811330087,
+            "mse_delta": 0.0,
+            "n": 29338,
+            "reference_mse": 3.859110811330087,
+            "relative_mse": 1.0,
+            "rmse": 1.9644619648468857
+          },
+          "likely": {
+            "bias": -0.33611481907280527,
+            "mae": 2.067568878034045,
+            "mse": 8.916426086928352,
+            "mse_delta": 0.0,
+            "n": 8189,
+            "reference_mse": 8.916426086928352,
+            "relative_mse": 1.0,
+            "rmse": 2.9860385273683847
+          }
+        }
+      },
+      "season": "2025-26",
+      "selected_arm": "blend_direct_football_050",
+      "selection_uses_earlier_seasons_only": true
+    }
+  ],
+  "historical_practical_gates_vs_rolling": {
+    "all_historical_point_gates_pass": true,
+    "balanced_relative_mse": 0.9517170656525938,
+    "gates": {
+      "balanced_improvement": true,
+      "full_bias": true,
+      "full_degradation": true,
+      "likely_bias": true,
+      "likely_degradation": true,
+      "nonnegative_outer_seasons": true
+    },
+    "meaning": "Point-estimate historical practical gates only. This does not pass decision/current-rule/portability/promotion gates.",
+    "nonnegative_season_count": 4,
+    "pool_results": {
+      "full": {
+        "bias_gate": true,
+        "degradation_gate": true,
+        "equal_season_bias": 0.019258475622176204,
+        "equal_season_relative_mse": 0.9396529067431277,
+        "mean_absolute_season_bias": 0.019258475622176204
+      },
+      "likely": {
+        "bias_gate": true,
+        "degradation_gate": true,
+        "equal_season_bias": -0.014861132019586257,
+        "equal_season_relative_mse": 0.9637812245620601,
+        "mean_absolute_season_bias": 0.021262737960878814
+      }
+    },
+    "relative_mse_improvement": 0.04828293434740616
+  },
+  "historical_practical_gates_vs_strongest": {
+    "all_historical_point_gates_pass": false,
+    "balanced_relative_mse": 1.0,
+    "gates": {
+      "balanced_improvement": false,
+      "full_bias": true,
+      "full_degradation": true,
+      "likely_bias": true,
+      "likely_degradation": true,
+      "nonnegative_outer_seasons": true
+    },
+    "meaning": "Point-estimate historical practical gates only. This does not pass decision/current-rule/portability/promotion gates.",
+    "nonnegative_season_count": 4,
+    "pool_results": {
+      "full": {
+        "bias_gate": true,
+        "degradation_gate": true,
+        "equal_season_bias": 0.019258475622176204,
+        "equal_season_relative_mse": 1.0,
+        "mean_absolute_season_bias": 0.019258475622176204
+      },
+      "likely": {
+        "bias_gate": true,
+        "degradation_gate": true,
+        "equal_season_bias": -0.014861132019586257,
+        "equal_season_relative_mse": 1.0,
+        "mean_absolute_season_bias": 0.021262737960878814
+      }
+    },
+    "protected_scores": {
+      "portable": 0.951717065652595,
+      "rolling20": 1.0
+    },
+    "purpose": "Conservative release check against strongest protected complete baseline; no model reselection",
+    "relative_mse_improvement": 0.0,
+    "strongest_protected_baseline": "portable"
+  },
+  "horizon_intervals": {
+    "exposed_confirmation_six_week_decision_uncertainty": {
+      "portable": {
+        "block_length_calendar_gameweeks": 6,
+        "interval95": [
+          -4.074603174603175,
+          1.9615740740740737
+        ],
+        "kind": "supported_decision_points_delta",
+        "meaning": "Equal-season paired calendar-block estimate conditional on search. Six-GW overlap is retained within six-GW blocks; fixed phase-one origins provide a nonoverlapping sensitivity. Not prospective or selection-adjusted.",
+        "nonoverlapping_phase_one_point_estimate": 8.25,
+        "point_estimate": -1.0384615384615385,
+        "repetitions": 2000,
+        "resampling": "Circular moving calendar blocks within season, equal season weight",
+        "seasons": {
+          "2025-26": {
+            "calendar_span": 32,
+            "nonoverlapping_phase_one_origins": 4,
+            "observed_origin_gameweeks": 26
+          }
+        },
+        "seed": 20261101,
+        "status": "descriptive_interval"
+      },
+      "rolling20": {
+        "block_length_calendar_gameweeks": 6,
+        "interval95": [
+          -10.26673076923077,
+          -2.317634680134683
+        ],
+        "kind": "supported_decision_points_delta",
+        "meaning": "Equal-season paired calendar-block estimate conditional on search. Six-GW overlap is retained within six-GW blocks; fixed phase-one origins provide a nonoverlapping sensitivity. Not prospective or selection-adjusted.",
+        "nonoverlapping_phase_one_point_estimate": -8.75,
+        "point_estimate": -6.6923076923076925,
+        "repetitions": 2000,
+        "resampling": "Circular moving calendar blocks within season, equal season weight",
+        "seasons": {
+          "2025-26": {
+            "calendar_span": 32,
+            "nonoverlapping_phase_one_origins": 4,
+            "observed_origin_gameweeks": 26
+          }
+        },
+        "seed": 20261101,
+        "status": "descriptive_interval"
+      }
+    },
+    "exposed_confirmation_six_week_paired_uncertainty": {
+      "portable": {
+        "block_length_calendar_gameweeks": 6,
+        "interval95": [
+          -0.020008783491772646,
+          -0.005656204188212181
+        ],
+        "kind": "relative_mse",
+        "meaning": "Equal-season paired calendar-block estimate conditional on search. Six-GW overlap is retained within six-GW blocks; fixed phase-one origins provide a nonoverlapping sensitivity. Not prospective or selection-adjusted.",
+        "nonoverlapping_phase_one_point_estimate": -0.00801529381515853,
+        "point_estimate": -0.012931328490963678,
+        "repetitions": 2000,
+        "resampling": "Circular moving calendar blocks within season, equal season weight",
+        "seasons": {
+          "2025-26": {
+            "calendar_span": 33,
+            "nonoverlapping_phase_one_origins": 6,
+            "observed_origin_gameweeks": 33
+          }
+        },
+        "seed": 20261101,
+        "status": "descriptive_interval"
+      },
+      "rolling20": {
+        "block_length_calendar_gameweeks": 6,
+        "interval95": [
+          -0.16173168088311754,
+          -0.05543790045295331
+        ],
+        "kind": "relative_mse",
+        "meaning": "Equal-season paired calendar-block estimate conditional on search. Six-GW overlap is retained within six-GW blocks; fixed phase-one origins provide a nonoverlapping sensitivity. Not prospective or selection-adjusted.",
+        "nonoverlapping_phase_one_point_estimate": -0.08268405683251345,
+        "point_estimate": -0.1048254965246812,
+        "repetitions": 2000,
+        "resampling": "Circular moving calendar blocks within season, equal season weight",
+        "seasons": {
+          "2025-26": {
+            "calendar_span": 33,
+            "nonoverlapping_phase_one_origins": 6,
+            "observed_origin_gameweeks": 33
+          }
+        },
+        "seed": 20261101,
+        "status": "descriptive_interval"
+      }
+    },
+    "outer_six_week_decision_uncertainty": {
+      "portable": {
+        "block_length_calendar_gameweeks": 6,
+        "interval95": [
+          0.0,
+          0.0
+        ],
+        "kind": "supported_decision_points_delta",
+        "meaning": "Equal-season paired calendar-block estimate conditional on search. Six-GW overlap is retained within six-GW blocks; fixed phase-one origins provide a nonoverlapping sensitivity. Not prospective or selection-adjusted.",
+        "nonoverlapping_phase_one_point_estimate": 0.0,
+        "point_estimate": 0.0,
+        "repetitions": 2000,
+        "resampling": "Circular moving calendar blocks within season, equal season weight",
+        "seasons": {
+          "2021-22": {
+            "calendar_span": 33,
+            "nonoverlapping_phase_one_origins": 6,
+            "observed_origin_gameweeks": 33
+          },
+          "2022-23": {
+            "calendar_span": 33,
+            "nonoverlapping_phase_one_origins": 4,
+            "observed_origin_gameweeks": 27
+          },
+          "2023-24": {
+            "calendar_span": 32,
+            "nonoverlapping_phase_one_origins": 5,
+            "observed_origin_gameweeks": 32
+          },
+          "2024-25": {
+            "calendar_span": 33,
+            "nonoverlapping_phase_one_origins": 6,
+            "observed_origin_gameweeks": 33
+          }
+        },
+        "seed": 20261101,
+        "status": "descriptive_interval"
+      },
+      "rolling20": {
+        "block_length_calendar_gameweeks": 6,
+        "interval95": [
+          -5.947797840180653,
+          2.1019698602403345
+        ],
+        "kind": "supported_decision_points_delta",
+        "meaning": "Equal-season paired calendar-block estimate conditional on search. Six-GW overlap is retained within six-GW blocks; fixed phase-one origins provide a nonoverlapping sensitivity. Not prospective or selection-adjusted.",
+        "nonoverlapping_phase_one_point_estimate": -5.833333333333333,
+        "point_estimate": -1.9343697390572392,
+        "repetitions": 2000,
+        "resampling": "Circular moving calendar blocks within season, equal season weight",
+        "seasons": {
+          "2021-22": {
+            "calendar_span": 33,
+            "nonoverlapping_phase_one_origins": 6,
+            "observed_origin_gameweeks": 33
+          },
+          "2022-23": {
+            "calendar_span": 33,
+            "nonoverlapping_phase_one_origins": 4,
+            "observed_origin_gameweeks": 27
+          },
+          "2023-24": {
+            "calendar_span": 32,
+            "nonoverlapping_phase_one_origins": 5,
+            "observed_origin_gameweeks": 32
+          },
+          "2024-25": {
+            "calendar_span": 33,
+            "nonoverlapping_phase_one_origins": 6,
+            "observed_origin_gameweeks": 33
+          }
+        },
+        "seed": 20261101,
+        "status": "descriptive_interval"
+      }
+    },
+    "outer_six_week_paired_uncertainty": {
+      "portable": {
+        "block_length_calendar_gameweeks": 6,
+        "interval95": [
+          0.0,
+          0.0
+        ],
+        "kind": "relative_mse",
+        "meaning": "Equal-season paired calendar-block estimate conditional on search. Six-GW overlap is retained within six-GW blocks; fixed phase-one origins provide a nonoverlapping sensitivity. Not prospective or selection-adjusted.",
+        "nonoverlapping_phase_one_point_estimate": 0.0,
+        "point_estimate": 0.0,
+        "repetitions": 2000,
+        "resampling": "Circular moving calendar blocks within season, equal season weight",
+        "seasons": {
+          "2021-22": {
+            "calendar_span": 33,
+            "nonoverlapping_phase_one_origins": 6,
+            "observed_origin_gameweeks": 33
+          },
+          "2022-23": {
+            "calendar_span": 33,
+            "nonoverlapping_phase_one_origins": 5,
+            "observed_origin_gameweeks": 32
+          },
+          "2023-24": {
+            "calendar_span": 33,
+            "nonoverlapping_phase_one_origins": 6,
+            "observed_origin_gameweeks": 33
+          },
+          "2024-25": {
+            "calendar_span": 33,
+            "nonoverlapping_phase_one_origins": 6,
+            "observed_origin_gameweeks": 33
+          }
+        },
+        "seed": 20261101,
+        "status": "descriptive_interval"
+      },
+      "rolling20": {
+        "block_length_calendar_gameweeks": 6,
+        "interval95": [
+          -0.11824407194923453,
+          -0.077629590109477
+        ],
+        "kind": "relative_mse",
+        "meaning": "Equal-season paired calendar-block estimate conditional on search. Six-GW overlap is retained within six-GW blocks; fixed phase-one origins provide a nonoverlapping sensitivity. Not prospective or selection-adjusted.",
+        "nonoverlapping_phase_one_point_estimate": -0.08437626314963831,
+        "point_estimate": -0.09780101874792338,
+        "repetitions": 2000,
+        "resampling": "Circular moving calendar blocks within season, equal season weight",
+        "seasons": {
+          "2021-22": {
+            "calendar_span": 33,
+            "nonoverlapping_phase_one_origins": 6,
+            "observed_origin_gameweeks": 33
+          },
+          "2022-23": {
+            "calendar_span": 33,
+            "nonoverlapping_phase_one_origins": 5,
+            "observed_origin_gameweeks": 32
+          },
+          "2023-24": {
+            "calendar_span": 33,
+            "nonoverlapping_phase_one_origins": 6,
+            "observed_origin_gameweeks": 33
+          },
+          "2024-25": {
+            "calendar_span": 33,
+            "nonoverlapping_phase_one_origins": 6,
+            "observed_origin_gameweeks": 33
+          }
+        },
+        "seed": 20261101,
+        "status": "descriptive_interval"
+      }
+    }
+  },
+  "horizons": [
+    {
+      "gated_squad_weeks": 0,
+      "metrics": [
+        {
+          "arm": "portable",
+          "historical_points_mae": 4.730429626295258,
+          "historical_points_mse": 53.11391329363386,
+          "six_gw_origins": 19556,
+          "supported_score_mae": 4.730429626295258,
+          "supported_score_mse": 53.11391329363386,
+          "target_scope": "Primary: matched supported score; secondary: actual archived historical points on identical complete cohort. Complete future outcome cohort is retrospective conditional.",
+          "unknown_future_origins": 42
+        },
+        {
+          "arm": "rolling20",
+          "historical_points_mae": 5.432676865403257,
+          "historical_points_mse": 57.294164576315495,
+          "six_gw_origins": 19556,
+          "supported_score_mae": 5.432676865403257,
+          "supported_score_mse": 57.294164576315495,
+          "target_scope": "Primary: matched supported score; secondary: actual archived historical points on identical complete cohort. Complete future outcome cohort is retrospective conditional.",
+          "unknown_future_origins": 42
+        }
+      ],
+      "season": "2021-22",
+      "selected_arm": "portable"
+    },
+    {
+      "gated_squad_weeks": 15,
+      "metrics": [
+        {
+          "arm": "portable",
+          "historical_points_mae": 4.362177828575534,
+          "historical_points_mse": 45.97011934854664,
+          "six_gw_origins": 20985,
+          "supported_score_mae": 4.362177828575534,
+          "supported_score_mse": 45.97011934854664,
+          "target_scope": "Primary: matched supported score; secondary: actual archived historical points on identical complete cohort. Complete future outcome cohort is retrospective conditional.",
+          "unknown_future_origins": 129
+        },
+        {
+          "arm": "rolling20",
+          "historical_points_mae": 5.172657966745457,
+          "historical_points_mse": 52.10127250162431,
+          "six_gw_origins": 20985,
+          "supported_score_mae": 5.172657966745457,
+          "supported_score_mse": 52.10127250162431,
+          "target_scope": "Primary: matched supported score; secondary: actual archived historical points on identical complete cohort. Complete future outcome cohort is retrospective conditional.",
+          "unknown_future_origins": 129
+        }
+      ],
+      "season": "2022-23",
+      "selected_arm": "portable"
+    },
+    {
+      "gated_squad_weeks": 5,
+      "metrics": [
+        {
+          "arm": "portable",
+          "historical_points_mae": 4.119329955399652,
+          "historical_points_mse": 44.4252864068069,
+          "six_gw_origins": 24395,
+          "supported_score_mae": 4.119329955399652,
+          "supported_score_mse": 44.4252864068069,
+          "target_scope": "Primary: matched supported score; secondary: actual archived historical points on identical complete cohort. Complete future outcome cohort is retrospective conditional.",
+          "unknown_future_origins": 88
+        },
+        {
+          "arm": "rolling20",
+          "historical_points_mae": 4.952908564123577,
+          "historical_points_mse": 49.55328981345636,
+          "six_gw_origins": 24395,
+          "supported_score_mae": 4.952908564123577,
+          "supported_score_mse": 49.55328981345636,
+          "target_scope": "Primary: matched supported score; secondary: actual archived historical points on identical complete cohort. Complete future outcome cohort is retrospective conditional.",
+          "unknown_future_origins": 88
+        }
+      ],
+      "season": "2023-24",
+      "selected_arm": "portable"
+    },
+    {
+      "gated_squad_weeks": 0,
+      "metrics": [
+        {
+          "arm": "portable",
+          "historical_points_mae": 4.159843191302529,
+          "historical_points_mse": 43.40562808094947,
+          "six_gw_origins": 23075,
+          "supported_score_mae": 4.159843191302529,
+          "supported_score_mse": 43.40562808094947,
+          "target_scope": "Primary: matched supported score; secondary: actual archived historical points on identical complete cohort. Complete future outcome cohort is retrospective conditional.",
+          "unknown_future_origins": 88
+        },
+        {
+          "arm": "rolling20",
+          "historical_points_mae": 4.891337330203454,
+          "historical_points_mse": 48.07254117580548,
+          "six_gw_origins": 23075,
+          "supported_score_mae": 4.891337330203454,
+          "supported_score_mse": 48.07254117580548,
+          "target_scope": "Primary: matched supported score; secondary: actual archived historical points on identical complete cohort. Complete future outcome cohort is retrospective conditional.",
+          "unknown_future_origins": 88
+        }
+      ],
+      "season": "2024-25",
+      "selected_arm": "portable"
+    },
+    {
+      "gated_squad_weeks": 24,
+      "metrics": [
+        {
+          "arm": "blend_direct_football_050",
+          "historical_points_mae": 4.139657153215925,
+          "historical_points_mse": 46.440067864109274,
+          "six_gw_origins": 25303,
+          "supported_score_mae": 3.8841574556653127,
+          "supported_score_mse": 40.35358237222193,
+          "target_scope": "Primary: matched supported score; secondary: actual archived historical points on identical complete cohort. Complete future outcome cohort is retrospective conditional.",
+          "unknown_future_origins": 102
+        },
+        {
+          "arm": "portable",
+          "historical_points_mae": 4.166381580974761,
+          "historical_points_mse": 46.8231603026728,
+          "six_gw_origins": 25303,
+          "supported_score_mae": 3.921620848431744,
+          "supported_score_mse": 40.88224410012846,
+          "target_scope": "Primary: matched supported score; secondary: actual archived historical points on identical complete cohort. Complete future outcome cohort is retrospective conditional.",
+          "unknown_future_origins": 102
+        },
+        {
+          "arm": "rolling20",
+          "historical_points_mae": 5.078866671273479,
+          "historical_points_mse": 53.06368432132554,
+          "six_gw_origins": 25303,
+          "supported_score_mae": 4.739855965386484,
+          "supported_score_mse": 45.079012209974685,
+          "target_scope": "Primary: matched supported score; secondary: actual archived historical points on identical complete cohort. Complete future outcome cohort is retrospective conditional.",
+          "unknown_future_origins": 102
+        }
+      ],
+      "season": "2025-26",
+      "selected_arm": "blend_direct_football_050"
+    }
+  ],
+  "limitations": [
+    "The final exported blend is different from the portable procedure selected throughout the four historical outer seasons.",
+    "Exact original-advisor comparison is restricted to seven already-exposed current-season snapshots.",
+    "Archive rows are observed opportunities; historical eligible rosters and publication deadlines are not certified.",
+    "Reconstructed historical origins and realised fixture calendars are assumptions, and incomplete future outcomes are excluded.",
+    "Current totals use historical assist/bonus definitions and an unvalidated lag-only defensive prior.",
+    "Block intervals are descriptive and conditional on this finite search, not selection-adjusted or prospective.",
+    "Fixed synthetic/owned squads do not establish gains from transfers, chips, or season-long rank policy.",
+    "Python-level relocation isolation is not an operating-system sandbox or native-I/O guarantee."
+  ],
+  "one_week_decisions": [
+    {
+      "arms": {
+        "portable": {
+          "blocks": 38,
+          "historical_points": 2266.0,
+          "supported_score": 2266.0
+        },
+        "rolling20": {
+          "blocks": 38,
+          "historical_points": 2356.0,
+          "supported_score": 2356.0
+        }
+      },
+      "season": "2021-22",
+      "selected_arm": "portable"
+    },
+    {
+      "arms": {
+        "portable": {
+          "blocks": 37,
+          "historical_points": 2267.0,
+          "supported_score": 2267.0
+        },
+        "rolling20": {
+          "blocks": 37,
+          "historical_points": 2249.0,
+          "supported_score": 2249.0
+        }
+      },
+      "season": "2022-23",
+      "selected_arm": "portable"
+    },
+    {
+      "arms": {
+        "portable": {
+          "blocks": 38,
+          "historical_points": 2153.0,
+          "supported_score": 2153.0
+        },
+        "rolling20": {
+          "blocks": 38,
+          "historical_points": 2198.0,
+          "supported_score": 2198.0
+        }
+      },
+      "season": "2023-24",
+      "selected_arm": "portable"
+    },
+    {
+      "arms": {
+        "portable": {
+          "blocks": 38,
+          "historical_points": 2110.0,
+          "supported_score": 2110.0
+        },
+        "rolling20": {
+          "blocks": 38,
+          "historical_points": 2136.0,
+          "supported_score": 2136.0
+        }
+      },
+      "season": "2024-25",
+      "selected_arm": "portable"
+    },
+    {
+      "arms": {
+        "blend_direct_football_050": {
+          "blocks": 38,
+          "historical_points": 2155.0,
+          "supported_score": 2043.0
+        },
+        "portable": {
+          "blocks": 38,
+          "historical_points": 2177.0,
+          "supported_score": 2057.0
+        },
+        "rolling20": {
+          "blocks": 38,
+          "historical_points": 2144.0,
+          "supported_score": 2040.0
+        }
+      },
+      "season": "2025-26",
+      "selected_arm": "blend_direct_football_050"
+    }
+  ],
+  "one_week_intervals": {
+    "portable": {
+      "block_length_gameweeks": 4,
+      "candidate_minus_baseline_balanced_relative_mse": 0.0,
+      "interval95": [
+        0.0,
+        0.0
+      ],
+      "repetitions": 2000,
+      "scope": "Descriptive paired within-season calendar-GW block bootstrap, equal season weight; conditional on the preceding search and reconstructed population. Not selection-adjusted, prospective, or independent player trials.",
+      "seasons": {
+        "2021-22": 38,
+        "2022-23": 37,
+        "2023-24": 38,
+        "2024-25": 38
+      },
+      "seed": 20261101
+    },
+    "rolling20": {
+      "block_length_gameweeks": 4,
+      "candidate_minus_baseline_balanced_relative_mse": -0.04828293434740516,
+      "interval95": [
+        -0.05417709171698137,
+        -0.042165707703233524
+      ],
+      "repetitions": 2000,
+      "scope": "Descriptive paired within-season calendar-GW block bootstrap, equal season weight; conditional on the preceding search and reconstructed population. Not selection-adjusted, prospective, or independent player trials.",
+      "seasons": {
+        "2021-22": 38,
+        "2022-23": 37,
+        "2023-24": 38,
+        "2024-25": 38
+      },
+      "seed": 20261101
+    }
+  },
+  "recommendation": "Retain the existing GitHub advisor as primary; publish the locked candidate as research comparison only.",
+  "scope": "Saved completed finite-study metrics; no new inference, fitting, thresholds or selections.",
+  "seed_sensitivity": {
+    "maximum_absolute_fixture_prediction_difference": 0.4939324589121661,
+    "mean_absolute_fixture_prediction_difference": 0.01875378345015057,
+    "metrics": {
+      "20261028": {
+        "balanced_relative_mse": 0.9391696018727173,
+        "full": {
+          "bias": 0.028421137048758087,
+          "mae": 0.9766434336666101,
+          "mse": 3.58471029560728,
+          "mse_delta": -0.2744005157228071,
+          "n": 29338,
+          "reference_mse": 3.859110811330087,
+          "relative_mse": 0.9288954038538656,
+          "rmse": 1.893333117971394
+        },
+        "likely": {
+          "bias": 0.07410147232980006,
+          "mae": 2.1434183362699577,
+          "mse": 8.465645465425567,
+          "mse_delta": -0.4507806215027852,
+          "n": 8189,
+          "reference_mse": 8.916426086928352,
+          "relative_mse": 0.9494437998915689,
+          "rmse": 2.9095782280986304
+        }
+      },
+      "20261029": {
+        "balanced_relative_mse": 0.9394517253451413,
+        "full": {
+          "bias": 0.027358370787705855,
+          "mae": 0.9768269400697202,
+          "mse": 3.586083761933822,
+          "mse_delta": -0.27302704939626476,
+          "n": 29338,
+          "reference_mse": 3.859110811330087,
+          "relative_mse": 0.9292513061312787,
+          "rmse": 1.8936957944542787
+        },
+        "likely": {
+          "bias": 0.07127549160800846,
+          "mae": 2.1432719863859244,
+          "mse": 8.467503155253358,
+          "mse_delta": -0.44892293167499453,
+          "n": 8189,
+          "reference_mse": 8.916426086928352,
+          "relative_mse": 0.9496521445590039,
+          "rmse": 2.9098974475492017
+        }
+      }
+    },
+    "no_seed_selection": true,
+    "selected_arm": "blend_direct_football_050"
+  },
+  "sources": [
+    {
+      "relative_path": "batches/confirmation/state.json",
+      "sha256": "c77a1ddda0f5bd09feeef5b7906ae8f4536ceac4ca25e099d45ae3a39c7f2267"
+    },
+    {
+      "relative_path": "batches/development/state.json",
+      "sha256": "b07b86128934cde59d07b09b855833ca35e5111ad5726972b938ac074ac9f760"
+    },
+    {
+      "relative_path": "batches/latest-model-export/state.json",
+      "sha256": "6bb72ef345057891c318dd5000708871bf9d4038abd64d8f9778a61f8df45c4a"
+    },
+    {
+      "relative_path": "batches/screen/state.json",
+      "sha256": "0ffde1b5b3c1fca55eb18dc816e7befabeb6131cf8845dd437e8acf72e136f5c"
+    },
+    {
+      "relative_path": "batches/seed-stability/state.json",
+      "sha256": "c0940e7bd6252783d912ec50662c4fc4653ecaa042791be5785c84d746008a99"
+    },
+    {
+      "relative_path": "batches/selected-fold-exports/state.json",
+      "sha256": "db370526b1e54d2f3aa1131ccd94330798068bba979a8fa754b983a3daf4ff19"
+    },
+    {
+      "relative_path": "compute-ledger.json",
+      "sha256": "d75dbffa7c143f588a93c56802a3c1f7e46723856a22ac8fe63c92cd3543d9fc"
+    },
+    {
+      "relative_path": "evaluations/2019-20.json",
+      "sha256": "0c81fc26e21dd36d9d56573d3ce2a81b5fdcb7f814874eb1f13414e77723e075"
+    },
+    {
+      "relative_path": "evaluations/2020-21.json",
+      "sha256": "420755173614ed84280e17cb093b44a6eea4e4529a78ace0243fd84eaa502903"
+    },
+    {
+      "relative_path": "evaluations/2021-22.json",
+      "sha256": "c1ca9a7b432c5f6f8dfcd0e278d0aea1a25ed91385a9b8b6c7dde467dbf84b8c"
+    },
+    {
+      "relative_path": "evaluations/2022-23.json",
+      "sha256": "23b21139e5ac4f5f202814c1942b607eaec4b5ed15ba77266a8bc7009621527e"
+    },
+    {
+      "relative_path": "evaluations/2023-24.json",
+      "sha256": "2b1ebd2277bb916dbc69b1e6c0ebe9159b5ae3955412fa6843e84d1f5f92fd5b"
+    },
+    {
+      "relative_path": "evaluations/2024-25.json",
+      "sha256": "81ecd7c8162e10799e1212009882eabe9efbc8b63a0c929db83ea9091a78b47c"
+    },
+    {
+      "relative_path": "evaluations/2025-26.json",
+      "sha256": "71ab4d47e2a751e53f4af6e664563c1480842751ede88831cd0641e8221422c0"
+    },
+    {
+      "relative_path": "protocol.json",
+      "sha256": "003f76f1088d332e8a6ba0e8f92d8fb571dab0d0e6e78d00252eac14f2aec676"
+    },
+    {
+      "relative_path": "selections/final-lock.json",
+      "sha256": "6b28262ac9a12e060066fdf78caf3ff78491165d865c39ff2587b307a51884b1"
+    },
+    {
+      "relative_path": "state.json",
+      "sha256": "d4ab16b800046ad9e9e8d48a3a53e0c71a455a9638936532ea3f5e57c2871c68"
+    },
+    {
+      "relative_path": "validation/current-independent.json",
+      "sha256": "881f051d7fc879c3abea892df4c6c8f37406e3b49088bd58824bcb546be7b716"
+    },
+    {
+      "relative_path": "validation/current-replay/per-gameweek-paired-losses.json",
+      "sha256": "bb228316eeecf8fd24c2e075986237187f2b0c17dfcb7534feffd55b4f911806"
+    },
+    {
+      "relative_path": "validation/current-replay/summary.json",
+      "sha256": "fc78082f8b49ee9b47816b4b21f8e55821774ad06c91af54e10afb5eaa3c6c4c"
+    },
+    {
+      "relative_path": "validation/decisions/2021-22/decision-results.json",
+      "sha256": "7d85e84d4a6ae22fac40f5bfc66b12e78d2033b827d77e395a0ca2602a1904b0"
+    },
+    {
+      "relative_path": "validation/decisions/2022-23/decision-results.json",
+      "sha256": "2b72b73e32e799553ecca93fb833d8b7025c32242976e85827d3dde251f89bd6"
+    },
+    {
+      "relative_path": "validation/decisions/2023-24/decision-results.json",
+      "sha256": "7520968d68bb6316acbc8b17c7fa6179058b9862809fa032da221bf23a8312d0"
+    },
+    {
+      "relative_path": "validation/decisions/2024-25/decision-results.json",
+      "sha256": "f42b4f9adde04e076db15a54b4696a5dbcebf16df9c842cf690ec230e1f5a9c2"
+    },
+    {
+      "relative_path": "validation/decisions/2025-26/decision-results.json",
+      "sha256": "ae3e2d06942456d05fd285719fbd5253cf97444670bf6f7a86cdbb4042e52f3f"
+    },
+    {
+      "relative_path": "validation/horizons/2021-22/horizon-results.json",
+      "sha256": "8c8142df1b941b1c7aa8901c0a36b972f8e4ba76926fcc73019e1ad53c32b675"
+    },
+    {
+      "relative_path": "validation/horizons/2022-23/horizon-results.json",
+      "sha256": "ad70c4a63d87803c26f1f1ca6e29f7aca6b0c7cdcc7481932e03d453a2db2ffe"
+    },
+    {
+      "relative_path": "validation/horizons/2023-24/horizon-results.json",
+      "sha256": "b7a59448b60f2a71403e3071ba82b7ea2c872ef6321936fef5371d87252f0aa2"
+    },
+    {
+      "relative_path": "validation/horizons/2024-25/horizon-results.json",
+      "sha256": "e047026f605388322bec90b7a591723be0751cebab597d354c89bb0f2828a4e3"
+    },
+    {
+      "relative_path": "validation/horizons/2025-26/horizon-results.json",
+      "sha256": "405f1476670d53e541616a0901c8b2201d77c8af2db1fe6a601640e4d0b7270d"
+    },
+    {
+      "relative_path": "validation/independent.json",
+      "sha256": "e7cce6e02137789a2fcef67a850ca42a6cce80fc8cbf364e6d69c04c4b6b3836"
+    },
+    {
+      "relative_path": "validation/package/capture-parity/verification.json",
+      "sha256": "fc321ba9e775d14fd4b917ee5b0c8dcbdb84f16f989aef593c416d5dd6e9f466"
+    },
+    {
+      "relative_path": "validation/package/offline-check.json",
+      "sha256": "7b449f68bf2822af1736b358dbeddcdece5314dab02394ee71b2a8b5cfa948fb"
+    },
+    {
+      "relative_path": "validation/package/validated-manifest.json",
+      "sha256": "a5f54f380a3a9e4d4cddc181f8831245974cbfdd41c327c683af78a1a26b9833"
+    },
+    {
+      "relative_path": "validation/protected-baseline-gates.json",
+      "sha256": "a01e48fa62735b81e5552fe2323ec281bb3313caddef9d72de63351482d1b13d"
+    },
+    {
+      "relative_path": "validation/release-checks.json",
+      "sha256": "5268665622c1b74a54643dc96fcc2401c2e169147240399f0628b3722aff0281"
+    },
+    {
+      "relative_path": "validation/seed-stability.json",
+      "sha256": "92101d212f2aee282954ba741568a80b7e0e72bbb982428970b4cc5f0b2fc418"
+    }
+  ],
+  "study": {
+    "batches": {
+      "confirmation": {
+        "maximum_attempt_count": 1,
+        "status": "complete",
+        "task_count": 29
+      },
+      "development": {
+        "maximum_attempt_count": 1,
+        "status": "complete",
+        "task_count": 668
+      },
+      "latest-model-export": {
+        "maximum_attempt_count": 1,
+        "status": "complete",
+        "task_count": 19
+      },
+      "screen": {
+        "maximum_attempt_count": 1,
+        "status": "complete",
+        "task_count": 334
+      },
+      "seed-stability": {
+        "maximum_attempt_count": 1,
+        "status": "complete",
+        "task_count": 29
+      },
+      "selected-fold-exports": {
+        "maximum_attempt_count": 1,
+        "status": "complete",
+        "task_count": 59
+      }
+    },
+    "complete_arms": 11,
+    "confirmation_previously_exposed": true,
+    "confirmation_season": "2025-26",
+    "development_seasons": [
+      "2019-20",
+      "2020-21",
+      "2021-22",
+      "2022-23",
+      "2023-24",
+      "2024-25"
+    ],
+    "families": {
+      "catboost": 8,
+      "extra_trees": 8,
+      "hist": 56,
+      "lightgbm": 29,
+      "prior": 13,
+      "regularized": 24,
+      "rolling": 21,
+      "xgboost": 8
+    },
+    "feature_columns": {
+      "base": 83,
+      "opponent_enhanced": 129,
+      "rolling_exact": 139
+    },
+    "history_variants": {
+      "all_earlier": 151,
+      "half_life_1095_days": 8,
+      "last_four_seasons": 8
+    },
+    "outer_seasons": [
+      "2021-22",
+      "2022-23",
+      "2023-24",
+      "2024-25"
+    ],
+    "raw_archive_rows": 320931,
+    "recipes": 167,
+    "screen_seasons": [
+      "2019-20",
+      "2020-21"
+    ],
+    "targets": 13
+  },
+  "version": "qualification-public-aggregates-v1"
+}

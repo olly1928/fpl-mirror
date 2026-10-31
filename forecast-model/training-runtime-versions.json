@@ -1,0 +1,30 @@
+{
+  "catboost": {
+    "available": true,
+    "version": "1.2.8"
+  },
+  "lightgbm": {
+    "available": true,
+    "version": "4.6.0"
+  },
+  "numpy": {
+    "available": true,
+    "version": "2.2.6"
+  },
+  "pandas": {
+    "available": true,
+    "version": "2.2.3"
+  },
+  "scikit-learn": {
+    "available": true,
+    "version": "1.6.1"
+  },
+  "scipy": {
+    "available": true,
+    "version": "1.14.1"
+  },
+  "xgboost": {
+    "available": true,
+    "version": "3.0.2"
+  }
+}
