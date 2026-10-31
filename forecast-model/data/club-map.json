@@ -1,0 +1,152 @@
+{
+  "evidence_sha256": {
+    "bridge": "937f2f68612474833e4d380a4b97d59f9a9ea0631a4e7ba477d4146ba0e832c6",
+    "canonical_goal_panel": "2b6fb8e884f65d86e0f2ed04402d60dea82185b89d66559d132b80eda6fbd8b8",
+    "mapping_function_source": "02051ca76fd9c4d2234c7ed256b09d3402d33aad74c297f757c3d17f75f7b118",
+    "source_snapshot": "8f8c737afd98baea90294c0ef35a3e6f4e6b9e49e07331c4d5b6be242aa95507"
+  },
+  "method": "Accepted source-player ID with canonical club corroboration; one unique canonical club per official2026team ID, with official stable team code retained.",
+  "season": "2026-27",
+  "teams": [
+    {
+      "canonical_club_id": "pl-club-arsenal",
+      "code": 3,
+      "id": 1,
+      "name": "Arsenal",
+      "short_name": "ARS"
+    },
+    {
+      "canonical_club_id": "pl-club-aston-villa",
+      "code": 7,
+      "id": 2,
+      "name": "Aston Villa",
+      "short_name": "AVL"
+    },
+    {
+      "canonical_club_id": "pl-club-bournemouth",
+      "code": 91,
+      "id": 3,
+      "name": "Bournemouth",
+      "short_name": "BOU"
+    },
+    {
+      "canonical_club_id": "pl-club-brentford",
+      "code": 94,
+      "id": 4,
+      "name": "Brentford",
+      "short_name": "BRE"
+    },
+    {
+      "canonical_club_id": "pl-club-brighton-hove-albion",
+      "code": 36,
+      "id": 5,
+      "name": "Brighton",
+      "short_name": "BHA"
+    },
+    {
+      "canonical_club_id": "pl-club-chelsea",
+      "code": 8,
+      "id": 6,
+      "name": "Chelsea",
+      "short_name": "CHE"
+    },
+    {
+      "canonical_club_id": "pl-club-coventry-city",
+      "code": 9,
+      "id": 7,
+      "name": "Coventry City",
+      "short_name": "COV"
+    },
+    {
+      "canonical_club_id": "pl-club-crystal-palace",
+      "code": 31,
+      "id": 8,
+      "name": "Crystal Palace",
+      "short_name": "CRY"
+    },
+    {
+      "canonical_club_id": "pl-club-everton",
+      "code": 11,
+      "id": 9,
+      "name": "Everton",
+      "short_name": "EVE"
+    },
+    {
+      "canonical_club_id": "pl-club-fulham",
+      "code": 54,
+      "id": 10,
+      "name": "Fulham",
+      "short_name": "FUL"
+    },
+    {
+      "canonical_club_id": "pl-club-hull-city",
+      "code": 88,
+      "id": 11,
+      "name": "Hull City",
+      "short_name": "HUL"
+    },
+    {
+      "canonical_club_id": "pl-club-ipswich-town",
+      "code": 40,
+      "id": 12,
+      "name": "Ipswich Town",
+      "short_name": "IPS"
+    },
+    {
+      "canonical_club_id": "pl-club-leeds-united",
+      "code": 2,
+      "id": 13,
+      "name": "Leeds",
+      "short_name": "LEE"
+    },
+    {
+      "canonical_club_id": "pl-club-liverpool",
+      "code": 14,
+      "id": 14,
+      "name": "Liverpool",
+      "short_name": "LIV"
+    },
+    {
+      "canonical_club_id": "pl-club-manchester-city",
+      "code": 43,
+      "id": 15,
+      "name": "Man City",
+      "short_name": "MCI"
+    },
+    {
+      "canonical_club_id": "pl-club-manchester-united",
+      "code": 1,
+      "id": 16,
+      "name": "Man Utd",
+      "short_name": "MUN"
+    },
+    {
+      "canonical_club_id": "pl-club-newcastle-united",
+      "code": 4,
+      "id": 17,
+      "name": "Newcastle",
+      "short_name": "NEW"
+    },
+    {
+      "canonical_club_id": "pl-club-nottingham-forest",
+      "code": 17,
+      "id": 18,
+      "name": "Nott'm Forest",
+      "short_name": "NFO"
+    },
+    {
+      "canonical_club_id": "pl-club-tottenham-hotspur",
+      "code": 6,
+      "id": 19,
+      "name": "Spurs",
+      "short_name": "TOT"
+    },
+    {
+      "canonical_club_id": "pl-club-sunderland",
+      "code": 56,
+      "id": 20,
+      "name": "Sunderland",
+      "short_name": "SUN"
+    }
+  ]
+}

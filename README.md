@@ -491,3 +491,12 @@ Understat careers and 33 seasons of team results/odds. Raw source packages and
 plain CSV exports are retained. This one-time import does not retrain the live
 advisor or change the three existing Claude project playbook URLs.
 
+
+## Fixed-model qualification package
+
+The [fixed forecast package](forecast-model/README.md) contains a model trained once and a manual GitHub Actions workflow for weekly CSV/JSON forecasts. It needs no season-long Mac service and does not retrain each week. Claude usage is described in [forecast-model/CLAUDE.md](forecast-model/CLAUDE.md).
+
+The [qualification report](forecast-model/research/REPORT.md) records the finite search and matched tests. The candidate did **not** beat the existing advisor on the exposed seven-gameweek comparison, so the existing advisor and playbooks remain primary. The package is an additional reproducible research option, not a demonstrated upgrade.
+
+
+This optional learned package uses its own pinned Python 3.12 environment. The standard-library-only dependency contract above continues to apply to the existing mirror and advisor.

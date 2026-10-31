@@ -1,0 +1,78 @@
+{
+  "contains_outcome_labels": false,
+  "contains_owned_squad": false,
+  "feature_sets": [
+    "base",
+    "opponent_enhanced",
+    "rolling_exact"
+  ],
+  "files": {
+    "approximate_total": {
+      "path": "approximate_total.parquet",
+      "sha256": "192d65856742a1e3ec743f54df7816a7d460f36ba9aee6bf375313d400a5d21c"
+    },
+    "base": {
+      "path": "base.parquet",
+      "sha256": "62792a181c2c0aee149097cf5c2f92e1f1425141e583f983b74870ea5fdcfdd2"
+    },
+    "cases": {
+      "path": "cases.parquet",
+      "sha256": "add1148dd6288caa2db1bb9c26698bd45d52d2049289a72857db1cd14632b269"
+    },
+    "defensive_prior": {
+      "path": "defensive_prior.parquet",
+      "sha256": "c1c91f399b8accb2b2a5bd010c1950c5b4e8bd16e9078fd4e012d66e32e6456b"
+    },
+    "expected": {
+      "path": "expected.parquet",
+      "sha256": "da3f5d683b2222d1fe966d2109231de2947d3153040055b29286fa93cec03682"
+    },
+    "opponent_enhanced": {
+      "path": "opponent_enhanced.parquet",
+      "sha256": "e53e11ce74c35651154d5a65a1ffc79ff2b8932391acad571b6d17d963bb596c"
+    },
+    "rolling_exact": {
+      "path": "rolling_exact.parquet",
+      "sha256": "02d305882c2f9c22707cb112b1fe7734adc36d7ed95e5a0dbe50231b63aab76c"
+    }
+  },
+  "model_hashes": {
+    "q-assists-xgboost-context": "9c04e9e325694369f2b85d688cc3115b64e1cf7086ea500b6d7035e7a2e34716",
+    "q-bonus-hist-small-context": "650a0baaa35ffcb5d89e635abc181d76e6948a26c41a15988f7605e81fd8dff1",
+    "q-clean_sheet_points-lightgbm-small-context": "fb5aaf034fa6cd854ccfcfcbbcd68ee99c54193338119817beb2e7d99b4b6dfa",
+    "q-conceded_blocks-hist-small-context": "d8dc5e96c16feaa79156fd0e4758cedc3c49004237d2e1429afb7d1085e76b66",
+    "q-goals-hist-small-context": "0441e47cf0f3823ca6f1d3a0dc2a8ba80492a7d4ab6750d5572855db9e809ec8",
+    "q-minute_state-hist-small-base": "2ad1574d5ef0a14bb1e6dea4bfc86a0fdd3d8e93812ff45bbaa326774c722225",
+    "q-minute_state-rolling20-context": "cb106fbbb088c2791e14c896d8e5a5f7182a64d43894401e6fd2aa2987d3130c",
+    "q-minutes-rolling20-context": "df5bda07704cc142891b0ebf2f56706a437c8370694d190ed9bbec5e4dcc33fe",
+    "q-negative_cost-lightgbm-small-context": "30e3ca2d70e8710d6c7bb077324a038f724eeaf263c31f4823d76e203eb3f623",
+    "q-penalties_saved-lightgbm-small-context": "8077a1e70e4e39c98b5c29a1c877ced62cac8ad3e2c5e70ec66e2d827529a2db",
+    "q-save_blocks-lightgbm-small-context": "9059b9fafbd0506eb57d1bbbd2ea2e43aad48029992029825256cbc09f18e7e6",
+    "q-supported_score-catboost-context": "73e454d129ff4234f6e5d6bc4022d947e4182d1f91f247f232d3e0cb1bc640ac"
+  },
+  "new_forecasts": 0,
+  "physical_fits": 0,
+  "primary_seed": 20261028,
+  "rows": 32,
+  "selection_rule": "First up to8 original-order rows in each FPL position, then original global row order; no outcome/score filtering.",
+  "selection_sha256": "6b28262ac9a12e060066fdf78caf3ff78491165d865c39ff2587b307a51884b1",
+  "source": {
+    "file_sha256": {
+      "base": "9b409ca521265a72aa9ca622fc33ce2dec1d7c90e33ca3f40f6f44c2a8649a1c",
+      "components": "cda3cdbe7c2f3ee26bc775cbc4ec4bb66c450e3f9c54f70d4d96b42b1e1fa89c",
+      "defensive-prior": "03e7b3fb2102dcdef7b25898871cfa340baf915950722f3651217a417ff3e168",
+      "opponent_enhanced": "4a491c91cc95ed40a6681746f6de1a2ecda169c3aa6495da6e2b17bf4ed03f33",
+      "origins": "06dad3b9c817cc81fbf2c342c936d5e5d407a8ffef91a24af3bec71d9ac1f0be",
+      "rolling_exact": "0854e1481e03806c37cd90e34741b796e1dc36949244dd48bf1af8325d4329b2"
+    },
+    "gameweek": 7,
+    "logical_artifact": "qualification-current-replay",
+    "protocol_sha256": "7c02c92d75ee9dc835ee07bead0fa9c825be3927b4bc6f1a83bd13bd26af50e5",
+    "summary_sha256": "fc78082f8b49ee9b47816b4b21f8e55821774ad06c91af54e10afb5eaa3c6c4c"
+  },
+  "tolerance": {
+    "absolute": 1e-10,
+    "relative": 1e-10
+  },
+  "version": "selected-procedure-offline-v1"
+}

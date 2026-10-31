@@ -1,0 +1,154 @@
+{
+  "columns": [
+    "observation_id",
+    "player_id",
+    "event_time",
+    "season",
+    "gameweek",
+    "fpl_position",
+    "minutes",
+    "goals_scored",
+    "assists",
+    "saves",
+    "goals_conceded",
+    "clean_sheets",
+    "bonus",
+    "yellow_cards",
+    "red_cards",
+    "own_goals",
+    "penalties_missed",
+    "penalties_saved",
+    "total_points",
+    "starts",
+    "negative_subtotal",
+    "known_score_subtotal",
+    "appeared",
+    "sixty",
+    "defensive_contribution"
+  ],
+  "dtypes": {
+    "appeared": "float64",
+    "assists": "int32",
+    "bonus": "int32",
+    "clean_sheets": "int32",
+    "defensive_contribution": "Int32",
+    "event_time": "datetime64[us, UTC]",
+    "fpl_position": "object",
+    "gameweek": "int32",
+    "goals_conceded": "int32",
+    "goals_scored": "int32",
+    "known_score_subtotal": "float64",
+    "minutes": "int32",
+    "negative_subtotal": "float64",
+    "observation_id": "object",
+    "own_goals": "int32",
+    "penalties_missed": "int32",
+    "penalties_saved": "int32",
+    "player_id": "object",
+    "red_cards": "int32",
+    "saves": "int32",
+    "season": "object",
+    "sixty": "float64",
+    "starts": "Int32",
+    "total_points": "int32",
+    "yellow_cards": "int32"
+  },
+  "exact_concatenated_parity": true,
+  "maximum_part_bytes": 2097152,
+  "order": "_package_row_index ascending; exactly0 through rows\u22121",
+  "parts": [
+    {
+      "bytes": 771167,
+      "path": "data/history/2013-14.parquet",
+      "rows": 17805,
+      "season": "2013-14",
+      "sha256": "179135e4c43b650202bb6988bb0cc5c554739608303ecf21de5d41849ccc5393"
+    },
+    {
+      "bytes": 1062571,
+      "path": "data/history/2014-15.parquet",
+      "rows": 24876,
+      "season": "2014-15",
+      "sha256": "f2b09b380dda7c898ff811d552e0bafc740c2bcc81923e00064f05d417d3afed"
+    },
+    {
+      "bytes": 1050436,
+      "path": "data/history/2015-16.parquet",
+      "rows": 24741,
+      "season": "2015-16",
+      "sha256": "d59404fd401b40ea97cd4153382e57c6b572858ad031b7584a61ce2a1452670e"
+    },
+    {
+      "bytes": 1006768,
+      "path": "data/history/2016-17.parquet",
+      "rows": 23679,
+      "season": "2016-17",
+      "sha256": "2a89f3d1b03dbb75169f8dd7b8844d1170fc719ab3e0f7fa78a06ba27f574634"
+    },
+    {
+      "bytes": 954171,
+      "path": "data/history/2017-18.parquet",
+      "rows": 22467,
+      "season": "2017-18",
+      "sha256": "a1329c524867340b1261675560fa179d3b41a4c21bec32e264f7c60ed0a2bcea"
+    },
+    {
+      "bytes": 931267,
+      "path": "data/history/2018-19.parquet",
+      "rows": 21790,
+      "season": "2018-19",
+      "sha256": "1c8f4659ccc0a406234025b3a2a5148cf8e73f2772ae121d76955ef2a2e6d6a8"
+    },
+    {
+      "bytes": 963157,
+      "path": "data/history/2019-20.parquet",
+      "rows": 22501,
+      "season": "2019-20",
+      "sha256": "7886a581da963bd8092a7286679ecf88aad80695cd3019232fa23d6dc252ba69"
+    },
+    {
+      "bytes": 1031628,
+      "path": "data/history/2020-21.parquet",
+      "rows": 24365,
+      "season": "2020-21",
+      "sha256": "ff1264b9dbe6895c70831c3465fe9e15b8bfc963f32dc2229c865458586f6b78"
+    },
+    {
+      "bytes": 1079561,
+      "path": "data/history/2021-22.parquet",
+      "rows": 25447,
+      "season": "2021-22",
+      "sha256": "aa363294fafe24c9597d03ecc03adfca5376d0493aa70876af5b52440cbfd5b8"
+    },
+    {
+      "bytes": 1122402,
+      "path": "data/history/2022-23.parquet",
+      "rows": 26505,
+      "season": "2022-23",
+      "sha256": "14727aef2eaf7d57e27d896c970a0478f8d47f26d7ee7a1e05d190b32aaa01f6"
+    },
+    {
+      "bytes": 1254444,
+      "path": "data/history/2023-24.parquet",
+      "rows": 29725,
+      "season": "2023-24",
+      "sha256": "ce38aae27709d4813f7cb9754402be1f32a39458007e420a782ce9dd98b32304"
+    },
+    {
+      "bytes": 1172404,
+      "path": "data/history/2024-25.parquet",
+      "rows": 27283,
+      "season": "2024-25",
+      "sha256": "14d6ffee0867ccea02808895845683b5da0e17c257f56c5257ca4a9a2518b018"
+    },
+    {
+      "bytes": 1258896,
+      "path": "data/history/2025-26.parquet",
+      "rows": 29747,
+      "season": "2025-26",
+      "sha256": "1f0a727764bebe5015d0c2a49175fb99b72e0e3d45005f7273244a6ae3651351"
+    }
+  ],
+  "rows": 320931,
+  "version": "lossless-history-partitions-v1"
+}
