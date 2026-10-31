@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-31T18:58:01.377560+00:00",
+  "fetched_at": "2026-10-31T22:13:38.206087+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,7 +8,7 @@
   "next_deadline": "2026-11-06T18:30:00Z",
   "preseason": false,
   "overall_points": 500,
-  "overall_rank": 4051518,
+  "overall_rank": 4306760,
   "bank": 2.4,
   "squad_value": 100.2,
   "squad_selling_value": 971,
@@ -286,8 +286,8 @@
           "entry": 62697,
           "entry_name": "Cherki Dinosaurs",
           "manager": "Jamie Howson",
-          "event_total": 36,
-          "total": 621,
+          "event_total": 45,
+          "total": 630,
           "is_me": false
         },
         {
@@ -305,7 +305,7 @@
     {
       "id": 358630,
       "name": "twentyAI FPL New",
-      "my_rank": 5,
+      "my_rank": 6,
       "my_last_rank": 5,
       "entries": 6,
       "standings_truncated_to": null,
@@ -316,8 +316,8 @@
           "entry": 1868009,
           "entry_name": "No More Mr Rice Kai",
           "manager": "Anai Patel",
-          "event_total": 47,
-          "total": 601,
+          "event_total": 56,
+          "total": 610,
           "is_me": false
         },
         {
@@ -326,8 +326,8 @@
           "entry": 3886598,
           "entry_name": "Col's Trolls",
           "manager": "James Collins",
-          "event_total": 40,
-          "total": 563,
+          "event_total": 49,
+          "total": 572,
           "is_me": false
         },
         {
@@ -346,12 +346,22 @@
           "entry": 5038162,
           "entry_name": "Quantum of Tzolis",
           "manager": "Ed Shropshire",
-          "event_total": 39,
-          "total": 524,
+          "event_total": 50,
+          "total": 535,
           "is_me": false
         },
         {
           "rank": 5,
+          "last_rank": 6,
+          "entry": 7267539,
+          "entry_name": "Pending Moderation",
+          "manager": "Paddy Hagger",
+          "event_total": 48,
+          "total": 508,
+          "is_me": false
+        },
+        {
+          "rank": 6,
           "last_rank": 5,
           "entry": 790889,
           "entry_name": "Meeks Freeks",
@@ -359,16 +369,6 @@
           "event_total": 28,
           "total": 500,
           "is_me": true
-        },
-        {
-          "rank": 6,
-          "last_rank": 6,
-          "entry": 7267539,
-          "entry_name": "Pending Moderation",
-          "manager": "Paddy Hagger",
-          "event_total": 39,
-          "total": 499,
-          "is_me": false
         }
       ]
     },
@@ -406,8 +406,8 @@
           "entry": 5749977,
           "entry_name": "SEAN",
           "manager": "Sean McGonigle",
-          "event_total": 35,
-          "total": 488,
+          "event_total": 44,
+          "total": 497,
           "is_me": false
         },
         {
@@ -416,8 +416,8 @@
           "entry": 6758481,
           "entry_name": "chilli con Cairney",
           "manager": "Joe Raven",
-          "event_total": 7,
-          "total": 449,
+          "event_total": 13,
+          "total": 455,
           "is_me": false
         }
       ]
@@ -436,12 +436,32 @@
           "entry": 351753,
           "entry_name": "XabiDooWhereAreYou",
           "manager": "Andrii Makarenko",
-          "event_total": 29,
-          "total": 607,
+          "event_total": 38,
+          "total": 616,
           "is_me": false
         },
         {
           "rank": 2,
+          "last_rank": 4,
+          "entry": 2753182,
+          "entry_name": "Daizen & Confused",
+          "manager": "Jamie McGachy",
+          "event_total": 59,
+          "total": 603,
+          "is_me": false
+        },
+        {
+          "rank": 3,
+          "last_rank": 2,
+          "entry": 662743,
+          "entry_name": "Haaland Globetroterz",
+          "manager": "Kelly Millsaps",
+          "event_total": 37,
+          "total": 591,
+          "is_me": false
+        },
+        {
+          "rank": 4,
           "last_rank": 3,
           "entry": 5122358,
           "entry_name": "Rohan Van Pedro",
@@ -451,53 +471,43 @@
           "is_me": false
         },
         {
-          "rank": 3,
-          "last_rank": 4,
-          "entry": 2753182,
-          "entry_name": "Daizen & Confused",
-          "manager": "Jamie McGachy",
-          "event_total": 41,
-          "total": 585,
-          "is_me": false
-        },
-        {
-          "rank": 4,
-          "last_rank": 2,
-          "entry": 662743,
-          "entry_name": "Haaland Globetroterz",
-          "manager": "Kelly Millsaps",
-          "event_total": 21,
-          "total": 575,
-          "is_me": false
-        },
-        {
           "rank": 5,
           "last_rank": 6,
           "entry": 3820692,
           "entry_name": "somgorsi",
           "manager": "Hubert Kaźmierczak",
-          "event_total": 38,
-          "total": 568,
+          "event_total": 42,
+          "total": 572,
           "is_me": false
         },
         {
           "rank": 6,
-          "last_rank": 5,
-          "entry": 2940306,
-          "entry_name": "SomeRandomName",
-          "manager": "Ania ER",
-          "event_total": 21,
-          "total": 561,
-          "is_me": false
-        },
-        {
-          "rank": 7,
           "last_rank": 10,
           "entry": 3747240,
           "entry_name": "VAR-a-Lago",
           "manager": "Mike Phillips",
-          "event_total": 37,
-          "total": 552,
+          "event_total": 55,
+          "total": 570,
+          "is_me": false
+        },
+        {
+          "rank": 7,
+          "last_rank": 5,
+          "entry": 2940306,
+          "entry_name": "SomeRandomName",
+          "manager": "Ania ER",
+          "event_total": 30,
+          "total": 570,
+          "is_me": false
+        },
+        {
+          "rank": 8,
+          "last_rank": 14,
+          "entry": 687538,
+          "entry_name": "week_foot_11",
+          "manager": "Samip Thakkar",
+          "event_total": 53,
+          "total": 549,
           "is_me": false
         },
         {
@@ -506,12 +516,42 @@
           "entry": 4780428,
           "entry_name": "Viva Les Vegas",
           "manager": "James Davies",
-          "event_total": 20,
-          "total": 539,
+          "event_total": 30,
+          "total": 549,
           "is_me": false
         },
         {
-          "rank": 9,
+          "rank": 10,
+          "last_rank": 8,
+          "entry": 2583053,
+          "entry_name": "Proper Team Name 2",
+          "manager": "Grzesiek Martinez",
+          "event_total": 32,
+          "total": 546,
+          "is_me": false
+        },
+        {
+          "rank": 11,
+          "last_rank": 11,
+          "entry": 548815,
+          "entry_name": "Sels Like TeamSpirit",
+          "manager": "John Braddock",
+          "event_total": 34,
+          "total": 544,
+          "is_me": false
+        },
+        {
+          "rank": 12,
+          "last_rank": 9,
+          "entry": 2840746,
+          "entry_name": "Matthew's Team",
+          "manager": "Matthew Evans",
+          "event_total": 20,
+          "total": 536,
+          "is_me": false
+        },
+        {
+          "rank": 13,
           "last_rank": 12,
           "entry": 2328199,
           "entry_name": "Super Saiyan Sarr",
@@ -521,63 +561,23 @@
           "is_me": false
         },
         {
-          "rank": 10,
-          "last_rank": 11,
-          "entry": 548815,
-          "entry_name": "Sels Like TeamSpirit",
-          "manager": "John Braddock",
-          "event_total": 25,
-          "total": 535,
-          "is_me": false
-        },
-        {
-          "rank": 10,
-          "last_rank": 9,
-          "entry": 2840746,
-          "entry_name": "Matthew's Team",
-          "manager": "Matthew Evans",
-          "event_total": 19,
-          "total": 535,
-          "is_me": false
-        },
-        {
-          "rank": 12,
-          "last_rank": 8,
-          "entry": 2583053,
-          "entry_name": "Proper Team Name 2",
-          "manager": "Grzesiek Martinez",
-          "event_total": 16,
-          "total": 530,
-          "is_me": false
-        },
-        {
-          "rank": 13,
-          "last_rank": 15,
-          "entry": 5984664,
-          "entry_name": "Wishing4Wigan",
-          "manager": "Micajah Dudley",
-          "event_total": 31,
-          "total": 525,
-          "is_me": false
-        },
-        {
           "rank": 14,
-          "last_rank": 14,
-          "entry": 687538,
-          "entry_name": "week_foot_11",
-          "manager": "Samip Thakkar",
-          "event_total": 24,
-          "total": 520,
-          "is_me": false
-        },
-        {
-          "rank": 15,
           "last_rank": 18,
           "entry": 2387148,
           "entry_name": "Amadness",
           "manager": "Michal Nowak",
-          "event_total": 48,
-          "total": 510,
+          "event_total": 73,
+          "total": 535,
+          "is_me": false
+        },
+        {
+          "rank": 15,
+          "last_rank": 15,
+          "entry": 5984664,
+          "entry_name": "Wishing4Wigan",
+          "manager": "Micajah Dudley",
+          "event_total": 40,
+          "total": 534,
           "is_me": false
         },
         {
@@ -592,22 +592,22 @@
         },
         {
           "rank": 17,
+          "last_rank": 19,
+          "entry": 2527602,
+          "entry_name": "Peak Roy Hodgson FC",
+          "manager": "Andrew Hayes",
+          "event_total": 40,
+          "total": 499,
+          "is_me": false
+        },
+        {
+          "rank": 18,
           "last_rank": 17,
           "entry": 5093062,
           "entry_name": "Saf London Fc",
           "manager": "Tony Huckle",
           "event_total": 31,
           "total": 496,
-          "is_me": false
-        },
-        {
-          "rank": 18,
-          "last_rank": 19,
-          "entry": 2527602,
-          "entry_name": "Peak Roy Hodgson FC",
-          "manager": "Andrew Hayes",
-          "event_total": 22,
-          "total": 481,
           "is_me": false
         },
         {
@@ -656,8 +656,8 @@
           "entry": 5887119,
           "entry_name": "You Araujo",
           "manager": "Finn Meredith",
-          "event_total": 31,
-          "total": 574,
+          "event_total": 40,
+          "total": 583,
           "is_me": false
         },
         {
@@ -666,8 +666,8 @@
           "entry": 2316299,
           "entry_name": "Caput mensae",
           "manager": "Huw Meredith",
-          "event_total": 25,
-          "total": 543,
+          "event_total": 44,
+          "total": 562,
           "is_me": false
         },
         {
@@ -676,8 +676,8 @@
           "entry": 1732178,
           "entry_name": "(Haa)Land Rover",
           "manager": "Joe Meiklejohn",
-          "event_total": 24,
-          "total": 533,
+          "event_total": 40,
+          "total": 549,
           "is_me": false
         },
         {
@@ -686,8 +686,8 @@
           "entry": 8668432,
           "entry_name": "MMDGAF FC",
           "manager": "Helen Maude",
-          "event_total": 33,
-          "total": 511,
+          "event_total": 42,
+          "total": 520,
           "is_me": false
         },
         {
@@ -736,8 +736,8 @@
           "entry": 6418014,
           "entry_name": "Murrays Marauders FC",
           "manager": "Ross Murray",
-          "event_total": 32,
-          "total": 572,
+          "event_total": 41,
+          "total": 581,
           "is_me": false
         },
         {
@@ -746,8 +746,8 @@
           "entry": 1732178,
           "entry_name": "(Haa)Land Rover",
           "manager": "Joe Meiklejohn",
-          "event_total": 24,
-          "total": 533,
+          "event_total": 40,
+          "total": 549,
           "is_me": false
         },
         {
@@ -766,8 +766,8 @@
           "entry": 6389595,
           "entry_name": "A Grand Old Team",
           "manager": "Steve Organ",
-          "event_total": 27,
-          "total": 409,
+          "event_total": 35,
+          "total": 417,
           "is_me": false
         },
         {
@@ -776,8 +776,8 @@
           "entry": 636134,
           "entry_name": "Hobblers 2",
           "manager": "Andrew Hasler",
-          "event_total": 24,
-          "total": 408,
+          "event_total": 26,
+          "total": 410,
           "is_me": false
         }
       ]
