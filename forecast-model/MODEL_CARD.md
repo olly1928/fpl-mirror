@@ -30,7 +30,9 @@ The immutable candidate passed local official-capture parity against the selecte
 
 A relocated CLI run and its nested replay process both demonstrated blocked original-workspace reads and blocked lab imports. Fresh-process predictions were exactly equal. This is a Python-level isolation check, not an OS sandbox or a guarantee about arbitrary native-library I/O. No fitting occurred during these package checks.
 
-**Hosted Linux CI and a fresh GitHub-hosted official-API run remain pending.** The manual and offline workflow examples are included, but availability of a workflow file is not evidence that it ran. Python 3.12 and exact runtime dependencies are required. Engineering release clearance does not imply scientific superiority.
+**Hosted Linux offline CI passed.** The [hosted run](https://github.com/olly1928/fpl-mirror/actions/runs/41250558816) reported 30 tests passed and one skipped, plus 32 actual-model cases whose 18 checked output columns matched within the declared 1e-10 tolerance. The largest component difference was 5.55e-17; headline prediction and approximate current total were exact. It performed zero fits and zero network requests. The reviewed PR head `feb525113f76467432b3431cb6a8db64b4ba4e67` has green [model offline CI](https://github.com/olly1928/fpl-mirror/actions/runs/41250558816) and existing repository tests. Python 3.12 and exact runtime dependencies remain required.
+
+The manual forecast and offline-CI workflows are installed in the repository. **The first fresh hosted official-API capture, forecast and publication is still pending** and requires authenticated manual dispatch. Saved-input CI does not prove API availability or successful publication. `release_validation_complete` means package/prepublication engineering clearance; `hosted_execution_validated` remains false until the fresh end-to-end run is evidenced. Neither engineering clearance nor hosted execution implies scientific superiority. There is no automatic forecast schedule or season-long service.
 
 ## Limitations
 

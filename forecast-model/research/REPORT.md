@@ -119,6 +119,16 @@ Model weights and the selected blend stay fixed while fresh past-match inputs up
 
 Publish this candidate with the evidence and keep the existing advisor as primary. This completes the requested finite research and produces a reproducible comparison model; it does not justify claiming a stronger weekly decision system.
 
+## Latest release checkpoint — 31 October 2026, 23:01 UTC
+
+The candidate and report are published for review in [PR #8](https://github.com/olly1928/fpl-mirror/pull/8). The current tested branch head is `feb525113f76467432b3431cb6a8db64b4ba4e67`. This adds a research comparison package; the scientific recommendation remains to retain the existing advisor as primary.
+
+Both the [initial Linux offline check](https://github.com/olly1928/fpl-mirror/actions/runs/41250463788) and the [current Linux offline check](https://github.com/olly1928/fpl-mirror/actions/runs/41250558816) passed. The initial logs record **30 tests passed, one skipped**, plus **32 saved-model rows across 18 output columns**, all with maximum absolute difference **0**, **zero fits** and **zero network requests**. The current run also passes 30 tests with one skip; its 18 outputs match within the fixed absolute and relative tolerance of **1×10⁻¹⁰**. The largest component difference is **5.55×10⁻¹⁷**, while the headline point forecasts, approximate current total and availability outputs remain exactly equal. This establishes hosted offline compatibility on the saved fixture; it is not a fresh official-API forecast.
+
+The repository's existing tests also pass in [run 41250558772](https://github.com/olly1928/fpl-mirror/actions/runs/41250558772) and [run 41250554225](https://github.com/olly1928/fpl-mirror/actions/runs/41250554225). A narrow standard-library guard change excludes only the `forecast-model/` subtree, whose optional model dependencies are covered by the separate pinned-dependency CI. Frozen model and scientific sources were not changed for this integration.
+
+The **first fresh hosted manual capture, inference and forecast publication remains pending**. The available GitHub connector has no workflow-dispatch action, and the available browsers are signed out. Release metadata can clear the completed pre-publication engineering checks while keeping fresh-hosted validation false. Offline CI and publication do not imply that this outstanding live workflow has run, nor do they demonstrate model superiority.
+
 ## Reproducible public evidence
 
 [aggregates.json](aggregates.json) contains only aggregate tables, intervals, counts, source-relative identifiers and SHA-256 bindings. It includes no user account IDs, individual owned squads, raw captures, home-directory paths or secrets. Source hashes refer to preserved local study records; those raw records are not bundled into this public report.

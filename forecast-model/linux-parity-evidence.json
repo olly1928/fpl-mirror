@@ -1,0 +1,100 @@
+{
+  "version": "qualification-linux-parity-evidence-v1",
+  "repository": "olly1928/fpl-mirror",
+  "head_sha": "feb525113f76467432b3431cb6a8db64b4ba4e67",
+  "run_id": 41250558816,
+  "run_url": "https://github.com/olly1928/fpl-mirror/actions/runs/41250558816",
+  "job_id": 124683015665,
+  "conclusion": "success",
+  "tests": {
+    "passed": 30,
+    "skipped": 1
+  },
+  "actual_model_parity": {
+    "complete": true,
+    "physical_fits": 0,
+    "network_requests": 0,
+    "rows": 32,
+    "checks": [
+      {
+        "column": "prediction",
+        "maximum_absolute_difference": 0
+      },
+      {
+        "column": "p_appear",
+        "maximum_absolute_difference": 0
+      },
+      {
+        "column": "p60",
+        "maximum_absolute_difference": 0
+      },
+      {
+        "column": "expected_minutes",
+        "maximum_absolute_difference": 0
+      },
+      {
+        "column": "minutes",
+        "maximum_absolute_difference": 0
+      },
+      {
+        "column": "component_supported_score",
+        "maximum_absolute_difference": 0
+      },
+      {
+        "column": "component_minute_state_p0",
+        "maximum_absolute_difference": 6.938893903907228e-18
+      },
+      {
+        "column": "component_minute_state_p1",
+        "maximum_absolute_difference": 2.7755575615628914e-17
+      },
+      {
+        "column": "component_minute_state_p2",
+        "maximum_absolute_difference": 0
+      },
+      {
+        "column": "component_goals",
+        "maximum_absolute_difference": 5.551115123125783e-17
+      },
+      {
+        "column": "component_clean_sheet_points",
+        "maximum_absolute_difference": 0
+      },
+      {
+        "column": "component_save_blocks",
+        "maximum_absolute_difference": 0
+      },
+      {
+        "column": "component_conceded_blocks",
+        "maximum_absolute_difference": 0
+      },
+      {
+        "column": "component_negative_cost",
+        "maximum_absolute_difference": 0
+      },
+      {
+        "column": "component_penalties_saved",
+        "maximum_absolute_difference": 0
+      },
+      {
+        "column": "component_assists",
+        "maximum_absolute_difference": 0
+      },
+      {
+        "column": "component_bonus",
+        "maximum_absolute_difference": 5.551115123125783e-17
+      },
+      {
+        "column": "approximate_current_rule_expected_total",
+        "maximum_absolute_difference": 0
+      }
+    ],
+    "absolute_tolerance": 1e-10,
+    "relative_tolerance": 1e-10,
+    "package_manifest_sha256": "3d541867ca19f297a0ae2708b2012444c2938949c1c10f79a0887bb36c1ac1ac",
+    "offline_fixture_sha256": "2e6f9a2768e1a2bea880434441be5ad76a1c339303fd6363bb5c09933f4edebe",
+    "compute_seconds": 0.532027893999981,
+    "scope": "Actual saved models, preprocessing, complete selected-score assembly, common availability and fixed defensive bridge. Feature-builder semantics tested separately."
+  },
+  "remaining": "First fresh manual hosted capture, inference and publication has not run."
+}

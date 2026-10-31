@@ -102,6 +102,9 @@
   "default_points_column": "approximate_current_rule_expected_total",
   "default_variant": "blend_direct_football_050",
   "deployment_recommendation": "retain_existing_advisor_additive_research_option",
+  "hosted_execution_pending": [
+    "First fresh manual GitHub capture, inference and bounded publication"
+  ],
   "hosted_execution_validated": false,
   "latest_fit_records_sha256": "9dce90b7a35250fe33a5498f7e93d3430475bac1e6bcf32c66cc0c3cc6d6e454",
   "limitations": [
@@ -7668,11 +7671,8 @@
     }
   ],
   "release_evidence_file": "release-evidence.json",
-  "release_validation_complete": false,
-  "release_validation_pending": [
-    "clean Linux actual-model offline CI",
-    "fresh hosted on-demand capture, inference and publication"
-  ],
+  "release_validation_complete": true,
+  "release_validation_pending": [],
   "release_validation_scope": "Engineering package and prepublication clearance only; scientific promotion and first hosted execution are separate.",
   "runtime_configuration_sha256": {
     "pyproject.toml": "daba0d1e46377f886ff5a98bb22dcf8fd3f639ee4c38c3e0dccad0925f98657e",
