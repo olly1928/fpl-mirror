@@ -34,6 +34,10 @@ jobs:
           local = {p.stem for p in pathlib.Path('.').glob('*.py')}
           bad = []
           for path in sorted(pathlib.Path('.').rglob('*.py')):
+              # The optional learned model has its own pinned runtime and offline CI.
+              # Keep the existing mirror/advisor dependency guard unchanged elsewhere.
+              if path.parts[0] == 'forecast-model':
+                  continue
               tree = ast.parse(path.read_text())
               for node in ast.walk(tree):
                   if isinstance(node, ast.Import):
