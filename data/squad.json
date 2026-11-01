@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-31T22:13:38.206087+00:00",
+  "fetched_at": "2026-11-01T01:44:50.989837+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,11 +8,11 @@
   "next_deadline": "2026-11-06T18:30:00Z",
   "preseason": false,
   "overall_points": 500,
-  "overall_rank": 4306760,
+  "overall_rank": 4302201,
   "bank": 2.4,
   "squad_value": 100.2,
   "squad_selling_value": 971,
-  "squad_market_value": 978,
+  "squad_market_value": 979,
   "available_budget": 995,
   "notes": [
     "FREE TRANSFERS: ESTIMATE ONLY — the FPL API does not expose free transfers. Derived from transfer history assuming 1 earned per gameweek, banked to a maximum of 5, with wildcard/free-hit weeks not consuming any. Confirm on the FPL site before making transfer decisions.",
@@ -95,12 +95,12 @@
     },
     {
       "event": 9,
-      "points": 0,
-      "overall_rank": 4037130,
-      "rank": null,
+      "points": 28,
+      "overall_rank": 4302201,
+      "rank": 6327244,
       "transfers": 1,
       "transfer_cost": 0,
-      "points_on_bench": 0
+      "points_on_bench": 8
     }
   ],
   "past_seasons": [
@@ -502,21 +502,21 @@
         },
         {
           "rank": 8,
-          "last_rank": 14,
-          "entry": 687538,
-          "entry_name": "week_foot_11",
-          "manager": "Samip Thakkar",
-          "event_total": 53,
-          "total": 549,
-          "is_me": false
-        },
-        {
-          "rank": 8,
           "last_rank": 7,
           "entry": 4780428,
           "entry_name": "Viva Les Vegas",
           "manager": "James Davies",
           "event_total": 30,
+          "total": 549,
+          "is_me": false
+        },
+        {
+          "rank": 8,
+          "last_rank": 14,
+          "entry": 687538,
+          "entry_name": "week_foot_11",
+          "manager": "Samip Thakkar",
+          "event_total": 53,
           "total": 549,
           "is_me": false
         },
@@ -676,8 +676,8 @@
           "entry": 1732178,
           "entry_name": "(Haa)Land Rover",
           "manager": "Joe Meiklejohn",
-          "event_total": 40,
-          "total": 549,
+          "event_total": 38,
+          "total": 547,
           "is_me": false
         },
         {
@@ -746,8 +746,8 @@
           "entry": 1732178,
           "entry_name": "(Haa)Land Rover",
           "manager": "Joe Meiklejohn",
-          "event_total": 40,
-          "total": 549,
+          "event_total": 38,
+          "total": 547,
           "is_me": false
         },
         {
@@ -915,7 +915,7 @@
       "full_name": "Marcus Tavernier",
       "team": "BOU",
       "pos": "MID",
-      "now_cost": 6.5,
+      "now_cost": 6.6,
       "multiplier": 1,
       "is_captain": false,
       "is_vice_captain": false,
@@ -1104,7 +1104,7 @@
       "suspect": false
     },
     "68": {
-      "now_cost": 65,
+      "now_cost": 66,
       "purchase": 65,
       "selling": 65,
       "source": "transfer",
