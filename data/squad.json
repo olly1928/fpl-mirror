@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-01T07:30:17.490653+00:00",
+  "fetched_at": "2026-11-01T08:30:28.954452+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -502,21 +502,21 @@
         },
         {
           "rank": 8,
-          "last_rank": 14,
-          "entry": 687538,
-          "entry_name": "week_foot_11",
-          "manager": "Samip Thakkar",
-          "event_total": 53,
-          "total": 549,
-          "is_me": false
-        },
-        {
-          "rank": 8,
           "last_rank": 7,
           "entry": 4780428,
           "entry_name": "Viva Les Vegas",
           "manager": "James Davies",
           "event_total": 30,
+          "total": 549,
+          "is_me": false
+        },
+        {
+          "rank": 8,
+          "last_rank": 14,
+          "entry": 687538,
+          "entry_name": "week_foot_11",
+          "manager": "Samip Thakkar",
+          "event_total": 53,
           "total": 549,
           "is_me": false
         },
