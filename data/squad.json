@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-03T00:15:38.730903+00:00",
+  "fetched_at": "2026-11-03T07:26:16.493990+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,7 +8,7 @@
   "next_deadline": "2026-11-06T18:30:00Z",
   "preseason": false,
   "overall_points": 518,
-  "overall_rank": 4016476,
+  "overall_rank": 4017641,
   "bank": 2.4,
   "squad_value": 100.2,
   "squad_selling_value": 971,
@@ -472,21 +472,21 @@
         },
         {
           "rank": 5,
-          "last_rank": 6,
-          "entry": 3820692,
-          "entry_name": "somgorsi",
-          "manager": "Hubert Kaźmierczak",
-          "event_total": 65,
-          "total": 595,
-          "is_me": false
-        },
-        {
-          "rank": 6,
           "last_rank": 10,
           "entry": 3747240,
           "entry_name": "VAR-a-Lago",
           "manager": "Mike Phillips",
           "event_total": 79,
+          "total": 594,
+          "is_me": false
+        },
+        {
+          "rank": 6,
+          "last_rank": 6,
+          "entry": 3820692,
+          "entry_name": "somgorsi",
+          "manager": "Hubert Kaźmierczak",
+          "event_total": 64,
           "total": 594,
           "is_me": false
         },
@@ -526,8 +526,8 @@
           "entry": 687538,
           "entry_name": "week_foot_11",
           "manager": "Samip Thakkar",
-          "event_total": 64,
-          "total": 560,
+          "event_total": 62,
+          "total": 558,
           "is_me": false
         },
         {
@@ -616,12 +616,12 @@
           "entry": 6423433,
           "entry_name": "Real Contenders",
           "manager": "Anthony Prior",
-          "event_total": 44,
-          "total": 473,
+          "event_total": 43,
+          "total": 472,
           "is_me": false
         },
         {
-          "rank": 20,
+          "rank": 19,
           "last_rank": 20,
           "entry": 1335880,
           "entry_name": "The Szo Show",
@@ -636,8 +636,8 @@
           "entry": 8853128,
           "entry_name": "Jesse's Team",
           "manager": "Jesse Huling",
-          "event_total": 39,
-          "total": 426,
+          "event_total": 38,
+          "total": 425,
           "is_me": false
         }
       ]
@@ -686,8 +686,8 @@
           "entry": 8668432,
           "entry_name": "MMDGAF FC",
           "manager": "Helen Maude",
-          "event_total": 56,
-          "total": 534,
+          "event_total": 55,
+          "total": 533,
           "is_me": false
         },
         {
@@ -716,8 +716,8 @@
           "entry": 7113295,
           "entry_name": "Eze does, Eze goes",
           "manager": "Gus Price",
-          "event_total": 54,
-          "total": 471,
+          "event_total": 57,
+          "total": 474,
           "is_me": false
         }
       ]
