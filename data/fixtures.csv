@@ -1,4 +1,4 @@
-# season=2026/27 preseason=False next_gw=11 deadline=2026-11-21T11:00:00Z players=670 fetched=2026-11-06T19:47:05+00:00
+# season=2026/27 preseason=False next_gw=11 deadline=2026-11-21T11:00:00Z players=670 fetched=2026-11-06T23:53:57+00:00
 # scores/minutes_played are blank until a fixture has been played.
 # provisional_start_time=True means the kickoff time is not yet confirmed.
 gw,home,away,h_diff,a_diff,kickoff,fixture_id,finished,provisional_start_time,team_h_score,team_a_score,minutes_played
@@ -92,7 +92,7 @@ gw,home,away,h_diff,a_diff,kickoff,fixture_id,finished,provisional_start_time,te
 9,AVL,FUL,2,3,2026-10-31,81,True,False,1,1,90
 9,LIV,ARS,4,4,2026-11-01,87,True,False,0,1,90
 9,NEW,EVE,3,3,2026-11-02,89,True,False,0,1,90
-10,EVE,COV,2,3,2026-11-06,94,False,False,,,0
+10,EVE,COV,2,3,2026-11-06,94,False,False,3,1,90
 10,LEE,TOT,3,3,2026-11-07,97,False,False,,,0
 10,ARS,HUL,2,5,2026-11-07,91,False,False,,,0
 10,FUL,NEW,3,3,2026-11-07,95,False,False,,,0
