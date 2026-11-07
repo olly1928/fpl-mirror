@@ -1,11 +1,11 @@
 {
-  "fetched_at": "2026-11-07T16:42:23+00:00",
+  "fetched_at": "2026-11-07T20:37:35+00:00",
   "season": "2026/27",
   "preseason": false,
   "current_event": 10,
   "next_event": 11,
   "next_deadline": "2026-11-21T11:00:00Z",
-  "player_count": 670,
+  "player_count": 671,
   "teams_in_game": [
     "ARS",
     "AVL",
@@ -702,7 +702,7 @@
       "sub_positions_locked": [
         12
       ],
-      "element_count": 74
+      "element_count": 75
     },
     {
       "id": 2,
@@ -929,7 +929,7 @@
   "warnings": [],
   "components": {
     "build_fpl": {
-      "last_run_at": "2026-11-07T16:42:23+00:00",
+      "last_run_at": "2026-11-07T20:37:35+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
@@ -941,19 +941,19 @@
       "stale": false
     },
     "build_player_history": {
-      "last_run_at": "2026-11-07T16:42:20+00:00",
+      "last_run_at": "2026-11-07T20:37:33+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
     },
     "build_snapshots": {
-      "last_run_at": "2026-11-07T16:42:20+00:00",
+      "last_run_at": "2026-11-07T20:37:33+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
     },
     "build_squad": {
-      "last_run_at": "2026-11-07T16:42:22+00:00",
+      "last_run_at": "2026-11-07T20:37:35+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
