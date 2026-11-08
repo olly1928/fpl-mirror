@@ -1,4 +1,4 @@
-# season=2026/27 preseason=False next_gw=11 deadline=2026-11-21T11:00:00Z players=671 fetched=2026-11-07T20:37:35+00:00
+# season=2026/27 preseason=False next_gw=11 deadline=2026-11-21T11:00:00Z players=671 fetched=2026-11-08T00:06:51+00:00
 # One row per fixture per player per stat, flattened from fixtures[].stats.
 # team_side: h=home side, a=away side. Empty until fixtures are played.
 # Unlike the other append-only files this one is rebuilt each run, so FPL's later bonus-point and stat corrections are picked up.
@@ -6332,23 +6332,23 @@ fixture_id,gw,player_id,team_side,identifier,value
 91,10,15,h,bonus,3
 91,10,16,h,bonus,2
 91,10,572,a,bonus,1
-91,10,15,h,bps,41
-91,10,16,h,bps,35
+91,10,15,h,bps,44
+91,10,16,h,bps,36
 91,10,1,h,bps,31
 91,10,5,h,bps,31
 91,10,4,h,bps,29
 91,10,31,h,bps,29
-91,10,8,h,bps,28
-91,10,452,h,bps,17
+91,10,8,h,bps,26
+91,10,452,h,bps,19
 91,10,557,h,bps,15
 91,10,13,h,bps,14
-91,10,17,h,bps,12
+91,10,17,h,bps,9
 91,10,25,h,bps,6
 91,10,9,h,bps,5
 91,10,19,h,bps,3
 91,10,26,h,bps,3
 91,10,14,h,bps,1
-91,10,572,a,bps,32
+91,10,572,a,bps,33
 91,10,279,a,bps,28
 91,10,280,a,bps,14
 91,10,290,a,bps,12
@@ -6364,7 +6364,7 @@ fixture_id,gw,player_id,team_side,identifier,value
 91,10,586,a,bps,3
 91,10,617,a,bps,2
 91,10,638,a,bps,-5
-91,10,31,h,defensive_contribution,12
+91,10,31,h,defensive_contribution,11
 91,10,4,h,defensive_contribution,10
 91,10,452,h,defensive_contribution,7
 91,10,8,h,defensive_contribution,6
@@ -6375,10 +6375,10 @@ fixture_id,gw,player_id,team_side,identifier,value
 91,10,25,h,defensive_contribution,3
 91,10,5,h,defensive_contribution,2
 91,10,14,h,defensive_contribution,2
-91,10,15,h,defensive_contribution,1
+91,10,15,h,defensive_contribution,2
 91,10,557,h,defensive_contribution,1
 91,10,586,a,defensive_contribution,13
-91,10,589,a,defensive_contribution,10
+91,10,589,a,defensive_contribution,11
 91,10,277,a,defensive_contribution,9
 91,10,279,a,defensive_contribution,8
 91,10,576,a,defensive_contribution,7
@@ -6473,23 +6473,23 @@ fixture_id,gw,player_id,team_side,identifier,value
 95,10,457,a,bonus,3
 95,10,271,h,bps,29
 95,10,258,h,bps,27
-95,10,261,h,bps,20
 95,10,265,h,bps,19
-95,10,580,h,bps,17
-95,10,250,h,bps,16
+95,10,250,h,bps,17
+95,10,261,h,bps,17
+95,10,580,h,bps,15
 95,10,650,h,bps,13
 95,10,570,h,bps,12
 95,10,257,h,bps,10
 95,10,264,h,bps,9
 95,10,268,h,bps,9
 95,10,254,h,bps,8
+95,10,569,h,bps,6
 95,10,269,h,bps,4
-95,10,569,h,bps,3
 95,10,256,h,bps,-1
 95,10,457,a,bps,38
 95,10,449,a,bps,20
 95,10,567,a,bps,17
-95,10,445,a,bps,15
+95,10,445,a,bps,13
 95,10,462,a,bps,13
 95,10,465,a,bps,13
 95,10,405,a,bps,8
@@ -6503,9 +6503,9 @@ fixture_id,gw,player_id,team_side,identifier,value
 95,10,634,a,bps,2
 95,10,446,a,bps,-1
 95,10,265,h,defensive_contribution,18
-95,10,580,h,defensive_contribution,10
+95,10,580,h,defensive_contribution,9
+95,10,650,h,defensive_contribution,9
 95,10,257,h,defensive_contribution,8
-95,10,650,h,defensive_contribution,8
 95,10,254,h,defensive_contribution,5
 95,10,264,h,defensive_contribution,4
 95,10,258,h,defensive_contribution,3
@@ -6516,8 +6516,8 @@ fixture_id,gw,player_id,team_side,identifier,value
 95,10,256,h,defensive_contribution,1
 95,10,268,h,defensive_contribution,1
 95,10,271,h,defensive_contribution,1
+95,10,449,a,defensive_contribution,12
 95,10,448,a,defensive_contribution,11
-95,10,449,a,defensive_contribution,11
 95,10,593,a,defensive_contribution,10
 95,10,462,a,defensive_contribution,9
 95,10,445,a,defensive_contribution,8
@@ -6619,8 +6619,8 @@ fixture_id,gw,player_id,team_side,identifier,value
 99,10,201,h,bps,12
 99,10,467,h,bps,12
 99,10,489,h,bps,11
+99,10,472,h,bps,8
 99,10,469,h,bps,7
-99,10,472,h,bps,7
 99,10,486,h,bps,4
 99,10,471,h,bps,3
 99,10,488,h,bps,3
@@ -6641,9 +6641,9 @@ fixture_id,gw,player_id,team_side,identifier,value
 99,10,387,a,bps,-3
 99,10,391,a,bps,-6
 99,10,558,h,defensive_contribution,14
-99,10,480,h,defensive_contribution,10
-99,10,472,h,defensive_contribution,9
-99,10,489,h,defensive_contribution,9
+99,10,472,h,defensive_contribution,11
+99,10,489,h,defensive_contribution,11
+99,10,480,h,defensive_contribution,9
 99,10,201,h,defensive_contribution,8
 99,10,471,h,defensive_contribution,8
 99,10,469,h,defensive_contribution,7
