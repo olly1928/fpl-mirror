@@ -1,4 +1,4 @@
-# season=2026/27 preseason=False next_gw=11 deadline=2026-11-21T11:00:00Z players=672 fetched=2026-11-08T22:37:06+00:00
+# season=2026/27 preseason=False next_gw=11 deadline=2026-11-21T11:00:00Z players=672 fetched=2026-11-09T02:16:28+00:00
 # One row per fixture per player per stat, flattened from fixtures[].stats.
 # team_side: h=home side, a=away side. Empty until fixtures are played.
 # Unlike the other append-only files this one is rebuilt each run, so FPL's later bonus-point and stat corrections are picked up.
@@ -6838,36 +6838,37 @@ fixture_id,gw,player_id,team_side,identifier,value
 98,10,597,a,yellow_cards,1
 98,10,412,h,saves,3
 98,10,597,a,saves,5
-98,10,415,h,bonus,1
+98,10,415,h,bonus,2
 98,10,52,a,bonus,3
 98,10,166,a,bonus,2
-98,10,415,h,bps,42
-98,10,43,h,bps,41
+98,10,415,h,bps,44
+98,10,43,h,bps,39
+98,10,428,h,bps,39
 98,10,426,h,bps,38
-98,10,428,h,bps,37
 98,10,440,h,bps,28
-98,10,432,h,bps,24
+98,10,432,h,bps,22
 98,10,431,h,bps,9
 98,10,422,h,bps,7
 98,10,435,h,bps,5
 98,10,427,h,bps,2
 98,10,412,h,bps,-1
 98,10,420,h,bps,-2
+98,10,421,h,bps,-3
 98,10,418,h,bps,-4
-98,10,421,h,bps,-4
-98,10,417,h,bps,-11
-98,10,52,a,bps,46
+98,10,417,h,bps,-7
+98,10,52,a,bps,48
 98,10,166,a,bps,44
 98,10,45,a,bps,36
 98,10,618,a,bps,31
-98,10,53,a,bps,17
-98,10,47,a,bps,8
+98,10,53,a,bps,19
+98,10,47,a,bps,9
 98,10,46,a,bps,5
 98,10,54,a,bps,5
 98,10,597,a,bps,5
 98,10,631,a,bps,5
 98,10,51,a,bps,4
 98,10,582,a,bps,4
+98,10,630,a,bps,2
 98,10,34,a,bps,-1
 98,10,37,a,bps,-1
 98,10,36,a,bps,-2
@@ -6875,10 +6876,10 @@ fixture_id,gw,player_id,team_side,identifier,value
 98,10,420,h,defensive_contribution,11
 98,10,422,h,defensive_contribution,8
 98,10,43,h,defensive_contribution,7
+98,10,428,h,defensive_contribution,7
 98,10,417,h,defensive_contribution,6
-98,10,428,h,defensive_contribution,6
 98,10,415,h,defensive_contribution,5
-98,10,421,h,defensive_contribution,4
+98,10,421,h,defensive_contribution,5
 98,10,431,h,defensive_contribution,4
 98,10,430,h,defensive_contribution,3
 98,10,418,h,defensive_contribution,2
@@ -6887,12 +6888,12 @@ fixture_id,gw,player_id,team_side,identifier,value
 98,10,435,h,defensive_contribution,1
 98,10,440,h,defensive_contribution,1
 98,10,37,a,defensive_contribution,14
+98,10,47,a,defensive_contribution,14
 98,10,34,a,defensive_contribution,12
-98,10,47,a,defensive_contribution,12
-98,10,53,a,defensive_contribution,8
+98,10,53,a,defensive_contribution,9
 98,10,630,a,defensive_contribution,8
+98,10,52,a,defensive_contribution,7
 98,10,36,a,defensive_contribution,6
-98,10,52,a,defensive_contribution,6
 98,10,45,a,defensive_contribution,5
 98,10,618,a,defensive_contribution,3
 98,10,51,a,defensive_contribution,2
