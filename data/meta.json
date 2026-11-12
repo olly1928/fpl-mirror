@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-12T12:01:51+00:00",
+  "fetched_at": "2026-11-12T20:35:29+00:00",
   "season": "2026/27",
   "preseason": false,
   "current_event": 10,
@@ -925,11 +925,13 @@
     ],
     "timezone": "UTC"
   },
-  "stale": false,
-  "warnings": [],
+  "stale": true,
+  "warnings": [
+    "[build_odds] STALE — last ran 2026-11-12T08:25:31+00:00, expected every 360 min"
+  ],
   "components": {
     "build_fpl": {
-      "last_run_at": "2026-11-12T12:01:51+00:00",
+      "last_run_at": "2026-11-12T20:35:29+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
@@ -938,22 +940,22 @@
       "last_run_at": "2026-11-12T08:25:31+00:00",
       "expected_interval_minutes": 360,
       "stale_after_minutes": 720,
-      "stale": false
+      "stale": true
     },
     "build_player_history": {
-      "last_run_at": "2026-11-12T12:01:49+00:00",
+      "last_run_at": "2026-11-12T20:35:27+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
     },
     "build_snapshots": {
-      "last_run_at": "2026-11-12T12:01:49+00:00",
+      "last_run_at": "2026-11-12T20:35:27+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
     },
     "build_squad": {
-      "last_run_at": "2026-11-12T12:01:51+00:00",
+      "last_run_at": "2026-11-12T20:35:29+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
