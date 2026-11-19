@@ -1,4 +1,4 @@
-# season=2026/27 preseason=False next_gw=11 deadline=2026-11-21T11:00:00Z players=672 fetched=2026-11-19T08:45:36+00:00
+# season=2026/27 preseason=False next_gw=11 deadline=2026-11-21T11:00:00Z players=672 fetched=2026-11-19T17:52:25+00:00
 # scores/minutes_played are blank until a fixture has been played.
 # provisional_start_time=True means the kickoff time is not yet confirmed.
 gw,home,away,h_diff,a_diff,kickoff,fixture_id,finished,provisional_start_time,team_h_score,team_a_score,minutes_played
@@ -202,36 +202,36 @@ gw,home,away,h_diff,a_diff,kickoff,fixture_id,finished,provisional_start_time,te
 20,IPS,COV,2,2,2027-01-06,196,False,False,,,0
 20,LEE,MCI,4,3,2027-01-06,197,False,False,,,0
 20,MUN,NEW,3,3,2027-01-07,198,False,False,,,0
-21,AVL,MUN,3,3,2027-01-16,201,False,False,,,0
-21,BOU,IPS,2,4,2027-01-16,202,False,False,,,0
-21,BRE,BHA,4,4,2027-01-16,203,False,False,,,0
-21,CHE,SUN,2,4,2027-01-16,204,False,False,,,0
 21,COV,EVE,3,2,2027-01-16,205,False,False,,,0
+21,CHE,SUN,2,4,2027-01-16,204,False,False,,,0
 21,HUL,ARS,4,2,2027-01-16,206,False,False,,,0
 21,LIV,CRY,2,4,2027-01-16,207,False,False,,,0
 21,MCI,NFO,3,5,2027-01-16,208,False,False,,,0
 21,NEW,FUL,2,3,2027-01-16,209,False,False,,,0
-21,TOT,LEE,3,3,2027-01-16,210,False,False,,,0
-22,ARS,NEW,3,5,2027-01-23,211,False,False,,,0
-22,BHA,MCI,4,4,2027-01-23,212,False,False,,,0
-22,CRY,TOT,3,2,2027-01-23,213,False,False,,,0
-22,EVE,BRE,3,3,2027-01-23,214,False,False,,,0
+21,AVL,MUN,3,3,2027-01-16,201,False,False,,,0
+21,BOU,IPS,2,4,2027-01-17,202,False,False,,,0
+21,TOT,LEE,3,3,2027-01-17,210,False,False,,,0
+21,BRE,BHA,4,4,2027-01-18,203,False,False,,,0
 22,FUL,AVL,3,3,2027-01-23,215,False,False,,,0
 22,IPS,HUL,2,2,2027-01-23,216,False,False,,,0
-22,LEE,CHE,4,3,2027-01-23,217,False,False,,,0
-22,MUN,LIV,4,3,2027-01-23,218,False,False,,,0
-22,NFO,BOU,3,2,2027-01-23,219,False,False,,,0
-22,SUN,COV,2,3,2027-01-23,220,False,False,,,0
-23,AVL,IPS,2,3,2027-01-30,221,False,False,,,0
-23,BOU,FUL,2,4,2027-01-30,222,False,False,,,0
-23,BRE,MUN,3,4,2027-01-30,223,False,False,,,0
-23,CHE,NFO,3,4,2027-01-30,224,False,False,,,0
-23,COV,LEE,3,2,2027-01-30,225,False,False,,,0
-23,HUL,CRY,2,2,2027-01-30,226,False,False,,,0
+22,ARS,NEW,3,5,2027-01-23,211,False,False,,,0
+22,BHA,MCI,4,4,2027-01-23,212,False,False,,,0
+22,CRY,TOT,3,2,2027-01-24,213,False,False,,,0
+22,EVE,BRE,3,3,2027-01-24,214,False,False,,,0
+22,NFO,BOU,3,2,2027-01-24,219,False,False,,,0
+22,SUN,COV,2,3,2027-01-24,220,False,False,,,0
+22,MUN,LIV,4,3,2027-01-24,218,False,False,,,0
+22,LEE,CHE,4,3,2027-01-25,217,False,False,,,0
 23,LIV,EVE,3,4,2027-01-30,227,False,False,,,0
-23,MCI,ARS,4,5,2027-01-30,228,False,False,,,0
+23,AVL,IPS,2,3,2027-01-30,221,False,False,,,0
 23,NEW,BHA,4,3,2027-01-30,229,False,False,,,0
-23,TOT,SUN,2,3,2027-01-30,230,False,False,,,0
+23,CHE,NFO,3,4,2027-01-30,224,False,False,,,0
+23,BOU,FUL,2,4,2027-01-31,222,False,False,,,0
+23,COV,LEE,3,2,2027-01-31,225,False,False,,,0
+23,HUL,CRY,2,2,2027-01-31,226,False,False,,,0
+23,TOT,SUN,2,3,2027-01-31,230,False,False,,,0
+23,MCI,ARS,4,5,2027-01-31,228,False,False,,,0
+23,BRE,MUN,3,4,2027-02-01,223,False,False,,,0
 24,ARS,LIV,4,5,2027-02-06,231,False,False,,,0
 24,BHA,HUL,2,4,2027-02-06,232,False,False,,,0
 24,CRY,COV,2,2,2027-02-06,233,False,False,,,0
