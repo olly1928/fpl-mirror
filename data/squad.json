@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-20T08:30:05.651596+00:00",
+  "fetched_at": "2026-11-20T16:39:48.670835+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,7 +8,7 @@
   "next_deadline": "2026-11-21T11:00:00Z",
   "preseason": false,
   "overall_points": 574,
-  "overall_rank": 4188263,
+  "overall_rank": 4188249,
   "bank": 1.3,
   "squad_value": 100.4,
   "squad_selling_value": 983,
@@ -861,10 +861,10 @@
       "multiplier": 1,
       "is_captain": false,
       "is_vice_captain": false,
-      "status": "d",
-      "status_meaning": "doubtful",
-      "chance_of_playing_next_round": 75,
-      "news": "Unspecified injury - 75% chance of playing"
+      "status": "a",
+      "status_meaning": "available",
+      "chance_of_playing_next_round": 100,
+      "news": ""
     },
     {
       "slot": 4,
