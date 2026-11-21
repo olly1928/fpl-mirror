@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-21T11:56:53+00:00",
+  "fetched_at": "2026-11-21T18:39:48+00:00",
   "season": "2026/27",
   "preseason": false,
   "current_event": 11,
@@ -38,7 +38,7 @@
       "is_next": false,
       "average_entry_score": 50,
       "highest_score": 131,
-      "most_captained": 411,
+      "most_captained": null,
       "most_selected": 411,
       "chip_plays": [
         {
@@ -330,9 +330,26 @@
       "is_next": false,
       "average_entry_score": 0,
       "highest_score": null,
-      "most_captained": null,
+      "most_captained": 411,
       "most_selected": 411,
-      "chip_plays": []
+      "chip_plays": [
+        {
+          "chip_name": "bboost",
+          "num_played": 276872
+        },
+        {
+          "chip_name": "freehit",
+          "num_played": 56517
+        },
+        {
+          "chip_name": "wildcard",
+          "num_played": 137848
+        },
+        {
+          "chip_name": "3xc",
+          "num_played": 203038
+        }
+      ]
     },
     {
       "id": 12,
@@ -929,7 +946,7 @@
   "warnings": [],
   "components": {
     "build_fpl": {
-      "last_run_at": "2026-11-21T11:56:53+00:00",
+      "last_run_at": "2026-11-21T18:39:49+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
@@ -941,19 +958,19 @@
       "stale": false
     },
     "build_player_history": {
-      "last_run_at": "2026-11-21T11:56:51+00:00",
+      "last_run_at": "2026-11-21T18:39:47+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
     },
     "build_snapshots": {
-      "last_run_at": "2026-11-21T11:56:51+00:00",
+      "last_run_at": "2026-11-21T18:39:46+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
     },
     "build_squad": {
-      "last_run_at": "2026-11-21T11:56:53+00:00",
+      "last_run_at": "2026-11-21T18:39:48+00:00",
       "expected_interval_minutes": 60,
       "stale_after_minutes": 120,
       "stale": false
