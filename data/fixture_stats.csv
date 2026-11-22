@@ -1,4 +1,4 @@
-# season=2026/27 preseason=False next_gw=12 deadline=2026-11-27T18:30:00Z players=674 fetched=2026-11-21T23:39:44+00:00
+# season=2026/27 preseason=False next_gw=12 deadline=2026-11-27T18:30:00Z players=674 fetched=2026-11-22T04:26:02+00:00
 # One row per fixture per player per stat, flattened from fixtures[].stats.
 # team_side: h=home side, a=away side. Empty until fixtures are played.
 # Unlike the other append-only files this one is rebuilt each run, so FPL's later bonus-point and stat corrections are picked up.
@@ -7404,28 +7404,29 @@ fixture_id,gw,player_id,team_side,identifier,value
 109,11,16,a,bonus,2
 109,11,453,h,bps,25
 109,11,445,h,bps,20
-109,11,465,h,bps,19
+109,11,465,h,bps,18
 109,11,460,h,bps,15
 109,11,459,h,bps,13
 109,11,567,h,bps,7
 109,11,448,h,bps,5
 109,11,456,h,bps,5
 109,11,447,h,bps,3
+109,11,450,h,bps,3
 109,11,454,h,bps,3
 109,11,457,h,bps,3
-109,11,450,h,bps,2
 109,11,462,h,bps,2
 109,11,464,h,bps,2
-109,11,593,h,bps,-3
-109,11,14,a,bps,34
-109,11,16,a,bps,29
+109,11,449,h,bps,-1
+109,11,593,h,bps,-4
+109,11,14,a,bps,35
+109,11,16,a,bps,32
 109,11,15,a,bps,24
 109,11,26,a,bps,20
-109,11,31,a,bps,13
+109,11,31,a,bps,15
 109,11,13,a,bps,12
-109,11,4,a,bps,6
-109,11,5,a,bps,6
+109,11,5,a,bps,8
 109,11,1,a,bps,5
+109,11,4,a,bps,5
 109,11,7,a,bps,5
 109,11,2,a,bps,4
 109,11,8,a,bps,4
@@ -7447,17 +7448,17 @@ fixture_id,gw,player_id,team_side,identifier,value
 109,11,462,h,defensive_contribution,2
 109,11,447,h,defensive_contribution,1
 109,11,450,h,defensive_contribution,1
-109,11,13,a,defensive_contribution,11
-109,11,16,a,defensive_contribution,7
+109,11,13,a,defensive_contribution,12
+109,11,16,a,defensive_contribution,9
+109,11,31,a,defensive_contribution,7
 109,11,4,a,defensive_contribution,6
 109,11,26,a,defensive_contribution,6
-109,11,31,a,defensive_contribution,6
 109,11,452,a,defensive_contribution,5
 109,11,8,a,defensive_contribution,4
 109,11,14,a,defensive_contribution,4
+109,11,15,a,defensive_contribution,4
 109,11,557,a,defensive_contribution,4
 109,11,7,a,defensive_contribution,3
-109,11,15,a,defensive_contribution,3
 109,11,5,a,defensive_contribution,2
 110,11,526,h,goals_scored,1
 110,11,601,h,goals_scored,1
