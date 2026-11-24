@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-23T22:21:09.661899+00:00",
+  "fetched_at": "2026-11-24T06:38:32.534745+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,11 +8,11 @@
   "next_deadline": "2026-11-27T18:30:00Z",
   "preseason": false,
   "overall_points": 627,
-  "overall_rank": 3226603,
+  "overall_rank": 3226596,
   "bank": 0.9,
   "squad_value": 100.5,
   "squad_selling_value": 986,
-  "squad_market_value": 997,
+  "squad_market_value": 998,
   "available_budget": 995,
   "notes": [
     "FREE TRANSFERS: ESTIMATE ONLY — the FPL API does not expose free transfers. Derived from transfer history assuming 1 earned per gameweek, banked to a maximum of 5, with wildcard/free-hit weeks not consuming any. Confirm on the FPL site before making transfer decisions.",
@@ -118,9 +118,9 @@
     },
     {
       "event": 11,
-      "points": 45,
-      "overall_rank": 3595302,
-      "rank": 1074837,
+      "points": 53,
+      "overall_rank": 3226601,
+      "rank": 320508,
       "transfers": 1,
       "transfer_cost": 0,
       "points_on_bench": 2
@@ -957,7 +957,7 @@
       "full_name": "Marcus Tavernier",
       "team": "BOU",
       "pos": "MID",
-      "now_cost": 6.7,
+      "now_cost": 6.8,
       "multiplier": 1,
       "is_captain": false,
       "is_vice_captain": false,
@@ -1155,7 +1155,7 @@
       "suspect": false
     },
     "68": {
-      "now_cost": 67,
+      "now_cost": 68,
       "purchase": 65,
       "selling": 66,
       "source": "transfer",
