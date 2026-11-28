@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-27T23:07:07.743190+00:00",
+  "fetched_at": "2026-11-28T05:45:26.987459+00:00",
   "team_id": 790889,
   "entry_name": "Meeks Freeks",
   "manager": "Oliver Meiklejohn",
@@ -8,11 +8,11 @@
   "next_deadline": "2026-12-01T18:30:00Z",
   "preseason": false,
   "overall_points": 627,
-  "overall_rank": 3422301,
+  "overall_rank": 3422298,
   "bank": 0.3,
   "squad_value": 100.6,
   "squad_selling_value": 992,
-  "squad_market_value": 1003,
+  "squad_market_value": 1004,
   "available_budget": 995,
   "notes": [
     "FREE TRANSFERS: ESTIMATE ONLY — the FPL API does not expose free transfers. Derived from transfer history assuming 1 earned per gameweek, banked to a maximum of 5, with wildcard/free-hit weeks not consuming any. Confirm on the FPL site before making transfer decisions.",
@@ -128,11 +128,11 @@
     {
       "event": 12,
       "points": 0,
-      "overall_rank": 3282248,
-      "rank": null,
+      "overall_rank": 3422302,
+      "rank": 10660464,
       "transfers": 1,
       "transfer_cost": 0,
-      "points_on_bench": 0
+      "points_on_bench": 2
     }
   ],
   "past_seasons": [
@@ -950,7 +950,7 @@
       "full_name": "James Justin",
       "team": "LEE",
       "pos": "DEF",
-      "now_cost": 4.5,
+      "now_cost": 4.6,
       "multiplier": 1,
       "is_captain": false,
       "is_vice_captain": false,
@@ -1052,7 +1052,7 @@
       "full_name": "Dominic Calvert-Lewin",
       "team": "LEE",
       "pos": "FWD",
-      "now_cost": 6.0,
+      "now_cost": 6.1,
       "multiplier": 2,
       "is_captain": true,
       "is_vice_captain": false,
@@ -1120,7 +1120,7 @@
       "full_name": "Lewis Hall",
       "team": "NEW",
       "pos": "DEF",
-      "now_cost": 5.2,
+      "now_cost": 5.1,
       "multiplier": 0,
       "is_captain": false,
       "is_vice_captain": false,
@@ -1166,7 +1166,7 @@
       "suspect": false
     },
     "332": {
-      "now_cost": 45,
+      "now_cost": 46,
       "purchase": 45,
       "selling": 45,
       "source": "transfer",
@@ -1214,7 +1214,7 @@
       "suspect": false
     },
     "346": {
-      "now_cost": 60,
+      "now_cost": 61,
       "purchase": 60,
       "selling": 60,
       "source": "initial_squad",
@@ -1246,7 +1246,7 @@
       "suspect": false
     },
     "449": {
-      "now_cost": 52,
+      "now_cost": 51,
       "purchase": 51,
       "selling": 51,
       "source": "transfer",
